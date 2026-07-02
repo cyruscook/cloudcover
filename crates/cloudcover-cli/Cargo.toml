@@ -1,0 +1,17 @@
+[package]
+name = "cloudcover-cli"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "cloudcover"
+path = "src/main.rs"
+
+[dependencies]
+cloudcover-aws = { path = "../cloudcover-aws" }
+cloudcover-core = { path = "../cloudcover-core" }
+cloudcover-go = { path = "../cloudcover-go" }
+serde_json = "1.0"
+
+[lints]
+workspace = true

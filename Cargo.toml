@@ -1,0 +1,19 @@
+[workspace]
+members = [
+    "crates/cloudcover-core",
+    "crates/cloudcover-aws",
+    "crates/cloudcover-aws-sdk-go-v2",
+    "crates/cloudcover-go",
+    "crates/cloudcover-cli",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+panic = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
