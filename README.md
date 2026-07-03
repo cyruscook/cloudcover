@@ -1,9 +1,12 @@
 # CloudCover
 
-A project to store data on the available API methods, associated permissions, and corresponding SDK methods, across different cloud providers.
+A project to process data on API methods, associated permissions, and corresponding SDK methods across cloud providers.
 
-Users should be able to discover the required permissions for calling given API methods. This can be done through a web interface, or through static analysis of their software to identify SDK methods within the callgraph.
+Users should be able to find the required permissions for the API methods they're calling by providing their source code. CloudCover will analyse the source code, discover references to SDK methods, and find the corresponding API methods and required permissions. CloudCover can then output a permissions policy.
 
-Initially we will only support AWS, however we want to support other cloud providers in the future.
-
-For AWS, we will use the Service Authorization Reference (https://servicereference.us-east-1.amazonaws.com/) as our source of truth. It is incomplete, paticularly on SDK methods (it only provides boto3 data), so we will need to extend it.
+Directories:
+* `crates/cloudcover-cli`: CLI, for user facing operations utilising CloudCover, such as outputting permissions policy for given source code
+* `crates/cloudcover-core`: shared definitions and functionality
+* `crates/clouds/`: support for cloud providers
+* `crates/langs/`: support for analysing source code languages
+* `crates/sdks/`: analyses SDKs and provides maps of SDK methods -> API methods
