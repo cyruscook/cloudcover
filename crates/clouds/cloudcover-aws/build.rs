@@ -427,7 +427,7 @@ fn sort_and_validate_sdk_mapping_rows(sdk_mapping_rows: &mut [SdkMappingRow]) ->
 }
 
 fn generate_code(rows: &GeneratedRows) -> Result<String, fmt::Error> {
-    let mut generated = String::from("pub(super) const ACTIONS: &[super::AwsAction] = &[\n");
+    let mut generated = String::from("pub(super) const ACTIONS: &[crate::model::AwsAction] = &[\n");
 
     write_actions(&mut generated, &rows.actions)?;
     write_operations(&mut generated, &rows.operations)?;
@@ -440,7 +440,7 @@ fn write_actions(generated: &mut String, action_rows: &[ActionRow]) -> Result<()
     for row in action_rows {
         writeln!(
             generated,
-            "    super::AwsAction {{ service: {service:?}, name: {name:?}, permission: {permission:?}, resource_types: &{resource_types:?}, resource_templates: &{resource_templates:?}, has_complete_resource_templates: {has_complete_resource_templates} }},",
+            "    crate::model::AwsAction {{ service: {service:?}, name: {name:?}, permission: {permission:?}, resource_types: &{resource_types:?}, resource_templates: &{resource_templates:?}, has_complete_resource_templates: {has_complete_resource_templates} }},",
             service = row.service,
             name = row.name,
             permission = row.permission,
@@ -457,11 +457,11 @@ fn write_operations(
     generated: &mut String,
     operation_rows: &[OperationRow],
 ) -> Result<(), fmt::Error> {
-    generated.push_str("pub(super) const OPERATIONS: &[super::AwsOperation] = &[\n");
+    generated.push_str("pub(super) const OPERATIONS: &[crate::model::AwsOperation] = &[\n");
     for row in operation_rows {
         writeln!(
             generated,
-            "    super::AwsOperation {{ service: {service:?}, name: {name:?}, authorized_actions: &{authorized_actions} }},",
+            "    crate::model::AwsOperation {{ service: {service:?}, name: {name:?}, authorized_actions: &{authorized_actions} }},",
             service = row.service,
             name = row.name,
             authorized_actions = format_authorized_actions(&row.authorized_actions),
@@ -476,11 +476,11 @@ fn write_sdk_method_mappings(
     sdk_mapping_rows: &[SdkMappingRow],
 ) -> Result<(), fmt::Error> {
     generated
-        .push_str("pub(super) const SDK_METHOD_MAPPINGS: &[super::AwsSdkMethodMapping] = &[\n");
+        .push_str("pub(super) const SDK_METHOD_MAPPINGS: &[crate::model::AwsSdkMethodMapping] = &[\n");
     for row in sdk_mapping_rows {
         writeln!(
             generated,
-            "    super::AwsSdkMethodMapping {{ sdk_package: {sdk_package:?}, sdk_name: {sdk_name:?}, sdk_method: {sdk_method:?}, api_service: {api_service:?}, api_name: {api_name:?} }},",
+            "    crate::model::AwsSdkMethodMapping {{ sdk_package: {sdk_package:?}, sdk_name: {sdk_name:?}, sdk_method: {sdk_method:?}, api_service: {api_service:?}, api_name: {api_name:?} }},",
             sdk_package = row.sdk_package,
             sdk_name = row.sdk_name,
             sdk_method = row.sdk_method,
@@ -512,7 +512,7 @@ fn format_authorized_actions(authorized_actions: &[(String, String)]) -> String 
     let entries = authorized_actions
         .iter()
         .map(|(service, name)| {
-            format!("super::AwsApiMethodRef {{ service: {service:?}, name: {name:?} }}")
+            format!("crate::model::AwsApiMethodRef {{ service: {service:?}, name: {name:?} }}")
         })
         .collect::<Vec<_>>();
 
