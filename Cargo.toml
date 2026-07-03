@@ -1,10 +1,10 @@
 [workspace]
 members = [
-    "crates/cloudcover-core",
-    "crates/cloudcover-aws",
-    "crates/cloudcover-aws-sdk-go-v2",
-    "crates/cloudcover-go",
     "crates/cloudcover-cli",
+    "crates/cloudcover-core",
+    "crates/clouds/cloudcover-aws",
+    "crates/langs/cloudcover-go",
+    "crates/sdks/cloudcover-aws-sdk-go-v2",
 ]
 resolver = "3"
 

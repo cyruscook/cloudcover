@@ -5,8 +5,8 @@ edition.workspace = true
 build = "build.rs"
 
 [dependencies]
-cloudcover-core = { path = "../cloudcover-core" }
-cloudcover-aws-sdk-go-v2 = { path = "../cloudcover-aws-sdk-go-v2" }
+cloudcover-core = { path = "../../cloudcover-core" }
+cloudcover-aws-sdk-go-v2 = { path = "../../sdks/cloudcover-aws-sdk-go-v2" }
 serde_json = "1.0"
 thiserror = "2.0"
 

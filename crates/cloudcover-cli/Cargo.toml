@@ -8,9 +8,9 @@ name = "cloudcover"
 path = "src/main.rs"
 
 [dependencies]
-cloudcover-aws = { path = "../cloudcover-aws" }
+cloudcover-aws = { path = "../clouds/cloudcover-aws" }
 cloudcover-core = { path = "../cloudcover-core" }
-cloudcover-go = { path = "../cloudcover-go" }
+cloudcover-go = { path = "../langs/cloudcover-go" }
 serde_json = "1.0"
 
 [lints]
