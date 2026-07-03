@@ -1,11 +1,18 @@
 pub const SDK_NAME: &str = "aws-sdk-go-v2";
 
+/// An AWS API method exposed by an SDK method.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct AwsSdkGoV2ApiMethodRef {
     pub service: &'static str,
     pub name: &'static str,
 }
 
+/// A Go method reference pattern discovered in generated aws-sdk-go-v2 code.
+///
+/// `package`, `receiver`, and `method` together describe the source-level SDK
+/// call shape, e.g. `github.com/aws/aws-sdk-go-v2/service/s3`, `Client`,
+/// `GetObject` for `(*s3.Client).GetObject(...)`. `api_methods` names the AWS
+/// API operations that are subsequently called by the method.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct AwsSdkGoV2MethodMapping {
     pub package: &'static str,

@@ -14,6 +14,9 @@ const SDK_REPOSITORY: &str = "https://github.com/aws/aws-sdk-go-v2";
 const SDK_BRANCH: &str = "main";
 const MINIMUM_GO_MINOR: u32 = 24;
 
+// These rows are JSON objects emitted by generator/main.go. The Go analyzer
+// discovers SDK method references. Then we validate, deduplicate, and bake
+// them into a Rust static.
 #[derive(Clone, Debug, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
 struct ApiMethodRefRow {
     service: String,
@@ -156,6 +159,9 @@ fn load_rows(sdk_dir: &Path) -> BuildResult<Vec<SdkMethodMappingRow>> {
 }
 
 fn validate_and_normalize_rows(rows: &mut Vec<SdkMethodMappingRow>) -> BuildResult<()> {
+    // The Go analyzer emits one row per discovered call edge. Collapse that to
+    // the public method reference we expose from Rust, and fail fast if two
+    // edges imply different API methods for the same package/receiver/method.
     if rows.is_empty() {
         return Err("aws-sdk-go-v2 analyzer returned no method mappings".into());
     }

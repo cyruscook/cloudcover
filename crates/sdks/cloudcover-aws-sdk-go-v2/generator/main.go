@@ -120,6 +120,9 @@ func discoverServiceDirs(sdkDir string) ([]string, error) {
 	return serviceDirs, nil
 }
 
+// Each aws-sdk-go-v2 service module is analyzed in isolation. We build SSA for
+// the generated package, derive a static callgraph, then scan its edges for the
+// standard request path used by generated client methods.
 func loadServiceRows(serviceDir string) ([]mappingRow, error) {
 	initial, err := packages.Load(&packages.Config{
 		Mode:  packages.LoadAllSyntax,
@@ -160,6 +163,18 @@ func loadServiceRows(serviceDir string) ([]mappingRow, error) {
 	return rows, nil
 }
 
+// We look for the generated pattern:
+//
+//	func (c *Client) GetObject(...) {
+//	    ...
+//	    result, metadata, err := c.invokeOperation(ctx, "GetObject", params, ...)
+//	    ...
+//	}
+//
+// The caller gives us the Go method reference users write in source
+// (`service.(*Client).GetObject`); the callee and constant argument identify the
+// API method it dispatches to. Static SSA edges are enough here because both
+// sides live in generated code within the same package.
 func edgeToMapping(edge *callgraph.Edge, packagePath string) (mappingRow, bool, error) {
 	if edge == nil || edge.Caller == nil || edge.Callee == nil || edge.Site == nil {
 		return mappingRow{}, false, nil
@@ -178,6 +193,8 @@ func edgeToMapping(edge *callgraph.Edge, packagePath string) (mappingRow, bool, 
 		return mappingRow{}, false, nil
 	}
 	if calleePackage.Pkg.Path() != packagePath || callee.Name() != "invokeOperation" {
+		// ignore helpers, paginators, waiters, and presigners: only exported Client
+		// methods that dispatch into invokeOperation are treated as SDK entry points.
 		return mappingRow{}, false, nil
 	}
 	if !caller.Object().Exported() {
@@ -207,6 +224,8 @@ func edgeToMapping(edge *callgraph.Edge, packagePath string) (mappingRow, bool, 
 	}, true, nil
 }
 
+// Generated methods are defined on *Client. Strip pointer layers so the mapping
+// remains stable even if SSA surfaces the receiver as Client or *Client.
 func clientReceiverName(signature *types.Signature) (string, bool) {
 	if signature == nil || signature.Recv() == nil {
 		return "", false
