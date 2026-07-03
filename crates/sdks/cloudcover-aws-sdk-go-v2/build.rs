@@ -1,9 +1,10 @@
 use std::{
-    collections::BTreeMap,
+    collections::{BTreeMap, hash_map::DefaultHasher},
     env,
     error::Error,
     fmt::{self, Write as _},
     fs,
+    hash::{Hash, Hasher},
     path::{Path, PathBuf},
     process::{Command, Output},
 };
@@ -13,6 +14,10 @@ use serde::Deserialize;
 const SDK_REPOSITORY: &str = "https://github.com/aws/aws-sdk-go-v2";
 const SDK_BRANCH: &str = "main";
 const MINIMUM_GO_MINOR: u32 = 24;
+const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
+const CACHE_FILE_NAME: &str = "sdk_mappings.rs";
+const SDK_CHECKOUT_DIR_NAME: &str = "aws-sdk-go-v2";
+const REFRESH_ENV: &str = "CLOUDCOVER_AWS_GO_V2_REFRESH";
 
 // These rows are JSON objects emitted by generator/main.go. The Go analyzer
 // discovers SDK method references. Then we validate, deduplicate, and bake
@@ -38,7 +43,7 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=generator/go.mod");
     println!("cargo:rerun-if-changed=generator/go.sum");
     println!("cargo:rerun-if-changed=generator/main.go");
-    println!("cargo:rerun-if-env-changed=CLOUDCOVER_AWS_GO_V2_REFRESH");
+    println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
 
     ensure_command_available(
         "git",
@@ -50,14 +55,28 @@ fn main() -> BuildResult<()> {
     ensure_go_available()?;
 
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let sdk_dir = out_dir.join("aws-sdk-go-v2");
-    refresh_sdk_checkout(&sdk_dir)?;
+    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws-sdk-go-v2");
+    fs::create_dir_all(&cache_dir)?;
 
-    let mut rows = load_rows(&sdk_dir)?;
-    validate_and_normalize_rows(&mut rows)?;
+    let sdk_dir = cache_dir.join(SDK_CHECKOUT_DIR_NAME);
+    refresh_sdk_checkout(&sdk_dir, env_var_requested(REFRESH_ENV))?;
 
-    let generated = generate_code(&rows)?;
-    fs::write(out_dir.join("sdk_mappings.rs"), generated)?;
+    let cache_key = format!(
+        "{}-{}",
+        generator_fingerprint()?,
+        checkout_revision(&sdk_dir)?
+    );
+    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
+    if !cached_output_path.exists() {
+        let mut rows = load_rows(&sdk_dir)?;
+        validate_and_normalize_rows(&mut rows)?;
+
+        let generated = generate_code(&rows)?;
+        write_if_changed(&cached_output_path, &generated)?;
+    }
+
+    let generated = fs::read_to_string(&cached_output_path)?;
+    write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
 
     Ok(())
 }
@@ -116,11 +135,76 @@ fn ensure_go_available() -> BuildResult<()> {
     .into())
 }
 
-fn refresh_sdk_checkout(sdk_dir: &Path) -> BuildResult<()> {
-    if sdk_dir.exists() {
-        fs::remove_dir_all(sdk_dir)?;
+fn refresh_sdk_checkout(sdk_dir: &Path, refresh: bool) -> BuildResult<()> {
+    if !sdk_dir.join(".git").exists() {
+        if sdk_dir.exists() {
+            fs::remove_dir_all(sdk_dir)?;
+        }
+        return clone_sdk_checkout(sdk_dir);
     }
 
+    if !refresh {
+        return Ok(());
+    }
+
+    let fetch_output = Command::new("git")
+        .args([
+            "-C",
+            sdk_dir.to_str().ok_or("invalid sdk path")?,
+            "fetch",
+            "--depth=1",
+            "origin",
+            SDK_BRANCH,
+        ])
+        .output()?;
+    if !fetch_output.status.success() {
+        return Err(format_command_failure(
+            "git fetch",
+            &fetch_output,
+            &["failed to refresh github.com/aws/aws-sdk-go-v2"],
+        )
+        .into());
+    }
+
+    let reset_output = Command::new("git")
+        .args([
+            "-C",
+            sdk_dir.to_str().ok_or("invalid sdk path")?,
+            "reset",
+            "--hard",
+            "FETCH_HEAD",
+        ])
+        .output()?;
+    if !reset_output.status.success() {
+        return Err(format_command_failure(
+            "git reset --hard",
+            &reset_output,
+            &["failed to update github.com/aws/aws-sdk-go-v2 checkout"],
+        )
+        .into());
+    }
+
+    let clean_output = Command::new("git")
+        .args([
+            "-C",
+            sdk_dir.to_str().ok_or("invalid sdk path")?,
+            "clean",
+            "-fdx",
+        ])
+        .output()?;
+    if clean_output.status.success() {
+        Ok(())
+    } else {
+        Err(format_command_failure(
+            "git clean -fdx",
+            &clean_output,
+            &["failed to clean github.com/aws/aws-sdk-go-v2 checkout"],
+        )
+        .into())
+    }
+}
+
+fn clone_sdk_checkout(sdk_dir: &Path) -> BuildResult<()> {
     let output = Command::new("git")
         .args(["clone", "--depth=1", "--branch", SDK_BRANCH, SDK_REPOSITORY])
         .arg(sdk_dir)
@@ -135,6 +219,27 @@ fn refresh_sdk_checkout(sdk_dir: &Path) -> BuildResult<()> {
         )
         .into())
     }
+}
+
+fn checkout_revision(sdk_dir: &Path) -> BuildResult<String> {
+    let output = Command::new("git")
+        .args([
+            "-C",
+            sdk_dir.to_str().ok_or("invalid sdk path")?,
+            "rev-parse",
+            "HEAD",
+        ])
+        .output()?;
+    if !output.status.success() {
+        return Err(format_command_failure(
+            "git rev-parse HEAD",
+            &output,
+            &["failed to inspect github.com/aws/aws-sdk-go-v2 checkout"],
+        )
+        .into());
+    }
+
+    Ok(String::from_utf8(output.stdout)?.trim().to_owned())
 }
 
 fn load_rows(sdk_dir: &Path) -> BuildResult<Vec<SdkMethodMappingRow>> {
@@ -154,7 +259,12 @@ fn load_rows(sdk_dir: &Path) -> BuildResult<Vec<SdkMethodMappingRow>> {
 
     let stdout = String::from_utf8(output.stdout)?;
     serde_json::from_str(&stdout).map_err(|error| {
-        format!("failed to parse analyzer output as JSON: {error}\nstdout:\n{stdout}").into()
+        format!(
+            "failed to parse analyzer output as JSON: {error}
+stdout:
+{stdout}"
+        )
+        .into()
     })
 }
 
@@ -249,13 +359,22 @@ fn validate_and_normalize_rows(rows: &mut Vec<SdkMethodMappingRow>) -> BuildResu
 
 fn generate_code(rows: &[SdkMethodMappingRow]) -> Result<String, fmt::Error> {
     let mut generated = String::new();
-    generated.push_str("pub const SDK_METHOD_MAPPINGS: &[AwsSdkGoV2MethodMapping] = &[\n");
+    generated.push_str(
+        "pub const SDK_METHOD_MAPPINGS: &[AwsSdkGoV2MethodMapping] = &[
+",
+    );
     for row in rows {
-        generated.push_str("    AwsSdkGoV2MethodMapping {\n");
+        generated.push_str(
+            "    AwsSdkGoV2MethodMapping {
+",
+        );
         writeln!(generated, "        package: {:?},", row.package)?;
         writeln!(generated, "        receiver: {:?},", row.receiver)?;
         writeln!(generated, "        method: {:?},", row.method)?;
-        generated.push_str("        api_methods: &[\n");
+        generated.push_str(
+            "        api_methods: &[
+",
+        );
         for api_method in &row.api_methods {
             generated.push_str("            AwsSdkGoV2ApiMethodRef { ");
             write!(
@@ -263,13 +382,90 @@ fn generate_code(rows: &[SdkMethodMappingRow]) -> Result<String, fmt::Error> {
                 "service: {:?}, name: {:?}",
                 api_method.service, api_method.name
             )?;
-            generated.push_str(" },\n");
+            generated.push_str(
+                " },
+",
+            );
         }
-        generated.push_str("        ],\n");
-        generated.push_str("    },\n");
+        generated.push_str(
+            "        ],
+",
+        );
+        generated.push_str(
+            "    },
+",
+        );
     }
-    generated.push_str("];\n");
+    generated.push_str(
+        "];
+",
+    );
     Ok(generated)
+}
+
+fn generator_fingerprint() -> BuildResult<String> {
+    let mut hasher = DefaultHasher::new();
+    SDK_REPOSITORY.hash(&mut hasher);
+    SDK_BRANCH.hash(&mut hasher);
+    for path in [
+        "build.rs",
+        "generator/go.mod",
+        "generator/go.sum",
+        "generator/main.go",
+    ] {
+        path.hash(&mut hasher);
+        fs::read(path)?.hash(&mut hasher);
+    }
+    Ok(format!("{:016x}", hasher.finish()))
+}
+
+fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
+    if let Some(target_dir) = env::var_os("CARGO_TARGET_DIR") {
+        return Ok(PathBuf::from(target_dir).join(CACHE_DIR_NAME));
+    }
+
+    let profile = env::var("PROFILE")?;
+    let target = env::var("TARGET")?;
+    let profile_dir = out_dir
+        .ancestors()
+        .find(|ancestor| {
+            ancestor.file_name().and_then(|name| name.to_str()) == Some(profile.as_str())
+        })
+        .ok_or_else(|| {
+            format!(
+                "failed to infer target directory from {}",
+                out_dir.display()
+            )
+        })?;
+    let parent = profile_dir.parent().ok_or_else(|| {
+        format!(
+            "failed to infer target directory parent from {}",
+            profile_dir.display()
+        )
+    })?;
+
+    if parent.file_name().and_then(|name| name.to_str()) == Some(target.as_str()) {
+        return Ok(parent
+            .parent()
+            .ok_or_else(|| format!("failed to infer target root from {}", out_dir.display()))?
+            .join(CACHE_DIR_NAME));
+    }
+
+    Ok(parent.join(CACHE_DIR_NAME))
+}
+
+fn env_var_requested(name: &str) -> bool {
+    env::var_os(name).is_some_and(|value| !value.is_empty() && value != "0")
+}
+
+fn write_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
+    match fs::read_to_string(path) {
+        Ok(existing) if existing == contents => Ok(()),
+        Ok(_) | Err(_) => {
+            fs::write(path, contents)?;
+            Ok(())
+        }
+    }
 }
 
 fn format_missing_executable(command: &str, help: &[&str]) -> String {

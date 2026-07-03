@@ -1,11 +1,16 @@
 use std::{
+    collections::hash_map::DefaultHasher,
     env,
     error::Error,
-    path::PathBuf,
+    fs,
+    hash::{Hash, Hasher},
+    path::{Path, PathBuf},
     process::{Command, Output},
 };
 
 const MINIMUM_GO_MINOR: u32 = 24;
+const ARCHIVE_NAME: &str = "libcloudcover_go_analyzer.a";
+const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 
@@ -28,25 +33,105 @@ fn main() -> BuildResult<()> {
 
     let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR")?);
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let output = Command::new("go")
-        .args(["build", "-mod=readonly", "-buildmode=c-archive", "-o"])
-        .arg(out_dir.join("libcloudcover_go_analyzer.a"))
-        .arg(".")
-        .current_dir(manifest_dir.join("analyzer"))
-        .output()?;
-    if !output.status.success() {
-        return Err(format_command_failure(
-            "go build",
-            &output,
-            &["failed to build cloudcover-go analyzer"],
-        )
-        .into());
+    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-go");
+    fs::create_dir_all(&cache_dir)?;
+
+    let cache_key = format!(
+        "{}-{}",
+        env::var("TARGET")?,
+        analyzer_fingerprint(&manifest_dir)?
+    );
+    let cached_archive_path = cache_dir.join(format!("{cache_key}-{ARCHIVE_NAME}"));
+    if !cached_archive_path.exists() {
+        build_go_analyzer(&manifest_dir, &cached_archive_path)?;
     }
+
+    copy_if_changed(&cached_archive_path, &out_dir.join(ARCHIVE_NAME))?;
 
     println!("cargo:rustc-link-search=native={}", out_dir.display());
     println!("cargo:rustc-link-lib=static=cloudcover_go_analyzer");
 
     Ok(())
+}
+
+fn build_go_analyzer(manifest_dir: &Path, output_path: &Path) -> BuildResult<()> {
+    let output = Command::new("go")
+        .args(["build", "-mod=readonly", "-buildmode=c-archive", "-o"])
+        .arg(output_path)
+        .arg(".")
+        .current_dir(manifest_dir.join("analyzer"))
+        .output()?;
+    if output.status.success() {
+        Ok(())
+    } else {
+        Err(format_command_failure(
+            "go build",
+            &output,
+            &["failed to build cloudcover-go analyzer"],
+        )
+        .into())
+    }
+}
+
+fn analyzer_fingerprint(manifest_dir: &Path) -> BuildResult<String> {
+    let mut hasher = DefaultHasher::new();
+    env::var("TARGET")?.hash(&mut hasher);
+    for relative_path in [
+        "build.rs",
+        "analyzer/go.mod",
+        "analyzer/go.sum",
+        "analyzer/main.go",
+    ] {
+        relative_path.hash(&mut hasher);
+        fs::read(manifest_dir.join(relative_path))?.hash(&mut hasher);
+    }
+    Ok(format!("{:016x}", hasher.finish()))
+}
+
+fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
+    if let Some(target_dir) = env::var_os("CARGO_TARGET_DIR") {
+        return Ok(PathBuf::from(target_dir).join(CACHE_DIR_NAME));
+    }
+
+    let profile = env::var("PROFILE")?;
+    let target = env::var("TARGET")?;
+    let profile_dir = out_dir
+        .ancestors()
+        .find(|ancestor| {
+            ancestor.file_name().and_then(|name| name.to_str()) == Some(profile.as_str())
+        })
+        .ok_or_else(|| {
+            format!(
+                "failed to infer target directory from {}",
+                out_dir.display()
+            )
+        })?;
+    let parent = profile_dir.parent().ok_or_else(|| {
+        format!(
+            "failed to infer target directory parent from {}",
+            profile_dir.display()
+        )
+    })?;
+
+    if parent.file_name().and_then(|name| name.to_str()) == Some(target.as_str()) {
+        return Ok(parent
+            .parent()
+            .ok_or_else(|| format!("failed to infer target root from {}", out_dir.display()))?
+            .join(CACHE_DIR_NAME));
+    }
+
+    Ok(parent.join(CACHE_DIR_NAME))
+}
+
+fn copy_if_changed(source: &Path, destination: &Path) -> BuildResult<()> {
+    match (fs::read(source), fs::read(destination)) {
+        (Ok(source_bytes), Ok(destination_bytes)) if source_bytes == destination_bytes => Ok(()),
+        (Ok(_), Ok(_)) | (Ok(_), Err(_)) => {
+            fs::copy(source, destination)?;
+            Ok(())
+        }
+        (Err(error), _) => Err(error.into()),
+    }
 }
 
 fn ensure_command_available(command: &str, missing_help: &[&str]) -> BuildResult<Output> {

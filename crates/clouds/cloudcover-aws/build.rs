@@ -1,15 +1,19 @@
 use serde::de::DeserializeOwned;
 use std::{
     collections::{BTreeMap, BTreeSet},
+    env,
     error::Error,
     fmt::{self, Write},
     fs,
-    path::PathBuf,
+    path::{Path, PathBuf},
     time::Duration,
 };
 use ureq::Agent;
 
 const SERVICE_REFERENCE_URL: &str = "https://servicereference.us-east-1.amazonaws.com/";
+const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
+const CACHE_FILE_NAME: &str = "actions.rs";
+const REFRESH_ENV: &str = "CLOUDCOVER_AWS_SAR_REFRESH";
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 
@@ -113,7 +117,18 @@ struct GeneratedRows {
 }
 
 fn main() -> BuildResult<()> {
-    println!("cargo:rerun-if-env-changed=CLOUDCOVER_AWS_SAR_REFRESH");
+    println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
+
+    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
+    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws");
+    fs::create_dir_all(&cache_dir)?;
+
+    let cached_output_path = cache_dir.join(CACHE_FILE_NAME);
+    if !env_var_requested(REFRESH_ENV) && cached_output_path.exists() {
+        let generated = fs::read_to_string(&cached_output_path)?;
+        return write_generated_file(&generated);
+    }
 
     let agent = build_agent();
     let mut rows = collect_rows(&agent)?;
@@ -123,6 +138,7 @@ fn main() -> BuildResult<()> {
     sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
 
     let generated = generate_code(&rows)?;
+    write_if_changed(&cached_output_path, &generated)?;
     write_generated_file(&generated)
 }
 
@@ -427,7 +443,10 @@ fn sort_and_validate_sdk_mapping_rows(sdk_mapping_rows: &mut [SdkMappingRow]) ->
 }
 
 fn generate_code(rows: &GeneratedRows) -> Result<String, fmt::Error> {
-    let mut generated = String::from("pub(super) const ACTIONS: &[crate::model::AwsAction] = &[\n");
+    let mut generated = String::from(
+        "pub(super) const ACTIONS: &[crate::model::AwsAction] = &[
+",
+    );
 
     write_actions(&mut generated, &rows.actions)?;
     write_operations(&mut generated, &rows.operations)?;
@@ -449,7 +468,10 @@ fn write_actions(generated: &mut String, action_rows: &[ActionRow]) -> Result<()
             has_complete_resource_templates = row.has_complete_resource_templates
         )?;
     }
-    generated.push_str("];\n");
+    generated.push_str(
+        "];
+",
+    );
     Ok(())
 }
 
@@ -457,7 +479,10 @@ fn write_operations(
     generated: &mut String,
     operation_rows: &[OperationRow],
 ) -> Result<(), fmt::Error> {
-    generated.push_str("pub(super) const OPERATIONS: &[crate::model::AwsOperation] = &[\n");
+    generated.push_str(
+        "pub(super) const OPERATIONS: &[crate::model::AwsOperation] = &[
+",
+    );
     for row in operation_rows {
         writeln!(
             generated,
@@ -467,7 +492,10 @@ fn write_operations(
             authorized_actions = format_authorized_actions(&row.authorized_actions),
         )?;
     }
-    generated.push_str("];\n");
+    generated.push_str(
+        "];
+",
+    );
     Ok(())
 }
 
@@ -475,8 +503,10 @@ fn write_sdk_method_mappings(
     generated: &mut String,
     sdk_mapping_rows: &[SdkMappingRow],
 ) -> Result<(), fmt::Error> {
-    generated
-        .push_str("pub(super) const SDK_METHOD_MAPPINGS: &[crate::model::AwsSdkMethodMapping] = &[\n");
+    generated.push_str(
+        "pub(super) const SDK_METHOD_MAPPINGS: &[crate::model::AwsSdkMethodMapping] = &[
+",
+    );
     for row in sdk_mapping_rows {
         writeln!(
             generated,
@@ -488,20 +518,66 @@ fn write_sdk_method_mappings(
             api_name = row.api_name,
         )?;
     }
-    generated.push_str("];\n");
+    generated.push_str(
+        "];
+",
+    );
     Ok(())
 }
 
 fn write_generated_file(generated: &str) -> BuildResult<()> {
-    let out_dir = PathBuf::from(std::env::var("OUT_DIR")?);
-    let output_path = out_dir.join("actions.rs");
-    fs::write(&output_path, generated).map_err(|error| {
+    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
+    let output_path = out_dir.join(CACHE_FILE_NAME);
+    write_if_changed(&output_path, generated)
+}
+
+fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
+    if let Some(target_dir) = env::var_os("CARGO_TARGET_DIR") {
+        return Ok(PathBuf::from(target_dir).join(CACHE_DIR_NAME));
+    }
+
+    let profile = env::var("PROFILE")?;
+    let target = env::var("TARGET")?;
+    let profile_dir = out_dir
+        .ancestors()
+        .find(|ancestor| {
+            ancestor.file_name().and_then(|name| name.to_str()) == Some(profile.as_str())
+        })
+        .ok_or_else(|| {
+            format!(
+                "failed to infer target directory from {}",
+                out_dir.display()
+            )
+        })?;
+    let parent = profile_dir.parent().ok_or_else(|| {
         format!(
-            "failed to write generated actions to {}: {error}",
-            output_path.display()
+            "failed to infer target directory parent from {}",
+            profile_dir.display()
         )
     })?;
-    Ok(())
+
+    if parent.file_name().and_then(|name| name.to_str()) == Some(target.as_str()) {
+        return Ok(parent
+            .parent()
+            .ok_or_else(|| format!("failed to infer target root from {}", out_dir.display()))?
+            .join(CACHE_DIR_NAME));
+    }
+
+    Ok(parent.join(CACHE_DIR_NAME))
+}
+
+fn env_var_requested(name: &str) -> bool {
+    env::var_os(name).is_some_and(|value| !value.is_empty() && value != "0")
+}
+
+fn write_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
+    match fs::read_to_string(path) {
+        Ok(existing) if existing == contents => Ok(()),
+        Ok(_) | Err(_) => {
+            fs::write(path, contents)?;
+            Ok(())
+        }
+    }
 }
 
 fn format_authorized_actions(authorized_actions: &[(String, String)]) -> String {
