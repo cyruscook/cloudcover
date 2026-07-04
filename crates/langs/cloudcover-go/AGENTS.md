@@ -1,3 +1,7 @@
 # cloudcover-go
 
-Provides Go language functionality for CloudCover. `analyzer` contains a Go library which uses `golang.org/x/tools/go` to generate callgraphs for Go source code. The crate static links to that library and and uses it to identify SDK methods used by the source code.
+This crate analyzes user Go source code and returns discovered Go method references for CloudCover.
+
+Structure:
+- `analyzer/`: Go shared library using `golang.org/x/tools/go/packages`, SSA, and static callgraph analysis.
+- Rust crate code loads the analyzer output and converts it into `cloudcover-core` method-reference types.

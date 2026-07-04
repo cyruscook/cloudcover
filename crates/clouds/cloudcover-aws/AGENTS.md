@@ -1,7 +1,13 @@
 # cloudcover-aws
 
-Implements AWS cloud provider functionality for CloudCover.
+Implements the AWS cloud provider for CloudCover.
 
-Uses Service Authorization Reference data (https://servicereference.us-east-1.amazonaws.com/) to cover API operation -> IAM permission and boto3 SDK -> API operation mapping.
+Responsibilities:
+- expose supported AWS API operations
+- map supported SDK method references to AWS API methods
+- translate API methods to IAM permissions policy output
 
-aws-sdk-go-v2 SDK -> API operation mapping is provided by the `cloudcover-aws-sdk-go-v2` crate.
+Current SDK inputs:
+- boto3 Python mappings generated in this crate from Service Authorization Reference data
+- Go mappings from `cloudcover-aws-sdk-go-v2`
+- Terraform provider entrypoint mappings from `cloudcover-terraform-provider-aws`

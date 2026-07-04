@@ -126,7 +126,7 @@ fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
 fn copy_if_changed(source: &Path, destination: &Path) -> BuildResult<()> {
     match (fs::read(source), fs::read(destination)) {
         (Ok(source_bytes), Ok(destination_bytes)) if source_bytes == destination_bytes => Ok(()),
-        (Ok(_), Ok(_)) | (Ok(_), Err(_)) => {
+        (Ok(_), Ok(_) | Err(_)) => {
             fs::copy(source, destination)?;
             Ok(())
         }

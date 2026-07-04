@@ -1,6 +1,6 @@
 use cloudcover_core::{
     ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, PythonMethodReference,
-    Sdk, SdkMethodMapping,
+    Sdk, SdkMethodMapping, TerraformMethodReference,
 };
 
 use crate::{generated, policy};
@@ -35,12 +35,14 @@ impl CloudProvider for AwsProvider {
         vec![
             Sdk::new(cloudcover_aws_sdk_go_v2::SDK_NAME, Language::Go),
             Sdk::new("boto3", Language::Python),
+            Sdk::new(cloudcover_terraform_provider_aws::SDK_NAME, Language::Terraform),
         ]
     }
 
     fn sdk_method_mappings(&self) -> Vec<SdkMethodMapping> {
         let mut mappings = python_sdk_method_mappings();
         mappings.extend(go_sdk_method_mappings());
+        mappings.extend(terraform_provider_aws_sdk_method_mappings());
         mappings.sort();
         mappings.dedup();
         mappings
@@ -92,6 +94,30 @@ fn go_sdk_method_mappings() -> impl Iterator<Item = SdkMethodMapping> {
                 api_methods,
             ))
         })
+}
+
+fn terraform_provider_aws_sdk_method_mappings() -> Vec<SdkMethodMapping> {
+    cloudcover_terraform_provider_aws::SDK_METHOD_MAPPINGS
+        .iter()
+        .map(|row| {
+            let api_methods = row
+                .api_methods
+                .iter()
+                .filter(|api_method| operation_exists(api_method.service, api_method.name))
+                .map(|api_method| ApiMethod::new(api_method.service, api_method.name))
+                .collect::<Vec<_>>();
+
+            SdkMethodMapping::new(
+                Sdk::new(cloudcover_terraform_provider_aws::SDK_NAME, Language::Terraform),
+                MethodReference::Terraform(TerraformMethodReference::new(
+                    row.kind,
+                    row.type_name,
+                    row.action,
+                )),
+                api_methods,
+            )
+        })
+        .collect()
 }
 
 fn operation_exists(service: &str, name: &str) -> bool {

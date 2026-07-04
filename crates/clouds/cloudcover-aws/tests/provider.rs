@@ -3,7 +3,7 @@ use std::{error::Error, io};
 use cloudcover_aws::{AwsError, AwsProvider};
 use cloudcover_core::{
     ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, PythonMethodReference,
-    Sdk, SdkMethodMapping,
+    Sdk, SdkMethodMapping, TerraformMethodReference,
 };
 use serde_json::json;
 
@@ -27,6 +27,7 @@ fn lists_supported_aws_sdks() {
         vec![
             Sdk::new("aws-sdk-go-v2", Language::Go),
             Sdk::new("boto3", Language::Python),
+            Sdk::new("terraform-provider-aws", Language::Terraform),
         ]
     );
 }
@@ -72,12 +73,36 @@ fn maps_sdk_methods_to_api_methods() {
         )),
         vec![ApiMethod::new("ec2", "DescribeInstances")],
     )));
+    let terraform_bucket_create_matches: Vec<_> = mappings
+        .iter()
+        .filter(|mapping| {
+            mapping.sdk() == &Sdk::new("terraform-provider-aws", Language::Terraform)
+                && mapping.method()
+                    == &MethodReference::Terraform(TerraformMethodReference::new(
+                        "resource",
+                        "aws_s3_bucket",
+                        "create",
+                    ))
+        })
+        .collect();
+    assert_eq!(
+        terraform_bucket_create_matches.len(),
+        1,
+        "missing terraform-provider-aws aws_s3_bucket create mapping"
+    );
+    let terraform_bucket_create = terraform_bucket_create_matches[0];
+    assert!(terraform_bucket_create
+        .api_methods()
+        .contains(&ApiMethod::new("s3", "CreateBucket")));
+
 
     let api_methods = provider.list_api_methods();
-    for mapping in mappings
-        .iter()
-        .filter(|mapping| mapping.sdk().name() == "aws-sdk-go-v2")
-    {
+    for mapping in mappings.iter().filter(|mapping| {
+        matches!(
+            mapping.sdk().name(),
+            "aws-sdk-go-v2" | "terraform-provider-aws"
+        )
+    }) {
         for api_method in mapping.api_methods() {
             assert!(api_methods.contains(api_method));
         }

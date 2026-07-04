@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub enum MethodReference {
     Python(PythonMethodReference),
     Go(GoMethodReference),
+    Terraform(TerraformMethodReference),
 }
 
 #[derive(Clone, Debug, Deserialize, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize)]
@@ -77,5 +78,42 @@ impl GoMethodReference {
     #[must_use]
     pub fn name(&self) -> &str {
         &self.name
+    }
+}
+
+#[derive(Clone, Debug, Deserialize, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize)]
+pub struct TerraformMethodReference {
+    kind: String,
+    type_name: String,
+    action: String,
+}
+
+impl TerraformMethodReference {
+    #[must_use]
+    pub fn new(
+        kind: impl Into<String>,
+        type_name: impl Into<String>,
+        action: impl Into<String>,
+    ) -> Self {
+        Self {
+            kind: kind.into(),
+            type_name: type_name.into(),
+            action: action.into(),
+        }
+    }
+
+    #[must_use]
+    pub fn kind(&self) -> &str {
+        &self.kind
+    }
+
+    #[must_use]
+    pub fn type_name(&self) -> &str {
+        &self.type_name
+    }
+
+    #[must_use]
+    pub fn action(&self) -> &str {
+        &self.action
     }
 }

@@ -7,9 +7,9 @@ build = "build.rs"
 [dependencies]
 cloudcover-core = { path = "../../cloudcover-core" }
 cloudcover-aws-sdk-go-v2 = { path = "../../sdks/cloudcover-aws-sdk-go-v2" }
+cloudcover-terraform-provider-aws = { path = "../../sdks/cloudcover-terraform-provider-aws" }
 serde_json = "1.0"
 thiserror = "2.0"
-
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"

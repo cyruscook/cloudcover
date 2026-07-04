@@ -1,6 +1,6 @@
 use crate::{
     ApiMethod, GoMethodReference, Language, MethodReference, PythonMethodReference, Sdk,
-    SdkMethodMapping,
+    SdkMethodMapping, TerraformMethodReference,
 };
 
 #[test]
@@ -33,10 +33,10 @@ fn api_methods_sort_by_service_then_name() {
 
 #[test]
 fn sdk_constructor_and_accessors() {
-    let sdk = Sdk::new("boto3", Language::Python);
+    let sdk = Sdk::new("terraform-provider-aws", Language::Terraform);
 
-    assert_eq!(sdk.name(), "boto3");
-    assert_eq!(sdk.language(), Language::Python);
+    assert_eq!(sdk.name(), "terraform-provider-aws");
+    assert_eq!(sdk.language(), Language::Terraform);
 }
 
 #[test]
@@ -55,6 +55,15 @@ fn go_method_reference_constructor_and_accessors() {
     assert_eq!(method.package(), "example.com/myapp");
     assert_eq!(method.receiver(), Some("MyType"));
     assert_eq!(method.name(), "MyMethod");
+}
+
+#[test]
+fn terraform_method_reference_constructor_and_accessors() {
+    let method = TerraformMethodReference::new("resource", "aws_s3_bucket", "create");
+
+    assert_eq!(method.kind(), "resource");
+    assert_eq!(method.type_name(), "aws_s3_bucket");
+    assert_eq!(method.action(), "create");
 }
 
 #[test]

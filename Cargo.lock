@@ -42,6 +42,7 @@ version = "0.1.0"
 dependencies = [
  "cloudcover-aws-sdk-go-v2",
  "cloudcover-core",
+ "cloudcover-terraform-provider-aws",
  "serde",
  "serde_json",
  "thiserror",
@@ -79,6 +80,15 @@ name = "cloudcover-go"
 version = "0.1.0"
 dependencies = [
  "cloudcover-core",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "cloudcover-terraform-provider-aws"
+version = "0.1.0"
+dependencies = [
+ "cloudcover-aws-sdk-go-v2",
  "serde",
  "serde_json",
 ]

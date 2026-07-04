@@ -4,4 +4,5 @@ use serde::{Deserialize, Serialize};
 pub enum Language {
     Python,
     Go,
+    Terraform,
 }

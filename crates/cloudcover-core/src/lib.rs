@@ -9,7 +9,9 @@ mod tests;
 
 pub use api_method::ApiMethod;
 pub use language::Language;
-pub use method_reference::{GoMethodReference, MethodReference, PythonMethodReference};
+pub use method_reference::{
+    GoMethodReference, MethodReference, PythonMethodReference, TerraformMethodReference,
+};
 pub use provider::CloudProvider;
 pub use sdk::Sdk;
 pub use sdk_method_mapping::SdkMethodMapping;
