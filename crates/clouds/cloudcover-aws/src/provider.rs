@@ -35,7 +35,10 @@ impl CloudProvider for AwsProvider {
         vec![
             Sdk::new(cloudcover_aws_sdk_go_v2::SDK_NAME, Language::Go),
             Sdk::new("boto3", Language::Python),
-            Sdk::new(cloudcover_terraform_provider_aws::SDK_NAME, Language::Terraform),
+            Sdk::new(
+                cloudcover_terraform_provider_aws::SDK_NAME,
+                Language::Terraform,
+            ),
         ]
     }
 
@@ -108,7 +111,10 @@ fn terraform_provider_aws_sdk_method_mappings() -> Vec<SdkMethodMapping> {
                 .collect::<Vec<_>>();
 
             SdkMethodMapping::new(
-                Sdk::new(cloudcover_terraform_provider_aws::SDK_NAME, Language::Terraform),
+                Sdk::new(
+                    cloudcover_terraform_provider_aws::SDK_NAME,
+                    Language::Terraform,
+                ),
                 MethodReference::Terraform(TerraformMethodReference::new(
                     row.kind,
                     row.type_name,

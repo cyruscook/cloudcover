@@ -29,8 +29,6 @@ fn main() -> BuildResult<()> {
         println!("cargo:rustc-link-lib=dylib=m");
     }
 
-    ensure_go_available()?;
-
     let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR")?);
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
     let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-go");
@@ -43,6 +41,7 @@ fn main() -> BuildResult<()> {
     );
     let cached_archive_path = cache_dir.join(format!("{cache_key}-{ARCHIVE_NAME}"));
     if !cached_archive_path.exists() {
+        ensure_go_available()?;
         build_go_analyzer(&manifest_dir, &cached_archive_path)?;
     }
 

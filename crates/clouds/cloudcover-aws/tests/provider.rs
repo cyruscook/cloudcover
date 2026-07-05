@@ -91,10 +91,11 @@ fn maps_sdk_methods_to_api_methods() {
         "missing terraform-provider-aws aws_s3_bucket create mapping"
     );
     let terraform_bucket_create = terraform_bucket_create_matches[0];
-    assert!(terraform_bucket_create
-        .api_methods()
-        .contains(&ApiMethod::new("s3", "CreateBucket")));
-
+    assert!(
+        terraform_bucket_create
+            .api_methods()
+            .contains(&ApiMethod::new("s3", "CreateBucket"))
+    );
 
     let api_methods = provider.list_api_methods();
     for mapping in mappings.iter().filter(|mapping| {

@@ -51,6 +51,21 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=generator/main.go");
     println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
 
+    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
+    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-terraform-provider-aws");
+    fs::create_dir_all(&cache_dir)?;
+
+    let aws_sdk_map_json = serde_json::to_string(&aws_sdk_rows())?;
+    let aws_sdk_map_hash = stable_hash(&aws_sdk_map_json);
+    let refresh = env_var_requested(REFRESH_ENV);
+    let cache_key = format!("{}-{}", generator_fingerprint()?, aws_sdk_map_hash);
+    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
+    if !refresh && cached_output_path.exists() {
+        let generated = fs::read_to_string(&cached_output_path)?;
+        write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
+        return Ok(());
+    }
+
     ensure_command_available(
         "git",
         &[
@@ -60,31 +75,18 @@ fn main() -> BuildResult<()> {
     )?;
     ensure_go_available()?;
 
-    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-terraform-provider-aws");
-    fs::create_dir_all(&cache_dir)?;
-
     let provider_dir = cache_dir.join(PROVIDER_CHECKOUT_DIR_NAME);
-    refresh_provider_checkout(&provider_dir, env_var_requested(REFRESH_ENV))?;
+    refresh_provider_checkout(&provider_dir, refresh)?;
 
-    let aws_sdk_map_json = serde_json::to_string(&aws_sdk_rows())?;
-    let aws_sdk_map_hash = stable_hash(&aws_sdk_map_json);
-    let cache_key = format!(
-        "{}-{}-{}",
-        generator_fingerprint()?,
-        checkout_revision(&provider_dir)?,
-        aws_sdk_map_hash
-    );
-    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
-    if !cached_output_path.exists() {
-        let mut rows = load_rows(&provider_dir, &out_dir.join("aws_sdk_go_v2_mappings.json"), &aws_sdk_map_json)?;
-        validate_and_normalize_rows(&mut rows)?;
+    let sdk_map_json_path = provider_dir.join("cloudcover-aws-sdk-go-v2-mappings.json");
+    let mut rows = load_rows(&provider_dir, &sdk_map_json_path, &aws_sdk_map_json)?;
+    validate_and_normalize_rows(&mut rows)?;
 
-        let generated = generate_code(&rows)?;
-        write_if_changed(&cached_output_path, &generated)?;
+    let generated = generate_code(&rows)?;
+    write_if_changed(&cached_output_path, &generated)?;
+    if provider_dir.exists() {
+        fs::remove_dir_all(&provider_dir)?;
     }
-
-    let generated = fs::read_to_string(&cached_output_path)?;
     write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
 
     Ok(())
@@ -236,27 +238,6 @@ fn clone_provider_checkout(provider_dir: &Path) -> BuildResult<()> {
     }
 }
 
-fn checkout_revision(provider_dir: &Path) -> BuildResult<String> {
-    let output = Command::new("git")
-        .args([
-            "-C",
-            provider_dir.to_str().ok_or("invalid provider path")?,
-            "rev-parse",
-            "HEAD",
-        ])
-        .output()?;
-    if !output.status.success() {
-        return Err(format_command_failure(
-            "git rev-parse HEAD",
-            &output,
-            &["failed to inspect github.com/hashicorp/terraform-provider-aws checkout"],
-        )
-        .into());
-    }
-
-    Ok(String::from_utf8(output.stdout)?.trim().to_owned())
-}
-
 fn load_rows(
     provider_dir: &Path,
     sdk_map_json_path: &Path,
@@ -268,7 +249,7 @@ fn load_rows(
         .args([
             "run",
             "-mod=readonly",
-            ".",
+            "./main.go",
             "--provider-dir",
             provider_dir.to_str().ok_or("invalid provider path")?,
             "--sdk-map-json",
@@ -287,21 +268,22 @@ fn load_rows(
 
     let stdout = String::from_utf8(output.stdout)?;
     serde_json::from_str(&stdout).map_err(|error| {
-        format!(
-            "failed to parse analyzer output as JSON: {error}\nstdout:\n{stdout}"
-        )
-        .into()
+        format!("failed to parse analyzer output as JSON: {error}\nstdout:\n{stdout}").into()
     })
 }
 
-fn validate_and_normalize_rows(rows: &mut Vec<TerraformProviderAwsMethodMappingRow>) -> BuildResult<()> {
+fn validate_and_normalize_rows(
+    rows: &mut Vec<TerraformProviderAwsMethodMappingRow>,
+) -> BuildResult<()> {
     if rows.is_empty() {
         return Err("terraform-provider-aws analyzer returned no method mappings".into());
     }
 
     for row in rows.iter_mut() {
         if row.kind.is_empty() || row.type_name.is_empty() || row.action.is_empty() {
-            return Err("terraform-provider-aws mapping row has empty kind/type_name/action".into());
+            return Err(
+                "terraform-provider-aws mapping row has empty kind/type_name/action".into(),
+            );
         }
 
         row.api_methods.sort();
@@ -357,9 +339,8 @@ fn validate_and_normalize_rows(rows: &mut Vec<TerraformProviderAwsMethodMappingR
 
 fn generate_code(rows: &[TerraformProviderAwsMethodMappingRow]) -> Result<String, fmt::Error> {
     let mut generated = String::new();
-    generated.push_str(
-        "pub const SDK_METHOD_MAPPINGS: &[TerraformProviderAwsMethodMapping] = &[\n",
-    );
+    generated
+        .push_str("pub const SDK_METHOD_MAPPINGS: &[TerraformProviderAwsMethodMapping] = &[\n");
     for row in rows {
         generated.push_str("    TerraformProviderAwsMethodMapping {\n");
         writeln!(generated, "        kind: {:?},", row.kind)?;
@@ -378,8 +359,10 @@ fn generate_code(rows: &[TerraformProviderAwsMethodMappingRow]) -> Result<String
         generated.push_str("        ],\n");
         generated.push_str("    },\n");
     }
-    generated.push_str("];
-");
+    generated.push_str(
+        "];
+",
+    );
     Ok(generated)
 }
 

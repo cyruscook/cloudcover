@@ -45,6 +45,19 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=generator/main.go");
     println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
 
+    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
+    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws-sdk-go-v2");
+    fs::create_dir_all(&cache_dir)?;
+
+    let refresh = env_var_requested(REFRESH_ENV);
+    let cache_key = generator_fingerprint()?;
+    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
+    if !refresh && cached_output_path.exists() {
+        let generated = fs::read_to_string(&cached_output_path)?;
+        write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
+        return Ok(());
+    }
+
     ensure_command_available(
         "git",
         &[
@@ -54,28 +67,17 @@ fn main() -> BuildResult<()> {
     )?;
     ensure_go_available()?;
 
-    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws-sdk-go-v2");
-    fs::create_dir_all(&cache_dir)?;
-
     let sdk_dir = cache_dir.join(SDK_CHECKOUT_DIR_NAME);
-    refresh_sdk_checkout(&sdk_dir, env_var_requested(REFRESH_ENV))?;
+    refresh_sdk_checkout(&sdk_dir, refresh)?;
 
-    let cache_key = format!(
-        "{}-{}",
-        generator_fingerprint()?,
-        checkout_revision(&sdk_dir)?
-    );
-    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
-    if !cached_output_path.exists() {
-        let mut rows = load_rows(&sdk_dir)?;
-        validate_and_normalize_rows(&mut rows)?;
+    let mut rows = load_rows(&sdk_dir)?;
+    validate_and_normalize_rows(&mut rows)?;
 
-        let generated = generate_code(&rows)?;
-        write_if_changed(&cached_output_path, &generated)?;
+    let generated = generate_code(&rows)?;
+    write_if_changed(&cached_output_path, &generated)?;
+    if sdk_dir.exists() {
+        fs::remove_dir_all(&sdk_dir)?;
     }
-
-    let generated = fs::read_to_string(&cached_output_path)?;
     write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
 
     Ok(())
@@ -221,30 +223,9 @@ fn clone_sdk_checkout(sdk_dir: &Path) -> BuildResult<()> {
     }
 }
 
-fn checkout_revision(sdk_dir: &Path) -> BuildResult<String> {
-    let output = Command::new("git")
-        .args([
-            "-C",
-            sdk_dir.to_str().ok_or("invalid sdk path")?,
-            "rev-parse",
-            "HEAD",
-        ])
-        .output()?;
-    if !output.status.success() {
-        return Err(format_command_failure(
-            "git rev-parse HEAD",
-            &output,
-            &["failed to inspect github.com/aws/aws-sdk-go-v2 checkout"],
-        )
-        .into());
-    }
-
-    Ok(String::from_utf8(output.stdout)?.trim().to_owned())
-}
-
 fn load_rows(sdk_dir: &Path) -> BuildResult<Vec<SdkMethodMappingRow>> {
     let output = Command::new("go")
-        .args(["run", "-mod=readonly", ".", "--sdk-dir"])
+        .args(["run", "-mod=readonly", "./main.go", "--sdk-dir"])
         .arg(sdk_dir)
         .current_dir("generator")
         .output()?;
