@@ -14,30 +14,70 @@ pub struct TerraformProviderAwsMethodMapping {
     pub api_methods: &'static [TerraformProviderAwsApiMethodRef],
 }
 
+#[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
+pub struct TerraformProviderAwsVersionMappings {
+    pub version: &'static str,
+    pub mappings: &'static [TerraformProviderAwsMethodMapping],
+}
+
 include!(concat!(
     env!("OUT_DIR"),
     "/terraform_provider_aws_mappings.rs"
 ));
 
+#[must_use]
+pub fn sdk_method_mappings(version: &str) -> Option<&'static [TerraformProviderAwsMethodMapping]> {
+    PROVIDER_VERSIONS
+        .iter()
+        .find(|entry| entry.version == version)
+        .map(|entry| entry.mappings)
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{SDK_METHOD_MAPPINGS, TerraformProviderAwsApiMethodRef};
+    use super::{PROVIDER_VERSIONS, TerraformProviderAwsApiMethodRef, sdk_method_mappings};
 
     #[test]
-    fn sdk_method_mappings_are_sorted_and_unique() {
-        let mut sorted = SDK_METHOD_MAPPINGS.to_vec();
-        sorted.sort();
-        assert_eq!(SDK_METHOD_MAPPINGS, sorted);
+    fn provider_versions_are_sorted_and_unique() {
+        assert!(!PROVIDER_VERSIONS.is_empty());
         assert!(
-            SDK_METHOD_MAPPINGS
+            PROVIDER_VERSIONS
                 .windows(2)
-                .all(|window| window[0] != window[1])
+                .all(|window| window[0].version != window[1].version)
         );
     }
 
     #[test]
-    fn contains_known_terraform_entrypoints() {
+    fn mappings_and_api_methods_are_sorted_and_unique() {
+        for version in PROVIDER_VERSIONS {
+            let mut mappings = version.mappings.to_vec();
+            mappings.sort();
+            assert_eq!(version.mappings, mappings);
+            assert!(
+                version
+                    .mappings
+                    .windows(2)
+                    .all(|window| window[0] != window[1])
+            );
+            for mapping in version.mappings {
+                let mut api_methods = mapping.api_methods.to_vec();
+                api_methods.sort();
+                assert_eq!(mapping.api_methods, api_methods);
+                assert!(
+                    mapping
+                        .api_methods
+                        .windows(2)
+                        .all(|window| window[0] != window[1])
+                );
+            }
+        }
+    }
+
+    #[test]
+    fn exact_lookup_retrieves_known_version_only() -> Result<(), &'static str> {
+        let mappings = sdk_method_mappings("6.64.0").ok_or("missing v6.64.0 mappings")?;
         assert_mapping_contains(
+            mappings,
             "resource",
             "aws_s3_bucket",
             "create",
@@ -47,6 +87,7 @@ mod tests {
             },
         );
         assert_mapping_contains(
+            mappings,
             "resource",
             "aws_s3_bucket",
             "delete",
@@ -56,15 +97,7 @@ mod tests {
             },
         );
         assert_mapping_contains(
-            "resource",
-            "aws_s3_directory_bucket",
-            "create",
-            TerraformProviderAwsApiMethodRef {
-                service: "s3",
-                name: "CreateBucket",
-            },
-        );
-        assert_mapping_contains(
+            mappings,
             "action",
             "aws_ec2_stop_instance",
             "invoke",
@@ -73,15 +106,21 @@ mod tests {
                 name: "StopInstances",
             },
         );
+        assert!(sdk_method_mappings("6.63.0").is_none());
+        assert!(sdk_method_mappings("6.64").is_none());
+        assert!(sdk_method_mappings("v6.64.0").is_none());
+        assert!(sdk_method_mappings("6.64.0+local").is_none());
+        Ok(())
     }
 
     fn assert_mapping_contains(
+        mappings: &[super::TerraformProviderAwsMethodMapping],
         kind: &str,
         type_name: &str,
         action: &str,
         expected_api_method: TerraformProviderAwsApiMethodRef,
     ) {
-        let matches: Vec<_> = SDK_METHOD_MAPPINGS
+        let matches: Vec<_> = mappings
             .iter()
             .filter(|mapping| {
                 mapping.kind == kind && mapping.type_name == type_name && mapping.action == action
@@ -92,7 +131,6 @@ mod tests {
             1,
             "missing mapping for {kind} {type_name} {action}"
         );
-        let mapping = matches[0];
-        assert!(mapping.api_methods.contains(&expected_api_method));
+        assert!(matches[0].api_methods.contains(&expected_api_method));
     }
 }

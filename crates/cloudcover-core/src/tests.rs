@@ -34,9 +34,35 @@ fn api_methods_sort_by_service_then_name() {
 #[test]
 fn sdk_constructor_and_accessors() {
     let sdk = Sdk::new("terraform-provider-aws", Language::Terraform);
+    let versioned = Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0");
 
     assert_eq!(sdk.name(), "terraform-provider-aws");
     assert_eq!(sdk.language(), Language::Terraform);
+    assert_eq!(sdk.version(), None);
+    assert_eq!(versioned.version(), Some("6.64.0"));
+    assert_ne!(sdk, versioned);
+    assert_eq!(sdk, Sdk::new("terraform-provider-aws", Language::Terraform));
+}
+
+#[test]
+fn sdk_serialization_omits_only_unversioned_version() -> Result<(), serde_json::Error> {
+    let unversioned = serde_json::to_value(Sdk::new("boto3", Language::Python))?;
+    let versioned = serde_json::to_value(
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0"),
+    )?;
+    assert_eq!(
+        unversioned,
+        serde_json::json!({"name": "boto3", "language": "Python"})
+    );
+    assert_eq!(
+        versioned,
+        serde_json::json!({
+            "name": "terraform-provider-aws",
+            "language": "Terraform",
+            "version": "6.64.0",
+        })
+    );
+    Ok(())
 }
 
 #[test]

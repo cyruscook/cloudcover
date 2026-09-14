@@ -10,3 +10,6 @@ Current workspace layout:
 - `crates/clouds/`: cloud-provider implementations.
 - `crates/langs/`: source-language analyzers.
 - `crates/sdks/`: SDK analyzers and generated SDK-to-API mapping crates.
+
+ALWAYS run `make check` after any changes.
+

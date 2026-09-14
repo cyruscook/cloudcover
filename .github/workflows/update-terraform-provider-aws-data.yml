@@ -1,0 +1,149 @@
+name: Update Terraform AWS provider permission data
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact stable provider version to generate
+        required: false
+        type: string
+        default: ''
+      from:
+        description: Inclusive lower bound for an --all generation
+        required: false
+        type: string
+        default: ''
+      to:
+        description: Inclusive upper bound for an --all generation
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-terraform-provider-aws-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+
+      - name: Generate scheduled stable releases
+        if: github.event_name == 'schedule'
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --all --from '6.64.0'
+
+      - name: Validate manual selection
+        if: github.event_name == 'workflow_dispatch' && inputs.version != '' && (inputs.from != '' || inputs.to != '')
+        run: |
+          echo 'version cannot be combined with from or to' >&2
+          exit 1
+
+      - name: Generate manually selected version
+        if: github.event_name == 'workflow_dispatch' && inputs.version != '' && inputs.from == '' && inputs.to == ''
+        env:
+          VERSION: ${{ inputs.version }}
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --version "$VERSION"
+
+      - name: Generate all stable releases
+        if: github.event_name == 'workflow_dispatch' && inputs.version == '' && inputs.from == '' && inputs.to == ''
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --all
+
+      - name: Generate releases from a lower bound
+        if: github.event_name == 'workflow_dispatch' && inputs.version == '' && inputs.from != '' && inputs.to == ''
+        env:
+          FROM_VERSION: ${{ inputs.from }}
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --all --from "$FROM_VERSION"
+
+      - name: Generate releases to an upper bound
+        if: github.event_name == 'workflow_dispatch' && inputs.version == '' && inputs.from == '' && inputs.to != ''
+        env:
+          TO_VERSION: ${{ inputs.to }}
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --all --to "$TO_VERSION"
+
+      - name: Generate releases in a bounded range
+        if: github.event_name == 'workflow_dispatch' && inputs.version == '' && inputs.from != '' && inputs.to != ''
+        env:
+          FROM_VERSION: ${{ inputs.from }}
+          TO_VERSION: ${{ inputs.to }}
+        run: cargo run -p cloudcover-terraform-provider-aws --features generator --bin generate-terraform-provider-aws-data -- --all --from "$FROM_VERSION" --to "$TO_VERSION"
+
+      - name: Detect generated data changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain -- crates/sdks/cloudcover-terraform-provider-aws/data)" ]; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepare pull request body
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          {
+            echo 'Generated Terraform AWS provider permission data for:'
+            git status --porcelain -- crates/sdks/cloudcover-terraform-provider-aws/data \
+              | sed -nE 's#.*([0-9]+\.[0-9]+\.[0-9]+)\.json$#- \1#p' \
+              | sort -uV
+          } > "$RUNNER_TEMP/terraform-provider-aws-data-pr-body.md"
+
+      - name: Run focused data tests
+        if: steps.changes.outputs.changed == 'true'
+        run: cargo test -p cloudcover-terraform-provider-aws
+
+      - name: Commit generated data
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/terraform-provider-aws-data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- crates/sdks/cloudcover-terraform-provider-aws/data
+          git commit -m 'Update Terraform AWS provider permission data'
+
+      - name: Push generated data branch
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/terraform-provider-aws-data
+        run: |
+          remote_sha="$(git ls-remote --heads origin "$BRANCH" | awk 'NR == 1 { print $1 }')"
+          if [ -n "$remote_sha" ]; then
+            git fetch origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+          fi
+          git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$remote_sha"
+
+      - name: Create or update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/terraform-provider-aws-data
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pull_request="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -n "$pull_request" ]; then
+            gh pr edit "$pull_request" \
+              --title 'Update Terraform AWS provider permission data' \
+              --body-file "$RUNNER_TEMP/terraform-provider-aws-data-pr-body.md"
+          else
+            gh pr create \
+              --head "$BRANCH" \
+              --base "${{ github.event.repository.default_branch }}" \
+              --title 'Update Terraform AWS provider permission data' \
+              --body-file "$RUNNER_TEMP/terraform-provider-aws-data-pr-body.md"
+          fi

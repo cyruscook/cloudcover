@@ -27,18 +27,24 @@ fn lists_supported_aws_sdks() {
         vec![
             Sdk::new("aws-sdk-go-v2", Language::Go),
             Sdk::new("boto3", Language::Python),
-            Sdk::new("terraform-provider-aws", Language::Terraform),
+            Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0"),
         ]
     );
 }
 
 #[test]
-fn maps_sdk_methods_to_api_methods() {
+fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     let provider = AwsProvider::new();
-    let mappings = provider.sdk_method_mappings();
+    let python_sdk = Sdk::new("boto3", Language::Python);
+    let go_sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
+    let terraform_sdk =
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0");
+    let python_mappings = provider.sdk_method_mappings(&python_sdk)?;
+    let go_mappings = provider.sdk_method_mappings(&go_sdk)?;
+    let terraform_mappings = provider.sdk_method_mappings(&terraform_sdk)?;
 
-    assert!(mappings.contains(&SdkMethodMapping::new(
-        Sdk::new("boto3", Language::Python),
+    assert!(python_mappings.contains(&SdkMethodMapping::new(
+        python_sdk.clone(),
         MethodReference::Python(PythonMethodReference::new(
             "boto3",
             Some("s3".to_owned()),
@@ -46,8 +52,8 @@ fn maps_sdk_methods_to_api_methods() {
         )),
         vec![ApiMethod::new("s3", "GetObject")],
     )));
-    assert!(mappings.contains(&SdkMethodMapping::new(
-        Sdk::new("boto3", Language::Python),
+    assert!(python_mappings.contains(&SdkMethodMapping::new(
+        python_sdk,
         MethodReference::Python(PythonMethodReference::new(
             "boto3",
             Some("ec2".to_owned()),
@@ -55,8 +61,8 @@ fn maps_sdk_methods_to_api_methods() {
         )),
         vec![ApiMethod::new("ec2", "DescribeInstances")],
     )));
-    assert!(mappings.contains(&SdkMethodMapping::new(
-        Sdk::new("aws-sdk-go-v2", Language::Go),
+    assert!(go_mappings.contains(&SdkMethodMapping::new(
+        go_sdk.clone(),
         MethodReference::Go(GoMethodReference::new(
             "github.com/aws/aws-sdk-go-v2/service/s3",
             Some("Client".to_owned()),
@@ -64,8 +70,8 @@ fn maps_sdk_methods_to_api_methods() {
         )),
         vec![ApiMethod::new("s3", "GetObject")],
     )));
-    assert!(mappings.contains(&SdkMethodMapping::new(
-        Sdk::new("aws-sdk-go-v2", Language::Go),
+    assert!(go_mappings.contains(&SdkMethodMapping::new(
+        go_sdk,
         MethodReference::Go(GoMethodReference::new(
             "github.com/aws/aws-sdk-go-v2/service/ec2",
             Some("Client".to_owned()),
@@ -73,24 +79,20 @@ fn maps_sdk_methods_to_api_methods() {
         )),
         vec![ApiMethod::new("ec2", "DescribeInstances")],
     )));
-    let terraform_bucket_create_matches: Vec<_> = mappings
+    let terraform_bucket_create = terraform_mappings
         .iter()
-        .filter(|mapping| {
-            mapping.sdk() == &Sdk::new("terraform-provider-aws", Language::Terraform)
-                && mapping.method()
-                    == &MethodReference::Terraform(TerraformMethodReference::new(
-                        "resource",
-                        "aws_s3_bucket",
-                        "create",
-                    ))
+        .find(|mapping| {
+            mapping.method()
+                == &MethodReference::Terraform(TerraformMethodReference::new(
+                    "resource",
+                    "aws_s3_bucket",
+                    "create",
+                ))
         })
-        .collect();
-    assert_eq!(
-        terraform_bucket_create_matches.len(),
-        1,
-        "missing terraform-provider-aws aws_s3_bucket create mapping"
-    );
-    let terraform_bucket_create = terraform_bucket_create_matches[0];
+        .ok_or_else(|| {
+            io::Error::other("missing terraform-provider-aws aws_s3_bucket create mapping")
+        })?;
+    assert_eq!(terraform_bucket_create.sdk(), &terraform_sdk);
     assert!(
         terraform_bucket_create
             .api_methods()
@@ -98,21 +100,50 @@ fn maps_sdk_methods_to_api_methods() {
     );
 
     let api_methods = provider.list_api_methods();
-    for mapping in mappings.iter().filter(|mapping| {
-        matches!(
-            mapping.sdk().name(),
-            "aws-sdk-go-v2" | "terraform-provider-aws"
-        )
-    }) {
+    for mapping in go_mappings.iter().chain(terraform_mappings.iter()) {
         for api_method in mapping.api_methods() {
             assert!(api_methods.contains(api_method));
         }
     }
 
-    let mut sorted = mappings.clone();
-    sorted.sort();
-    assert_eq!(mappings, sorted);
-    assert!(mappings.windows(2).all(|window| window[0] != window[1]));
+    for mappings in [&python_mappings, &go_mappings, &terraform_mappings] {
+        let mut sorted = mappings.clone();
+        sorted.sort();
+        assert_eq!(*mappings, sorted);
+        assert!(mappings.windows(2).all(|window| window[0] != window[1]));
+    }
+    Ok(())
+}
+
+#[test]
+fn rejects_unsupported_sdk_mappings() {
+    let provider = AwsProvider::new();
+
+    let result =
+        provider.sdk_method_mappings(&Sdk::new("terraform-provider-aws", Language::Terraform));
+    assert!(matches!(
+        result,
+        Err(AwsError::MissingSdkVersion { name }) if name == "terraform-provider-aws"
+    ));
+
+    for version in ["6.63.0", "6.64", "v6.64.0", "6.64.0+local"] {
+        let result = provider.sdk_method_mappings(
+            &Sdk::new("terraform-provider-aws", Language::Terraform).with_version(version),
+        );
+        assert!(matches!(
+            result,
+            Err(AwsError::UnsupportedSdkVersion { name, version: actual })
+                if name == "terraform-provider-aws" && actual == version
+        ));
+    }
+
+    let result =
+        provider.sdk_method_mappings(&Sdk::new("other-terraform-provider", Language::Terraform));
+    assert!(matches!(
+        result,
+        Err(AwsError::UnsupportedSdk { name, language })
+            if name == "other-terraform-provider" && language == Language::Terraform
+    ));
 }
 
 #[test]

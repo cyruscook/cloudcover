@@ -9,8 +9,11 @@ pub trait CloudProvider {
     #[must_use]
     fn list_sdks(&self) -> Vec<Sdk>;
 
-    #[must_use]
-    fn sdk_method_mappings(&self) -> Vec<SdkMethodMapping>;
+    /// # Errors
+    ///
+    /// Returns an error when the SDK is unsupported or when its required
+    /// version is missing or unsupported.
+    fn sdk_method_mappings(&self, sdk: &Sdk) -> Result<Vec<SdkMethodMapping>, Self::Error>;
 
     /// # Errors
     ///

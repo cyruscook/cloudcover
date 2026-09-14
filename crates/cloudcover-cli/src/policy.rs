@@ -23,10 +23,10 @@ pub(crate) fn build_go_policy(
     let provider = AwsProvider::new();
     let sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
     let mut methods_by_sdk = BTreeMap::<(String, Option<String>, String), Vec<ApiMethod>>::new();
-    for mapping in provider.sdk_method_mappings() {
-        if mapping.sdk() != &sdk {
-            continue;
-        }
+    for mapping in provider
+        .sdk_method_mappings(&sdk)
+        .map_err(|error| CliError::Runtime(error.to_string()))?
+    {
         let MethodReference::Go(go_method) = mapping.method() else {
             continue;
         };
