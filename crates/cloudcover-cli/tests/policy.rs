@@ -6,8 +6,8 @@ fn fixture_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/aws-s3")
 }
 
-fn fixture_path() -> String {
-    fixture_dir().to_string_lossy().into_owned()
+fn terraform_fixture_dir() -> PathBuf {
+    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/aws-terraform")
 }
 
 fn run_policy(arguments: &[&str]) -> Result<std::process::Output, Box<dyn Error>> {
@@ -44,7 +44,7 @@ fn collect_actions(policy: &Value) -> Result<Vec<String>, Box<dyn Error>> {
 
 #[test]
 fn emits_expected_s3_read_policy() -> Result<(), Box<dyn Error>> {
-    let fixture = fixture_path();
+    let fixture = fixture_dir().to_string_lossy().into_owned();
     let output = run_policy(&["policy", "--language", "go", &fixture])?;
 
     assert!(
@@ -70,8 +70,7 @@ fn emits_expected_s3_read_policy() -> Result<(), Box<dyn Error>> {
 
 #[test]
 fn shorthand_matches_explicit_language_output() -> Result<(), Box<dyn Error>> {
-    let fixture = fixture_path();
-
+    let fixture = fixture_dir().to_string_lossy().into_owned();
     let explicit = run_policy(&["policy", "--language", "go", &fixture])?;
     let shorthand = run_policy(&["policy", &fixture])?;
 
@@ -94,13 +93,42 @@ fn shorthand_matches_explicit_language_output() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
+fn emits_full_lifecycle_policy_for_initialized_terraform_modules() -> Result<(), Box<dyn Error>> {
+    let fixture = terraform_fixture_dir().to_string_lossy().into_owned();
+    let output = run_policy(&["policy", "--language", "terraform", &fixture])?;
+
+    assert!(
+        output.status.success(),
+        "stdout: {}\nstderr: {}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let actions = collect_actions(&parse_stdout_json(&output)?)?;
+    for action in [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:PutBucketPolicy",
+        "sts:GetCallerIdentity",
+    ] {
+        assert!(actions.contains(&action.to_owned()), "missing {action}");
+    }
+    assert!(
+        !actions
+            .iter()
+            .any(|action| action == "*" || action.ends_with(":*"))
+    );
+
+    Ok(())
+}
+
+#[test]
 fn unsupported_language_is_usage_error() -> Result<(), Box<dyn Error>> {
-    let fixture = fixture_path();
+    let fixture = fixture_dir().to_string_lossy().into_owned();
     let output = run_policy(&["policy", "--language", "python", &fixture])?;
 
     assert_eq!(output.status.code(), Some(2));
     let stderr = String::from_utf8(output.stderr)?;
-    assert!(stderr.contains("Usage: cloudcover policy [--language go] <PATH>"));
+    assert!(stderr.contains("Usage: cloudcover policy [--language go|terraform] <PATH>"));
 
     Ok(())
 }

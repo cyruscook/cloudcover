@@ -2,14 +2,21 @@
 
 A project to process data on API methods, associated permissions, and corresponding SDK methods across cloud providers.
 
-Users should be able to find the required permissions for the API methods they're calling by providing their source code. CloudCover will analyse the source code, discover references to SDK methods, and find the corresponding API methods and required permissions. CloudCover can then output a permissions policy.
+## CLI usage
 
-Current workspace layout:
-- `crates/cloudcover-cli`: user-facing CLI entrypoint.
-- `crates/cloudcover-core`: shared model types such as languages, SDKs, method references, API methods, and mappings.
-- `crates/clouds/`: cloud-provider implementations.
-- `crates/langs/`: source-language analyzers.
-- `crates/sdks/`: SDK analyzers and generated SDK-to-API mapping crates.
+Run `cloudcover` with the path to a Go project:
 
-ALWAYS run `make check` after any changes.
+```sh
+cargo run -p cloudcover-cli -- policy --language go ./path/to/project
+```
 
+Terraform analysis requires an initialized root module with
+`.terraform.lock.hcl` and `.terraform/modules/modules.json`:
+
+```sh
+cargo run -p cloudcover-cli -- policy --language terraform ./path/to/root-module
+```
+
+CloudCover analyzes the root module and every module recorded in the
+initialized Terraform module manifest, including remote modules. The command
+writes an AWS IAM policy as JSON to standard output.

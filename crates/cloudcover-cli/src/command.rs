@@ -2,9 +2,9 @@ use std::{env, ffi::OsString, process::ExitCode};
 
 use cloudcover_core::Language;
 
-use crate::{error::CliError, policy::build_go_policy};
+use crate::{error::CliError, policy::build_policy};
 
-pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go] <PATH>";
+pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go|terraform] <PATH>";
 
 pub(crate) fn run_main() -> ExitCode {
     match run() {
@@ -32,10 +32,7 @@ fn run() -> Result<(), CliError> {
     match args.next() {
         None => Err(CliError::Usage("missing command".to_owned())),
         Some(command) if is_help_flag(&command) => Err(CliError::Help),
-        Some(command) if command == "policy" => {
-            let args = args.collect::<Vec<_>>();
-            run_policy(&args)
-        }
+        Some(command) if command == "policy" => run_policy(&args.collect::<Vec<_>>()),
         Some(command) => Err(CliError::Usage(format!(
             "unsupported command: {}",
             command.to_string_lossy()
@@ -60,13 +57,16 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
             let value = args
                 .get(index + 1)
                 .ok_or_else(|| CliError::Usage("missing value for --language".to_owned()))?;
-            if value != "go" {
-                return Err(CliError::Usage(format!(
-                    "unsupported language: {}",
-                    value.to_string_lossy()
-                )));
-            }
-            language = Language::Go;
+            language = match value.to_string_lossy().as_ref() {
+                "go" => Language::Go,
+                "terraform" => Language::Terraform,
+                _ => {
+                    return Err(CliError::Usage(format!(
+                        "unsupported language: {}",
+                        value.to_string_lossy()
+                    )));
+                }
+            };
             index += 2;
             continue;
         }
@@ -83,7 +83,7 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
     }
 
     let path = path.ok_or_else(|| CliError::Usage("missing path".to_owned()))?;
-    let policy = build_go_policy(path, language)?;
+    let policy = build_policy(path, language)?;
     let stdout = serde_json::to_string_pretty(&policy)
         .map_err(|error| CliError::Runtime(format!("failed to encode policy JSON: {error}")))?;
     println!("{stdout}");

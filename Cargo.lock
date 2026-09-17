@@ -160,6 +160,7 @@ dependencies = [
  "cloudcover-aws",
  "cloudcover-core",
  "cloudcover-go",
+ "cloudcover-terraform",
  "serde_json",
 ]
 
@@ -176,6 +177,16 @@ name = "cloudcover-go"
 version = "0.1.0"
 dependencies = [
  "cloudcover-core",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "cloudcover-terraform"
+version = "0.1.0"
+dependencies = [
+ "cloudcover-core",
+ "cloudcover-go",
  "serde",
  "serde_json",
 ]

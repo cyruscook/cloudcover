@@ -2,11 +2,16 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"go/types"
+	"os"
+	"path/filepath"
 	"slices"
+	"sort"
 	"strings"
 	"unsafe"
 
+	"github.com/hashicorp/terraform-config-inspect/tfconfig"
 	"golang.org/x/tools/go/callgraph"
 	"golang.org/x/tools/go/callgraph/static"
 	"golang.org/x/tools/go/packages"
@@ -188,5 +193,147 @@ func (err stringError) Error() string {
 	return string(err)
 }
 
-
 func main() {}
+
+type terraformReference struct {
+	Kind     string `json:"kind"`
+	TypeName string `json:"type_name"`
+	Action   string `json:"action"`
+}
+
+type terraformSuccessResponse struct {
+	Methods         []terraformReference `json:"methods"`
+	ProviderVersion string               `json:"provider_version"`
+}
+
+type terraformModuleManifest struct {
+	Modules []struct {
+		Key string `json:"Key"`
+		Dir string `json:"Dir"`
+	} `json:"Modules"`
+}
+
+//export CloudCoverAnalyzeTerraform
+func CloudCoverAnalyzeTerraform(path *C.char) *C.char {
+	if path == nil {
+		return mustCString(marshalError("path is required"))
+	}
+	references, providerVersion, err := analyzeTerraformDir(C.GoString(path))
+	if err != nil {
+		return mustCString(marshalError(err.Error()))
+	}
+	payload, marshalErr := json.Marshal(terraformSuccessResponse{
+		Methods: references, ProviderVersion: providerVersion,
+	})
+	if marshalErr != nil {
+		return mustCString(marshalError(marshalErr.Error()))
+	}
+	return mustCString(string(payload))
+}
+
+//export CloudCoverFreeTerraformCString
+func CloudCoverFreeTerraformCString(ptr *C.char) {
+	if ptr != nil {
+		C.free(unsafe.Pointer(ptr))
+	}
+}
+
+func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
+	info, err := os.Stat(root)
+	if err != nil {
+		return nil, "", err
+	}
+	if !info.IsDir() {
+		return nil, "", fmt.Errorf("path is not a directory: %s", root)
+	}
+
+	lockPath := filepath.Join(root, ".terraform.lock.hcl")
+	if _, err := os.Stat(lockPath); err != nil {
+		return nil, "", fmt.Errorf("Terraform provider lock file is required at %s", lockPath)
+	}
+	manifestPath := filepath.Join(root, ".terraform", "modules", "modules.json")
+	if _, err := os.Stat(manifestPath); err != nil {
+		return nil, "", fmt.Errorf("Terraform module manifest is required at %s", manifestPath)
+	}
+
+	configuration := tfconfig.LoadPostInit(root, filepath.Join(root, ".terraform"))
+	for _, diagnostic := range configuration.Diagnostics {
+		if diagnostic.Severity == tfconfig.DiagError {
+			return nil, "", fmt.Errorf("Terraform initialization metadata: %s", diagnostic.Detail)
+		}
+	}
+	provider, ok := configuration.Providers["registry.terraform.io/hashicorp/aws"]
+	if !ok || provider.Version == "" {
+		return nil, "", fmt.Errorf("Terraform AWS provider version is missing from .terraform.lock.hcl")
+	}
+
+	content, err := os.ReadFile(manifestPath)
+	if err != nil {
+		return nil, "", err
+	}
+	var manifest terraformModuleManifest
+	if err := json.Unmarshal(content, &manifest); err != nil {
+		return nil, "", fmt.Errorf("failed to parse Terraform module manifest: %w", err)
+	}
+	moduleDirs := make(map[string]string, len(manifest.Modules)+1)
+	moduleDirs[""] = root
+	for _, module := range manifest.Modules {
+		if module.Dir == "" {
+			return nil, "", fmt.Errorf("Terraform module manifest entry %q has no directory", module.Key)
+		}
+		dir := module.Dir
+		if !filepath.IsAbs(dir) {
+			dir = filepath.Join(root, dir)
+		}
+		moduleDirs[module.Key] = filepath.Clean(dir)
+	}
+
+	seen := make(map[string]bool)
+	references := make([]terraformReference, 0)
+	for _, dir := range moduleDirs {
+		if seen[dir] {
+			continue
+		}
+		seen[dir] = true
+		module, diagnostics := tfconfig.LoadModule(dir)
+		if diagnostics.HasErrors() {
+			return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", dir, diagnostics.Error())
+		}
+		for _, resource := range module.ManagedResources {
+			if resource.Provider.Name != "aws" {
+				continue
+			}
+			for _, action := range []string{"create", "read", "update", "delete"} {
+				references = append(references, terraformReference{
+					Kind: "resource", TypeName: resource.Type, Action: action,
+				})
+			}
+		}
+		for _, resource := range module.DataResources {
+			if resource.Provider.Name != "aws" {
+				continue
+			}
+			references = append(references, terraformReference{
+				Kind: "data_source", TypeName: resource.Type, Action: "read",
+			})
+		}
+	}
+
+	sort.Slice(references, func(i, j int) bool {
+		left, right := references[i], references[j]
+		if left.Kind != right.Kind {
+			return left.Kind < right.Kind
+		}
+		if left.TypeName != right.TypeName {
+			return left.TypeName < right.TypeName
+		}
+		return left.Action < right.Action
+	})
+	result := references[:0]
+	for _, reference := range references {
+		if len(result) == 0 || result[len(result)-1] != reference {
+			result = append(result, reference)
+		}
+	}
+	return result, provider.Version, nil
+}
