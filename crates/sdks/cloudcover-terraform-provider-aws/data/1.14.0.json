@@ -1,0 +1,54 @@
+{
+  "provider_version": "1.14.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_organizations_account",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_organizations_account",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_organizations_account",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ses_identity_notification_topic",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_ses_identity_notification_topic",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_ses_identity_notification_topic",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ses_identity_notification_topic",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssm_maintenance_window_target",
+      "update",
+      []
+    ]
+  ]
+}

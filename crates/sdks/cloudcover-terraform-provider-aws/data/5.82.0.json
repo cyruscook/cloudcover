@@ -1,0 +1,64 @@
+{
+  "provider_version": "5.82.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_networkmanager_attachment_accepter",
+      "create",
+      [
+        [
+          "networkmanager",
+          "AcceptAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetDirectConnectGatewayAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetVpcAttachment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_attachment_accepter",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetDirectConnectGatewayAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetVpcAttachment"
+        ]
+      ]
+    ]
+  ]
+}

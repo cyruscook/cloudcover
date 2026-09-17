@@ -1,0 +1,40 @@
+{
+  "provider_version": "5.28.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_controltower_controls",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_controltower_control",
+      "create",
+      [
+        [
+          "controltower",
+          "EnableControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_controltower_control",
+      "delete",
+      [
+        [
+          "controltower",
+          "DisableControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_controltower_control",
+      "read",
+      []
+    ]
+  ]
+}

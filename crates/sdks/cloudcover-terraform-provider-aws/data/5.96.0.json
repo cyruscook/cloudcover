@@ -1,0 +1,23 @@
+{
+  "provider_version": "5.96.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_fis_experiment_templates",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_vpc_endpoint_associations",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcEndpointAssociations"
+        ]
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "provider_version": "2.64.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_ses_event_destination",
+      "create",
+      [
+        [
+          "ses",
+          "CreateConfigurationSetEventDestination"
+        ],
+        [
+          "ses",
+          "DescribeConfigurationSet"
+        ],
+        [
+          "ses",
+          "new"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ses_event_destination",
+      "read",
+      [
+        [
+          "ses",
+          "DescribeConfigurationSet"
+        ],
+        [
+          "ses",
+          "new"
+        ]
+      ]
+    ]
+  ]
+}

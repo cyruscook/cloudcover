@@ -1,0 +1,25 @@
+{
+  "provider_version": "3.26.1",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_iam_access_key",
+      "create",
+      [
+        [
+          "iam",
+          "CreateAccessKey"
+        ],
+        [
+          "iam",
+          "UpdateAccessKey"
+        ],
+        [
+          "iam",
+          "new"
+        ]
+      ]
+    ]
+  ]
+}

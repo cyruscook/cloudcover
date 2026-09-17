@@ -1,0 +1,25 @@
+{
+  "provider_version": "5.94.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_cloudformation_type",
+      "create",
+      [
+        [
+          "cloudformation",
+          "DescribeType"
+        ],
+        [
+          "cloudformation",
+          "RegisterType"
+        ],
+        [
+          "cloudformation",
+          "SetTypeDefaultVersion"
+        ]
+      ]
+    ]
+  ]
+}

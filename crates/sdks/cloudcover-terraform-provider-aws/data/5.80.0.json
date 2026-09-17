@@ -1,0 +1,21 @@
+{
+  "provider_version": "5.80.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_rds_cluster_instance",
+      "delete",
+      [
+        [
+          "rds",
+          "DeleteDBInstance"
+        ],
+        [
+          "rds",
+          "PromoteReadReplicaDBCluster"
+        ]
+      ]
+    ]
+  ]
+}

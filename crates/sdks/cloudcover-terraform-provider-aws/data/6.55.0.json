@@ -1,0 +1,48 @@
+{
+  "provider_version": "6.55.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_elasticache_service_updates",
+      "read",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_autoscaling_group",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_cloudwatch_log_stream",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_kinesis_firehose_delivery_stream",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_network_interface",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_rds_cluster",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_sfn_state_machine",
+      "list",
+      []
+    ]
+  ]
+}

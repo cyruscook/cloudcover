@@ -1,0 +1,36 @@
+{
+  "provider_version": "1.23.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_vpcs",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_neptune_parameter_group",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_neptune_parameter_group",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_neptune_parameter_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_neptune_parameter_group",
+      "update",
+      []
+    ]
+  ]
+}

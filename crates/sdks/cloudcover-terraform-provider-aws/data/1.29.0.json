@@ -1,0 +1,18 @@
+{
+  "provider_version": "1.29.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_kms_secrets",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_network_interfaces",
+      "read",
+      []
+    ]
+  ]
+}

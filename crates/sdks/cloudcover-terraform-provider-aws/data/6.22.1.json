@@ -1,0 +1,61 @@
+{
+  "provider_version": "6.22.1",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_msk_cluster",
+      "update",
+      [
+        [
+          "kafka",
+          "DescribeCluster"
+        ],
+        [
+          "kafka",
+          "GetBootstrapBrokers"
+        ],
+        [
+          "kafka",
+          "UpdateBrokerCount"
+        ],
+        [
+          "kafka",
+          "UpdateBrokerStorage"
+        ],
+        [
+          "kafka",
+          "UpdateBrokerType"
+        ],
+        [
+          "kafka",
+          "UpdateClusterConfiguration"
+        ],
+        [
+          "kafka",
+          "UpdateClusterKafkaVersion"
+        ],
+        [
+          "kafka",
+          "UpdateConnectivity"
+        ],
+        [
+          "kafka",
+          "UpdateMonitoring"
+        ],
+        [
+          "kafka",
+          "UpdateRebalancing"
+        ],
+        [
+          "kafka",
+          "UpdateSecurity"
+        ],
+        [
+          "kafka",
+          "UpdateStorage"
+        ]
+      ]
+    ]
+  ]
+}

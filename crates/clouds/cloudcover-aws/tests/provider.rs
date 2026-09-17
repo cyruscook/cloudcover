@@ -22,14 +22,21 @@ fn lists_known_aws_methods() {
 
 #[test]
 fn lists_supported_aws_sdks() {
+    let sdks = AwsProvider::new().list_sdks();
     assert_eq!(
-        AwsProvider::new().list_sdks(),
-        vec![
+        &sdks[..2],
+        &[
             Sdk::new("aws-sdk-go-v2", Language::Go),
             Sdk::new("boto3", Language::Python),
-            Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0"),
         ]
     );
+    let terraform_sdks = &sdks[2..];
+    assert_eq!(terraform_sdks.len(), 515);
+    for version in ["0.1.0", "6.63.0", "6.64.0"] {
+        assert!(terraform_sdks.contains(
+            &Sdk::new("terraform-provider-aws", Language::Terraform).with_version(version)
+        ));
+    }
 }
 
 #[test]
@@ -126,7 +133,7 @@ fn rejects_unsupported_sdk_mappings() {
         Err(AwsError::MissingSdkVersion { name }) if name == "terraform-provider-aws"
     ));
 
-    for version in ["6.63.0", "6.64", "v6.64.0", "6.64.0+local"] {
+    for version in ["7.0.0", "6.64", "v6.64.0", "6.64.0+local"] {
         let result = provider.sdk_method_mappings(
             &Sdk::new("terraform-provider-aws", Language::Terraform).with_version(version),
         );

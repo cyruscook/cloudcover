@@ -1,0 +1,56 @@
+{
+  "provider_version": "6.30.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachments_exclusive",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "AttachManagedPolicyToPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DetachManagedPolicyFromPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ProvisionPermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachments_exclusive",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachments_exclusive",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachments_exclusive",
+      "update",
+      [
+        [
+          "ssoadmin",
+          "AttachManagedPolicyToPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DetachManagedPolicyFromPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ProvisionPermissionSet"
+        ]
+      ]
+    ]
+  ]
+}

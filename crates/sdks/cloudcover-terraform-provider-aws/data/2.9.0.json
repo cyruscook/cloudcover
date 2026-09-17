@@ -1,0 +1,24 @@
+{
+  "provider_version": "2.9.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_db_instance_role_association",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_instance_role_association",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_instance_role_association",
+      "read",
+      []
+    ]
+  ]
+}

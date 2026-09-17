@@ -1,0 +1,60 @@
+{
+  "provider_version": "1.26.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_launch_configuration",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_pricing_product",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_s3_bucket_inventory",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_s3_bucket_inventory",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_s3_bucket_inventory",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_s3_bucket_inventory",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_ipv4_cidr_block_association",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_ipv4_cidr_block_association",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_ipv4_cidr_block_association",
+      "read",
+      []
+    ]
+  ]
+}

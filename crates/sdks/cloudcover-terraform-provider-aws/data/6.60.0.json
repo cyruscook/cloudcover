@@ -1,0 +1,52 @@
+{
+  "provider_version": "6.60.0",
+  "remove": [],
+  "upsert": [
+    [
+      "list_resource",
+      "aws_db_parameter_group",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_resiliencehubv2_input_source",
+      "list",
+      []
+    ],
+    [
+      "resource",
+      "aws_resiliencehubv2_input_source",
+      "create",
+      [
+        [
+          "resiliencehubv2",
+          "CreateInputSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resiliencehubv2_input_source",
+      "delete",
+      [
+        [
+          "resiliencehubv2",
+          "DeleteInputSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resiliencehubv2_input_source",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_resiliencehubv2_input_source",
+      "update",
+      []
+    ]
+  ]
+}

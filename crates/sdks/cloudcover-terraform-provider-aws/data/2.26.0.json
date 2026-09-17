@@ -1,0 +1,21 @@
+{
+  "provider_version": "2.26.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_elasticsearch_domain",
+      "read",
+      [
+        [
+          "elasticsearchservice",
+          "DescribeElasticsearchDomain"
+        ],
+        [
+          "elasticsearchservice",
+          "ListTags"
+        ]
+      ]
+    ]
+  ]
+}

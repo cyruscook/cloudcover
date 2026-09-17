@@ -1,0 +1,24 @@
+{
+  "provider_version": "1.46.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_api_gateway_api_key",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ecs_cluster",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_ecs_task_definition",
+      "update",
+      []
+    ]
+  ]
+}

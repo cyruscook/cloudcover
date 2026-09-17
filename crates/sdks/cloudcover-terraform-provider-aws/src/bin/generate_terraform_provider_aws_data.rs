@@ -1,5 +1,5 @@
 use std::{
-    collections::BTreeMap,
+    collections::{BTreeMap, BTreeSet},
     env,
     error::Error,
     fs,
@@ -16,7 +16,7 @@ use tempfile::{NamedTempFile, TempDir};
 #[path = "../data.rs"]
 mod data;
 
-use data::{PermissionDataFile, TerraformProviderAwsMethodMappingRow};
+use data::{MappingState, PermissionDataFile, TerraformProviderAwsMethodMappingRow};
 
 const PROVIDER_REPOSITORY: &str = "https://github.com/hashicorp/terraform-provider-aws";
 
@@ -78,32 +78,33 @@ fn run() -> GeneratorResult<()> {
     let args = Args::parse();
     let selected_versions = select_versions(&args)?;
     let output_dir = args.output_dir;
-    let pending_versions = validate_existing_outputs(&output_dir, &selected_versions, args.force)?;
+    let existing_files = load_existing_files(&output_dir)?;
+    let pending_versions = select_pending_versions(&existing_files, &selected_versions, args.force);
     if pending_versions.is_empty() {
         return Ok(());
     }
 
     fs::create_dir_all(&output_dir)?;
     let temporary = TempDir::new()?;
-    let provider_dir = temporary.path().join("terraform-provider-aws");
+    let provider_dir = temporary
+        .path()
+        .join("gopath/src/github.com/hashicorp/terraform-provider-aws");
+    fs::create_dir_all(provider_dir.parent().ok_or("provider path has no parent")?)?;
     let sdk_map_path = temporary
         .path()
         .join("cloudcover-aws-sdk-go-v2-mappings.json");
     write_sdk_map(&sdk_map_path)?;
     initialize_provider_checkout(&provider_dir)?;
 
+    let mut replacements = BTreeMap::<Version, MappingState>::new();
     for version in pending_versions {
         checkout_provider_version(&provider_dir, &version)?;
-        let mappings = analyze_provider(&provider_dir, &sdk_map_path)?;
-        let mut file = PermissionDataFile {
-            provider_version: version.to_string(),
-            mappings,
-        };
-        data::validate_and_normalize_file(&mut file, Some(&version.to_string()))
-            .map_err(|error| format!("v{version}: {error}"))?;
-        persist_data_file(&output_dir, &version, &file)?;
+        let mut mappings = analyze_provider(&provider_dir, &sdk_map_path)?;
+        let state =
+            state_from_rows(&mut mappings).map_err(|error| format!("v{version}: {error}"))?;
+        replacements.insert(version, state);
     }
-
+    persist_updated_files(&output_dir, existing_files, replacements)?;
     Ok(())
 }
 
@@ -173,52 +174,129 @@ fn discover_stable_versions() -> GeneratorResult<Vec<Version>> {
     Ok(versions.into_keys().collect())
 }
 
-fn validate_existing_outputs(
+fn load_existing_files(
     output_dir: &Path,
-    versions: &[Version],
-    force: bool,
-) -> GeneratorResult<Vec<Version>> {
-    let mut pending = Vec::new();
-    for version in versions {
-        let path = output_dir.join(format!("{version}.json"));
-        match fs::read_to_string(&path) {
-            Ok(contents) => {
-                let validation = match serde_json::from_str::<PermissionDataFile>(&contents) {
-                    Ok(mut file) => {
-                        data::validate_and_normalize_file(&mut file, Some(&version.to_string()))
-                    }
-                    Err(_error) if force => {
-                        pending.push(version.clone());
-                        continue;
-                    }
-                    Err(error) => {
-                        return Err(format!(
-                            "{}: invalid JSON: {error}; use --force to replace invalid data",
-                            path.display()
-                        )
-                        .into());
-                    }
-                };
-                match validation {
-                    Ok(_) if !force => {}
-                    Ok(_) => pending.push(version.clone()),
-                    Err(_) if force => pending.push(version.clone()),
-                    Err(error) => {
-                        return Err(format!(
-                            "{}: {error}; use --force to replace invalid data",
-                            path.display()
-                        )
-                        .into());
-                    }
-                }
-            }
-            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
-                pending.push(version.clone());
-            }
-            Err(error) => return Err(format!("{}: {error}", path.display()).into()),
+) -> GeneratorResult<BTreeMap<Version, PermissionDataFile>> {
+    if !output_dir.exists() {
+        return Ok(BTreeMap::new());
+    }
+    let mut paths = BTreeMap::<Version, PathBuf>::new();
+    for entry in fs::read_dir(output_dir)? {
+        let path = entry?.path();
+        if path.extension().is_none_or(|extension| extension != "json") {
+            continue;
+        }
+        let stem = path
+            .file_stem()
+            .and_then(|stem| stem.to_str())
+            .ok_or_else(|| format!("invalid permission data filename: {}", path.display()))?;
+        let version = data::parse_canonical_version(stem)?;
+        if paths.insert(version.clone(), path).is_some() {
+            return Err(format!("duplicate permission data version {version}").into());
         }
     }
-    Ok(pending)
+
+    let mut state = MappingState::new();
+    let mut files = BTreeMap::new();
+    for (version, path) in paths {
+        let contents = fs::read_to_string(&path)?;
+        let mut file: PermissionDataFile = serde_json::from_str(&contents)
+            .map_err(|error| format!("{}: invalid JSON: {error}", path.display()))?;
+        data::validate_and_apply_file(&mut file, Some(&version.to_string()), &mut state)
+            .map_err(|error| format!("{}: {error}", path.display()))?;
+        files.insert(version, file);
+    }
+    Ok(files)
+}
+
+fn select_pending_versions(
+    existing_files: &BTreeMap<Version, PermissionDataFile>,
+    versions: &[Version],
+    force: bool,
+) -> Vec<Version> {
+    versions
+        .iter()
+        .filter(|version| force || !existing_files.contains_key(*version))
+        .cloned()
+        .collect()
+}
+
+fn persist_updated_files(
+    output_dir: &Path,
+    existing_files: BTreeMap<Version, PermissionDataFile>,
+    replacements: BTreeMap<Version, MappingState>,
+) -> GeneratorResult<()> {
+    let versions = existing_files
+        .keys()
+        .chain(replacements.keys())
+        .cloned()
+        .collect::<BTreeSet<_>>();
+    let mut original_state = MappingState::new();
+    let mut rewritten_state = MappingState::new();
+
+    for version in versions {
+        if let Some(existing) = existing_files.get(&version) {
+            let mut existing = existing.clone();
+            data::validate_and_apply_file(
+                &mut existing,
+                Some(&version.to_string()),
+                &mut original_state,
+            )
+            .map_err(|error| format!("v{version}: {error}"))?;
+        }
+        let target = replacements.get(&version).unwrap_or(&original_state);
+        let mut delta = create_delta(version.to_string(), &rewritten_state, target);
+        data::validate_and_apply_file(&mut delta, Some(&version.to_string()), &mut rewritten_state)
+            .map_err(|error| format!("v{version}: generated invalid delta: {error}"))?;
+        persist_data_file(output_dir, &version, &delta)?;
+    }
+    Ok(())
+}
+fn state_from_rows(
+    rows: &mut Vec<TerraformProviderAwsMethodMappingRow>,
+) -> Result<MappingState, String> {
+    data::validate_and_normalize_rows(rows)?;
+    Ok(rows
+        .iter()
+        .map(|row| {
+            (
+                (row.kind.clone(), row.type_name.clone(), row.action.clone()),
+                row.api_methods.clone(),
+            )
+        })
+        .collect())
+}
+
+fn create_delta(
+    provider_version: String,
+    previous: &MappingState,
+    current: &MappingState,
+) -> PermissionDataFile {
+    let remove = previous
+        .keys()
+        .filter(|key| !current.contains_key(*key))
+        .cloned()
+        .collect();
+    let upsert = current
+        .iter()
+        .filter(|(key, api_methods)| previous.get(*key) != Some(*api_methods))
+        .map(|((kind, type_name, action), api_methods)| {
+            (
+                kind.clone(),
+                type_name.clone(),
+                action.clone(),
+                api_methods
+                    .iter()
+                    .map(|api_method| (api_method.service.clone(), api_method.name.clone()))
+                    .collect(),
+            )
+        })
+        .collect();
+    PermissionDataFile {
+        provider_version,
+        remove,
+        upsert,
+    }
 }
 
 fn write_sdk_map(path: &Path) -> GeneratorResult<()> {
@@ -366,4 +444,78 @@ fn command_output(
         message.push_str(stderr.trim_end());
     }
     Err(message.into())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use data::ApiMethodRefRow;
+
+    #[test]
+    fn historical_replacement_repairs_successor_delta() -> Result<(), Box<dyn Error>> {
+        let first_version = Version::parse("1.0.0")?;
+        let replaced_version = Version::parse("1.1.0")?;
+        let successor_version = Version::parse("1.2.0")?;
+        let first = mapping_state("First");
+        let original = mapping_state("Original");
+        let replacement = mapping_state("Replacement");
+        let successor = mapping_state("Successor");
+
+        let snapshots = [
+            (first_version.clone(), first),
+            (replaced_version.clone(), original),
+            (successor_version.clone(), successor.clone()),
+        ];
+        let mut previous = MappingState::new();
+        let mut existing_files = BTreeMap::new();
+        for (version, snapshot) in snapshots {
+            existing_files.insert(
+                version.clone(),
+                create_delta(version.to_string(), &previous, &snapshot),
+            );
+            previous = snapshot;
+        }
+
+        let output = TempDir::new()?;
+        persist_updated_files(
+            output.path(),
+            existing_files,
+            BTreeMap::from([(replaced_version.clone(), replacement.clone())]),
+        )?;
+
+        let files = load_existing_files(output.path())?;
+        assert!(
+            files
+                .get(&successor_version)
+                .is_some_and(|file| !file.upsert.is_empty())
+        );
+        let mut reconstructed = MappingState::new();
+        for (version, mut file) in files {
+            data::validate_and_apply_file(
+                &mut file,
+                Some(&version.to_string()),
+                &mut reconstructed,
+            )?;
+            if version == replaced_version {
+                assert_eq!(reconstructed, replacement);
+            } else if version == successor_version {
+                assert_eq!(reconstructed, successor);
+            }
+        }
+        Ok(())
+    }
+
+    fn mapping_state(api_name: &str) -> MappingState {
+        BTreeMap::from([(
+            (
+                "resource".to_owned(),
+                "aws_test".to_owned(),
+                "read".to_owned(),
+            ),
+            vec![ApiMethodRefRow {
+                service: "test".to_owned(),
+                name: api_name.to_owned(),
+            }],
+        )])
+    }
 }

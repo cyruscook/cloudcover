@@ -1,0 +1,17 @@
+{
+  "provider_version": "5.68.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_ses_email_identity",
+      "read",
+      [
+        [
+          "ses",
+          "GetIdentityNotificationAttributes"
+        ]
+      ]
+    ]
+  ]
+}

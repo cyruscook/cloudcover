@@ -1,0 +1,45 @@
+{
+  "provider_version": "5.90.1",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_datazone_domain",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_simpledb_domain",
+      "create",
+      [
+        [
+          "simpledb",
+          "CreateDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_simpledb_domain",
+      "delete",
+      [
+        [
+          "simpledb",
+          "DeleteDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_simpledb_domain",
+      "read",
+      [
+        [
+          "simpledb",
+          "DomainMetadata"
+        ]
+      ]
+    ]
+  ]
+}

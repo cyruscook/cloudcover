@@ -1,0 +1,67 @@
+{
+  "provider_version": "5.83.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_apigatewayv2_api",
+      "create",
+      [
+        [
+          "apigatewayv2",
+          "CreateApi"
+        ],
+        [
+          "apigatewayv2",
+          "DeleteCorsConfiguration"
+        ],
+        [
+          "apigatewayv2",
+          "GetApi"
+        ],
+        [
+          "apigatewayv2",
+          "ReimportApi"
+        ],
+        [
+          "apigatewayv2",
+          "UpdateApi"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_apigatewayv2_api",
+      "update",
+      [
+        [
+          "apigatewayv2",
+          "DeleteCorsConfiguration"
+        ],
+        [
+          "apigatewayv2",
+          "GetApi"
+        ],
+        [
+          "apigatewayv2",
+          "ReimportApi"
+        ],
+        [
+          "apigatewayv2",
+          "UpdateApi"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ses_identity_notification_topic",
+      "delete",
+      [
+        [
+          "ses",
+          "SetIdentityNotificationTopic"
+        ]
+      ]
+    ]
+  ]
+}

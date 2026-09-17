@@ -1,0 +1,60 @@
+{
+  "provider_version": "1.8.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_appautoscaling_target",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_dynamodb_global_table",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_dynamodb_global_table",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_dynamodb_global_table",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_dynamodb_global_table",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_gamelift_build",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_gamelift_build",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_gamelift_build",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_gamelift_build",
+      "update",
+      []
+    ]
+  ]
+}

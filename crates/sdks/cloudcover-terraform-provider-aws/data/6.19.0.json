@@ -1,0 +1,55 @@
+{
+  "provider_version": "6.19.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_ecrpublic_images",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_lakeformation_identity_center_configuration",
+      "create",
+      [
+        [
+          "lakeformation",
+          "CreateLakeFormationIdentityCenterConfiguration"
+        ],
+        [
+          "lakeformation",
+          "DescribeLakeFormationIdentityCenterConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_identity_center_configuration",
+      "delete",
+      [
+        [
+          "lakeformation",
+          "DeleteLakeFormationIdentityCenterConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_identity_center_configuration",
+      "read",
+      [
+        [
+          "lakeformation",
+          "DescribeLakeFormationIdentityCenterConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_identity_center_configuration",
+      "update",
+      []
+    ]
+  ]
+}

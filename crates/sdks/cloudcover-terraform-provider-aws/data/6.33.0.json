@@ -1,0 +1,52 @@
+{
+  "provider_version": "6.33.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_ec2_secondary_network",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_secondary_subnet",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_attachment_routing_policy_label",
+      "create",
+      [
+        [
+          "networkmanager",
+          "PutAttachmentRoutingPolicyLabel"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_attachment_routing_policy_label",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "RemoveAttachmentRoutingPolicyLabel"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_attachment_routing_policy_label",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_attachment_routing_policy_label",
+      "update",
+      []
+    ]
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "provider_version": "5.79.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_rds_cluster",
+      "update",
+      [
+        [
+          "rds",
+          "AddRoleToDBCluster"
+        ],
+        [
+          "rds",
+          "DisableHttpEndpoint"
+        ],
+        [
+          "rds",
+          "EnableHttpEndpoint"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "PromoteReadReplicaDBCluster"
+        ],
+        [
+          "rds",
+          "RemoveFromGlobalCluster"
+        ],
+        [
+          "rds",
+          "RemoveRoleFromDBCluster"
+        ]
+      ]
+    ]
+  ]
+}

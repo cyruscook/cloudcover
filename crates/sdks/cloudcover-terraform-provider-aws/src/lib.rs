@@ -1,4 +1,11 @@
+use std::iter::FusedIterator;
+
 pub const SDK_NAME: &str = "terraform-provider-aws";
+
+static MAPPING_INDEX: &[u8] = include_bytes!(concat!(
+    env!("OUT_DIR"),
+    "/terraform_provider_aws_mappings.bin"
+));
 
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct TerraformProviderAwsApiMethodRef {
@@ -6,18 +13,30 @@ pub struct TerraformProviderAwsApiMethodRef {
     pub name: &'static str,
 }
 
-#[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
+pub struct TerraformProviderAwsApiMethods {
+    next: u32,
+    end: u32,
+}
+
+#[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct TerraformProviderAwsMethodMapping {
     pub kind: &'static str,
     pub type_name: &'static str,
     pub action: &'static str,
-    pub api_methods: &'static [TerraformProviderAwsApiMethodRef],
+    pub api_methods: TerraformProviderAwsApiMethods,
 }
 
-#[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
-pub struct TerraformProviderAwsVersionMappings {
-    pub version: &'static str,
-    pub mappings: &'static [TerraformProviderAwsMethodMapping],
+#[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
+pub struct TerraformProviderAwsMappings {
+    next: u32,
+    end: u32,
+}
+
+#[derive(Clone, Copy)]
+struct VersionIndex {
+    start: u32,
+    len: u32,
 }
 
 include!(concat!(
@@ -26,58 +45,184 @@ include!(concat!(
 ));
 
 #[must_use]
-pub fn sdk_method_mappings(version: &str) -> Option<&'static [TerraformProviderAwsMethodMapping]> {
+pub const fn provider_versions() -> &'static [&'static str] {
     PROVIDER_VERSIONS
-        .iter()
-        .find(|entry| entry.version == version)
-        .map(|entry| entry.mappings)
+}
+
+#[must_use]
+pub fn sdk_method_mappings(version: &str) -> Option<TerraformProviderAwsMappings> {
+    let lookup_index = VERSION_LOOKUP
+        .binary_search_by(|(candidate, _)| candidate.cmp(&version))
+        .ok()?;
+    let version_index = VERSION_INDEX[VERSION_LOOKUP[lookup_index].1];
+    Some(TerraformProviderAwsMappings {
+        next: version_index.start,
+        end: version_index.start + version_index.len,
+    })
+}
+
+impl TerraformProviderAwsMappings {
+    #[must_use]
+    pub fn iter(&self) -> Self {
+        self.clone()
+    }
+}
+impl IntoIterator for &TerraformProviderAwsMappings {
+    type Item = TerraformProviderAwsMethodMapping;
+    type IntoIter = TerraformProviderAwsMappings;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.iter()
+    }
+}
+
+impl Iterator for TerraformProviderAwsMappings {
+    type Item = TerraformProviderAwsMethodMapping;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.next == self.end {
+            return None;
+        }
+        let row_id = read_u16(ROW_IDS_OFFSET + self.next as usize * 2);
+        self.next += 1;
+        let row_offset = ROWS_OFFSET + row_id as usize * 8;
+        let kind = string(read_u16(row_offset));
+        let type_name = string(read_u16(row_offset + 2));
+        let action = string(read_u16(row_offset + 4));
+        let api_list = read_u16(row_offset + 6);
+        let api_list_offset = API_LISTS_OFFSET + api_list as usize * 8;
+        let api_start = read_u32(api_list_offset);
+        let api_len = read_u32(api_list_offset + 4);
+        Some(TerraformProviderAwsMethodMapping {
+            kind,
+            type_name,
+            action,
+            api_methods: TerraformProviderAwsApiMethods {
+                next: api_start,
+                end: api_start + api_len,
+            },
+        })
+    }
+
+    fn size_hint(&self) -> (usize, Option<usize>) {
+        let len = self.len();
+        (len, Some(len))
+    }
+}
+
+impl ExactSizeIterator for TerraformProviderAwsMappings {
+    fn len(&self) -> usize {
+        (self.end - self.next) as usize
+    }
+}
+
+impl FusedIterator for TerraformProviderAwsMappings {}
+
+impl TerraformProviderAwsApiMethods {
+    #[must_use]
+    pub fn iter(&self) -> Self {
+        self.clone()
+    }
+
+    #[must_use]
+    pub fn contains(&self, expected: &TerraformProviderAwsApiMethodRef) -> bool {
+        self.iter().any(|api_method| api_method == *expected)
+    }
+}
+impl IntoIterator for &TerraformProviderAwsApiMethods {
+    type Item = TerraformProviderAwsApiMethodRef;
+    type IntoIter = TerraformProviderAwsApiMethods;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.iter()
+    }
+}
+
+impl Iterator for TerraformProviderAwsApiMethods {
+    type Item = TerraformProviderAwsApiMethodRef;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.next == self.end {
+            return None;
+        }
+        let offset = API_METHODS_OFFSET + self.next as usize * 4;
+        self.next += 1;
+        Some(TerraformProviderAwsApiMethodRef {
+            service: string(read_u16(offset)),
+            name: string(read_u16(offset + 2)),
+        })
+    }
+
+    fn size_hint(&self) -> (usize, Option<usize>) {
+        let len = self.len();
+        (len, Some(len))
+    }
+}
+
+impl ExactSizeIterator for TerraformProviderAwsApiMethods {
+    fn len(&self) -> usize {
+        (self.end - self.next) as usize
+    }
+}
+
+impl FusedIterator for TerraformProviderAwsApiMethods {}
+
+fn string(index: u16) -> &'static str {
+    STRINGS[index as usize]
+}
+
+fn read_u16(offset: usize) -> u16 {
+    u16::from_le_bytes([MAPPING_INDEX[offset], MAPPING_INDEX[offset + 1]])
+}
+
+fn read_u32(offset: usize) -> u32 {
+    u32::from_le_bytes([
+        MAPPING_INDEX[offset],
+        MAPPING_INDEX[offset + 1],
+        MAPPING_INDEX[offset + 2],
+        MAPPING_INDEX[offset + 3],
+    ])
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{PROVIDER_VERSIONS, TerraformProviderAwsApiMethodRef, sdk_method_mappings};
+    use super::{TerraformProviderAwsApiMethodRef, provider_versions, sdk_method_mappings};
 
     #[test]
     fn provider_versions_are_sorted_and_unique() {
-        assert!(!PROVIDER_VERSIONS.is_empty());
+        assert!(!provider_versions().is_empty());
         assert!(
-            PROVIDER_VERSIONS
+            provider_versions()
                 .windows(2)
-                .all(|window| window[0].version != window[1].version)
+                .all(|window| window[0] != window[1])
         );
     }
 
     #[test]
-    fn mappings_and_api_methods_are_sorted_and_unique() {
-        for version in PROVIDER_VERSIONS {
-            let mut mappings = version.mappings.to_vec();
-            mappings.sort();
-            assert_eq!(version.mappings, mappings);
-            assert!(
-                version
-                    .mappings
-                    .windows(2)
-                    .all(|window| window[0] != window[1])
-            );
-            for mapping in version.mappings {
-                let mut api_methods = mapping.api_methods.to_vec();
-                api_methods.sort();
-                assert_eq!(mapping.api_methods, api_methods);
-                assert!(
-                    mapping
-                        .api_methods
-                        .windows(2)
-                        .all(|window| window[0] != window[1])
-                );
+    fn mappings_and_api_methods_are_sorted_and_unique() -> Result<(), &'static str> {
+        for version in provider_versions() {
+            let mappings = sdk_method_mappings(version).ok_or("missing indexed version")?;
+            let rows = mappings.collect::<Vec<_>>();
+            assert!(rows.windows(2).all(|window| {
+                let left = (window[0].kind, window[0].type_name, window[0].action);
+                let right = (window[1].kind, window[1].type_name, window[1].action);
+                left < right
+            }));
+            for mapping in rows {
+                let api_methods = mapping.api_methods.collect::<Vec<_>>();
+                assert!(api_methods.windows(2).all(|window| window[0] < window[1]));
             }
         }
+        Ok(())
     }
 
     #[test]
     fn exact_lookup_retrieves_known_version_only() -> Result<(), &'static str> {
-        let mappings = sdk_method_mappings("6.64.0").ok_or("missing v6.64.0 mappings")?;
+        let mappings = sdk_method_mappings("6.64.0")
+            .ok_or("missing v6.64.0 mappings")?
+            .collect::<Vec<_>>();
         assert_mapping_contains(
-            mappings,
+            &mappings,
             "resource",
             "aws_s3_bucket",
             "create",
@@ -87,7 +232,7 @@ mod tests {
             },
         );
         assert_mapping_contains(
-            mappings,
+            &mappings,
             "resource",
             "aws_s3_bucket",
             "delete",
@@ -97,7 +242,7 @@ mod tests {
             },
         );
         assert_mapping_contains(
-            mappings,
+            &mappings,
             "action",
             "aws_ec2_stop_instance",
             "invoke",
@@ -106,7 +251,7 @@ mod tests {
                 name: "StopInstances",
             },
         );
-        assert!(sdk_method_mappings("6.63.0").is_none());
+        assert!(sdk_method_mappings("7.0.0").is_none());
         assert!(sdk_method_mappings("6.64").is_none());
         assert!(sdk_method_mappings("v6.64.0").is_none());
         assert!(sdk_method_mappings("6.64.0+local").is_none());
@@ -120,12 +265,12 @@ mod tests {
         action: &str,
         expected_api_method: TerraformProviderAwsApiMethodRef,
     ) {
-        let matches: Vec<_> = mappings
+        let matches = mappings
             .iter()
             .filter(|mapping| {
                 mapping.kind == kind && mapping.type_name == type_name && mapping.action == action
             })
-            .collect();
+            .collect::<Vec<_>>();
         assert_eq!(
             matches.len(),
             1,

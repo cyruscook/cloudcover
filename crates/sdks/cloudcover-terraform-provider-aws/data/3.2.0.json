@@ -1,0 +1,66 @@
+{
+  "provider_version": "3.2.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_default_security_group",
+      "create",
+      [
+        [
+          "ec2",
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "new"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_security_group",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_default_security_group",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
+          "new"
+        ]
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "provider_version": "5.74.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_ssmcontacts_contact",
+      "read",
+      [
+        [
+          "ssmcontacts",
+          "GetContact"
+        ]
+      ]
+    ]
+  ]
+}

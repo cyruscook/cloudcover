@@ -1,0 +1,24 @@
+{
+  "provider_version": "1.47.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_route53_delegation_set",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ssm_document",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_organizations_organization",
+      "update",
+      []
+    ]
+  ]
+}

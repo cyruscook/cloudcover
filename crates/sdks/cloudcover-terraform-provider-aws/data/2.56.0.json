@@ -1,0 +1,25 @@
+{
+  "provider_version": "2.56.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_elastic_beanstalk_environment",
+      "delete",
+      [
+        [
+          "elasticbeanstalk",
+          "DescribeEnvironments"
+        ],
+        [
+          "elasticbeanstalk",
+          "TerminateEnvironment"
+        ],
+        [
+          "elasticbeanstalk",
+          "new"
+        ]
+      ]
+    ]
+  ]
+}

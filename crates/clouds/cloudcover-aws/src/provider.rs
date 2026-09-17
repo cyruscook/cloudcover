@@ -43,14 +43,15 @@ impl CloudProvider for AwsProvider {
             Sdk::new("boto3", Language::Python),
         ];
         sdks.extend(
-            cloudcover_terraform_provider_aws::PROVIDER_VERSIONS
+            cloudcover_terraform_provider_aws::provider_versions()
                 .iter()
-                .map(|entry| {
+                .copied()
+                .map(|version| {
                     Sdk::new(
                         cloudcover_terraform_provider_aws::SDK_NAME,
                         Language::Terraform,
                     )
-                    .with_version(entry.version)
+                    .with_version(version)
                 }),
         );
         sdks

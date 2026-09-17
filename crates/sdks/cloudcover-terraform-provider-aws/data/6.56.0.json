@@ -1,0 +1,47 @@
+{
+  "provider_version": "6.56.0",
+  "remove": [],
+  "upsert": [
+    [
+      "action",
+      "aws_elasticache_apply_service_update",
+      "invoke",
+      [
+        [
+          "elasticache",
+          "BatchApplyUpdateAction"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_elasticache_service_update_actions",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_s3_buckets",
+      "read",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_eks_addon",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_notification",
+      "list",
+      []
+    ],
+    [
+      "list_resource",
+      "aws_secretsmanager_secret_policy",
+      "list",
+      []
+    ]
+  ]
+}

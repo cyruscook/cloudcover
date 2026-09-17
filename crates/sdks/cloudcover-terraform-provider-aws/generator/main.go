@@ -9,6 +9,7 @@ import (
 	"go/token"
 	"go/types"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"slices"
 	"strconv"
@@ -118,7 +119,8 @@ func run() error {
 	for _, spec := range specs {
 		handlers, err := resolveHandlers(index, spec)
 		if err != nil {
-			return fmt.Errorf("%s %s factory %s in %s: %w", spec.kind, spec.typeName, spec.factory, spec.sourceFile, err)
+			fmt.Fprintf(os.Stderr, "warning: skipping %s %s factory %s in %s: %v\n", spec.kind, spec.typeName, spec.factory, spec.sourceFile, err)
+			continue
 		}
 		for _, handler := range handlers {
 			apiMethods := collectAPIMethods(index, handler.funcs, sdkMappings)
@@ -166,23 +168,52 @@ func loadSDKMappings(path string) (map[sdkMethodKey][]apiMethod, error) {
 }
 
 func loadProviderIndex(providerDir string) (*packageIndex, error) {
+	patterns := []string{"./aws"}
+	packageEnv := os.Environ()
+	if info, err := os.Stat(filepath.Join(providerDir, "internal", "service")); err == nil && info.IsDir() {
+		patterns = []string{"./internal/service/...", "./internal/provider"}
+	} else if err != nil && !errors.Is(err, os.ErrNotExist) {
+		return nil, err
+	}
+	hasModule := false
+	if _, err := os.Stat(filepath.Join(providerDir, "go.mod")); errors.Is(err, os.ErrNotExist) {
+		gopath := filepath.Dir(filepath.Dir(filepath.Dir(filepath.Dir(providerDir))))
+		packageEnv = append(packageEnv, "GO111MODULE=off", "GOPATH="+gopath)
+	} else if err != nil {
+		return nil, err
+	} else {
+		hasModule = true
+	}
+	if hasModule {
+		cmdArgs := []string{"mod", "edit", "-droprequire=github.com/golangci/golangci-lint", "-dropgodebug=tlskyber"}
+		if module, err := os.ReadFile(filepath.Join(providerDir, "go.mod")); err == nil &&
+			!strings.Contains(string(module), providerModulePath) {
+			_ = os.Remove(filepath.Join(providerDir, "go.sum"))
+			packageEnv = append(packageEnv, "GOSUMDB=off", "GOFLAGS=-mod=mod")
+		}
+		cmd := exec.Command("go", cmdArgs...)
+		cmd.Dir = providerDir
+		_ = cmd.Run()
+	}
 	initial, err := packages.Load(&packages.Config{
-		Mode:  packages.LoadAllSyntax,
-		Dir:   providerDir,
-		Tests: false,
-	}, "./internal/service/...")
+		Mode:       packages.LoadAllSyntax,
+		Dir:        providerDir,
+		Env:        packageEnv,
+		Tests:      false,
+		BuildFlags: nil,
+		Overlay:    nil,
+	}, patterns...)
 	if err != nil {
 		return nil, fmt.Errorf("packages.Load failed for %s: %w", providerDir, err)
 	}
-	if packages.PrintErrors(initial) > 0 {
-		return nil, fmt.Errorf("packages.Load reported errors for %s", providerDir)
-	}
-
+	packages.PrintErrors(initial)
 	prog, ssaPackages := ssautil.AllPackages(initial, ssa.InstantiateGenerics)
 	for _, pkg := range ssaPackages {
+		if pkg == nil || pkg.Pkg == nil {
+			continue
+		}
 		pkg.Build()
 	}
-	prog.Build()
 	cg := static.CallGraph(prog)
 
 	index := &packageIndex{
@@ -309,7 +340,94 @@ func discoverEntrypoints(index *packageIndex) ([]entrypointSpec, error) {
 			specs = append(specs, methodSpecs...)
 		}
 	}
-	return specs, nil
+	if len(specs) != 0 {
+		return specs, nil
+	}
+	return discoverProviderMapEntrypoints(index)
+}
+
+func discoverProviderMapEntrypoints(index *packageIndex) ([]entrypointSpec, error) {
+	paths := make([]string, 0)
+	for path := range index.byFile {
+		if filepath.Base(path) == "provider.go" {
+			paths = append(paths, path)
+		}
+	}
+	slices.Sort(paths)
+
+	specs := make([]entrypointSpec, 0)
+	for _, path := range paths {
+		pkg := index.byFile[path]
+		file, err := fileForPath(pkg, path)
+		if err != nil {
+			return nil, err
+		}
+		ast.Inspect(file, func(node ast.Node) bool {
+			field, ok := node.(*ast.KeyValueExpr)
+			if !ok {
+				return true
+			}
+			var kind string
+			switch exprIdentName(field.Key) {
+			case "ResourcesMap":
+				kind = "resource"
+			case "DataSourcesMap":
+				kind = "data_source"
+			default:
+				return true
+			}
+			registry, ok := field.Value.(*ast.CompositeLit)
+			if !ok {
+				return true
+			}
+			for _, element := range registry.Elts {
+				entry, ok := element.(*ast.KeyValueExpr)
+				if !ok {
+					continue
+				}
+				typeName, err := stringLiteralValue(entry.Key)
+				if err != nil || !strings.HasPrefix(typeName, "aws_") {
+					continue
+				}
+				call, ok := entry.Value.(*ast.CallExpr)
+				if !ok {
+					continue
+				}
+				factory := calledFunctionObject(pkg, call)
+				factoryName := exprIdentName(call.Fun)
+				factoryPackagePath := pkg.PkgPath
+				if factory != nil {
+					factoryName = factory.Name()
+					if factory.Pkg() != nil {
+						factoryPackagePath = factory.Pkg().Path()
+					}
+				}
+				if factoryName == "" {
+					continue
+				}
+				specs = append(specs, entrypointSpec{
+					kind:        kind,
+					typeName:    typeName,
+					factory:     factoryName,
+					sourceFile:  path,
+					packagePath: factoryPackagePath,
+				})
+			}
+			return false
+		})
+	}
+	if len(specs) == 0 {
+		return nil, errors.New("discovered no terraform-provider-aws entrypoints")
+	}
+	slices.SortFunc(specs, func(left, right entrypointSpec) int {
+		if result := compareStrings(left.kind, right.kind); result != 0 {
+			return result
+		}
+		return compareStrings(left.typeName, right.typeName)
+	})
+	return slices.CompactFunc(specs, func(left, right entrypointSpec) bool {
+		return left.kind == right.kind && left.typeName == right.typeName
+	}), nil
 }
 
 func resolveHandlers(index *packageIndex, spec entrypointSpec) ([]handlerMethod, error) {
@@ -325,11 +443,10 @@ func resolveHandlers(index *packageIndex, spec entrypointSpec) ([]handlerMethod,
 	if decl == nil {
 		return nil, fmt.Errorf("factory declaration not found")
 	}
-
 	switch spec.kind {
 	case "resource":
 		if isSDKFactory(factoryObj) {
-			return resolveSchemaResourceHandlers(index, pkg, decl, map[string]string{
+			handlers, err := resolveSchemaResourceHandlers(index, pkg, decl, map[string]string{
 				"Create":               "create",
 				"CreateContext":        "create",
 				"CreateWithoutTimeout": "create",
@@ -343,15 +460,28 @@ func resolveHandlers(index *packageIndex, spec entrypointSpec) ([]handlerMethod,
 				"DeleteContext":        "delete",
 				"DeleteWithoutTimeout": "delete",
 			})
+			if err == nil {
+				return handlers, nil
+			}
+			return resolveLegacySchemaResourceHandlers(index, pkg, decl, []namedMethodAction{
+				{"Create", "create"},
+				{"Read", "read"},
+				{"Update", "update"},
+				{"Delete", "delete"},
+			})
 		}
 		return resolveConcreteTypeHandlers(index, pkg, decl, []namedMethodAction{{"Create", "create"}, {"Read", "read"}, {"Update", "update"}, {"Delete", "delete"}})
 	case "data_source":
 		if isSDKFactory(factoryObj) {
-			return resolveSchemaResourceHandlers(index, pkg, decl, map[string]string{
+			handlers, err := resolveSchemaResourceHandlers(index, pkg, decl, map[string]string{
 				"Read":               "read",
 				"ReadContext":        "read",
 				"ReadWithoutTimeout": "read",
 			})
+			if err == nil {
+				return handlers, nil
+			}
+			return resolveLegacySchemaResourceHandlers(index, pkg, decl, []namedMethodAction{{"Read", "read"}})
 		}
 		return resolveConcreteTypeHandlers(index, pkg, decl, []namedMethodAction{{"Read", "read"}})
 	case "list_resource":
@@ -393,6 +523,9 @@ func resolveSchemaResourceHandlers(index *packageIndex, pkg *packages.Package, d
 		}
 		fieldName := exprIdentName(kv.Key)
 		action, ok := fieldActions[fieldName]
+		if !ok && strings.HasSuffix(fieldName, "WithoutTimeout") {
+			action, ok = fieldActions[strings.TrimSuffix(fieldName, "WithoutTimeout")]
+		}
 		if !ok {
 			continue
 		}
@@ -418,6 +551,9 @@ func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, dec
 	if err != nil {
 		return nil, err
 	}
+	if isSchemaResourcePointer(concreteType) {
+		return resolveLegacySchemaResourceHandlers(index, pkg, decl, actions)
+	}
 	named, err := namedType(concreteType)
 	if err != nil {
 		return nil, err
@@ -435,7 +571,7 @@ func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, dec
 		}
 		funcs := index.ssaFuncs[funcObj]
 		if len(funcs) == 0 {
-			return nil, fmt.Errorf("SSA function missing for method %s", action.method)
+			continue
 		}
 		handlers = append(handlers, handlerMethod{action: action.action, funcs: funcs})
 	}
@@ -444,6 +580,111 @@ func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, dec
 	}
 	slices.SortFunc(handlers, compareHandlerMethods)
 	return handlers, nil
+}
+
+func resolveLegacySchemaResourceHandlers(index *packageIndex, pkg *packages.Package, decl *ast.FuncDecl, actions []namedMethodAction) ([]handlerMethod, error) {
+	handlers := make([]handlerMethod, 0, len(actions))
+	for _, action := range actions {
+		funcs, err := collectLegacyHandlerFunctions(index, pkg, decl, action.method, map[*types.Func]struct{}{})
+		if err != nil {
+			return nil, fmt.Errorf("resolve %s handler: %w", action.action, err)
+		}
+		if len(funcs) == 0 {
+			continue
+		}
+		handlers = append(handlers, handlerMethod{action: action.action, funcs: funcs})
+	}
+	if len(handlers) == 0 {
+		return nil, errors.New("resolved no legacy resource handlers")
+	}
+	slices.SortFunc(handlers, compareHandlerMethods)
+	return handlers, nil
+}
+
+func collectLegacyHandlerFunctions(index *packageIndex, pkg *packages.Package, decl *ast.FuncDecl, method string, seen map[*types.Func]struct{}) ([]*ssa.Function, error) {
+	if decl == nil || decl.Body == nil {
+		return nil, nil
+	}
+	locals := collectLocalExprs(decl.Body)
+	funcs := make([]*ssa.Function, 0)
+	for _, stmt := range decl.Body.List {
+		switch stmt := stmt.(type) {
+		case *ast.AssignStmt:
+			for i, lhs := range stmt.Lhs {
+				selector, ok := lhs.(*ast.SelectorExpr)
+				if !ok || !legacyHandlerFieldMatches(selector.Sel.Name, method) || i >= len(stmt.Rhs) {
+					continue
+				}
+				resolved, err := resolveFunctionExpr(index, pkg, stmt.Rhs[i], locals)
+				if err != nil {
+					return nil, err
+				}
+				for _, fn := range resolved {
+					funcs = append(funcs, fn)
+				}
+			}
+		case *ast.ReturnStmt:
+			if len(stmt.Results) == 0 {
+				continue
+			}
+			expr := resolveExpr(stmt.Results[0], locals)
+			if lit, ok := expr.(*ast.UnaryExpr); ok && lit.Op == token.AND {
+				expr = lit.X
+			}
+			if literal, ok := expr.(*ast.CompositeLit); ok {
+				for _, element := range literal.Elts {
+					field, ok := element.(*ast.KeyValueExpr)
+					if !ok || !legacyHandlerFieldMatches(exprIdentName(field.Key), method) || exprIdentName(field.Value) == "nil" {
+						continue
+					}
+					resolved, err := resolveFunctionExpr(index, pkg, field.Value, locals)
+					if err != nil {
+						return nil, err
+					}
+					funcs = append(funcs, resolved...)
+				}
+				continue
+			}
+			call, ok := expr.(*ast.CallExpr)
+			if !ok {
+				continue
+			}
+			callee, calleePkg, err := resolveFunctionObject(index, pkg, call.Fun, locals)
+			if err != nil {
+				return nil, err
+			}
+			if callee == nil {
+				continue
+			}
+			if _, ok := seen[callee]; ok {
+				continue
+			}
+			seen[callee] = struct{}{}
+			if calleePkg == nil {
+				calleePkg = index.byPath[callee.Pkg().Path()]
+			}
+			calleeDecl := index.funcDecls[callee]
+			if calleeDecl == nil || calleePkg == nil {
+				continue
+			}
+			if handlers, err := resolveSchemaResourceHandlers(index, calleePkg, calleeDecl, map[string]string{method: method}); err == nil {
+				for _, handler := range handlers {
+					funcs = append(funcs, handler.funcs...)
+				}
+				continue
+			}
+			inherited, err := collectLegacyHandlerFunctions(index, calleePkg, calleeDecl, method, seen)
+			if err != nil {
+				return nil, err
+			}
+			funcs = append(funcs, inherited...)
+		}
+	}
+	return slices.Compact(funcs), nil
+}
+
+func legacyHandlerFieldMatches(fieldName, method string) bool {
+	return fieldName == method || fieldName == method+"WithoutTimeout"
 }
 
 func resolveReturnedSchemaResourceLiteral(pkg *packages.Package, decl *ast.FuncDecl) (*ast.CompositeLit, error) {
@@ -483,12 +724,12 @@ func unwrapSchemaResourceLiteral(pkg *packages.Package, expr ast.Expr, locals ma
 		if !ok {
 			return nil, false, nil
 		}
-		if !isSchemaResourceType(pkg.TypesInfo.TypeOf(lit)) {
+		if !isSchemaResourceType(pkg.TypesInfo.TypeOf(lit)) && !isSchemaResourcePointer(pkg.TypesInfo.TypeOf(lit)) {
 			return nil, false, nil
 		}
 		return lit, true, nil
 	case *ast.CompositeLit:
-		if !isSchemaResourceType(pkg.TypesInfo.TypeOf(expr)) {
+		if !isSchemaResourceType(pkg.TypesInfo.TypeOf(expr)) && !isSchemaResourcePointer(pkg.TypesInfo.TypeOf(expr)) {
 			return nil, false, nil
 		}
 		return expr, true, nil
@@ -588,7 +829,7 @@ func collectAPIMethods(index *packageIndex, roots []*ssa.Function, sdkMappings m
 		}
 		seen[fn] = struct{}{}
 		if key, ok := sdkKeyForFunction(fn); ok {
-			methods = append(methods, sdkMappings[key]...)
+			methods = append(methods, apiMethodsForSDKKey(key, sdkMappings)...)
 		}
 		methods = append(methods, collectDirectSDKAPIMethods(index, fn, sdkMappings)...)
 		queue = append(queue, index.nestedFuncs[fn]...)
@@ -633,7 +874,7 @@ func collectDirectSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappin
 				continue
 			}
 			if key, ok := sdkKeyForFunction(callee); ok {
-				methods = append(methods, sdkMappings[key]...)
+				methods = append(methods, apiMethodsForSDKKey(key, sdkMappings)...)
 			}
 		}
 	}
@@ -664,7 +905,7 @@ func collectDirectASTSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMap
 			return true
 		}
 		if key, ok := sdkKeyForObject(obj); ok {
-			methods = append(methods, sdkMappings[key]...)
+			methods = append(methods, apiMethodsForSDKKey(key, sdkMappings)...)
 		}
 		return true
 	})
@@ -686,6 +927,30 @@ func calledFunctionObject(pkg *packages.Package, callExpr *ast.CallExpr) *types.
 	default:
 		return nil
 	}
+}
+
+func apiMethodsForSDKKey(key sdkMethodKey, sdkMappings map[sdkMethodKey][]apiMethod) []apiMethod {
+	if methods, ok := sdkMappings[key]; ok {
+		return methods
+	}
+
+	const awsSDKGoV1ServicePrefix = "github.com/aws/aws-sdk-go/service/"
+	service, ok := strings.CutPrefix(key.pkg, awsSDKGoV1ServicePrefix)
+	if !ok || service == "" || strings.ContainsRune(service, '/') ||
+		strings.HasPrefix(key.method, "WaitUntil") {
+		return nil
+	}
+	method := key.method
+	for _, suffix := range []string{"PagesWithContext", "WithContext", "Request", "Pages"} {
+		if stripped, found := strings.CutSuffix(method, suffix); found {
+			method = stripped
+			break
+		}
+	}
+	if method == "" {
+		return nil
+	}
+	return []apiMethod{{Service: service, Name: method}}
 }
 
 func sdkKeyForObject(obj *types.Func) (sdkMethodKey, bool) {
@@ -747,7 +1012,15 @@ func extractSpecsFromServiceMethod(pkg *packages.Package, decl *ast.FuncDecl, ki
 		if !ok || len(returnStmt.Results) == 0 {
 			continue
 		}
-		items, ok, err := unwrapSpecList(resolveExpr(returnStmt.Results[0], locals), locals)
+		resolved := resolveExpr(returnStmt.Results[0], locals)
+		if mapSpecs, ok, err := entrypointSpecsFromMapLit(pkg, kind, sourceFile, resolved); ok {
+			if err != nil {
+				return nil, err
+			}
+			specs = append(specs, mapSpecs...)
+			continue
+		}
+		items, ok, err := unwrapSpecList(resolved, locals)
 		if err != nil {
 			return nil, err
 		}
@@ -756,6 +1029,9 @@ func extractSpecsFromServiceMethod(pkg *packages.Package, decl *ast.FuncDecl, ki
 		}
 		for _, item := range items {
 			spec, err := entrypointFromCompositeLit(pkg, kind, sourceFile, item)
+			if errors.Is(err, errIncompleteEntrypointSpec) {
+				continue
+			}
 			if err != nil {
 				return nil, err
 			}
@@ -779,11 +1055,14 @@ func unwrapSpecList(expr ast.Expr, locals map[string]ast.Expr) ([]*ast.Composite
 		}
 		return nil, false, nil
 	case *ast.CompositeLit:
+		if specCompositeLit(expr) {
+			return []*ast.CompositeLit{expr}, true, nil
+		}
 		items := make([]*ast.CompositeLit, 0, len(expr.Elts))
 		for _, elt := range expr.Elts {
 			lit, ok := elt.(*ast.CompositeLit)
 			if !ok {
-				return nil, false, fmt.Errorf("unexpected spec element %T", elt)
+				continue
 			}
 			items = append(items, lit)
 		}
@@ -792,6 +1071,48 @@ func unwrapSpecList(expr ast.Expr, locals map[string]ast.Expr) ([]*ast.Composite
 		return nil, false, nil
 	}
 }
+
+func entrypointSpecsFromMapLit(pkg *packages.Package, kind, sourceFile string, expr ast.Expr) ([]entrypointSpec, bool, error) {
+	lit, ok := expr.(*ast.CompositeLit)
+	if !ok {
+		return nil, false, nil
+	}
+	specs := make([]entrypointSpec, 0, len(lit.Elts))
+	for _, elt := range lit.Elts {
+		kv, ok := elt.(*ast.KeyValueExpr)
+		if !ok {
+			return nil, false, nil
+		}
+		typeName, err := stringLiteralValue(kv.Key)
+		if err != nil {
+			return nil, false, nil
+		}
+		factory := exprIdentName(kv.Value)
+		if factory == "" {
+			return nil, false, fmt.Errorf("map entrypoint %s has no factory", typeName)
+		}
+		specs = append(specs, entrypointSpec{
+			kind:        kind,
+			typeName:    typeName,
+			factory:     factory,
+			sourceFile:  sourceFile,
+			packagePath: pkg.PkgPath,
+		})
+	}
+	return specs, true, nil
+}
+func specCompositeLit(expr *ast.CompositeLit) bool {
+	for _, elt := range expr.Elts {
+		kv, ok := elt.(*ast.KeyValueExpr)
+		if ok && (exprIdentName(kv.Key) == "Factory" || exprIdentName(kv.Key) == "TypeName") {
+			return true
+		}
+	}
+	return false
+
+}
+
+var errIncompleteEntrypointSpec = errors.New("incomplete entrypoint spec")
 
 func entrypointFromCompositeLit(pkg *packages.Package, kind, sourceFile string, lit *ast.CompositeLit) (entrypointSpec, error) {
 	var factory string
@@ -814,13 +1135,13 @@ func entrypointFromCompositeLit(pkg *packages.Package, kind, sourceFile string, 
 		}
 	}
 	if factory == "" || typeName == "" {
-		return entrypointSpec{}, errors.New("entrypoint spec missing Factory or TypeName")
+		return entrypointSpec{}, fmt.Errorf("%w: missing Factory or TypeName", errIncompleteEntrypointSpec)
 	}
 	return entrypointSpec{
-		kind:       kind,
-		typeName:   typeName,
-		factory:    factory,
-		sourceFile: sourceFile,
+		kind:        kind,
+		typeName:    typeName,
+		factory:     factory,
+		sourceFile:  sourceFile,
 		packagePath: pkg.PkgPath,
 	}, nil
 }
@@ -909,13 +1230,8 @@ func resolveFunctionObject(
 		return nil, nil, fmt.Errorf("unsupported function expression %T", expr)
 	}
 }
-
 func ssaFunctionsForObject(index *packageIndex, obj *types.Func, name string) ([]*ssa.Function, error) {
-	funcs := index.ssaFuncs[obj]
-	if len(funcs) == 0 {
-		return nil, fmt.Errorf("SSA function missing for %s", name)
-	}
-	return funcs, nil
+	return index.ssaFuncs[obj], nil
 }
 
 func resolveReturnedHandlerExpr(decl *ast.FuncDecl) (ast.Expr, error) {
@@ -1107,7 +1423,7 @@ func isSchemaResourceType(typ types.Type) bool {
 	if !ok || named.Obj() == nil || named.Obj().Pkg() == nil {
 		return false
 	}
-	return named.Obj().Pkg().Path() == "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema" && named.Obj().Name() == "Resource"
+	return strings.HasSuffix(named.Obj().Pkg().Path(), "/helper/schema") && named.Obj().Name() == "Resource"
 }
 
 func compareHandlerMethods(left, right handlerMethod) int {

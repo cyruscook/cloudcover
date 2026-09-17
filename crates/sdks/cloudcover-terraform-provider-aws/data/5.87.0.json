@@ -1,0 +1,40 @@
+{
+  "provider_version": "5.87.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_cloudwatch_contributor_insight_rule",
+      "create",
+      [
+        [
+          "cloudwatch",
+          "PutInsightRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_contributor_insight_rule",
+      "delete",
+      [
+        [
+          "cloudwatch",
+          "DeleteInsightRules"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_contributor_insight_rule",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_contributor_insight_rule",
+      "update",
+      []
+    ]
+  ]
+}

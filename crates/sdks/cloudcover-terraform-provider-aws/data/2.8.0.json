@@ -1,0 +1,30 @@
+{
+  "provider_version": "2.8.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_dx_gateway_association",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_dx_gateway_association_proposal",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_dx_gateway_association_proposal",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_dx_gateway_association_proposal",
+      "read",
+      []
+    ]
+  ]
+}

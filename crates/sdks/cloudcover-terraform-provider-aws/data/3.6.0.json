@@ -1,0 +1,61 @@
+{
+  "provider_version": "3.6.0",
+  "remove": [],
+  "upsert": [
+    [
+      "resource",
+      "aws_db_proxy_default_target_group",
+      "create",
+      [
+        [
+          "rds",
+          "DescribeDBProxyTargetGroups"
+        ],
+        [
+          "rds",
+          "ModifyDBProxyTargetGroup"
+        ],
+        [
+          "rds",
+          "new"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_proxy_default_target_group",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_proxy_default_target_group",
+      "read",
+      [
+        [
+          "rds",
+          "DescribeDBProxyTargetGroups"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_proxy_default_target_group",
+      "update",
+      [
+        [
+          "rds",
+          "DescribeDBProxyTargetGroups"
+        ],
+        [
+          "rds",
+          "ModifyDBProxyTargetGroup"
+        ],
+        [
+          "rds",
+          "new"
+        ]
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "provider_version": "2.28.0",
+  "remove": [],
+  "upsert": [
+    [
+      "data_source",
+      "aws_route53_resolver_rule",
+      "read",
+      [
+        [
+          "route53resolver",
+          "GetResolverRule"
+        ],
+        [
+          "route53resolver",
+          "ListResolverRules"
+        ],
+        [
+          "route53resolver",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_route53_resolver_rules",
+      "read",
+      [
+        [
+          "route53resolver",
+          "ListResolverRules"
+        ]
+      ]
+    ]
+  ]
+}
