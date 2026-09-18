@@ -4,12 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_ssoadmin_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ssoadmin_permission_set",
       "read",
       [
@@ -19,48 +13,34 @@
         ],
         [
           "ssoadmin",
+          "ListPermissionSets"
+        ],
+        [
+          "ssoadmin",
           "ListTagsForResource"
         ]
       ]
     ],
     [
       "resource",
-      "aws_docdb_cluster_snapshot",
-      "read",
-      [
-        [
-          "docdb",
-          "DescribeDBClusterSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_docdb_global_cluster",
+      "aws_docdb_cluster",
       "delete",
       [
         [
           "docdb",
-          "DeleteGlobalCluster"
+          "DeleteDBCluster"
+        ],
+        [
+          "docdb",
+          "DescribeDBClusters"
+        ],
+        [
+          "docdb",
+          "DescribeGlobalClusters"
         ],
         [
           "docdb",
           "RemoveFromGlobalCluster"
-        ],
-        [
-          "docdb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_snapshot",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeDBClusterSnapshots"
         ]
       ]
     ],
@@ -84,47 +64,6 @@
         [
           "neptune",
           "ModifyDBParameterGroup"
-        ],
-        [
-          "neptune",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_parameter_group",
-      "delete",
-      [
-        [
-          "neptune",
-          "DeleteDBParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_parameter_group",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeDBParameterGroups"
-        ],
-        [
-          "neptune",
-          "DescribeDBParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_subnet_group",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeDBSubnetGroups"
         ]
       ]
     ],
@@ -139,7 +78,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetVpcAttachment"
         ]
       ]
     ],
@@ -159,164 +98,8 @@
         [
           "networkmanager",
           "RejectAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "CreateAccountAssignment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeleteAccountAssignment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachCustomerManagedPolicyReferenceToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DetachCustomerManagedPolicyReferenceFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_instance_access_control_attributes",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "CreateInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "DescribeInstanceAccessControlAttributeConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_instance_access_control_attributes",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeleteInstanceAccessControlAttributeConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_instance_access_control_attributes",
-      "read",
-      [
-        [
-          "ssoadmin",
-          "DescribeInstanceAccessControlAttributeConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_instance_access_control_attributes",
-      "update",
-      [
-        [
-          "ssoadmin",
-          "DescribeInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "UpdateInstanceAccessControlAttributeConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachManagedPolicyToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DetachManagedPolicyFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "read",
-      []
     ],
     [
       "resource",
@@ -340,17 +123,6 @@
     [
       "resource",
       "aws_ssoadmin_permission_set",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeletePermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set",
       "read",
       [
         [
@@ -371,6 +143,10 @@
         [
           "ssoadmin",
           "DescribePermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
         ],
         [
           "ssoadmin",
@@ -391,115 +167,6 @@
         [
           "ssoadmin",
           "UpdatePermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "GetInlinePolicyForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutInlinePolicyToPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeleteInlinePolicyFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "read",
-      [
-        [
-          "ssoadmin",
-          "GetInlinePolicyForPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "update",
-      [
-        [
-          "ssoadmin",
-          "GetInlinePolicyForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutInlinePolicyToPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permissions_boundary_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "GetPermissionsBoundaryForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutPermissionsBoundaryToPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permissions_boundary_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeletePermissionsBoundaryFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permissions_boundary_attachment",
-      "read",
-      [
-        [
-          "ssoadmin",
-          "GetPermissionsBoundaryForPermissionSet"
         ]
       ]
     ]

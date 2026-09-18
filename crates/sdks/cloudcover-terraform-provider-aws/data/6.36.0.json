@@ -4,17 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_glue_catalog_table",
-      "read",
-      [
-        [
-          "glue",
-          "GetTable"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_iam_outbound_web_identity_federation",
       "read",
       [
@@ -37,87 +26,35 @@
     ],
     [
       "list_resource",
+      "aws_s3_bucket",
+      "list",
+      [
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
       "aws_s3_bucket_versioning",
       "list",
-      []
-    ],
-    [
-      "resource",
-      "aws_glue_catalog_table",
-      "create",
       [
         [
-          "glue",
-          "CreateTable"
+          "s3",
+          "GetBucketVersioning"
         ],
         [
-          "glue",
-          "GetTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_catalog_table",
-      "read",
-      [
-        [
-          "glue",
-          "GetTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_catalog_table",
-      "update",
-      [
-        [
-          "glue",
-          "GetTable"
+          "s3",
+          "ListBuckets"
         ],
         [
-          "glue",
-          "UpdateTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_partition_index",
-      "create",
-      [
-        [
-          "glue",
-          "CreatePartitionIndex"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_partition_index",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_guardduty_ipset",
-      "delete",
-      [
-        [
-          "guardduty",
-          "DeleteIPSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_guardduty_threatintelset",
-      "delete",
-      [
-        [
-          "guardduty",
-          "DeleteThreatIntelSet"
+          "s3",
+          "ListDirectoryBuckets"
         ]
       ]
     ]

@@ -10,10 +10,6 @@
         [
           "costexplorer",
           "DescribeCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "costexplorer",
           "GetTags"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -51,98 +43,6 @@
         [
           "mq",
           "DescribeBrokerInstanceOptions"
-        ],
-        [
-          "mq",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "create",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "ListTagsForCertificate"
-        ],
-        [
-          "acm",
-          "RequestCertificate"
-        ],
-        [
-          "acm",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "delete",
-      [
-        [
-          "acm",
-          "DeleteCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "read",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ListTagsForCertificate"
-        ],
-        [
-          "acm",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "update",
-      [
-        [
-          "acm",
-          "AddTagsToCertificate"
-        ],
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "ListTagsForCertificate"
-        ],
-        [
-          "acm",
-          "RemoveTagsFromCertificate"
-        ],
-        [
-          "acm",
-          "new"
         ]
       ]
     ],
@@ -190,10 +90,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -237,10 +133,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -260,10 +152,6 @@
         [
           "athena",
           "ListTagsForResource"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -275,10 +163,6 @@
         [
           "athena",
           "DeleteDataCatalog"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -294,10 +178,6 @@
         [
           "athena",
           "ListTagsForResource"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -325,10 +205,6 @@
         [
           "athena",
           "UpdateDataCatalog"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -344,10 +220,6 @@
         [
           "costexplorer",
           "DescribeCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -359,10 +231,6 @@
         [
           "costexplorer",
           "DeleteCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -374,10 +242,6 @@
         [
           "costexplorer",
           "DescribeCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -393,10 +257,6 @@
         [
           "costexplorer",
           "UpdateCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -416,10 +276,6 @@
         [
           "docdb",
           "ListTagsForResource"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -434,7 +290,7 @@
         ],
         [
           "docdb",
-          "new"
+          "DescribeEventSubscriptions"
         ]
       ]
     ],
@@ -450,10 +306,6 @@
         [
           "docdb",
           "ListTagsForResource"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -489,10 +341,6 @@
         [
           "docdb",
           "RemoveTagsFromResource"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -516,10 +364,6 @@
         [
           "managedgrafana",
           "UpdateWorkspace"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -579,6 +423,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -647,10 +495,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -706,6 +550,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -770,10 +618,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -821,10 +665,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -868,48 +708,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequests"
-        ],
-        [
-          "ec2",
-          "RequestSpotFleet"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
-      "delete",
-      [
-        [
-          "ec2",
-          "CancelSpotFleetRequests"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

@@ -10,10 +10,6 @@
         [
           "batch",
           "DescribeSchedulingPolicies"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -36,10 +32,6 @@
         [
           "cognitoidentityprovider",
           "GetSigningCertificate"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -59,10 +51,6 @@
         [
           "kinesis",
           "ListTagsForStream"
-        ],
-        [
-          "kinesis",
-          "new"
         ]
       ]
     ],
@@ -89,10 +77,6 @@
         [
           "kafkaconnect",
           "ListWorkerConfigurations"
-        ],
-        [
-          "kafkaconnect",
-          "new"
         ]
       ]
     ],
@@ -115,10 +99,6 @@
         [
           "ses",
           "DescribeActiveReceiptRuleSet"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -130,10 +110,6 @@
         [
           "ses",
           "GetIdentityVerificationAttributes"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -145,32 +121,6 @@
         [
           "ses",
           "GetIdentityVerificationAttributes"
-        ],
-        [
-          "ses",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_subnet",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSubnets"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_subnet_ids",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSubnets"
         ]
       ]
     ],
@@ -186,10 +136,6 @@
         [
           "batch",
           "DescribeSchedulingPolicies"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -201,10 +147,6 @@
         [
           "batch",
           "DeleteSchedulingPolicy"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -216,10 +158,6 @@
         [
           "batch",
           "DescribeSchedulingPolicies"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -243,10 +181,6 @@
         [
           "batch",
           "UpdateSchedulingPolicy"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -266,25 +200,6 @@
         [
           "cloud9",
           "ListTagsForResource"
-        ],
-        [
-          "cloud9",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloud9_environment_ec2",
-      "delete",
-      [
-        [
-          "cloud9",
-          "DeleteEnvironment"
-        ],
-        [
-          "cloud9",
-          "new"
         ]
       ]
     ],
@@ -300,10 +215,6 @@
         [
           "cloud9",
           "DescribeEnvironmentMemberships"
-        ],
-        [
-          "cloud9",
-          "new"
         ]
       ]
     ],
@@ -315,10 +226,6 @@
         [
           "cloud9",
           "DeleteEnvironmentMembership"
-        ],
-        [
-          "cloud9",
-          "new"
         ]
       ]
     ],
@@ -330,10 +237,6 @@
         [
           "cloud9",
           "DescribeEnvironmentMemberships"
-        ],
-        [
-          "cloud9",
-          "new"
         ]
       ]
     ],
@@ -349,10 +252,6 @@
         [
           "cloud9",
           "UpdateEnvironmentMembership"
-        ],
-        [
-          "cloud9",
-          "new"
         ]
       ]
     ],
@@ -372,10 +271,6 @@
         [
           "codebuild",
           "UpdateProjectVisibility"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -395,10 +290,6 @@
         [
           "codebuild",
           "UpdateProjectVisibility"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -414,10 +305,6 @@
         [
           "codebuild",
           "PutResourcePolicy"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -429,10 +316,6 @@
         [
           "codebuild",
           "DeleteResourcePolicy"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -444,10 +327,6 @@
         [
           "codebuild",
           "GetResourcePolicy"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -463,10 +342,6 @@
         [
           "codebuild",
           "PutResourcePolicy"
-        ],
-        [
-          "codebuild",
-          "new"
         ]
       ]
     ],
@@ -490,10 +365,6 @@
         [
           "codepipeline",
           "UntagResource"
-        ],
-        [
-          "codepipeline",
-          "new"
         ]
       ]
     ],
@@ -513,10 +384,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -528,10 +395,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -547,10 +410,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -574,10 +433,6 @@
         [
           "datasync",
           "UntagResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -597,10 +452,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -612,10 +463,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -631,10 +478,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -662,47 +505,6 @@
         [
           "datasync",
           "UpdateLocationHdfs"
-        ],
-        [
-          "datasync",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DisassociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -730,10 +532,6 @@
         [
           "devicefarm",
           "UntagResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -745,10 +543,6 @@
         [
           "devicefarm",
           "DeleteDevicePool"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -764,10 +558,6 @@
         [
           "devicefarm",
           "ListTagsForResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -795,10 +585,6 @@
         [
           "devicefarm",
           "UpdateDevicePool"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -826,10 +612,6 @@
         [
           "devicefarm",
           "UntagResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -841,10 +623,6 @@
         [
           "devicefarm",
           "DeleteNetworkProfile"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -860,10 +638,6 @@
         [
           "devicefarm",
           "ListTagsForResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -891,10 +665,6 @@
         [
           "devicefarm",
           "UpdateNetworkProfile"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -910,10 +680,6 @@
         [
           "devicefarm",
           "GetUpload"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -925,10 +691,6 @@
         [
           "devicefarm",
           "DeleteUpload"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -940,10 +702,6 @@
         [
           "devicefarm",
           "GetUpload"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -959,37 +717,6 @@
         [
           "devicefarm",
           "UpdateUpload"
-        ],
-        [
-          "devicefarm",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSubnets"
-        ],
-        [
-          "efs",
-          "CreateMountTarget"
-        ],
-        [
-          "efs",
-          "DescribeMountTargetSecurityGroups"
-        ],
-        [
-          "efs",
-          "DescribeMountTargets"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -1021,10 +748,6 @@
         [
           "elasticsearchservice",
           "UpdateElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -1048,10 +771,6 @@
         [
           "fsx",
           "DescribeVolumes"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1066,7 +785,7 @@
         ],
         [
           "fsx",
-          "new"
+          "DescribeFileSystems"
         ]
       ]
     ],
@@ -1113,10 +832,6 @@
         [
           "fsx",
           "UpdateVolume"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1136,10 +851,6 @@
         [
           "fsx",
           "ListTagsForResource"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1154,7 +865,7 @@
         ],
         [
           "fsx",
-          "new"
+          "DescribeSnapshots"
         ]
       ]
     ],
@@ -1170,10 +881,6 @@
         [
           "fsx",
           "ListTagsForResource"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1201,10 +908,6 @@
         [
           "fsx",
           "UpdateSnapshot"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1224,10 +927,6 @@
         [
           "fsx",
           "ListTagsForResource"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1242,7 +941,7 @@
         ],
         [
           "fsx",
-          "new"
+          "DescribeVolumes"
         ]
       ]
     ],
@@ -1258,10 +957,6 @@
         [
           "fsx",
           "ListTagsForResource"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1289,10 +984,6 @@
         [
           "fsx",
           "UpdateVolume"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -1332,10 +1023,21 @@
         [
           "kinesis",
           "StartStreamEncryption"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesis_stream",
+      "delete",
+      [
+        [
+          "kinesis",
+          "DeleteStream"
         ],
         [
           "kinesis",
-          "new"
+          "DescribeStreamSummary"
         ]
       ]
     ],
@@ -1351,10 +1053,6 @@
         [
           "kinesis",
           "ListTagsForStream"
-        ],
-        [
-          "kinesis",
-          "new"
         ]
       ]
     ],
@@ -1410,10 +1108,6 @@
         [
           "kinesis",
           "UpdateStreamMode"
-        ],
-        [
-          "kinesis",
-          "new"
         ]
       ]
     ],
@@ -1433,10 +1127,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1451,7 +1141,7 @@
         ],
         [
           "memorydb",
-          "new"
+          "DescribeACLs"
         ]
       ]
     ],
@@ -1467,10 +1157,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1498,10 +1184,6 @@
         [
           "memorydb",
           "UpdateACL"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1521,10 +1203,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1539,7 +1217,7 @@
         ],
         [
           "memorydb",
-          "new"
+          "DescribeClusters"
         ]
       ]
     ],
@@ -1555,10 +1233,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1586,10 +1260,6 @@
         [
           "memorydb",
           "UpdateCluster"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1629,10 +1299,6 @@
         [
           "memorydb",
           "UpdateParameterGroup"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1644,10 +1310,6 @@
         [
           "memorydb",
           "DeleteParameterGroup"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1667,10 +1329,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1706,10 +1364,6 @@
         [
           "memorydb",
           "UpdateParameterGroup"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1729,10 +1383,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1744,10 +1394,6 @@
         [
           "memorydb",
           "DeleteSubnetGroup"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1763,10 +1409,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1794,10 +1436,6 @@
         [
           "memorydb",
           "UpdateSubnetGroup"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1817,10 +1455,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1835,7 +1469,7 @@
         ],
         [
           "memorydb",
-          "new"
+          "DescribeUsers"
         ]
       ]
     ],
@@ -1851,10 +1485,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1882,10 +1512,6 @@
         [
           "memorydb",
           "UpdateUser"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1901,10 +1527,6 @@
         [
           "kafkaconnect",
           "DescribeCustomPlugin"
-        ],
-        [
-          "kafkaconnect",
-          "new"
         ]
       ]
     ],
@@ -1922,10 +1544,6 @@
         [
           "kafkaconnect",
           "DescribeCustomPlugin"
-        ],
-        [
-          "kafkaconnect",
-          "new"
         ]
       ]
     ],
@@ -1941,10 +1559,6 @@
         [
           "kafkaconnect",
           "DescribeWorkerConfiguration"
-        ],
-        [
-          "kafkaconnect",
-          "new"
         ]
       ]
     ],
@@ -1962,21 +1576,6 @@
         [
           "kafkaconnect",
           "DescribeWorkerConfiguration"
-        ],
-        [
-          "kafkaconnect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_resource_policy",
-      "delete",
-      [
-        [
-          "networkfirewall",
-          "DeleteResourcePolicy"
         ]
       ]
     ],
@@ -1990,16 +1589,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "GetObjectTagging"
         ],
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -2011,10 +1606,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -2043,10 +1634,6 @@
         [
           "s3",
           "PutObjectTagging"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -2062,10 +1649,6 @@
         [
           "sagemaker",
           "RegisterDevices"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -2077,10 +1660,6 @@
         [
           "sagemaker",
           "DeregisterDevices"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -2092,10 +1671,6 @@
         [
           "sagemaker",
           "DescribeDevice"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -2115,98 +1690,6 @@
         [
           "sagemaker",
           "UpdateDevices"
-        ],
-        [
-          "sagemaker",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "create",
-      [
-        [
-          "sns",
-          "Subscribe"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "update",
-      [
-        [
-          "sns",
-          "SetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "create",
-      [
-        [
-          "sqs",
-          "CreateQueue"
-        ],
-        [
-          "sqs",
-          "TagQueue"
-        ],
-        [
-          "sqs",
-          "UntagQueue"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "TagQueue"
-        ],
-        [
-          "sqs",
-          "UntagQueue"
-        ],
-        [
-          "sqs",
-          "new"
         ]
       ]
     ],
@@ -2226,66 +1709,6 @@
         [
           "ssoadmin",
           "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateSubnet"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DisassociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -2301,10 +1724,6 @@
         [
           "ec2",
           "DescribeVpcEndpointConnections"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -2316,10 +1735,6 @@
         [
           "ec2",
           "RejectVpcEndpointConnections"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -2344,16 +1759,8 @@
           "EnableIpamOrganizationAdminAccount"
         ],
         [
-          "ec2",
-          "new"
-        ],
-        [
           "organizations",
           "ListDelegatedAdministrators"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -2365,10 +1772,6 @@
         [
           "ec2",
           "DisableIpamOrganizationAdminAccount"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -2380,10 +1783,6 @@
         [
           "organizations",
           "ListDelegatedAdministrators"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -2395,10 +1794,6 @@
         [
           "ec2",
           "AllocateIpamPoolCidr"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],

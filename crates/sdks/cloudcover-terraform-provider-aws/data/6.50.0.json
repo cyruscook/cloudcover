@@ -3,34 +3,60 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_secretsmanager_secret_version",
-      "read",
-      []
-    ],
-    [
       "list_resource",
       "aws_bedrockagentcore_policy",
       "list",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "ListPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_log_s3_table_integration_source",
       "list",
-      []
+      [
+        [
+          "cloudwatchlogs",
+          "ListSourcesForS3TableIntegration"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ecs_daemon",
       "list",
-      []
+      [
+        [
+          "ecs",
+          "DescribeDaemon"
+        ],
+        [
+          "ecs",
+          "DescribeDaemonRevisions"
+        ],
+        [
+          "ecs",
+          "ListDaemons"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ecs_daemon_task_definition",
       "list",
-      []
+      [
+        [
+          "ecs",
+          "DescribeDaemonTaskDefinition"
+        ],
+        [
+          "ecs",
+          "ListDaemonTaskDefinitions"
+        ]
+      ]
     ],
     [
       "resource",
@@ -40,6 +66,10 @@
         [
           "bedrockagentcorecontrol",
           "CreatePolicy"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetPolicy"
         ]
       ]
     ],
@@ -51,6 +81,10 @@
         [
           "bedrockagentcorecontrol",
           "DeletePolicy"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetPolicy"
         ]
       ]
     ],
@@ -72,18 +106,11 @@
       [
         [
           "bedrockagentcorecontrol",
-          "UpdatePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_policy_engine",
-      "create",
-      [
+          "GetPolicy"
+        ],
         [
           "bedrockagentcorecontrol",
-          "CreatePolicyEngine"
+          "UpdatePolicy"
         ]
       ]
     ],
@@ -106,6 +133,10 @@
         [
           "cloudwatchlogs",
           "DisassociateSourceFromS3TableIntegration"
+        ],
+        [
+          "cloudwatchlogs",
+          "ListSourcesForS3TableIntegration"
         ]
       ]
     ],
@@ -113,7 +144,12 @@
       "resource",
       "aws_cloudwatch_log_s3_table_integration_source",
       "read",
-      []
+      [
+        [
+          "cloudwatchlogs",
+          "ListSourcesForS3TableIntegration"
+        ]
+      ]
     ],
     [
       "resource",
@@ -156,6 +192,10 @@
         [
           "ecs",
           "DeleteDaemon"
+        ],
+        [
+          "ecs",
+          "DescribeDaemon"
         ]
       ]
     ],
@@ -252,6 +292,10 @@
         [
           "observabilityadmin",
           "CreateS3TableIntegration"
+        ],
+        [
+          "observabilityadmin",
+          "GetS3TableIntegration"
         ]
       ]
     ],
@@ -263,6 +307,10 @@
         [
           "observabilityadmin",
           "DeleteS3TableIntegration"
+        ],
+        [
+          "observabilityadmin",
+          "GetS3TableIntegration"
         ]
       ]
     ],
@@ -282,34 +330,6 @@
       "aws_observabilityadmin_s3_table_integration",
       "update",
       []
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
-      "create",
-      [
-        [
-          "secretsmanager",
-          "PutSecretValue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "UpdateSecretVersionStage"
-        ]
-      ]
     ]
   ]
 }

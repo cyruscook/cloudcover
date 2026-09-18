@@ -4,21 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_s3_bucket",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketWebsite"
-        ],
-        [
-          "s3",
-          "HeadBucket"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_s3_bucket_object",
       "read",
       [
@@ -35,12 +20,6 @@
           "HeadObject"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_s3_bucket_objects",
-      "read",
-      []
     ],
     [
       "resource",
@@ -96,21 +75,6 @@
     ],
     [
       "resource",
-      "aws_cloudformation_stack_set_instance",
-      "delete",
-      [
-        [
-          "cloudformation",
-          "DeleteStackInstances"
-        ],
-        [
-          "cloudformation",
-          "ListStackSetOperationResults"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudfront_distribution",
       "delete",
       [
@@ -137,10 +101,6 @@
         [
           "cloudfront",
           "UpdateDistribution"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -164,10 +124,6 @@
         [
           "databasemigrationservice",
           "StartReplication"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -187,10 +143,6 @@
         [
           "databasemigrationservice",
           "StopReplication"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -229,10 +181,6 @@
         [
           "databasemigrationservice",
           "StopReplication"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -247,11 +195,11 @@
         ],
         [
           "opensearchservice",
-          "RejectInboundConnection"
+          "DescribeInboundConnections"
         ],
         [
           "opensearchservice",
-          "new"
+          "RejectInboundConnection"
         ]
       ]
     ],
@@ -270,26 +218,11 @@
         ],
         [
           "opensearchservice",
+          "DescribeInboundConnections"
+        ],
+        [
+          "opensearchservice",
           "DescribeOutboundConnections"
-        ],
-        [
-          "opensearchservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opensearch_outbound_connection",
-      "delete",
-      [
-        [
-          "opensearchservice",
-          "DeleteOutboundConnection"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -305,10 +238,6 @@
         [
           "rds",
           "DescribeDBEngineVersions"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -323,7 +252,7 @@
         ],
         [
           "rds",
-          "new"
+          "DescribeDBEngineVersions"
         ]
       ]
     ],
@@ -335,10 +264,6 @@
         [
           "rds",
           "DescribeDBEngineVersions"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -354,103 +279,6 @@
         [
           "rds",
           "ModifyCustomDBEngineVersion"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_acl",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketAcl"
-        ],
-        [
-          "s3",
-          "PutBucketAcl"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_acl",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketAcl"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_acl",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketAcl"
-        ],
-        [
-          "s3",
-          "PutBucketAcl"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_analytics_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketAnalyticsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_analytics_configuration",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteBucketAnalyticsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_analytics_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketAnalyticsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_analytics_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketAnalyticsConfiguration"
         ]
       ]
     ],
@@ -462,36 +290,10 @@
         [
           "s3",
           "DeleteBucketCors"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_cors_configuration",
-      "update",
-      [
+        ],
         [
           "s3",
           "GetBucketCors"
-        ],
-        [
-          "s3",
-          "PutBucketCors"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_intelligent_tiering_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketIntelligentTieringConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketIntelligentTieringConfiguration"
         ]
       ]
     ],
@@ -503,47 +305,10 @@
         [
           "s3",
           "DeleteBucketIntelligentTieringConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_intelligent_tiering_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketIntelligentTieringConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_intelligent_tiering_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketIntelligentTieringConfiguration"
         ],
         [
           "s3",
-          "PutBucketIntelligentTieringConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_inventory",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketInventoryConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketInventoryConfiguration"
+          "GetBucketIntelligentTieringConfiguration"
         ]
       ]
     ],
@@ -555,99 +320,10 @@
         [
           "s3",
           "DeleteBucketInventoryConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_inventory",
-      "read",
-      [
+        ],
         [
           "s3",
           "GetBucketInventoryConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_inventory",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketInventoryConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketInventoryConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "PutBucketLogging"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "delete",
-      [
-        [
-          "s3",
-          "PutBucketLogging"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "PutBucketLogging"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_metric",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketMetricsConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketMetricsConfiguration"
         ]
       ]
     ],
@@ -659,84 +335,10 @@
         [
           "s3",
           "DeleteBucketMetricsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_metric",
-      "read",
-      [
+        ],
         [
           "s3",
           "GetBucketMetricsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_metric",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketMetricsConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketMetricsConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_notification",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketNotificationConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketNotificationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_notification",
-      "delete",
-      [
-        [
-          "s3",
-          "PutBucketNotificationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_notification",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketNotificationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_notification",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketNotificationConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketNotificationConfiguration"
         ]
       ]
     ],
@@ -748,10 +350,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -773,10 +371,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "GetObjectTagging"
         ],
@@ -794,10 +388,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -832,44 +422,7 @@
     [
       "resource",
       "aws_s3_bucket_object_lock_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "PutObjectLockConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_object_lock_configuration",
       "delete",
-      [
-        [
-          "s3",
-          "PutObjectLockConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_object_lock_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetObjectLockConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_object_lock_configuration",
-      "update",
       [
         [
           "s3",
@@ -884,164 +437,30 @@
     [
       "resource",
       "aws_s3_bucket_ownership_controls",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "PutBucketOwnershipControls"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_ownership_controls",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketOwnershipControls"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_ownership_controls",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "PutBucketOwnershipControls"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_request_payment_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketRequestPayment"
-        ],
-        [
-          "s3",
-          "PutBucketRequestPayment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_request_payment_configuration",
       "delete",
       [
         [
           "s3",
-          "PutBucketRequestPayment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_request_payment_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketRequestPayment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_request_payment_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketRequestPayment"
+          "DeleteBucketOwnershipControls"
         ],
         [
           "s3",
-          "PutBucketRequestPayment"
+          "GetBucketOwnershipControls"
         ]
       ]
     ],
     [
       "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
-        ],
-        [
-          "s3",
-          "PutBucketEncryption"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
+      "aws_s3_bucket_policy",
       "delete",
       [
         [
           "s3",
-          "DeleteBucketEncryption"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
+          "DeleteBucketPolicy"
         ],
         [
           "s3",
-          "PutBucketEncryption"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_website_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketLocation"
-        ],
-        [
-          "s3",
-          "GetBucketWebsite"
-        ],
-        [
-          "s3",
-          "PutBucketWebsite"
+          "GetBucketPolicy"
         ]
       ]
     ],
@@ -1053,40 +472,10 @@
         [
           "s3",
           "DeleteBucketWebsite"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_website_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketLocation"
         ],
         [
           "s3",
           "GetBucketWebsite"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_website_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLocation"
-        ],
-        [
-          "s3",
-          "GetBucketWebsite"
-        ],
-        [
-          "s3",
-          "PutBucketWebsite"
         ]
       ]
     ]

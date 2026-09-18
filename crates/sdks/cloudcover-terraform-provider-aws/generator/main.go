@@ -832,6 +832,9 @@ func collectAPIMethods(index *packageIndex, roots []*ssa.Function, sdkMappings m
 			methods = append(methods, apiMethodsForSDKKey(key, sdkMappings)...)
 		}
 		methods = append(methods, collectDirectSDKAPIMethods(index, fn, sdkMappings)...)
+		// The static call graph omits some calls inside range-over-function iterators.
+		// Preserve those provider-local edges from the type-checked AST.
+		queue = append(queue, collectDirectLocalCallees(index, fn)...)
 		queue = append(queue, index.nestedFuncs[fn]...)
 		queue = append(queue, index.callers[fn]...)
 	}
@@ -855,6 +858,38 @@ func expandRootFunctions(index *packageIndex, roots []*ssa.Function) []*ssa.Func
 		})
 	}
 	return expanded
+}
+
+func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) []*ssa.Function {
+	if fn == nil || fn.Syntax() == nil {
+		return nil
+	}
+	ssaPkg := fn.Package()
+	if ssaPkg == nil || ssaPkg.Pkg == nil {
+		return nil
+	}
+	if !strings.HasPrefix(ssaPkg.Pkg.Path(), providerModulePath+"/") {
+		return nil
+	}
+	sourcePkg := index.byPath[ssaPkg.Pkg.Path()]
+	if sourcePkg == nil {
+		return nil
+	}
+
+	var callees []*ssa.Function
+	ast.Inspect(fn.Syntax(), func(node ast.Node) bool {
+		callExpr, ok := node.(*ast.CallExpr)
+		if !ok {
+			return true
+		}
+		obj := calledFunctionObject(sourcePkg, callExpr)
+		if obj != nil && obj.Pkg() != nil &&
+			strings.HasPrefix(obj.Pkg().Path(), providerModulePath+"/") {
+			callees = append(callees, index.ssaFuncs[obj]...)
+		}
+		return true
+	})
+	return callees
 }
 
 func collectDirectSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod) []apiMethod {
@@ -961,11 +996,7 @@ func sdkKeyForObject(obj *types.Func) (sdkMethodKey, bool) {
 	if !ok {
 		return sdkMethodKey{}, false
 	}
-	receiver := receiverName(signature)
-	if receiver == "" {
-		return sdkMethodKey{}, false
-	}
-	return sdkMethodKey{pkg: obj.Pkg().Path(), receiver: receiver, method: obj.Name()}, true
+	return sdkKeyForCallable(obj.Pkg().Path(), receiverName(signature), obj.Name())
 }
 
 func sdkKeyForFunction(fn *ssa.Function) (sdkMethodKey, bool) {
@@ -976,11 +1007,27 @@ func sdkKeyForFunction(fn *ssa.Function) (sdkMethodKey, bool) {
 	if pkg == nil || pkg.Pkg == nil {
 		return sdkMethodKey{}, false
 	}
-	receiver := receiverName(fn.Signature)
-	if receiver == "" {
+	return sdkKeyForCallable(pkg.Pkg.Path(), receiverName(fn.Signature), fn.Name())
+}
+
+func sdkKeyForCallable(pkg, receiver, method string) (sdkMethodKey, bool) {
+	if receiver != "" {
+		return sdkMethodKey{pkg: pkg, receiver: receiver, method: method}, true
+	}
+
+	const awsSDKGoV2ServicePrefix = "github.com/aws/aws-sdk-go-v2/service/"
+	if service, ok := strings.CutPrefix(pkg, awsSDKGoV2ServicePrefix); !ok || service == "" || strings.ContainsRune(service, '/') {
 		return sdkMethodKey{}, false
 	}
-	return sdkMethodKey{pkg: pkg.Pkg.Path(), receiver: receiver, method: fn.Name()}, true
+	operation, ok := strings.CutPrefix(method, "New")
+	if !ok {
+		return sdkMethodKey{}, false
+	}
+	operation, ok = strings.CutSuffix(operation, "Paginator")
+	if !ok || operation == "" {
+		return sdkMethodKey{}, false
+	}
+	return sdkMethodKey{pkg: pkg, receiver: "Client", method: operation}, true
 }
 
 func receiverName(signature *types.Signature) string {

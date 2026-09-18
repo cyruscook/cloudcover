@@ -3,17 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_iam_group",
-      "read",
-      [
-        [
-          "iam",
-          "GetGroup"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_dx_hosted_transit_virtual_interface",
       "create",
@@ -25,10 +14,6 @@
         [
           "directconnect",
           "DescribeVirtualInterfaces"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -44,10 +29,6 @@
         [
           "directconnect",
           "DescribeVirtualInterfaces"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -90,10 +71,6 @@
         [
           "directconnect",
           "UpdateVirtualInterfaceAttributes"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -115,10 +92,6 @@
         [
           "directconnect",
           "DescribeVirtualInterfaces"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -146,10 +119,6 @@
         [
           "directconnect",
           "UpdateVirtualInterfaceAttributes"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -169,10 +138,6 @@
         [
           "directconnect",
           "DescribeVirtualInterfaces"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -192,10 +157,6 @@
         [
           "directconnect",
           "DescribeVirtualInterfaces"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -211,10 +172,6 @@
         [
           "ec2",
           "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -234,10 +191,6 @@
         [
           "ec2",
           "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -253,10 +206,6 @@
         [
           "ec2",
           "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -276,10 +225,6 @@
         [
           "ec2",
           "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

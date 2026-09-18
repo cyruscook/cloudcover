@@ -10,10 +10,6 @@
         [
           "appconfig",
           "GetConfigurationProfile"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -36,10 +32,6 @@
         [
           "appconfig",
           "GetEnvironment"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -92,10 +84,6 @@
         [
           "cloudwatchevidently",
           "GetProject"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -107,10 +95,6 @@
         [
           "cloudwatchevidently",
           "DeleteProject"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -122,10 +106,6 @@
         [
           "cloudwatchevidently",
           "GetProject"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -145,10 +125,6 @@
         [
           "cloudwatchevidently",
           "UpdateProjectDataDelivery"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -168,21 +144,6 @@
         [
           "networkfirewall",
           "SetAction"
-        ],
-        [
-          "networkfirewall",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_firewall_policy",
-      "delete",
-      [
-        [
-          "networkfirewall",
-          "DeleteFirewallPolicy"
         ]
       ]
     ],
@@ -202,54 +163,6 @@
         [
           "networkfirewall",
           "UpdateFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_ip_set",
-      "delete",
-      [
-        [
-          "wafv2",
-          "DeleteIPSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_regex_pattern_set",
-      "delete",
-      [
-        [
-          "wafv2",
-          "DeleteRegexPatternSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_rule_group",
-      "delete",
-      [
-        [
-          "wafv2",
-          "DeleteRuleGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "delete",
-      [
-        [
-          "wafv2",
-          "DeleteWebACL"
         ]
       ]
     ]

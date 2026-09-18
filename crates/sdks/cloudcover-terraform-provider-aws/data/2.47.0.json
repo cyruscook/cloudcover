@@ -4,21 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_api_gateway_rest_api",
-      "read",
-      [
-        [
-          "apigateway",
-          "GetResources"
-        ],
-        [
-          "apigateway",
-          "GetRestApis"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_efs_file_system",
       "read",
       [
@@ -29,10 +14,6 @@
         [
           "efs",
           "DescribeLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -56,10 +37,6 @@
         [
           "efs",
           "PutLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -75,10 +52,6 @@
         [
           "efs",
           "DescribeLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -110,10 +83,6 @@
         [
           "efs",
           "UpdateFileSystem"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -145,10 +114,6 @@
         [
           "storagegateway",
           "UpdateGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ]

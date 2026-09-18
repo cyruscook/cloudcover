@@ -105,6 +105,8 @@ fn emits_full_lifecycle_policy_for_initialized_terraform_modules() -> Result<(),
     );
     let actions = collect_actions(&parse_stdout_json(&output)?)?;
     for action in [
+        "ecr:DescribeImages",
+        "ecr:DescribeRepositories",
         "s3:CreateBucket",
         "s3:DeleteBucket",
         "s3:PutBucketPolicy",

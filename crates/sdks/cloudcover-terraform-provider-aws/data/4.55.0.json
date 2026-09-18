@@ -30,74 +30,6 @@
     ],
     [
       "resource",
-      "aws_elastic_beanstalk_environment",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "TerminateEnvironment"
-        ],
-        [
-          "elasticbeanstalk",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "create",
-      [
-        [
-          "kms",
-          "CreateGrant"
-        ],
-        [
-          "kms",
-          "ListGrants"
-        ],
-        [
-          "kms",
-          "SetEncryptionContextEquals"
-        ],
-        [
-          "kms",
-          "SetEncryptionContextSubset"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "delete",
-      [
-        [
-          "kms",
-          "RetireGrant"
-        ],
-        [
-          "kms",
-          "RevokeGrant"
-        ],
-        [
-          "kms",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "read",
-      [
-        [
-          "kms",
-          "ListGrants"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_neptune_cluster",
       "create",
       [
@@ -124,10 +56,6 @@
         [
           "neptune",
           "RestoreDBClusterFromSnapshot"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -142,56 +70,15 @@
         ],
         [
           "neptune",
-          "RemoveFromGlobalCluster"
+          "DescribeDBClusters"
         ],
         [
           "neptune",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_global_cluster",
-      "delete",
-      [
-        [
-          "neptune",
-          "DeleteGlobalCluster"
+          "DescribeGlobalClusters"
         ],
         [
           "neptune",
           "RemoveFromGlobalCluster"
-        ],
-        [
-          "neptune",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBClusterEndpoint"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
         ]
       ]
     ],
@@ -207,10 +94,6 @@
         [
           "ec2",
           "DescribeIpamResourceDiscoveries"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -225,7 +108,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeIpamResourceDiscoveries"
         ]
       ]
     ],
@@ -247,11 +130,11 @@
       [
         [
           "ec2",
-          "ModifyIpamResourceDiscovery"
+          "DescribeIpamResourceDiscoveries"
         ],
         [
           "ec2",
-          "new"
+          "ModifyIpamResourceDiscovery"
         ]
       ]
     ],
@@ -267,10 +150,6 @@
         [
           "ec2",
           "DescribeIpamResourceDiscoveryAssociations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -281,11 +160,11 @@
       [
         [
           "ec2",
-          "DisassociateIpamResourceDiscovery"
+          "DescribeIpamResourceDiscoveryAssociations"
         ],
         [
           "ec2",
-          "new"
+          "DisassociateIpamResourceDiscovery"
         ]
       ]
     ],

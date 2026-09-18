@@ -14,10 +14,6 @@
         [
           "cloudfront",
           "ListOriginRequestPolicies"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "cloudfront",
           "GetOriginRequestPolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "cloudfront",
           "DeleteOriginRequestPolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -63,10 +51,6 @@
         [
           "cloudfront",
           "GetOriginRequestPolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -82,10 +66,6 @@
         [
           "cloudfront",
           "UpdateOriginRequestPolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -97,14 +77,6 @@
         [
           "ec2",
           "CreateTransitGatewayPrefixListReference"
-        ],
-        [
-          "ec2",
-          "GetTransitGatewayPrefixListReferences"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -116,10 +88,6 @@
         [
           "ec2",
           "DeleteTransitGatewayPrefixListReference"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -127,12 +95,7 @@
       "resource",
       "aws_ec2_transit_gateway_prefix_list_reference",
       "read",
-      [
-        [
-          "ec2",
-          "GetTransitGatewayPrefixListReferences"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -141,15 +104,7 @@
       [
         [
           "ec2",
-          "GetTransitGatewayPrefixListReferences"
-        ],
-        [
-          "ec2",
           "ModifyTransitGatewayPrefixListReference"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -164,15 +119,7 @@
         ],
         [
           "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -188,14 +135,6 @@
         [
           "route53",
           "DeleteKeySigningKey"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -207,10 +146,6 @@
         [
           "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -229,15 +164,7 @@
         ],
         [
           "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ]

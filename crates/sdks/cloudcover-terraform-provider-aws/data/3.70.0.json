@@ -25,10 +25,6 @@
         [
           "connect",
           "ListHoursOfOperations"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -66,10 +62,6 @@
         [
           "connect",
           "DisassociateBot"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -96,10 +88,6 @@
         [
           "connect",
           "DescribeHoursOfOperation"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -111,10 +99,6 @@
         [
           "connect",
           "DeleteHoursOfOperation"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -126,10 +110,6 @@
         [
           "connect",
           "DescribeHoursOfOperation"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -153,10 +133,6 @@
         [
           "connect",
           "UpdateHoursOfOperation"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -172,10 +148,6 @@
         [
           "connect",
           "ListLambdaFunctions"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -187,10 +159,6 @@
         [
           "connect",
           "DisassociateLambdaFunction"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -245,10 +213,6 @@
         [
           "dynamodb",
           "UpdateTimeToLive"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -264,10 +228,6 @@
         [
           "ecr",
           "DescribePullThroughCacheRules"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -279,10 +239,6 @@
         [
           "ecr",
           "DeletePullThroughCacheRule"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -294,10 +250,6 @@
         [
           "ecr",
           "DescribePullThroughCacheRules"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -313,10 +265,6 @@
         [
           "ecr",
           "PutRegistryScanningConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -328,10 +276,6 @@
         [
           "ecr",
           "PutRegistryScanningConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -343,10 +287,6 @@
         [
           "ecr",
           "GetRegistryScanningConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -362,10 +302,6 @@
         [
           "ecr",
           "PutRegistryScanningConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -381,10 +317,6 @@
         [
           "ecrpublic",
           "SetRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -396,10 +328,6 @@
         [
           "ecrpublic",
           "DeleteRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -411,10 +339,6 @@
         [
           "ecrpublic",
           "GetRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -430,10 +354,6 @@
         [
           "ecrpublic",
           "SetRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -444,11 +364,11 @@
       [
         [
           "emr",
-          "TerminateJobFlows"
+          "DescribeCluster"
         ],
         [
           "emr",
-          "new"
+          "TerminateJobFlows"
         ]
       ]
     ],
@@ -463,29 +383,27 @@
         ],
         [
           "iam",
+          "GetRole"
+        ],
+        [
+          "iam",
           "TagRole"
         ],
         [
           "iam",
           "UntagRole"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_iam_service_linked_role",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_service_linked_role",
       "update",
       [
+        [
+          "iam",
+          "GetRole"
+        ],
         [
           "iam",
           "TagRole"
@@ -497,141 +415,6 @@
         [
           "iam",
           "UpdateRole"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_policy",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "create",
-      [
-        [
-          "sqs",
-          "CreateQueue"
-        ],
-        [
-          "sqs",
-          "ListQueueTags"
-        ],
-        [
-          "sqs",
-          "TagQueue"
-        ],
-        [
-          "sqs",
-          "UntagQueue"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "read",
-      [
-        [
-          "sqs",
-          "ListQueueTags"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "update",
-      [
-        [
-          "sqs",
-          "ListQueueTags"
-        ],
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "TagQueue"
-        ],
-        [
-          "sqs",
-          "UntagQueue"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "create",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "delete",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "new"
         ]
       ]
     ]

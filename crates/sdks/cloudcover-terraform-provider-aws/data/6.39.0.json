@@ -6,13 +6,23 @@
       "data_source",
       "aws_iam_role_policies",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListRolePolicies"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_iam_role_policy_attachments",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -29,37 +39,83 @@
       "data_source",
       "aws_uxc_services",
       "read",
-      []
+      [
+        [
+          "uxc",
+          "ListServices"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eks_cluster",
       "list",
-      []
+      [
+        [
+          "eks",
+          "DescribeCluster"
+        ],
+        [
+          "eks",
+          "ListClusters"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_organizations_aws_service_access",
       "list",
-      []
+      [
+        [
+          "organizations",
+          "ListAWSServiceAccessForOrganization"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sagemaker_training_job",
       "list",
-      []
+      [
+        [
+          "sagemaker",
+          "DescribeTrainingJob"
+        ],
+        [
+          "sagemaker",
+          "ListTrainingJobs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_workmail_group",
       "list",
-      []
+      [
+        [
+          "workmail",
+          "DescribeGroup"
+        ],
+        [
+          "workmail",
+          "ListGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_workmail_user",
       "list",
-      []
+      [
+        [
+          "workmail",
+          "DescribeUser"
+        ],
+        [
+          "workmail",
+          "ListUsers"
+        ]
+      ]
     ],
     [
       "resource",
@@ -69,6 +125,10 @@
         [
           "organizations",
           "EnableAWSServiceAccess"
+        ],
+        [
+          "organizations",
+          "ListAWSServiceAccessForOrganization"
         ]
       ]
     ],
@@ -87,7 +147,12 @@
       "resource",
       "aws_organizations_aws_service_access",
       "read",
-      []
+      [
+        [
+          "organizations",
+          "ListAWSServiceAccessForOrganization"
+        ]
+      ]
     ],
     [
       "resource",
@@ -103,6 +168,10 @@
         [
           "sagemaker",
           "CreateTrainingJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeTrainingJob"
         ]
       ]
     ],
@@ -118,6 +187,14 @@
         [
           "sagemaker",
           "DeleteTrainingJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeTrainingJob"
+        ],
+        [
+          "sagemaker",
+          "ListModelPackages"
         ],
         [
           "sagemaker",
@@ -203,6 +280,10 @@
         [
           "workmail",
           "CreateGroup"
+        ],
+        [
+          "workmail",
+          "DescribeGroup"
         ],
         [
           "workmail",

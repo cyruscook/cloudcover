@@ -4,114 +4,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_ami",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ami_ids",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "String"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_lbs",
       "read",
       [
         [
           "elbv2",
           "DescribeLoadBalancers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_target_group",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_target_group",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroup"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroup"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -164,17 +62,6 @@
         [
           "sesv2",
           "UpdateConfigurationSetEventDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_connection_notification",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpointConnectionNotifications"
         ]
       ]
     ]

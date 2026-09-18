@@ -12,6 +12,40 @@
           "GetIdentityNotificationAttributes"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_dynamodb_tag",
+      "delete",
+      [
+        [
+          "dynamodb",
+          "ListTagsOfResource"
+        ],
+        [
+          "dynamodb",
+          "TagResource"
+        ],
+        [
+          "dynamodb",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_account_public_access_block",
+      "delete",
+      [
+        [
+          "s3control",
+          "DeletePublicAccessBlock"
+        ],
+        [
+          "s3control",
+          "GetPublicAccessBlock"
+        ]
+      ]
     ]
   ]
 }

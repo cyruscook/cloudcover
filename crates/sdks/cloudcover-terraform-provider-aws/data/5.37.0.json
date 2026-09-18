@@ -10,214 +10,6 @@
         [
           "rds",
           "DescribeDBParameterGroups"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_db_proxy",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain",
-      "create",
-      [
-        [
-          "cloudsearch",
-          "CreateDomain"
-        ],
-        [
-          "cloudsearch",
-          "DefineIndexField"
-        ],
-        [
-          "cloudsearch",
-          "DescribeAvailabilityOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomainEndpointOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomains"
-        ],
-        [
-          "cloudsearch",
-          "DescribeIndexFields"
-        ],
-        [
-          "cloudsearch",
-          "DescribeScalingParameters"
-        ],
-        [
-          "cloudsearch",
-          "IndexDocuments"
-        ],
-        [
-          "cloudsearch",
-          "UpdateAvailabilityOptions"
-        ],
-        [
-          "cloudsearch",
-          "UpdateDomainEndpointOptions"
-        ],
-        [
-          "cloudsearch",
-          "UpdateScalingParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain",
-      "delete",
-      [
-        [
-          "cloudsearch",
-          "DeleteDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain",
-      "read",
-      [
-        [
-          "cloudsearch",
-          "DescribeAvailabilityOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomainEndpointOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomains"
-        ],
-        [
-          "cloudsearch",
-          "DescribeIndexFields"
-        ],
-        [
-          "cloudsearch",
-          "DescribeScalingParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain",
-      "update",
-      [
-        [
-          "cloudsearch",
-          "DefineIndexField"
-        ],
-        [
-          "cloudsearch",
-          "DeleteIndexField"
-        ],
-        [
-          "cloudsearch",
-          "DescribeAvailabilityOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomainEndpointOptions"
-        ],
-        [
-          "cloudsearch",
-          "DescribeDomains"
-        ],
-        [
-          "cloudsearch",
-          "DescribeIndexFields"
-        ],
-        [
-          "cloudsearch",
-          "DescribeScalingParameters"
-        ],
-        [
-          "cloudsearch",
-          "IndexDocuments"
-        ],
-        [
-          "cloudsearch",
-          "UpdateAvailabilityOptions"
-        ],
-        [
-          "cloudsearch",
-          "UpdateDomainEndpointOptions"
-        ],
-        [
-          "cloudsearch",
-          "UpdateScalingParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain_service_access_policy",
-      "create",
-      [
-        [
-          "cloudsearch",
-          "DescribeServiceAccessPolicies"
-        ],
-        [
-          "cloudsearch",
-          "UpdateServiceAccessPolicies"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain_service_access_policy",
-      "delete",
-      [
-        [
-          "cloudsearch",
-          "UpdateServiceAccessPolicies"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain_service_access_policy",
-      "read",
-      [
-        [
-          "cloudsearch",
-          "DescribeServiceAccessPolicies"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudsearch_domain_service_access_policy",
-      "update",
-      [
-        [
-          "cloudsearch",
-          "DescribeServiceAccessPolicies"
-        ],
-        [
-          "cloudsearch",
-          "UpdateServiceAccessPolicies"
         ]
       ]
     ],
@@ -269,10 +61,6 @@
         [
           "datasync",
           "SetVerified"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -324,230 +112,6 @@
         [
           "datasync",
           "UpdateTask"
-        ],
-        [
-          "datasync",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
-      "create",
-      [
-        [
-          "rds",
-          "CreateEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
-      "update",
-      [
-        [
-          "rds",
-          "AddSourceIdentifierToSubscription"
-        ],
-        [
-          "rds",
-          "ModifyEventSubscription"
-        ],
-        [
-          "rds",
-          "RemoveSourceIdentifierFromSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBProxy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBProxy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBProxy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "create",
-      [
-        [
-          "rds",
-          "ModifyDBProxyTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBProxyTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "create",
-      [
-        [
-          "rds",
-          "RegisterDBProxyTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "delete",
-      [
-        [
-          "rds",
-          "DeregisterDBProxyTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBSubnetGroup"
         ]
       ]
     ],
@@ -563,10 +127,6 @@
         [
           "ecr",
           "UpdatePullThroughCacheRule"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -586,10 +146,6 @@
         [
           "iam",
           "RemoveUserFromGroup"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -605,10 +161,6 @@
         [
           "ram",
           "EnableSharingWithAwsOrganization"
-        ],
-        [
-          "ram",
-          "new"
         ]
       ]
     ],
@@ -620,10 +172,6 @@
         [
           "organizations",
           "DisableAWSServiceAccess"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -635,36 +183,6 @@
         [
           "organizations",
           "ListAWSServiceAccessForOrganization"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_product",
-      "create",
-      [
-        [
-          "servicecatalog",
-          "CreateProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_product",
-      "update",
-      [
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ],
-        [
-          "servicecatalog",
-          "UpdateProduct"
         ]
       ]
     ]

@@ -15,52 +15,6 @@
     ],
     [
       "resource",
-      "aws_appsync_graphql_api",
-      "create",
-      [
-        [
-          "appsync",
-          "CreateGraphqlApi"
-        ],
-        [
-          "appsync",
-          "GetGraphqlApi"
-        ],
-        [
-          "appsync",
-          "StartSchemaCreation"
-        ],
-        [
-          "appsync",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appsync_graphql_api",
-      "update",
-      [
-        [
-          "appsync",
-          "GetGraphqlApi"
-        ],
-        [
-          "appsync",
-          "StartSchemaCreation"
-        ],
-        [
-          "appsync",
-          "UpdateGraphqlApi"
-        ],
-        [
-          "appsync",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_autoscaling_group",
       "update",
       [
@@ -78,11 +32,23 @@
         ],
         [
           "autoscaling",
+          "CancelInstanceRefresh"
+        ],
+        [
+          "autoscaling",
           "DeleteWarmPool"
         ],
         [
           "autoscaling",
           "DescribeAutoScalingGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
+        [
+          "autoscaling",
+          "DescribeTrafficSources"
         ],
         [
           "autoscaling",
@@ -125,8 +91,12 @@
           "UpdateAutoScalingGroup"
         ],
         [
-          "autoscaling",
-          "new"
+          "elb",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elbv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
@@ -142,10 +112,6 @@
         [
           "autoscaling",
           "DescribeTrafficSources"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -156,11 +122,11 @@
       [
         [
           "autoscaling",
-          "DetachTrafficSources"
+          "DescribeTrafficSources"
         ],
         [
           "autoscaling",
-          "new"
+          "DetachTrafficSources"
         ]
       ]
     ],
@@ -177,21 +143,6 @@
     ],
     [
       "resource",
-      "aws_connect_instance",
-      "delete",
-      [
-        [
-          "connect",
-          "DeleteInstance"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_emrcontainers_job_template",
       "create",
       [
@@ -202,10 +153,6 @@
         [
           "emrcontainers",
           "DescribeJobTemplate"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -217,10 +164,6 @@
         [
           "emrcontainers",
           "DeleteJobTemplate"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -232,10 +175,6 @@
         [
           "emrcontainers",
           "DescribeJobTemplate"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -251,10 +190,6 @@
         [
           "glue",
           "GetDataQualityRuleset"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -266,10 +201,6 @@
         [
           "glue",
           "DeleteDataQualityRuleset"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -281,10 +212,6 @@
         [
           "glue",
           "GetDataQualityRuleset"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -300,10 +227,6 @@
         [
           "glue",
           "UpdateDataQualityRuleset"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -315,10 +238,6 @@
         [
           "lambda",
           "Invoke"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -330,10 +249,6 @@
         [
           "lambda",
           "Invoke"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -357,10 +272,6 @@
         [
           "quicksight",
           "DescribeAnalysisPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -372,10 +283,6 @@
         [
           "quicksight",
           "DeleteAnalysis"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -395,10 +302,6 @@
         [
           "quicksight",
           "DescribeAnalysisPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -426,10 +329,6 @@
         [
           "quicksight",
           "UpdateAnalysisPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -453,10 +352,6 @@
         [
           "quicksight",
           "DescribeDashboardPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -468,10 +363,6 @@
         [
           "quicksight",
           "DeleteDashboard"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -491,10 +382,6 @@
         [
           "quicksight",
           "DescribeDashboardPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -526,10 +413,6 @@
         [
           "quicksight",
           "UpdateDashboardPublishedVersion"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -545,10 +428,6 @@
         [
           "resourcegroups",
           "ListGroupResources"
-        ],
-        [
-          "resourcegroups",
-          "new"
         ]
       ]
     ],
@@ -559,11 +438,11 @@
       [
         [
           "resourcegroups",
-          "UngroupResources"
+          "ListGroupResources"
         ],
         [
           "resourcegroups",
-          "new"
+          "UngroupResources"
         ]
       ]
     ],
@@ -575,36 +454,6 @@
         [
           "resourcegroups",
           "ListGroupResources"
-        ],
-        [
-          "resourcegroups",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_vpc_association_authorization",
-      "delete",
-      [
-        [
-          "route53",
-          "DeleteVPCAssociationAuthorization"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_replication_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketReplication"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ]

@@ -28,79 +28,184 @@
       "list_resource",
       "aws_apigatewayv2_api",
       "list",
-      []
+      [
+        [
+          "apigatewayv2",
+          "GetApis"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_log_metric_filter",
       "list",
-      []
+      [
+        [
+          "cloudwatchlogs",
+          "DescribeMetricFilters"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_config_remediation_configuration",
       "list",
-      []
+      [
+        [
+          "configservice",
+          "DescribeRemediationConfigurations"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ebs_volume",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eip",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeAddresses"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_user_policy_attachment",
       "list",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedUserPolicies"
+        ],
+        [
+          "iam",
+          "ListUsers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_internet_gateway",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInternetGateways"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_layer_version",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetLayerVersion"
+        ],
+        [
+          "lambda",
+          "ListLayerVersions"
+        ],
+        [
+          "lambda",
+          "ListLayers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_launch_template",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInstanceTypes"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplateVersions"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplates"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_route53_zone",
       "list",
-      []
+      [
+        [
+          "route53",
+          "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListHostedZones"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
+        ],
+        [
+          "route53",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sagemaker_hyper_parameter_tuning_job",
       "list",
-      []
+      [
+        [
+          "sagemaker",
+          "DescribeHyperParameterTuningJob"
+        ],
+        [
+          "sagemaker",
+          "ListHyperParameterTuningJobs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sqs_queue_policy",
       "list",
-      []
+      [
+        [
+          "sqs",
+          "GetQueueAttributes"
+        ],
+        [
+          "sqs",
+          "ListQueues"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_volume_attachment",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
+        ]
+      ]
     ],
     [
       "resource",
@@ -157,6 +262,10 @@
         [
           "ec2",
           "CopyVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
         ]
       ]
     ],
@@ -168,6 +277,10 @@
         [
           "ec2",
           "DeleteVolume"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
         ]
       ]
     ],
@@ -175,13 +288,22 @@
       "resource",
       "aws_ebs_volume_copy",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_ebs_volume_copy",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
         [
           "ec2",
           "ModifyVolume"
@@ -210,6 +332,10 @@
         ],
         [
           "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ],
+        [
+          "networkmanager",
           "PutAttachmentRoutingPolicyLabel"
         ],
         [
@@ -225,6 +351,10 @@
       [
         [
           "odb",
+          "GetOdbPeeringConnection"
+        ],
+        [
+          "odb",
           "UpdateOdbPeeringConnection"
         ]
       ]
@@ -234,6 +364,10 @@
       "aws_rds_integration",
       "update",
       [
+        [
+          "rds",
+          "DescribeIntegrations"
+        ],
         [
           "rds",
           "ModifyIntegration"
@@ -248,6 +382,10 @@
         [
           "sagemaker",
           "CreateHyperParameterTuningJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeHyperParameterTuningJob"
         ]
       ]
     ],
@@ -259,6 +397,10 @@
         [
           "sagemaker",
           "DeleteHyperParameterTuningJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeHyperParameterTuningJob"
         ],
         [
           "sagemaker",

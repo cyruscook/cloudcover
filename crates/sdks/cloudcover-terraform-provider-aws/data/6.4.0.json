@@ -65,6 +65,10 @@
         [
           "fsx",
           "CreateAndAttachS3AccessPoint"
+        ],
+        [
+          "fsx",
+          "DescribeS3AccessPointAttachments"
         ]
       ]
     ],
@@ -75,6 +79,10 @@
       [
         [
           "fsx",
+          "DescribeS3AccessPointAttachments"
+        ],
+        [
+          "fsx",
           "DetachAndDeleteS3AccessPoint"
         ]
       ]
@@ -83,7 +91,12 @@
       "resource",
       "aws_fsx_s3_access_point_attachment",
       "read",
-      []
+      [
+        [
+          "fsx",
+          "DescribeS3AccessPointAttachments"
+        ]
+      ]
     ],
     [
       "resource",

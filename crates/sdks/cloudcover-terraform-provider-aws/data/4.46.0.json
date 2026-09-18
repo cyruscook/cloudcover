@@ -14,10 +14,6 @@
         [
           "glue",
           "GetTable"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -61,10 +57,6 @@
         [
           "networkfirewall",
           "UpdateSubnetChangeProtection"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -84,10 +76,6 @@
         [
           "networkmanager",
           "GetCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -102,7 +90,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetCoreNetwork"
         ]
       ]
     ],
@@ -118,10 +106,6 @@
         [
           "networkmanager",
           "GetCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -149,10 +133,6 @@
         [
           "networkmanager",
           "UpdateCoreNetwork"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -168,10 +148,6 @@
         [
           "cloudwatchrum",
           "UpdateAppMonitor"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -187,10 +163,6 @@
         [
           "cloudwatchrum",
           "PutRumMetricsDestination"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -202,10 +174,6 @@
         [
           "cloudwatchrum",
           "DeleteRumMetricsDestination"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -232,10 +200,6 @@
         [
           "cloudwatchrum",
           "PutRumMetricsDestination"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -244,6 +208,10 @@
       "aws_vpc_network_performance_metric_subscription",
       "create",
       [
+        [
+          "ec2",
+          "DescribeAwsNetworkPerformanceMetricSubscriptions"
+        ],
         [
           "ec2",
           "EnableAwsNetworkPerformanceMetricSubscription"
@@ -265,7 +233,12 @@
       "resource",
       "aws_vpc_network_performance_metric_subscription",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeAwsNetworkPerformanceMetricSubscriptions"
+        ]
+      ]
     ]
   ]
 }

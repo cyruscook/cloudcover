@@ -24,39 +24,6 @@
   ],
   "upsert": [
     [
-      "data_source",
-      "aws_dms_endpoint",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeEndpoints"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_dms_replication_instance",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeReplicationInstances"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_dms_replication_subnet_group",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeReplicationSubnetGroups"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_datasync_location_azure_blob",
       "create",
@@ -68,10 +35,6 @@
         [
           "datasync",
           "DescribeLocationAzureBlob"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -83,10 +46,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -98,10 +57,6 @@
         [
           "datasync",
           "DescribeLocationAzureBlob"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -117,10 +72,6 @@
         [
           "datasync",
           "UpdateLocationAzureBlob"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -136,10 +87,6 @@
         [
           "datasync",
           "DescribeLocationFsxOntap"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -151,10 +98,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -166,10 +109,6 @@
         [
           "datasync",
           "DescribeLocationFsxOntap"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -181,274 +120,6 @@
         [
           "datasync",
           "DescribeLocationFsxOntap"
-        ],
-        [
-          "datasync",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_endpoint",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateEndpoint"
-        ],
-        [
-          "databasemigrationservice",
-          "DescribeEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_endpoint",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationInstance"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeReplicationInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateReplicationSubnetGroup"
-        ],
-        [
-          "databasemigrationservice",
-          "DescribeReplicationSubnetGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeReplicationSubnetGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_s3_endpoint",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_path",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInsightsPath"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "CreateAccountAssignment"
-        ],
-        [
-          "ssoadmin",
-          "ListAccountAssignments"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeleteAccountAssignment"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachCustomerManagedPolicyReferenceToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ListCustomerManagedPolicyReferencesInPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DetachCustomerManagedPolicyReferenceFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachManagedPolicyToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ListManagedPoliciesInPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DetachManagedPolicyFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set",
-      "update",
-      [
-        [
-          "ssoadmin",
-          "DescribePermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "UpdatePermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "GetInlinePolicyForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutInlinePolicyToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -463,76 +134,11 @@
         ],
         [
           "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permission_set_inline_policy",
-      "update",
-      [
-        [
-          "ssoadmin",
-          "GetInlinePolicyForPermissionSet"
+          "DescribePermissionSetProvisioningStatus"
         ],
         [
           "ssoadmin",
           "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutInlinePolicyToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permissions_boundary_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "GetPermissionsBoundaryForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "PutPermissionsBoundaryToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_permissions_boundary_attachment",
-      "delete",
-      [
-        [
-          "ssoadmin",
-          "DeletePermissionsBoundaryFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ]

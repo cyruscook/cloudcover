@@ -414,21 +414,6 @@
   ],
   "upsert": [
     [
-      "data_source",
-      "aws_launch_configuration",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_appsync_type",
       "create",
@@ -440,10 +425,6 @@
         [
           "appsync",
           "GetType"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -455,10 +436,6 @@
         [
           "appsync",
           "DeleteType"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -470,10 +447,6 @@
         [
           "appsync",
           "GetType"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -489,10 +462,6 @@
         [
           "appsync",
           "UpdateType"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -507,15 +476,15 @@
         ],
         [
           "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
           "StartInstances"
         ],
         [
           "ec2",
           "StopInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -533,10 +502,6 @@
         [
           "ec2",
           "DescribeInstanceStatus"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -551,60 +516,15 @@
         ],
         [
           "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
           "StartInstances"
         ],
         [
           "ec2",
           "StopInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group_association",
-      "delete",
-      [
-        [
-          "elasticache",
-          "ModifyUserGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_configuration",
-      "create",
-      [
-        [
-          "autoscaling",
-          "CreateLaunchConfiguration"
-        ],
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_configuration",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
         ]
       ]
     ],
@@ -624,10 +544,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -643,10 +559,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -658,10 +570,6 @@
         [
           "lightsail",
           "GetBuckets"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -681,10 +589,6 @@
         [
           "lightsail",
           "UpdateBucketBundle"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -708,10 +612,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -739,25 +639,6 @@
         [
           "lightsail",
           "SetIpAddressType"
-        ],
-        [
-          "lightsail",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequests"
         ]
       ]
     ],
@@ -773,10 +654,6 @@
         [
           "ssoadmin",
           "DescribeInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -788,10 +665,6 @@
         [
           "ssoadmin",
           "DeleteInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -803,10 +676,6 @@
         [
           "ssoadmin",
           "DescribeInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -822,10 +691,6 @@
         [
           "ssoadmin",
           "UpdateInstanceAccessControlAttributeConfiguration"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ]

@@ -10,32 +10,6 @@
         [
           "cloudfront",
           "GetCloudFrontOriginAccessIdentity"
-        ],
-        [
-          "cloudfront",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_nat_gateway",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNatGateways"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpc_dhcp_options",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeDhcpOptions"
         ]
       ]
     ],
@@ -47,10 +21,6 @@
         [
           "ec2",
           "AllocateIpamPoolCidr"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -66,10 +36,6 @@
         [
           "appsync",
           "GetApiCache"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -84,7 +50,7 @@
         ],
         [
           "appsync",
-          "new"
+          "GetApiCache"
         ]
       ]
     ],
@@ -96,10 +62,6 @@
         [
           "appsync",
           "GetApiCache"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -115,10 +77,6 @@
         [
           "appsync",
           "UpdateApiCache"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -134,10 +92,6 @@
         [
           "appsync",
           "GetDomainName"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -149,10 +103,6 @@
         [
           "appsync",
           "DeleteDomainName"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -164,10 +114,6 @@
         [
           "appsync",
           "GetDomainName"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -183,10 +129,6 @@
         [
           "appsync",
           "UpdateDomainName"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -202,10 +144,6 @@
         [
           "appsync",
           "GetApiAssociation"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -220,7 +158,7 @@
         ],
         [
           "appsync",
-          "new"
+          "GetApiAssociation"
         ]
       ]
     ],
@@ -232,10 +170,6 @@
         [
           "appsync",
           "GetApiAssociation"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -251,10 +185,6 @@
         [
           "appsync",
           "GetApiAssociation"
-        ],
-        [
-          "appsync",
-          "new"
         ]
       ]
     ],
@@ -306,10 +236,6 @@
         [
           "cloudsearch",
           "UpdateScalingParameters"
-        ],
-        [
-          "cloudsearch",
-          "new"
         ]
       ]
     ],
@@ -324,7 +250,7 @@
         ],
         [
           "cloudsearch",
-          "new"
+          "DescribeDomains"
         ]
       ]
     ],
@@ -352,10 +278,6 @@
         [
           "cloudsearch",
           "DescribeScalingParameters"
-        ],
-        [
-          "cloudsearch",
-          "new"
         ]
       ]
     ],
@@ -407,10 +329,6 @@
         [
           "cloudsearch",
           "UpdateScalingParameters"
-        ],
-        [
-          "cloudsearch",
-          "new"
         ]
       ]
     ],
@@ -426,10 +344,6 @@
         [
           "cloudsearch",
           "UpdateServiceAccessPolicies"
-        ],
-        [
-          "cloudsearch",
-          "new"
         ]
       ]
     ],
@@ -440,11 +354,11 @@
       [
         [
           "cloudsearch",
-          "UpdateServiceAccessPolicies"
+          "DescribeServiceAccessPolicies"
         ],
         [
           "cloudsearch",
-          "new"
+          "UpdateServiceAccessPolicies"
         ]
       ]
     ],
@@ -456,10 +370,6 @@
         [
           "cloudsearch",
           "DescribeServiceAccessPolicies"
-        ],
-        [
-          "cloudsearch",
-          "new"
         ]
       ]
     ],
@@ -475,179 +385,6 @@
         [
           "cloudsearch",
           "UpdateServiceAccessPolicies"
-        ],
-        [
-          "cloudsearch",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpc"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateVpcCidrBlock"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "DisableVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DisableVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "DisassociateVpcCidrBlock"
-        ],
-        [
-          "ec2",
-          "EnableVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "EnableVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyVpcTenancy"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "delete",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "DeleteDhcpOptions"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -663,10 +400,6 @@
         [
           "detective",
           "ListInvitations"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -678,10 +411,6 @@
         [
           "detective",
           "DisassociateMembership"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -708,10 +437,6 @@
         [
           "detective",
           "ListMembers"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -723,10 +448,6 @@
         [
           "detective",
           "DeleteMembers"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -743,46 +464,6 @@
     ],
     [
       "resource",
-      "aws_egress_only_internet_gateway",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateEgressOnlyInternetGateway"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_fsx_data_repository_association",
       "create",
       [
@@ -793,10 +474,6 @@
         [
           "fsx",
           "DescribeDataRepositoryAssociations"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -811,7 +488,7 @@
         ],
         [
           "fsx",
-          "new"
+          "DescribeDataRepositoryAssociations"
         ]
       ]
     ],
@@ -846,10 +523,6 @@
         [
           "fsx",
           "UpdateDataRepositoryAssociation"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -861,10 +534,6 @@
         [
           "lambda",
           "Invoke"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -879,21 +548,6 @@
       "aws_lambda_invocation",
       "read",
       []
-    ],
-    [
-      "resource",
-      "aws_nat_gateway",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNatGateway"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
     ],
     [
       "resource",
@@ -930,6 +584,10 @@
         ],
         [
           "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
           "DisableVpcClassicLink"
         ],
         [
@@ -947,252 +605,6 @@
         [
           "ec2",
           "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpc"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateVpcCidrBlock"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DescribeVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "DisableVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "DisableVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "DisassociateVpcCidrBlock"
-        ],
-        [
-          "ec2",
-          "EnableVpcClassicLink"
-        ],
-        [
-          "ec2",
-          "EnableVpcClassicLinkDnsSupport"
-        ],
-        [
-          "ec2",
-          "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyVpcTenancy"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "delete",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "DeleteDhcpOptions"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv4_cidr_block_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcs"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv6_cidr_block_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcs"
         ]
       ]
     ]

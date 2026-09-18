@@ -14,21 +14,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_sesv2_dedicated_ip_pool",
-      "read",
-      [
-        [
-          "sesv2",
-          "GetDedicatedIpPool"
-        ],
-        [
-          "sesv2",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_cloudformation_stack_instances",
       "create",
@@ -40,6 +25,18 @@
         [
           "cloudformation",
           "DescribeStackInstance"
+        ],
+        [
+          "cloudformation",
+          "DescribeStackSetOperation"
+        ],
+        [
+          "cloudformation",
+          "ListStackInstances"
+        ],
+        [
+          "cloudformation",
+          "ListStackSetOperationResults"
         ]
       ]
     ],
@@ -51,6 +48,14 @@
         [
           "cloudformation",
           "DeleteStackInstances"
+        ],
+        [
+          "cloudformation",
+          "DescribeStackSetOperation"
+        ],
+        [
+          "cloudformation",
+          "ListStackSetOperationResults"
         ]
       ]
     ],
@@ -62,6 +67,10 @@
         [
           "cloudformation",
           "DescribeStackInstance"
+        ],
+        [
+          "cloudformation",
+          "ListStackInstances"
         ]
       ]
     ],
@@ -81,6 +90,18 @@
         [
           "cloudformation",
           "DescribeStackInstance"
+        ],
+        [
+          "cloudformation",
+          "DescribeStackSetOperation"
+        ],
+        [
+          "cloudformation",
+          "ListStackInstances"
+        ],
+        [
+          "cloudformation",
+          "ListStackSetOperationResults"
         ],
         [
           "cloudformation",
@@ -108,6 +129,10 @@
       "aws_codebuild_fleet",
       "delete",
       [
+        [
+          "codebuild",
+          "BatchGetFleets"
+        ],
         [
           "codebuild",
           "DeleteFleet"

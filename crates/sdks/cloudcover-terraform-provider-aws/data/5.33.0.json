@@ -14,60 +14,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_secretsmanager_random_password",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetRandomPassword"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_secretsmanager_secret",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_secretsmanager_secret_rotation",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_secretsmanager_secret_version",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetSecretValue"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_secretsmanager_secrets",
-      "read",
-      []
-    ],
-    [
       "resource",
       "aws_eks_access_entry",
       "create",
@@ -127,6 +73,10 @@
         [
           "eks",
           "AssociateAccessPolicy"
+        ],
+        [
+          "eks",
+          "ListAssociatedAccessPolicies"
         ]
       ]
     ],
@@ -145,96 +95,10 @@
       "resource",
       "aws_eks_access_policy_association",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "create",
       [
         [
-          "secretsmanager",
-          "CreateSecret"
-        ],
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "delete",
-      [
-        [
-          "secretsmanager",
-          "DeleteSecret"
-        ],
-        [
-          "secretsmanager",
-          "RemoveRegionsFromReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "DeleteResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "RemoveRegionsFromReplication"
-        ],
-        [
-          "secretsmanager",
-          "ReplicateSecretToRegions"
-        ],
-        [
-          "secretsmanager",
-          "UpdateSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_policy",
-      "create",
-      [
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
+          "eks",
+          "ListAssociatedAccessPolicies"
         ]
       ]
     ],
@@ -246,96 +110,22 @@
         [
           "secretsmanager",
           "DeleteResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_policy",
-      "update",
-      [
+        ],
         [
           "secretsmanager",
           "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "create",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "secretsmanager",
-          "RotateSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "delete",
-      [
-        [
-          "secretsmanager",
-          "CancelRotateSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "secretsmanager",
-          "RotateSecret"
         ]
       ]
     ],
     [
       "resource",
       "aws_secretsmanager_secret_version",
-      "create",
+      "delete",
       [
         [
           "secretsmanager",
           "GetSecretValue"
         ],
-        [
-          "secretsmanager",
-          "PutSecretValue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
-      "delete",
-      [
         [
           "secretsmanager",
           "UpdateSecretVersionStage"
@@ -345,22 +135,15 @@
     [
       "resource",
       "aws_secretsmanager_secret_version",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetSecretValue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
       "update",
       [
         [
           "secretsmanager",
           "GetSecretValue"
+        ],
+        [
+          "secretsmanager",
+          "ListSecretVersionIds"
         ],
         [
           "secretsmanager",

@@ -6,13 +6,23 @@
       "list_resource",
       "aws_ecr_repository",
       "list",
-      []
+      [
+        [
+          "ecr",
+          "DescribeRepositories"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_permission",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetPolicy"
+        ]
+      ]
     ],
     [
       "list_resource",
@@ -29,43 +39,121 @@
       "list_resource",
       "aws_route53_resolver_rule_association",
       "list",
-      []
+      [
+        [
+          "route53resolver",
+          "GetResolverRuleAssociation"
+        ],
+        [
+          "route53resolver",
+          "ListResolverRuleAssociations"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_route_table",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribeRouteTables"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_policy",
+      "list",
+      [
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_directory_bucket",
       "list",
-      []
+      [
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_secretsmanager_secret",
       "list",
-      []
+      [
+        [
+          "secretsmanager",
+          "DescribeSecret"
+        ],
+        [
+          "secretsmanager",
+          "GetResourcePolicy"
+        ],
+        [
+          "secretsmanager",
+          "ListSecrets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_secretsmanager_secret_version",
       "list",
-      []
+      [
+        [
+          "secretsmanager",
+          "GetSecretValue"
+        ],
+        [
+          "secretsmanager",
+          "ListSecretVersionIds"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_vpc_security_group_egress_rule",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_vpc_security_group_ingress_rule",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ]
+      ]
     ],
     [
       "resource",
@@ -75,6 +163,10 @@
         [
           "ec2",
           "CreateSecondaryNetwork"
+        ],
+        [
+          "ec2",
+          "DescribeSecondaryNetworks"
         ]
       ]
     ],
@@ -86,6 +178,10 @@
         [
           "ec2",
           "DeleteSecondaryNetwork"
+        ],
+        [
+          "ec2",
+          "DescribeSecondaryNetworks"
         ]
       ]
     ],
@@ -114,6 +210,10 @@
         [
           "ec2",
           "CreateSecondarySubnet"
+        ],
+        [
+          "ec2",
+          "DescribeSecondarySubnets"
         ]
       ]
     ],
@@ -125,6 +225,10 @@
         [
           "ec2",
           "DeleteSecondarySubnet"
+        ],
+        [
+          "ec2",
+          "DescribeSecondarySubnets"
         ]
       ]
     ],

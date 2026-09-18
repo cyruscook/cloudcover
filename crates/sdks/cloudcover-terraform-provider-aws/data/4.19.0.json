@@ -4,28 +4,6 @@
   "upsert": [
     [
       "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "create",
-      [
-        [
-          "ec2",
-          "ModifyManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "delete",
-      [
-        [
-          "ec2",
-          "ModifyManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_kendra_index",
       "create",
       [
@@ -63,6 +41,10 @@
         [
           "kendra",
           "DeleteIndex"
+        ],
+        [
+          "kendra",
+          "DescribeIndex"
         ]
       ]
     ],
@@ -124,10 +106,6 @@
         [
           "lightsail",
           "UpdateContainerService"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -142,7 +120,7 @@
         ],
         [
           "lightsail",
-          "new"
+          "GetContainerServices"
         ]
       ]
     ],
@@ -154,10 +132,6 @@
         [
           "lightsail",
           "GetContainerServices"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -181,10 +155,6 @@
         [
           "lightsail",
           "UpdateContainerService"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -200,10 +170,6 @@
         [
           "lightsail",
           "GetContainerServiceDeployments"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -221,10 +187,6 @@
         [
           "lightsail",
           "GetContainerServiceDeployments"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ]

@@ -40,6 +40,10 @@
         [
           "cognitoidentityprovider",
           "DescribeManagedLoginBrandingByClient"
+        ],
+        [
+          "cognitoidentityprovider",
+          "ListUserPoolClients"
         ]
       ]
     ],
@@ -99,17 +103,6 @@
         [
           "s3tables",
           "PutTablePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_provisioned_product",
-      "delete",
-      [
-        [
-          "servicecatalog",
-          "TerminateProvisionedProduct"
         ]
       ]
     ]

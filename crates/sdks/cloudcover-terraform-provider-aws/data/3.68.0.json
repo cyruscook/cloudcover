@@ -21,10 +21,6 @@
         [
           "codecommit",
           "GetApprovalRuleTemplate"
-        ],
-        [
-          "codecommit",
-          "new"
         ]
       ]
     ],
@@ -36,10 +32,6 @@
         [
           "ec2",
           "DescribeIpamPools"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -55,10 +47,6 @@
         [
           "codecommit",
           "GetApprovalRuleTemplate"
-        ],
-        [
-          "codecommit",
-          "new"
         ]
       ]
     ],
@@ -70,10 +58,6 @@
         [
           "codecommit",
           "DeleteApprovalRuleTemplate"
-        ],
-        [
-          "codecommit",
-          "new"
         ]
       ]
     ],
@@ -85,10 +69,6 @@
         [
           "codecommit",
           "GetApprovalRuleTemplate"
-        ],
-        [
-          "codecommit",
-          "new"
         ]
       ]
     ],
@@ -112,10 +92,6 @@
         [
           "codecommit",
           "UpdateApprovalRuleTemplateName"
-        ],
-        [
-          "codecommit",
-          "new"
         ]
       ]
     ],
@@ -131,10 +107,6 @@
         [
           "ecs",
           "PutAccountSettingDefault"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -146,10 +118,6 @@
         [
           "ecs",
           "PutAccountSettingDefault"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -161,10 +129,6 @@
         [
           "ecs",
           "ListAccountSettings"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -176,10 +140,6 @@
         [
           "ecs",
           "PutAccountSettingDefault"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -195,10 +155,6 @@
         [
           "ec2",
           "DescribeIpams"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -213,7 +169,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeIpams"
         ]
       ]
     ],
@@ -225,10 +181,6 @@
         [
           "ec2",
           "DescribeIpams"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -248,10 +200,6 @@
         [
           "ec2",
           "ModifyIpam"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -267,10 +215,6 @@
         [
           "ec2",
           "DescribeIpamPools"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -285,7 +229,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeIpamPools"
         ]
       ]
     ],
@@ -297,10 +241,6 @@
         [
           "ec2",
           "DescribeIpamPools"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -324,10 +264,6 @@
         [
           "ec2",
           "ModifyIpamPool"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -343,10 +279,6 @@
         [
           "ec2",
           "ProvisionIpamPoolCidr"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -358,6 +290,10 @@
         [
           "ec2",
           "DeprovisionIpamPoolCidr"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolCidrs"
         ]
       ]
     ],
@@ -369,10 +305,6 @@
         [
           "ec2",
           "GetIpamPoolCidrs"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -388,10 +320,6 @@
         [
           "ec2",
           "GetIpamPoolAllocations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -403,10 +331,6 @@
         [
           "ec2",
           "ReleaseIpamPoolAllocation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -418,10 +342,6 @@
         [
           "ec2",
           "GetIpamPoolAllocations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -437,10 +357,6 @@
         [
           "ec2",
           "DescribeIpamScopes"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -455,7 +371,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeIpamScopes"
         ]
       ]
     ],
@@ -467,10 +383,6 @@
         [
           "ec2",
           "DescribeIpamScopes"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -494,10 +406,6 @@
         [
           "ec2",
           "ModifyIpamScope"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -513,10 +421,6 @@
         [
           "ec2",
           "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -527,11 +431,11 @@
       [
         [
           "ec2",
-          "DisassociateVpcCidrBlock"
+          "DescribeVpcs"
         ],
         [
           "ec2",
-          "new"
+          "DisassociateVpcCidrBlock"
         ]
       ]
     ],
@@ -543,10 +447,6 @@
         [
           "ec2",
           "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

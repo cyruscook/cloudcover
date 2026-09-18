@@ -14,10 +14,6 @@
         [
           "servicediscovery",
           "ListNamespaces"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ],
@@ -28,19 +24,11 @@
       [
         [
           "cloudwatch",
-          "GetMetricStream"
-        ],
-        [
-          "cloudwatch",
           "ListTagsForResource"
         ],
         [
           "cloudwatch",
           "PutMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -52,14 +40,6 @@
         [
           "cloudwatch",
           "DeleteMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "GetMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -70,15 +50,7 @@
       [
         [
           "cloudwatch",
-          "GetMetricStream"
-        ],
-        [
-          "cloudwatch",
           "ListTagsForResource"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -89,19 +61,11 @@
       [
         [
           "cloudwatch",
-          "GetMetricStream"
-        ],
-        [
-          "cloudwatch",
           "ListTagsForResource"
         ],
         [
           "cloudwatch",
           "PutMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -221,10 +185,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -336,10 +296,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -351,14 +307,6 @@
         [
           "servicecatalog",
           "CreateConstraint"
-        ],
-        [
-          "servicecatalog",
-          "DescribeConstraint"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -370,14 +318,6 @@
         [
           "servicecatalog",
           "DeleteConstraint"
-        ],
-        [
-          "servicecatalog",
-          "DescribeConstraint"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -385,12 +325,7 @@
       "resource",
       "aws_servicecatalog_constraint",
       "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeConstraint"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -399,15 +334,7 @@
       [
         [
           "servicecatalog",
-          "DescribeConstraint"
-        ],
-        [
-          "servicecatalog",
           "UpdateConstraint"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -419,10 +346,6 @@
         [
           "servicecatalog",
           "AssociateProductWithPortfolio"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -434,10 +357,6 @@
         [
           "servicecatalog",
           "DisassociateProductFromPortfolio"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -455,14 +374,6 @@
         [
           "servicecatalog",
           "CreateServiceAction"
-        ],
-        [
-          "servicecatalog",
-          "DescribeServiceAction"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -474,14 +385,6 @@
         [
           "servicecatalog",
           "DeleteServiceAction"
-        ],
-        [
-          "servicecatalog",
-          "DescribeServiceAction"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -489,12 +392,7 @@
       "resource",
       "aws_servicecatalog_service_action",
       "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeServiceAction"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -503,15 +401,7 @@
       [
         [
           "servicecatalog",
-          "DescribeServiceAction"
-        ],
-        [
-          "servicecatalog",
           "UpdateServiceAction"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ]

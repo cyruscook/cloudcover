@@ -32,36 +32,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_metric_stream",
-      "delete",
-      [
-        [
-          "cloudwatch",
-          "DeleteMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_metric_stream",
-      "read",
-      [
-        [
-          "cloudwatch",
-          "GetMetricStream"
-        ],
-        [
-          "cloudwatch",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_sagemaker_app",
       "create",
       [
@@ -76,10 +46,6 @@
         [
           "sagemaker",
           "ListApps"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -94,7 +60,11 @@
         ],
         [
           "sagemaker",
-          "new"
+          "DescribeApp"
+        ],
+        [
+          "sagemaker",
+          "ListApps"
         ]
       ]
     ],
@@ -110,10 +80,6 @@
         [
           "sagemaker",
           "ListApps"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -129,25 +95,6 @@
         [
           "sagemaker",
           "ListApps"
-        ],
-        [
-          "sagemaker",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_domain",
-      "delete",
-      [
-        [
-          "sagemaker",
-          "DeleteDomain"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -163,10 +110,6 @@
         [
           "sagemaker",
           "DescribeSpace"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -181,7 +124,7 @@
         ],
         [
           "sagemaker",
-          "new"
+          "DescribeSpace"
         ]
       ]
     ],
@@ -193,10 +136,6 @@
         [
           "sagemaker",
           "DescribeSpace"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -212,25 +151,6 @@
         [
           "sagemaker",
           "UpdateSpace"
-        ],
-        [
-          "sagemaker",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_user_profile",
-      "delete",
-      [
-        [
-          "sagemaker",
-          "DeleteUserProfile"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -254,10 +174,6 @@
         [
           "ssoadmin",
           "PutPermissionsBoundaryToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -277,10 +193,6 @@
         [
           "ssoadmin",
           "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -292,10 +204,6 @@
         [
           "ssoadmin",
           "GetPermissionsBoundaryForPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ]

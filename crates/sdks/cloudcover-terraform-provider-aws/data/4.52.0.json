@@ -40,16 +40,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -71,16 +63,8 @@
           "DescribeTimeToLive"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -114,16 +98,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -149,16 +125,8 @@
           "UpdateTable"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -176,16 +144,8 @@
           "DescribeTable"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -211,16 +171,105 @@
           "UpdateTable"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_instance_profile",
+      "create",
+      [
+        [
+          "iam",
+          "AddRoleToInstanceProfile"
         ],
         [
-          "kms",
-          "new"
+          "iam",
+          "CreateInstanceProfile"
+        ],
+        [
+          "iam",
+          "GetInstanceProfile"
+        ],
+        [
+          "iam",
+          "RemoveRoleFromInstanceProfile"
+        ],
+        [
+          "iam",
+          "TagInstanceProfile"
+        ],
+        [
+          "iam",
+          "UntagInstanceProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lambda_function",
+      "update",
+      [
+        [
+          "lambda",
+          "DeleteFunctionCodeSigningConfig"
+        ],
+        [
+          "lambda",
+          "DeleteFunctionConcurrency"
+        ],
+        [
+          "lambda",
+          "GetFunction"
+        ],
+        [
+          "lambda",
+          "GetFunctionCodeSigningConfig"
+        ],
+        [
+          "lambda",
+          "GetFunctionConfiguration"
+        ],
+        [
+          "lambda",
+          "ListVersionsByFunction"
+        ],
+        [
+          "lambda",
+          "PublishVersion"
+        ],
+        [
+          "lambda",
+          "PutFunctionCodeSigningConfig"
+        ],
+        [
+          "lambda",
+          "PutFunctionConcurrency"
+        ],
+        [
+          "lambda",
+          "UpdateFunctionCode"
+        ],
+        [
+          "lambda",
+          "UpdateFunctionConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_sagemaker_endpoint",
+      "delete",
+      [
+        [
+          "sagemaker",
+          "DeleteEndpoint"
+        ],
+        [
+          "sagemaker",
+          "DescribeEndpoint"
         ]
       ]
     ],
@@ -240,10 +289,6 @@
         [
           "ec2",
           "ModifySpotFleetRequest"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

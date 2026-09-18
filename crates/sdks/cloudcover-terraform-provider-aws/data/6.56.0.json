@@ -10,6 +10,10 @@
         [
           "elasticache",
           "BatchApplyUpdateAction"
+        ],
+        [
+          "elasticache",
+          "DescribeUpdateActions"
         ]
       ]
     ],
@@ -17,31 +21,188 @@
       "data_source",
       "aws_elasticache_service_update_actions",
       "read",
-      []
+      [
+        [
+          "elasticache",
+          "DescribeUpdateActions"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_s3_buckets",
       "read",
-      []
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eks_addon",
       "list",
-      []
+      [
+        [
+          "eks",
+          "DescribeAddon"
+        ],
+        [
+          "eks",
+          "DescribePodIdentityAssociation"
+        ],
+        [
+          "eks",
+          "ListAddons"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_notification",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketNotificationConfiguration"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_secretsmanager_secret_policy",
       "list",
-      []
+      [
+        [
+          "secretsmanager",
+          "GetResourcePolicy"
+        ],
+        [
+          "secretsmanager",
+          "ListSecrets"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagent_data_source",
+      "update",
+      [
+        [
+          "bedrockagent",
+          "GetDataSource"
+        ],
+        [
+          "bedrockagent",
+          "UpdateDataSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_subnet",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
+          "DeleteSubnet"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
+        ],
+        [
+          "ec2",
+          "ModifyVpcEndpoint"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_subnet",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
+          "DeleteSubnet"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
+        ],
+        [
+          "ec2",
+          "ModifyVpcEndpoint"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_ipam_pool",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateIpamPool"
+        ],
+        [
+          "ec2",
+          "DescribeIpamPools"
+        ],
+        [
+          "ec2",
+          "DescribeIpamScopes"
+        ],
+        [
+          "ec2",
+          "GetIpamResourceCidrs"
+        ]
+      ]
     ]
   ]
 }

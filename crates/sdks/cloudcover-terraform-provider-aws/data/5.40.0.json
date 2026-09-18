@@ -3,28 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_elastic_beanstalk_application",
-      "read",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeApplications"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_elastic_beanstalk_solution_stack",
-      "read",
-      [
-        [
-          "elasticbeanstalk",
-          "ListAvailableSolutionStacks"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_account_region",
       "create",
@@ -81,453 +59,68 @@
     ],
     [
       "resource",
-      "aws_dax_cluster",
-      "create",
-      [
-        [
-          "dax",
-          "CreateCluster"
-        ],
-        [
-          "dax",
-          "DescribeClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_cluster",
-      "delete",
-      [
-        [
-          "dax",
-          "DeleteCluster"
-        ],
-        [
-          "dax",
-          "DescribeClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_cluster",
+      "aws_s3_bucket",
       "read",
       [
         [
-          "dax",
-          "DescribeClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_cluster",
-      "update",
-      [
-        [
-          "dax",
-          "DecreaseReplicationFactor"
+          "s3",
+          "GetBucketAccelerateConfiguration"
         ],
         [
-          "dax",
-          "DescribeClusters"
+          "s3",
+          "GetBucketAcl"
         ],
         [
-          "dax",
-          "IncreaseReplicationFactor"
+          "s3",
+          "GetBucketCors"
         ],
         [
-          "dax",
-          "UpdateCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_parameter_group",
-      "create",
-      [
-        [
-          "dax",
-          "CreateParameterGroup"
+          "s3",
+          "GetBucketEncryption"
         ],
         [
-          "dax",
-          "DescribeParameterGroups"
+          "s3",
+          "GetBucketLifecycleConfiguration"
         ],
         [
-          "dax",
-          "DescribeParameters"
+          "s3",
+          "GetBucketLogging"
         ],
         [
-          "dax",
-          "UpdateParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_parameter_group",
-      "delete",
-      [
-        [
-          "dax",
-          "DeleteParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_parameter_group",
-      "read",
-      [
-        [
-          "dax",
-          "DescribeParameterGroups"
+          "s3",
+          "GetBucketPolicy"
         ],
         [
-          "dax",
-          "DescribeParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_parameter_group",
-      "update",
-      [
-        [
-          "dax",
-          "DescribeParameterGroups"
+          "s3",
+          "GetBucketReplication"
         ],
         [
-          "dax",
-          "DescribeParameters"
+          "s3",
+          "GetBucketRequestPayment"
         ],
         [
-          "dax",
-          "UpdateParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_subnet_group",
-      "create",
-      [
-        [
-          "dax",
-          "CreateSubnetGroup"
+          "s3",
+          "GetBucketVersioning"
         ],
         [
-          "dax",
-          "DescribeSubnetGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_subnet_group",
-      "delete",
-      [
-        [
-          "dax",
-          "DeleteSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_subnet_group",
-      "read",
-      [
-        [
-          "dax",
-          "DescribeSubnetGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dax_subnet_group",
-      "update",
-      [
-        [
-          "dax",
-          "DescribeSubnetGroups"
+          "s3",
+          "GetBucketWebsite"
         ],
         [
-          "dax",
-          "UpdateSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application",
-      "create",
-      [
-        [
-          "elasticbeanstalk",
-          "CreateApplication"
+          "s3",
+          "GetObjectLockConfiguration"
         ],
         [
-          "elasticbeanstalk",
-          "DescribeApplications"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateApplicationResourceLifecycle"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "DeleteApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application",
-      "read",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeApplications"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application",
-      "update",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeApplications"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateApplication"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateApplicationResourceLifecycle"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application_version",
-      "create",
-      [
-        [
-          "elasticbeanstalk",
-          "CreateApplicationVersion"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeApplicationVersions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application_version",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "DeleteApplicationVersion"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application_version",
-      "read",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeApplicationVersions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application_version",
-      "update",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeApplicationVersions"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateApplicationVersion"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_configuration_template",
-      "create",
-      [
-        [
-          "elasticbeanstalk",
-          "CreateConfigurationTemplate"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_configuration_template",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "DeleteConfigurationTemplate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_configuration_template",
-      "read",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_configuration_template",
-      "update",
-      [
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateConfigurationTemplate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "CreateEnvironment"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "TerminateEnvironment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateEnvironment"
+          "s3",
+          "HeadBucket"
         ]
       ]
     ],
     [
       "resource",
       "aws_s3_bucket",
-      "create",
+      "update",
       [
-        [
-          "s3",
-          "CreateBucket"
-        ],
         [
           "s3",
           "DeleteBucketCors"
@@ -550,15 +143,55 @@
         ],
         [
           "s3",
-          "DeleteBucketTagging"
-        ],
-        [
-          "s3",
           "DeleteBucketWebsite"
         ],
         [
           "s3",
-          "GetBucketTagging"
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
         ],
         [
           "s3",
@@ -602,10 +235,6 @@
         ],
         [
           "s3",
-          "PutBucketTagging"
-        ],
-        [
-          "s3",
           "PutBucketVersioning"
         ],
         [
@@ -628,10 +257,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ]
@@ -647,10 +272,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ]
@@ -664,10 +285,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -697,10 +314,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ]
@@ -716,10 +329,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ]
@@ -733,10 +342,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -764,10 +369,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -789,10 +390,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ]
@@ -806,10 +403,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",

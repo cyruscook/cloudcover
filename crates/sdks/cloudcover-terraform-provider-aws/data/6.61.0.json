@@ -21,49 +21,108 @@
       "list_resource",
       "aws_ami_launch_permission",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeImageAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeImages"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_instance_profile",
       "list",
-      []
+      [
+        [
+          "iam",
+          "GetInstanceProfile"
+        ],
+        [
+          "iam",
+          "ListInstanceProfiles"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambdacore_network_connector",
       "list",
-      []
+      [
+        [
+          "lambdacore",
+          "GetNetworkConnector"
+        ],
+        [
+          "lambdacore",
+          "ListNetworkConnectors"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_mailmanager_relay",
       "list",
-      []
+      [
+        [
+          "mailmanager",
+          "GetRelay"
+        ],
+        [
+          "mailmanager",
+          "ListRelays"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_assertion",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "ListAssertions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_service_function",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "ListServiceFunctions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_user_journey",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "GetUserJourney"
+        ],
+        [
+          "resiliencehubv2",
+          "ListUserJourneys"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_dsql_cluster_policy",
       "create",
       [
+        [
+          "dsql",
+          "GetClusterPolicy"
+        ],
         [
           "dsql",
           "PutClusterPolicy"
@@ -78,6 +137,10 @@
         [
           "dsql",
           "DeleteClusterPolicy"
+        ],
+        [
+          "dsql",
+          "GetClusterPolicy"
         ]
       ]
     ],
@@ -99,6 +162,10 @@
       [
         [
           "dsql",
+          "GetClusterPolicy"
+        ],
+        [
+          "dsql",
           "PutClusterPolicy"
         ]
       ]
@@ -111,6 +178,10 @@
         [
           "lambdacore",
           "CreateNetworkConnector"
+        ],
+        [
+          "lambdacore",
+          "GetNetworkConnector"
         ]
       ]
     ],
@@ -122,6 +193,10 @@
         [
           "lambdacore",
           "DeleteNetworkConnector"
+        ],
+        [
+          "lambdacore",
+          "GetNetworkConnector"
         ]
       ]
     ],
@@ -143,6 +218,10 @@
       [
         [
           "lambdacore",
+          "GetNetworkConnector"
+        ],
+        [
+          "lambdacore",
           "UpdateNetworkConnector"
         ]
       ]
@@ -155,6 +234,10 @@
         [
           "lambdamicrovms",
           "CreateMicrovmImage"
+        ],
+        [
+          "lambdamicrovms",
+          "GetMicrovmImage"
         ]
       ]
     ],
@@ -166,6 +249,10 @@
         [
           "lambdamicrovms",
           "DeleteMicrovmImage"
+        ],
+        [
+          "lambdamicrovms",
+          "GetMicrovmImage"
         ]
       ]
     ],
@@ -185,6 +272,10 @@
       "aws_lambdamicrovms_image",
       "update",
       [
+        [
+          "lambdamicrovms",
+          "GetMicrovmImage"
+        ],
         [
           "lambdamicrovms",
           "UpdateMicrovmImage"
@@ -245,42 +336,20 @@
     ],
     [
       "resource",
-      "aws_observabilityadmin_centralization_rule_for_organization",
-      "create",
-      [
-        [
-          "observabilityadmin",
-          "CreateCentralizationRuleForOrganization"
-        ],
-        [
-          "observabilityadmin",
-          "GetCentralizationRuleForOrganization"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_observabilityadmin_telemetry_enrichment",
-      "delete",
-      [
-        [
-          "observabilityadmin",
-          "GetTelemetryEnrichmentStatus"
-        ],
-        [
-          "observabilityadmin",
-          "StopTelemetryEnrichment"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_odb_iam_role_association",
       "create",
       [
         [
           "odb",
           "AssociateIamRoleToResource"
+        ],
+        [
+          "odb",
+          "GetCloudAutonomousVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ]
       ]
     ],
@@ -292,6 +361,14 @@
         [
           "odb",
           "DisassociateIamRoleFromResource"
+        ],
+        [
+          "odb",
+          "GetCloudAutonomousVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ]
       ]
     ],
@@ -342,7 +419,12 @@
       "resource",
       "aws_resiliencehubv2_assertion",
       "read",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "ListAssertions"
+        ]
+      ]
     ],
     [
       "resource",
@@ -381,7 +463,12 @@
       "resource",
       "aws_resiliencehubv2_service_function",
       "read",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "ListServiceFunctions"
+        ]
+      ]
     ],
     [
       "resource",

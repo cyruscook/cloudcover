@@ -32,10 +32,6 @@
         [
           "servicecatalog",
           "ListProvisioningArtifacts"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -59,10 +55,6 @@
         [
           "apigateway",
           "UpdateMethod"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -78,10 +70,6 @@
         [
           "codegurureviewer",
           "DescribeRepositoryAssociation"
-        ],
-        [
-          "codegurureviewer",
-          "new"
         ]
       ]
     ],
@@ -92,11 +80,11 @@
       [
         [
           "codegurureviewer",
-          "DisassociateRepository"
+          "DescribeRepositoryAssociation"
         ],
         [
           "codegurureviewer",
-          "new"
+          "DisassociateRepository"
         ]
       ]
     ],
@@ -108,10 +96,6 @@
         [
           "codegurureviewer",
           "DescribeRepositoryAssociation"
-        ],
-        [
-          "codegurureviewer",
-          "new"
         ]
       ]
     ],
@@ -123,25 +107,6 @@
         [
           "codegurureviewer",
           "DescribeRepositoryAssociation"
-        ],
-        [
-          "codegurureviewer",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_user_pool_domain",
-      "delete",
-      [
-        [
-          "cognitoidentityprovider",
-          "DeleteUserPoolDomain"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -157,29 +122,6 @@
         [
           "cognitoidentityprovider",
           "UpdateUserPoolDomain"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dynamodb_global_table",
-      "update",
-      [
-        [
-          "dynamodb",
-          "DescribeGlobalTable"
-        ],
-        [
-          "dynamodb",
-          "UpdateGlobalTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -195,10 +137,6 @@
         [
           "emr",
           "PutBlockPublicAccessConfiguration"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -210,10 +148,6 @@
         [
           "emr",
           "PutBlockPublicAccessConfiguration"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -225,10 +159,6 @@
         [
           "emr",
           "GetBlockPublicAccessConfiguration"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -284,6 +214,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -356,10 +290,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -411,6 +341,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -479,10 +413,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -491,6 +421,18 @@
       "aws_kms_key_policy",
       "create",
       [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
         [
           "kms",
           "PutKeyPolicy"
@@ -504,21 +446,8 @@
       [
         [
           "kms",
-          "PutKeyPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_key_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_key_policy",
-      "update",
-      [
+          "GetKeyPolicy"
+        ],
         [
           "kms",
           "PutKeyPolicy"
@@ -527,9 +456,45 @@
     ],
     [
       "resource",
-      "aws_network_acl_association",
+      "aws_kms_key_policy",
       "read",
-      []
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key_policy",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ]
+      ]
     ],
     [
       "resource",

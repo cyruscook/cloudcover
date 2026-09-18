@@ -10,32 +10,6 @@
         [
           "cloudfront",
           "GetRealtimeLogConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_cognito_user_pools",
-      "read",
-      [
-        [
-          "cognitoidentityprovider",
-          "ListUserPools"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ebs_volumes",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ],
@@ -58,43 +32,6 @@
         [
           "ec2",
           "DescribeAddresses"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_emr_release_labels",
-      "read",
-      [
-        [
-          "emr",
-          "ListReleaseLabels"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_network_acls",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_route_tables",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
         ]
       ]
     ],
@@ -114,10 +51,6 @@
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -129,28 +62,6 @@
         [
           "s3",
           "ListObjectsV2"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_security_groups",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpcs",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcs"
         ]
       ]
     ],
@@ -174,10 +85,6 @@
         [
           "cognitoidentityprovider",
           "AdminSetUserPassword"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -189,10 +96,6 @@
         [
           "cognitoidentityprovider",
           "AdminDeleteUser"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -204,10 +107,6 @@
         [
           "cognitoidentityprovider",
           "AdminGetUser"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -239,10 +138,6 @@
         [
           "cognitoidentityprovider",
           "AdminUpdateUserAttributes"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -258,10 +153,6 @@
         [
           "dataexchange",
           "GetRevision"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -273,10 +164,6 @@
         [
           "dataexchange",
           "DeleteRevision"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -288,10 +175,6 @@
         [
           "dataexchange",
           "GetRevision"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -315,18 +198,8 @@
         [
           "dataexchange",
           "UpdateRevision"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_default_network_acl",
-      "read",
-      []
     ],
     [
       "resource",
@@ -360,10 +233,6 @@
         [
           "ec2",
           "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -439,99 +308,6 @@
         [
           "ec2",
           "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_authorization_rule",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeClientVpnAuthorizationRules"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteClientVpnEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeClientVpnEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_network_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateClientVpnTargetNetwork"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_network_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeClientVpnTargetNetworks"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_route",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateClientVpnRoute"
-        ],
-        [
-          "ec2",
-          "DescribeClientVpnRoutes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_route",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeClientVpnRoutes"
         ]
       ]
     ],
@@ -555,18 +331,8 @@
         [
           "ec2",
           "ReplaceNetworkAclAssociation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "read",
-      []
     ],
     [
       "resource",
@@ -595,10 +361,6 @@
         [
           "ec2",
           "ReplaceNetworkAclAssociation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -615,33 +377,16 @@
     ],
     [
       "resource",
-      "aws_network_acl_rule",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_s3_bucket",
       "create",
       [
         [
           "s3",
           "CreateBucket"
+        ],
+        [
+          "s3",
+          "DeleteBucketTagging"
         ],
         [
           "s3",
@@ -685,6 +430,10 @@
         ],
         [
           "s3",
+          "GetBucketTagging"
+        ],
+        [
+          "s3",
           "GetBucketVersioning"
         ],
         [
@@ -701,11 +450,11 @@
         ],
         [
           "s3",
-          "PutObjectLockConfiguration"
+          "PutBucketTagging"
         ],
         [
           "s3",
-          "new"
+          "PutObjectLockConfiguration"
         ]
       ]
     ],
@@ -716,6 +465,10 @@
       [
         [
           "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
           "GetBucketAccelerateConfiguration"
         ],
         [
@@ -756,6 +509,10 @@
         ],
         [
           "s3",
+          "GetBucketTagging"
+        ],
+        [
+          "s3",
           "GetBucketVersioning"
         ],
         [
@@ -772,11 +529,11 @@
         ],
         [
           "s3",
-          "PutObjectLockConfiguration"
+          "PutBucketTagging"
         ],
         [
           "s3",
-          "new"
+          "PutObjectLockConfiguration"
         ]
       ]
     ],
@@ -792,17 +549,6 @@
         [
           "s3",
           "PutBucketLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
         ]
       ]
     ],
@@ -831,16 +577,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "GetObjectTagging"
         ],
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -864,10 +606,6 @@
         [
           "s3",
           "PutObjectLegalHold"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -881,16 +619,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "GetObjectTagging"
         ],
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -902,10 +636,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -934,10 +664,6 @@
         [
           "s3",
           "PutObjectTagging"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -956,15 +682,15 @@
         ],
         [
           "ec2",
+          "DescribeSubnets"
+        ],
+        [
+          "ec2",
           "DisassociateSubnetCidrBlock"
         ],
         [
           "ec2",
           "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

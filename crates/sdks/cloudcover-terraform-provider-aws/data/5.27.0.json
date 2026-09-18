@@ -3,28 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_s3_account_public_access_block",
-      "read",
-      [
-        [
-          "s3control",
-          "GetPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_connector_profile",
-      "create",
-      [
-        [
-          "appflow",
-          "CreateConnectorProfile"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_appflow_connector_profile",
       "delete",
@@ -32,233 +10,6 @@
         [
           "appflow",
           "DeleteConnectorProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_connector_profile",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appflow_connector_profile",
-      "update",
-      [
-        [
-          "appflow",
-          "UpdateConnectorProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_flow",
-      "create",
-      [
-        [
-          "appflow",
-          "CreateFlow"
-        ],
-        [
-          "appflow",
-          "DescribeFlow"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_flow",
-      "delete",
-      [
-        [
-          "appflow",
-          "DeleteFlow"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_flow",
-      "read",
-      [
-        [
-          "appflow",
-          "DescribeFlow"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_flow",
-      "update",
-      [
-        [
-          "appflow",
-          "DescribeFlow"
-        ],
-        [
-          "appflow",
-          "UpdateFlow"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_auto_scaling_configuration_version",
-      "create",
-      [
-        [
-          "apprunner",
-          "CreateAutoScalingConfiguration"
-        ],
-        [
-          "apprunner",
-          "DescribeAutoScalingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_auto_scaling_configuration_version",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteAutoScalingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_auto_scaling_configuration_version",
-      "read",
-      [
-        [
-          "apprunner",
-          "DescribeAutoScalingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_auto_scaling_configuration_version",
-      "update",
-      [
-        [
-          "apprunner",
-          "DescribeAutoScalingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_connection",
-      "create",
-      [
-        [
-          "apprunner",
-          "CreateConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_connection",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_connection",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_apprunner_connection",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_apprunner_custom_domain_association",
-      "create",
-      [
-        [
-          "apprunner",
-          "AssociateCustomDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_custom_domain_association",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DisassociateCustomDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_custom_domain_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_apprunner_observability_configuration",
-      "create",
-      [
-        [
-          "apprunner",
-          "CreateObservabilityConfiguration"
-        ],
-        [
-          "apprunner",
-          "DescribeObservabilityConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_observability_configuration",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteObservabilityConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_observability_configuration",
-      "read",
-      [
-        [
-          "apprunner",
-          "DescribeObservabilityConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_observability_configuration",
-      "update",
-      [
-        [
-          "apprunner",
-          "DescribeObservabilityConfiguration"
         ]
       ]
     ],
@@ -273,18 +24,11 @@
         ],
         [
           "apprunner",
-          "DescribeService"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_service",
-      "delete",
-      [
+          "DescribeCustomDomains"
+        ],
         [
           "apprunner",
-          "DeleteService"
+          "DescribeService"
         ]
       ]
     ],
@@ -293,6 +37,10 @@
       "aws_apprunner_service",
       "read",
       [
+        [
+          "apprunner",
+          "DescribeCustomDomains"
+        ],
         [
           "apprunner",
           "DescribeService"
@@ -304,6 +52,10 @@
       "aws_apprunner_service",
       "update",
       [
+        [
+          "apprunner",
+          "DescribeCustomDomains"
+        ],
         [
           "apprunner",
           "DescribeService"
@@ -316,284 +68,6 @@
     ],
     [
       "resource",
-      "aws_apprunner_vpc_connector",
-      "create",
-      [
-        [
-          "apprunner",
-          "CreateVpcConnector"
-        ],
-        [
-          "apprunner",
-          "DescribeVpcConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_connector",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteVpcConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_connector",
-      "read",
-      [
-        [
-          "apprunner",
-          "DescribeVpcConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_connector",
-      "update",
-      [
-        [
-          "apprunner",
-          "DescribeVpcConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_ingress_connection",
-      "create",
-      [
-        [
-          "apprunner",
-          "CreateVpcIngressConnection"
-        ],
-        [
-          "apprunner",
-          "DescribeVpcIngressConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_ingress_connection",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteVpcIngressConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_ingress_connection",
-      "read",
-      [
-        [
-          "apprunner",
-          "DescribeVpcIngressConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_ingress_connection",
-      "update",
-      [
-        [
-          "apprunner",
-          "DescribeVpcIngressConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkmediapipelines_media_insights_pipeline_configuration",
-      "create",
-      [
-        [
-          "chimesdkmediapipelines",
-          "CreateMediaInsightsPipelineConfiguration"
-        ],
-        [
-          "chimesdkmediapipelines",
-          "GetMediaInsightsPipelineConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkmediapipelines_media_insights_pipeline_configuration",
-      "read",
-      [
-        [
-          "chimesdkmediapipelines",
-          "GetMediaInsightsPipelineConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkmediapipelines_media_insights_pipeline_configuration",
-      "update",
-      [
-        [
-          "chimesdkmediapipelines",
-          "GetMediaInsightsPipelineConfiguration"
-        ],
-        [
-          "chimesdkmediapipelines",
-          "UpdateMediaInsightsPipelineConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_app",
-      "create",
-      [
-        [
-          "codedeploy",
-          "CreateApplication"
-        ],
-        [
-          "codedeploy",
-          "GetApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_app",
-      "delete",
-      [
-        [
-          "codedeploy",
-          "DeleteApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_app",
-      "read",
-      [
-        [
-          "codedeploy",
-          "GetApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_app",
-      "update",
-      [
-        [
-          "codedeploy",
-          "GetApplication"
-        ],
-        [
-          "codedeploy",
-          "UpdateApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_config",
-      "create",
-      [
-        [
-          "codedeploy",
-          "CreateDeploymentConfig"
-        ],
-        [
-          "codedeploy",
-          "GetDeploymentConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_config",
-      "delete",
-      [
-        [
-          "codedeploy",
-          "DeleteDeploymentConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_config",
-      "read",
-      [
-        [
-          "codedeploy",
-          "GetDeploymentConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_group",
-      "create",
-      [
-        [
-          "codedeploy",
-          "CreateDeploymentGroup"
-        ],
-        [
-          "codedeploy",
-          "GetDeploymentGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_group",
-      "delete",
-      [
-        [
-          "codedeploy",
-          "DeleteDeploymentGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_group",
-      "read",
-      [
-        [
-          "codedeploy",
-          "GetDeploymentGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codedeploy_deployment_group",
-      "update",
-      [
-        [
-          "codedeploy",
-          "GetDeploymentGroup"
-        ],
-        [
-          "codedeploy",
-          "UpdateDeploymentGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_evidently_feature",
       "create",
       []
@@ -687,58 +161,6 @@
       "aws_evidently_segment",
       "update",
       []
-    ],
-    [
-      "resource",
-      "aws_s3_account_public_access_block",
-      "create",
-      [
-        [
-          "s3control",
-          "GetPublicAccessBlock"
-        ],
-        [
-          "s3control",
-          "PutPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_account_public_access_block",
-      "delete",
-      [
-        [
-          "s3control",
-          "DeletePublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_account_public_access_block",
-      "read",
-      [
-        [
-          "s3control",
-          "GetPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_account_public_access_block",
-      "update",
-      [
-        [
-          "s3control",
-          "GetPublicAccessBlock"
-        ],
-        [
-          "s3control",
-          "PutPublicAccessBlock"
-        ]
-      ]
     ],
     [
       "resource",
@@ -763,14 +185,7 @@
         [
           "s3",
           "DeleteBucketLifecycle"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "read",
-      [
+        ],
         [
           "s3",
           "GetBucketLifecycleConfiguration"
@@ -795,63 +210,15 @@
     [
       "resource",
       "aws_s3_bucket_public_access_block",
-      "create",
-      [
-        [
-          "s3",
-          "GetPublicAccessBlock"
-        ],
-        [
-          "s3",
-          "PutPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_public_access_block",
       "delete",
       [
         [
           "s3",
           "DeletePublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_public_access_block",
-      "read",
-      [
-        [
-          "s3",
-          "GetPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_public_access_block",
-      "update",
-      [
-        [
-          "s3",
-          "PutPublicAccessBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_replication_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketReplication"
         ],
         [
           "s3",
-          "PutBucketReplication"
+          "GetPublicAccessBlock"
         ]
       ]
     ],
@@ -863,32 +230,10 @@
         [
           "s3",
           "DeleteBucketReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_replication_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_replication_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketReplication"
         ],
         [
           "s3",
-          "PutBucketReplication"
+          "GetBucketReplication"
         ]
       ]
     ]

@@ -17,6 +17,10 @@
         ],
         [
           "cloudwatchlogs",
+          "DescribeLogGroups"
+        ],
+        [
+          "cloudwatchlogs",
           "DisassociateKmsKey"
         ],
         [
@@ -92,6 +96,10 @@
         ],
         [
           "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -104,6 +112,10 @@
         [
           "eks",
           "CreateCapability"
+        ],
+        [
+          "eks",
+          "DescribeCapability"
         ]
       ]
     ],
@@ -115,6 +127,10 @@
         [
           "eks",
           "DeleteCapability"
+        ],
+        [
+          "eks",
+          "DescribeCapability"
         ]
       ]
     ],
@@ -136,6 +152,10 @@
       [
         [
           "eks",
+          "DescribeUpdate"
+        ],
+        [
+          "eks",
           "UpdateCapability"
         ]
       ]
@@ -148,6 +168,18 @@
         [
           "lambda",
           "DeleteFunction"
+        ],
+        [
+          "lambda",
+          "GetDurableExecution"
+        ],
+        [
+          "lambda",
+          "GetFunction"
+        ],
+        [
+          "lambda",
+          "ListDurableExecutionsByFunction"
         ],
         [
           "lambda",
@@ -178,7 +210,15 @@
         ],
         [
           "route53",
+          "GetChange"
+        ],
+        [
+          "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ],
         [
           "route53",
@@ -205,11 +245,19 @@
         ],
         [
           "route53",
+          "GetChange"
+        ],
+        [
+          "route53",
           "GetDNSSEC"
         ],
         [
           "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ],
         [
           "route53",
@@ -232,7 +280,15 @@
         ],
         [
           "route53",
+          "GetChange"
+        ],
+        [
+          "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ],
         [
           "route53",
@@ -241,6 +297,21 @@
         [
           "route53",
           "UpdateHostedZoneFeatures"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_transfer_connector",
+      "delete",
+      [
+        [
+          "transfer",
+          "DeleteConnector"
+        ],
+        [
+          "transfer",
+          "DescribeConnector"
         ]
       ]
     ]

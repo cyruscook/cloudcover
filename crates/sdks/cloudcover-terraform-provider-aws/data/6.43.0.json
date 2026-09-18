@@ -6,43 +6,90 @@
       "data_source",
       "aws_securityhub_enabled_standards",
       "read",
-      []
+      [
+        [
+          "securityhub",
+          "GetEnabledStandards"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_securityhub_security_controls",
       "read",
-      []
+      [
+        [
+          "securityhub",
+          "ListSecurityControlDefinitions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_db_subnet_group",
       "list",
-      []
+      [
+        [
+          "rds",
+          "DescribeDBSubnetGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ec2_network_insights_access_scope",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeNetworkInsightsAccessScopes"
+        ],
+        [
+          "ec2",
+          "GetNetworkInsightsAccessScopeContent"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_group_policy_attachment",
       "list",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
+        ],
+        [
+          "iam",
+          "ListGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_event_source_mapping",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetEventSourceMapping"
+        ],
+        [
+          "lambda",
+          "ListEventSourceMappings"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_securityhub_insight",
       "list",
-      []
+      [
+        [
+          "securityhub",
+          "GetInsights"
+        ]
+      ]
     ],
     [
       "resource",
@@ -95,7 +142,27 @@
       [
         [
           "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
           "DeleteSubnet"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
         ],
         [
           "ec2",
@@ -119,6 +186,22 @@
         [
           "ec2",
           "DeleteVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
         ]
       ]
     ],
@@ -149,6 +232,10 @@
       "aws_ec2_network_insights_access_scope",
       "read",
       [
+        [
+          "ec2",
+          "DescribeNetworkInsightsAccessScopes"
+        ],
         [
           "ec2",
           "GetNetworkInsightsAccessScopeContent"
@@ -207,7 +294,27 @@
       [
         [
           "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
           "DeleteSubnet"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
         ],
         [
           "ec2",
@@ -231,6 +338,22 @@
         [
           "ec2",
           "DeleteVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
         ]
       ]
     ]

@@ -13,6 +13,14 @@
         ],
         [
           "ecs",
+          "DescribeExpressGatewayService"
+        ],
+        [
+          "ecs",
+          "DescribeServiceDeployments"
+        ],
+        [
+          "ecs",
           "DescribeServices"
         ],
         [
@@ -29,6 +37,10 @@
         [
           "ecs",
           "DeleteExpressGatewayService"
+        ],
+        [
+          "ecs",
+          "DescribeExpressGatewayService"
         ]
       ]
     ],
@@ -51,6 +63,10 @@
         [
           "ecs",
           "DescribeExpressGatewayService"
+        ],
+        [
+          "ecs",
+          "DescribeServiceDeployments"
         ],
         [
           "ecs",
@@ -157,6 +173,10 @@
         [
           "ec2",
           "CreateVpnConcentrator"
+        ],
+        [
+          "ec2",
+          "DescribeVpnConcentrators"
         ]
       ]
     ],
@@ -168,6 +188,14 @@
         [
           "ec2",
           "DeleteVpnConcentrator"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeVpnConcentrators"
         ]
       ]
     ],
@@ -175,7 +203,12 @@
       "resource",
       "aws_vpn_concentrator",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVpnConcentrators"
+        ]
+      ]
     ],
     [
       "resource",

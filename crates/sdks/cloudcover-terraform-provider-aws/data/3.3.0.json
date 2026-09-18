@@ -34,10 +34,6 @@
         [
           "apigatewayv2",
           "UpdateApi"
-        ],
-        [
-          "apigatewayv2",
-          "new"
         ]
       ]
     ],
@@ -69,10 +65,17 @@
         [
           "apigatewayv2",
           "UpdateApi"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_user_pool_domain",
+      "delete",
+      [
         [
-          "apigatewayv2",
-          "new"
+          "cognitoidentityprovider",
+          "DeleteUserPoolDomain"
         ]
       ]
     ],
@@ -88,10 +91,6 @@
         [
           "ec2",
           "DescribeCustomerGateways"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -111,10 +110,17 @@
         [
           "ec2",
           "DescribeClientVpnTargetNetworks"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_client_vpn_network_association",
+      "delete",
+      [
         [
           "ec2",
-          "new"
+          "DisassociateClientVpnTargetNetwork"
         ]
       ]
     ],
@@ -130,10 +136,6 @@
         [
           "ec2",
           "DescribeClientVpnTargetNetworks"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -149,10 +151,6 @@
         [
           "ec2",
           "DescribeEgressOnlyInternetGateways"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -172,10 +170,6 @@
         [
           "ec2",
           "DescribeInternetGateways"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -207,10 +201,6 @@
         [
           "ec2",
           "RequestSpotInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -226,10 +216,6 @@
         [
           "storagegateway",
           "DescribeNFSFileShares"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -241,10 +227,6 @@
         [
           "storagegateway",
           "DescribeNFSFileShares"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -268,10 +250,6 @@
         [
           "storagegateway",
           "UpdateNFSFileShare"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -287,10 +265,6 @@
         [
           "storagegateway",
           "DescribeSMBFileShares"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -302,10 +276,6 @@
         [
           "storagegateway",
           "DescribeSMBFileShares"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -329,10 +299,6 @@
         [
           "storagegateway",
           "UpdateSMBFileShare"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -352,10 +318,6 @@
         [
           "ec2",
           "ModifySubnetAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -407,10 +369,6 @@
         [
           "ec2",
           "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -426,10 +384,6 @@
         [
           "ec2",
           "DescribeDhcpOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -449,10 +403,6 @@
         [
           "ec2",
           "DescribeVpnConnections"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -472,10 +422,6 @@
         [
           "ec2",
           "DescribeVpnGateways"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

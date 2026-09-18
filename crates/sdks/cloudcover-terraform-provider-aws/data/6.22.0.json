@@ -21,6 +21,10 @@
         [
           "billing",
           "CreateBillingView"
+        ],
+        [
+          "billing",
+          "GetBillingView"
         ]
       ]
     ],
@@ -32,6 +36,10 @@
         [
           "billing",
           "DeleteBillingView"
+        ],
+        [
+          "billing",
+          "GetBillingView"
         ]
       ]
     ],
@@ -43,6 +51,10 @@
         [
           "billing",
           "GetBillingView"
+        ],
+        [
+          "billing",
+          "ListSourceViewsForBillingView"
         ]
       ]
     ],
@@ -51,6 +63,10 @@
       "aws_billing_view",
       "update",
       [
+        [
+          "billing",
+          "GetBillingView"
+        ],
         [
           "billing",
           "UpdateBillingView"
@@ -69,6 +85,10 @@
         [
           "odb",
           "GetCloudExadataInfrastructure"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ],
         [
           "odb",

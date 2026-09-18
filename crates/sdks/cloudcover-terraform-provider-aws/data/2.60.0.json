@@ -14,10 +14,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "backup",
           "GetBackupSelection"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -63,10 +51,6 @@
         [
           "ec2",
           "DescribeTransitGatewayPeeringAttachments"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -86,10 +70,6 @@
         [
           "mq",
           "ListBrokers"
-        ],
-        [
-          "mq",
-          "new"
         ]
       ]
     ],
@@ -101,10 +81,6 @@
         [
           "ec2",
           "DescribeImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -120,10 +96,6 @@
         [
           "ec2",
           "DescribeTransitGatewayPeeringAttachments"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -135,10 +107,6 @@
         [
           "ec2",
           "DeleteTransitGatewayPeeringAttachment"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -150,10 +118,6 @@
         [
           "ec2",
           "DescribeTransitGatewayPeeringAttachments"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -169,10 +133,6 @@
         [
           "ec2",
           "DeleteTags"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -188,10 +148,6 @@
         [
           "guardduty",
           "ListOrganizationAdminAccounts"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -203,10 +159,6 @@
         [
           "guardduty",
           "DisableOrganizationAdminAccount"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -233,10 +185,6 @@
         [
           "guardduty",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -254,10 +202,6 @@
         [
           "guardduty",
           "DescribeOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -273,10 +217,6 @@
         [
           "guardduty",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -292,10 +232,28 @@
         [
           "ec2",
           "ImportKeyPair"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_external_key",
+      "delete",
+      [
         [
-          "ec2",
-          "new"
+          "kms",
+          "ScheduleKeyDeletion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key",
+      "delete",
+      [
+        [
+          "kms",
+          "ScheduleKeyDeletion"
         ]
       ]
     ],
@@ -315,10 +273,6 @@
         [
           "mq",
           "DescribeUser"
-        ],
-        [
-          "mq",
-          "new"
         ]
       ]
     ],
@@ -334,10 +288,6 @@
         [
           "mq",
           "DescribeUser"
-        ],
-        [
-          "mq",
-          "new"
         ]
       ]
     ],
@@ -353,10 +303,6 @@
         [
           "ec2",
           "DescribePlacementGroups"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],

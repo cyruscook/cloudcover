@@ -10,10 +10,6 @@
         [
           "appmesh",
           "DescribeGatewayRoute"
-        ],
-        [
-          "appmesh",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "appmesh",
           "DescribeVirtualNode"
-        ],
-        [
-          "appmesh",
-          "new"
         ]
       ]
     ],
@@ -40,10 +32,6 @@
         [
           "appmesh",
           "DescribeVirtualRouter"
-        ],
-        [
-          "appmesh",
-          "new"
         ]
       ]
     ],
@@ -59,10 +47,6 @@
         [
           "globalaccelerator",
           "ListCustomRoutingAccelerators"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -85,7 +69,12 @@
       "data_source",
       "aws_oam_sinks",
       "read",
-      []
+      [
+        [
+          "oam",
+          "ListSinks"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -99,10 +88,6 @@
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -118,10 +103,6 @@
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -146,114 +127,6 @@
     ],
     [
       "resource",
-      "aws_appmesh_gateway_route",
-      "create",
-      [
-        [
-          "appmesh",
-          "CreateGatewayRoute"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appmesh_gateway_route",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_gateway_route",
-      "update",
-      [
-        [
-          "appmesh",
-          "UpdateGatewayRoute"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_node",
-      "create",
-      [
-        [
-          "appmesh",
-          "CreateVirtualNode"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_node",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_node",
-      "update",
-      [
-        [
-          "appmesh",
-          "UpdateVirtualNode"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "create",
-      [
-        [
-          "appmesh",
-          "CreateVirtualRouter"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "update",
-      [
-        [
-          "appmesh",
-          "UpdateVirtualRouter"
-        ],
-        [
-          "appmesh",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_globalaccelerator_custom_routing_accelerator",
       "create",
       [
@@ -272,10 +145,6 @@
         [
           "globalaccelerator",
           "UpdateAcceleratorAttributes"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -290,11 +159,11 @@
         ],
         [
           "globalaccelerator",
-          "UpdateCustomRoutingAccelerator"
+          "DescribeCustomRoutingAccelerator"
         ],
         [
           "globalaccelerator",
-          "new"
+          "UpdateCustomRoutingAccelerator"
         ]
       ]
     ],
@@ -310,10 +179,6 @@
         [
           "globalaccelerator",
           "DescribeCustomRoutingAcceleratorAttributes"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -337,10 +202,6 @@
         [
           "globalaccelerator",
           "UpdateCustomRoutingAcceleratorAttributes"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -359,11 +220,11 @@
         ],
         [
           "globalaccelerator",
-          "DescribeCustomRoutingEndpointGroup"
+          "DescribeCustomRoutingAccelerator"
         ],
         [
           "globalaccelerator",
-          "new"
+          "DescribeCustomRoutingEndpointGroup"
         ]
       ]
     ],
@@ -378,7 +239,7 @@
         ],
         [
           "globalaccelerator",
-          "new"
+          "DescribeCustomRoutingAccelerator"
         ]
       ]
     ],
@@ -390,10 +251,6 @@
         [
           "globalaccelerator",
           "DescribeCustomRoutingEndpointGroup"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -408,11 +265,11 @@
         ],
         [
           "globalaccelerator",
-          "DescribeCustomRoutingListener"
+          "DescribeCustomRoutingAccelerator"
         ],
         [
           "globalaccelerator",
-          "new"
+          "DescribeCustomRoutingListener"
         ]
       ]
     ],
@@ -427,7 +284,7 @@
         ],
         [
           "globalaccelerator",
-          "new"
+          "DescribeCustomRoutingAccelerator"
         ]
       ]
     ],
@@ -439,10 +296,6 @@
         [
           "globalaccelerator",
           "DescribeCustomRoutingListener"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -453,15 +306,15 @@
       [
         [
           "globalaccelerator",
+          "DescribeCustomRoutingAccelerator"
+        ],
+        [
+          "globalaccelerator",
           "DescribeCustomRoutingListener"
         ],
         [
           "globalaccelerator",
           "UpdateCustomRoutingListener"
-        ],
-        [
-          "globalaccelerator",
-          "new"
         ]
       ]
     ],
@@ -489,10 +342,6 @@
         [
           "iam",
           "RemoveRoleFromInstanceProfile"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -516,10 +365,6 @@
         [
           "iam",
           "RemoveRoleFromInstanceProfile"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -535,10 +380,6 @@
         [
           "iam",
           "GetOpenIDConnectProvider"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -554,10 +395,6 @@
         [
           "iam",
           "UpdateOpenIDConnectProviderThumbprint"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -577,10 +414,6 @@
         [
           "iam",
           "GetPolicyVersion"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -608,10 +441,6 @@
         [
           "iam",
           "ListPolicyVersions"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -630,6 +459,10 @@
         ],
         [
           "iam",
+          "GetRole"
+        ],
+        [
+          "iam",
           "GetRolePolicy"
         ],
         [
@@ -643,10 +476,6 @@
         [
           "iam",
           "PutRolePolicy"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -670,6 +499,10 @@
         [
           "iam",
           "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "GetRole"
         ],
         [
           "iam",
@@ -702,10 +535,6 @@
         [
           "iam",
           "UpdateRoleDescription"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -721,10 +550,6 @@
         [
           "iam",
           "GetSAMLProvider"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -740,10 +565,6 @@
         [
           "iam",
           "UpdateSAMLProvider"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -759,10 +580,6 @@
         [
           "iam",
           "UploadServerCertificate"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -774,10 +591,6 @@
         [
           "iam",
           "GetServerCertificate"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -792,7 +605,7 @@
         ],
         [
           "iam",
-          "new"
+          "GetRole"
         ]
       ]
     ],
@@ -803,11 +616,11 @@
       [
         [
           "iam",
-          "UpdateRole"
+          "GetRole"
         ],
         [
           "iam",
-          "new"
+          "UpdateRole"
         ]
       ]
     ],
@@ -823,10 +636,6 @@
         [
           "iam",
           "GetUser"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -850,10 +659,6 @@
         [
           "iam",
           "UpdateUser"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -873,10 +678,6 @@
         [
           "iam",
           "ListVirtualMFADevices"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -892,10 +693,6 @@
         [
           "iam",
           "ListVirtualMFADevices"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -919,10 +716,6 @@
         [
           "inspector",
           "SubscribeToEvent"
-        ],
-        [
-          "inspector",
-          "new"
         ]
       ]
     ],
@@ -946,10 +739,6 @@
         [
           "inspector",
           "UnsubscribeFromEvent"
-        ],
-        [
-          "inspector",
-          "new"
         ]
       ]
     ],
@@ -969,10 +758,6 @@
         [
           "lakeformation",
           "UpdateLFTag"
-        ],
-        [
-          "lakeformation",
-          "new"
         ]
       ]
     ],
@@ -999,6 +784,10 @@
         [
           "rbin",
           "DeleteRule"
+        ],
+        [
+          "rbin",
+          "GetRule"
         ]
       ]
     ],
@@ -1030,6 +819,430 @@
     ],
     [
       "resource",
+      "aws_s3_bucket",
+      "create",
+      [
+        [
+          "s3",
+          "CreateBucket"
+        ],
+        [
+          "s3",
+          "DeleteBucketCors"
+        ],
+        [
+          "s3",
+          "DeleteBucketEncryption"
+        ],
+        [
+          "s3",
+          "DeleteBucketLifecycle"
+        ],
+        [
+          "s3",
+          "DeleteBucketPolicy"
+        ],
+        [
+          "s3",
+          "DeleteBucketReplication"
+        ],
+        [
+          "s3",
+          "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLocation"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "PutBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketAcl"
+        ],
+        [
+          "s3",
+          "PutBucketCors"
+        ],
+        [
+          "s3",
+          "PutBucketEncryption"
+        ],
+        [
+          "s3",
+          "PutBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketLogging"
+        ],
+        [
+          "s3",
+          "PutBucketPolicy"
+        ],
+        [
+          "s3",
+          "PutBucketReplication"
+        ],
+        [
+          "s3",
+          "PutBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "PutBucketVersioning"
+        ],
+        [
+          "s3",
+          "PutBucketWebsite"
+        ],
+        [
+          "s3",
+          "PutObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "SetAnd"
+        ],
+        [
+          "s3",
+          "SetFilter"
+        ],
+        [
+          "s3",
+          "SetID"
+        ],
+        [
+          "s3",
+          "SetPrefix"
+        ],
+        [
+          "s3",
+          "SetTags"
+        ],
+        [
+          "s3",
+          "SetType"
+        ],
+        [
+          "s3",
+          "SetURI"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "delete",
+      [
+        [
+          "s3",
+          "DeleteBucket"
+        ],
+        [
+          "s3",
+          "DeleteObject"
+        ],
+        [
+          "s3",
+          "DeleteObjects"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "ListObjectVersions"
+        ],
+        [
+          "s3",
+          "PutObjectLegalHold"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "read",
+      [
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLocation"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "update",
+      [
+        [
+          "s3",
+          "DeleteBucketCors"
+        ],
+        [
+          "s3",
+          "DeleteBucketEncryption"
+        ],
+        [
+          "s3",
+          "DeleteBucketLifecycle"
+        ],
+        [
+          "s3",
+          "DeleteBucketPolicy"
+        ],
+        [
+          "s3",
+          "DeleteBucketReplication"
+        ],
+        [
+          "s3",
+          "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLocation"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "PutBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketAcl"
+        ],
+        [
+          "s3",
+          "PutBucketCors"
+        ],
+        [
+          "s3",
+          "PutBucketEncryption"
+        ],
+        [
+          "s3",
+          "PutBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketLogging"
+        ],
+        [
+          "s3",
+          "PutBucketPolicy"
+        ],
+        [
+          "s3",
+          "PutBucketReplication"
+        ],
+        [
+          "s3",
+          "PutBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "PutBucketVersioning"
+        ],
+        [
+          "s3",
+          "PutBucketWebsite"
+        ],
+        [
+          "s3",
+          "PutObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "SetAnd"
+        ],
+        [
+          "s3",
+          "SetFilter"
+        ],
+        [
+          "s3",
+          "SetID"
+        ],
+        [
+          "s3",
+          "SetPrefix"
+        ],
+        [
+          "s3",
+          "SetTags"
+        ],
+        [
+          "s3",
+          "SetType"
+        ],
+        [
+          "s3",
+          "SetURI"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_s3_bucket_object",
       "create",
       [
@@ -1038,8 +1251,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ]
       ]
     ],
@@ -1053,8 +1266,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ]
       ]
     ],
@@ -1068,8 +1281,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ],
         [
           "s3",
@@ -1082,10 +1295,6 @@
         [
           "s3",
           "PutObjectRetention"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1099,8 +1308,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ]
       ]
     ],
@@ -1114,8 +1323,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ]
       ]
     ],
@@ -1129,8 +1338,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "HeadObject"
         ],
         [
           "s3",
@@ -1143,10 +1352,6 @@
         [
           "s3",
           "PutObjectRetention"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1160,12 +1365,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "CopyObject"
         ],
         [
           "s3",
-          "CopyObject"
+          "HeadObject"
         ],
         [
           "s3",
@@ -1182,10 +1387,21 @@
         [
           "s3",
           "SetURI"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_object_copy",
+      "read",
+      [
+        [
+          "kms",
+          "DescribeKey"
         ],
         [
           "s3",
-          "new"
+          "HeadObject"
         ]
       ]
     ],
@@ -1199,12 +1415,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
+          "s3",
+          "CopyObject"
         ],
         [
           "s3",
-          "CopyObject"
+          "HeadObject"
         ],
         [
           "s3",
@@ -1221,10 +1437,6 @@
         [
           "s3",
           "SetURI"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1240,10 +1452,6 @@
         [
           "sns",
           "PutDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -1255,10 +1463,6 @@
         [
           "sns",
           "PutDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -1270,10 +1474,6 @@
         [
           "sns",
           "GetDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -1289,36 +1489,6 @@
         [
           "sns",
           "PutDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssm_activation",
-      "create",
-      [
-        [
-          "ssm",
-          "CreateActivation"
-        ],
-        [
-          "ssm",
-          "DescribeActivations"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssm_activation",
-      "read",
-      [
-        [
-          "ssm",
-          "DescribeActivations"
         ]
       ]
     ],

@@ -28,7 +28,12 @@
       "resource",
       "aws_cloudwatch_contributor_insight_rule",
       "read",
-      []
+      [
+        [
+          "cloudwatch",
+          "DescribeInsightRules"
+        ]
+      ]
     ],
     [
       "resource",

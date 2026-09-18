@@ -10,10 +10,6 @@
         [
           "codeartifact",
           "GetAuthorizationToken"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "ec2",
           "DescribeInstanceTypes"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -40,10 +32,6 @@
         [
           "lexmodelbuildingservice",
           "GetBotAlias"
-        ],
-        [
-          "lexmodelbuildingservice",
-          "new"
         ]
       ]
     ],
@@ -55,21 +43,6 @@
         [
           "redshift",
           "DescribeOrderableClusterOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "delete",
-      [
-        [
-          "acm",
-          "DeleteCertificate"
-        ],
-        [
-          "acm",
-          "new"
         ]
       ]
     ],
@@ -93,10 +66,6 @@
         [
           "batch",
           "UpdateComputeEnvironment"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -112,10 +81,6 @@
         [
           "batch",
           "UntagResource"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -139,10 +104,6 @@
         [
           "batch",
           "UpdateJobQueue"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -158,10 +119,6 @@
         [
           "codeartifact",
           "PutRepositoryPermissionsPolicy"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -173,10 +130,6 @@
         [
           "codeartifact",
           "DeleteRepositoryPermissionsPolicy"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -188,10 +141,6 @@
         [
           "codeartifact",
           "GetRepositoryPermissionsPolicy"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -207,25 +156,6 @@
         [
           "codeartifact",
           "PutRepositoryPermissionsPolicy"
-        ],
-        [
-          "codeartifact",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_config_remediation_configuration",
-      "delete",
-      [
-        [
-          "configservice",
-          "DeleteRemediationConfiguration"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -241,10 +171,6 @@
         [
           "lexmodelbuildingservice",
           "PutBotAlias"
-        ],
-        [
-          "lexmodelbuildingservice",
-          "new"
         ]
       ]
     ],
@@ -256,10 +182,6 @@
         [
           "lexmodelbuildingservice",
           "DeleteBotAlias"
-        ],
-        [
-          "lexmodelbuildingservice",
-          "GetBotAlias"
         ]
       ]
     ],
@@ -271,10 +193,6 @@
         [
           "lexmodelbuildingservice",
           "GetBotAlias"
-        ],
-        [
-          "lexmodelbuildingservice",
-          "new"
         ]
       ]
     ],
@@ -290,61 +208,6 @@
         [
           "lexmodelbuildingservice",
           "PutBotAlias"
-        ],
-        [
-          "lexmodelbuildingservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_object",
-      "update",
-      [
-        [
-          "kms",
-          "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
-        ],
-        [
-          "s3",
-          "DeleteObjectTagging"
-        ],
-        [
-          "s3",
-          "GetObjectTagging"
-        ],
-        [
-          "s3",
-          "HeadObject"
-        ],
-        [
-          "s3",
-          "PutObject"
-        ],
-        [
-          "s3",
-          "PutObjectAcl"
-        ],
-        [
-          "s3",
-          "PutObjectLegalHold"
-        ],
-        [
-          "s3",
-          "PutObjectRetention"
-        ],
-        [
-          "s3",
-          "PutObjectTagging"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -360,10 +223,6 @@
         [
           "s3",
           "PutBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -375,10 +234,6 @@
         [
           "s3",
           "DeleteBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -390,10 +245,6 @@
         [
           "s3",
           "GetBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -409,10 +260,6 @@
         [
           "s3",
           "PutBucketOwnershipControls"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -432,10 +279,6 @@
         [
           "sns",
           "Subscribe"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ]

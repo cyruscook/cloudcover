@@ -6,12 +6,7 @@
       "data_source",
       "aws_servicecatalog_product",
       "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -25,10 +20,6 @@
         [
           "cloudwatchevents",
           "PutPermission"
-        ],
-        [
-          "cloudwatchevents",
-          "new"
         ]
       ]
     ],
@@ -40,10 +31,6 @@
         [
           "cloudwatchevents",
           "RemovePermission"
-        ],
-        [
-          "cloudwatchevents",
-          "new"
         ]
       ]
     ],
@@ -55,10 +42,6 @@
         [
           "cloudwatchevents",
           "DescribeEventBus"
-        ],
-        [
-          "cloudwatchevents",
-          "new"
         ]
       ]
     ],
@@ -74,10 +57,6 @@
         [
           "cloudwatchevents",
           "PutPermission"
-        ],
-        [
-          "cloudwatchevents",
-          "new"
         ]
       ]
     ],
@@ -100,21 +79,19 @@
         ],
         [
           "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
           "DisableVgwRoutePropagation"
         ],
         [
           "ec2",
           "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_default_route_table",
+      "read",
+      []
     ],
     [
       "resource",
@@ -139,10 +116,6 @@
         ],
         [
           "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
           "DisableVgwRoutePropagation"
         ],
         [
@@ -152,25 +125,6 @@
         [
           "ec2",
           "ReplaceRoute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_capacity_provider",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeleteCapacityProvider"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -194,10 +148,6 @@
         [
           "ecs",
           "UpdateCapacityProvider"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -213,10 +163,6 @@
         [
           "efs",
           "PutBackupPolicy"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -228,10 +174,6 @@
         [
           "efs",
           "PutBackupPolicy"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -243,10 +185,6 @@
         [
           "efs",
           "DescribeBackupPolicy"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -262,52 +200,6 @@
         [
           "efs",
           "PutBackupPolicy"
-        ],
-        [
-          "efs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "delete",
-      [
-        [
-          "eks",
-          "DeleteAddon"
-        ],
-        [
-          "eks",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeAddon"
-        ],
-        [
-          "eks",
-          "TagResource"
-        ],
-        [
-          "eks",
-          "UntagResource"
-        ],
-        [
-          "eks",
-          "UpdateAddon"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -319,10 +211,6 @@
         [
           "eks",
           "DeleteCluster"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -354,10 +242,6 @@
         [
           "eks",
           "UpdateClusterVersion"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -369,10 +253,6 @@
         [
           "eks",
           "DeleteFargateProfile"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -384,10 +264,6 @@
         [
           "eks",
           "DeleteNodegroup"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -415,10 +291,6 @@
         [
           "eks",
           "UpdateNodegroupVersion"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -438,10 +310,6 @@
         [
           "elasticsearchservice",
           "UpdateElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -461,10 +329,6 @@
         [
           "elasticsearchservice",
           "UpdateElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -476,10 +340,6 @@
         [
           "elasticsearchservice",
           "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -499,29 +359,34 @@
         [
           "elasticsearchservice",
           "UpdateElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_main_route_table_association",
-      "update",
+      "create",
       [
         [
           "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
           "ReplaceRouteTableAssociation"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_main_route_table_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_neptune_cluster",
+      "delete",
+      [
         [
-          "ec2",
-          "new"
+          "neptune",
+          "DeleteDBCluster"
         ]
       ]
     ],
@@ -541,10 +406,6 @@
         [
           "neptune",
           "ListTagsForResource"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -556,10 +417,6 @@
         [
           "neptune",
           "DeleteDBClusterEndpoint"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -575,10 +432,6 @@
         [
           "neptune",
           "ListTagsForResource"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -606,21 +459,6 @@
         [
           "neptune",
           "RemoveTagsFromResource"
-        ],
-        [
-          "neptune",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateRoute"
         ]
       ]
     ],
@@ -639,19 +477,11 @@
         ],
         [
           "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
           "GetDNSSEC"
         ],
         [
           "route53",
           "ListResourceRecordSets"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -670,38 +500,7 @@
         ],
         [
           "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
           "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteRouteTable"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DisassociateRouteTable"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -728,10 +527,6 @@
         ],
         [
           "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
           "DisableVgwRoutePropagation"
         ],
         [
@@ -741,67 +536,29 @@
         [
           "ec2",
           "ReplaceRoute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_route_table_association",
+      "aws_vpc_endpoint",
       "create",
       [
         [
           "ec2",
-          "AssociateRouteTable"
+          "AcceptVpcEndpointConnections"
         ],
         [
           "ec2",
-          "DescribeRouteTables"
+          "CreateVpcEndpoint"
         ],
         [
           "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
+          "DescribePrefixLists"
         ],
         [
           "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateRouteTable"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "ReplaceRouteTableAssociation"
-        ],
-        [
-          "ec2",
-          "new"
+          "DescribeVpcEndpointServiceConfigurations"
         ]
       ]
     ],
@@ -813,10 +570,70 @@
         [
           "ec2",
           "DeleteVpcEndpoints"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribePrefixLists"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint",
+      "update",
+      [
+        [
+          "ec2",
+          "AcceptVpcEndpointConnections"
         ],
         [
           "ec2",
-          "new"
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DescribePrefixLists"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpointServiceConfigurations"
+        ],
+        [
+          "ec2",
+          "ModifyVpcEndpoint"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint_route_table_association",
+      "create",
+      [
+        [
+          "ec2",
+          "ModifyVpcEndpoint"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint_subnet_association",
+      "create",
+      [
+        [
+          "ec2",
+          "ModifyVpcEndpoint"
         ]
       ]
     ],
@@ -828,12 +645,14 @@
         [
           "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint_subnet_association",
+      "read",
+      []
     ]
   ]
 }

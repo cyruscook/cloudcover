@@ -22,240 +22,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_sqs_queues",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_athena_data_catalog",
-      "create",
-      [
-        [
-          "athena",
-          "CreateDataCatalog"
-        ],
-        [
-          "athena",
-          "GetDataCatalog"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_data_catalog",
-      "delete",
-      [
-        [
-          "athena",
-          "DeleteDataCatalog"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_data_catalog",
-      "read",
-      [
-        [
-          "athena",
-          "GetDataCatalog"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_data_catalog",
-      "update",
-      [
-        [
-          "athena",
-          "GetDataCatalog"
-        ],
-        [
-          "athena",
-          "UpdateDataCatalog"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_database",
-      "create",
-      [
-        [
-          "athena",
-          "GetDatabase"
-        ],
-        [
-          "athena",
-          "GetQueryExecution"
-        ],
-        [
-          "athena",
-          "GetQueryResults"
-        ],
-        [
-          "athena",
-          "StartQueryExecution"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_database",
-      "delete",
-      [
-        [
-          "athena",
-          "GetQueryExecution"
-        ],
-        [
-          "athena",
-          "GetQueryResults"
-        ],
-        [
-          "athena",
-          "StartQueryExecution"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_database",
-      "read",
-      [
-        [
-          "athena",
-          "GetDatabase"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_named_query",
-      "create",
-      [
-        [
-          "athena",
-          "CreateNamedQuery"
-        ],
-        [
-          "athena",
-          "GetNamedQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_named_query",
-      "delete",
-      [
-        [
-          "athena",
-          "DeleteNamedQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_named_query",
-      "read",
-      [
-        [
-          "athena",
-          "GetNamedQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_workgroup",
-      "create",
-      [
-        [
-          "athena",
-          "CreateWorkGroup"
-        ],
-        [
-          "athena",
-          "GetWorkGroup"
-        ],
-        [
-          "athena",
-          "UpdateWorkGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_workgroup",
-      "delete",
-      [
-        [
-          "athena",
-          "DeleteWorkGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_workgroup",
-      "read",
-      [
-        [
-          "athena",
-          "GetWorkGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_athena_workgroup",
-      "update",
-      [
-        [
-          "athena",
-          "GetWorkGroup"
-        ],
-        [
-          "athena",
-          "UpdateWorkGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_graph",
-      "create",
-      [
-        [
-          "detective",
-          "CreateGraph"
-        ],
-        [
-          "detective",
-          "ListGraphs"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_member",
-      "create",
-      [
-        [
-          "detective",
-          "CreateMembers"
-        ],
-        [
-          "detective",
-          "ListMembers"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_detective_organization_admin_account",
       "create",
@@ -267,10 +33,6 @@
         [
           "detective",
           "ListOrganizationAdminAccounts"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -285,7 +47,7 @@
         ],
         [
           "detective",
-          "new"
+          "ListOrganizationAdminAccounts"
         ]
       ]
     ],
@@ -312,10 +74,6 @@
         [
           "detective",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -333,10 +91,6 @@
         [
           "detective",
           "DescribeOrganizationConfiguration"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -352,10 +106,6 @@
         [
           "detective",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "detective",
-          "new"
         ]
       ]
     ],
@@ -394,10 +144,6 @@
         [
           "redshift",
           "PutResourcePolicy"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -409,10 +155,6 @@
         [
           "redshift",
           "DeleteResourcePolicy"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -424,10 +166,6 @@
         [
           "redshift",
           "GetResourcePolicy"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -443,10 +181,6 @@
         [
           "redshift",
           "PutResourcePolicy"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -455,6 +189,10 @@
       "aws_secretsmanager_secret_rotation",
       "update",
       [
+        [
+          "secretsmanager",
+          "DescribeSecret"
+        ],
         [
           "secretsmanager",
           "RotateSecret"
@@ -472,132 +210,15 @@
         ],
         [
           "sqs",
+          "GetQueueAttributes"
+        ],
+        [
+          "sqs",
           "TagQueue"
         ],
         [
           "sqs",
           "UntagQueue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "delete",
-      [
-        [
-          "sqs",
-          "DeleteQueue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "create",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "delete",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_policy",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_allow_policy",
-      "create",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_allow_policy",
-      "delete",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_allow_policy",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_policy",
-      "create",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_policy",
-      "delete",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sqs_queue_redrive_policy",
-      "update",
-      [
-        [
-          "sqs",
-          "SetQueueAttributes"
         ]
       ]
     ],
@@ -609,6 +230,10 @@
         [
           "ec2",
           "CreateVerifiedAccessEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
         ]
       ]
     ],
@@ -620,6 +245,10 @@
         [
           "ec2",
           "DeleteVerifiedAccessEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
         ]
       ]
     ],
@@ -627,13 +256,22 @@
       "resource",
       "aws_verifiedaccess_endpoint",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_endpoint",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessEndpoint"

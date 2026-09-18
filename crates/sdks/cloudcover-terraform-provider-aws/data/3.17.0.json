@@ -10,10 +10,6 @@
         [
           "lambda",
           "GetCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "lambda",
           "GetFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -44,10 +36,6 @@
         [
           "signer",
           "DescribeSigningJob"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -59,10 +47,111 @@
         [
           "signer",
           "GetSigningProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack",
+      "create",
+      [
+        [
+          "cloudformation",
+          "CreateStack"
         ],
         [
-          "signer",
-          "new"
+          "cloudformation",
+          "DescribeStacks"
+        ],
+        [
+          "cloudformation",
+          "GetTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack",
+      "delete",
+      [
+        [
+          "cloudformation",
+          "DeleteStack"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack",
+      "update",
+      [
+        [
+          "cloudformation",
+          "DescribeStacks"
+        ],
+        [
+          "cloudformation",
+          "GetTemplate"
+        ],
+        [
+          "cloudformation",
+          "UpdateStack"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack_set",
+      "update",
+      [
+        [
+          "cloudformation",
+          "DescribeStackSet"
+        ],
+        [
+          "cloudformation",
+          "UpdateStackSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack_set_instance",
+      "create",
+      [
+        [
+          "cloudformation",
+          "CreateStackInstances"
+        ],
+        [
+          "cloudformation",
+          "DescribeStackInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack_set_instance",
+      "delete",
+      [
+        [
+          "cloudformation",
+          "DeleteStackInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_stack_set_instance",
+      "update",
+      [
+        [
+          "cloudformation",
+          "DescribeStackInstance"
+        ],
+        [
+          "cloudformation",
+          "UpdateStackInstances"
         ]
       ]
     ],
@@ -82,10 +171,6 @@
         [
           "glue",
           "GetTable"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -101,10 +186,6 @@
         [
           "glue",
           "GetTable"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -124,10 +205,6 @@
         [
           "glue",
           "UpdateTable"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -143,10 +220,6 @@
         [
           "lambda",
           "GetCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -158,10 +231,6 @@
         [
           "lambda",
           "DeleteCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -173,10 +242,6 @@
         [
           "lambda",
           "GetCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -192,10 +257,6 @@
         [
           "lambda",
           "UpdateCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -223,10 +284,6 @@
         [
           "lambda",
           "PutFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -246,10 +303,6 @@
         [
           "lambda",
           "ListVersionsByFunction"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -305,10 +358,6 @@
         [
           "lambda",
           "UpdateFunctionConfiguration"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -324,10 +373,6 @@
         [
           "networkfirewall",
           "DescribeFirewall"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -339,10 +384,6 @@
         [
           "networkfirewall",
           "DescribeFirewall"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -390,10 +431,6 @@
         [
           "networkfirewall",
           "UpdateSubnetChangeProtection"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -409,10 +446,6 @@
         [
           "networkfirewall",
           "DescribeFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -424,10 +457,6 @@
         [
           "networkfirewall",
           "DescribeFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -451,10 +480,6 @@
         [
           "networkfirewall",
           "UpdateFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -470,10 +495,6 @@
         [
           "networkfirewall",
           "DescribeRuleGroup"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -485,10 +506,6 @@
         [
           "networkfirewall",
           "DescribeRuleGroup"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -512,10 +529,6 @@
         [
           "networkfirewall",
           "UpdateRuleGroup"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -531,10 +544,6 @@
         [
           "signer",
           "StartSigningJob"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -552,10 +561,6 @@
         [
           "signer",
           "DescribeSigningJob"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -571,10 +576,6 @@
         [
           "signer",
           "PutSigningProfile"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -586,10 +587,6 @@
         [
           "signer",
           "CancelSigningProfile"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -601,10 +598,6 @@
         [
           "signer",
           "GetSigningProfile"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -624,10 +617,6 @@
         [
           "signer",
           "UntagResource"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -643,10 +632,6 @@
         [
           "signer",
           "ListProfilePermissions"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -662,10 +647,6 @@
         [
           "signer",
           "RemoveProfilePermission"
-        ],
-        [
-          "signer",
-          "new"
         ]
       ]
     ],
@@ -677,10 +658,17 @@
         [
           "signer",
           "ListProfilePermissions"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_storagegateway_nfs_file_share",
+      "delete",
+      [
         [
-          "signer",
-          "new"
+          "storagegateway",
+          "DeleteFileShare"
         ]
       ]
     ],
@@ -712,10 +700,6 @@
         [
           "workspaces",
           "RegisterWorkspaceDirectory"
-        ],
-        [
-          "workspaces",
-          "new"
         ]
       ]
     ],
@@ -755,10 +739,6 @@
         [
           "workspaces",
           "ModifyWorkspaceCreationProperties"
-        ],
-        [
-          "workspaces",
-          "new"
         ]
       ]
     ],
@@ -778,10 +758,6 @@
         [
           "workspaces",
           "DisassociateIpGroups"
-        ],
-        [
-          "workspaces",
-          "new"
         ]
       ]
     ]

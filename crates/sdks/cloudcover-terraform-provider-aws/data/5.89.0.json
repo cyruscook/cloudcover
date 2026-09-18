@@ -60,6 +60,10 @@
         [
           "neptunegraph",
           "CreateGraph"
+        ],
+        [
+          "neptunegraph",
+          "GetGraph"
         ]
       ]
     ],
@@ -71,6 +75,10 @@
         [
           "neptunegraph",
           "DeleteGraph"
+        ],
+        [
+          "neptunegraph",
+          "GetGraph"
         ]
       ]
     ],
@@ -90,6 +98,10 @@
       "aws_neptunegraph_graph",
       "update",
       [
+        [
+          "neptunegraph",
+          "GetGraph"
+        ],
         [
           "neptunegraph",
           "UpdateGraph"
@@ -122,7 +134,12 @@
       "resource",
       "aws_quicksight_role_membership",
       "read",
-      []
+      [
+        [
+          "quicksight",
+          "ListRoleMemberships"
+        ]
+      ]
     ],
     [
       "resource",
@@ -138,6 +155,14 @@
         [
           "rds",
           "CreateDBShardGroup"
+        ],
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeDBShardGroups"
         ]
       ]
     ],
@@ -149,6 +174,14 @@
         [
           "rds",
           "DeleteDBShardGroup"
+        ],
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeDBShardGroups"
         ]
       ]
     ],
@@ -168,6 +201,14 @@
       "aws_rds_shard_group",
       "update",
       [
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeDBShardGroups"
+        ],
         [
           "rds",
           "ModifyDBShardGroup"
@@ -193,6 +234,10 @@
         [
           "xray",
           "DeleteResourcePolicy"
+        ],
+        [
+          "xray",
+          "ListResourcePolicies"
         ]
       ]
     ],
@@ -200,7 +245,12 @@
       "resource",
       "aws_xray_resource_policy",
       "read",
-      []
+      [
+        [
+          "xray",
+          "ListResourcePolicies"
+        ]
+      ]
     ],
     [
       "resource",

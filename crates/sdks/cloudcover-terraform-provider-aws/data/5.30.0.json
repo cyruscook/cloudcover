@@ -15,39 +15,13 @@
     ],
     [
       "resource",
-      "aws_alb_listener",
-      "create",
-      [
-        [
-          "elbv2",
-          "CreateListener"
-        ],
-        [
-          "elbv2",
-          "DescribeListeners"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_listener",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
-        ],
-        [
-          "elbv2",
-          "ModifyListener"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_ami",
       "update",
       [
+        [
+          "ec2",
+          "DescribeImages"
+        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -59,10 +33,6 @@
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -73,6 +43,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "DisableImageDeprecation"
         ],
         [
@@ -82,10 +56,6 @@
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -96,6 +66,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "DisableImageDeprecation"
         ],
         [
@@ -105,10 +79,6 @@
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -218,36 +188,6 @@
     ],
     [
       "resource",
-      "aws_lb_listener",
-      "create",
-      [
-        [
-          "elbv2",
-          "CreateListener"
-        ],
-        [
-          "elbv2",
-          "DescribeListeners"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_listener",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
-        ],
-        [
-          "elbv2",
-          "ModifyListener"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_lb_trust_store",
       "create",
       [
@@ -258,10 +198,6 @@
         [
           "elbv2",
           "DescribeTrustStores"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -273,6 +209,10 @@
         [
           "elbv2",
           "DeleteTrustStore"
+        ],
+        [
+          "elbv2",
+          "DescribeTrustStoreAssociations"
         ]
       ]
     ],
@@ -299,10 +239,6 @@
         [
           "elbv2",
           "ModifyTrustStore"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -318,10 +254,6 @@
         [
           "elbv2",
           "DescribeTrustStoreRevocations"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -333,10 +265,6 @@
         [
           "elbv2",
           "RemoveTrustStoreRevocations"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -398,43 +326,6 @@
     ],
     [
       "resource",
-      "aws_securityhub_action_target",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateActionTarget"
-        ],
-        [
-          "securityhub",
-          "DescribeActionTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DeleteActionTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "update",
-      [
-        [
-          "securityhub",
-          "UpdateActionTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_securityhub_finding_aggregator",
       "create",
       [
@@ -445,17 +336,6 @@
         [
           "securityhub",
           "GetFindingAggregator"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_finding_aggregator",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DeleteFindingAggregator"
         ]
       ]
     ],
@@ -484,293 +364,6 @@
           "UpdateFindingAggregator"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateInsight"
-        ],
-        [
-          "securityhub",
-          "GetInsights"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DeleteInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "read",
-      [
-        [
-          "securityhub",
-          "GetInsights"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "update",
-      [
-        [
-          "securityhub",
-          "GetInsights"
-        ],
-        [
-          "securityhub",
-          "UpdateInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_invite_accepter",
-      "create",
-      [
-        [
-          "securityhub",
-          "AcceptInvitation"
-        ],
-        [
-          "securityhub",
-          "GetMasterAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_invite_accepter",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DisassociateFromMasterAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_invite_accepter",
-      "read",
-      [
-        [
-          "securityhub",
-          "GetMasterAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_member",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateMembers"
-        ],
-        [
-          "securityhub",
-          "GetMembers"
-        ],
-        [
-          "securityhub",
-          "InviteMembers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_member",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DeleteMembers"
-        ],
-        [
-          "securityhub",
-          "DisassociateMembers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_member",
-      "read",
-      [
-        [
-          "securityhub",
-          "GetMembers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_admin_account",
-      "create",
-      [
-        [
-          "securityhub",
-          "EnableOrganizationAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_admin_account",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DisableOrganizationAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_admin_account",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_configuration",
-      "create",
-      [
-        [
-          "securityhub",
-          "DescribeOrganizationConfiguration"
-        ],
-        [
-          "securityhub",
-          "UpdateOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_configuration",
-      "read",
-      [
-        [
-          "securityhub",
-          "DescribeOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_configuration",
-      "update",
-      [
-        [
-          "securityhub",
-          "DescribeOrganizationConfiguration"
-        ],
-        [
-          "securityhub",
-          "UpdateOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_product_subscription",
-      "create",
-      [
-        [
-          "securityhub",
-          "EnableImportFindingsForProduct"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_product_subscription",
-      "delete",
-      [
-        [
-          "securityhub",
-          "DisableImportFindingsForProduct"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_product_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_control",
-      "create",
-      [
-        [
-          "securityhub",
-          "UpdateStandardsControl"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_control",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_control",
-      "update",
-      [
-        [
-          "securityhub",
-          "UpdateStandardsControl"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_subscription",
-      "create",
-      [
-        [
-          "securityhub",
-          "BatchEnableStandards"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_subscription",
-      "delete",
-      [
-        [
-          "securityhub",
-          "BatchDisableStandards"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_subscription",
-      "read",
-      []
     ]
   ]
 }

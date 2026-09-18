@@ -4,85 +4,31 @@
   "upsert": [
     [
       "list_resource",
-      "aws_bedrockagentcore_harness",
-      "list",
-      []
-    ],
-    [
-      "list_resource",
-      "aws_iam_access_key",
-      "list",
-      []
-    ],
-    [
-      "list_resource",
       "aws_observabilityadmin_telemetry_rule_for_organization",
       "list",
-      []
-    ],
-    [
-      "list_resource",
-      "aws_route53_vpc_association_authorization",
-      "list",
-      []
-    ],
-    [
-      "list_resource",
-      "aws_route53_zone_association",
-      "list",
-      []
+      [
+        [
+          "observabilityadmin",
+          "GetTelemetryRuleForOrganization"
+        ],
+        [
+          "observabilityadmin",
+          "ListTelemetryRulesForOrganization"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_securityhub_automation_rule_v2",
       "list",
-      []
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_harness",
-      "create",
       [
         [
-          "bedrockagentcorecontrol",
-          "CreateHarness"
+          "securityhub",
+          "GetAutomationRuleV2"
         ],
         [
-          "bedrockagentcorecontrol",
-          "GetHarness"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_harness",
-      "delete",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "DeleteHarness"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_harness",
-      "read",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "GetHarness"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_harness",
-      "update",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "UpdateHarness"
+          "securityhub",
+          "ListAutomationRulesV2"
         ]
       ]
     ],
@@ -177,91 +123,14 @@
     [
       "resource",
       "aws_xray_indexing_rule",
-      "create",
-      [
-        [
-          "xray",
-          "UpdateIndexingRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_indexing_rule",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_xray_indexing_rule",
-      "read",
-      [
-        [
-          "xray",
-          "GetIndexingRules"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_indexing_rule",
-      "update",
-      [
-        [
-          "xray",
-          "UpdateIndexingRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_resource_policy",
-      "update",
-      [
-        [
-          "xray",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_trace_segment_destination",
-      "create",
-      [
-        [
-          "xray",
-          "UpdateTraceSegmentDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_trace_segment_destination",
       "delete",
       []
     ],
     [
       "resource",
       "aws_xray_trace_segment_destination",
-      "read",
-      [
-        [
-          "xray",
-          "GetTraceSegmentDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_trace_segment_destination",
-      "update",
-      [
-        [
-          "xray",
-          "UpdateTraceSegmentDestination"
-        ]
-      ]
+      "delete",
+      []
     ]
   ]
 }

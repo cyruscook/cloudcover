@@ -22,10 +22,6 @@
         [
           "athena",
           "StartQueryExecution"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -37,10 +33,6 @@
         [
           "athena",
           "GetDatabase"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -52,10 +44,6 @@
         [
           "athena",
           "GetDatabase"
-        ],
-        [
-          "athena",
-          "new"
         ]
       ]
     ],
@@ -72,44 +60,6 @@
     ],
     [
       "resource",
-      "aws_service_discovery_http_namespace",
-      "create",
-      [
-        [
-          "servicediscovery",
-          "CreateHttpNamespace"
-        ],
-        [
-          "servicediscovery",
-          "GetNamespace"
-        ],
-        [
-          "servicediscovery",
-          "ListTagsForResource"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_http_namespace",
-      "delete",
-      [
-        [
-          "servicediscovery",
-          "DeleteNamespace"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_service_discovery_instance",
       "create",
       [
@@ -120,10 +70,6 @@
         [
           "servicediscovery",
           "RegisterInstance"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ],
@@ -135,10 +81,6 @@
         [
           "servicediscovery",
           "DeregisterInstance"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ],
@@ -150,10 +92,6 @@
         [
           "servicediscovery",
           "GetInstance"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ],
@@ -169,86 +107,6 @@
         [
           "servicediscovery",
           "RegisterInstance"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_private_dns_namespace",
-      "create",
-      [
-        [
-          "servicediscovery",
-          "CreatePrivateDnsNamespace"
-        ],
-        [
-          "servicediscovery",
-          "GetNamespace"
-        ],
-        [
-          "servicediscovery",
-          "ListTagsForResource"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_private_dns_namespace",
-      "delete",
-      [
-        [
-          "servicediscovery",
-          "DeleteNamespace"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_public_dns_namespace",
-      "create",
-      [
-        [
-          "servicediscovery",
-          "CreatePublicDnsNamespace"
-        ],
-        [
-          "servicediscovery",
-          "GetNamespace"
-        ],
-        [
-          "servicediscovery",
-          "ListTagsForResource"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_public_dns_namespace",
-      "delete",
-      [
-        [
-          "servicediscovery",
-          "DeleteNamespace"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ],
@@ -264,41 +122,6 @@
         [
           "servicediscovery",
           "ListInstances"
-        ],
-        [
-          "servicediscovery",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_service_discovery_service",
-      "update",
-      [
-        [
-          "servicediscovery",
-          "GetService"
-        ],
-        [
-          "servicediscovery",
-          "ListTagsForResource"
-        ],
-        [
-          "servicediscovery",
-          "TagResource"
-        ],
-        [
-          "servicediscovery",
-          "UntagResource"
-        ],
-        [
-          "servicediscovery",
-          "UpdateService"
-        ],
-        [
-          "servicediscovery",
-          "new"
         ]
       ]
     ]

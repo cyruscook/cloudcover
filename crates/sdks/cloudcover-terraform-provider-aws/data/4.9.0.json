@@ -21,10 +21,6 @@
         [
           "lambda",
           "GetFunctionUrlConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -40,10 +36,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -59,10 +51,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -78,10 +66,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -97,10 +81,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -120,10 +100,6 @@
         [
           "opensearchservice",
           "ListTags"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -140,6 +116,21 @@
     ],
     [
       "resource",
+      "aws_backup_report_plan",
+      "delete",
+      [
+        [
+          "backup",
+          "DeleteReportPlan"
+        ],
+        [
+          "backup",
+          "DescribeReportPlan"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_db_instance_automated_backups_replication",
       "create",
       [
@@ -150,10 +141,6 @@
         [
           "rds",
           "StartDBInstanceAutomatedBackupsReplication"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -168,11 +155,11 @@
         ],
         [
           "rds",
-          "StopDBInstanceAutomatedBackupsReplication"
+          "DescribeDBInstances"
         ],
         [
           "rds",
-          "new"
+          "StopDBInstanceAutomatedBackupsReplication"
         ]
       ]
     ],
@@ -199,10 +186,6 @@
         [
           "dynamodb",
           "UpdateContributorInsights"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -213,11 +196,11 @@
       [
         [
           "dynamodb",
-          "UpdateContributorInsights"
+          "DescribeContributorInsights"
         ],
         [
           "dynamodb",
-          "new"
+          "UpdateContributorInsights"
         ]
       ]
     ],
@@ -229,10 +212,6 @@
         [
           "dynamodb",
           "DescribeContributorInsights"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -260,10 +239,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -286,6 +261,10 @@
         ],
         [
           "elasticache",
+          "DescribeGlobalReplicationGroups"
+        ],
+        [
+          "elasticache",
           "DescribeReplicationGroups"
         ],
         [
@@ -295,10 +274,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -326,10 +301,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -357,10 +328,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -388,10 +355,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -407,10 +370,6 @@
         [
           "iot",
           "UpdateIndexingConfiguration"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -428,10 +387,6 @@
         [
           "iot",
           "GetIndexingConfiguration"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -447,10 +402,6 @@
         [
           "iot",
           "UpdateIndexingConfiguration"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -466,10 +417,6 @@
         [
           "iot",
           "SetV2LoggingOptions"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -487,10 +434,6 @@
         [
           "iot",
           "GetV2LoggingOptions"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -506,10 +449,6 @@
         [
           "iot",
           "SetV2LoggingOptions"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -529,10 +468,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -544,10 +479,6 @@
         [
           "iot",
           "DeleteProvisioningTemplate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -563,10 +494,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -598,10 +525,6 @@
         [
           "iot",
           "UpdateProvisioningTemplate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -621,10 +544,6 @@
         [
           "lambda",
           "GetFunctionUrlConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -636,10 +555,6 @@
         [
           "lambda",
           "DeleteFunctionUrlConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -651,10 +566,6 @@
         [
           "lambda",
           "GetFunctionUrlConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -670,10 +581,6 @@
         [
           "lambda",
           "UpdateFunctionUrlConfig"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -705,10 +612,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -724,10 +627,6 @@
         [
           "opensearchservice",
           "DescribeDomain"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -747,10 +646,6 @@
         [
           "opensearchservice",
           "ListTags"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -794,10 +689,6 @@
         [
           "opensearchservice",
           "UpgradeDomain"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -813,10 +704,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -832,10 +719,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -847,10 +730,6 @@
         [
           "opensearchservice",
           "DescribeDomain"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -866,10 +745,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -889,10 +764,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -912,10 +783,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -927,10 +794,6 @@
         [
           "opensearchservice",
           "DescribeDomain"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -950,41 +813,6 @@
         [
           "opensearchservice",
           "UpdateDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_organizations_account",
-      "create",
-      [
-        [
-          "organizations",
-          "CreateAccount"
-        ],
-        [
-          "organizations",
-          "DescribeAccount"
-        ],
-        [
-          "organizations",
-          "ListParents"
-        ],
-        [
-          "organizations",
-          "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "MoveAccount"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -999,11 +827,11 @@
         ],
         [
           "organizations",
-          "RemoveAccountFromOrganization"
+          "DescribeAccount"
         ],
         [
           "organizations",
-          "new"
+          "RemoveAccountFromOrganization"
         ]
       ]
     ],
@@ -1019,10 +847,6 @@
         [
           "rds",
           "StartActivityStream"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -1033,11 +857,11 @@
       [
         [
           "rds",
-          "StopActivityStream"
+          "DescribeDBClusters"
         ],
         [
           "rds",
-          "new"
+          "StopActivityStream"
         ]
       ]
     ],
@@ -1049,10 +873,6 @@
         [
           "rds",
           "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -1087,6 +907,10 @@
         ],
         [
           "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
           "DeleteBucketWebsite"
         ],
         [
@@ -1128,6 +952,10 @@
         [
           "s3",
           "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketTagging"
         ],
         [
           "s3",
@@ -1183,6 +1011,10 @@
         ],
         [
           "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
           "PutBucketVersioning"
         ],
         [
@@ -1220,10 +1052,6 @@
         [
           "s3",
           "SetURI"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1238,11 +1066,19 @@
         ],
         [
           "s3",
+          "DeleteObject"
+        ],
+        [
+          "s3",
+          "DeleteObjects"
+        ],
+        [
+          "s3",
           "ListObjectVersions"
         ],
         [
           "s3",
-          "new"
+          "PutObjectLegalHold"
         ]
       ]
     ],
@@ -1273,6 +1109,10 @@
         ],
         [
           "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
           "DeleteBucketWebsite"
         ],
         [
@@ -1314,6 +1154,10 @@
         [
           "s3",
           "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketTagging"
         ],
         [
           "s3",
@@ -1369,6 +1213,10 @@
         ],
         [
           "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
           "PutBucketVersioning"
         ],
         [
@@ -1406,10 +1254,6 @@
         [
           "s3",
           "SetURI"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1465,10 +1309,6 @@
         [
           "storagegateway",
           "UpdateSMBSecurityStrategy"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -1492,10 +1332,6 @@
         [
           "storagegateway",
           "DescribeSMBSettings"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -1559,25 +1395,6 @@
         [
           "storagegateway",
           "UpdateSMBSecurityStrategy"
-        ],
-        [
-          "storagegateway",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_storagegateway_nfs_file_share",
-      "delete",
-      [
-        [
-          "storagegateway",
-          "DeleteFileShare"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ]

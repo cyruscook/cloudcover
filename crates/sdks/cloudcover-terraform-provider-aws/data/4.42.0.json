@@ -10,10 +10,6 @@
         [
           "redshiftserverless",
           "GetCredentials"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -88,6 +84,10 @@
         ],
         [
           "rds",
+          "DescribeBlueGreenDeployments"
+        ],
+        [
+          "rds",
           "DescribeDBInstances"
         ],
         [
@@ -101,21 +101,6 @@
         [
           "rds",
           "SwitchoverBlueGreenDeployment"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_parameter_group",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBParameterGroup"
         ]
       ]
     ]

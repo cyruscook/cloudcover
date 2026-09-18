@@ -4,69 +4,6 @@
   "upsert": [
     [
       "resource",
-      "aws_s3_bucket",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketAccelerateConfiguration"
-        ],
-        [
-          "s3",
-          "GetBucketCors"
-        ],
-        [
-          "s3",
-          "GetBucketEncryption"
-        ],
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "GetBucketLocation"
-        ],
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "GetBucketPolicy"
-        ],
-        [
-          "s3",
-          "GetBucketReplication"
-        ],
-        [
-          "s3",
-          "GetBucketRequestPayment"
-        ],
-        [
-          "s3",
-          "GetBucketTagging"
-        ],
-        [
-          "s3",
-          "GetBucketVersioning"
-        ],
-        [
-          "s3",
-          "GetBucketWebsite"
-        ],
-        [
-          "s3",
-          "GetObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "HeadBucket"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_sagemaker_model",
       "create",
       [
@@ -81,10 +18,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -112,10 +45,6 @@
         [
           "waf",
           "UpdateRule"
-        ],
-        [
-          "waf",
-          "new"
         ]
       ]
     ],
@@ -147,10 +76,6 @@
         [
           "waf",
           "UpdateRuleGroup"
-        ],
-        [
-          "waf",
-          "new"
         ]
       ]
     ],
@@ -186,10 +111,6 @@
         [
           "waf",
           "UpdateWebACL"
-        ],
-        [
-          "waf",
-          "new"
         ]
       ]
     ]

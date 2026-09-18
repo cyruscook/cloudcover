@@ -10,10 +10,6 @@
         [
           "cloudformation",
           "DescribeType"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "iam",
           "ListPolicies"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "kms",
           "GetPublicKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -69,6 +57,17 @@
     [
       "resource",
       "aws_batch_compute_environment",
+      "create",
+      [
+        [
+          "batch",
+          "CreateComputeEnvironment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_batch_compute_environment",
       "delete",
       [
         [
@@ -78,12 +77,50 @@
         [
           "batch",
           "UpdateComputeEnvironment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_batch_compute_environment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_batch_compute_environment",
+      "update",
+      [
+        [
+          "batch",
+          "TagResource"
         ],
         [
           "batch",
-          "new"
+          "UntagResource"
+        ],
+        [
+          "batch",
+          "UpdateComputeEnvironment"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_batch_job_definition",
+      "create",
+      [
+        [
+          "batch",
+          "RegisterJobDefinition"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_batch_job_definition",
+      "read",
+      []
     ],
     [
       "resource",
@@ -96,15 +133,7 @@
         ],
         [
           "cloudformation",
-          "DescribeTypeRegistration"
-        ],
-        [
-          "cloudformation",
           "RegisterType"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -120,10 +149,6 @@
         [
           "cloudformation",
           "ListTypeVersions"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -135,10 +160,6 @@
         [
           "cloudformation",
           "DescribeType"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -154,10 +175,6 @@
         [
           "codestarconnections",
           "GetHost"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -169,10 +186,6 @@
         [
           "codestarconnections",
           "DeleteHost"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -184,10 +197,6 @@
         [
           "codestarconnections",
           "GetHost"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -203,10 +212,6 @@
         [
           "codestarconnections",
           "UpdateHost"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -226,10 +231,6 @@
         [
           "rds",
           "ListTagsForResource"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -241,10 +242,6 @@
         [
           "rds",
           "DeleteDBProxyEndpoint"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -260,10 +257,6 @@
         [
           "rds",
           "ListTagsForResource"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -291,10 +284,6 @@
         [
           "rds",
           "RemoveTagsFromResource"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -314,10 +303,6 @@
         [
           "elasticache",
           "ListTagsForResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -333,10 +318,6 @@
         [
           "elasticache",
           "ListTagsForResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -364,10 +345,6 @@
         [
           "elasticache",
           "RemoveTagsFromResource"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -383,10 +360,6 @@
         [
           "ec2",
           "TerminateInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -401,31 +374,25 @@
         ],
         [
           "lambda",
-          "GetEventSourceMapping"
-        ],
-        [
-          "lambda",
           "SetDestination"
         ],
         [
           "lambda",
           "SetOnFailure"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_lambda_event_source_mapping",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_lambda_event_source_mapping",
       "update",
       [
-        [
-          "lambda",
-          "GetEventSourceMapping"
-        ],
         [
           "lambda",
           "SetDestination"
@@ -437,10 +404,6 @@
         [
           "lambda",
           "UpdateEventSourceMapping"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -456,10 +419,6 @@
         [
           "macie2",
           "GetMacieSession"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -471,10 +430,6 @@
         [
           "macie2",
           "DisableMacie"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -486,10 +441,6 @@
         [
           "macie2",
           "GetMacieSession"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -505,10 +456,6 @@
         [
           "macie2",
           "UpdateMacieSession"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -540,10 +487,6 @@
         [
           "organizations",
           "MoveAccount"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -571,10 +514,6 @@
         [
           "organizations",
           "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -598,10 +537,6 @@
         [
           "organizations",
           "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -621,10 +556,6 @@
         [
           "organizations",
           "UpdateOrganizationalUnit"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -636,10 +567,21 @@
         [
           "ram",
           "DeleteResourceShare"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ram_resource_share_accepter",
+      "create",
+      [
+        [
+          "ram",
+          "AcceptResourceShareInvitation"
         ],
         [
           "ram",
-          "new"
+          "ListResources"
         ]
       ]
     ],
@@ -651,10 +593,17 @@
         [
           "ram",
           "DisassociateResourceShare"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ram_resource_share_accepter",
+      "read",
+      [
         [
           "ram",
-          "new"
+          "ListResources"
         ]
       ]
     ],
@@ -678,10 +627,6 @@
         [
           "rds",
           "ModifyGlobalCluster"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -697,10 +642,6 @@
         [
           "route53resolver",
           "ListFirewallRules"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -712,10 +653,6 @@
         [
           "route53resolver",
           "DeleteFirewallRule"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -742,10 +679,6 @@
         [
           "route53resolver",
           "UpdateFirewallRule"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -765,10 +698,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -780,10 +709,6 @@
         [
           "route53resolver",
           "DisassociateFirewallRuleGroup"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -799,10 +724,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -830,10 +751,6 @@
         [
           "route53resolver",
           "UpdateFirewallRuleGroupAssociation"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -845,14 +762,6 @@
         [
           "servicecatalog",
           "CreateProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -864,14 +773,6 @@
         [
           "servicecatalog",
           "DeleteProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -879,12 +780,7 @@
       "resource",
       "aws_servicecatalog_product",
       "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -893,15 +789,7 @@
       [
         [
           "servicecatalog",
-          "DescribeProductAsAdmin"
-        ],
-        [
-          "servicecatalog",
           "UpdateProduct"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -929,10 +817,6 @@
         [
           "ses",
           "UpdateConfigurationSetSendingEnabled"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -956,10 +840,6 @@
         [
           "ses",
           "UpdateConfigurationSetSendingEnabled"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ]

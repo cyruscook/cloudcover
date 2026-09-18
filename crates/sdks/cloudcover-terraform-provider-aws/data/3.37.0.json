@@ -4,49 +4,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_alb_listener",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_eks_addon",
       "read",
       [
         [
           "eks",
           "DescribeAddon"
-        ],
-        [
-          "eks",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_lb_listener",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_listener",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
         ]
       ]
     ],
@@ -92,24 +55,12 @@
           "UpdateAutoScalingGroup"
         ],
         [
-          "autoscaling",
-          "new"
-        ],
-        [
           "elb",
           "DescribeInstanceHealth"
         ],
         [
-          "elb",
-          "new"
-        ],
-        [
           "elbv2",
           "DescribeTargetHealth"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -141,10 +92,6 @@
         [
           "autoscaling",
           "UpdateAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -234,35 +181,12 @@
           "UpdateAutoScalingGroup"
         ],
         [
-          "autoscaling",
-          "new"
-        ],
-        [
           "elb",
           "DescribeInstanceHealth"
         ],
         [
-          "elb",
-          "new"
-        ],
-        [
           "elbv2",
           "DescribeTargetHealth"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudhsm_v2_cluster",
-      "read",
-      [
-        [
-          "cloudhsmv2",
-          "DescribeClusters"
         ]
       ]
     ],
@@ -282,10 +206,6 @@
         [
           "codedeploy",
           "ListTagsForResource"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -301,10 +221,6 @@
         [
           "codedeploy",
           "ListTagsForResource"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -332,10 +248,6 @@
         [
           "codedeploy",
           "UpdateApplication"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -355,10 +267,6 @@
         [
           "codedeploy",
           "ListTagsForResource"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -374,10 +282,6 @@
         [
           "codedeploy",
           "ListTagsForResource"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -405,10 +309,6 @@
         [
           "codedeploy",
           "UpdateDeploymentGroup"
-        ],
-        [
-          "codedeploy",
-          "new"
         ]
       ]
     ],
@@ -424,10 +324,6 @@
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -439,10 +335,6 @@
         [
           "ecr",
           "PutReplicationConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -458,10 +350,6 @@
         [
           "eks",
           "DescribeAddon"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -473,14 +361,6 @@
         [
           "eks",
           "DeleteAddon"
-        ],
-        [
-          "eks",
-          "DescribeAddon"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -492,10 +372,6 @@
         [
           "eks",
           "DescribeAddon"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -510,10 +386,6 @@
         ],
         [
           "eks",
-          "DescribeUpdate"
-        ],
-        [
-          "eks",
           "TagResource"
         ],
         [
@@ -523,21 +395,6 @@
         [
           "eks",
           "UpdateAddon"
-        ],
-        [
-          "eks",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_listener",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeListeners"
         ]
       ]
     ],
@@ -573,10 +430,6 @@
         [
           "route53resolver",
           "UpdateFirewallDomains"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -588,10 +441,6 @@
         [
           "route53resolver",
           "DeleteFirewallDomainList"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -611,10 +460,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -646,10 +491,6 @@
         [
           "route53resolver",
           "UpdateFirewallDomains"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -665,10 +506,6 @@
         [
           "securityhub",
           "GetInsights"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -680,10 +517,6 @@
         [
           "securityhub",
           "DeleteInsight"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -695,10 +528,6 @@
         [
           "securityhub",
           "GetInsights"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -714,10 +543,6 @@
         [
           "securityhub",
           "UpdateInsight"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ]

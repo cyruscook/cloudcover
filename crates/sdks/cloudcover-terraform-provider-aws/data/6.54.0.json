@@ -4,6 +4,29 @@
   "upsert": [
     [
       "data_source",
+      "aws_mq_broker",
+      "read",
+      [
+        [
+          "mq",
+          "DescribeBroker"
+        ],
+        [
+          "mq",
+          "DescribeSharedResources"
+        ],
+        [
+          "mq",
+          "DescribeUser"
+        ],
+        [
+          "mq",
+          "ListBrokers"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_quicksight_data_set",
       "read",
       [
@@ -28,6 +51,10 @@
         ],
         [
           "route53profiles",
+          "ListProfiles"
+        ],
+        [
+          "route53profiles",
           "ListTagsForResource"
         ]
       ]
@@ -36,37 +63,83 @@
       "list_resource",
       "aws_bedrockagentcore_browser_profile",
       "list",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "ListBrowserProfiles"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_codepipeline",
       "list",
-      []
+      [
+        [
+          "codepipeline",
+          "GetPipeline"
+        ],
+        [
+          "codepipeline",
+          "ListPipelines"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_function_scaling_config",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetFunctionScalingConfig"
+        ],
+        [
+          "lambda",
+          "ListCapacityProviders"
+        ],
+        [
+          "lambda",
+          "ListFunctionVersionsByCapacityProvider"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_scheduler_schedule",
       "list",
-      []
+      [
+        [
+          "scheduler",
+          "GetSchedule"
+        ],
+        [
+          "scheduler",
+          "ListSchedules"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssoadmin_region",
       "list",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListRegions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_workspaces_pool",
       "list",
-      []
+      [
+        [
+          "workspaces",
+          "DescribeWorkspacesPools"
+        ]
+      ]
     ],
     [
       "resource",
@@ -76,6 +149,10 @@
         [
           "bedrockagentcorecontrol",
           "CreateBrowserProfile"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetBrowserProfile"
         ]
       ]
     ],
@@ -87,6 +164,10 @@
         [
           "bedrockagentcorecontrol",
           "DeleteBrowserProfile"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetBrowserProfile"
         ]
       ]
     ],
@@ -129,6 +210,10 @@
       [
         [
           "lambda",
+          "GetFunctionScalingConfig"
+        ],
+        [
+          "lambda",
           "PutFunctionScalingConfig"
         ]
       ]
@@ -162,6 +247,10 @@
       [
         [
           "lambda",
+          "GetFunctionScalingConfig"
+        ],
+        [
+          "lambda",
           "PutFunctionScalingConfig"
         ]
       ]
@@ -181,6 +270,10 @@
         ],
         [
           "mq",
+          "DescribeSharedResources"
+        ],
+        [
+          "mq",
           "DescribeUser"
         ],
         [
@@ -195,12 +288,70 @@
     ],
     [
       "resource",
+      "aws_mq_broker",
+      "read",
+      [
+        [
+          "mq",
+          "DescribeBroker"
+        ],
+        [
+          "mq",
+          "DescribeSharedResources"
+        ],
+        [
+          "mq",
+          "DescribeUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_mq_broker",
+      "update",
+      [
+        [
+          "mq",
+          "CreateUser"
+        ],
+        [
+          "mq",
+          "DeleteUser"
+        ],
+        [
+          "mq",
+          "DescribeBroker"
+        ],
+        [
+          "mq",
+          "DescribeSharedResources"
+        ],
+        [
+          "mq",
+          "RebootBroker"
+        ],
+        [
+          "mq",
+          "UpdateBroker"
+        ],
+        [
+          "mq",
+          "UpdateUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_ssoadmin_region",
       "create",
       [
         [
           "ssoadmin",
           "AddRegion"
+        ],
+        [
+          "ssoadmin",
+          "DescribeRegion"
         ]
       ]
     ],
@@ -209,6 +360,10 @@
       "aws_ssoadmin_region",
       "delete",
       [
+        [
+          "ssoadmin",
+          "DescribeRegion"
+        ],
         [
           "ssoadmin",
           "RemoveRegion"
@@ -252,6 +407,10 @@
       "aws_workspaces_pool",
       "delete",
       [
+        [
+          "workspaces",
+          "DescribeWorkspacesPools"
+        ],
         [
           "workspaces",
           "TerminateWorkspacesPool"

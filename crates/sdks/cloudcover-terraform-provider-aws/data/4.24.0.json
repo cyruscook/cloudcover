@@ -14,10 +14,6 @@
         [
           "acmpca",
           "ListPermissions"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "acmpca",
           "DeletePermission"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -71,10 +63,21 @@
         [
           "ec2",
           "RevokeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_vpc",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpc"
         ],
         [
           "ec2",
-          "new"
+          "DescribeVpcs"
         ]
       ]
     ],
@@ -106,10 +109,6 @@
         [
           "ses",
           "UpdateConfigurationSetSendingEnabled"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -137,10 +136,6 @@
         [
           "ses",
           "UpdateConfigurationSetTrackingOptions"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -156,10 +151,6 @@
         [
           "ssm",
           "UpdateServiceSetting"
-        ],
-        [
-          "ssm",
-          "new"
         ]
       ]
     ],
@@ -170,11 +161,11 @@
       [
         [
           "ssm",
-          "ResetServiceSetting"
+          "GetServiceSetting"
         ],
         [
           "ssm",
-          "new"
+          "ResetServiceSetting"
         ]
       ]
     ],
@@ -186,10 +177,6 @@
         [
           "ssm",
           "GetServiceSetting"
-        ],
-        [
-          "ssm",
-          "new"
         ]
       ]
     ],
@@ -205,10 +192,21 @@
         [
           "ssm",
           "UpdateServiceSetting"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpc"
         ],
         [
-          "ssm",
-          "new"
+          "ec2",
+          "DescribeVpcs"
         ]
       ]
     ]

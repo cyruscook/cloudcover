@@ -10,10 +10,6 @@
         [
           "cloudcontrolapi",
           "GetResource"
-        ],
-        [
-          "cloudcontrolapi",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "rds",
           "DescribeDBProxies"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -36,16 +28,7 @@
       "data_source",
       "aws_ec2_host",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeHosts"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -55,10 +38,6 @@
         [
           "firehose",
           "DescribeDeliveryStream"
-        ],
-        [
-          "firehose",
-          "new"
         ]
       ]
     ],
@@ -84,15 +63,7 @@
         ],
         [
           "appstream",
-          "DescribeImageBuilders"
-        ],
-        [
-          "appstream",
           "ListTagsForResource"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -104,10 +75,6 @@
         [
           "appstream",
           "DeleteImageBuilder"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -118,15 +85,7 @@
       [
         [
           "appstream",
-          "DescribeImageBuilders"
-        ],
-        [
-          "appstream",
           "ListTagsForResource"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -135,10 +94,6 @@
       "aws_appstream_image_builder",
       "update",
       [
-        [
-          "appstream",
-          "DescribeImageBuilders"
-        ],
         [
           "appstream",
           "ListTagsForResource"
@@ -150,10 +105,6 @@
         [
           "appstream",
           "UntagResource"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -169,10 +120,6 @@
         [
           "cloudcontrolapi",
           "GetResource"
-        ],
-        [
-          "cloudcontrolapi",
-          "new"
         ]
       ]
     ],
@@ -184,10 +131,6 @@
         [
           "cloudcontrolapi",
           "DeleteResource"
-        ],
-        [
-          "cloudcontrolapi",
-          "new"
         ]
       ]
     ],
@@ -199,10 +142,6 @@
         [
           "cloudcontrolapi",
           "GetResource"
-        ],
-        [
-          "cloudcontrolapi",
-          "new"
         ]
       ]
     ],
@@ -218,10 +157,6 @@
         [
           "cloudcontrolapi",
           "UpdateResource"
-        ],
-        [
-          "cloudcontrolapi",
-          "new"
         ]
       ]
     ],
@@ -241,29 +176,6 @@
         [
           "cloudformation",
           "UpdateStackSet"
-        ],
-        [
-          "cloudformation",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudformation_stack_set_instance",
-      "create",
-      [
-        [
-          "cloudformation",
-          "CreateStackInstances"
-        ],
-        [
-          "cloudformation",
-          "DescribeStackInstance"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -279,10 +191,6 @@
         [
           "cloudformation",
           "ListStackSetOperationResults"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -302,10 +210,6 @@
         [
           "cloudformation",
           "UpdateStackInstances"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -316,17 +220,15 @@
       [
         [
           "cloudformation",
-          "DescribeType"
-        ],
-        [
-          "cloudformation",
           "RegisterType"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_cloudformation_type",
+      "read",
+      []
     ],
     [
       "resource",
@@ -336,14 +238,6 @@
         [
           "ec2",
           "AllocateHosts"
-        ],
-        [
-          "ec2",
-          "DescribeHosts"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -355,10 +249,6 @@
         [
           "ec2",
           "ReleaseHosts"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -366,16 +256,7 @@
       "resource",
       "aws_ec2_host",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeHosts"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -392,15 +273,7 @@
         ],
         [
           "ec2",
-          "DescribeHosts"
-        ],
-        [
-          "ec2",
           "ModifyHosts"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -416,10 +289,6 @@
         [
           "iot",
           "DescribeAuthorizer"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -435,10 +304,6 @@
         [
           "iot",
           "UpdateAuthorizer"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -450,10 +315,6 @@
         [
           "iot",
           "DescribeAuthorizer"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -469,10 +330,6 @@
         [
           "iot",
           "UpdateAuthorizer"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -484,10 +341,6 @@
         [
           "firehose",
           "DeleteDeliveryStream"
-        ],
-        [
-          "firehose",
-          "new"
         ]
       ]
     ],
@@ -511,10 +364,6 @@
         [
           "quicksight",
           "ListTagsForResource"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -526,10 +375,6 @@
         [
           "quicksight",
           "DeleteDataSource"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -549,10 +394,6 @@
         [
           "quicksight",
           "ListTagsForResource"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -588,10 +429,6 @@
         [
           "quicksight",
           "UpdateDataSourcePermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -607,10 +444,6 @@
         [
           "redshift",
           "DescribeScheduledActions"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -622,10 +455,6 @@
         [
           "redshift",
           "DeleteScheduledAction"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -637,10 +466,6 @@
         [
           "redshift",
           "DescribeScheduledActions"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -652,10 +477,6 @@
         [
           "redshift",
           "ModifyScheduledAction"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -675,10 +496,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -694,10 +511,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -725,10 +538,6 @@
         [
           "sagemaker",
           "UpdateAppImageConfig"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -748,10 +557,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -763,10 +568,6 @@
         [
           "sagemaker",
           "DeleteStudioLifecycleConfig"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -782,10 +583,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -809,10 +606,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ]

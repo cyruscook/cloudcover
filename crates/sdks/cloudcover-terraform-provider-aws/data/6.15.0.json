@@ -43,13 +43,12 @@
       "data_source",
       "aws_appconfig_application",
       "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_iam_account_alias",
-      "read",
-      []
+      [
+        [
+          "appconfig",
+          "ListApplications"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -66,7 +65,12 @@
       "data_source",
       "aws_odb_db_nodes",
       "read",
-      []
+      [
+        [
+          "odb",
+          "ListDbNodes"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -83,19 +87,34 @@
       "data_source",
       "aws_odb_db_servers",
       "read",
-      []
+      [
+        [
+          "odb",
+          "ListDbServers"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_odb_db_system_shapes",
       "read",
-      []
+      [
+        [
+          "odb",
+          "ListDbSystemShapes"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_odb_gi_versions",
       "read",
-      []
+      [
+        [
+          "odb",
+          "ListGiVersions"
+        ]
+      ]
     ],
     [
       "resource",
@@ -108,15 +127,13 @@
         ],
         [
           "dsql",
+          "GetCluster"
+        ],
+        [
+          "dsql",
           "UpdateCluster"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_iam_account_alias",
-      "read",
-      []
     ],
     [
       "resource",

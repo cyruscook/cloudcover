@@ -6,7 +6,12 @@
       "data_source",
       "aws_cloudwatch_contributor_managed_insight_rules",
       "read",
-      []
+      [
+        [
+          "cloudwatch",
+          "ListManagedInsightRules"
+        ]
+      ]
     ],
     [
       "resource",
@@ -49,6 +54,10 @@
         ],
         [
           "cloudwatch",
+          "ListManagedInsightRules"
+        ],
+        [
+          "cloudwatch",
           "PutManagedInsightRules"
         ]
       ]
@@ -61,6 +70,10 @@
         [
           "cloudwatch",
           "DeleteInsightRules"
+        ],
+        [
+          "cloudwatch",
+          "ListManagedInsightRules"
         ]
       ]
     ],
@@ -68,7 +81,12 @@
       "resource",
       "aws_cloudwatch_contributor_managed_insight_rule",
       "read",
-      []
+      [
+        [
+          "cloudwatch",
+          "ListManagedInsightRules"
+        ]
+      ]
     ],
     [
       "resource",
@@ -78,6 +96,10 @@
         [
           "cloudwatch",
           "DisableInsightRules"
+        ],
+        [
+          "cloudwatch",
+          "ListManagedInsightRules"
         ],
         [
           "cloudwatch",
@@ -108,6 +130,10 @@
         [
           "qbusiness",
           "DeleteApplication"
+        ],
+        [
+          "qbusiness",
+          "GetApplication"
         ]
       ]
     ],

@@ -405,9 +405,33 @@
   "upsert": [
     [
       "data_source",
-      "aws_servicequotas_templates",
+      "aws_identitystore_group",
       "read",
-      []
+      [
+        [
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -417,6 +441,10 @@
         [
           "ssmincidents",
           "GetReplicationSet"
+        ],
+        [
+          "ssmincidents",
+          "ListReplicationSets"
         ]
       ]
     ],
@@ -433,50 +461,52 @@
     ],
     [
       "resource",
-      "aws_appflow_connector_profile",
+      "aws_auditmanager_account_registration",
       "create",
       [
         [
-          "appflow",
-          "CreateConnectorProfile"
+          "auditmanager",
+          "GetAccountStatus"
         ],
         [
-          "appflow",
-          "DescribeConnectorProfiles"
+          "auditmanager",
+          "RegisterAccount"
         ]
       ]
     ],
     [
       "resource",
-      "aws_appflow_connector_profile",
-      "read",
-      [
-        [
-          "appflow",
-          "DescribeConnectorProfiles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appflow_connector_profile",
+      "aws_auditmanager_account_registration",
       "update",
       [
         [
-          "appflow",
-          "DescribeConnectorProfiles"
+          "auditmanager",
+          "GetAccountStatus"
         ],
         [
-          "appflow",
-          "UpdateConnectorProfile"
+          "auditmanager",
+          "RegisterAccount"
         ]
       ]
     ],
     [
       "resource",
-      "aws_rds_export_task",
-      "read",
-      []
+      "aws_auditmanager_framework_share",
+      "delete",
+      [
+        [
+          "auditmanager",
+          "DeleteAssessmentFrameworkShare"
+        ],
+        [
+          "auditmanager",
+          "ListAssessmentFrameworkShareRequests"
+        ],
+        [
+          "auditmanager",
+          "UpdateAssessmentFrameworkShare"
+        ]
+      ]
     ],
     [
       "resource",
@@ -486,6 +516,10 @@
         [
           "redshift",
           "CreateCluster"
+        ],
+        [
+          "redshift",
+          "DescribeClusters"
         ],
         [
           "redshift",
@@ -501,13 +535,22 @@
       "resource",
       "aws_redshift_cluster",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeClusters"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_redshift_cluster",
       "update",
       [
+        [
+          "redshift",
+          "DescribeClusters"
+        ],
         [
           "redshift",
           "ModifyAquaConfiguration"
@@ -598,6 +641,21 @@
         [
           "servicequotas",
           "AssociateServiceQuotaTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssmincidents_replication_set",
+      "delete",
+      [
+        [
+          "ssmincidents",
+          "DeleteReplicationSet"
+        ],
+        [
+          "ssmincidents",
+          "GetReplicationSet"
         ]
       ]
     ]

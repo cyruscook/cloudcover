@@ -10,10 +10,6 @@
         [
           "apigateway",
           "GetAuthorizer"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -31,10 +27,6 @@
         [
           "databasemigrationservice",
           "DescribeReplicationSubnetGroups"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -113,10 +105,6 @@
         [
           "chimesdkvoice",
           "PutVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -128,10 +116,6 @@
         [
           "chimesdkvoice",
           "DeleteVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -143,10 +127,6 @@
         [
           "chimesdkvoice",
           "GetVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -162,10 +142,6 @@
         [
           "chimesdkvoice",
           "PutVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -176,7 +152,15 @@
       [
         [
           "configservice",
+          "DescribeOrganizationConfigRuleStatuses"
+        ],
+        [
+          "configservice",
           "DescribeOrganizationConfigRules"
+        ],
+        [
+          "configservice",
+          "GetOrganizationConfigRuleDetailedStatus"
         ],
         [
           "configservice",
@@ -185,10 +169,6 @@
         [
           "configservice",
           "PutOrganizationConfigRule"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -203,7 +183,11 @@
         ],
         [
           "configservice",
-          "new"
+          "DescribeOrganizationConfigRuleStatuses"
+        ],
+        [
+          "configservice",
+          "GetOrganizationConfigRuleDetailedStatus"
         ]
       ]
     ],
@@ -219,10 +203,6 @@
         [
           "configservice",
           "GetOrganizationCustomRulePolicy"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -233,7 +213,15 @@
       [
         [
           "configservice",
+          "DescribeOrganizationConfigRuleStatuses"
+        ],
+        [
+          "configservice",
           "DescribeOrganizationConfigRules"
+        ],
+        [
+          "configservice",
+          "GetOrganizationConfigRuleDetailedStatus"
         ],
         [
           "configservice",
@@ -242,21 +230,21 @@
         [
           "configservice",
           "PutOrganizationConfigRule"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_directory_service_shared_directory",
-      "read",
+      "aws_gamelift_game_session_queue",
+      "delete",
       [
         [
-          "directoryservice",
-          "DescribeSharedDirectories"
+          "gamelift",
+          "DeleteGameSessionQueue"
+        ],
+        [
+          "gamelift",
+          "DescribeGameSessionQueues"
         ]
       ]
     ],
@@ -276,10 +264,6 @@
         [
           "internetmonitor",
           "UpdateMonitor"
-        ],
-        [
-          "internetmonitor",
-          "new"
         ]
       ]
     ],
@@ -294,11 +278,11 @@
         ],
         [
           "internetmonitor",
-          "UpdateMonitor"
+          "GetMonitor"
         ],
         [
           "internetmonitor",
-          "new"
+          "UpdateMonitor"
         ]
       ]
     ],
@@ -310,10 +294,6 @@
         [
           "internetmonitor",
           "GetMonitor"
-        ],
-        [
-          "internetmonitor",
-          "new"
         ]
       ]
     ],
@@ -329,10 +309,6 @@
         [
           "internetmonitor",
           "UpdateMonitor"
-        ],
-        [
-          "internetmonitor",
-          "new"
         ]
       ]
     ],
@@ -564,10 +540,6 @@
         [
           "synthetics",
           "GetGroup"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -579,10 +551,6 @@
         [
           "synthetics",
           "DeleteGroup"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -594,10 +562,6 @@
         [
           "synthetics",
           "GetGroup"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -609,10 +573,6 @@
         [
           "synthetics",
           "GetGroup"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -628,10 +588,6 @@
         [
           "synthetics",
           "ListAssociatedGroups"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -643,10 +599,6 @@
         [
           "synthetics",
           "DisassociateResource"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -658,33 +610,8 @@
         [
           "synthetics",
           "ListAssociatedGroups"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_route_table_association",
-      "create",
-      [
-        [
-          "ec2",
-          "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_route_table_association",
-      "read",
-      []
     ]
   ]
 }

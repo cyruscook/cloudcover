@@ -10,25 +10,6 @@
         [
           "ecrpublic",
           "GetAuthorizationToken"
-        ],
-        [
-          "ecrpublic",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_launch_template",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
         ]
       ]
     ],
@@ -168,10 +149,6 @@
         [
           "databasemigrationservice",
           "StartReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -191,10 +168,6 @@
         [
           "databasemigrationservice",
           "StopReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -230,18 +203,18 @@
         [
           "databasemigrationservice",
           "StopReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_ec2_capacity_reservation",
-      "read",
+      "delete",
       [
+        [
+          "ec2",
+          "CancelCapacityReservation"
+        ],
         [
           "ec2",
           "DescribeCapacityReservations"
@@ -262,10 +235,6 @@
           "DescribePolicies"
         ],
         [
-          "autoscaling",
-          "new"
-        ],
-        [
           "gamelift",
           "CreateGameServerGroup"
         ],
@@ -276,10 +245,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -294,7 +259,7 @@
         ],
         [
           "gamelift",
-          "new"
+          "DescribeGameServerGroup"
         ]
       ]
     ],
@@ -312,20 +277,12 @@
           "DescribePolicies"
         ],
         [
-          "autoscaling",
-          "new"
-        ],
-        [
           "gamelift",
           "DescribeGameServerGroup"
         ],
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -341,10 +298,6 @@
         [
           "autoscaling",
           "DescribePolicies"
-        ],
-        [
-          "autoscaling",
-          "new"
         ],
         [
           "gamelift",
@@ -365,10 +318,6 @@
         [
           "gamelift",
           "UpdateGameServerGroup"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -388,10 +337,6 @@
         [
           "managedgrafana",
           "UpdateWorkspaceAuthentication"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -409,10 +354,6 @@
         [
           "managedgrafana",
           "DescribeWorkspaceAuthentication"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -432,10 +373,6 @@
         [
           "managedgrafana",
           "UpdateWorkspaceAuthentication"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -463,44 +400,6 @@
         [
           "iot",
           "RegisterCertificateWithoutCA"
-        ],
-        [
-          "iot",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_configuration",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_template",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
         ]
       ]
     ],
@@ -516,10 +415,6 @@
         [
           "networkmanager",
           "GetConnections"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -534,7 +429,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetConnections"
         ]
       ]
     ],
@@ -569,10 +464,6 @@
         [
           "networkmanager",
           "UpdateConnection"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -602,7 +493,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetCustomerGatewayAssociations"
         ]
       ]
     ],
@@ -629,10 +520,6 @@
         [
           "networkmanager",
           "GetDevices"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -647,7 +534,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetDevices"
         ]
       ]
     ],
@@ -682,10 +569,6 @@
         [
           "networkmanager",
           "UpdateDevice"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -701,10 +584,6 @@
         [
           "networkmanager",
           "DescribeGlobalNetworks"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -720,6 +599,10 @@
         [
           "networkmanager",
           "DeregisterTransitGateway"
+        ],
+        [
+          "networkmanager",
+          "DescribeGlobalNetworks"
         ],
         [
           "networkmanager",
@@ -740,10 +623,6 @@
         [
           "networkmanager",
           "GetTransitGatewayRegistrations"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -778,10 +657,6 @@
         [
           "networkmanager",
           "UpdateGlobalNetwork"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -797,10 +672,6 @@
         [
           "networkmanager",
           "GetLinks"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -815,7 +686,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetLinks"
         ]
       ]
     ],
@@ -850,10 +721,6 @@
         [
           "networkmanager",
           "UpdateLink"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -869,10 +736,6 @@
         [
           "networkmanager",
           "GetLinkAssociations"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -887,7 +750,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetLinkAssociations"
         ]
       ]
     ],
@@ -914,10 +777,6 @@
         [
           "networkmanager",
           "GetSites"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -929,6 +788,10 @@
         [
           "networkmanager",
           "DeleteSite"
+        ],
+        [
+          "networkmanager",
+          "GetSites"
         ]
       ]
     ],
@@ -963,10 +826,6 @@
         [
           "networkmanager",
           "UpdateSite"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -982,10 +841,6 @@
         [
           "networkmanager",
           "GetTransitGatewayConnectPeerAssociations"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -1000,7 +855,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetTransitGatewayConnectPeerAssociations"
         ]
       ]
     ],
@@ -1027,10 +882,6 @@
         [
           "networkmanager",
           "RegisterTransitGateway"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -1045,7 +896,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetTransitGatewayRegistrations"
         ]
       ]
     ],
@@ -1076,10 +927,6 @@
         [
           "s3",
           "SetFilter"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1099,86 +946,6 @@
         [
           "s3",
           "SetFilter"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_transfer_server",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "transfer",
-          "CreateServer"
-        ],
-        [
-          "transfer",
-          "DescribeServer"
-        ],
-        [
-          "transfer",
-          "StartServer"
-        ],
-        [
-          "transfer",
-          "StopServer"
-        ],
-        [
-          "transfer",
-          "UpdateServer"
-        ],
-        [
-          "transfer",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_transfer_server",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "transfer",
-          "DescribeServer"
-        ],
-        [
-          "transfer",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_policy",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_route_table_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
         ]
       ]
     ],
@@ -1198,10 +965,6 @@
         [
           "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -1221,42 +984,12 @@
         [
           "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_vpc_endpoint_security_group_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_subnet_association",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "ModifyVpcEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_subnet_association",
       "read",
       [
         [

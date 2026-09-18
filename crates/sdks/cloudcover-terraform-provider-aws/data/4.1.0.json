@@ -14,10 +14,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "imagebuilder",
           "GetContainerRecipe"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -104,10 +92,6 @@
         [
           "autoscaling",
           "UpdateAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -127,10 +111,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -161,10 +141,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -192,10 +168,6 @@
         [
           "backup",
           "UpdateFramework"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -215,10 +187,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -230,10 +198,6 @@
         [
           "backup",
           "DeleteReportPlan"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -249,10 +213,6 @@
         [
           "backup",
           "ListTags"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -280,10 +240,6 @@
         [
           "backup",
           "UpdateReportPlan"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -299,10 +255,6 @@
         [
           "elastictranscoder",
           "ReadPreset"
-        ],
-        [
-          "elastictranscoder",
-          "new"
         ]
       ]
     ],
@@ -326,29 +278,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_fleet",
-      "delete",
-      [
-        [
-          "gamelift",
-          "DeleteFleet"
-        ],
-        [
-          "gamelift",
-          "DescribeFleetEvents"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -368,10 +297,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -411,10 +336,6 @@
         [
           "gamelift",
           "UpdateRuntimeConfiguration"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -434,10 +355,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -449,10 +366,6 @@
         [
           "gamelift",
           "DeleteScript"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -468,10 +381,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -499,10 +408,6 @@
         [
           "gamelift",
           "UpdateScript"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -517,11 +422,11 @@
         ],
         [
           "iam",
-          "UpdateServiceSpecificCredential"
+          "ListServiceSpecificCredentials"
         ],
         [
           "iam",
-          "new"
+          "UpdateServiceSpecificCredential"
         ]
       ]
     ],
@@ -533,10 +438,6 @@
         [
           "iam",
           "DeleteServiceSpecificCredential"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -544,7 +445,12 @@
       "resource",
       "aws_iam_service_specific_credential",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListServiceSpecificCredentials"
+        ]
+      ]
     ],
     [
       "resource",
@@ -553,11 +459,11 @@
       [
         [
           "iam",
-          "UpdateServiceSpecificCredential"
+          "ListServiceSpecificCredentials"
         ],
         [
           "iam",
-          "new"
+          "UpdateServiceSpecificCredential"
         ]
       ]
     ],
@@ -568,15 +474,15 @@
       [
         [
           "iam",
+          "ListSigningCertificates"
+        ],
+        [
+          "iam",
           "UpdateSigningCertificate"
         ],
         [
           "iam",
           "UploadSigningCertificate"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -588,10 +494,6 @@
         [
           "iam",
           "DeleteSigningCertificate"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -599,7 +501,12 @@
       "resource",
       "aws_iam_signing_certificate",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListSigningCertificates"
+        ]
+      ]
     ],
     [
       "resource",
@@ -608,11 +515,11 @@
       [
         [
           "iam",
-          "UpdateSigningCertificate"
+          "ListSigningCertificates"
         ],
         [
           "iam",
-          "new"
+          "UpdateSigningCertificate"
         ]
       ]
     ],
@@ -684,10 +591,6 @@
         [
           "iam",
           "RemoveUserFromGroup"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -707,10 +610,6 @@
         [
           "iam",
           "ListVirtualMFADevices"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -722,10 +621,6 @@
         [
           "iam",
           "DeleteVirtualMFADevice"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -741,10 +636,6 @@
         [
           "iam",
           "ListVirtualMFADevices"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -768,10 +659,6 @@
         [
           "iam",
           "UntagMFADevice"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -787,10 +674,6 @@
         [
           "imagebuilder",
           "GetContainerRecipe"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -802,10 +685,6 @@
         [
           "imagebuilder",
           "DeleteContainerRecipe"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -817,10 +696,6 @@
         [
           "imagebuilder",
           "GetContainerRecipe"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -840,10 +715,6 @@
         [
           "imagebuilder",
           "UntagResource"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -863,10 +734,6 @@
         [
           "prometheusservice",
           "ListTagsForResource"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -882,10 +749,6 @@
         [
           "prometheusservice",
           "ListTagsForResource"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -913,63 +776,6 @@
         [
           "prometheusservice",
           "UpdateWorkspaceAlias"
-        ],
-        [
-          "prometheusservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ]

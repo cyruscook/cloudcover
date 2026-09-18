@@ -6,19 +6,164 @@
       "resource",
       "aws_db_instance_role_association",
       "create",
-      []
+      [
+        [
+          "rds",
+          "AddRoleToDBInstance"
+        ],
+        [
+          "rds",
+          "DescribeDBInstances"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_db_instance_role_association",
       "delete",
-      []
+      [
+        [
+          "rds",
+          "RemoveRoleFromDBInstance"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_db_instance_role_association",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeDBInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_maintenance_window",
+      "create",
+      [
+        [
+          "ssm",
+          "CreateMaintenanceWindow"
+        ],
+        [
+          "ssm",
+          "GetMaintenanceWindow"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ],
+        [
+          "ssm",
+          "UpdateMaintenanceWindow"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_maintenance_window",
+      "read",
+      [
+        [
+          "ssm",
+          "GetMaintenanceWindow"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_maintenance_window",
+      "update",
+      [
+        [
+          "ssm",
+          "AddTagsToResource"
+        ],
+        [
+          "ssm",
+          "GetMaintenanceWindow"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ],
+        [
+          "ssm",
+          "RemoveTagsFromResource"
+        ],
+        [
+          "ssm",
+          "UpdateMaintenanceWindow"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_patch_baseline",
+      "create",
+      [
+        [
+          "ssm",
+          "CreatePatchBaseline"
+        ],
+        [
+          "ssm",
+          "GetPatchBaseline"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_patch_baseline",
+      "read",
+      [
+        [
+          "ssm",
+          "GetPatchBaseline"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssm_patch_baseline",
+      "update",
+      [
+        [
+          "ssm",
+          "AddTagsToResource"
+        ],
+        [
+          "ssm",
+          "GetPatchBaseline"
+        ],
+        [
+          "ssm",
+          "ListTagsForResource"
+        ],
+        [
+          "ssm",
+          "RemoveTagsFromResource"
+        ],
+        [
+          "ssm",
+          "UpdatePatchBaseline"
+        ]
+      ]
     ]
   ]
 }

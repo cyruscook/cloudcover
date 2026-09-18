@@ -6,25 +6,53 @@
       "resource",
       "aws_dx_gateway_association",
       "update",
-      []
+      [
+        [
+          "directconnect",
+          "DescribeDirectConnectGatewayAssociations"
+        ],
+        [
+          "directconnect",
+          "UpdateDirectConnectGatewayAssociation"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_dx_gateway_association_proposal",
       "create",
-      []
+      [
+        [
+          "directconnect",
+          "CreateDirectConnectGatewayAssociationProposal"
+        ],
+        [
+          "directconnect",
+          "DescribeDirectConnectGatewayAssociationProposals"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_dx_gateway_association_proposal",
       "delete",
-      []
+      [
+        [
+          "directconnect",
+          "DeleteDirectConnectGatewayAssociationProposal"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_dx_gateway_association_proposal",
       "read",
-      []
+      [
+        [
+          "directconnect",
+          "DescribeDirectConnectGatewayAssociationProposals"
+        ]
+      ]
     ]
   ]
 }

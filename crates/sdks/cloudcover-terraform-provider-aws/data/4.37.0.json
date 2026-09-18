@@ -10,44 +10,6 @@
         [
           "directconnect",
           "DescribeRouterConfiguration"
-        ],
-        [
-          "directconnect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_endpoint",
-      "read",
-      [
-        [
-          "route53resolver",
-          "ListResolverEndpointIpAddresses"
-        ],
-        [
-          "route53resolver",
-          "ListResolverEndpoints"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_rule",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetResolverRule"
-        ],
-        [
-          "route53resolver",
-          "ListResolverRules"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -73,30 +35,11 @@
     [
       "resource",
       "aws_apprunner_vpc_connector",
-      "delete",
-      [
-        [
-          "apprunner",
-          "DeleteVpcConnector"
-        ],
-        [
-          "apprunner",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apprunner_vpc_connector",
       "update",
       [
         [
           "apprunner",
           "DescribeVpcConnector"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -124,10 +67,6 @@
         [
           "elasticache",
           "ModifyGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -151,10 +90,21 @@
         [
           "elasticache",
           "ModifyGlobalReplicationGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_evidently_project",
+      "delete",
+      [
+        [
+          "cloudwatchevidently",
+          "DeleteProject"
         ],
         [
-          "elasticache",
-          "new"
+          "cloudwatchevidently",
+          "GetProject"
         ]
       ]
     ],
@@ -226,10 +176,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -245,10 +191,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -260,10 +202,6 @@
         [
           "lightsail",
           "GetLoadBalancerTlsCertificates"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -283,10 +221,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -304,10 +238,6 @@
         [
           "lightsail",
           "GetLoadBalancerTlsCertificates"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -323,10 +253,6 @@
         [
           "route53resolver",
           "UpdateResolverConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -359,100 +285,6 @@
         [
           "route53resolver",
           "UpdateResolverConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_dnssec_config",
-      "delete",
-      [
-        [
-          "route53resolver",
-          "UpdateResolverDnssecConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_endpoint",
-      "delete",
-      [
-        [
-          "route53resolver",
-          "DeleteResolverEndpoint"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule",
-      "delete",
-      [
-        [
-          "route53resolver",
-          "DeleteResolverRule"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetResolverRule"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule_association",
-      "delete",
-      [
-        [
-          "route53resolver",
-          "DisassociateResolverRule"
-        ],
-        [
-          "route53resolver",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule_association",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetResolverRuleAssociation"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -623,32 +455,6 @@
         [
           "sesv2",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeprovisionIpamPoolCidr"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "read",
-      [
-        [
-          "ec2",
-          "GetIpamPoolCidrs"
         ]
       ]
     ]

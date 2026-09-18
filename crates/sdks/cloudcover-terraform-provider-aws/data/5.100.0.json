@@ -13,6 +13,10 @@
         ],
         [
           "dsql",
+          "GetCluster"
+        ],
+        [
+          "dsql",
           "GetVpcEndpointServiceName"
         ]
       ]
@@ -25,6 +29,10 @@
         [
           "dsql",
           "DeleteCluster"
+        ],
+        [
+          "dsql",
+          "GetCluster"
         ]
       ]
     ],
@@ -48,6 +56,10 @@
       "aws_dsql_cluster",
       "update",
       [
+        [
+          "dsql",
+          "GetCluster"
+        ],
         [
           "dsql",
           "UpdateCluster"
@@ -97,6 +109,10 @@
       "aws_prometheus_workspace_configuration",
       "create",
       [
+        [
+          "amp",
+          "DescribeWorkspaceConfiguration"
+        ],
         [
           "amp",
           "UpdateWorkspaceConfiguration"
@@ -127,26 +143,13 @@
       [
         [
           "amp",
+          "DescribeWorkspaceConfiguration"
+        ],
+        [
+          "amp",
           "UpdateWorkspaceConfiguration"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_route53_vpc_association_authorization",
-      "create",
-      [
-        [
-          "route53",
-          "CreateVPCAssociationAuthorization"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_vpc_association_authorization",
-      "read",
-      []
     ],
     [
       "resource",
@@ -200,6 +203,10 @@
         [
           "ec2",
           "CreateRouteServer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServers"
         ]
       ]
     ],
@@ -211,6 +218,10 @@
         [
           "ec2",
           "DeleteRouteServer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServers"
         ]
       ]
     ],
@@ -218,13 +229,22 @@
       "resource",
       "aws_vpc_route_server",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServers"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_vpc_route_server",
       "update",
       [
+        [
+          "ec2",
+          "DescribeRouteServers"
+        ],
         [
           "ec2",
           "ModifyRouteServer"
@@ -239,6 +259,10 @@
         [
           "ec2",
           "CreateRouteServerEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
         ]
       ]
     ],
@@ -250,6 +274,10 @@
         [
           "ec2",
           "DeleteRouteServerEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
         ]
       ]
     ],
@@ -257,7 +285,12 @@
       "resource",
       "aws_vpc_route_server_endpoint",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -273,6 +306,10 @@
         [
           "ec2",
           "CreateRouteServerPeer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
         ]
       ]
     ],
@@ -284,6 +321,10 @@
         [
           "ec2",
           "DeleteRouteServerPeer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
         ]
       ]
     ],
@@ -291,7 +332,12 @@
       "resource",
       "aws_vpc_route_server_peer",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
+        ]
+      ]
     ],
     [
       "resource",
@@ -307,6 +353,10 @@
         [
           "ec2",
           "EnableRouteServerPropagation"
+        ],
+        [
+          "ec2",
+          "GetRouteServerPropagations"
         ]
       ]
     ],
@@ -318,6 +368,10 @@
         [
           "ec2",
           "DisableRouteServerPropagation"
+        ],
+        [
+          "ec2",
+          "GetRouteServerPropagations"
         ]
       ]
     ],
@@ -346,6 +400,10 @@
         [
           "ec2",
           "AssociateRouteServer"
+        ],
+        [
+          "ec2",
+          "GetRouteServerAssociations"
         ]
       ]
     ],
@@ -357,6 +415,10 @@
         [
           "ec2",
           "DisassociateRouteServer"
+        ],
+        [
+          "ec2",
+          "GetRouteServerAssociations"
         ]
       ]
     ],

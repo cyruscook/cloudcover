@@ -3,6 +3,36 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_elb",
+      "read",
+      [
+        [
+          "elb",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elb",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elb",
+          "DescribeTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_api_gateway_vpc_link",
+      "delete",
+      [
+        [
+          "apigateway",
+          "DeleteVpcLink"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_appconfig_application",
       "create",
@@ -18,10 +48,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -33,10 +59,6 @@
         [
           "appconfig",
           "DeleteApplication"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -52,10 +74,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -83,10 +101,6 @@
         [
           "appconfig",
           "UpdateApplication"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -106,10 +120,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -121,10 +131,6 @@
         [
           "appconfig",
           "DeleteConfigurationProfile"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -140,10 +146,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -171,10 +173,6 @@
         [
           "appconfig",
           "UpdateConfigurationProfile"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -194,10 +192,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -209,10 +203,6 @@
         [
           "appconfig",
           "DeleteDeploymentStrategy"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -228,10 +218,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -259,10 +245,6 @@
         [
           "appconfig",
           "UpdateDeploymentStrategy"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -282,10 +264,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -297,10 +275,6 @@
         [
           "appconfig",
           "DeleteEnvironment"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -316,10 +290,6 @@
         [
           "appconfig",
           "ListTagsForResource"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -347,10 +317,6 @@
         [
           "appconfig",
           "UpdateEnvironment"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -366,10 +332,6 @@
         [
           "appconfig",
           "GetHostedConfigurationVersion"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -381,10 +343,6 @@
         [
           "appconfig",
           "DeleteHostedConfigurationVersion"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -396,10 +354,6 @@
         [
           "appconfig",
           "GetHostedConfigurationVersion"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -415,10 +369,6 @@
         [
           "configservice",
           "PutOrganizationConformancePack"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -430,10 +380,6 @@
         [
           "configservice",
           "DeleteOrganizationConformancePack"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -445,10 +391,6 @@
         [
           "configservice",
           "DescribeOrganizationConformancePacks"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -464,10 +406,43 @@
         [
           "configservice",
           "PutOrganizationConformancePack"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_security_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_default_security_group",
+      "update",
+      [
+        [
+          "ec2",
+          "AuthorizeSecurityGroupEgress"
         ],
         [
-          "configservice",
-          "new"
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
         ]
       ]
     ],
@@ -479,10 +454,6 @@
         [
           "directoryservice",
           "DeleteDirectory"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -494,25 +465,21 @@
         [
           "directconnect",
           "DeleteDirectConnectGateway"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_dx_gateway",
-      "read",
+      "aws_dx_gateway_association",
+      "create",
       [
         [
           "directconnect",
-          "DescribeDirectConnectGateways"
+          "AcceptDirectConnectGatewayAssociationProposal"
         ],
         [
           "directconnect",
-          "new"
+          "CreateDirectConnectGatewayAssociation"
         ]
       ]
     ],
@@ -524,10 +491,6 @@
         [
           "directconnect",
           "DeleteDirectConnectGatewayAssociation"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -535,56 +498,181 @@
       "resource",
       "aws_dx_gateway_association",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_dx_gateway_association",
+      "update",
       [
         [
           "directconnect",
-          "DescribeDirectConnectGatewayAssociations"
-        ],
-        [
-          "directconnect",
-          "new"
+          "UpdateDirectConnectGatewayAssociation"
         ]
       ]
     ],
     [
       "resource",
-      "aws_dx_gateway_association_proposal",
+      "aws_elb",
       "create",
       [
         [
-          "directconnect",
-          "CreateDirectConnectGatewayAssociationProposal"
+          "elb",
+          "AddTags"
         ],
         [
-          "directconnect",
-          "DescribeDirectConnectGatewayAssociationProposals"
+          "elb",
+          "ApplySecurityGroupsToLoadBalancer"
         ],
         [
-          "directconnect",
-          "DescribeDirectConnectGatewayAssociations"
+          "elb",
+          "AttachLoadBalancerToSubnets"
         ],
         [
-          "directconnect",
-          "new"
+          "elb",
+          "ConfigureHealthCheck"
+        ],
+        [
+          "elb",
+          "CreateLoadBalancer"
+        ],
+        [
+          "elb",
+          "CreateLoadBalancerListeners"
+        ],
+        [
+          "elb",
+          "DeleteLoadBalancerListeners"
+        ],
+        [
+          "elb",
+          "DeregisterInstancesFromLoadBalancer"
+        ],
+        [
+          "elb",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elb",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elb",
+          "DescribeTags"
+        ],
+        [
+          "elb",
+          "DetachLoadBalancerFromSubnets"
+        ],
+        [
+          "elb",
+          "DisableAvailabilityZonesForLoadBalancer"
+        ],
+        [
+          "elb",
+          "EnableAvailabilityZonesForLoadBalancer"
+        ],
+        [
+          "elb",
+          "ModifyLoadBalancerAttributes"
+        ],
+        [
+          "elb",
+          "RegisterInstancesWithLoadBalancer"
+        ],
+        [
+          "elb",
+          "RemoveTags"
         ]
       ]
     ],
     [
       "resource",
-      "aws_dx_gateway_association_proposal",
+      "aws_elb",
       "read",
       [
         [
-          "directconnect",
-          "DescribeDirectConnectGatewayAssociationProposals"
+          "elb",
+          "DescribeLoadBalancerAttributes"
         ],
         [
-          "directconnect",
-          "DescribeDirectConnectGatewayAssociations"
+          "elb",
+          "DescribeLoadBalancers"
         ],
         [
-          "directconnect",
-          "new"
+          "elb",
+          "DescribeTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elb",
+      "update",
+      [
+        [
+          "elb",
+          "AddTags"
+        ],
+        [
+          "elb",
+          "ApplySecurityGroupsToLoadBalancer"
+        ],
+        [
+          "elb",
+          "AttachLoadBalancerToSubnets"
+        ],
+        [
+          "elb",
+          "ConfigureHealthCheck"
+        ],
+        [
+          "elb",
+          "CreateLoadBalancerListeners"
+        ],
+        [
+          "elb",
+          "DeleteLoadBalancerListeners"
+        ],
+        [
+          "elb",
+          "DeregisterInstancesFromLoadBalancer"
+        ],
+        [
+          "elb",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elb",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elb",
+          "DescribeTags"
+        ],
+        [
+          "elb",
+          "DetachLoadBalancerFromSubnets"
+        ],
+        [
+          "elb",
+          "DisableAvailabilityZonesForLoadBalancer"
+        ],
+        [
+          "elb",
+          "EnableAvailabilityZonesForLoadBalancer"
+        ],
+        [
+          "elb",
+          "ModifyLoadBalancerAttributes"
+        ],
+        [
+          "elb",
+          "RegisterInstancesWithLoadBalancer"
+        ],
+        [
+          "elb",
+          "RemoveTags"
         ]
       ]
     ],
@@ -616,10 +704,72 @@
         [
           "fsx",
           "UpdateFileSystem"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_security_group",
+      "create",
+      [
+        [
+          "ec2",
+          "AuthorizeSecurityGroupEgress"
         ],
         [
-          "fsx",
-          "new"
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateSecurityGroup"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_security_group",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
+          "DeleteSecurityGroup"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
         ]
       ]
     ],
@@ -627,14 +777,87 @@
       "resource",
       "aws_security_group",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_security_group",
+      "update",
       [
         [
           "ec2",
-          "DescribeSecurityGroups"
+          "AuthorizeSecurityGroupEgress"
         ],
         [
           "ec2",
-          "new"
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_security_group_rule",
+      "create",
+      [
+        [
+          "ec2",
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_security_group_rule",
+      "delete",
+      [
+        [
+          "ec2",
+          "RevokeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "RevokeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_security_group_rule",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_security_group_rule",
+      "update",
+      [
+        [
+          "ec2",
+          "UpdateSecurityGroupRuleDescriptionsEgress"
+        ],
+        [
+          "ec2",
+          "UpdateSecurityGroupRuleDescriptionsIngress"
         ]
       ]
     ],
@@ -650,10 +873,6 @@
         [
           "securityhub",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -671,10 +890,6 @@
         [
           "securityhub",
           "DescribeOrganizationConfiguration"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -690,10 +905,6 @@
         [
           "securityhub",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -709,10 +920,6 @@
         [
           "securityhub",
           "UpdateStandardsControl"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -745,10 +952,6 @@
         [
           "securityhub",
           "UpdateStandardsControl"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ]

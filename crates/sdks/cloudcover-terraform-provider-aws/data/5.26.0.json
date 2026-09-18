@@ -9,15 +9,13 @@
       [
         [
           "cloudwatchlogs",
+          "DescribeLogGroups"
+        ],
+        [
+          "cloudwatchlogs",
           "ListTagsLogGroup"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_cloudwatch_log_groups",
-      "read",
-      []
     ],
     [
       "data_source",
@@ -27,564 +25,6 @@
         [
           "iot",
           "GetRegistrationCode"
-        ],
-        [
-          "iot",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "CreateVoiceConnector"
-        ],
-        [
-          "chimesdkvoice",
-          "GetVoiceConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnector"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateVoiceConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_group",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "CreateVoiceConnectorGroup"
-        ],
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_group",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnectorGroup"
-        ],
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorGroup"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateVoiceConnectorGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_group",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_group",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorGroup"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateVoiceConnectorGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_logging",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorLoggingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorLoggingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_logging",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorLoggingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_logging",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorLoggingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_logging",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorLoggingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorLoggingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_origination",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorOrigination"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorOrigination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_origination",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnectorOrigination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_origination",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorOrigination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_origination",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorOrigination"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorOrigination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_streaming",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorStreamingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_streaming",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnectorStreamingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_streaming",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorStreamingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_streaming",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorStreamingConfiguration"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorStreamingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorTermination"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorTermination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnectorTermination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorTermination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceConnectorTermination"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorTermination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination_credentials",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "ListVoiceConnectorTerminationCredentials"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorTerminationCredentials"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination_credentials",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceConnectorTerminationCredentials"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination_credentials",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "ListVoiceConnectorTerminationCredentials"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chime_voice_connector_termination_credentials",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "ListVoiceConnectorTerminationCredentials"
-        ],
-        [
-          "chimesdkvoice",
-          "PutVoiceConnectorTerminationCredentials"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkmediapipelines_media_insights_pipeline_configuration",
-      "delete",
-      [
-        [
-          "chimesdkmediapipelines",
-          "DeleteMediaInsightsPipelineConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_global_settings",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "GetGlobalSettings"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateGlobalSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_global_settings",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "UpdateGlobalSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_global_settings",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetGlobalSettings"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateGlobalSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_media_application",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "CreateSipMediaApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_media_application",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteSipMediaApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_media_application",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_media_application",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "UpdateSipMediaApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_rule",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "CreateSipRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_rule",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteSipRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_sip_rule",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "UpdateSipRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_voice_profile_domain",
-      "create",
-      [
-        [
-          "chimesdkvoice",
-          "CreateVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "GetVoiceProfileDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_voice_profile_domain",
-      "delete",
-      [
-        [
-          "chimesdkvoice",
-          "DeleteVoiceProfileDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_voice_profile_domain",
-      "read",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceProfileDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_chimesdkvoice_voice_profile_domain",
-      "update",
-      [
-        [
-          "chimesdkvoice",
-          "GetVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "UpdateVoiceProfileDomain"
         ]
       ]
     ],
@@ -593,6 +33,10 @@
       "aws_cloudwatch_log_destination",
       "create",
       [
+        [
+          "cloudwatchlogs",
+          "DescribeDestinations"
+        ],
         [
           "cloudwatchlogs",
           "PutDestination"
@@ -609,68 +53,16 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_destination",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "PutDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination_policy",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "PutDestinationPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination_policy",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "PutDestinationPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_log_group",
       "create",
       [
         [
           "cloudwatchlogs",
           "CreateLogGroup"
+        ],
+        [
+          "cloudwatchlogs",
+          "DescribeLogGroups"
         ],
         [
           "cloudwatchlogs",
@@ -689,6 +81,10 @@
       [
         [
           "cloudwatchlogs",
+          "DescribeLogGroups"
+        ],
+        [
+          "cloudwatchlogs",
           "ListTagsLogGroup"
         ]
       ]
@@ -705,6 +101,10 @@
         [
           "cloudwatchlogs",
           "DeleteRetentionPolicy"
+        ],
+        [
+          "cloudwatchlogs",
+          "DescribeLogGroups"
         ],
         [
           "cloudwatchlogs",
@@ -730,45 +130,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_metric_filter",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "PutMetricFilter"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_metric_filter",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteMetricFilter"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_metric_filter",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_metric_filter",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "PutMetricFilter"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_log_resource_policy",
       "create",
       [
@@ -779,17 +140,6 @@
         [
           "cloudwatchlogs",
           "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_resource_policy",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteResourcePolicy"
         ]
       ]
     ],
@@ -821,51 +171,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_stream",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "CreateLogStream"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_stream",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteLogStream"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_stream",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_subscription_filter",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteSubscriptionFilter"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_subscription_filter",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_cloudwatch_query_definition",
       "create",
       [
@@ -876,17 +181,6 @@
         [
           "cloudwatchlogs",
           "PutQueryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_query_definition",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteQueryDefinition"
         ]
       ]
     ],
@@ -918,70 +212,6 @@
     ],
     [
       "resource",
-      "aws_elasticache_user",
-      "create",
-      [
-        [
-          "elasticache",
-          "CreateUser"
-        ],
-        [
-          "elasticache",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyUser"
-        ],
-        [
-          "elasticache",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_group_policy_attachment",
-      "create",
-      [
-        [
-          "iam",
-          "AttachGroupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_group_policy_attachment",
-      "delete",
-      [
-        [
-          "iam",
-          "DetachGroupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_group_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_iam_policy_attachment",
       "create",
       [
@@ -1000,25 +230,6 @@
         [
           "iam",
           "ListEntitiesForPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_policy_attachment",
-      "delete",
-      [
-        [
-          "iam",
-          "DetachGroupPolicy"
-        ],
-        [
-          "iam",
-          "DetachRolePolicy"
-        ],
-        [
-          "iam",
-          "DetachUserPolicy"
         ]
       ]
     ],
@@ -1067,62 +278,6 @@
           "ListEntitiesForPolicy"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_iam_role_policy_attachment",
-      "create",
-      [
-        [
-          "iam",
-          "AttachRolePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_role_policy_attachment",
-      "delete",
-      [
-        [
-          "iam",
-          "DetachRolePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_role_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_user_policy_attachment",
-      "create",
-      [
-        [
-          "iam",
-          "AttachUserPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_user_policy_attachment",
-      "delete",
-      [
-        [
-          "iam",
-          "DetachUserPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_user_policy_attachment",
-      "read",
-      []
     ],
     [
       "resource",
@@ -1136,10 +291,6 @@
         [
           "iot",
           "DescribeBillingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1151,10 +302,6 @@
         [
           "iot",
           "DeleteBillingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1166,10 +313,6 @@
         [
           "iot",
           "DescribeBillingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1185,10 +328,6 @@
         [
           "iot",
           "UpdateBillingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1204,10 +343,6 @@
         [
           "iot",
           "RegisterCACertificate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1223,10 +358,6 @@
         [
           "iot",
           "UpdateCACertificate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1238,10 +369,6 @@
         [
           "iot",
           "DescribeCACertificate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1257,10 +384,6 @@
         [
           "iot",
           "UpdateCACertificate"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1276,10 +399,6 @@
         [
           "iot",
           "UpdateEventConfigurations"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1297,10 +416,6 @@
         [
           "iot",
           "DescribeEventConfigurations"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1316,10 +431,6 @@
         [
           "iot",
           "UpdateEventConfigurations"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -1343,43 +454,6 @@
         [
           "iot",
           "ListPolicyVersions"
-        ],
-        [
-          "iot",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_policy_attachment",
-      "read",
-      [
-        [
-          "iot",
-          "ListAttachedPolicies"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_endpoint",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeDBClusterEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_global_cluster",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeGlobalClusters"
         ]
       ]
     ]

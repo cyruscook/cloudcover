@@ -17,7 +17,12 @@
       "data_source",
       "aws_dynamodb_tables",
       "read",
-      []
+      [
+        [
+          "dynamodb",
+          "ListTables"
+        ]
+      ]
     ],
     [
       "resource",
@@ -74,6 +79,10 @@
         ],
         [
           "cloudfrontkeyvaluestore",
+          "ListKeys"
+        ],
+        [
+          "cloudfrontkeyvaluestore",
           "UpdateKeys"
         ]
       ]
@@ -92,6 +101,10 @@
         [
           "cloudfrontkeyvaluestore",
           "DescribeKeyValueStore"
+        ],
+        [
+          "cloudfrontkeyvaluestore",
+          "ListKeys"
         ]
       ]
     ],
@@ -103,6 +116,10 @@
         [
           "cloudfrontkeyvaluestore",
           "DescribeKeyValueStore"
+        ],
+        [
+          "cloudfrontkeyvaluestore",
+          "ListKeys"
         ],
         [
           "cloudfrontkeyvaluestore",
@@ -122,6 +139,18 @@
         [
           "dataexchange",
           "CreateRevision"
+        ],
+        [
+          "dataexchange",
+          "GetJob"
+        ],
+        [
+          "dataexchange",
+          "ListRevisionAssets"
+        ],
+        [
+          "dataexchange",
+          "StartJob"
         ],
         [
           "dataexchange",
@@ -192,7 +221,12 @@
       "resource",
       "aws_inspector2_filter",
       "read",
-      []
+      [
+        [
+          "inspector2",
+          "ListFilters"
+        ]
+      ]
     ],
     [
       "resource",

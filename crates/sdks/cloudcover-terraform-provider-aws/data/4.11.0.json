@@ -10,25 +10,6 @@
         [
           "s3",
           "GetBucketPolicy"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBProxy"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -48,10 +29,6 @@
         [
           "elasticsearchservice",
           "DescribeElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -111,6 +88,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -175,10 +156,25 @@
         [
           "ec2",
           "UnmonitorInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_instance",
+      "delete",
+      [
+        [
+          "ec2",
+          "DescribeInstances"
         ],
         [
           "ec2",
-          "new"
+          "ModifyInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "TerminateInstances"
         ]
       ]
     ],
@@ -234,6 +230,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -294,10 +294,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -317,87 +313,25 @@
         [
           "opensearchservice",
           "DescribeDomainConfig"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_spot_instance_request",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_instance_request",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_transfer_server",
       "delete",
       [
         [
-          "transfer",
-          "DeleteServer"
+          "ec2",
+          "CancelSpotInstanceRequests"
         ],
         [
-          "transfer",
-          "ListUsers"
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "TerminateInstances"
         ]
       ]
     ],
@@ -413,10 +347,6 @@
         [
           "transfer",
           "DescribeWorkflow"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ],
@@ -428,10 +358,6 @@
         [
           "transfer",
           "DeleteWorkflow"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ],
@@ -443,10 +369,6 @@
         [
           "transfer",
           "DescribeWorkflow"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ],
@@ -466,10 +388,48 @@
         [
           "transfer",
           "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_volume_attachment",
+      "create",
+      [
+        [
+          "ec2",
+          "AttachVolume"
         ],
         [
-          "transfer",
-          "new"
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_volume_attachment",
+      "delete",
+      [
+        [
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DetachVolume"
+        ],
+        [
+          "ec2",
+          "StopInstances"
         ]
       ]
     ]

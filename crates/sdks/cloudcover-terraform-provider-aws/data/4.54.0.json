@@ -22,36 +22,6 @@
         [
           "elb",
           "SetLoadBalancerPoliciesOfListener"
-        ],
-        [
-          "elb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteMountTarget"
-        ],
-        [
-          "efs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteCacheSubnetGroup"
         ]
       ]
     ],
@@ -67,10 +37,6 @@
         [
           "emr",
           "ListInstanceFleets"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -86,10 +52,6 @@
         [
           "cloudwatchevidently",
           "GetLaunch"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -104,7 +66,7 @@
         ],
         [
           "cloudwatchevidently",
-          "new"
+          "GetLaunch"
         ]
       ]
     ],
@@ -116,10 +78,6 @@
         [
           "cloudwatchevidently",
           "GetLaunch"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -135,10 +93,6 @@
         [
           "cloudwatchevidently",
           "UpdateLaunch"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -171,16 +125,8 @@
           "ModifyNetworkInterfaceAttribute"
         ],
         [
-          "ec2",
-          "new"
-        ],
-        [
           "lambda",
           "DeleteFunction"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -204,10 +150,6 @@
         [
           "elb",
           "SetLoadBalancerPoliciesOfListener"
-        ],
-        [
-          "elb",
-          "new"
         ]
       ]
     ],
@@ -231,10 +173,6 @@
         [
           "elb",
           "SetLoadBalancerPoliciesOfListener"
-        ],
-        [
-          "elb",
-          "new"
         ]
       ]
     ],
@@ -250,10 +188,6 @@
         [
           "elb",
           "DescribeLoadBalancers"
-        ],
-        [
-          "elb",
-          "new"
         ]
       ]
     ],
@@ -273,10 +207,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -292,10 +222,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -307,51 +233,6 @@
         [
           "lightsail",
           "GetBucketAccessKeys"
-        ],
-        [
-          "lightsail",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_subnet_group",
-      "read",
-      [
-        [
-          "neptune",
-          "DescribeDBSubnetGroups"
-        ],
-        [
-          "neptune",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_firewall",
-      "delete",
-      [
-        [
-          "networkfirewall",
-          "DeleteFirewall"
-        ],
-        [
-          "networkfirewall",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_rule_group",
-      "delete",
-      [
-        [
-          "networkfirewall",
-          "DeleteRuleGroup"
         ]
       ]
     ],
@@ -375,10 +256,6 @@
         [
           "networkmanager",
           "PutCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -400,10 +277,6 @@
         [
           "networkmanager",
           "GetCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -427,10 +300,6 @@
         [
           "networkmanager",
           "PutCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -462,10 +331,6 @@
         [
           "prometheusservice",
           "UpdateWorkspaceAlias"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -493,10 +358,6 @@
         [
           "rds",
           "ResetDBClusterParameterGroup"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -512,10 +373,6 @@
         [
           "rds",
           "DescribeDBClusterParameters"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -539,74 +396,6 @@
         [
           "rds",
           "ResetDBClusterParameterGroup"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic",
-      "create",
-      [
-        [
-          "sns",
-          "CreateTopic"
-        ],
-        [
-          "sns",
-          "SetTopicAttributes"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_topic",
-      "update",
-      [
-        [
-          "sns",
-          "SetTopicAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_policy",
-      "create",
-      [
-        [
-          "sns",
-          "SetTopicAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_topic_policy",
-      "update",
-      [
-        [
-          "sns",
-          "SetTopicAttributes"
         ]
       ]
     ]

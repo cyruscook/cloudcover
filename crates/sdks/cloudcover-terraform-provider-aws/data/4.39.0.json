@@ -10,10 +10,6 @@
         [
           "dynamodb",
           "GetItem"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "route53resolver",
           "GetFirewallConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -40,10 +32,6 @@
         [
           "route53resolver",
           "GetFirewallDomainList"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -55,10 +43,6 @@
         [
           "route53resolver",
           "GetFirewallRuleGroup"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -70,10 +54,6 @@
         [
           "route53resolver",
           "GetFirewallRuleGroupAssociation"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -100,10 +80,6 @@
         [
           "ivs",
           "ImportPlaybackKeyPair"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -118,7 +94,7 @@
         ],
         [
           "ivs",
-          "new"
+          "GetPlaybackKeyPair"
         ]
       ]
     ],
@@ -130,10 +106,6 @@
         [
           "ivs",
           "GetPlaybackKeyPair"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -149,10 +121,6 @@
         [
           "ivs",
           "GetRecordingConfiguration"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -167,7 +135,7 @@
         ],
         [
           "ivs",
-          "new"
+          "GetRecordingConfiguration"
         ]
       ]
     ],
@@ -179,10 +147,6 @@
         [
           "ivs",
           "GetRecordingConfiguration"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -202,10 +166,6 @@
         [
           "lightsail",
           "SetIpAddressType"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -225,10 +185,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -244,10 +200,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -259,10 +211,6 @@
         [
           "lightsail",
           "GetLoadBalancer"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -282,10 +230,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -316,6 +260,10 @@
         [
           "medialive",
           "DeleteChannel"
+        ],
+        [
+          "medialive",
+          "DescribeChannel"
         ]
       ]
     ],
@@ -377,10 +325,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -396,10 +340,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -415,10 +355,6 @@
         [
           "networkmanager",
           "GetSiteToSiteVpnAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -434,10 +370,6 @@
         [
           "networkmanager",
           "GetSiteToSiteVpnAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -449,10 +381,6 @@
         [
           "networkmanager",
           "GetSiteToSiteVpnAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -464,10 +392,6 @@
         [
           "networkmanager",
           "GetSiteToSiteVpnAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -483,10 +407,6 @@
         [
           "redshift",
           "DescribeEndpointAuthorization"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -498,10 +418,6 @@
         [
           "redshift",
           "RevokeEndpointAccess"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -513,10 +429,6 @@
         [
           "redshift",
           "DescribeEndpointAuthorization"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -536,10 +448,6 @@
         [
           "redshift",
           "RevokeEndpointAccess"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -555,10 +463,6 @@
         [
           "redshift",
           "DescribePartners"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -570,10 +474,6 @@
         [
           "redshift",
           "DeletePartner"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -585,10 +485,6 @@
         [
           "redshift",
           "DescribePartners"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -604,10 +500,6 @@
         [
           "redshiftserverless",
           "GetSnapshot"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -622,7 +514,7 @@
         ],
         [
           "redshiftserverless",
-          "new"
+          "GetSnapshot"
         ]
       ]
     ],
@@ -634,10 +526,6 @@
         [
           "redshiftserverless",
           "GetSnapshot"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -653,10 +541,6 @@
         [
           "redshiftserverless",
           "UpdateSnapshot"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ]

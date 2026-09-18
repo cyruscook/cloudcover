@@ -4,6 +4,119 @@
   "upsert": [
     [
       "resource",
+      "aws_globalaccelerator_accelerator",
+      "create",
+      [
+        [
+          "globalaccelerator",
+          "CreateAccelerator"
+        ],
+        [
+          "globalaccelerator",
+          "ListTagsForResource"
+        ],
+        [
+          "globalaccelerator",
+          "UpdateAcceleratorAttributes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_accelerator",
+      "read",
+      [
+        [
+          "globalaccelerator",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_accelerator",
+      "update",
+      [
+        [
+          "globalaccelerator",
+          "ListTagsForResource"
+        ],
+        [
+          "globalaccelerator",
+          "TagResource"
+        ],
+        [
+          "globalaccelerator",
+          "UntagResource"
+        ],
+        [
+          "globalaccelerator",
+          "UpdateAccelerator"
+        ],
+        [
+          "globalaccelerator",
+          "UpdateAcceleratorAttributes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_endpoint_group",
+      "create",
+      [
+        [
+          "globalaccelerator",
+          "CreateEndpointGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_endpoint_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_endpoint_group",
+      "update",
+      [
+        [
+          "globalaccelerator",
+          "UpdateEndpointGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_listener",
+      "create",
+      [
+        [
+          "globalaccelerator",
+          "CreateListener"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_listener",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_globalaccelerator_listener",
+      "update",
+      [
+        [
+          "globalaccelerator",
+          "UpdateListener"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_neptune_cluster_parameter_group",
       "create",
       [
@@ -26,10 +139,6 @@
         [
           "neptune",
           "ModifyDBClusterParameterGroup"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -48,15 +157,7 @@
         ],
         [
           "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -68,14 +169,6 @@
         [
           "route53",
           "DisableHostedZoneDNSSEC"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -87,10 +180,6 @@
         [
           "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -109,15 +198,7 @@
         ],
         [
           "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
           "GetDNSSEC"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ]

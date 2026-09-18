@@ -104,6 +104,36 @@
   ],
   "upsert": [
     [
+      "data_source",
+      "aws_identitystore_group",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_default_vpc",
       "create",
@@ -143,10 +173,6 @@
         [
           "ec2",
           "ModifyVpcAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -173,7 +199,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeVpcs"
         ]
       ]
     ],
@@ -204,6 +230,10 @@
         ],
         [
           "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
           "DisassociateVpcCidrBlock"
         ],
         [
@@ -213,10 +243,6 @@
         [
           "ec2",
           "ModifyVpcTenancy"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -232,21 +258,6 @@
         [
           "ec2",
           "DescribeClientVpnTargetNetworks"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_cluster",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeleteCluster"
         ]
       ]
     ],
@@ -255,110 +266,13 @@
       "aws_ecs_cluster",
       "update",
       [
+        [
+          "ecs",
+          "DescribeClusters"
+        ],
         [
           "ecs",
           "UpdateCluster"
-        ],
-        [
-          "ecs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "CreateEnvironment"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEvents"
-        ],
-        [
-          "elasticbeanstalk",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ],
-        [
-          "elasticbeanstalk",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEvents"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateEnvironment"
-        ],
-        [
-          "elasticbeanstalk",
-          "new"
         ]
       ]
     ],
@@ -374,10 +288,6 @@
         [
           "networkmanager",
           "GetCoreNetwork"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -389,37 +299,6 @@
         [
           "networkmanager",
           "GetCoreNetwork"
-        ],
-        [
-          "networkmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_core_network",
-      "update",
-      [
-        [
-          "networkmanager",
-          "ExecuteCoreNetworkChangeSet"
-        ],
-        [
-          "networkmanager",
-          "GetCoreNetwork"
-        ],
-        [
-          "networkmanager",
-          "PutCoreNetworkPolicy"
-        ],
-        [
-          "networkmanager",
-          "UpdateCoreNetwork"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -434,15 +313,15 @@
         ],
         [
           "secretsmanager",
+          "DescribeSecret"
+        ],
+        [
+          "secretsmanager",
           "GetResourcePolicy"
         ],
         [
           "secretsmanager",
           "PutResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ],
@@ -454,6 +333,10 @@
         [
           "secretsmanager",
           "DeleteResourcePolicy"
+        ],
+        [
+          "secretsmanager",
+          "DescribeSecret"
         ],
         [
           "secretsmanager",
@@ -474,46 +357,6 @@
         [
           "secretsmanager",
           "UpdateSecret"
-        ],
-        [
-          "secretsmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "create",
-      [
-        [
-          "secretsmanager",
-          "RotateSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_rotation",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "CancelRotateSecret"
-        ],
-        [
-          "secretsmanager",
-          "RotateSecret"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ],
@@ -574,11 +417,11 @@
         ],
         [
           "ec2",
-          "ModifyVpcAttribute"
+          "DescribeVpcs"
         ],
         [
           "ec2",
-          "new"
+          "ModifyVpcAttribute"
         ]
       ]
     ],
@@ -605,7 +448,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeVpcs"
         ]
       ]
     ],
@@ -636,6 +479,10 @@
         ],
         [
           "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
           "DisassociateVpcCidrBlock"
         ],
         [
@@ -645,10 +492,6 @@
         [
           "ec2",
           "ModifyVpcTenancy"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

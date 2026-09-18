@@ -26,10 +26,6 @@
         [
           "inspector",
           "SubscribeToEvent"
-        ],
-        [
-          "inspector",
-          "new"
         ]
       ]
     ],
@@ -45,10 +41,6 @@
         [
           "inspector",
           "ListEventSubscriptions"
-        ],
-        [
-          "inspector",
-          "new"
         ]
       ]
     ],
@@ -76,10 +68,44 @@
         [
           "inspector",
           "UnsubscribeFromEvent"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_msk_cluster",
+      "create",
+      [
+        [
+          "kafka",
+          "CreateCluster"
         ],
         [
-          "inspector",
-          "new"
+          "kafka",
+          "DescribeCluster"
+        ],
+        [
+          "kafka",
+          "DescribeClusterV2"
+        ],
+        [
+          "kafka",
+          "GetBootstrapBrokers"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_msk_cluster",
+      "delete",
+      [
+        [
+          "kafka",
+          "DeleteCluster"
+        ],
+        [
+          "kafka",
+          "DescribeClusterV2"
         ]
       ]
     ],
@@ -95,10 +121,6 @@
         [
           "kafka",
           "DescribeClusterV2"
-        ],
-        [
-          "kafka",
-          "new"
         ]
       ]
     ],
@@ -113,7 +135,7 @@
         ],
         [
           "kafka",
-          "new"
+          "DescribeClusterV2"
         ]
       ]
     ],
@@ -125,10 +147,6 @@
         [
           "kafka",
           "DescribeClusterV2"
-        ],
-        [
-          "kafka",
-          "new"
         ]
       ]
     ],
@@ -140,10 +158,6 @@
         [
           "kafka",
           "DescribeClusterV2"
-        ],
-        [
-          "kafka",
-          "new"
         ]
       ]
     ],
@@ -159,10 +173,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -180,10 +190,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -199,10 +205,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -217,7 +219,7 @@
         ],
         [
           "networkmanager",
-          "new"
+          "GetVpcAttachment"
         ]
       ]
     ],
@@ -229,10 +231,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -248,10 +246,6 @@
         [
           "networkmanager",
           "UpdateVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -267,10 +261,6 @@
         [
           "opsworks",
           "DescribeStacks"
-        ],
-        [
-          "opsworks",
-          "new"
         ]
       ]
     ]

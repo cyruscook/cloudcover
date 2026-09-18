@@ -25,6 +25,10 @@
         [
           "networkflowmonitor",
           "CreateMonitor"
+        ],
+        [
+          "networkflowmonitor",
+          "GetMonitor"
         ]
       ]
     ],
@@ -36,6 +40,10 @@
         [
           "networkflowmonitor",
           "DeleteMonitor"
+        ],
+        [
+          "networkflowmonitor",
+          "GetMonitor"
         ]
       ]
     ],
@@ -57,6 +65,10 @@
       [
         [
           "networkflowmonitor",
+          "GetMonitor"
+        ],
+        [
+          "networkflowmonitor",
           "UpdateMonitor"
         ]
       ]
@@ -69,6 +81,10 @@
         [
           "networkflowmonitor",
           "CreateScope"
+        ],
+        [
+          "networkflowmonitor",
+          "GetScope"
         ]
       ]
     ],
@@ -80,6 +96,10 @@
         [
           "networkflowmonitor",
           "DeleteScope"
+        ],
+        [
+          "networkflowmonitor",
+          "GetScope"
         ]
       ]
     ],
@@ -101,6 +121,10 @@
       [
         [
           "networkflowmonitor",
+          "GetScope"
+        ],
+        [
+          "networkflowmonitor",
           "UpdateScope"
         ]
       ]
@@ -113,6 +137,10 @@
         [
           "observabilityadmin",
           "CreateCentralizationRuleForOrganization"
+        ],
+        [
+          "observabilityadmin",
+          "GetCentralizationRuleForOrganization"
         ]
       ]
     ],
@@ -145,15 +173,13 @@
       [
         [
           "observabilityadmin",
+          "GetCentralizationRuleForOrganization"
+        ],
+        [
+          "observabilityadmin",
           "UpdateCentralizationRuleForOrganization"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic",
-      "update",
-      []
     ]
   ]
 }

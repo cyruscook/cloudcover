@@ -10,10 +10,6 @@
         [
           "rds",
           "DescribeReservedDBInstancesOfferings"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -35,15 +31,15 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
           "ec2",
           "RegisterImage"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -58,11 +54,11 @@
         ],
         [
           "ec2",
-          "EnableImageDeprecation"
+          "DescribeImages"
         ],
         [
           "ec2",
-          "new"
+          "EnableImageDeprecation"
         ]
       ]
     ],
@@ -78,10 +74,6 @@
         [
           "codepipeline",
           "ListActionTypes"
-        ],
-        [
-          "codepipeline",
-          "new"
         ]
       ]
     ],
@@ -93,10 +85,6 @@
         [
           "codepipeline",
           "DeleteCustomActionType"
-        ],
-        [
-          "codepipeline",
-          "new"
         ]
       ]
     ],
@@ -142,6 +130,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -156,7 +148,27 @@
         ],
         [
           "comprehend",
+          "DescribeDocumentClassifier"
+        ],
+        [
+          "comprehend",
+          "ListDocumentClassifiers"
+        ],
+        [
+          "comprehend",
           "StopTrainingDocumentClassifier"
+        ],
+        [
+          "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
         ]
       ]
     ],
@@ -203,6 +215,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -234,10 +250,6 @@
         [
           "ec2",
           "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -246,6 +258,14 @@
       "aws_ebs_snapshot_import",
       "create",
       [
+        [
+          "ec2",
+          "DescribeImportSnapshotTasks"
+        ],
+        [
+          "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
         [
           "ec2",
           "DescribeSnapshots"
@@ -257,10 +277,6 @@
         [
           "ec2",
           "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -286,10 +302,6 @@
         [
           "ec2",
           "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -333,10 +345,6 @@
         [
           "ec2",
           "GetTransitGatewayRouteTablePropagations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -348,6 +356,10 @@
         [
           "inspector2",
           "EnableDelegatedAdminAccount"
+        ],
+        [
+          "inspector2",
+          "ListDelegatedAdminAccounts"
         ]
       ]
     ],
@@ -359,6 +371,10 @@
         [
           "inspector2",
           "DisableDelegatedAdminAccount"
+        ],
+        [
+          "inspector2",
+          "ListDelegatedAdminAccounts"
         ]
       ]
     ],
@@ -366,7 +382,12 @@
       "resource",
       "aws_inspector2_delegated_admin_account",
       "read",
-      []
+      [
+        [
+          "inspector2",
+          "ListDelegatedAdminAccounts"
+        ]
+      ]
     ],
     [
       "resource",
@@ -420,6 +441,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -488,25 +513,985 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_organizations_policy_attachment",
+      "aws_opsworks_custom_layer",
       "create",
       [
         [
-          "organizations",
-          "AttachPolicy"
+          "opsworks",
+          "AttachElasticLoadBalancer"
         ],
         [
-          "organizations",
-          "ListTargetsForPolicy"
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ecs_cluster_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ecs_cluster_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ecs_cluster_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "read",
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "update",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
         ]
       ]
     ],
@@ -530,25 +1515,6 @@
         [
           "prometheusservice",
           "DescribeWorkspace"
-        ],
-        [
-          "prometheusservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_prometheus_workspace",
-      "delete",
-      [
-        [
-          "prometheusservice",
-          "DeleteWorkspace"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -564,10 +1530,6 @@
         [
           "prometheusservice",
           "DescribeWorkspace"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -595,10 +1557,6 @@
         [
           "prometheusservice",
           "UpdateWorkspaceAlias"
-        ],
-        [
-          "prometheusservice",
-          "new"
         ]
       ]
     ],
@@ -614,10 +1572,6 @@
         [
           "rds",
           "PurchaseReservedDBInstancesOffering"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -635,10 +1589,6 @@
         [
           "rds",
           "DescribeReservedDBInstances"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -650,21 +1600,6 @@
         [
           "rds",
           "DescribeReservedDBInstances"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_ownership_controls",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteBucketOwnershipControls"
         ]
       ]
     ],
@@ -868,10 +1803,6 @@
         [
           "ec2",
           "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

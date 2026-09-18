@@ -17,7 +17,12 @@
       "data_source",
       "aws_opensearchserverless_collection_groups",
       "read",
-      []
+      [
+        [
+          "opensearchserverless",
+          "ListCollectionGroups"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -67,37 +72,86 @@
       "list_resource",
       "aws_config_config_rule",
       "list",
-      []
+      [
+        [
+          "configservice",
+          "DescribeConfigRules"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_glue_job",
       "list",
-      []
+      [
+        [
+          "glue",
+          "GetJobs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_collection_group",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "BatchGetCollectionGroup"
+        ],
+        [
+          "opensearchserverless",
+          "ListCollectionGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_route_table_association",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInternetGateways"
+        ],
+        [
+          "ec2",
+          "DescribeRouteTables"
+        ],
+        [
+          "ec2",
+          "DescribeSubnets"
+        ],
+        [
+          "ec2",
+          "DescribeVpnGateways"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3files_access_point",
       "list",
-      []
+      [
+        [
+          "s3files",
+          "GetAccessPoint"
+        ],
+        [
+          "s3files",
+          "ListAccessPoints"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3files_file_system",
       "list",
       [
+        [
+          "s3files",
+          "GetFileSystem"
+        ],
         [
           "s3files",
           "ListFileSystems"
@@ -108,31 +162,64 @@
       "list_resource",
       "aws_s3files_file_system_policy",
       "list",
-      []
+      [
+        [
+          "s3files",
+          "GetFileSystemPolicy"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3files_mount_target",
       "list",
-      []
+      [
+        [
+          "s3files",
+          "GetMountTarget"
+        ],
+        [
+          "s3files",
+          "ListMountTargets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3files_synchronization_configuration",
       "list",
-      []
+      [
+        [
+          "s3files",
+          "GetSynchronizationConfiguration"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssm_association",
       "list",
-      []
+      [
+        [
+          "ssm",
+          "DescribeAssociation"
+        ],
+        [
+          "ssm",
+          "ListAssociations"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssm_patch_group",
       "list",
-      []
+      [
+        [
+          "ssm",
+          "DescribePatchGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -186,6 +273,10 @@
         [
           "s3files",
           "CreateAccessPoint"
+        ],
+        [
+          "s3files",
+          "GetAccessPoint"
         ]
       ]
     ],
@@ -197,6 +288,10 @@
         [
           "s3files",
           "DeleteAccessPoint"
+        ],
+        [
+          "s3files",
+          "GetAccessPoint"
         ]
       ]
     ],
@@ -225,6 +320,10 @@
         [
           "s3files",
           "CreateFileSystem"
+        ],
+        [
+          "s3files",
+          "GetFileSystem"
         ]
       ]
     ],
@@ -236,6 +335,10 @@
         [
           "s3files",
           "DeleteFileSystem"
+        ],
+        [
+          "s3files",
+          "GetFileSystem"
         ]
       ]
     ],
@@ -308,6 +411,10 @@
         [
           "s3files",
           "CreateMountTarget"
+        ],
+        [
+          "s3files",
+          "GetMountTarget"
         ]
       ]
     ],
@@ -319,6 +426,10 @@
         [
           "s3files",
           "DeleteMountTarget"
+        ],
+        [
+          "s3files",
+          "GetMountTarget"
         ]
       ]
     ],

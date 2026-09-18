@@ -10,10 +10,6 @@
         [
           "apigateway",
           "GetExport"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "apigateway",
           "GetSdk"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -40,10 +32,6 @@
         [
           "apigatewayv2",
           "ExportApi"
-        ],
-        [
-          "apigatewayv2",
-          "new"
         ]
       ]
     ],
@@ -59,10 +47,6 @@
         [
           "connect",
           "ListContactFlowModules"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -89,10 +73,6 @@
         [
           "connect",
           "ListQuickConnects"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -104,10 +84,6 @@
         [
           "datapipeline",
           "DescribePipelines"
-        ],
-        [
-          "datapipeline",
-          "new"
         ]
       ]
     ],
@@ -119,10 +95,6 @@
         [
           "datapipeline",
           "GetPipelineDefinition"
-        ],
-        [
-          "datapipeline",
-          "new"
         ]
       ]
     ],
@@ -171,10 +143,6 @@
         [
           "connect",
           "DescribeQueue"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -192,10 +160,6 @@
         [
           "connect",
           "DescribeQueue"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -235,10 +199,6 @@
         [
           "connect",
           "UpdateQueueStatus"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -254,10 +214,6 @@
         [
           "connect",
           "DescribeSecurityProfile"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -269,10 +225,6 @@
         [
           "connect",
           "DeleteSecurityProfile"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -284,10 +236,6 @@
         [
           "connect",
           "DescribeSecurityProfile"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -311,10 +259,6 @@
         [
           "connect",
           "UpdateSecurityProfile"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -330,10 +274,6 @@
         [
           "dataexchange",
           "GetDataSet"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -345,10 +285,6 @@
         [
           "dataexchange",
           "DeleteDataSet"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -360,10 +296,6 @@
         [
           "dataexchange",
           "GetDataSet"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -387,10 +319,6 @@
         [
           "dataexchange",
           "UpdateDataSet"
-        ],
-        [
-          "dataexchange",
-          "new"
         ]
       ]
     ],
@@ -410,10 +338,6 @@
         [
           "datapipeline",
           "PutPipelineDefinition"
-        ],
-        [
-          "datapipeline",
-          "new"
         ]
       ]
     ],
@@ -431,10 +355,6 @@
         [
           "datapipeline",
           "GetPipelineDefinition"
-        ],
-        [
-          "datapipeline",
-          "new"
         ]
       ]
     ],
@@ -454,10 +374,6 @@
         [
           "datapipeline",
           "PutPipelineDefinition"
-        ],
-        [
-          "datapipeline",
-          "new"
         ]
       ]
     ],
@@ -485,10 +401,6 @@
         [
           "devicefarm",
           "UntagResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -500,10 +412,6 @@
         [
           "devicefarm",
           "DeleteTestGridProject"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -519,10 +427,6 @@
         [
           "devicefarm",
           "ListTagsForResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -550,43 +454,6 @@
         [
           "devicefarm",
           "UpdateTestGridProject"
-        ],
-        [
-          "devicefarm",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_import",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
         ]
       ]
     ],
@@ -602,10 +469,6 @@
         [
           "ecs",
           "PutClusterCapacityProviders"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -616,11 +479,11 @@
       [
         [
           "ecs",
-          "PutClusterCapacityProviders"
+          "DescribeClusters"
         ],
         [
           "ecs",
-          "new"
+          "PutClusterCapacityProviders"
         ]
       ]
     ],
@@ -632,10 +495,6 @@
         [
           "ecs",
           "DescribeClusters"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -651,10 +510,6 @@
         [
           "ecs",
           "PutClusterCapacityProviders"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -685,11 +540,11 @@
         ],
         [
           "ec2",
-          "ModifyNetworkInterfaceAttribute"
+          "DescribeNetworkInterfaces"
         ],
         [
           "ec2",
-          "new"
+          "ModifyNetworkInterfaceAttribute"
         ]
       ]
     ],
@@ -709,10 +564,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -727,7 +578,7 @@
         ],
         [
           "sagemaker",
-          "new"
+          "DescribeProject"
         ]
       ]
     ],
@@ -743,10 +594,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -774,10 +621,6 @@
         [
           "sagemaker",
           "UpdateProject"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ]

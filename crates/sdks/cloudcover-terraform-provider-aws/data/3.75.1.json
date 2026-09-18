@@ -1,42 +1,5 @@
 {
   "provider_version": "3.75.1",
   "remove": [],
-  "upsert": [
-    [
-      "resource",
-      "aws_route_table_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateRouteTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateRouteTable"
-        ],
-        [
-          "ec2",
-          "ReplaceRouteTableAssociation"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ]
-  ]
+  "upsert": []
 }

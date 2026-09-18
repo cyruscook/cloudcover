@@ -25,6 +25,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyCapacityReservation"
         ],
         [
@@ -65,6 +69,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -80,6 +88,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -130,6 +142,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyCapacityReservation"
         ],
         [
@@ -170,6 +186,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -185,6 +205,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -238,7 +262,12 @@
       "resource",
       "aws_notifications_channel_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListChannels"
+        ]
+      ]
     ],
     [
       "resource",
@@ -254,6 +283,10 @@
         [
           "notifications",
           "CreateEventRule"
+        ],
+        [
+          "notifications",
+          "GetEventRule"
         ]
       ]
     ],
@@ -265,6 +298,10 @@
         [
           "notifications",
           "DeleteEventRule"
+        ],
+        [
+          "notifications",
+          "GetEventRule"
         ]
       ]
     ],
@@ -284,6 +321,10 @@
       "aws_notifications_event_rule",
       "update",
       [
+        [
+          "notifications",
+          "GetEventRule"
+        ],
         [
           "notifications",
           "UpdateEventRule"
@@ -313,6 +354,10 @@
         [
           "notifications",
           "DeleteNotificationConfiguration"
+        ],
+        [
+          "notifications",
+          "GetNotificationConfiguration"
         ]
       ]
     ],
@@ -345,6 +390,10 @@
       [
         [
           "notifications",
+          "ListNotificationHubs"
+        ],
+        [
+          "notifications",
           "RegisterNotificationHub"
         ]
       ]
@@ -357,6 +406,10 @@
         [
           "notifications",
           "DeregisterNotificationHub"
+        ],
+        [
+          "notifications",
+          "ListNotificationHubs"
         ]
       ]
     ],
@@ -364,7 +417,12 @@
       "resource",
       "aws_notifications_notification_hub",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListNotificationHubs"
+        ]
+      ]
     ],
     [
       "resource",
@@ -430,6 +488,10 @@
         ],
         [
           "organizations",
+          "ListParents"
+        ],
+        [
+          "organizations",
           "MoveAccount"
         ]
       ]
@@ -439,6 +501,10 @@
       "aws_quicksight_account_settings",
       "create",
       [
+        [
+          "quicksight",
+          "DescribeAccountSettings"
+        ],
         [
           "quicksight",
           "UpdateAccountSettings"
@@ -467,6 +533,10 @@
       "aws_quicksight_account_settings",
       "update",
       [
+        [
+          "quicksight",
+          "DescribeAccountSettings"
+        ],
         [
           "quicksight",
           "UpdateAccountSettings"

@@ -10,82 +10,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_ec2_transit_gateway",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_dx_gateway_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayAttachments"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_peering_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayPeeringAttachments"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayRouteTables"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_vpc_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayVpcAttachments"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_vpn_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayAttachments"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_waf_subscribed_rule_group",
       "read",
       [
         [
           "waf",
           "ListSubscribedRuleGroups"
-        ],
-        [
-          "waf",
-          "new"
         ]
       ]
     ],
@@ -97,29 +27,41 @@
         [
           "wafregional",
           "ListSubscribedRuleGroups"
-        ],
-        [
-          "wafregional",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_connect",
-      "read",
+      "aws_ec2_transit_gateway_vpc_attachment",
+      "create",
       [
         [
           "ec2",
-          "DescribeTransitGatewayAttachments"
+          "AssociateTransitGatewayRouteTable"
         ],
         [
           "ec2",
-          "DescribeTransitGatewayConnects"
+          "CreateTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayVpcAttachments"
         ],
         [
           "ec2",
           "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
         ],
         [
           "ec2",
@@ -133,57 +75,28 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_peering_attachment",
-      "read",
+      "aws_ec2_transit_gateway_vpc_attachment",
+      "delete",
       [
         [
           "ec2",
-          "DescribeTransitGatewayPeeringAttachments"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_peering_attachment_accepter",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayPeeringAttachments"
+          "DeleteTransitGatewayVpcAttachment"
         ],
         [
           "ec2",
-          "DescribeTransitGateways"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGatewayRouteTables"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_route_table_association",
-      "read",
-      [
-        [
-          "ec2",
-          "GetTransitGatewayRouteTableAssociations"
+          "DescribeTransitGatewayVpcAttachments"
         ]
       ]
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_vpc_attachment",
-      "read",
+      "update",
       [
+        [
+          "ec2",
+          "AssociateTransitGatewayRouteTable"
+        ],
         [
           "ec2",
           "DescribeTransitGatewayVpcAttachments"
@@ -191,6 +104,69 @@
         [
           "ec2",
           "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTableAssociations"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTablePropagations"
+        ],
+        [
+          "ec2",
+          "ModifyTransitGatewayVpcAttachment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_vpc_attachment_accepter",
+      "create",
+      [
+        [
+          "ec2",
+          "AcceptTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "AssociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayVpcAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
         ],
         [
           "ec2",
@@ -205,23 +181,15 @@
     [
       "resource",
       "aws_ec2_transit_gateway_vpc_attachment_accepter",
-      "read",
+      "delete",
       [
         [
           "ec2",
+          "DeleteTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
           "DescribeTransitGatewayVpcAttachments"
-        ],
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
-          "GetTransitGatewayRouteTableAssociations"
-        ],
-        [
-          "ec2",
-          "GetTransitGatewayRouteTablePropagations"
         ]
       ]
     ],
@@ -252,6 +220,10 @@
         [
           "kendra",
           "DeleteDataSource"
+        ],
+        [
+          "kendra",
+          "DescribeDataSource"
         ]
       ]
     ],
@@ -309,10 +281,6 @@
         [
           "macie2",
           "PutClassificationExportConfiguration"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -324,10 +292,6 @@
         [
           "macie2",
           "PutClassificationExportConfiguration"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -339,10 +303,6 @@
         [
           "macie2",
           "GetClassificationExportConfiguration"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],
@@ -358,10 +318,6 @@
         [
           "macie2",
           "PutClassificationExportConfiguration"
-        ],
-        [
-          "macie2",
-          "new"
         ]
       ]
     ],

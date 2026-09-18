@@ -9,95 +9,11 @@
       [
         [
           "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
           "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_coip_pool",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_coip_pools",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_route_table",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_route_tables",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateways",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_efs_access_point",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_efs_access_points",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_efs_file_system",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_efs_mount_target",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeMountTargetSecurityGroups"
         ]
       ]
     ],
@@ -117,66 +33,6 @@
         [
           "elasticloadbalancing",
           "DescribeTags"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_mskconnect_connector",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_mskconnect_custom_plugin",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_mskconnect_worker_configuration",
-      "read",
-      [
-        [
-          "kafkaconnect",
-          "DescribeWorkerConfiguration"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_sfn_activity",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeActivity"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_sfn_alias",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeStateMachineAlias"
-        ],
-        [
-          "sfn",
-          "ListStateMachineAliases"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_sfn_state_machine",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeStateMachine"
         ]
       ]
     ],
@@ -241,6 +97,164 @@
         [
           "elasticloadbalancing",
           "DescribeLoadBalancers"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_autoscaling_group",
+      "create",
+      [
+        [
+          "autoscaling",
+          "CreateAutoScalingGroup"
+        ],
+        [
+          "autoscaling",
+          "DescribeAutoScalingGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
+        [
+          "autoscaling",
+          "EnableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "PutLifecycleHook"
+        ],
+        [
+          "autoscaling",
+          "PutWarmPool"
+        ],
+        [
+          "autoscaling",
+          "SuspendProcesses"
+        ],
+        [
+          "autoscaling",
+          "UpdateAutoScalingGroup"
+        ],
+        [
+          "elasticloadbalancing",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elbv2",
+          "DescribeTargetHealth"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_autoscaling_group",
+      "update",
+      [
+        [
+          "autoscaling",
+          "AttachLoadBalancerTargetGroups"
+        ],
+        [
+          "autoscaling",
+          "AttachLoadBalancers"
+        ],
+        [
+          "autoscaling",
+          "AttachTrafficSources"
+        ],
+        [
+          "autoscaling",
+          "CancelInstanceRefresh"
+        ],
+        [
+          "autoscaling",
+          "CreateOrUpdateTags"
+        ],
+        [
+          "autoscaling",
+          "DeleteTags"
+        ],
+        [
+          "autoscaling",
+          "DeleteWarmPool"
+        ],
+        [
+          "autoscaling",
+          "DescribeAutoScalingGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeInstanceRefreshes"
+        ],
+        [
+          "autoscaling",
+          "DescribeLoadBalancerTargetGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
+        [
+          "autoscaling",
+          "DescribeTrafficSources"
+        ],
+        [
+          "autoscaling",
+          "DescribeWarmPool"
+        ],
+        [
+          "autoscaling",
+          "DetachLoadBalancerTargetGroups"
+        ],
+        [
+          "autoscaling",
+          "DetachLoadBalancers"
+        ],
+        [
+          "autoscaling",
+          "DetachTrafficSources"
+        ],
+        [
+          "autoscaling",
+          "DisableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "EnableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "PutWarmPool"
+        ],
+        [
+          "autoscaling",
+          "ResumeProcesses"
+        ],
+        [
+          "autoscaling",
+          "StartInstanceRefresh"
+        ],
+        [
+          "autoscaling",
+          "SuspendProcesses"
+        ],
+        [
+          "autoscaling",
+          "UpdateAutoScalingGroup"
+        ],
+        [
+          "elasticloadbalancing",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elbv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
@@ -313,43 +327,6 @@
     ],
     [
       "resource",
-      "aws_directory_service_conditional_forwarder",
-      "delete",
-      [
-        [
-          "directoryservice",
-          "DeleteConditionalForwarder"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_conditional_forwarder",
-      "read",
-      [
-        [
-          "directoryservice",
-          "DescribeConditionalForwarders"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_conditional_forwarder",
-      "update",
-      [
-        [
-          "directoryservice",
-          "DescribeConditionalForwarders"
-        ],
-        [
-          "directoryservice",
-          "UpdateConditionalForwarder"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_directory_service_directory",
       "create",
       [
@@ -360,6 +337,14 @@
         [
           "directoryservice",
           "DeleteDirectory"
+        ],
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
+          "DescribeDomainControllers"
         ],
         [
           "directoryservice",
@@ -374,8 +359,42 @@
     [
       "resource",
       "aws_directory_service_directory",
+      "delete",
+      [
+        [
+          "directoryservice",
+          "DeleteDirectory"
+        ],
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_directory",
+      "read",
+      [
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_directory",
       "update",
       [
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
+          "DescribeDomainControllers"
+        ],
         [
           "directoryservice",
           "DisableSso"
@@ -392,37 +411,13 @@
     ],
     [
       "resource",
-      "aws_directory_service_log_subscription",
-      "create",
-      [
-        [
-          "directoryservice",
-          "CreateLogSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_log_subscription",
-      "delete",
-      [
-        [
-          "directoryservice",
-          "DeleteLogSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_log_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_directory_service_radius_settings",
       "create",
       [
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ],
         [
           "directoryservice",
           "EnableRadius"
@@ -432,11 +427,11 @@
     [
       "resource",
       "aws_directory_service_radius_settings",
-      "delete",
+      "read",
       [
         [
           "directoryservice",
-          "DisableRadius"
+          "DescribeDirectories"
         ]
       ]
     ],
@@ -445,6 +440,10 @@
       "aws_directory_service_radius_settings",
       "update",
       [
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ],
         [
           "directoryservice",
           "UpdateRadius"
@@ -466,6 +465,14 @@
         ],
         [
           "directoryservice",
+          "DescribeDomainControllers"
+        ],
+        [
+          "directoryservice",
+          "DescribeRegions"
+        ],
+        [
+          "directoryservice",
           "ListTagsForResource"
         ],
         [
@@ -485,6 +492,10 @@
       [
         [
           "directoryservice",
+          "DescribeRegions"
+        ],
+        [
+          "directoryservice",
           "RemoveRegion"
         ]
       ]
@@ -494,6 +505,10 @@
       "aws_directory_service_region",
       "read",
       [
+        [
+          "directoryservice",
+          "DescribeRegions"
+        ],
         [
           "directoryservice",
           "ListTagsForResource"
@@ -511,6 +526,14 @@
         ],
         [
           "directoryservice",
+          "DescribeDomainControllers"
+        ],
+        [
+          "directoryservice",
+          "DescribeRegions"
+        ],
+        [
+          "directoryservice",
           "ListTagsForResource"
         ],
         [
@@ -530,26 +553,13 @@
       [
         [
           "directoryservice",
+          "DescribeSharedDirectories"
+        ],
+        [
+          "directoryservice",
           "ShareDirectory"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_shared_directory",
-      "delete",
-      [
-        [
-          "directoryservice",
-          "UnshareDirectory"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_shared_directory",
-      "read",
-      []
     ],
     [
       "resource",
@@ -559,17 +569,36 @@
         [
           "directoryservice",
           "AcceptSharedDirectory"
+        ],
+        [
+          "directoryservice",
+          "DescribeDirectories"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_local_gateway_route",
-      "create",
+      "aws_directory_service_shared_directory_accepter",
+      "delete",
       [
         [
-          "ec2",
-          "CreateLocalGatewayRoute"
+          "directoryservice",
+          "DeleteDirectory"
+        ],
+        [
+          "directoryservice",
+          "DescribeDirectories"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_shared_directory_accepter",
+      "read",
+      [
+        [
+          "directoryservice",
+          "DescribeDirectories"
         ]
       ]
     ],
@@ -581,338 +610,12 @@
         [
           "ec2",
           "DeleteLocalGatewayRoute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "create",
-      [
+        ],
         [
           "ec2",
-          "CreateLocalGatewayRouteTableVpcAssociation"
+          "SearchLocalGatewayRoutes"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteLocalGatewayRouteTableVpcAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "create",
-      [
-        [
-          "efs",
-          "CreateAccessPoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteAccessPoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_efs_backup_policy",
-      "create",
-      [
-        [
-          "efs",
-          "DescribeBackupPolicy"
-        ],
-        [
-          "efs",
-          "PutBackupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_backup_policy",
-      "delete",
-      [
-        [
-          "efs",
-          "PutBackupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_backup_policy",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeBackupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_backup_policy",
-      "update",
-      [
-        [
-          "efs",
-          "DescribeBackupPolicy"
-        ],
-        [
-          "efs",
-          "PutBackupPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system",
-      "create",
-      [
-        [
-          "efs",
-          "CreateFileSystem"
-        ],
-        [
-          "efs",
-          "DescribeLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "PutLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "UpdateFileSystemProtection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system",
-      "update",
-      [
-        [
-          "efs",
-          "DescribeLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "PutLifecycleConfiguration"
-        ],
-        [
-          "efs",
-          "UpdateFileSystem"
-        ],
-        [
-          "efs",
-          "UpdateFileSystemProtection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system_policy",
-      "create",
-      [
-        [
-          "efs",
-          "DescribeFileSystemPolicy"
-        ],
-        [
-          "efs",
-          "PutFileSystemPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system_policy",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteFileSystemPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system_policy",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeFileSystemPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_file_system_policy",
-      "update",
-      [
-        [
-          "efs",
-          "DescribeFileSystemPolicy"
-        ],
-        [
-          "efs",
-          "PutFileSystemPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSubnets"
-        ],
-        [
-          "efs",
-          "CreateMountTarget"
-        ],
-        [
-          "efs",
-          "DescribeMountTargetSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteMountTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeMountTargetSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_mount_target",
-      "update",
-      [
-        [
-          "efs",
-          "DescribeMountTargetSecurityGroups"
-        ],
-        [
-          "efs",
-          "ModifyMountTargetSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_replication_configuration",
-      "create",
-      [
-        [
-          "efs",
-          "CreateReplicationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_replication_configuration",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteReplicationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_replication_configuration",
-      "read",
-      []
     ],
     [
       "resource",
@@ -1387,116 +1090,12 @@
     ],
     [
       "resource",
-      "aws_mskconnect_connector",
-      "create",
-      [
-        [
-          "kafkaconnect",
-          "CreateConnector"
-        ],
-        [
-          "kafkaconnect",
-          "DescribeConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_connector",
-      "delete",
-      [
-        [
-          "kafkaconnect",
-          "DeleteConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_connector",
-      "read",
-      [
-        [
-          "kafkaconnect",
-          "DescribeConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_connector",
-      "update",
-      [
-        [
-          "kafkaconnect",
-          "DescribeConnector"
-        ],
-        [
-          "kafkaconnect",
-          "UpdateConnector"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_custom_plugin",
-      "create",
-      [
-        [
-          "kafkaconnect",
-          "CreateCustomPlugin"
-        ],
-        [
-          "kafkaconnect",
-          "DescribeCustomPlugin"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_custom_plugin",
-      "delete",
-      [
-        [
-          "kafkaconnect",
-          "DeleteCustomPlugin"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_custom_plugin",
-      "read",
-      [
-        [
-          "kafkaconnect",
-          "DescribeCustomPlugin"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_mskconnect_custom_plugin",
       "update",
       [
         [
           "kafkaconnect",
           "DescribeCustomPlugin"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_worker_configuration",
-      "create",
-      [
-        [
-          "kafkaconnect",
-          "CreateWorkerConfiguration"
-        ],
-        [
-          "kafkaconnect",
-          "DescribeWorkerConfiguration"
         ]
       ]
     ],
@@ -1508,14 +1107,7 @@
         [
           "kafkaconnect",
           "DeleteWorkerConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mskconnect_worker_configuration",
-      "read",
-      [
+        ],
         [
           "kafkaconnect",
           "DescribeWorkerConfiguration"
@@ -1594,170 +1186,6 @@
         [
           "elasticloadbalancing",
           "SetLoadBalancerPoliciesForBackendServer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_activity",
-      "create",
-      [
-        [
-          "sfn",
-          "CreateActivity"
-        ],
-        [
-          "sfn",
-          "DescribeActivity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_activity",
-      "delete",
-      [
-        [
-          "sfn",
-          "DeleteActivity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_activity",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeActivity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_activity",
-      "update",
-      [
-        [
-          "sfn",
-          "DescribeActivity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_alias",
-      "create",
-      [
-        [
-          "sfn",
-          "CreateStateMachineAlias"
-        ],
-        [
-          "sfn",
-          "DescribeStateMachineAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_alias",
-      "delete",
-      [
-        [
-          "sfn",
-          "DeleteStateMachineAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_alias",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeStateMachineAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_alias",
-      "update",
-      [
-        [
-          "sfn",
-          "DescribeStateMachineAlias"
-        ],
-        [
-          "sfn",
-          "UpdateStateMachineAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_state_machine",
-      "create",
-      [
-        [
-          "sfn",
-          "CreateStateMachine"
-        ],
-        [
-          "sfn",
-          "DescribeStateMachine"
-        ],
-        [
-          "sfn",
-          "ListStateMachineVersions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_state_machine",
-      "delete",
-      [
-        [
-          "sfn",
-          "DeleteStateMachine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_state_machine",
-      "read",
-      [
-        [
-          "sfn",
-          "DescribeStateMachine"
-        ],
-        [
-          "sfn",
-          "ListStateMachineVersions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_state_machine",
-      "update",
-      [
-        [
-          "sfn",
-          "DescribeStateMachine"
-        ],
-        [
-          "sfn",
-          "ListStateMachineVersions"
-        ],
-        [
-          "sfn",
-          "UpdateStateMachine"
         ]
       ]
     ]

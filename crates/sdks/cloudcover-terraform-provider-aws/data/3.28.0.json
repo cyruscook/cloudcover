@@ -14,10 +14,6 @@
         [
           "cloudfront",
           "ListCachePolicies"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "cloudfront",
           "GetCachePolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "cloudfront",
           "DeleteCachePolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -63,10 +51,6 @@
         [
           "cloudfront",
           "GetCachePolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -82,10 +66,6 @@
         [
           "cloudfront",
           "UpdateCachePolicy"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -101,10 +81,6 @@
         [
           "cloudfront",
           "GetRealtimeLogConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -116,10 +92,6 @@
         [
           "cloudfront",
           "DeleteRealtimeLogConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -131,10 +103,6 @@
         [
           "cloudfront",
           "GetRealtimeLogConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -150,10 +118,6 @@
         [
           "cloudfront",
           "UpdateRealtimeLogConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -169,10 +133,6 @@
         [
           "cloudwatchlogs",
           "PutDestination"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
         ]
       ]
     ],
@@ -188,10 +148,6 @@
         [
           "cloudwatchlogs",
           "PutDestination"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
         ]
       ]
     ],
@@ -211,10 +167,6 @@
         [
           "codestarconnections",
           "ListTagsForResource"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -230,10 +182,6 @@
         [
           "codestarconnections",
           "ListTagsForResource"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -249,10 +197,6 @@
         [
           "codestarconnections",
           "UntagResource"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -268,10 +212,6 @@
         [
           "configservice",
           "PutConformancePack"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -283,10 +223,6 @@
         [
           "configservice",
           "DeleteConformancePack"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -298,10 +234,6 @@
         [
           "configservice",
           "DescribeConformancePacks"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -317,10 +249,17 @@
         [
           "configservice",
           "PutConformancePack"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_efs_access_point",
+      "delete",
+      [
         [
-          "configservice",
-          "new"
+          "efs",
+          "DeleteAccessPoint"
         ]
       ]
     ],
@@ -340,10 +279,6 @@
         [
           "iam",
           "RemoveRoleFromInstanceProfile"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -359,10 +294,6 @@
         [
           "route53resolver",
           "UpdateResolverDnssecConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -382,10 +313,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -397,14 +324,6 @@
         [
           "sagemaker",
           "DeleteModelPackageGroup"
-        ],
-        [
-          "sagemaker",
-          "DescribeModelPackageGroup"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -420,10 +339,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -447,10 +362,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -466,10 +377,6 @@
         [
           "securityhub",
           "ListOrganizationAdminAccounts"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -481,10 +388,6 @@
         [
           "securityhub",
           "DisableOrganizationAdminAccount"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -515,10 +418,6 @@
         [
           "ses",
           "PutConfigurationSetDeliveryOptions"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -534,10 +433,6 @@
         [
           "ses",
           "PutConfigurationSetDeliveryOptions"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -553,10 +448,6 @@
         [
           "ses",
           "DescribeReceiptRule"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -576,10 +467,6 @@
         [
           "synthetics",
           "StartCanary"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -595,10 +482,6 @@
         [
           "synthetics",
           "StopCanary"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -610,10 +493,6 @@
         [
           "synthetics",
           "GetCanary"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ],
@@ -645,10 +524,6 @@
         [
           "synthetics",
           "UpdateCanary"
-        ],
-        [
-          "synthetics",
-          "new"
         ]
       ]
     ]

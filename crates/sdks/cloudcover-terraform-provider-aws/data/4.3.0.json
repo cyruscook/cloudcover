@@ -33,28 +33,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_vpc_peering_connection",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcPeeringConnections"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpc_peering_connections",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcPeeringConnections"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_connect_queue",
       "create",
@@ -70,10 +48,6 @@
         [
           "connect",
           "ListQueueQuickConnects"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -89,10 +63,6 @@
         [
           "connect",
           "ListQueueQuickConnects"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -144,10 +114,6 @@
         [
           "connect",
           "UpdateQueueStatus"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -167,10 +133,6 @@
         [
           "connect",
           "ListSecurityProfilePermissions"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -186,10 +148,6 @@
         [
           "connect",
           "ListSecurityProfilePermissions"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -217,25 +175,6 @@
         [
           "connect",
           "UpdateSecurityProfile"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_task",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -251,10 +190,6 @@
         [
           "ec2",
           "DescribeTransitGatewayMulticastDomains"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -277,6 +212,10 @@
         ],
         [
           "ec2",
+          "DescribeTransitGatewayMulticastDomains"
+        ],
+        [
+          "ec2",
           "DisassociateTransitGatewayMulticastDomain"
         ],
         [
@@ -286,10 +225,6 @@
         [
           "ec2",
           "SearchTransitGatewayMulticastGroups"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -320,10 +255,6 @@
         [
           "ec2",
           "DescribeTransitGatewayMulticastDomains"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -339,10 +270,6 @@
         [
           "ec2",
           "GetTransitGatewayMulticastDomainAssociations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -357,7 +284,7 @@
         ],
         [
           "ec2",
-          "new"
+          "GetTransitGatewayMulticastDomainAssociations"
         ]
       ]
     ],
@@ -383,7 +310,7 @@
         ],
         [
           "ec2",
-          "new"
+          "SearchTransitGatewayMulticastGroups"
         ]
       ]
     ],
@@ -398,7 +325,7 @@
         ],
         [
           "ec2",
-          "new"
+          "SearchTransitGatewayMulticastGroups"
         ]
       ]
     ],
@@ -406,7 +333,12 @@
       "resource",
       "aws_ec2_transit_gateway_multicast_group_member",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "SearchTransitGatewayMulticastGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -419,7 +351,7 @@
         ],
         [
           "ec2",
-          "new"
+          "SearchTransitGatewayMulticastGroups"
         ]
       ]
     ],
@@ -434,7 +366,7 @@
         ],
         [
           "ec2",
-          "new"
+          "SearchTransitGatewayMulticastGroups"
         ]
       ]
     ],
@@ -442,7 +374,12 @@
       "resource",
       "aws_ec2_transit_gateway_multicast_group_source",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "SearchTransitGatewayMulticastGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -452,6 +389,10 @@
         [
           "ec2",
           "AttachInternetGateway"
+        ],
+        [
+          "ec2",
+          "DescribeInternetGateways"
         ]
       ]
     ],
@@ -460,6 +401,10 @@
       "aws_internet_gateway_attachment",
       "delete",
       [
+        [
+          "ec2",
+          "DescribeInternetGateways"
+        ],
         [
           "ec2",
           "DetachInternetGateway"
@@ -470,31 +415,664 @@
       "resource",
       "aws_internet_gateway_attachment",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInternetGateways"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ecs_cluster_layer",
       "create",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ecs_cluster_layer",
       "delete",
-      []
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ecs_cluster_layer",
       "read",
-      []
+      [
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ecs_cluster_layer",
       "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DetachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ],
+        [
+          "opsworks",
+          "UpdateLayer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "create",
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "delete",
+      [
+        [
+          "opsworks",
+          "DeleteLayer"
+        ],
+        [
+          "opsworks",
+          "DeregisterEcsCluster"
+        ]
+      ]
     ],
     [
       "resource",
@@ -508,10 +1086,6 @@
         [
           "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -522,11 +1096,11 @@
       [
         [
           "ec2",
-          "ModifyVpcEndpoint"
+          "DescribeVpcEndpoints"
         ],
         [
           "ec2",
-          "new"
+          "ModifyVpcEndpoint"
         ]
       ]
     ],
@@ -538,10 +1112,6 @@
         [
           "ec2",
           "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -557,10 +1127,6 @@
         [
           "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -584,25 +1150,6 @@
         [
           "ec2",
           "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpcPeeringConnection"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -626,59 +1173,6 @@
         [
           "ec2",
           "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_options",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeVpcPeeringConnections"
-        ],
-        [
-          "ec2",
-          "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_options",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcPeeringConnections"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_options",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeVpcPeeringConnections"
-        ],
-        [
-          "ec2",
-          "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

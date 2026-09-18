@@ -10,10 +10,6 @@
         [
           "budgets",
           "DescribeBudget"
-        ],
-        [
-          "budgets",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "ecr",
           "DescribePullThroughCacheRules"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -40,10 +32,6 @@
         [
           "iam",
           "SimulatePrincipalPolicy"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -59,10 +47,6 @@
         [
           "chimesdkvoice",
           "UpdateGlobalSettings"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -74,10 +58,6 @@
         [
           "chimesdkvoice",
           "UpdateGlobalSettings"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -104,10 +84,6 @@
         [
           "chimesdkvoice",
           "UpdateGlobalSettings"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -131,10 +107,6 @@
         [
           "ec2",
           "GetTransitGatewayRouteTableAssociations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -171,6 +143,10 @@
         [
           "finspace",
           "DeleteKxCluster"
+        ],
+        [
+          "finspace",
+          "GetKxCluster"
         ]
       ]
     ],
@@ -291,6 +267,10 @@
         [
           "finspace",
           "DeleteKxEnvironment"
+        ],
+        [
+          "finspace",
+          "GetKxEnvironment"
         ]
       ]
     ],
@@ -417,112 +397,6 @@
     ],
     [
       "resource",
-      "aws_glacier_vault",
-      "delete",
-      [
-        [
-          "glacier",
-          "DeleteVault"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glacier_vault",
-      "read",
-      [
-        [
-          "glacier",
-          "DescribeVault"
-        ],
-        [
-          "glacier",
-          "GetVaultAccessPolicy"
-        ],
-        [
-          "glacier",
-          "GetVaultNotifications"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glacier_vault",
-      "update",
-      [
-        [
-          "glacier",
-          "DeleteVaultAccessPolicy"
-        ],
-        [
-          "glacier",
-          "DeleteVaultNotifications"
-        ],
-        [
-          "glacier",
-          "DescribeVault"
-        ],
-        [
-          "glacier",
-          "GetVaultAccessPolicy"
-        ],
-        [
-          "glacier",
-          "GetVaultNotifications"
-        ],
-        [
-          "glacier",
-          "SetVaultAccessPolicy"
-        ],
-        [
-          "glacier",
-          "SetVaultNotifications"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glacier_vault_lock",
-      "create",
-      [
-        [
-          "glacier",
-          "CompleteVaultLock"
-        ],
-        [
-          "glacier",
-          "GetVaultLock"
-        ],
-        [
-          "glacier",
-          "InitiateVaultLock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glacier_vault_lock",
-      "delete",
-      [
-        [
-          "glacier",
-          "AbortVaultLock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glacier_vault_lock",
-      "read",
-      [
-        [
-          "glacier",
-          "GetVaultLock"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_instance",
       "create",
       [
@@ -577,6 +451,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -649,10 +527,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -667,15 +541,15 @@
         ],
         [
           "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
           "ModifyInstanceAttribute"
         ],
         [
           "ec2",
           "TerminateInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -727,10 +601,6 @@
         [
           "ec2",
           "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -786,6 +656,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -854,101 +728,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_instance_request",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceTypes"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "RequestSpotInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_swf_domain",
-      "create",
-      [
-        [
-          "swf",
-          "DescribeDomain"
-        ],
-        [
-          "swf",
-          "RegisterDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_swf_domain",
-      "delete",
-      [
-        [
-          "swf",
-          "DeprecateDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_swf_domain",
-      "read",
-      [
-        [
-          "swf",
-          "DescribeDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_swf_domain",
-      "update",
-      [
-        [
-          "swf",
-          "DescribeDomain"
         ]
       ]
     ]

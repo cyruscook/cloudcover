@@ -10,10 +10,6 @@
         [
           "apigatewayv2",
           "GetVpcLink"
-        ],
-        [
-          "apigatewayv2",
-          "new"
         ]
       ]
     ],
@@ -25,108 +21,10 @@
         [
           "athena",
           "BatchGetNamedQuery"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_eks_addon",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeAddon"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_eks_addon_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_eks_cluster",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeCluster"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_eks_clusters",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_eks_node_group",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeNodegroup"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_eks_node_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_sns_topic",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_apigatewayv2_deployment",
-      "read",
-      [
-        [
-          "apigatewayv2",
-          "GetDeployment"
         ],
         [
-          "apigatewayv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apigatewayv2_vpc_link",
-      "delete",
-      [
-        [
-          "apigatewayv2",
-          "DeleteVpcLink"
-        ],
-        [
-          "apigatewayv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_apigatewayv2_vpc_link",
-      "read",
-      [
-        [
-          "apigatewayv2",
-          "GetVpcLink"
-        ],
-        [
-          "apigatewayv2",
-          "new"
+          "athena",
+          "ListNamedQueries"
         ]
       ]
     ],
@@ -193,6 +91,10 @@
         ],
         [
           "cloudtrail",
+          "DescribeTrails"
+        ],
+        [
+          "cloudtrail",
           "GetEventSelectors"
         ],
         [
@@ -218,33 +120,6 @@
         [
           "cloudtrail",
           "StopLogging"
-        ],
-        [
-          "cloudtrail",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudtrail",
-      "read",
-      [
-        [
-          "cloudtrail",
-          "GetEventSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetInsightSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetTrailStatus"
-        ],
-        [
-          "cloudtrail",
-          "new"
         ]
       ]
     ],
@@ -253,6 +128,10 @@
       "aws_cloudtrail",
       "update",
       [
+        [
+          "cloudtrail",
+          "DescribeTrails"
+        ],
         [
           "cloudtrail",
           "GetEventSelectors"
@@ -284,10 +163,6 @@
         [
           "cloudtrail",
           "UpdateTrail"
-        ],
-        [
-          "cloudtrail",
-          "new"
         ]
       ]
     ],
@@ -323,10 +198,6 @@
         [
           "datasync",
           "SetReportLevel"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -362,10 +233,6 @@
         [
           "datasync",
           "UpdateTask"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -401,274 +268,6 @@
         [
           "databasemigrationservice",
           "TestConnection"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "create",
-      [
-        [
-          "eks",
-          "CreateAddon"
-        ],
-        [
-          "eks",
-          "DescribeAddon"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "delete",
-      [
-        [
-          "eks",
-          "DeleteAddon"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeAddon"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_addon",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeAddon"
-        ],
-        [
-          "eks",
-          "UpdateAddon"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_cluster",
-      "create",
-      [
-        [
-          "eks",
-          "CreateCluster"
-        ],
-        [
-          "eks",
-          "DescribeCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_cluster",
-      "delete",
-      [
-        [
-          "eks",
-          "DeleteCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_cluster",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_cluster",
-      "update",
-      [
-        [
-          "eks",
-          "AssociateEncryptionConfig"
-        ],
-        [
-          "eks",
-          "DescribeCluster"
-        ],
-        [
-          "eks",
-          "UpdateClusterConfig"
-        ],
-        [
-          "eks",
-          "UpdateClusterVersion"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_fargate_profile",
-      "create",
-      [
-        [
-          "eks",
-          "CreateFargateProfile"
-        ],
-        [
-          "eks",
-          "DescribeFargateProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_fargate_profile",
-      "delete",
-      [
-        [
-          "eks",
-          "DeleteFargateProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_fargate_profile",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeFargateProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_fargate_profile",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeFargateProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_identity_provider_config",
-      "create",
-      [
-        [
-          "eks",
-          "AssociateIdentityProviderConfig"
-        ],
-        [
-          "eks",
-          "DescribeIdentityProviderConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_identity_provider_config",
-      "delete",
-      [
-        [
-          "eks",
-          "DisassociateIdentityProviderConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_identity_provider_config",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeIdentityProviderConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_identity_provider_config",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeIdentityProviderConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_node_group",
-      "create",
-      [
-        [
-          "eks",
-          "CreateNodegroup"
-        ],
-        [
-          "eks",
-          "DescribeNodegroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_node_group",
-      "delete",
-      [
-        [
-          "eks",
-          "DeleteNodegroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_node_group",
-      "read",
-      [
-        [
-          "eks",
-          "DescribeNodegroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_node_group",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeNodegroup"
-        ],
-        [
-          "eks",
-          "UpdateNodegroupConfig"
-        ],
-        [
-          "eks",
-          "UpdateNodegroupVersion"
         ]
       ]
     ],
@@ -684,106 +283,6 @@
         [
           "sagemaker",
           "UpdateFeatureGroup"
-        ],
-        [
-          "sagemaker",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_platform_application",
-      "create",
-      [
-        [
-          "sns",
-          "CreatePlatformApplication"
-        ],
-        [
-          "sns",
-          "GetPlatformApplicationAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_platform_application",
-      "delete",
-      [
-        [
-          "sns",
-          "DeletePlatformApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_platform_application",
-      "read",
-      [
-        [
-          "sns",
-          "GetPlatformApplicationAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_platform_application",
-      "update",
-      [
-        [
-          "sns",
-          "GetPlatformApplicationAttributes"
-        ],
-        [
-          "sns",
-          "SetPlatformApplicationAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "create",
-      [
-        [
-          "sns",
-          "SetSMSAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "delete",
-      [
-        [
-          "sns",
-          "SetSMSAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "read",
-      [
-        [
-          "sns",
-          "GetSMSAttributes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "update",
-      [
-        [
-          "sns",
-          "SetSMSAttributes"
         ]
       ]
     ],
@@ -798,107 +297,19 @@
         ],
         [
           "sns",
+          "GetTopicAttributes"
+        ],
+        [
+          "sns",
+          "SetTopicAttributes"
+        ],
+        [
+          "sns",
           "TagResource"
         ],
         [
           "sns",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic",
-      "delete",
-      [
-        [
-          "sns",
-          "DeleteTopic"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_data_protection_policy",
-      "create",
-      [
-        [
-          "sns",
-          "GetDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "PutDataProtectionPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_data_protection_policy",
-      "delete",
-      [
-        [
-          "sns",
-          "PutDataProtectionPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_data_protection_policy",
-      "read",
-      [
-        [
-          "sns",
-          "GetDataProtectionPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_data_protection_policy",
-      "update",
-      [
-        [
-          "sns",
-          "GetDataProtectionPolicy"
-        ],
-        [
-          "sns",
-          "PutDataProtectionPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "create",
-      [
-        [
-          "sns",
-          "Subscribe"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "delete",
-      [
-        [
-          "sns",
-          "Unsubscribe"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "update",
-      [
-        [
-          "sns",
-          "SetSubscriptionAttributes"
         ]
       ]
     ]

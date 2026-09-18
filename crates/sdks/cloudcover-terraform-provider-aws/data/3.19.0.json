@@ -18,10 +18,6 @@
         [
           "glue",
           "GetTags"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "glue",
           "DeleteRegistry"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -52,10 +44,6 @@
         [
           "glue",
           "GetTags"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -83,10 +71,17 @@
         [
           "glue",
           "UpdateRegistry"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_storagegateway_smb_file_share",
+      "delete",
+      [
         [
-          "glue",
-          "new"
+          "storagegateway",
+          "DeleteFileShare"
         ]
       ]
     ]

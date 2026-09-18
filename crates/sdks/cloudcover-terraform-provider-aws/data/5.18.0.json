@@ -48,17 +48,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_group",
-      "delete",
-      [
-        [
-          "cloudwatchlogs",
-          "DeleteLogGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_opensearch_package",
       "create",
       [
@@ -69,10 +58,6 @@
         [
           "opensearchservice",
           "DescribePackages"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -84,10 +69,6 @@
         [
           "opensearchservice",
           "DeletePackage"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -114,10 +95,6 @@
         [
           "opensearchservice",
           "UpdatePackage"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -133,10 +110,6 @@
         [
           "opensearchservice",
           "ListPackagesForDomain"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -151,7 +124,7 @@
         ],
         [
           "opensearchservice",
-          "new"
+          "ListPackagesForDomain"
         ]
       ]
     ],

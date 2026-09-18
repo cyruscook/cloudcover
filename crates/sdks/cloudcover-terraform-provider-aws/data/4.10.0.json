@@ -10,10 +10,6 @@
         [
           "iam",
           "GetSAMLProvider"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -40,10 +36,6 @@
         [
           "qldb",
           "ListTagsForResource"
-        ],
-        [
-          "qldb",
-          "new"
         ]
       ]
     ],
@@ -59,25 +51,6 @@
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_config_config_rule",
-      "delete",
-      [
-        [
-          "configservice",
-          "DeleteConfigRule"
-        ],
-        [
-          "configservice",
-          "new"
         ]
       ]
     ],
@@ -97,10 +70,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -112,10 +81,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -131,10 +96,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -158,10 +119,6 @@
         [
           "datasync",
           "UntagResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -177,10 +134,6 @@
         [
           "elasticache",
           "ModifyUserGroup"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -191,11 +144,11 @@
       [
         [
           "elasticache",
-          "ModifyUserGroup"
+          "DescribeUserGroups"
         ],
         [
           "elasticache",
-          "new"
+          "ModifyUserGroup"
         ]
       ]
     ],
@@ -207,21 +160,6 @@
         [
           "elasticache",
           "DescribeUserGroups"
-        ],
-        [
-          "elasticache",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_qldb_ledger",
-      "delete",
-      [
-        [
-          "qldb",
-          "DeleteLedger"
         ]
       ]
     ],
@@ -241,10 +179,6 @@
         [
           "qldb",
           "StreamJournalToKinesis"
-        ],
-        [
-          "qldb",
-          "new"
         ]
       ]
     ],
@@ -256,6 +190,10 @@
         [
           "qldb",
           "CancelJournalKinesisStream"
+        ],
+        [
+          "qldb",
+          "DescribeJournalKinesisStream"
         ]
       ]
     ],
@@ -271,10 +209,6 @@
         [
           "qldb",
           "ListTagsForResource"
-        ],
-        [
-          "qldb",
-          "new"
         ]
       ]
     ],
@@ -298,21 +232,6 @@
         [
           "qldb",
           "UntagResource"
-        ],
-        [
-          "qldb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeIpamScopes"
         ]
       ]
     ]

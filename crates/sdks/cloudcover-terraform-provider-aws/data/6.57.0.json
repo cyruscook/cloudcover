@@ -6,67 +6,150 @@
       "data_source",
       "aws_eks_access_policies",
       "read",
-      []
+      [
+        [
+          "eks",
+          "ListAccessPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_bedrock_evaluation_job",
       "list",
-      []
+      [
+        [
+          "bedrock",
+          "GetEvaluationJob"
+        ],
+        [
+          "bedrock",
+          "ListEvaluationJobs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eks_access_entry",
       "list",
-      []
+      [
+        [
+          "eks",
+          "DescribeAccessEntry"
+        ],
+        [
+          "eks",
+          "ListAccessEntries"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eks_access_policy_association",
       "list",
-      []
+      [
+        [
+          "eks",
+          "ListAssociatedAccessPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_eks_node_group",
       "list",
-      []
+      [
+        [
+          "eks",
+          "DescribeNodegroup"
+        ],
+        [
+          "eks",
+          "ListNodegroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_flow_log",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeFlowLogs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_mailmanager_traffic_policy",
       "list",
-      []
+      [
+        [
+          "mailmanager",
+          "GetTrafficPolicy"
+        ],
+        [
+          "mailmanager",
+          "ListTrafficPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_osis_pipeline",
       "list",
-      []
+      [
+        [
+          "osis",
+          "GetPipeline"
+        ],
+        [
+          "osis",
+          "ListPipelines"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_osis_pipeline_endpoint",
       "list",
-      []
+      [
+        [
+          "osis",
+          "ListPipelineEndpoints"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_osis_resource_policy",
       "list",
-      []
+      [
+        [
+          "osis",
+          "GetResourcePolicy"
+        ],
+        [
+          "osis",
+          "ListPipelines"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_rekognition_collection",
       "list",
-      []
+      [
+        [
+          "rekognition",
+          "DescribeCollection"
+        ],
+        [
+          "rekognition",
+          "ListCollections"
+        ]
+      ]
     ],
     [
       "resource",
@@ -76,6 +159,10 @@
         [
           "bedrock",
           "CreateEvaluationJob"
+        ],
+        [
+          "bedrock",
+          "GetEvaluationJob"
         ]
       ]
     ],
@@ -84,6 +171,10 @@
       "aws_bedrock_evaluation_job",
       "delete",
       [
+        [
+          "bedrock",
+          "GetEvaluationJob"
+        ],
         [
           "bedrock",
           "StopEvaluationJob"
@@ -106,6 +197,36 @@
       "aws_bedrock_evaluation_job",
       "update",
       []
+    ],
+    [
+      "resource",
+      "aws_bedrockagentcore_memory",
+      "update",
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "UpdateMemory"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagentcore_memory_strategy",
+      "update",
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "UpdateMemory"
+        ]
+      ]
     ],
     [
       "resource",
@@ -211,6 +332,10 @@
         [
           "osis",
           "CreatePipelineEndpoint"
+        ],
+        [
+          "osis",
+          "ListPipelineEndpoints"
         ]
       ]
     ],
@@ -222,6 +347,10 @@
         [
           "osis",
           "DeletePipelineEndpoint"
+        ],
+        [
+          "osis",
+          "ListPipelineEndpoints"
         ]
       ]
     ],
@@ -229,7 +358,12 @@
       "resource",
       "aws_osis_pipeline_endpoint",
       "read",
-      []
+      [
+        [
+          "osis",
+          "ListPipelineEndpoints"
+        ]
+      ]
     ],
     [
       "resource",

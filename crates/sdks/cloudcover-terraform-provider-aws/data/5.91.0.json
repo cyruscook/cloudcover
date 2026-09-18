@@ -13,6 +13,10 @@
         ],
         [
           "kafka",
+          "DescribeClusterOperation"
+        ],
+        [
+          "kafka",
           "GetBootstrapBrokers"
         ],
         [
@@ -61,6 +65,10 @@
         [
           "ec2",
           "CreateNetworkInterfacePermission"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfacePermissions"
         ]
       ]
     ],
@@ -72,6 +80,10 @@
         [
           "ec2",
           "DeleteNetworkInterfacePermission"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfacePermissions"
         ]
       ]
     ],
@@ -79,7 +91,12 @@
       "resource",
       "aws_network_interface_permission",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeNetworkInterfacePermissions"
+        ]
+      ]
     ],
     [
       "resource",
@@ -98,7 +115,15 @@
         ],
         [
           "route53",
+          "GetChange"
+        ],
+        [
+          "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ]
       ]
     ],
@@ -116,6 +141,10 @@
         [
           "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ]
       ]
     ],
@@ -130,7 +159,15 @@
         ],
         [
           "route53",
+          "GetChange"
+        ],
+        [
+          "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ]
       ]
     ]

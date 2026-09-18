@@ -14,10 +14,6 @@
         [
           "ses",
           "DescribeConfigurationSet"
-        ],
-        [
-          "ses",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,28 @@
         [
           "ses",
           "DescribeConfigurationSet"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_directory",
+      "delete",
+      [
         [
-          "ses",
-          "new"
+          "workspaces",
+          "DeregisterWorkspaceDirectory"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_workspace",
+      "delete",
+      [
+        [
+          "workspaces",
+          "TerminateWorkspaces"
         ]
       ]
     ]

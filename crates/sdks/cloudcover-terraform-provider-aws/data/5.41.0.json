@@ -4,17 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_cognito_identity_pool",
-      "read",
-      [
-        [
-          "cognitoidentity",
-          "DescribeIdentityPool"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_lakeformation_data_lake_settings",
       "read",
       [
@@ -28,183 +17,10 @@
       "data_source",
       "aws_lakeformation_permissions",
       "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_lakeformation_resource",
-      "read",
       [
         [
           "lakeformation",
-          "DescribeResource"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpc",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool",
-      "create",
-      [
-        [
-          "cognitoidentity",
-          "CreateIdentityPool"
-        ],
-        [
-          "cognitoidentity",
-          "DescribeIdentityPool"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool",
-      "delete",
-      [
-        [
-          "cognitoidentity",
-          "DeleteIdentityPool"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool",
-      "read",
-      [
-        [
-          "cognitoidentity",
-          "DescribeIdentityPool"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool",
-      "update",
-      [
-        [
-          "cognitoidentity",
-          "DescribeIdentityPool"
-        ],
-        [
-          "cognitoidentity",
-          "UpdateIdentityPool"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_provider_principal_tag",
-      "create",
-      [
-        [
-          "cognitoidentity",
-          "GetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "SetPrincipalTagAttributeMap"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_provider_principal_tag",
-      "delete",
-      [
-        [
-          "cognitoidentity",
-          "SetPrincipalTagAttributeMap"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_provider_principal_tag",
-      "read",
-      [
-        [
-          "cognitoidentity",
-          "GetPrincipalTagAttributeMap"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_provider_principal_tag",
-      "update",
-      [
-        [
-          "cognitoidentity",
-          "GetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "SetPrincipalTagAttributeMap"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_roles_attachment",
-      "create",
-      [
-        [
-          "cognitoidentity",
-          "GetIdentityPoolRoles"
-        ],
-        [
-          "cognitoidentity",
-          "SetIdentityPoolRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_roles_attachment",
-      "delete",
-      [
-        [
-          "cognitoidentity",
-          "SetIdentityPoolRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_roles_attachment",
-      "read",
-      [
-        [
-          "cognitoidentity",
-          "GetIdentityPoolRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cognito_identity_pool_roles_attachment",
-      "update",
-      [
-        [
-          "cognitoidentity",
-          "GetIdentityPoolRoles"
-        ],
-        [
-          "cognitoidentity",
-          "SetIdentityPoolRoles"
+          "ListPermissions"
         ]
       ]
     ],
@@ -268,6 +84,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -344,10 +164,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -407,6 +223,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -479,10 +299,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -504,28 +320,6 @@
     [
       "resource",
       "aws_lakeformation_data_lake_settings",
-      "delete",
-      [
-        [
-          "lakeformation",
-          "PutDataLakeSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_data_lake_settings",
-      "read",
-      [
-        [
-          "lakeformation",
-          "GetDataLakeSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_data_lake_settings",
       "update",
       [
         [
@@ -535,62 +329,6 @@
         [
           "lakeformation",
           "PutDataLakeSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_lf_tag",
-      "create",
-      [
-        [
-          "lakeformation",
-          "CreateLFTag"
-        ],
-        [
-          "lakeformation",
-          "GetLFTag"
-        ],
-        [
-          "lakeformation",
-          "UpdateLFTag"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_lf_tag",
-      "delete",
-      [
-        [
-          "lakeformation",
-          "DeleteLFTag"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_lf_tag",
-      "read",
-      [
-        [
-          "lakeformation",
-          "GetLFTag"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_lf_tag",
-      "update",
-      [
-        [
-          "lakeformation",
-          "GetLFTag"
-        ],
-        [
-          "lakeformation",
-          "UpdateLFTag"
         ]
       ]
     ],
@@ -602,60 +340,10 @@
         [
           "lakeformation",
           "GrantPermissions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_permissions",
-      "delete",
-      [
-        [
-          "lakeformation",
-          "RevokePermissions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_permissions",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource",
-      "create",
-      [
-        [
-          "lakeformation",
-          "DescribeResource"
         ],
         [
           "lakeformation",
-          "RegisterResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource",
-      "delete",
-      [
-        [
-          "lakeformation",
-          "DeregisterResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource",
-      "read",
-      [
-        [
-          "lakeformation",
-          "DescribeResource"
+          "ListPermissions"
         ]
       ]
     ],
@@ -673,75 +361,6 @@
           "GetResourceLFTags"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource_lf_tags",
-      "delete",
-      [
-        [
-          "lakeformation",
-          "RemoveLFTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource_lf_tags",
-      "read",
-      [
-        [
-          "lakeformation",
-          "GetResourceLFTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_rule",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ram_resource_association",
-      "read",
-      [
-        [
-          "ram",
-          "GetResourceShareAssociations"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateActionTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "read",
-      []
     ],
     [
       "resource",
@@ -849,37 +468,13 @@
     ],
     [
       "resource",
-      "aws_securityhub_insight",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "update",
-      [
-        [
-          "securityhub",
-          "UpdateInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_securityhub_organization_configuration",
       "delete",
       [
+        [
+          "securityhub",
+          "DescribeOrganizationConfiguration"
+        ],
         [
           "securityhub",
           "UpdateOrganizationConfiguration"

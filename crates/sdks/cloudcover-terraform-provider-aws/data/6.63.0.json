@@ -6,61 +6,147 @@
       "list_resource",
       "aws_accountaccess_application",
       "list",
-      []
+      [
+        [
+          "accountaccess",
+          "GetApplication"
+        ],
+        [
+          "accountaccess",
+          "ListApplications"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_key_pair",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeKeyPairs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambdamicrovms_image",
       "list",
-      []
+      [
+        [
+          "lambdamicrovms",
+          "GetMicrovmImage"
+        ],
+        [
+          "lambdamicrovms",
+          "ListMicrovmImages"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambdamicrovms_microvm",
       "list",
-      []
+      [
+        [
+          "lambdamicrovms",
+          "GetMicrovm"
+        ],
+        [
+          "lambdamicrovms",
+          "ListMicrovms"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_mailmanager_archive",
       "list",
-      []
+      [
+        [
+          "mailmanager",
+          "GetArchive"
+        ],
+        [
+          "mailmanager",
+          "ListArchives"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_access_policy",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "GetAccessPolicy"
+        ],
+        [
+          "opensearchserverless",
+          "ListAccessPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_lifecycle_policy",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "BatchGetLifecyclePolicy"
+        ],
+        [
+          "opensearchserverless",
+          "ListLifecyclePolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_security_config",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "GetSecurityConfig"
+        ],
+        [
+          "opensearchserverless",
+          "ListSecurityConfigs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_security_policy",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "GetSecurityPolicy"
+        ],
+        [
+          "opensearchserverless",
+          "ListSecurityPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_vpc_endpoint",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "BatchGetVpcEndpoint"
+        ],
+        [
+          "opensearchserverless",
+          "ListVpcEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -70,6 +156,10 @@
         [
           "accountaccess",
           "CreateApplication"
+        ],
+        [
+          "accountaccess",
+          "GetApplication"
         ],
         [
           "accountaccess",
@@ -89,6 +179,10 @@
         [
           "accountaccess",
           "DeleteApplication"
+        ],
+        [
+          "accountaccess",
+          "GetApplication"
         ]
       ]
     ],
@@ -117,6 +211,10 @@
         [
           "datazone",
           "AddPolicyGrant"
+        ],
+        [
+          "datazone",
+          "ListPolicyGrants"
         ]
       ]
     ],
@@ -127,6 +225,10 @@
       [
         [
           "datazone",
+          "ListPolicyGrants"
+        ],
+        [
+          "datazone",
           "RemovePolicyGrant"
         ]
       ]
@@ -135,7 +237,12 @@
       "resource",
       "aws_datazone_policy_grant",
       "read",
-      []
+      [
+        [
+          "datazone",
+          "ListPolicyGrants"
+        ]
+      ]
     ],
     [
       "resource",
@@ -150,6 +257,10 @@
       [
         [
           "lambdamicrovms",
+          "GetMicrovm"
+        ],
+        [
+          "lambdamicrovms",
           "RunMicrovm"
         ]
       ]
@@ -159,6 +270,10 @@
       "aws_lambdamicrovms_microvm",
       "delete",
       [
+        [
+          "lambdamicrovms",
+          "GetMicrovm"
+        ],
         [
           "lambdamicrovms",
           "TerminateMicrovm"

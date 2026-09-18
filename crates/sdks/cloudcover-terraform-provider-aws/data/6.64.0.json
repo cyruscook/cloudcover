@@ -10,6 +10,10 @@
         [
           "accountaccess",
           "GetApplication"
+        ],
+        [
+          "accountaccess",
+          "ListApplications"
         ]
       ]
     ],
@@ -17,7 +21,12 @@
       "data_source",
       "aws_accountaccess_entitlements",
       "read",
-      []
+      [
+        [
+          "accountaccess",
+          "ListEntitlements"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -34,49 +43,113 @@
       "data_source",
       "aws_rds_events",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeEvents"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_accountaccess_entitlement",
       "list",
-      []
+      [
+        [
+          "accountaccess",
+          "GetEntitlement"
+        ],
+        [
+          "accountaccess",
+          "ListEntitlements"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_agentregistry_registry",
       "list",
-      []
+      [
+        [
+          "agentregistrycontrol",
+          "GetRegistry"
+        ],
+        [
+          "agentregistrycontrol",
+          "ListRegistries"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_bedrock_model_invocation_job",
       "list",
-      []
+      [
+        [
+          "bedrock",
+          "GetModelInvocationJob"
+        ],
+        [
+          "bedrock",
+          "ListModelInvocationJobs"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_dms_data_provider",
       "list",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeDataProviders"
+        ],
+        [
+          "databasemigrationservice",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_dms_instance_profile",
       "list",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeInstanceProfiles"
+        ],
+        [
+          "databasemigrationservice",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_fis_safety_lever_state",
       "list",
-      []
+      [
+        [
+          "fis",
+          "GetSafetyLever"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_alias",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetAlias"
+        ],
+        [
+          "lambda",
+          "ListAliases"
+        ]
+      ]
     ],
     [
       "resource",
@@ -129,6 +202,10 @@
         [
           "agentregistrycontrol",
           "CreateRegistry"
+        ],
+        [
+          "agentregistrycontrol",
+          "GetRegistry"
         ]
       ]
     ],
@@ -140,6 +217,10 @@
         [
           "agentregistrycontrol",
           "DeleteRegistry"
+        ],
+        [
+          "agentregistrycontrol",
+          "GetRegistry"
         ]
       ]
     ],
@@ -161,6 +242,10 @@
       [
         [
           "agentregistrycontrol",
+          "GetRegistry"
+        ],
+        [
+          "agentregistrycontrol",
           "UpdateRegistry"
         ]
       ]
@@ -173,6 +258,10 @@
         [
           "bedrock",
           "CreateModelInvocationJob"
+        ],
+        [
+          "bedrock",
+          "GetModelInvocationJob"
         ]
       ]
     ],
@@ -181,6 +270,10 @@
       "aws_bedrock_model_invocation_job",
       "delete",
       [
+        [
+          "bedrock",
+          "GetModelInvocationJob"
+        ],
         [
           "bedrock",
           "StopModelInvocationJob"
@@ -206,23 +299,125 @@
     ],
     [
       "resource",
-      "aws_bedrockagentcore_oauth2_credential_provider",
+      "aws_bedrockagentcore_harness",
       "create",
       [
         [
           "bedrockagentcorecontrol",
-          "CreateOauth2CredentialProvider"
+          "CreateHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "DeleteHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
         ]
       ]
     ],
     [
       "resource",
       "aws_bedrockagentcore_oauth2_credential_provider",
-      "update",
+      "delete",
       [
         [
           "bedrockagentcorecontrol",
-          "UpdateOauth2CredentialProvider"
+          "DeleteOauth2CredentialProvider"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetOauth2CredentialProvider"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_instance",
+      "create",
+      [
+        [
+          "rds",
+          "CreateDBInstance"
+        ],
+        [
+          "rds",
+          "CreateDBInstanceReadReplica"
+        ],
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "ModifyDBInstance"
+        ],
+        [
+          "rds",
+          "RebootDBInstance"
+        ],
+        [
+          "rds",
+          "RestoreDBInstanceFromDBSnapshot"
+        ],
+        [
+          "rds",
+          "RestoreDBInstanceFromS3"
+        ],
+        [
+          "rds",
+          "RestoreDBInstanceToPointInTime"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_instance",
+      "update",
+      [
+        [
+          "rds",
+          "CreateBlueGreenDeployment"
+        ],
+        [
+          "rds",
+          "DeleteBlueGreenDeployment"
+        ],
+        [
+          "rds",
+          "DeleteDBInstance"
+        ],
+        [
+          "rds",
+          "DescribeBlueGreenDeployments"
+        ],
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "ModifyDBInstance"
+        ],
+        [
+          "rds",
+          "PromoteReadReplica"
+        ],
+        [
+          "rds",
+          "SwitchoverBlueGreenDeployment"
         ]
       ]
     ],
@@ -252,7 +447,12 @@
       "resource",
       "aws_dms_data_provider",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeDataProviders"
+        ]
+      ]
     ],
     [
       "resource",
@@ -291,7 +491,12 @@
       "resource",
       "aws_dms_instance_profile",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeInstanceProfiles"
+        ]
+      ]
     ],
     [
       "resource",
@@ -348,6 +553,150 @@
         [
           "fis",
           "UpdateSafetyLeverState"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "create",
+      [
+        [
+          "rds",
+          "AddRoleToDBCluster"
+        ],
+        [
+          "rds",
+          "CreateDBCluster"
+        ],
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "DescribeGlobalClusters"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterFromS3"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterFromSnapshot"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterToPointInTime"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "update",
+      [
+        [
+          "rds",
+          "AddRoleToDBCluster"
+        ],
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "DescribeGlobalClusters"
+        ],
+        [
+          "rds",
+          "DisableHttpEndpoint"
+        ],
+        [
+          "rds",
+          "EnableHttpEndpoint"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "PromoteReadReplicaDBCluster"
+        ],
+        [
+          "rds",
+          "RemoveFromGlobalCluster"
+        ],
+        [
+          "rds",
+          "RemoveRoleFromDBCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster_instance",
+      "create",
+      [
+        [
+          "rds",
+          "CreateDBInstance"
+        ],
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "ModifyDBInstance"
+        ],
+        [
+          "rds",
+          "RebootDBInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster_instance",
+      "update",
+      [
+        [
+          "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
+          "DescribeEvents"
+        ],
+        [
+          "rds",
+          "ModifyDBInstance"
         ]
       ]
     ]

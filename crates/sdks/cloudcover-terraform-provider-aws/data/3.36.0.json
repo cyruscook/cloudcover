@@ -14,10 +14,6 @@
         [
           "cloudfront",
           "GetKeyGroup"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "cloudfront",
           "DeleteKeyGroup"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -44,10 +36,6 @@
         [
           "cloudfront",
           "GetKeyGroup"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -63,21 +51,6 @@
         [
           "cloudfront",
           "UpdateKeyGroup"
-        ],
-        [
-          "cloudfront",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudhsm_v2_hsm",
-      "read",
-      [
-        [
-          "cloudhsmv2",
-          "DescribeClusters"
         ]
       ]
     ],
@@ -93,10 +66,6 @@
         [
           "ecr",
           "PutRegistryPolicy"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -108,10 +77,6 @@
         [
           "ecr",
           "DeleteRegistryPolicy"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -123,10 +88,6 @@
         [
           "ecr",
           "GetRegistryPolicy"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -142,10 +103,6 @@
         [
           "ecr",
           "PutRegistryPolicy"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -161,10 +118,6 @@
         [
           "ecr",
           "PutReplicationConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -182,10 +135,6 @@
         [
           "ecr",
           "DescribeRegistry"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -201,10 +150,6 @@
         [
           "ecr",
           "PutReplicationConfiguration"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -217,21 +162,6 @@
           "iam",
           "CreateGroup"
         ],
-        [
-          "iam",
-          "GetGroup"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_group_membership",
-      "read",
-      [
         [
           "iam",
           "GetGroup"
@@ -250,10 +180,6 @@
         [
           "iam",
           "ListAttachedGroupPolicies"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -270,17 +196,6 @@
     ],
     [
       "resource",
-      "aws_iam_user_group_membership",
-      "read",
-      [
-        [
-          "iam",
-          "ListGroupsForUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_iam_user_policy_attachment",
       "create",
       [
@@ -291,10 +206,6 @@
         [
           "iam",
           "ListAttachedUserPolicies"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -320,19 +231,22 @@
         ],
         [
           "kinesisanalyticsv2",
-          "DescribeApplication"
-        ],
-        [
-          "kinesisanalyticsv2",
           "ListTagsForResource"
         ],
         [
           "kinesisanalyticsv2",
           "StartApplication"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesisanalyticsv2_application",
+      "read",
+      [
         [
           "kinesisanalyticsv2",
-          "new"
+          "ListTagsForResource"
         ]
       ]
     ],
@@ -387,10 +301,6 @@
         ],
         [
           "kinesisanalyticsv2",
-          "DescribeApplication"
-        ],
-        [
-          "kinesisanalyticsv2",
           "ListTagsForResource"
         ],
         [
@@ -412,10 +322,6 @@
         [
           "kinesisanalyticsv2",
           "UpdateApplication"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "new"
         ]
       ]
     ],
@@ -427,14 +333,6 @@
         [
           "kinesisanalyticsv2",
           "CreateApplicationSnapshot"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "DescribeApplicationSnapshot"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "new"
         ]
       ]
     ],
@@ -446,10 +344,6 @@
         [
           "kinesisanalyticsv2",
           "DeleteApplicationSnapshot"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "new"
         ]
       ]
     ],
@@ -457,16 +351,7 @@
       "resource",
       "aws_kinesisanalyticsv2_application_snapshot",
       "read",
-      [
-        [
-          "kinesisanalyticsv2",
-          "DescribeApplicationSnapshot"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -480,10 +365,6 @@
         [
           "mwaa",
           "GetEnvironment"
-        ],
-        [
-          "mwaa",
-          "new"
         ]
       ]
     ],
@@ -495,10 +376,6 @@
         [
           "mwaa",
           "DeleteEnvironment"
-        ],
-        [
-          "mwaa",
-          "new"
         ]
       ]
     ],
@@ -510,10 +387,6 @@
         [
           "mwaa",
           "GetEnvironment"
-        ],
-        [
-          "mwaa",
-          "new"
         ]
       ]
     ],
@@ -537,10 +410,6 @@
         [
           "mwaa",
           "UpdateEnvironment"
-        ],
-        [
-          "mwaa",
-          "new"
         ]
       ]
     ],
@@ -560,10 +429,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -575,10 +440,6 @@
         [
           "route53resolver",
           "DeleteFirewallRuleGroup"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -594,10 +455,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -621,10 +478,6 @@
         [
           "route53resolver",
           "UntagResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -640,10 +493,6 @@
         [
           "s3control",
           "PutPublicAccessBlock"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -659,10 +508,6 @@
         [
           "s3",
           "PutBucketNotificationConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -674,10 +519,6 @@
         [
           "s3",
           "GetBucketNotificationConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -693,12 +534,14 @@
         [
           "s3",
           "PutBucketNotificationConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint_route_table_association",
+      "read",
+      []
     ]
   ]
 }

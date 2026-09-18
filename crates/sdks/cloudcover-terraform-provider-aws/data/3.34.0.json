@@ -14,10 +14,6 @@
         [
           "codestarconnections",
           "ListTagsForResource"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,17 @@
         [
           "ec2",
           "DescribeImages"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_apigatewayv2_domain_name",
+      "create",
+      [
         [
-          "ec2",
-          "new"
+          "apigatewayv2",
+          "CreateDomainName"
         ]
       ]
     ],
@@ -44,14 +47,24 @@
       "resource",
       "aws_apigatewayv2_domain_name",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_apigatewayv2_domain_name",
+      "update",
       [
         [
           "apigatewayv2",
-          "GetDomainName"
+          "TagResource"
         ],
         [
           "apigatewayv2",
-          "new"
+          "UntagResource"
+        ],
+        [
+          "apigatewayv2",
+          "UpdateDomainName"
         ]
       ]
     ],
@@ -67,10 +80,6 @@
         [
           "ecr",
           "SetRepositoryPolicy"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -89,10 +98,6 @@
         ],
         [
           "iam",
-          "GetInstanceProfile"
-        ],
-        [
-          "iam",
           "RemoveRoleFromInstanceProfile"
         ],
         [
@@ -102,10 +107,6 @@
         [
           "iam",
           "UntagInstanceProfile"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -129,10 +130,6 @@
         [
           "iam",
           "UntagInstanceProfile"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -156,10 +153,6 @@
         [
           "iam",
           "UpdateOpenIDConnectProviderThumbprint"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -183,10 +176,6 @@
         [
           "iam",
           "UpdateSAMLProvider"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -206,10 +195,6 @@
         [
           "iam",
           "UntagServerCertificate"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -225,10 +210,6 @@
         [
           "lightsail",
           "PutInstancePublicPorts"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -240,10 +221,6 @@
         [
           "lightsail",
           "CloseInstancePublicPorts"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -255,10 +232,6 @@
         [
           "lightsail",
           "GetInstancePortStates"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -286,10 +259,6 @@
         [
           "ec2",
           "ReplaceNetworkAclAssociation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -301,10 +270,6 @@
         [
           "ec2",
           "CreateRoute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -330,10 +295,6 @@
         [
           "sns",
           "Subscribe"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -349,10 +310,6 @@
         [
           "sns",
           "ListSubscriptionsByTopic"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -372,10 +329,6 @@
         [
           "sns",
           "SetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -395,10 +348,6 @@
         [
           "storagegateway",
           "ListLocalDisks"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -414,10 +363,6 @@
         [
           "storagegateway",
           "ListLocalDisks"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ]

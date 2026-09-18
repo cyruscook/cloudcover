@@ -28,6 +28,10 @@
       [
         [
           "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
           "StopInstances"
         ]
       ]
@@ -69,7 +73,12 @@
       "data_source",
       "aws_billing_views",
       "read",
-      []
+      [
+        [
+          "billing",
+          "ListBillingViews"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -134,25 +143,85 @@
       "list_resource",
       "aws_batch_job_queue",
       "list",
-      []
+      [
+        [
+          "batch",
+          "DescribeJobQueues"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_log_group",
       "list",
-      []
+      [
+        [
+          "cloudwatchlogs",
+          "DescribeLogGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_role",
       "list",
-      []
+      [
+        [
+          "iam",
+          "ListRoles"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_instance",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceCreditSpecifications"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceTypes"
+        ],
+        [
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplateVersions"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplates"
+        ],
+        [
+          "ec2",
+          "DescribeSpotInstanceRequests"
+        ],
+        [
+          "ec2",
+          "DescribeTags"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetPasswordData"
+        ]
+      ]
     ],
     [
       "resource",
@@ -162,6 +231,10 @@
         [
           "controltower",
           "EnableBaseline"
+        ],
+        [
+          "controltower",
+          "GetEnabledBaseline"
         ]
       ]
     ],
@@ -173,6 +246,10 @@
         [
           "controltower",
           "DisableBaseline"
+        ],
+        [
+          "controltower",
+          "GetEnabledBaseline"
         ]
       ]
     ],
@@ -194,6 +271,10 @@
       [
         [
           "controltower",
+          "GetEnabledBaseline"
+        ],
+        [
+          "controltower",
           "UpdateEnabledBaseline"
         ]
       ]
@@ -206,6 +287,10 @@
         [
           "odb",
           "CreateCloudAutonomousVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudAutonomousVmCluster"
         ]
       ]
     ],
@@ -217,6 +302,10 @@
         [
           "odb",
           "DeleteCloudAutonomousVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudAutonomousVmCluster"
         ]
       ]
     ],
@@ -245,6 +334,10 @@
         [
           "odb",
           "CreateCloudExadataInfrastructure"
+        ],
+        [
+          "odb",
+          "GetCloudExadataInfrastructure"
         ]
       ]
     ],
@@ -256,6 +349,10 @@
         [
           "odb",
           "DeleteCloudExadataInfrastructure"
+        ],
+        [
+          "odb",
+          "GetCloudExadataInfrastructure"
         ]
       ]
     ],
@@ -277,6 +374,10 @@
       [
         [
           "odb",
+          "GetCloudExadataInfrastructure"
+        ],
+        [
+          "odb",
           "UpdateCloudExadataInfrastructure"
         ]
       ]
@@ -289,6 +390,10 @@
         [
           "odb",
           "CreateCloudVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ]
       ]
     ],
@@ -300,6 +405,10 @@
         [
           "odb",
           "DeleteCloudVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ]
       ]
     ],
@@ -328,6 +437,10 @@
         [
           "odb",
           "CreateOdbNetwork"
+        ],
+        [
+          "odb",
+          "GetOdbNetwork"
         ]
       ]
     ],
@@ -339,6 +452,10 @@
         [
           "odb",
           "DeleteOdbNetwork"
+        ],
+        [
+          "odb",
+          "GetOdbNetwork"
         ]
       ]
     ],
@@ -360,6 +477,10 @@
       [
         [
           "odb",
+          "GetOdbNetwork"
+        ],
+        [
+          "odb",
           "UpdateOdbNetwork"
         ]
       ]
@@ -372,6 +493,10 @@
         [
           "odb",
           "CreateOdbPeeringConnection"
+        ],
+        [
+          "odb",
+          "GetOdbPeeringConnection"
         ]
       ]
     ],
@@ -383,6 +508,10 @@
         [
           "odb",
           "DeleteOdbPeeringConnection"
+        ],
+        [
+          "odb",
+          "GetOdbPeeringConnection"
         ]
       ]
     ],

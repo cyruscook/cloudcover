@@ -4,231 +4,22 @@
   "upsert": [
     [
       "data_source",
-      "aws_db_cluster_snapshot",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusterSnapshots"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_db_instance",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_db_snapshot",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBSnapshots"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_sfn_state_machine_versions",
       "read",
       []
     ],
     [
-      "resource",
-      "aws_cloudformation_stack",
-      "delete",
-      [
-        [
-          "cloudformation",
-          "DeleteStack"
-        ],
-        [
-          "cloudformation",
-          "DescribeStackEvents"
-        ],
-        [
-          "cloudformation",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_cluster_snapshot",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBClusterSnapshot"
-        ],
-        [
-          "rds",
-          "DescribeDBClusterSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_cluster_snapshot",
+      "data_source",
+      "aws_vpclattice_service",
       "read",
       [
         [
-          "rds",
-          "DescribeDBClusterSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_cluster_snapshot",
-      "update",
-      [
-        [
-          "rds",
-          "DescribeDBClusterSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_instance",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_instance",
-      "update",
-      [
-        [
-          "rds",
-          "CreateBlueGreenDeployment"
+          "vpclattice",
+          "GetService"
         ],
         [
-          "rds",
-          "DeleteBlueGreenDeployment"
-        ],
-        [
-          "rds",
-          "DeleteDBInstance"
-        ],
-        [
-          "rds",
-          "DescribeDBInstances"
-        ],
-        [
-          "rds",
-          "ModifyDBInstance"
-        ],
-        [
-          "rds",
-          "PromoteReadReplica"
-        ],
-        [
-          "rds",
-          "SwitchoverBlueGreenDeployment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_instance_role_association",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_snapshot_copy",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_snapshot_copy",
-      "update",
-      [
-        [
-          "rds",
-          "DescribeDBSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_media_package_channel",
-      "create",
-      [
-        [
-          "mediapackage",
-          "CreateChannel"
-        ],
-        [
-          "mediapackage",
-          "DescribeChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_media_package_channel",
-      "delete",
-      [
-        [
-          "mediapackage",
-          "DeleteChannel"
-        ],
-        [
-          "mediapackage",
-          "DescribeChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_media_package_channel",
-      "read",
-      [
-        [
-          "mediapackage",
-          "DescribeChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_media_package_channel",
-      "update",
-      [
-        [
-          "mediapackage",
-          "DescribeChannel"
-        ],
-        [
-          "mediapackage",
-          "UpdateChannel"
+          "vpclattice",
+          "ListServices"
         ]
       ]
     ],
@@ -244,10 +35,6 @@
         [
           "sagemaker",
           "DescribePipeline"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -259,10 +46,6 @@
         [
           "sagemaker",
           "DeletePipeline"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -274,10 +57,6 @@
         [
           "sagemaker",
           "DescribePipeline"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -293,48 +72,6 @@
         [
           "sagemaker",
           "UpdatePipeline"
-        ],
-        [
-          "sagemaker",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_serverlessapplicationrepository_cloudformation_stack",
-      "delete",
-      [
-        [
-          "cloudformation",
-          "DeleteStack"
-        ],
-        [
-          "cloudformation",
-          "DescribeStackEvents"
-        ],
-        [
-          "cloudformation",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_serverlessapplicationrepository_cloudformation_stack",
-      "read",
-      [
-        [
-          "cloudformation",
-          "DescribeStacks"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "GetApplication"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "new"
         ]
       ]
     ],
@@ -354,10 +91,6 @@
         [
           "sfn",
           "ListStateMachineVersions"
-        ],
-        [
-          "sfn",
-          "new"
         ]
       ]
     ],
@@ -373,10 +106,6 @@
         [
           "sfn",
           "ListStateMachineVersions"
-        ],
-        [
-          "sfn",
-          "new"
         ]
       ]
     ],
@@ -396,10 +125,6 @@
         [
           "sfn",
           "UpdateStateMachine"
-        ],
-        [
-          "sfn",
-          "new"
         ]
       ]
     ]

@@ -10,10 +10,55 @@
         [
           "ec2",
           "DescribeSnapshots"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "create",
+      [
+        [
+          "cloudwatchevents",
+          "ListTagsForResource"
         ],
         [
-          "ec2",
-          "new"
+          "cloudwatchevents",
+          "PutRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "read",
+      [
+        [
+          "cloudwatchevents",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "update",
+      [
+        [
+          "cloudwatchevents",
+          "ListTagsForResource"
+        ],
+        [
+          "cloudwatchevents",
+          "PutRule"
+        ],
+        [
+          "cloudwatchevents",
+          "TagResource"
+        ],
+        [
+          "cloudwatchevents",
+          "UntagResource"
         ]
       ]
     ],
@@ -36,10 +81,6 @@
         [
           "glue",
           "DeleteResourcePolicy"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -51,10 +92,6 @@
         [
           "glue",
           "GetResourcePolicy"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -93,10 +130,6 @@
         [
           "s3control",
           "PutBucketTagging"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -108,10 +141,6 @@
         [
           "s3control",
           "DeleteBucket"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -127,10 +156,6 @@
         [
           "s3control",
           "GetBucketTagging"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -154,10 +179,6 @@
         [
           "s3control",
           "PutBucketTagging"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -173,10 +194,6 @@
         [
           "s3control",
           "PutBucketLifecycleConfiguration"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -188,10 +205,6 @@
         [
           "s3control",
           "DeleteBucketLifecycleConfiguration"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -203,10 +216,6 @@
         [
           "s3control",
           "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -222,10 +231,6 @@
         [
           "s3control",
           "PutBucketLifecycleConfiguration"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -241,10 +246,6 @@
         [
           "s3control",
           "PutBucketPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -256,10 +257,6 @@
         [
           "s3control",
           "DeleteBucketPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -271,10 +268,6 @@
         [
           "s3control",
           "GetBucketPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -290,10 +283,6 @@
         [
           "s3control",
           "PutBucketPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -309,10 +298,6 @@
         [
           "s3outposts",
           "ListEndpoints"
-        ],
-        [
-          "s3outposts",
-          "new"
         ]
       ]
     ],
@@ -324,10 +309,6 @@
         [
           "s3outposts",
           "DeleteEndpoint"
-        ],
-        [
-          "s3outposts",
-          "new"
         ]
       ]
     ],
@@ -354,10 +335,6 @@
         [
           "sagemaker",
           "DescribeCodeRepository"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -369,10 +346,6 @@
         [
           "sagemaker",
           "DeleteCodeRepository"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -384,10 +357,6 @@
         [
           "sagemaker",
           "DescribeCodeRepository"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -403,10 +372,6 @@
         [
           "sagemaker",
           "UpdateCodeRepository"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -426,10 +391,6 @@
         [
           "storagegateway",
           "ListTapePools"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -441,10 +402,6 @@
         [
           "storagegateway",
           "DeleteTapePool"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -460,10 +417,6 @@
         [
           "storagegateway",
           "ListTapePools"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -487,10 +440,6 @@
         [
           "storagegateway",
           "RemoveTagsFromResource"
-        ],
-        [
-          "storagegateway",
-          "new"
         ]
       ]
     ],
@@ -502,10 +451,6 @@
         [
           "ec2",
           "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -523,10 +468,6 @@
         [
           "ec2",
           "ModifyVpcPeeringConnectionOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

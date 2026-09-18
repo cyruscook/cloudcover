@@ -9,6 +9,10 @@
       [
         [
           "amp",
+          "DescribeScraper"
+        ],
+        [
+          "amp",
           "UpdateScraper"
         ]
       ]
@@ -21,6 +25,10 @@
         [
           "redshift",
           "CreateIntegration"
+        ],
+        [
+          "redshift",
+          "DescribeIntegrations"
         ]
       ]
     ],
@@ -32,6 +40,10 @@
         [
           "redshift",
           "DeleteIntegration"
+        ],
+        [
+          "redshift",
+          "DescribeIntegrations"
         ]
       ]
     ],
@@ -39,7 +51,12 @@
       "resource",
       "aws_redshift_integration",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeIntegrations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -48,29 +65,11 @@
       [
         [
           "redshift",
+          "DescribeIntegrations"
+        ],
+        [
+          "redshift",
           "ModifyIntegration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
         ]
       ]
     ],

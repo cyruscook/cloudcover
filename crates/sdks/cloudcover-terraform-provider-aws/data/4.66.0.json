@@ -10,10 +10,6 @@
         [
           "appintegrationsservice",
           "GetEventIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -25,10 +21,6 @@
         [
           "databasemigrationservice",
           "DescribeReplicationInstances"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -55,158 +47,6 @@
         [
           "vpclattice",
           "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_analyzer",
-      "create",
-      [
-        [
-          "accessanalyzer",
-          "CreateAnalyzer"
-        ],
-        [
-          "accessanalyzer",
-          "GetAnalyzer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_analyzer",
-      "delete",
-      [
-        [
-          "accessanalyzer",
-          "DeleteAnalyzer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_analyzer",
-      "read",
-      [
-        [
-          "accessanalyzer",
-          "GetAnalyzer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_analyzer",
-      "update",
-      [
-        [
-          "accessanalyzer",
-          "GetAnalyzer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_archive_rule",
-      "create",
-      [
-        [
-          "accessanalyzer",
-          "CreateArchiveRule"
-        ],
-        [
-          "accessanalyzer",
-          "GetArchiveRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_archive_rule",
-      "delete",
-      [
-        [
-          "accessanalyzer",
-          "DeleteArchiveRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_archive_rule",
-      "read",
-      [
-        [
-          "accessanalyzer",
-          "GetArchiveRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_accessanalyzer_archive_rule",
-      "update",
-      [
-        [
-          "accessanalyzer",
-          "GetArchiveRule"
-        ],
-        [
-          "accessanalyzer",
-          "UpdateArchiveRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_account_alternate_contact",
-      "create",
-      [
-        [
-          "account",
-          "GetAlternateContact"
-        ],
-        [
-          "account",
-          "PutAlternateContact"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_account_alternate_contact",
-      "delete",
-      [
-        [
-          "account",
-          "DeleteAlternateContact"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_account_alternate_contact",
-      "read",
-      [
-        [
-          "account",
-          "GetAlternateContact"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_account_alternate_contact",
-      "update",
-      [
-        [
-          "account",
-          "GetAlternateContact"
-        ],
-        [
-          "account",
-          "PutAlternateContact"
         ]
       ]
     ],
@@ -259,28 +99,6 @@
     ],
     [
       "resource",
-      "aws_appautoscaling_target",
-      "create",
-      [
-        [
-          "applicationautoscaling",
-          "RegisterScalableTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_target",
-      "update",
-      [
-        [
-          "applicationautoscaling",
-          "RegisterScalableTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_appintegrations_data_integration",
       "create",
       [
@@ -291,10 +109,6 @@
         [
           "appintegrationsservice",
           "GetDataIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -306,10 +120,6 @@
         [
           "appintegrationsservice",
           "DeleteDataIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -321,10 +131,6 @@
         [
           "appintegrationsservice",
           "GetDataIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -340,10 +146,6 @@
         [
           "appintegrationsservice",
           "UpdateDataIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -359,10 +161,6 @@
         [
           "chimesdkvoice",
           "GetVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -374,10 +172,6 @@
         [
           "chimesdkvoice",
           "DeleteVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -389,10 +183,6 @@
         [
           "chimesdkvoice",
           "GetVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -408,10 +198,6 @@
         [
           "chimesdkvoice",
           "UpdateVoiceProfileDomain"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -439,10 +225,6 @@
         [
           "connect",
           "ListRoutingProfileQueues"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -470,10 +252,6 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -493,6 +271,21 @@
         [
           "inspector2",
           "Enable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_inspector2_enabler",
+      "delete",
+      [
+        [
+          "inspector2",
+          "BatchGetAccountStatus"
+        ],
+        [
+          "inspector2",
+          "Disable"
         ]
       ]
     ],
@@ -523,6 +316,21 @@
         [
           "inspector2",
           "Enable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_inspector2_member_association",
+      "delete",
+      [
+        [
+          "inspector2",
+          "DisassociateMember"
+        ],
+        [
+          "inspector2",
+          "GetMember"
         ]
       ]
     ],
@@ -685,6 +493,10 @@
       [
         [
           "vpclattice",
+          "ListTargets"
+        ],
+        [
+          "vpclattice",
           "RegisterTargets"
         ]
       ]
@@ -697,6 +509,10 @@
         [
           "vpclattice",
           "DeregisterTargets"
+        ],
+        [
+          "vpclattice",
+          "ListTargets"
         ]
       ]
     ],
@@ -704,7 +520,12 @@
       "resource",
       "aws_vpclattice_target_group_attachment",
       "read",
-      []
+      [
+        [
+          "vpclattice",
+          "ListTargets"
+        ]
+      ]
     ]
   ]
 }

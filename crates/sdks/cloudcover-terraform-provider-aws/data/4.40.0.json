@@ -40,10 +40,6 @@
         [
           "ivs",
           "ListStreamKeys"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -59,10 +55,6 @@
         [
           "appconfig",
           "GetExtension"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -74,10 +66,6 @@
         [
           "appconfig",
           "DeleteExtension"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -89,10 +77,6 @@
         [
           "appconfig",
           "GetExtension"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -108,10 +92,6 @@
         [
           "appconfig",
           "UpdateExtension"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -127,10 +107,6 @@
         [
           "appconfig",
           "GetExtensionAssociation"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -142,10 +118,6 @@
         [
           "appconfig",
           "DeleteExtensionAssociation"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -157,10 +129,6 @@
         [
           "appconfig",
           "GetExtensionAssociation"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -176,10 +144,6 @@
         [
           "appconfig",
           "UpdateExtensionAssociation"
-        ],
-        [
-          "appconfig",
-          "new"
         ]
       ]
     ],
@@ -194,11 +158,11 @@
         ],
         [
           "controltower",
-          "ListEnabledControls"
+          "GetControlOperation"
         ],
         [
           "controltower",
-          "new"
+          "ListEnabledControls"
         ]
       ]
     ],
@@ -213,7 +177,7 @@
         ],
         [
           "controltower",
-          "new"
+          "GetControlOperation"
         ]
       ]
     ],
@@ -225,21 +189,6 @@
         [
           "controltower",
           "ListEnabledControls"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dynamodb_table",
-      "delete",
-      [
-        [
-          "dynamodb",
-          "DeleteTable"
-        ],
-        [
-          "dynamodb",
-          "UpdateTable"
         ]
       ]
     ],
@@ -255,10 +204,6 @@
         [
           "cloudwatchevidently",
           "GetFeature"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -273,7 +218,7 @@
         ],
         [
           "cloudwatchevidently",
-          "new"
+          "GetFeature"
         ]
       ]
     ],
@@ -285,10 +230,6 @@
         [
           "cloudwatchevidently",
           "GetFeature"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -304,10 +245,6 @@
         [
           "cloudwatchevidently",
           "UpdateFeature"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -323,10 +260,6 @@
         [
           "ivs",
           "GetChannel"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -341,7 +274,7 @@
         ],
         [
           "ivs",
-          "new"
+          "GetChannel"
         ]
       ]
     ],
@@ -353,10 +286,6 @@
         [
           "ivs",
           "GetChannel"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -372,10 +301,6 @@
         [
           "ivs",
           "UpdateChannel"
-        ],
-        [
-          "ivs",
-          "new"
         ]
       ]
     ],
@@ -399,10 +324,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -422,10 +343,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -441,10 +358,6 @@
         [
           "networkmanager",
           "GetConnectAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -460,10 +373,6 @@
         [
           "networkmanager",
           "GetConnectAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -475,10 +384,6 @@
         [
           "networkmanager",
           "GetConnectAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -490,29 +395,6 @@
         [
           "networkmanager",
           "GetConnectAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_vpc_attachment",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteAttachment"
-        ],
-        [
-          "networkmanager",
-          "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -528,10 +410,6 @@
         [
           "opensearchservice",
           "DescribeInboundConnections"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -547,10 +425,6 @@
         [
           "opensearchservice",
           "DescribeInboundConnections"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -577,10 +451,6 @@
         [
           "opensearchservice",
           "DescribeOutboundConnections"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -596,10 +466,6 @@
         [
           "opensearchservice",
           "DescribeOutboundConnections"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -641,6 +507,10 @@
         [
           "scheduler",
           "DeleteScheduleGroup"
+        ],
+        [
+          "scheduler",
+          "GetScheduleGroup"
         ]
       ]
     ],
@@ -694,10 +564,6 @@
         [
           "schemas",
           "PutResourcePolicy"
-        ],
-        [
-          "schemas",
-          "new"
         ]
       ]
     ],
@@ -709,10 +575,6 @@
         [
           "schemas",
           "DeleteResourcePolicy"
-        ],
-        [
-          "schemas",
-          "new"
         ]
       ]
     ],
@@ -724,10 +586,6 @@
         [
           "schemas",
           "GetResourcePolicy"
-        ],
-        [
-          "schemas",
-          "new"
         ]
       ]
     ],
@@ -743,10 +601,6 @@
         [
           "schemas",
           "PutResourcePolicy"
-        ],
-        [
-          "schemas",
-          "new"
         ]
       ]
     ],
@@ -785,10 +639,6 @@
         [
           "ec2",
           "UpdateSecurityGroupRuleDescriptionsIngress"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],

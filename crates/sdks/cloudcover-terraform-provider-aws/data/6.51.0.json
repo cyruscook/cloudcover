@@ -6,19 +6,50 @@
       "list_resource",
       "aws_acm_certificate",
       "list",
-      []
+      [
+        [
+          "acm",
+          "DescribeCertificate"
+        ],
+        [
+          "acm",
+          "ListCertificates"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_bedrockagentcore_evaluator",
       "list",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetEvaluator"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "ListEvaluators"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sagemaker_hub_content_reference",
       "list",
-      []
+      [
+        [
+          "sagemaker",
+          "DescribeHubContent"
+        ],
+        [
+          "sagemaker",
+          "ListHubContents"
+        ],
+        [
+          "sagemaker",
+          "ListHubs"
+        ]
+      ]
     ],
     [
       "resource",
@@ -28,6 +59,10 @@
         [
           "bedrockagentcorecontrol",
           "CreateEvaluator"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetEvaluator"
         ]
       ]
     ],
@@ -39,6 +74,10 @@
         [
           "bedrockagentcorecontrol",
           "DeleteEvaluator"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetEvaluator"
         ]
       ]
     ],
@@ -60,6 +99,10 @@
       [
         [
           "bedrockagentcorecontrol",
+          "GetEvaluator"
+        ],
+        [
+          "bedrockagentcorecontrol",
           "UpdateEvaluator"
         ]
       ]
@@ -72,6 +115,10 @@
         [
           "sagemaker",
           "CreateHubContentReference"
+        ],
+        [
+          "sagemaker",
+          "DescribeHubContent"
         ]
       ]
     ],
@@ -83,6 +130,10 @@
         [
           "sagemaker",
           "DeleteHubContentReference"
+        ],
+        [
+          "sagemaker",
+          "DescribeHubContent"
         ]
       ]
     ],
@@ -102,6 +153,10 @@
       "aws_sagemaker_hub_content_reference",
       "update",
       [
+        [
+          "sagemaker",
+          "DescribeHubContent"
+        ],
         [
           "sagemaker",
           "UpdateHubContentReference"

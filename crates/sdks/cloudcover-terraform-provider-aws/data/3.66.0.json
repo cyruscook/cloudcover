@@ -4,54 +4,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_elb",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "elb",
-          "DescribeTags"
-        ],
-        [
-          "elb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_emr_release_labels",
       "read",
       [
         [
           "emr",
           "ListReleaseLabels"
-        ],
-        [
-          "emr",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_security_group",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
         ]
       ]
     ],
@@ -67,10 +25,6 @@
         [
           "appstream",
           "DescribeDirectoryConfigs"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -82,10 +36,6 @@
         [
           "appstream",
           "DeleteDirectoryConfig"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -97,10 +47,6 @@
         [
           "appstream",
           "DescribeDirectoryConfigs"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -116,210 +62,6 @@
         [
           "appstream",
           "UpdateDirectoryConfig"
-        ],
-        [
-          "appstream",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_security_group",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elb",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elb",
-          "AddTags"
-        ],
-        [
-          "elb",
-          "ApplySecurityGroupsToLoadBalancer"
-        ],
-        [
-          "elb",
-          "AttachLoadBalancerToSubnets"
-        ],
-        [
-          "elb",
-          "ConfigureHealthCheck"
-        ],
-        [
-          "elb",
-          "CreateLoadBalancer"
-        ],
-        [
-          "elb",
-          "CreateLoadBalancerListeners"
-        ],
-        [
-          "elb",
-          "DeleteLoadBalancerListeners"
-        ],
-        [
-          "elb",
-          "DeregisterInstancesFromLoadBalancer"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "elb",
-          "DescribeTags"
-        ],
-        [
-          "elb",
-          "DetachLoadBalancerFromSubnets"
-        ],
-        [
-          "elb",
-          "DisableAvailabilityZonesForLoadBalancer"
-        ],
-        [
-          "elb",
-          "EnableAvailabilityZonesForLoadBalancer"
-        ],
-        [
-          "elb",
-          "ModifyLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "RegisterInstancesWithLoadBalancer"
-        ],
-        [
-          "elb",
-          "RemoveTags"
-        ],
-        [
-          "elb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elb",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "elb",
-          "DescribeTags"
-        ],
-        [
-          "elb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elb",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elb",
-          "AddTags"
-        ],
-        [
-          "elb",
-          "ApplySecurityGroupsToLoadBalancer"
-        ],
-        [
-          "elb",
-          "AttachLoadBalancerToSubnets"
-        ],
-        [
-          "elb",
-          "ConfigureHealthCheck"
-        ],
-        [
-          "elb",
-          "CreateLoadBalancerListeners"
-        ],
-        [
-          "elb",
-          "DeleteLoadBalancerListeners"
-        ],
-        [
-          "elb",
-          "DeregisterInstancesFromLoadBalancer"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "elb",
-          "DescribeTags"
-        ],
-        [
-          "elb",
-          "DetachLoadBalancerFromSubnets"
-        ],
-        [
-          "elb",
-          "DisableAvailabilityZonesForLoadBalancer"
-        ],
-        [
-          "elb",
-          "EnableAvailabilityZonesForLoadBalancer"
-        ],
-        [
-          "elb",
-          "ModifyLoadBalancerAttributes"
-        ],
-        [
-          "elb",
-          "RegisterInstancesWithLoadBalancer"
-        ],
-        [
-          "elb",
-          "RemoveTags"
-        ],
-        [
-          "elb",
-          "new"
         ]
       ]
     ],
@@ -359,10 +101,6 @@
         [
           "emr",
           "SetTerminationProtection"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -394,10 +132,6 @@
         [
           "emr",
           "ListSteps"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -469,10 +203,6 @@
         [
           "emr",
           "SetVisibleToAllUsers"
-        ],
-        [
-          "emr",
-          "new"
         ]
       ]
     ],
@@ -492,10 +222,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -522,10 +248,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -553,10 +275,6 @@
         [
           "iot",
           "UpdateThingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -572,10 +290,6 @@
         [
           "iot",
           "ListThingGroupsForThing"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -587,10 +301,6 @@
         [
           "iot",
           "RemoveThingFromThingGroup"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -625,10 +335,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -644,10 +350,6 @@
         [
           "iot",
           "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -675,10 +377,6 @@
         [
           "iot",
           "UntagResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -694,10 +392,6 @@
         [
           "lambda",
           "GetLayerVersionPolicy"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -709,10 +403,6 @@
         [
           "lambda",
           "RemoveLayerVersionPermission"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -724,10 +414,6 @@
         [
           "lambda",
           "GetLayerVersionPolicy"
-        ],
-        [
-          "lambda",
-          "new"
         ]
       ]
     ],
@@ -743,10 +429,6 @@
         [
           "s3",
           "PutBucketReplication"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -758,10 +440,6 @@
         [
           "s3",
           "DeleteBucketReplication"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -788,10 +466,6 @@
         [
           "s3",
           "PutBucketReplication"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -811,10 +485,6 @@
         [
           "s3control",
           "PutAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -826,10 +496,6 @@
         [
           "s3control",
           "DeleteAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -845,10 +511,6 @@
         [
           "s3control",
           "GetAccessPointPolicyStatus"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -868,10 +530,6 @@
         [
           "s3control",
           "PutAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -886,11 +544,11 @@
         ],
         [
           "s3control",
-          "GetMultiRegionAccessPoint"
+          "DescribeMultiRegionAccessPointOperation"
         ],
         [
           "s3control",
-          "new"
+          "GetMultiRegionAccessPoint"
         ]
       ]
     ],
@@ -905,7 +563,7 @@
         ],
         [
           "s3control",
-          "new"
+          "DescribeMultiRegionAccessPointOperation"
         ]
       ]
     ],
@@ -917,10 +575,6 @@
         [
           "s3control",
           "GetMultiRegionAccessPoint"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -931,15 +585,15 @@
       [
         [
           "s3control",
+          "DescribeMultiRegionAccessPointOperation"
+        ],
+        [
+          "s3control",
           "GetMultiRegionAccessPointPolicy"
         ],
         [
           "s3control",
           "PutMultiRegionAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -957,10 +611,6 @@
         [
           "s3control",
           "GetMultiRegionAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -971,15 +621,15 @@
       [
         [
           "s3control",
+          "DescribeMultiRegionAccessPointOperation"
+        ],
+        [
+          "s3control",
           "GetMultiRegionAccessPointPolicy"
         ],
         [
           "s3control",
           "PutMultiRegionAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -995,10 +645,6 @@
         [
           "s3control",
           "GetAccessPointConfigurationForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1010,10 +656,6 @@
         [
           "s3control",
           "DeleteAccessPointForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1025,10 +667,6 @@
         [
           "s3control",
           "GetAccessPointConfigurationForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1044,10 +682,6 @@
         [
           "s3control",
           "PutAccessPointConfigurationForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1067,10 +701,6 @@
         [
           "s3control",
           "PutAccessPointPolicyForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1082,10 +712,6 @@
         [
           "s3control",
           "DeleteAccessPointPolicyForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1101,10 +727,6 @@
         [
           "s3control",
           "GetAccessPointPolicyStatusForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
         ]
       ]
     ],
@@ -1124,32 +746,6 @@
         [
           "s3control",
           "PutAccessPointPolicyForObjectLambda"
-        ],
-        [
-          "s3control",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
         ]
       ]
     ],
@@ -1169,10 +765,6 @@
         [
           "securityhub",
           "ListFindingAggregators"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -1184,10 +776,6 @@
         [
           "securityhub",
           "DeleteFindingAggregator"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -1222,10 +810,6 @@
         [
           "securityhub",
           "UpdateFindingAggregator"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ]

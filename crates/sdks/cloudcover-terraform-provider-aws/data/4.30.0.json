@@ -3,33 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_ec2_managed_prefix_list",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeManagedPrefixLists"
-        ],
-        [
-          "ec2",
-          "GetManagedPrefixListEntries"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_identitystore_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_identitystore_user",
-      "read",
-      []
-    ],
-    [
       "resource",
       "aws_db_instance",
       "delete",
@@ -40,26 +13,11 @@
         ],
         [
           "rds",
-          "ModifyDBInstance"
+          "DescribeDBInstances"
         ],
         [
           "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeManagedPrefixLists"
-        ],
-        [
-          "ec2",
-          "GetManagedPrefixListEntries"
+          "ModifyDBInstance"
         ]
       ]
     ],
@@ -166,15 +124,15 @@
         ],
         [
           "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
           "ModifyDBCluster"
         ],
         [
           "rds",
           "RemoveFromGlobalCluster"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -190,10 +148,6 @@
         [
           "redshiftserverless",
           "GetUsageLimit"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -205,10 +159,6 @@
         [
           "redshiftserverless",
           "DeleteUsageLimit"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -220,10 +170,6 @@
         [
           "redshiftserverless",
           "GetUsageLimit"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -239,21 +185,6 @@
         [
           "redshiftserverless",
           "UpdateUsageLimit"
-        ],
-        [
-          "redshiftserverless",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshiftserverless_workgroup",
-      "delete",
-      [
-        [
-          "redshiftserverless",
-          "DeleteWorkgroup"
         ]
       ]
     ],
@@ -277,10 +208,6 @@
         [
           "ssoadmin",
           "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],
@@ -300,10 +227,6 @@
         [
           "ssoadmin",
           "ProvisionPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "new"
         ]
       ]
     ],

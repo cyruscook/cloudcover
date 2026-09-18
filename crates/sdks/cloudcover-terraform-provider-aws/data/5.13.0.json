@@ -19,77 +19,6 @@
     ],
     [
       "resource",
-      "aws_budgets_budget_action",
-      "delete",
-      [
-        [
-          "budgets",
-          "DeleteBudgetAction"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codestarnotifications_notification_rule",
-      "create",
-      [
-        [
-          "codestarnotifications",
-          "CreateNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "DescribeNotificationRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codestarnotifications_notification_rule",
-      "delete",
-      [
-        [
-          "codestarnotifications",
-          "DeleteNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "DeleteTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codestarnotifications_notification_rule",
-      "read",
-      [
-        [
-          "codestarnotifications",
-          "DescribeNotificationRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codestarnotifications_notification_rule",
-      "update",
-      [
-        [
-          "codestarnotifications",
-          "DeleteTarget"
-        ],
-        [
-          "codestarnotifications",
-          "DescribeNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "UpdateNotificationRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_msk_cluster_policy",
       "create",
       [
@@ -152,10 +81,6 @@
         [
           "opensearchservice",
           "DescribeVpcEndpoints"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -170,7 +95,7 @@
         ],
         [
           "opensearchservice",
-          "new"
+          "DescribeVpcEndpoints"
         ]
       ]
     ],
@@ -182,10 +107,6 @@
         [
           "opensearchservice",
           "DescribeVpcEndpoints"
-        ],
-        [
-          "opensearchservice",
-          "new"
         ]
       ]
     ],
@@ -201,44 +122,6 @@
         [
           "opensearchservice",
           "UpdateVpcEndpoint"
-        ],
-        [
-          "opensearchservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ram_resource_share",
-      "read",
-      [
-        [
-          "ram",
-          "GetResourceShares"
-        ],
-        [
-          "ram",
-          "ListResourceSharePermissions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ram_resource_share_accepter",
-      "read",
-      [
-        [
-          "ram",
-          "GetResourceShareInvitations"
-        ],
-        [
-          "ram",
-          "GetResourceShares"
-        ],
-        [
-          "ram",
-          "ListResources"
         ]
       ]
     ],
@@ -252,20 +135,12 @@
           "GetRole"
         ],
         [
-          "iam",
-          "new"
-        ],
-        [
           "organizations",
           "ListAWSServiceAccessForOrganization"
         ],
         [
           "ram",
           "EnableSharingWithAwsOrganization"
-        ],
-        [
-          "ram",
-          "new"
         ]
       ]
     ],
@@ -280,15 +155,11 @@
         ],
         [
           "iam",
-          "new"
+          "GetServiceLinkedRoleDeletionStatus"
         ],
         [
           "organizations",
           "DisableAWSServiceAccess"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -302,84 +173,8 @@
           "GetRole"
         ],
         [
-          "iam",
-          "new"
-        ],
-        [
           "organizations",
           "ListAWSServiceAccessForOrganization"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_global_cluster",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteGlobalCluster"
-        ],
-        [
-          "rds",
-          "RemoveFromGlobalCluster"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "PutBucketLogging"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_logging",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLogging"
-        ],
-        [
-          "s3",
-          "PutBucketLogging"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ]

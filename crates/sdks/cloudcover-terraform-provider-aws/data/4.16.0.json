@@ -4,27 +4,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_autoscaling_group",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_location_place_index",
       "read",
       [
         [
           "locationservice",
           "DescribePlaceIndex"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -36,166 +21,6 @@
         [
           "redshift",
           "DescribeClusterSubnetGroups"
-        ],
-        [
-          "redshift",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_group",
-      "delete",
-      [
-        [
-          "autoscaling",
-          "DeleteAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "DeleteWarmPool"
-        ],
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ],
-        [
-          "autoscaling",
-          "PutWarmPool"
-        ],
-        [
-          "autoscaling",
-          "SetInstanceProtection"
-        ],
-        [
-          "autoscaling",
-          "UpdateAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_group",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_group",
-      "update",
-      [
-        [
-          "autoscaling",
-          "AttachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "AttachLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "CreateOrUpdateTags"
-        ],
-        [
-          "autoscaling",
-          "DeleteTags"
-        ],
-        [
-          "autoscaling",
-          "DeleteWarmPool"
-        ],
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ],
-        [
-          "autoscaling",
-          "DescribeScalingActivities"
-        ],
-        [
-          "autoscaling",
-          "DetachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "DetachLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "DisableMetricsCollection"
-        ],
-        [
-          "autoscaling",
-          "EnableMetricsCollection"
-        ],
-        [
-          "autoscaling",
-          "PutWarmPool"
-        ],
-        [
-          "autoscaling",
-          "ResumeProcesses"
-        ],
-        [
-          "autoscaling",
-          "StartInstanceRefresh"
-        ],
-        [
-          "autoscaling",
-          "String"
-        ],
-        [
-          "autoscaling",
-          "SuspendProcesses"
-        ],
-        [
-          "autoscaling",
-          "UpdateAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "new"
-        ],
-        [
-          "elb",
-          "DescribeInstanceHealth"
-        ],
-        [
-          "elb",
-          "new"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetHealth"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "create",
-      [
-        [
-          "rds",
-          "DescribeDBProxyTargets"
-        ],
-        [
-          "rds",
-          "RegisterDBProxyTargets"
         ]
       ]
     ],
@@ -211,10 +36,6 @@
         [
           "efs",
           "DescribeReplicationConfigurations"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -229,7 +50,7 @@
         ],
         [
           "efs",
-          "new"
+          "DescribeReplicationConfigurations"
         ]
       ]
     ],
@@ -241,10 +62,6 @@
         [
           "efs",
           "DescribeReplicationConfigurations"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -264,10 +81,6 @@
         [
           "elasticache",
           "ModifyGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -286,22 +99,15 @@
         ],
         [
           "elasticache",
-          "DisassociateGlobalReplicationGroup"
+          "DescribeGlobalReplicationGroups"
         ],
         [
           "elasticache",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_access_key",
-      "read",
-      [
+          "DescribeReplicationGroups"
+        ],
         [
-          "iam",
-          "ListAccessKeys"
+          "elasticache",
+          "DisassociateGlobalReplicationGroup"
         ]
       ]
     ],
@@ -317,10 +123,6 @@
         [
           "locationservice",
           "DescribePlaceIndex"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -332,10 +134,6 @@
         [
           "locationservice",
           "DeletePlaceIndex"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -347,10 +145,6 @@
         [
           "locationservice",
           "DescribePlaceIndex"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -374,10 +168,6 @@
         [
           "locationservice",
           "UpdatePlaceIndex"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -393,10 +183,6 @@
         [
           "redshift",
           "DescribeAuthenticationProfiles"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -408,10 +194,6 @@
         [
           "redshift",
           "DeleteAuthenticationProfile"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -423,10 +205,6 @@
         [
           "redshift",
           "DescribeAuthenticationProfiles"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -442,10 +220,6 @@
         [
           "redshift",
           "ModifyAuthenticationProfile"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -501,10 +275,6 @@
         [
           "redshift",
           "RebootCluster"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -520,10 +290,6 @@
         [
           "redshift",
           "DescribeEndpointAccess"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -538,7 +304,7 @@
         ],
         [
           "redshift",
-          "new"
+          "DescribeEndpointAccess"
         ]
       ]
     ],
@@ -550,10 +316,6 @@
         [
           "redshift",
           "DescribeEndpointAccess"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -569,10 +331,6 @@
         [
           "redshift",
           "ModifyEndpointAccess"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -588,10 +346,6 @@
         [
           "redshift",
           "DescribeHsmClientCertificates"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -603,10 +357,6 @@
         [
           "redshift",
           "DeleteHsmClientCertificate"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -618,10 +368,6 @@
         [
           "redshift",
           "DescribeHsmClientCertificates"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -641,25 +387,6 @@
         [
           "redshift",
           "DescribeHsmClientCertificates"
-        ],
-        [
-          "redshift",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule_association",
-      "delete",
-      [
-        [
-          "redshift",
-          "ModifyClusterSnapshotSchedule"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -675,10 +402,6 @@
         [
           "redshift",
           "DescribeUsageLimits"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -690,10 +413,6 @@
         [
           "redshift",
           "DeleteUsageLimit"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -705,10 +424,6 @@
         [
           "redshift",
           "DescribeUsageLimits"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -732,10 +447,6 @@
         [
           "redshift",
           "ModifyUsageLimit"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ]

@@ -6,29 +6,26 @@
       "data_source",
       "aws_apigatewayv2_api",
       "read",
-      [
-        [
-          "apigatewayv2",
-          "GetApi"
-        ],
-        [
-          "apigatewayv2",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_apigatewayv2_apis",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_apigatewayv2_authorizer",
+      "create",
       [
         [
           "apigatewayv2",
-          "GetApis"
+          "CreateAuthorizer"
         ],
         [
           "apigatewayv2",
-          "new"
+          "GetAuthorizer"
         ]
       ]
     ],
@@ -44,10 +41,6 @@
         [
           "cognitoidentityprovider",
           "SetUICustomization"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -59,10 +52,6 @@
         [
           "cognitoidentityprovider",
           "SetUICustomization"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -74,10 +63,6 @@
         [
           "cognitoidentityprovider",
           "GetUICustomization"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -93,10 +78,6 @@
         [
           "cognitoidentityprovider",
           "SetUICustomization"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -116,10 +97,6 @@
         [
           "databasemigrationservice",
           "ListTagsForResource"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -135,10 +112,6 @@
         [
           "databasemigrationservice",
           "ListTagsForResource"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -162,10 +135,6 @@
         [
           "databasemigrationservice",
           "RemoveTagsFromResource"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -185,10 +154,6 @@
         [
           "ecrpublic",
           "GetRepositoryCatalogData"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -204,10 +169,6 @@
         [
           "ecrpublic",
           "DescribeRepositories"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -223,10 +184,6 @@
         [
           "ecrpublic",
           "GetRepositoryCatalogData"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -246,10 +203,6 @@
         [
           "ecrpublic",
           "PutRepositoryCatalogData"
-        ],
-        [
-          "ecrpublic",
-          "new"
         ]
       ]
     ],
@@ -273,45 +226,6 @@
         [
           "glue",
           "StartTrigger"
-        ],
-        [
-          "glue",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_trigger",
-      "update",
-      [
-        [
-          "glue",
-          "GetTrigger"
-        ],
-        [
-          "glue",
-          "StartTrigger"
-        ],
-        [
-          "glue",
-          "StopTrigger"
-        ],
-        [
-          "glue",
-          "TagResource"
-        ],
-        [
-          "glue",
-          "UntagResource"
-        ],
-        [
-          "glue",
-          "UpdateTrigger"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -331,10 +245,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -346,14 +256,6 @@
         [
           "sagemaker",
           "DeleteApp"
-        ],
-        [
-          "sagemaker",
-          "DescribeApp"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -369,10 +271,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -396,10 +294,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -415,10 +309,6 @@
         [
           "sns",
           "Subscribe"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ]

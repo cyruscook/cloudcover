@@ -24,6 +24,44 @@
   ],
   "upsert": [
     [
+      "data_source",
+      "aws_identitystore_group",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ],
+        [
+          "identitystore",
+          "ListGroups"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ],
+        [
+          "identitystore",
+          "ListUsers"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_datasync_location_object_storage",
       "create",
@@ -35,10 +73,6 @@
         [
           "datasync",
           "DescribeLocationObjectStorage"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -50,10 +84,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -65,10 +95,6 @@
         [
           "datasync",
           "DescribeLocationObjectStorage"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -84,10 +110,6 @@
         [
           "datasync",
           "UpdateLocationObjectStorage"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -107,10 +129,6 @@
         [
           "managedgrafana",
           "DescribeWorkspaceConfiguration"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -126,10 +144,6 @@
         [
           "managedgrafana",
           "DescribeWorkspaceConfiguration"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -153,25 +167,6 @@
         [
           "managedgrafana",
           "UpdateWorkspaceConfiguration"
-        ],
-        [
-          "managedgrafana",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteSnapshotCopyGrant"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ]

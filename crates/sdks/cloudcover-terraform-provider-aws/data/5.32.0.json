@@ -14,21 +14,6 @@
         [
           "ecr",
           "DescribeRepositories"
-        ],
-        [
-          "ecr",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_kinesis_firehose_delivery_stream",
-      "read",
-      [
-        [
-          "firehose",
-          "DescribeDeliveryStream"
         ]
       ]
     ],
@@ -48,27 +33,6 @@
         [
           "kinesis",
           "ListTagsForStream"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_kinesis_stream_consumer",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_mq_broker",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeUser"
         ]
       ]
     ],
@@ -107,40 +71,6 @@
     ],
     [
       "data_source",
-      "aws_msk_broker_nodes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_msk_cluster",
-      "read",
-      [
-        [
-          "kafka",
-          "GetBootstrapBrokers"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_msk_configuration",
-      "read",
-      [
-        [
-          "kafka",
-          "DescribeConfigurationRevision"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_msk_kafka_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_prometheus_workspace",
       "read",
       [
@@ -154,73 +84,10 @@
       "data_source",
       "aws_prometheus_workspaces",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_alb_target_group",
-      "delete",
       [
         [
-          "elbv2",
-          "DeleteTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_target_group",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetGroups"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_target_group",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetGroups"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroup"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_target_group_attachment",
-      "create",
-      [
-        [
-          "elbv2",
-          "RegisterTargets"
+          "amp",
+          "ListWorkspaces"
         ]
       ]
     ],
@@ -240,135 +107,6 @@
         [
           "batch",
           "UpdateComputeEnvironment"
-        ],
-        [
-          "batch",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline",
-      "create",
-      [
-        [
-          "codepipeline",
-          "CreatePipeline"
-        ],
-        [
-          "codepipeline",
-          "GetPipeline"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline",
-      "delete",
-      [
-        [
-          "codepipeline",
-          "DeletePipeline"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline",
-      "read",
-      [
-        [
-          "codepipeline",
-          "GetPipeline"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline",
-      "update",
-      [
-        [
-          "codepipeline",
-          "GetPipeline"
-        ],
-        [
-          "codepipeline",
-          "UpdatePipeline"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline_custom_action_type",
-      "create",
-      [
-        [
-          "codepipeline",
-          "CreateCustomActionType"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline_custom_action_type",
-      "delete",
-      [
-        [
-          "codepipeline",
-          "DeleteCustomActionType"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline_custom_action_type",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_codepipeline_custom_action_type",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_codepipeline_webhook",
-      "create",
-      [
-        [
-          "codepipeline",
-          "PutWebhook"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline_webhook",
-      "delete",
-      [
-        [
-          "codepipeline",
-          "DeleteWebhook"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_codepipeline_webhook",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_codepipeline_webhook",
-      "update",
-      [
-        [
-          "codepipeline",
-          "PutWebhook"
         ]
       ]
     ],
@@ -396,10 +134,6 @@
         [
           "databasemigrationservice",
           "StopReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -449,16 +183,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -486,10 +212,6 @@
         [
           "efs",
           "UpdateFileSystemProtection"
-        ],
-        [
-          "efs",
-          "new"
         ]
       ]
     ],
@@ -517,21 +239,6 @@
         [
           "efs",
           "UpdateFileSystemProtection"
-        ],
-        [
-          "efs",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_replication_configuration",
-      "read",
-      [
-        [
-          "efs",
-          "DescribeReplicationConfigurations"
         ]
       ]
     ],
@@ -547,10 +254,6 @@
         [
           "imagebuilder",
           "GetWorkflow"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -562,10 +265,6 @@
         [
           "imagebuilder",
           "DeleteWorkflow"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -577,10 +276,6 @@
         [
           "imagebuilder",
           "GetWorkflow"
-        ],
-        [
-          "imagebuilder",
-          "new"
         ]
       ]
     ],
@@ -592,74 +287,6 @@
         [
           "imagebuilder",
           "GetWorkflow"
-        ],
-        [
-          "imagebuilder",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_firehose_delivery_stream",
-      "create",
-      [
-        [
-          "firehose",
-          "CreateDeliveryStream"
-        ],
-        [
-          "firehose",
-          "DescribeDeliveryStream"
-        ],
-        [
-          "firehose",
-          "StartDeliveryStreamEncryption"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_firehose_delivery_stream",
-      "delete",
-      [
-        [
-          "firehose",
-          "DeleteDeliveryStream"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_firehose_delivery_stream",
-      "read",
-      [
-        [
-          "firehose",
-          "DescribeDeliveryStream"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_firehose_delivery_stream",
-      "update",
-      [
-        [
-          "firehose",
-          "DescribeDeliveryStream"
-        ],
-        [
-          "firehose",
-          "StartDeliveryStreamEncryption"
-        ],
-        [
-          "firehose",
-          "StopDeliveryStreamEncryption"
-        ],
-        [
-          "firehose",
-          "UpdateDestination"
         ]
       ]
     ],
@@ -700,551 +327,12 @@
     ],
     [
       "resource",
-      "aws_kinesis_stream",
-      "delete",
-      [
-        [
-          "kinesis",
-          "DeleteStream"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_stream",
-      "read",
-      [
-        [
-          "kinesis",
-          "DescribeStreamSummary"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_stream",
-      "update",
-      [
-        [
-          "kinesis",
-          "DecreaseStreamRetentionPeriod"
-        ],
-        [
-          "kinesis",
-          "DescribeStreamSummary"
-        ],
-        [
-          "kinesis",
-          "DisableEnhancedMonitoring"
-        ],
-        [
-          "kinesis",
-          "EnableEnhancedMonitoring"
-        ],
-        [
-          "kinesis",
-          "IncreaseStreamRetentionPeriod"
-        ],
-        [
-          "kinesis",
-          "StartStreamEncryption"
-        ],
-        [
-          "kinesis",
-          "StopStreamEncryption"
-        ],
-        [
-          "kinesis",
-          "UpdateShardCount"
-        ],
-        [
-          "kinesis",
-          "UpdateStreamMode"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_stream_consumer",
-      "create",
-      [
-        [
-          "kinesis",
-          "DescribeStreamConsumer"
-        ],
-        [
-          "kinesis",
-          "RegisterStreamConsumer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_stream_consumer",
-      "delete",
-      [
-        [
-          "kinesis",
-          "DeregisterStreamConsumer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kinesis_stream_consumer",
-      "read",
-      [
-        [
-          "kinesis",
-          "DescribeStreamConsumer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group",
-      "delete",
-      [
-        [
-          "elbv2",
-          "DeleteTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group",
-      "read",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetGroups"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group",
-      "update",
-      [
-        [
-          "elbv2",
-          "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetGroups"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroup"
-        ],
-        [
-          "elbv2",
-          "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_target_group_attachment",
-      "create",
-      [
-        [
-          "elbv2",
-          "RegisterTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "create",
-      [
-        [
-          "mq",
-          "CreateBroker"
-        ],
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "delete",
-      [
-        [
-          "mq",
-          "DeleteBroker"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "update",
-      [
-        [
-          "mq",
-          "CreateUser"
-        ],
-        [
-          "mq",
-          "DeleteUser"
-        ],
-        [
-          "mq",
-          "RebootBroker"
-        ],
-        [
-          "mq",
-          "UpdateBroker"
-        ],
-        [
-          "mq",
-          "UpdateUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_configuration",
-      "create",
-      [
-        [
-          "mq",
-          "CreateConfiguration"
-        ],
-        [
-          "mq",
-          "DescribeConfiguration"
-        ],
-        [
-          "mq",
-          "DescribeConfigurationRevision"
-        ],
-        [
-          "mq",
-          "UpdateConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_configuration",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeConfiguration"
-        ],
-        [
-          "mq",
-          "DescribeConfigurationRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_configuration",
-      "update",
-      [
-        [
-          "mq",
-          "DescribeConfiguration"
-        ],
-        [
-          "mq",
-          "DescribeConfigurationRevision"
-        ],
-        [
-          "mq",
-          "UpdateConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_cluster",
-      "create",
-      [
-        [
-          "kafka",
-          "CreateCluster"
-        ],
-        [
-          "kafka",
-          "DescribeCluster"
-        ],
-        [
-          "kafka",
-          "GetBootstrapBrokers"
-        ],
-        [
-          "kafka",
-          "UpdateConnectivity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_cluster",
-      "delete",
-      [
-        [
-          "kafka",
-          "DeleteCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_cluster",
-      "read",
-      [
-        [
-          "kafka",
-          "DescribeCluster"
-        ],
-        [
-          "kafka",
-          "GetBootstrapBrokers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_cluster",
-      "update",
-      [
-        [
-          "kafka",
-          "DescribeCluster"
-        ],
-        [
-          "kafka",
-          "GetBootstrapBrokers"
-        ],
-        [
-          "kafka",
-          "UpdateBrokerCount"
-        ],
-        [
-          "kafka",
-          "UpdateBrokerStorage"
-        ],
-        [
-          "kafka",
-          "UpdateBrokerType"
-        ],
-        [
-          "kafka",
-          "UpdateClusterConfiguration"
-        ],
-        [
-          "kafka",
-          "UpdateClusterKafkaVersion"
-        ],
-        [
-          "kafka",
-          "UpdateConnectivity"
-        ],
-        [
-          "kafka",
-          "UpdateMonitoring"
-        ],
-        [
-          "kafka",
-          "UpdateSecurity"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_configuration",
-      "create",
-      [
-        [
-          "kafka",
-          "CreateConfiguration"
-        ],
-        [
-          "kafka",
-          "DescribeConfiguration"
-        ],
-        [
-          "kafka",
-          "DescribeConfigurationRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_configuration",
-      "delete",
-      [
-        [
-          "kafka",
-          "DeleteConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_configuration",
-      "read",
-      [
-        [
-          "kafka",
-          "DescribeConfiguration"
-        ],
-        [
-          "kafka",
-          "DescribeConfigurationRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_configuration",
-      "update",
-      [
-        [
-          "kafka",
-          "DescribeConfiguration"
-        ],
-        [
-          "kafka",
-          "DescribeConfigurationRevision"
-        ],
-        [
-          "kafka",
-          "UpdateConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "create",
-      [
-        [
-          "kafka",
-          "BatchAssociateScramSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_msk_scram_secret_association",
       "delete",
       [
         [
           "kafka",
           "BatchDisassociateScramSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "update",
-      [
-        [
-          "kafka",
-          "BatchAssociateScramSecret"
-        ],
-        [
-          "kafka",
-          "BatchDisassociateScramSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_serverless_cluster",
-      "create",
-      [
-        [
-          "kafka",
-          "CreateClusterV2"
-        ],
-        [
-          "kafka",
-          "DescribeClusterV2"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_serverless_cluster",
-      "delete",
-      [
-        [
-          "kafka",
-          "DeleteCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_serverless_cluster",
-      "read",
-      [
-        [
-          "kafka",
-          "DescribeClusterV2"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_serverless_cluster",
-      "update",
-      [
-        [
-          "kafka",
-          "DescribeClusterV2"
         ]
       ]
     ],
@@ -1271,6 +359,10 @@
         [
           "amp",
           "DeleteAlertManagerDefinition"
+        ],
+        [
+          "amp",
+          "DescribeAlertManagerDefinition"
         ]
       ]
     ],
@@ -1323,6 +415,10 @@
         [
           "amp",
           "DeleteRuleGroupsNamespace"
+        ],
+        [
+          "amp",
+          "DescribeRuleGroupsNamespace"
         ]
       ]
     ],
@@ -1383,6 +479,10 @@
         [
           "amp",
           "DeleteWorkspace"
+        ],
+        [
+          "amp",
+          "DescribeWorkspace"
         ]
       ]
     ],
@@ -1434,17 +534,6 @@
     ],
     [
       "resource",
-      "aws_ram_principal_association",
-      "read",
-      [
-        [
-          "ram",
-          "GetResourceShareAssociations"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_s3_bucket",
       "create",
       [
@@ -1474,7 +563,63 @@
         ],
         [
           "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
           "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketTagging"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
         ],
         [
           "s3",
@@ -1518,6 +663,10 @@
         ],
         [
           "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
           "PutBucketVersioning"
         ],
         [
@@ -1533,19 +682,60 @@
     [
       "resource",
       "aws_s3_bucket",
-      "delete",
+      "read",
       [
         [
           "s3",
-          "DeleteBucket"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket",
-      "read",
-      [
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketTagging"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
         [
           "s3",
           "HeadBucket"
@@ -1579,7 +769,63 @@
         ],
         [
           "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
           "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketTagging"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
         ],
         [
           "s3",
@@ -1623,6 +869,10 @@
         ],
         [
           "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
           "PutBucketVersioning"
         ],
         [
@@ -1646,6 +896,10 @@
         ],
         [
           "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ]
       ]
@@ -1657,6 +911,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ]
       ]
@@ -1666,6 +924,10 @@
       "aws_verifiedaccess_endpoint",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
         [
           "ec2",
           "GetVerifiedAccessEndpointPolicy"

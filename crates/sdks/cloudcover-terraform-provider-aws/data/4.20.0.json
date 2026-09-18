@@ -4,47 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_ec2_instance_type",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeInstanceTypes"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ec2_instance_type_offering",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeInstanceTypeOfferings"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_iam_policy",
-      "read",
-      [
-        [
-          "iam",
-          "GetPolicy"
-        ],
-        [
-          "iam",
-          "GetPolicyVersion"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_instance",
       "read",
       [
@@ -75,10 +34,6 @@
         [
           "ec2",
           "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -154,32 +109,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_prefix_list",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpc_endpoint",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_applicationinsights_application",
       "create",
@@ -195,10 +124,6 @@
         [
           "applicationinsights",
           "ListTagsForResource"
-        ],
-        [
-          "applicationinsights",
-          "new"
         ]
       ]
     ],
@@ -213,7 +138,7 @@
         ],
         [
           "applicationinsights",
-          "new"
+          "DescribeApplication"
         ]
       ]
     ],
@@ -229,10 +154,6 @@
         [
           "applicationinsights",
           "ListTagsForResource"
-        ],
-        [
-          "applicationinsights",
-          "new"
         ]
       ]
     ],
@@ -260,10 +181,6 @@
         [
           "applicationinsights",
           "UpdateApplication"
-        ],
-        [
-          "applicationinsights",
-          "new"
         ]
       ]
     ],
@@ -283,10 +200,6 @@
         [
           "costexplorer",
           "ListTagsForResource"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -298,10 +211,6 @@
         [
           "costexplorer",
           "DeleteAnomalySubscription"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -317,10 +226,6 @@
         [
           "costexplorer",
           "ListTagsForResource"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -348,10 +253,6 @@
         [
           "costexplorer",
           "UpdateAnomalySubscription"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -367,10 +268,6 @@
         [
           "costexplorer",
           "UpdateCostAllocationTagsStatus"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -382,10 +279,6 @@
         [
           "costexplorer",
           "UpdateCostAllocationTagsStatus"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -397,10 +290,6 @@
         [
           "costexplorer",
           "ListCostAllocationTags"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -416,10 +305,6 @@
         [
           "costexplorer",
           "UpdateCostAllocationTagsStatus"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -435,10 +320,6 @@
         [
           "cognitoidentityprovider",
           "SetRiskConfiguration"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -450,10 +331,6 @@
         [
           "cognitoidentityprovider",
           "SetRiskConfiguration"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -465,10 +342,6 @@
         [
           "cognitoidentityprovider",
           "DescribeRiskConfiguration"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -484,10 +357,6 @@
         [
           "cognitoidentityprovider",
           "SetRiskConfiguration"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -507,10 +376,6 @@
         [
           "ec2",
           "DescribeDhcpOptions"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -583,6 +448,10 @@
         ],
         [
           "ec2",
+          "DescribeVolumesModifications"
+        ],
+        [
+          "ec2",
           "DescribeVpcs"
         ],
         [
@@ -648,10 +517,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -699,10 +564,6 @@
         [
           "ec2",
           "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -762,6 +623,10 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
         ],
         [
           "ec2",
@@ -826,10 +691,6 @@
         [
           "ec2",
           "UnmonitorInstances"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -856,6 +717,10 @@
         [
           "kendra",
           "DeleteExperience"
+        ],
+        [
+          "kendra",
+          "DescribeExperience"
         ]
       ]
     ],
@@ -912,6 +777,10 @@
         [
           "kendra",
           "DeleteFaq"
+        ],
+        [
+          "kendra",
+          "DescribeFaq"
         ]
       ]
     ],
@@ -980,6 +849,10 @@
         [
           "kendra",
           "DeleteQuerySuggestionsBlockList"
+        ],
+        [
+          "kendra",
+          "DescribeQuerySuggestionsBlockList"
         ]
       ]
     ],
@@ -1052,6 +925,10 @@
         [
           "kendra",
           "DeleteThesaurus"
+        ],
+        [
+          "kendra",
+          "DescribeThesaurus"
         ]
       ]
     ],
@@ -1109,10 +986,6 @@
         [
           "lakeformation",
           "GetLFTag"
-        ],
-        [
-          "lakeformation",
-          "new"
         ]
       ]
     ],
@@ -1124,10 +997,6 @@
         [
           "lakeformation",
           "DeleteLFTag"
-        ],
-        [
-          "lakeformation",
-          "new"
         ]
       ]
     ],
@@ -1139,10 +1008,6 @@
         [
           "lakeformation",
           "GetLFTag"
-        ],
-        [
-          "lakeformation",
-          "new"
         ]
       ]
     ],
@@ -1158,10 +1023,6 @@
         [
           "lakeformation",
           "UpdateLFTag"
-        ],
-        [
-          "lakeformation",
-          "new"
         ]
       ]
     ],
@@ -1185,10 +1046,6 @@
         [
           "ec2",
           "DescribeLaunchTemplates"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -1243,10 +1100,6 @@
         [
           "ec2",
           "ModifyLaunchTemplate"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -1262,10 +1115,6 @@
         [
           "locationservice",
           "DescribeTracker"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -1277,10 +1126,6 @@
         [
           "locationservice",
           "DeleteTracker"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -1292,10 +1137,6 @@
         [
           "locationservice",
           "DescribeTracker"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -1319,10 +1160,6 @@
         [
           "locationservice",
           "UpdateTracker"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -1338,10 +1175,6 @@
         [
           "cloudwatchrum",
           "GetAppMonitor"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -1353,10 +1186,6 @@
         [
           "cloudwatchrum",
           "DeleteAppMonitor"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -1368,10 +1197,6 @@
         [
           "cloudwatchrum",
           "GetAppMonitor"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -1399,10 +1224,6 @@
         [
           "cloudwatchrum",
           "UpdateAppMonitor"
-        ],
-        [
-          "cloudwatchrum",
-          "new"
         ]
       ]
     ],
@@ -1446,66 +1267,6 @@
         [
           "ec2",
           "RequestSpotInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_service",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpcEndpointServiceConfigurations"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_service",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpointServiceConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpointServicePermissions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_service_allowed_principal",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpointServicePermissions"
         ]
       ]
     ]

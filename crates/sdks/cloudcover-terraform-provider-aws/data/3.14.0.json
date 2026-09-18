@@ -14,10 +14,6 @@
         [
           "route53resolver",
           "ListResolverEndpoints"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -39,10 +35,34 @@
         [
           "workspaces",
           "DescribeWorkspaces"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_target",
+      "create",
+      [
         [
-          "workspaces",
-          "new"
+          "cloudwatchevents",
+          "PutTargets"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_target",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_target",
+      "update",
+      [
+        [
+          "cloudwatchevents",
+          "PutTargets"
         ]
       ]
     ],
@@ -62,10 +82,6 @@
         [
           "codeartifact",
           "ListTagsForResource"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -81,10 +97,6 @@
         [
           "codeartifact",
           "ListTagsForResource"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -108,10 +120,6 @@
         [
           "codeartifact",
           "UntagResource"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -135,10 +143,6 @@
         [
           "codeartifact",
           "ListTagsForResource"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -154,10 +158,6 @@
         [
           "codeartifact",
           "ListTagsForResource"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -193,10 +193,6 @@
         [
           "codeartifact",
           "UpdateRepository"
-        ],
-        [
-          "codeartifact",
-          "new"
         ]
       ]
     ],
@@ -212,10 +208,17 @@
         [
           "glue",
           "GetDatabase"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_trigger",
+      "delete",
+      [
         [
           "glue",
-          "new"
+          "DeleteTrigger"
         ]
       ]
     ],
@@ -239,10 +242,6 @@
         [
           "kinesisanalytics",
           "ListTagsForResource"
-        ],
-        [
-          "kinesisanalytics",
-          "new"
         ]
       ]
     ],
@@ -254,10 +253,6 @@
         [
           "kinesisanalytics",
           "DeleteApplication"
-        ],
-        [
-          "kinesisanalytics",
-          "new"
         ]
       ]
     ],
@@ -321,10 +316,6 @@
         [
           "kinesisanalytics",
           "UpdateApplication"
-        ],
-        [
-          "kinesisanalytics",
-          "new"
         ]
       ]
     ],
@@ -340,10 +331,6 @@
         [
           "secretsmanager",
           "PutResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ],
@@ -355,10 +342,6 @@
         [
           "secretsmanager",
           "DeleteResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ],
@@ -370,10 +353,6 @@
         [
           "secretsmanager",
           "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ],
@@ -389,10 +368,6 @@
         [
           "secretsmanager",
           "PutResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
         ]
       ]
     ]

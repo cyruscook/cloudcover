@@ -28,13 +28,27 @@
       "data_source",
       "aws_ec2_capacity_block_reservation",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeCapacityReservations"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_pinpointsmsvoicev2_pool",
       "list",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePools"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "ListPoolOriginationIdentities"
+        ]
+      ]
     ],
     [
       "resource",
@@ -44,6 +58,10 @@
         [
           "bedrock",
           "CreateFoundationModelAgreement"
+        ],
+        [
+          "bedrock",
+          "GetFoundationModelAvailability"
         ]
       ]
     ],
@@ -55,6 +73,10 @@
         [
           "bedrock",
           "DeleteFoundationModelAgreement"
+        ],
+        [
+          "bedrock",
+          "GetFoundationModelAvailability"
         ]
       ]
     ],
@@ -115,42 +137,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_composite_alarm",
-      "create",
-      [
-        [
-          "cloudwatch",
-          "PutCompositeAlarm"
-        ],
-        [
-          "cloudwatch",
-          "TagResource"
-        ],
-        [
-          "cloudwatch",
-          "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_composite_alarm",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_composite_alarm",
-      "update",
-      [
-        [
-          "cloudwatch",
-          "PutCompositeAlarm"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_contributor_insight_rule",
       "create",
       [
@@ -199,6 +185,10 @@
         [
           "cloudwatch",
           "EnableInsightRules"
+        ],
+        [
+          "cloudwatch",
+          "ListManagedInsightRules"
         ],
         [
           "cloudwatch",
@@ -209,6 +199,17 @@
     [
       "resource",
       "aws_cloudwatch_contributor_managed_insight_rule",
+      "delete",
+      [
+        [
+          "cloudwatch",
+          "DeleteInsightRules"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_contributor_managed_insight_rule",
       "update",
       [
         [
@@ -223,101 +224,13 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_resource_policy",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_resource_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_resource_policy",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_metric_alarm",
-      "create",
-      [
-        [
-          "cloudwatch",
-          "PutMetricAlarm"
-        ],
-        [
-          "cloudwatch",
-          "TagResource"
-        ],
-        [
-          "cloudwatch",
-          "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_metric_alarm",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_metric_alarm",
-      "update",
-      [
-        [
-          "cloudwatch",
-          "PutMetricAlarm"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_query_definition",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "PutQueryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_query_definition",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_query_definition",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "PutQueryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_pinpointsmsvoicev2_phone_number",
       "delete",
       [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
         [
           "pinpointsmsvoicev2",
           "DisassociateOriginationIdentity"
@@ -343,6 +256,22 @@
         ],
         [
           "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "DescribePools"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "DescribeSenderIds"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "ListPoolOriginationIdentities"
+        ],
+        [
+          "pinpointsmsvoicev2",
           "UpdatePool"
         ]
       ]
@@ -355,6 +284,10 @@
         [
           "pinpointsmsvoicev2",
           "DeletePool"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "DescribePools"
         ]
       ]
     ],
@@ -362,7 +295,16 @@
       "resource",
       "aws_pinpointsmsvoicev2_pool",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePools"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "ListPoolOriginationIdentities"
+        ]
+      ]
     ],
     [
       "resource",
@@ -375,7 +317,23 @@
         ],
         [
           "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "DescribePools"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "DescribeSenderIds"
+        ],
+        [
+          "pinpointsmsvoicev2",
           "DisassociateOriginationIdentity"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "ListPoolOriginationIdentities"
         ],
         [
           "pinpointsmsvoicev2",

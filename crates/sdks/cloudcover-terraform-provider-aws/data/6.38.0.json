@@ -9,6 +9,10 @@
       [
         [
           "databasemigrationservice",
+          "DescribeReplicationTaskAssessmentRuns"
+        ],
+        [
+          "databasemigrationservice",
           "StartReplicationTaskAssessmentRun"
         ]
       ]
@@ -50,55 +54,144 @@
       "list_resource",
       "aws_msk_cluster",
       "list",
-      []
+      [
+        [
+          "kafka",
+          "GetBootstrapBrokers"
+        ],
+        [
+          "kafka",
+          "ListClusters"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_msk_serverless_cluster",
       "list",
-      []
+      [
+        [
+          "kafka",
+          "GetBootstrapBrokers"
+        ],
+        [
+          "kafka",
+          "ListClustersV2"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_msk_topic",
       "list",
-      []
+      [
+        [
+          "kafka",
+          "DescribeTopic"
+        ],
+        [
+          "kafka",
+          "ListTopics"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_route53_resolver_rule",
       "list",
-      []
+      [
+        [
+          "route53resolver",
+          "ListResolverRules"
+        ],
+        [
+          "route53resolver",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sagemaker_algorithm",
       "list",
-      []
+      [
+        [
+          "sagemaker",
+          "DescribeAlgorithm"
+        ],
+        [
+          "sagemaker",
+          "ListAlgorithms"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssm_document",
       "list",
-      []
+      [
+        [
+          "ssm",
+          "DescribeDocument"
+        ],
+        [
+          "ssm",
+          "DescribeDocumentPermission"
+        ],
+        [
+          "ssm",
+          "GetDocument"
+        ],
+        [
+          "ssm",
+          "ListDocuments"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssoadmin_account_assignment",
       "list",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListAccountAssignments"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_vpc_endpoint",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DescribePrefixLists"
+        ],
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_workmail_domain",
       "list",
-      []
+      [
+        [
+          "workmail",
+          "GetMailDomain"
+        ],
+        [
+          "workmail",
+          "ListMailDomains"
+        ]
+      ]
     ],
     [
       "resource",
@@ -112,6 +205,10 @@
         [
           "dynamodb",
           "DescribeContinuousBackups"
+        ],
+        [
+          "dynamodb",
+          "DescribeImport"
         ],
         [
           "dynamodb",
@@ -167,6 +264,10 @@
         [
           "kafka",
           "CreateTopic"
+        ],
+        [
+          "kafka",
+          "DescribeTopic"
         ]
       ]
     ],
@@ -178,6 +279,10 @@
         [
           "kafka",
           "DeleteTopic"
+        ],
+        [
+          "kafka",
+          "DescribeTopic"
         ]
       ]
     ],
@@ -199,6 +304,10 @@
       [
         [
           "kafka",
+          "DescribeTopic"
+        ],
+        [
+          "kafka",
           "UpdateTopic"
         ]
       ]
@@ -210,6 +319,10 @@
       [
         [
           "observabilityadmin",
+          "GetTelemetryEnrichmentStatus"
+        ],
+        [
+          "observabilityadmin",
           "StartTelemetryEnrichment"
         ]
       ]
@@ -219,6 +332,10 @@
       "aws_observabilityadmin_telemetry_enrichment",
       "delete",
       [
+        [
+          "observabilityadmin",
+          "GetTelemetryEnrichmentStatus"
+        ],
         [
           "observabilityadmin",
           "StopTelemetryEnrichment"
@@ -244,12 +361,69 @@
     ],
     [
       "resource",
+      "aws_route53_resolver_rule",
+      "create",
+      [
+        [
+          "route53resolver",
+          "CreateResolverRule"
+        ],
+        [
+          "route53resolver",
+          "GetResolverRule"
+        ],
+        [
+          "route53resolver",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_resolver_rule",
+      "read",
+      [
+        [
+          "route53resolver",
+          "GetResolverRule"
+        ],
+        [
+          "route53resolver",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_resolver_rule",
+      "update",
+      [
+        [
+          "route53resolver",
+          "GetResolverRule"
+        ],
+        [
+          "route53resolver",
+          "ListTagsForResource"
+        ],
+        [
+          "route53resolver",
+          "UpdateResolverRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_sagemaker_algorithm",
       "create",
       [
         [
           "sagemaker",
           "CreateAlgorithm"
+        ],
+        [
+          "sagemaker",
+          "DescribeAlgorithm"
         ]
       ]
     ],
@@ -261,6 +435,10 @@
         [
           "sagemaker",
           "DeleteAlgorithm"
+        ],
+        [
+          "sagemaker",
+          "DescribeAlgorithm"
         ]
       ]
     ],
@@ -302,7 +480,12 @@
       "resource",
       "aws_workmail_default_domain",
       "read",
-      []
+      [
+        [
+          "workmail",
+          "ListMailDomains"
+        ]
+      ]
     ],
     [
       "resource",

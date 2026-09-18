@@ -6,43 +6,122 @@
       "list_resource",
       "aws_ecs_service",
       "list",
-      []
+      [
+        [
+          "ecs",
+          "DescribeServices"
+        ],
+        [
+          "ecs",
+          "ListServices"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lb",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeCapacityReservation"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTags"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lb_listener",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTags"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lb_listener_rule",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeRules"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTags"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lb_target_group",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTags"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sns_topic",
       "list",
-      []
+      [
+        [
+          "sns",
+          "GetTopicAttributes"
+        ],
+        [
+          "sns",
+          "ListTopics"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sns_topic_subscription",
       "list",
-      []
+      [
+        [
+          "sns",
+          "GetSubscriptionAttributes"
+        ],
+        [
+          "sns",
+          "ListSubscriptionsByTopic"
+        ]
+      ]
     ],
     [
       "resource",
@@ -52,6 +131,10 @@
         [
           "observabilityadmin",
           "CreateTelemetryPipeline"
+        ],
+        [
+          "observabilityadmin",
+          "GetTelemetryPipeline"
         ]
       ]
     ],
@@ -63,6 +146,10 @@
         [
           "observabilityadmin",
           "DeleteTelemetryPipeline"
+        ],
+        [
+          "observabilityadmin",
+          "GetTelemetryPipeline"
         ]
       ]
     ],
@@ -84,6 +171,10 @@
       [
         [
           "observabilityadmin",
+          "GetTelemetryPipeline"
+        ],
+        [
+          "observabilityadmin",
           "UpdateTelemetryPipeline"
         ]
       ]
@@ -96,6 +187,10 @@
         [
           "sagemaker",
           "CreateMlflowApp"
+        ],
+        [
+          "sagemaker",
+          "DescribeMlflowApp"
         ]
       ]
     ],
@@ -107,6 +202,10 @@
         [
           "sagemaker",
           "DeleteMlflowApp"
+        ],
+        [
+          "sagemaker",
+          "DescribeMlflowApp"
         ]
       ]
     ],
@@ -126,6 +225,10 @@
       "aws_sagemaker_mlflow_app",
       "update",
       [
+        [
+          "sagemaker",
+          "DescribeMlflowApp"
+        ],
         [
           "sagemaker",
           "UpdateMlflowApp"

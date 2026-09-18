@@ -10,10 +10,6 @@
         [
           "acmpca",
           "GetCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "acmpca",
           "IssueCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -44,10 +36,6 @@
         [
           "acmpca",
           "RevokeCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -59,10 +47,6 @@
         [
           "acmpca",
           "GetCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -78,10 +62,6 @@
         [
           "acmpca",
           "UpdateCertificateAuthority"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -97,10 +77,6 @@
         [
           "acmpca",
           "ImportCertificateAuthorityCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -118,21 +94,6 @@
         [
           "acmpca",
           "GetCertificateAuthorityCertificate"
-        ],
-        [
-          "acmpca",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_scheduled_action",
-      "read",
-      [
-        [
-          "applicationautoscaling",
-          "DescribeScheduledActions"
         ]
       ]
     ],
@@ -148,10 +109,6 @@
         [
           "applicationautoscaling",
           "PutScheduledAction"
-        ],
-        [
-          "applicationautoscaling",
-          "new"
         ]
       ]
     ],
@@ -167,10 +124,6 @@
         [
           "elasticache",
           "DisassociateGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -189,19 +142,22 @@
         ],
         [
           "kinesisanalytics",
-          "DescribeApplication"
-        ],
-        [
-          "kinesisanalytics",
           "ListTagsForResource"
         ],
         [
           "kinesisanalytics",
           "StartApplication"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesis_analytics_application",
+      "read",
+      [
         [
           "kinesisanalytics",
-          "new"
+          "ListTagsForResource"
         ]
       ]
     ],
@@ -248,10 +204,6 @@
         ],
         [
           "kinesisanalytics",
-          "DescribeApplication"
-        ],
-        [
-          "kinesisanalytics",
           "ListTagsForResource"
         ],
         [
@@ -273,10 +225,52 @@
         [
           "kinesisanalytics",
           "UpdateApplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_mq_broker",
+      "delete",
+      [
+        [
+          "mq",
+          "DeleteBroker"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_mq_broker",
+      "update",
+      [
+        [
+          "mq",
+          "CreateTags"
         ],
         [
-          "kinesisanalytics",
-          "new"
+          "mq",
+          "CreateUser"
+        ],
+        [
+          "mq",
+          "DeleteTags"
+        ],
+        [
+          "mq",
+          "DeleteUser"
+        ],
+        [
+          "mq",
+          "RebootBroker"
+        ],
+        [
+          "mq",
+          "UpdateBroker"
+        ],
+        [
+          "mq",
+          "UpdateUser"
         ]
       ]
     ]

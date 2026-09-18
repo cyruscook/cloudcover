@@ -10,10 +10,6 @@
         [
           "iam",
           "GetRole"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -21,23 +17,13 @@
       "data_source",
       "aws_servicecatalog_launch_paths",
       "read",
-      [
-        [
-          "servicecatalog",
-          "ListLaunchPaths"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_servicecatalog_portfolio_constraints",
       "read",
-      [
-        [
-          "servicecatalog",
-          "ListConstraintsForPortfolio"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -51,10 +37,6 @@
         [
           "cloudfront",
           "GetMonitoringSubscription"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -66,10 +48,6 @@
         [
           "cloudfront",
           "DeleteMonitoringSubscription"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -81,10 +59,6 @@
         [
           "cloudfront",
           "GetMonitoringSubscription"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -100,10 +74,6 @@
         [
           "cloudfront",
           "GetMonitoringSubscription"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -114,19 +84,7 @@
       [
         [
           "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeRecord"
-        ],
-        [
-          "servicecatalog",
           "ProvisionProduct"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -137,15 +95,7 @@
       [
         [
           "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
           "TerminateProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ],
@@ -153,16 +103,7 @@
       "resource",
       "aws_servicecatalog_provisioned_product",
       "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeRecord"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -171,19 +112,7 @@
       [
         [
           "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeRecord"
-        ],
-        [
-          "servicecatalog",
           "UpdateProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "new"
         ]
       ]
     ]

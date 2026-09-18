@@ -26,10 +26,6 @@
         [
           "elbv2",
           "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -49,10 +45,6 @@
         [
           "cloudformation",
           "ListStackInstances"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -68,10 +60,6 @@
         [
           "cloudformation",
           "ListStackInstances"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -95,10 +83,6 @@
         [
           "cloudformation",
           "UpdateStackInstances"
-        ],
-        [
-          "cloudformation",
-          "new"
         ]
       ]
     ],
@@ -110,10 +94,6 @@
         [
           "directconnect",
           "ConfirmConnection"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -131,10 +111,6 @@
         [
           "directconnect",
           "DescribeConnections"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -150,10 +126,6 @@
         [
           "directconnect",
           "DescribeHostedConnections"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -165,10 +137,6 @@
         [
           "directconnect",
           "DeleteConnection"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -180,10 +148,6 @@
         [
           "directconnect",
           "DescribeHostedConnections"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -207,10 +171,6 @@
         [
           "directconnect",
           "DisassociateConnectionFromLag"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -238,43 +198,6 @@
         [
           "elbv2",
           "ModifyTargetGroupAttributes"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lex_bot",
-      "delete",
-      [
-        [
-          "lexmodelbuildingservice",
-          "DeleteBot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_instance",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteRoute"
         ]
       ]
     ],
@@ -294,44 +217,6 @@
         [
           "ec2",
           "StopInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway_route_propagation",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway_route_propagation",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

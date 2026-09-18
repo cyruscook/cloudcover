@@ -78,45 +78,14 @@
     ],
     [
       "data_source",
-      "aws_imagebuilder_components",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_container_recipes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_distribution_configurations",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_image_pipelines",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_image_recipes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_infrastructure_configurations",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_sns_topic",
       "read",
-      []
+      [
+        [
+          "sns",
+          "ListTopics"
+        ]
+      ]
     ],
     [
       "resource",
@@ -137,6 +106,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeListeners"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyListenerAttributes"
         ],
         [
@@ -153,6 +126,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
         ]
       ]
     ],
@@ -164,6 +141,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
         ],
         [
           "elasticloadbalancingv2",
@@ -194,6 +175,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeListeners"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyListenerAttributes"
         ],
         [
@@ -210,6 +195,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
         ]
       ]
     ],
@@ -221,6 +210,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
         ],
         [
           "elasticloadbalancingv2",
@@ -255,6 +248,10 @@
         [
           "sagemaker",
           "DeleteHub"
+        ],
+        [
+          "sagemaker",
+          "DescribeHub"
         ]
       ]
     ],
@@ -307,6 +304,10 @@
         [
           "sagemaker",
           "DeleteMlflowTrackingServer"
+        ],
+        [
+          "sagemaker",
+          "DescribeMlflowTrackingServer"
         ]
       ]
     ],

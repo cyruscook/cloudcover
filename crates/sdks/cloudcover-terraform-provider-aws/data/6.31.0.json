@@ -6,7 +6,12 @@
       "data_source",
       "aws_account_regions",
       "read",
-      []
+      [
+        [
+          "account",
+          "ListRegions"
+        ]
+      ]
     ],
     [
       "ephemeral_resource",
@@ -23,49 +28,125 @@
       "list_resource",
       "aws_cloudwatch_event_rule",
       "list",
-      []
+      [
+        [
+          "eventbridge",
+          "DescribeRule"
+        ],
+        [
+          "eventbridge",
+          "ListRules"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_event_target",
       "list",
-      []
+      [
+        [
+          "eventbridge",
+          "ListTargetsByRule"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_metric_alarm",
       "list",
-      []
+      [
+        [
+          "cloudwatch",
+          "DescribeAlarms"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_role_policy",
       "list",
-      []
+      [
+        [
+          "iam",
+          "GetRolePolicy"
+        ],
+        [
+          "iam",
+          "ListRolePolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lambda_function",
       "list",
-      []
+      [
+        [
+          "lambda",
+          "GetFunction"
+        ],
+        [
+          "lambda",
+          "GetFunctionCodeSigningConfig"
+        ],
+        [
+          "lambda",
+          "GetFunctionConcurrency"
+        ],
+        [
+          "lambda",
+          "ListFunctions"
+        ],
+        [
+          "lambda",
+          "ListVersionsByFunction"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_acl",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_policy",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_public_access_block",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetPublicAccessBlock"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "resource",
@@ -78,7 +159,15 @@
         ],
         [
           "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
+        ],
+        [
+          "ssoadmin",
           "DetachCustomerManagedPolicyReferenceFromPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ListCustomerManagedPolicyReferencesInPermissionSet"
         ],
         [
           "ssoadmin",
@@ -96,7 +185,12 @@
       "resource",
       "aws_ssoadmin_customer_managed_policy_attachments_exclusive",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListCustomerManagedPolicyReferencesInPermissionSet"
+        ]
+      ]
     ],
     [
       "resource",
@@ -109,7 +203,15 @@
         ],
         [
           "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
+        ],
+        [
+          "ssoadmin",
           "DetachCustomerManagedPolicyReferenceFromPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ListCustomerManagedPolicyReferencesInPermissionSet"
         ],
         [
           "ssoadmin",

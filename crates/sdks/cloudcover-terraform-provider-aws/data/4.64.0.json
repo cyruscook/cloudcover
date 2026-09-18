@@ -10,10 +10,6 @@
         [
           "databasemigrationservice",
           "DescribeEndpoints"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
         ]
       ]
     ],
@@ -47,10 +43,6 @@
         [
           "networkfirewall",
           "DescribeResourcePolicy"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -73,10 +65,6 @@
         [
           "redshiftserverless",
           "GetWorkgroup"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -133,10 +121,6 @@
         [
           "eventbridge",
           "DescribeEndpoint"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -151,7 +135,7 @@
         ],
         [
           "eventbridge",
-          "new"
+          "DescribeEndpoint"
         ]
       ]
     ],
@@ -163,10 +147,6 @@
         [
           "eventbridge",
           "DescribeEndpoint"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -182,47 +162,25 @@
         [
           "eventbridge",
           "UpdateEndpoint"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_vpc",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpc"
         ],
         [
-          "eventbridge",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_rule",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_application",
-      "delete",
-      [
-        [
-          "elasticbeanstalk",
-          "DeleteApplication"
+          "ec2",
+          "DescribeVpcs"
         ],
         [
-          "elasticbeanstalk",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_event_source_mapping",
-      "delete",
-      [
-        [
-          "lambda",
-          "DeleteEventSourceMapping"
+          "ec2",
+          "GetIpamPoolAllocations"
         ]
       ]
     ],
@@ -246,10 +204,6 @@
         [
           "securityhub",
           "UpdateSecurityHubConfiguration"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -265,10 +219,6 @@
         [
           "securityhub",
           "GetEnabledStandards"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
@@ -288,25 +238,25 @@
         [
           "securityhub",
           "UpdateSecurityHubConfiguration"
-        ],
-        [
-          "securityhub",
-          "new"
         ]
       ]
     ],
     [
       "resource",
-      "aws_sns_topic",
-      "create",
+      "aws_vpc",
+      "delete",
       [
         [
-          "sns",
-          "CreateTopic"
+          "ec2",
+          "DeleteVpc"
         ],
         [
-          "sns",
-          "new"
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
         ]
       ]
     ],

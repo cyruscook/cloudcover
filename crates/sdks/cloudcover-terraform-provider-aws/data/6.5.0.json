@@ -6,7 +6,12 @@
       "data_source",
       "aws_ecr_images",
       "read",
-      []
+      [
+        [
+          "ecr",
+          "ListImages"
+        ]
+      ]
     ],
     [
       "resource",
@@ -49,6 +54,60 @@
         [
           "cognitoidentityprovider",
           "SetLogDeliveryConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ecs_service",
+      "create",
+      [
+        [
+          "ecs",
+          "CreateService"
+        ],
+        [
+          "ecs",
+          "DescribeServiceDeployments"
+        ],
+        [
+          "ecs",
+          "DescribeServices"
+        ],
+        [
+          "ecs",
+          "ListServiceDeployments"
+        ],
+        [
+          "ecs",
+          "TagResource"
+        ],
+        [
+          "ecs",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ecs_service",
+      "update",
+      [
+        [
+          "ecs",
+          "DescribeServiceDeployments"
+        ],
+        [
+          "ecs",
+          "DescribeServices"
+        ],
+        [
+          "ecs",
+          "ListServiceDeployments"
+        ],
+        [
+          "ecs",
+          "UpdateService"
         ]
       ]
     ],
@@ -168,6 +227,10 @@
         [
           "s3",
           "DeleteBucketMetadataConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketMetadataConfiguration"
         ]
       ]
     ],

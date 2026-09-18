@@ -30,10 +30,6 @@
         [
           "elasticsearchservice",
           "SetMasterUserOptions"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
         ]
       ]
     ],
@@ -73,29 +69,6 @@
         [
           "elasticsearchservice",
           "UpgradeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sfn_state_machine",
-      "delete",
-      [
-        [
-          "sfn",
-          "DeleteStateMachine"
-        ],
-        [
-          "sfn",
-          "DescribeStateMachine"
-        ],
-        [
-          "sfn",
-          "new"
         ]
       ]
     ]

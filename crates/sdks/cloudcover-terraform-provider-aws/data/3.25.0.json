@@ -3,6 +3,17 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_elasticache_cluster",
+      "read",
+      [
+        [
+          "elasticache",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_api_gateway_authorizer",
       "create",
@@ -18,10 +29,6 @@
         [
           "apigateway",
           "UpdateAuthorizer"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -49,10 +56,6 @@
         [
           "apigateway",
           "UpdateRestApi"
-        ],
-        [
-          "apigateway",
-          "new"
         ]
       ]
     ],
@@ -68,10 +71,6 @@
         [
           "backup",
           "UpdateGlobalSettings"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -89,10 +88,6 @@
         [
           "backup",
           "DescribeGlobalSettings"
-        ],
-        [
-          "backup",
-          "new"
         ]
       ]
     ],
@@ -108,10 +103,21 @@
         [
           "backup",
           "UpdateGlobalSettings"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_cluster",
+      "create",
+      [
+        [
+          "elasticache",
+          "CreateCacheCluster"
         ],
         [
-          "backup",
-          "new"
+          "elasticache",
+          "ListTagsForResource"
         ]
       ]
     ],
@@ -123,10 +129,40 @@
         [
           "elasticache",
           "DeleteCacheCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_cluster",
+      "read",
+      [
+        [
+          "elasticache",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_cluster",
+      "update",
+      [
+        [
+          "elasticache",
+          "AddTagsToResource"
         ],
         [
           "elasticache",
-          "new"
+          "ListTagsForResource"
+        ],
+        [
+          "elasticache",
+          "ModifyCacheCluster"
+        ],
+        [
+          "elasticache",
+          "RemoveTagsFromResource"
         ]
       ]
     ],
@@ -138,10 +174,6 @@
         [
           "elasticache",
           "DeleteReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "new"
         ]
       ]
     ],
@@ -161,10 +193,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -176,10 +204,6 @@
         [
           "sagemaker",
           "DeleteFeatureGroup"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -195,10 +219,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -222,10 +242,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -241,10 +257,6 @@
         [
           "sagemaker",
           "DescribeImageVersion"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -256,14 +268,6 @@
         [
           "sagemaker",
           "DeleteImageVersion"
-        ],
-        [
-          "sagemaker",
-          "DescribeImageVersion"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -275,10 +279,6 @@
         [
           "sagemaker",
           "DescribeImageVersion"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -298,10 +298,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -313,14 +309,6 @@
         [
           "sagemaker",
           "DeleteUserProfile"
-        ],
-        [
-          "sagemaker",
-          "DescribeUserProfile"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -336,10 +324,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -367,10 +351,6 @@
         [
           "sagemaker",
           "UpdateUserProfile"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ]

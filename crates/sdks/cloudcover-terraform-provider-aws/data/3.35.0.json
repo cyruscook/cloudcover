@@ -3,6 +3,12 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_route",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_apigatewayv2_route",
       "update",
@@ -18,10 +24,6 @@
         [
           "apigatewayv2",
           "UpdateRoute"
-        ],
-        [
-          "apigatewayv2",
-          "new"
         ]
       ]
     ],
@@ -32,15 +34,7 @@
       [
         [
           "cloudwatchlogs",
-          "DescribeQueryDefinitions"
-        ],
-        [
-          "cloudwatchlogs",
           "PutQueryDefinition"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
         ]
       ]
     ],
@@ -52,10 +46,6 @@
         [
           "cloudwatchlogs",
           "DeleteQueryDefinition"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
         ]
       ]
     ],
@@ -63,16 +53,7 @@
       "resource",
       "aws_cloudwatch_query_definition",
       "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeQueryDefinitions"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -81,15 +62,7 @@
       [
         [
           "cloudwatchlogs",
-          "DescribeQueryDefinitions"
-        ],
-        [
-          "cloudwatchlogs",
           "PutQueryDefinition"
-        ],
-        [
-          "cloudwatchlogs",
-          "new"
         ]
       ]
     ],
@@ -117,10 +90,79 @@
         [
           "cognitoidentityprovider",
           "UpdateUserPool"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_route_table",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateRoute"
         ],
         [
-          "cognitoidentityprovider",
-          "new"
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteRoute"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DisableVgwRoutePropagation"
+        ],
+        [
+          "ec2",
+          "EnableVgwRoutePropagation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_route_table",
+      "update",
+      [
+        [
+          "ec2",
+          "CreateRoute"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteRoute"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DisableVgwRoutePropagation"
+        ],
+        [
+          "ec2",
+          "EnableVgwRoutePropagation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_efs_file_system",
+      "delete",
+      [
+        [
+          "efs",
+          "DeleteFileSystem"
         ]
       ]
     ],
@@ -156,10 +198,47 @@
         [
           "iam",
           "UntagPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_network_interface_sg_attachment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_route_table",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateRoute"
         ],
         [
-          "iam",
-          "new"
+          "ec2",
+          "CreateRouteTable"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteRoute"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DisableVgwRoutePropagation"
+        ],
+        [
+          "ec2",
+          "EnableVgwRoutePropagation"
         ]
       ]
     ],
@@ -175,10 +254,6 @@
         [
           "ec2",
           "DisassociateRouteTable"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -186,14 +261,36 @@
       "resource",
       "aws_route_table",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_route_table",
+      "update",
       [
         [
           "ec2",
-          "DescribeRouteTables"
+          "CreateRoute"
         ],
         [
           "ec2",
-          "new"
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteRoute"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DisableVgwRoutePropagation"
+        ],
+        [
+          "ec2",
+          "EnableVgwRoutePropagation"
         ]
       ]
     ],
@@ -215,10 +312,6 @@
         [
           "sns",
           "Subscribe"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -230,10 +323,6 @@
         [
           "sns",
           "GetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "new"
         ]
       ]
     ],
@@ -249,25 +338,6 @@
         [
           "sns",
           "SetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],

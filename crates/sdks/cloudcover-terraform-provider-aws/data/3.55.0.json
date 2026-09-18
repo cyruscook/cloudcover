@@ -36,10 +36,6 @@
         [
           "chime",
           "GetVoiceConnectorGroup"
-        ],
-        [
-          "chime",
-          "new"
         ]
       ]
     ],
@@ -59,10 +55,6 @@
         [
           "chime",
           "UpdateVoiceConnectorGroup"
-        ],
-        [
-          "chime",
-          "new"
         ]
       ]
     ],
@@ -74,10 +66,6 @@
         [
           "chime",
           "GetVoiceConnectorGroup"
-        ],
-        [
-          "chime",
-          "new"
         ]
       ]
     ],
@@ -93,10 +81,67 @@
         [
           "chime",
           "UpdateVoiceConnectorGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "create",
+      [
+        [
+          "cloudwatchevents",
+          "DescribeRule"
         ],
         [
-          "chime",
-          "new"
+          "cloudwatchevents",
+          "ListTagsForResource"
+        ],
+        [
+          "cloudwatchevents",
+          "PutRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "read",
+      [
+        [
+          "cloudwatchevents",
+          "DescribeRule"
+        ],
+        [
+          "cloudwatchevents",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_event_rule",
+      "update",
+      [
+        [
+          "cloudwatchevents",
+          "DescribeRule"
+        ],
+        [
+          "cloudwatchevents",
+          "ListTagsForResource"
+        ],
+        [
+          "cloudwatchevents",
+          "PutRule"
+        ],
+        [
+          "cloudwatchevents",
+          "TagResource"
+        ],
+        [
+          "cloudwatchevents",
+          "UntagResource"
         ]
       ]
     ],
@@ -112,10 +157,6 @@
         [
           "fsx",
           "DescribeBackups"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -127,10 +168,6 @@
         [
           "fsx",
           "DeleteBackup"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -142,10 +179,6 @@
         [
           "fsx",
           "DescribeBackups"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -165,25 +198,6 @@
         [
           "fsx",
           "UntagResource"
-        ],
-        [
-          "fsx",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_glue_dev_endpoint",
-      "delete",
-      [
-        [
-          "glue",
-          "DeleteDevEndpoint"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -203,10 +217,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -218,10 +228,6 @@
         [
           "sagemaker",
           "DeleteDeviceFleet"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -237,10 +243,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -272,10 +274,6 @@
         [
           "sagemaker",
           "UpdateDeviceFleet"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -295,10 +293,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -310,10 +304,6 @@
         [
           "sagemaker",
           "DeleteHumanTaskUi"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -329,10 +319,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -356,10 +342,6 @@
         [
           "sagemaker",
           "ListTags"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ]

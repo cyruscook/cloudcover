@@ -10,10 +10,6 @@
         [
           "emrcontainers",
           "DescribeVirtualCluster"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -51,10 +47,6 @@
         [
           "ssm",
           "GetPatchBaseline"
-        ],
-        [
-          "ssm",
-          "new"
         ]
       ]
     ],
@@ -69,42 +61,17 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
           "ec2",
           "RegisterImage"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ami",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
-        ],
-        [
-          "ec2",
-          "DeregisterImage"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ami",
-      "read",
-      []
     ],
     [
       "resource",
@@ -121,15 +88,15 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -148,38 +115,13 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ami_copy",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
-        ],
-        [
-          "ec2",
-          "DeregisterImage"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ami_copy",
-      "read",
-      []
     ],
     [
       "resource",
@@ -196,15 +138,15 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -219,38 +161,13 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ami_from_instance",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSnapshot"
-        ],
-        [
-          "ec2",
-          "DeregisterImage"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ami_from_instance",
-      "read",
-      []
     ],
     [
       "resource",
@@ -267,15 +184,15 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
           "ec2",
           "ModifyImageAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -291,10 +208,6 @@
         [
           "emrcontainers",
           "DescribeVirtualCluster"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -309,7 +222,7 @@
         ],
         [
           "emrcontainers",
-          "new"
+          "DescribeVirtualCluster"
         ]
       ]
     ],
@@ -321,10 +234,6 @@
         [
           "emrcontainers",
           "DescribeVirtualCluster"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -344,10 +253,6 @@
         [
           "emrcontainers",
           "UntagResource"
-        ],
-        [
-          "emrcontainers",
-          "new"
         ]
       ]
     ],
@@ -371,10 +276,6 @@
         [
           "iot",
           "ListTopicRules"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -394,10 +295,6 @@
         [
           "iot",
           "ListTopicRules"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -429,10 +326,6 @@
         [
           "iot",
           "UntagResource"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -456,10 +349,6 @@
         [
           "iot",
           "UpdateTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -474,7 +363,11 @@
         ],
         [
           "iot",
-          "new"
+          "GetTopicRuleDestination"
+        ],
+        [
+          "iot",
+          "ListTopicRuleDestinations"
         ]
       ]
     ],
@@ -490,10 +383,6 @@
         [
           "iot",
           "ListTopicRuleDestinations"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
     ],
@@ -513,44 +402,8 @@
         [
           "iot",
           "UpdateTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_lambda_permission",
-      "create",
-      [
-        [
-          "lambda",
-          "AddPermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_permission",
-      "delete",
-      [
-        [
-          "lambda",
-          "RemovePermission"
-        ],
-        [
-          "lambda",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_permission",
-      "read",
-      []
     ],
     [
       "resource",
@@ -560,6 +413,10 @@
         [
           "kafka",
           "DescribeCluster"
+        ],
+        [
+          "kafka",
+          "DescribeClusterOperation"
         ],
         [
           "kafka",
@@ -604,114 +461,25 @@
         [
           "kafka",
           "UpdateSecurity"
-        ],
-        [
-          "kafka",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_secretsmanager_secret",
-      "create",
+      "delete",
       [
         [
           "secretsmanager",
-          "CreateSecret"
+          "DeleteSecret"
         ],
         [
           "secretsmanager",
-          "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "RotateSecret"
-        ],
-        [
-          "secretsmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "read",
-      [
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "CancelRotateSecret"
-        ],
-        [
-          "secretsmanager",
-          "DeleteResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "PutResourcePolicy"
+          "DescribeSecret"
         ],
         [
           "secretsmanager",
           "RemoveRegionsFromReplication"
-        ],
-        [
-          "secretsmanager",
-          "ReplicateSecretToRegions"
-        ],
-        [
-          "secretsmanager",
-          "RotateSecret"
-        ],
-        [
-          "secretsmanager",
-          "TagResource"
-        ],
-        [
-          "secretsmanager",
-          "UntagResource"
-        ],
-        [
-          "secretsmanager",
-          "UpdateSecret"
-        ],
-        [
-          "secretsmanager",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssm_resource_data_sync",
-      "read",
-      [
-        [
-          "ssm",
-          "ListResourceDataSync"
         ]
       ]
     ]

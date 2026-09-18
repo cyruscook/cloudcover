@@ -26,102 +26,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_log_destination",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeDestinations"
-        ],
-        [
-          "cloudwatchlogs",
-          "PutDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination",
-      "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeDestinations"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination",
-      "update",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeDestinations"
-        ],
-        [
-          "cloudwatchlogs",
-          "PutDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_destination_policy",
-      "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeDestinations"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_metric_filter",
-      "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeMetricFilters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_stream",
-      "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeLogStreams"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_subscription_filter",
-      "create",
-      [
-        [
-          "cloudwatchlogs",
-          "PutSubscriptionFilter"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_log_subscription_filter",
-      "read",
-      [
-        [
-          "cloudwatchlogs",
-          "DescribeSubscriptionFilters"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_log_subscription_filter",
       "update",
       [
@@ -158,6 +62,10 @@
         [
           "ivschat",
           "DeleteLoggingConfiguration"
+        ],
+        [
+          "ivschat",
+          "GetLoggingConfiguration"
         ]
       ]
     ],
@@ -230,6 +138,10 @@
         [
           "ivschat",
           "DeleteRoom"
+        ],
+        [
+          "ivschat",
+          "GetRoom"
         ]
       ]
     ],
@@ -364,10 +276,6 @@
         [
           "redshiftserverless",
           "PutResourcePolicy"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -379,10 +287,6 @@
         [
           "redshiftserverless",
           "DeleteResourcePolicy"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -394,10 +298,6 @@
         [
           "redshiftserverless",
           "GetResourcePolicy"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],
@@ -413,10 +313,6 @@
         [
           "redshiftserverless",
           "PutResourcePolicy"
-        ],
-        [
-          "redshiftserverless",
-          "new"
         ]
       ]
     ],

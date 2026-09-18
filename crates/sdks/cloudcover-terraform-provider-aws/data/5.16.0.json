@@ -4,20 +4,41 @@
   "upsert": [
     [
       "data_source",
-      "aws_canonical_user_id",
+      "aws_identitystore_group",
       "read",
       [
         [
-          "s3",
-          "ListBuckets"
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ],
+        [
+          "identitystore",
+          "ListGroups"
         ]
       ]
     ],
     [
       "data_source",
-      "aws_s3_objects",
+      "aws_identitystore_user",
       "read",
-      []
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ],
+        [
+          "identitystore",
+          "ListUsers"
+        ]
+      ]
     ],
     [
       "resource",
@@ -27,10 +48,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -54,10 +71,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -79,10 +92,6 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "CopyObject"
         ],
@@ -93,32 +102,6 @@
         [
           "s3",
           "HeadObject"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_principal_portfolio_association",
-      "create",
-      [
-        [
-          "servicecatalog",
-          "AssociatePrincipalWithPortfolio"
-        ],
-        [
-          "servicecatalog",
-          "ListPrincipalsForPortfolio"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_principal_portfolio_association",
-      "read",
-      [
-        [
-          "servicecatalog",
-          "ListPrincipalsForPortfolio"
         ]
       ]
     ]

@@ -10,6 +10,10 @@
         [
           "datazone",
           "GetDomain"
+        ],
+        [
+          "datazone",
+          "ListDomains"
         ]
       ]
     ],
@@ -21,6 +25,10 @@
         [
           "organizations",
           "DescribeAccount"
+        ],
+        [
+          "organizations",
+          "ListParents"
         ]
       ]
     ],
@@ -28,7 +36,28 @@
       "list_resource",
       "aws_kms_key",
       "list",
-      []
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListKeys"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
     ],
     [
       "resource",
@@ -38,6 +67,10 @@
         [
           "cloudfront",
           "CreateTrustStore"
+        ],
+        [
+          "cloudfront",
+          "GetTrustStore"
         ]
       ]
     ],
@@ -49,6 +82,10 @@
         [
           "cloudfront",
           "DeleteTrustStore"
+        ],
+        [
+          "cloudfront",
+          "GetTrustStore"
         ]
       ]
     ],
@@ -70,7 +107,226 @@
       [
         [
           "cloudfront",
+          "GetTrustStore"
+        ],
+        [
+          "cloudfront",
           "UpdateTrustStore"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connect_attachment",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connect_attachment",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connect_attachment",
+      "update",
+      [
+        [
+          "networkmanager",
+          "GetConnectAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_dx_gateway_attachment",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetDirectConnectGatewayAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site_to_site_vpn_attachment",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site_to_site_vpn_attachment",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site_to_site_vpn_attachment",
+      "update",
+      [
+        [
+          "networkmanager",
+          "GetSiteToSiteVpnAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_route_table_attachment",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_route_table_attachment",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_route_table_attachment",
+      "update",
+      [
+        [
+          "networkmanager",
+          "GetTransitGatewayRouteTableAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_vpc_attachment",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateVpcAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetVpcAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_vpc_attachment",
+      "read",
+      [
+        [
+          "networkmanager",
+          "GetVpcAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_vpc_attachment",
+      "update",
+      [
+        [
+          "networkmanager",
+          "GetVpcAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ],
+        [
+          "networkmanager",
+          "UpdateVpcAttachment"
         ]
       ]
     ],
@@ -82,6 +338,10 @@
         [
           "odb",
           "CreateCloudVmCluster"
+        ],
+        [
+          "odb",
+          "GetCloudVmCluster"
         ]
       ]
     ],

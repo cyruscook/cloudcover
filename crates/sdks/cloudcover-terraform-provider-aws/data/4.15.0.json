@@ -16,52 +16,12 @@
     ],
     [
       "resource",
-      "aws_appautoscaling_target",
-      "create",
-      [
-        [
-          "applicationautoscaling",
-          "RegisterScalableTarget"
-        ],
-        [
-          "applicationautoscaling",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_target",
-      "update",
-      [
-        [
-          "applicationautoscaling",
-          "RegisterScalableTarget"
-        ],
-        [
-          "applicationautoscaling",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_autoscaling_lifecycle_hook",
       "delete",
       [
         [
           "autoscaling",
           "DeleteLifecycleHook"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -73,32 +33,6 @@
         [
           "autoscaling",
           "DeletePolicy"
-        ],
-        [
-          "autoscaling",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_policy",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribePolicies"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_schedule",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeScheduledActions"
         ]
       ]
     ],
@@ -118,10 +52,6 @@
         [
           "rds",
           "ListTagsForResource"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -133,10 +63,6 @@
         [
           "rds",
           "DeleteDBSnapshot"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -152,10 +78,6 @@
         [
           "rds",
           "ListTagsForResource"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -179,47 +101,6 @@
         [
           "rds",
           "RemoveTagsFromResource"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_fleet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteFleets"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_fleet",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeFleets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_keyspaces_keyspace",
-      "delete",
-      [
-        [
-          "keyspaces",
-          "DeleteKeyspace"
         ]
       ]
     ],
@@ -239,10 +120,6 @@
         [
           "keyspaces",
           "ListTagsForResource"
-        ],
-        [
-          "keyspaces",
-          "new"
         ]
       ]
     ],
@@ -257,7 +134,7 @@
         ],
         [
           "keyspaces",
-          "new"
+          "GetTable"
         ]
       ]
     ],
@@ -273,10 +150,6 @@
         [
           "keyspaces",
           "ListTagsForResource"
-        ],
-        [
-          "keyspaces",
-          "new"
         ]
       ]
     ],
@@ -304,21 +177,6 @@
         [
           "keyspaces",
           "UpdateTable"
-        ],
-        [
-          "keyspaces",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_configuration",
-      "delete",
-      [
-        [
-          "autoscaling",
-          "DeleteLaunchConfiguration"
         ]
       ]
     ],
@@ -354,10 +212,6 @@
         [
           "organizations",
           "MoveAccount"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -381,10 +235,6 @@
         [
           "organizations",
           "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -420,10 +270,6 @@
         [
           "organizations",
           "UntagResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ]

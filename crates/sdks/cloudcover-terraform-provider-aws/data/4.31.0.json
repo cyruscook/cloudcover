@@ -15,50 +15,16 @@
     ],
     [
       "resource",
-      "aws_autoscaling_attachment",
-      "create",
-      [
-        [
-          "autoscaling",
-          "AttachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "AttachLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_attachment",
-      "delete",
-      [
-        [
-          "autoscaling",
-          "DetachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "DetachLoadBalancers"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_sqs_queue_redrive_allow_policy",
       "create",
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ],
@@ -69,11 +35,11 @@
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ],
@@ -81,7 +47,12 @@
       "resource",
       "aws_sqs_queue_redrive_allow_policy",
       "read",
-      []
+      [
+        [
+          "sqs",
+          "GetQueueAttributes"
+        ]
+      ]
     ],
     [
       "resource",
@@ -90,11 +61,11 @@
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ],
@@ -105,11 +76,11 @@
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ],
@@ -120,11 +91,11 @@
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ],
@@ -132,7 +103,12 @@
       "resource",
       "aws_sqs_queue_redrive_policy",
       "read",
-      []
+      [
+        [
+          "sqs",
+          "GetQueueAttributes"
+        ]
+      ]
     ],
     [
       "resource",
@@ -141,11 +117,11 @@
       [
         [
           "sqs",
-          "SetQueueAttributes"
+          "GetQueueAttributes"
         ],
         [
           "sqs",
-          "new"
+          "SetQueueAttributes"
         ]
       ]
     ]

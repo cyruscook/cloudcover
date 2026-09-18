@@ -3,28 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_ecrpublic_authorization_token",
-      "read",
-      [
-        [
-          "ecrpublic",
-          "GetAuthorizationToken"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_policy",
-      "create",
-      [
-        [
-          "applicationautoscaling",
-          "PutScalingPolicy"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_appautoscaling_policy",
       "delete",
@@ -32,53 +10,6 @@
         [
           "applicationautoscaling",
           "DeleteScalingPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_policy",
-      "update",
-      [
-        [
-          "applicationautoscaling",
-          "PutScalingPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_scheduled_action",
-      "create",
-      [
-        [
-          "applicationautoscaling",
-          "DescribeScheduledActions"
-        ],
-        [
-          "applicationautoscaling",
-          "PutScheduledAction"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_appautoscaling_scheduled_action",
-      "update",
-      [
-        [
-          "applicationautoscaling",
-          "DescribeScheduledActions"
-        ],
-        [
-          "applicationautoscaling",
-          "PutScheduledAction"
         ]
       ]
     ],
@@ -94,10 +25,6 @@
         [
           "dynamodb",
           "ExportTableToPointInTime"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -115,130 +42,6 @@
         [
           "dynamodb",
           "DescribeExport"
-        ],
-        [
-          "dynamodb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository",
-      "create",
-      [
-        [
-          "ecrpublic",
-          "CreateRepository"
-        ],
-        [
-          "ecrpublic",
-          "DescribeRepositories"
-        ],
-        [
-          "ecrpublic",
-          "GetRepositoryCatalogData"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository",
-      "delete",
-      [
-        [
-          "ecrpublic",
-          "DeleteRepository"
-        ],
-        [
-          "ecrpublic",
-          "DescribeRepositories"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository",
-      "read",
-      [
-        [
-          "ecrpublic",
-          "DescribeRepositories"
-        ],
-        [
-          "ecrpublic",
-          "GetRepositoryCatalogData"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository",
-      "update",
-      [
-        [
-          "ecrpublic",
-          "DescribeRepositories"
-        ],
-        [
-          "ecrpublic",
-          "GetRepositoryCatalogData"
-        ],
-        [
-          "ecrpublic",
-          "PutRepositoryCatalogData"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository_policy",
-      "create",
-      [
-        [
-          "ecrpublic",
-          "GetRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "SetRepositoryPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository_policy",
-      "delete",
-      [
-        [
-          "ecrpublic",
-          "DeleteRepositoryPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository_policy",
-      "read",
-      [
-        [
-          "ecrpublic",
-          "GetRepositoryPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecrpublic_repository_policy",
-      "update",
-      [
-        [
-          "ecrpublic",
-          "GetRepositoryPolicy"
-        ],
-        [
-          "ecrpublic",
-          "SetRepositoryPolicy"
         ]
       ]
     ]

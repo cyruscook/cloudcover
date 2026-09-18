@@ -3,28 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_ebs_snapshot",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ebs_snapshot_ids",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_ce_anomaly_monitor",
       "create",
@@ -40,10 +18,6 @@
         [
           "costexplorer",
           "ListTagsForResource"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -55,10 +29,6 @@
         [
           "costexplorer",
           "DeleteAnomalyMonitor"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -74,10 +44,6 @@
         [
           "costexplorer",
           "ListTagsForResource"
-        ],
-        [
-          "costexplorer",
-          "new"
         ]
       ]
     ],
@@ -105,70 +71,6 @@
         [
           "costexplorer",
           "UpdateAnomalyMonitor"
-        ],
-        [
-          "costexplorer",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_import",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "ImportSnapshot"
-        ],
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_import",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
         ]
       ]
     ],
@@ -184,6 +86,10 @@
         [
           "ec2",
           "DeleteVolume"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
         ]
       ]
     ],
@@ -199,10 +105,6 @@
         [
           "emrserverless",
           "GetApplication"
-        ],
-        [
-          "emrserverless",
-          "new"
         ]
       ]
     ],
@@ -217,7 +119,7 @@
         ],
         [
           "emrserverless",
-          "new"
+          "GetApplication"
         ]
       ]
     ],
@@ -229,10 +131,6 @@
         [
           "emrserverless",
           "GetApplication"
-        ],
-        [
-          "emrserverless",
-          "new"
         ]
       ]
     ],
@@ -256,55 +154,6 @@
         [
           "emrserverless",
           "UpdateApplication"
-        ],
-        [
-          "emrserverless",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_snapshot_create_volume_permission",
-      "create",
-      [
-        [
-          "ec2",
-          "ModifySnapshotAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_snapshot_create_volume_permission",
-      "delete",
-      [
-        [
-          "ec2",
-          "ModifySnapshotAttribute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_snapshot_create_volume_permission",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshotAttribute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -332,10 +181,6 @@
         [
           "ssm",
           "SetKeyId"
-        ],
-        [
-          "ssm",
-          "new"
         ]
       ]
     ]

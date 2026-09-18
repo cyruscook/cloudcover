@@ -6,31 +6,56 @@
       "data_source",
       "aws_dms_certificate",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeCertificates"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_dms_endpoint",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeEndpoints"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_dms_replication_instance",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeReplicationInstances"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_dms_replication_subnet_group",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeReplicationSubnetGroups"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_dms_replication_task",
       "read",
-      []
+      [
+        [
+          "databasemigrationservice",
+          "DescribeReplicationTasks"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -70,26 +95,34 @@
         [
           "sesv2",
           "GetDedicatedIpPool"
+        ],
+        [
+          "sesv2",
+          "GetDedicatedIps"
         ]
       ]
     ],
     [
       "data_source",
-      "aws_workspaces_bundle",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_workspaces_directory",
       "read",
-      []
+      [
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_workspaces_workspace",
       "read",
-      []
+      [
+        [
+          "workspaces",
+          "DescribeWorkspaces"
+        ]
+      ]
     ],
     [
       "resource",
@@ -99,6 +132,10 @@
         [
           "workspaces",
           "AssociateIpGroups"
+        ],
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
         ],
         [
           "workspaces",
@@ -125,17 +162,15 @@
     [
       "resource",
       "aws_workspaces_directory",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_directory",
       "update",
       [
         [
           "workspaces",
           "AssociateIpGroups"
+        ],
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
         ],
         [
           "workspaces",
@@ -156,45 +191,6 @@
         [
           "workspaces",
           "ModifyWorkspaceCreationProperties"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "create",
-      [
-        [
-          "workspaces",
-          "CreateWorkspaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "delete",
-      [
-        [
-          "workspaces",
-          "TerminateWorkspaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "update",
-      [
-        [
-          "workspaces",
-          "ModifyWorkspaceProperties"
         ]
       ]
     ]

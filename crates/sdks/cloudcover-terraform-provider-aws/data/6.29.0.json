@@ -58,6 +58,10 @@
         [
           "organizations",
           "DescribeOrganization"
+        ],
+        [
+          "organizations",
+          "ListParents"
         ]
       ]
     ],
@@ -65,7 +69,12 @@
       "data_source",
       "aws_resourcegroupstaggingapi_required_tags",
       "read",
-      []
+      [
+        [
+          "resourcegroupstaggingapi",
+          "ListRequiredTags"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -93,13 +102,23 @@
       "data_source",
       "aws_s3control_access_points",
       "read",
-      []
+      [
+        [
+          "s3control",
+          "ListAccessPoints"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_s3control_multi_region_access_points",
       "read",
-      []
+      [
+        [
+          "s3control",
+          "ListMultiRegionAccessPoints"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -127,61 +146,195 @@
       "list_resource",
       "aws_appflow_connector_profile",
       "list",
-      []
+      [
+        [
+          "appflow",
+          "DescribeConnectorProfiles"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_appflow_flow",
       "list",
-      []
+      [
+        [
+          "appflow",
+          "DescribeFlow"
+        ],
+        [
+          "appflow",
+          "ListFlows"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cleanrooms_collaboration",
       "list",
-      []
+      [
+        [
+          "cleanrooms",
+          "GetCollaboration"
+        ],
+        [
+          "cleanrooms",
+          "ListCollaborations"
+        ],
+        [
+          "cleanrooms",
+          "ListMembers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cleanrooms_configured_table",
       "list",
-      []
+      [
+        [
+          "cleanrooms",
+          "GetConfiguredTable"
+        ],
+        [
+          "cleanrooms",
+          "ListConfiguredTables"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudfront_key_value_store",
       "list",
-      []
+      [
+        [
+          "cloudfront",
+          "DescribeKeyValueStore"
+        ],
+        [
+          "cloudfront",
+          "ListKeyValueStores"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_opensearchserverless_collection",
       "list",
-      []
+      [
+        [
+          "opensearchserverless",
+          "BatchGetCollection"
+        ],
+        [
+          "opensearchserverless",
+          "ListCollections"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_route53_record",
       "list",
-      []
+      [
+        [
+          "route53",
+          "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketAcl"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_object",
       "list",
-      []
+      [
+        [
+          "s3",
+          "HeadObject"
+        ],
+        [
+          "s3",
+          "ListObjectsV2"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_security_group",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -235,6 +388,14 @@
         [
           "arcregionswitch",
           "CreatePlan"
+        ],
+        [
+          "arcregionswitch",
+          "GetPlan"
+        ],
+        [
+          "arcregionswitch",
+          "ListRoute53HealthChecks"
         ]
       ]
     ],
@@ -246,6 +407,10 @@
         [
           "arcregionswitch",
           "DeletePlan"
+        ],
+        [
+          "arcregionswitch",
+          "GetPlan"
         ]
       ]
     ],
@@ -295,6 +460,10 @@
         [
           "cloudfront",
           "CreateAnycastIpList"
+        ],
+        [
+          "cloudfront",
+          "GetAnycastIpList"
         ]
       ]
     ],
@@ -356,7 +525,12 @@
       "resource",
       "aws_notifications_managed_notification_account_contact_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListManagedNotificationChannelAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -390,7 +564,12 @@
       "resource",
       "aws_notifications_managed_notification_additional_channel_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListManagedNotificationChannelAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -424,7 +603,12 @@
       "resource",
       "aws_notifications_organizational_unit_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListOrganizationalUnits"
+        ]
+      ]
     ],
     [
       "resource",
@@ -444,6 +628,10 @@
         [
           "notifications",
           "EnableNotificationsAccessForOrganization"
+        ],
+        [
+          "notifications",
+          "GetNotificationsAccessForOrganization"
         ]
       ]
     ],
@@ -455,6 +643,10 @@
         [
           "notifications",
           "DisableNotificationsAccessForOrganization"
+        ],
+        [
+          "notifications",
+          "GetNotificationsAccessForOrganization"
         ]
       ]
     ],
@@ -481,6 +673,10 @@
         [
           "notifications",
           "EnableNotificationsAccessForOrganization"
+        ],
+        [
+          "notifications",
+          "GetNotificationsAccessForOrganization"
         ]
       ]
     ],
@@ -492,6 +688,10 @@
         [
           "opensearch",
           "CreateApplication"
+        ],
+        [
+          "opensearch",
+          "GetApplication"
         ]
       ]
     ],
@@ -503,6 +703,10 @@
         [
           "opensearch",
           "DeleteApplication"
+        ],
+        [
+          "opensearch",
+          "GetApplication"
         ]
       ]
     ],
@@ -522,6 +726,10 @@
       "aws_opensearch_application",
       "update",
       [
+        [
+          "opensearch",
+          "GetApplication"
+        ],
         [
           "opensearch",
           "UpdateApplication"
@@ -547,6 +755,10 @@
         [
           "ram",
           "DeletePermission"
+        ],
+        [
+          "ram",
+          "GetPermission"
         ]
       ]
     ],
@@ -573,6 +785,10 @@
         [
           "ram",
           "DeletePermissionVersion"
+        ],
+        [
+          "ram",
+          "ListPermissionVersions"
         ]
       ]
     ],
@@ -588,6 +804,14 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
+        ],
+        [
+          "ram",
+          "GetResourceShares"
         ]
       ]
     ],
@@ -599,6 +823,10 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
         ]
       ]
     ],
@@ -606,7 +834,16 @@
       "resource",
       "aws_ram_resource_share_associations_exclusive",
       "read",
-      []
+      [
+        [
+          "ram",
+          "GetResourceShareAssociations"
+        ],
+        [
+          "ram",
+          "GetResourceShares"
+        ]
+      ]
     ],
     [
       "resource",
@@ -620,6 +857,29 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_sagemaker_endpoint",
+      "create",
+      [
+        [
+          "sagemaker",
+          "CreateEndpoint"
+        ],
+        [
+          "sagemaker",
+          "DeleteEndpoint"
+        ],
+        [
+          "sagemaker",
+          "DescribeEndpoint"
         ]
       ]
     ],
@@ -631,6 +891,10 @@
         [
           "sagemaker",
           "CreateLabelingJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeLabelingJob"
         ]
       ]
     ],
@@ -681,6 +945,10 @@
         [
           "sagemaker",
           "DeleteModelCard"
+        ],
+        [
+          "sagemaker",
+          "DescribeModelCard"
         ]
       ]
     ],
@@ -714,6 +982,10 @@
         [
           "sagemaker",
           "CreateModelCardExportJob"
+        ],
+        [
+          "sagemaker",
+          "DescribeModelCardExportJob"
         ]
       ]
     ],
@@ -748,6 +1020,10 @@
         [
           "savingsplans",
           "CreateSavingsPlan"
+        ],
+        [
+          "savingsplans",
+          "DescribeSavingsPlans"
         ]
       ]
     ],
@@ -759,6 +1035,10 @@
         [
           "savingsplans",
           "DeleteQueuedSavingsPlan"
+        ],
+        [
+          "savingsplans",
+          "DescribeSavingsPlans"
         ]
       ]
     ],
@@ -805,13 +1085,68 @@
       "resource",
       "aws_sesv2_tenant_resource_association",
       "read",
-      []
+      [
+        [
+          "sesv2",
+          "ListTenantResources"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_sesv2_tenant_resource_association",
       "update",
       []
+    ],
+    [
+      "resource",
+      "aws_vpc_ipam_pool",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateIpamPool"
+        ],
+        [
+          "ec2",
+          "DescribeIpamPools"
+        ],
+        [
+          "ec2",
+          "DescribeIpamScopes"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetIpamResourceCidrs"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_ipam_pool_cidr",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeprovisionIpamPoolCidr"
+        ],
+        [
+          "ec2",
+          "DescribeIpamPools"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolCidrs"
+        ]
+      ]
     ],
     [
       "resource",
@@ -824,6 +1159,10 @@
         ],
         [
           "ec2",
+          "DescribeIpamResourceDiscoveries"
+        ],
+        [
+          "ec2",
           "ModifyIpamResourceDiscovery"
         ]
       ]
@@ -833,6 +1172,10 @@
       "aws_vpc_security_group_rules_exclusive",
       "create",
       [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
         [
           "ec2",
           "RevokeSecurityGroupEgress"
@@ -853,13 +1196,26 @@
       "resource",
       "aws_vpc_security_group_rules_exclusive",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_vpc_security_group_rules_exclusive",
       "update",
       [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
         [
           "ec2",
           "RevokeSecurityGroupEgress"

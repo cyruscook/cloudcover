@@ -4,6 +4,109 @@
   "upsert": [
     [
       "resource",
+      "aws_dx_hosted_connection",
+      "delete",
+      [
+        [
+          "directconnect",
+          "DeleteConnection"
+        ],
+        [
+          "directconnect",
+          "DescribeHostedConnections"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ecs_service",
+      "create",
+      [
+        [
+          "ecs",
+          "CreateService"
+        ],
+        [
+          "ecs",
+          "DescribeServiceDeployments"
+        ],
+        [
+          "ecs",
+          "DescribeServices"
+        ],
+        [
+          "ecs",
+          "ListServiceDeployments"
+        ],
+        [
+          "ecs",
+          "StopServiceDeployment"
+        ],
+        [
+          "ecs",
+          "TagResource"
+        ],
+        [
+          "ecs",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ecs_service",
+      "update",
+      [
+        [
+          "ecs",
+          "DescribeServiceDeployments"
+        ],
+        [
+          "ecs",
+          "DescribeServices"
+        ],
+        [
+          "ecs",
+          "ListServiceDeployments"
+        ],
+        [
+          "ecs",
+          "StopServiceDeployment"
+        ],
+        [
+          "ecs",
+          "UpdateService"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iot_thing_principal_attachment",
+      "create",
+      [
+        [
+          "iot",
+          "AttachThingPrincipal"
+        ],
+        [
+          "iot",
+          "ListThingPrincipalsV2"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iot_thing_principal_attachment",
+      "read",
+      [
+        [
+          "iot",
+          "ListThingPrincipalsV2"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_s3tables_table_bucket",
       "delete",
       [
@@ -18,6 +121,14 @@
         [
           "s3tables",
           "DeleteTableBucket"
+        ],
+        [
+          "s3tables",
+          "ListNamespaces"
+        ],
+        [
+          "s3tables",
+          "ListTables"
         ]
       ]
     ],
@@ -29,6 +140,10 @@
         [
           "timestreaminfluxdb",
           "CreateDbCluster"
+        ],
+        [
+          "timestreaminfluxdb",
+          "GetDbCluster"
         ]
       ]
     ],
@@ -40,6 +155,10 @@
         [
           "timestreaminfluxdb",
           "DeleteDbCluster"
+        ],
+        [
+          "timestreaminfluxdb",
+          "GetDbCluster"
         ]
       ]
     ],
@@ -59,6 +178,10 @@
       "aws_timestreaminfluxdb_db_cluster",
       "update",
       [
+        [
+          "timestreaminfluxdb",
+          "GetDbCluster"
+        ],
         [
           "timestreaminfluxdb",
           "UpdateDbCluster"
@@ -277,6 +400,10 @@
         [
           "workspacesweb",
           "CreatePortal"
+        ],
+        [
+          "workspacesweb",
+          "GetPortal"
         ]
       ]
     ],
@@ -288,6 +415,10 @@
         [
           "workspacesweb",
           "DeletePortal"
+        ],
+        [
+          "workspacesweb",
+          "GetPortal"
         ]
       ]
     ],
@@ -307,6 +438,10 @@
       "aws_workspacesweb_portal",
       "update",
       [
+        [
+          "workspacesweb",
+          "GetPortal"
+        ],
         [
           "workspacesweb",
           "UpdatePortal"
@@ -416,6 +551,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ]
       ]
     ],
@@ -442,6 +581,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ]
       ]
     ],
@@ -457,6 +600,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ],
         [
           "workspacesweb",

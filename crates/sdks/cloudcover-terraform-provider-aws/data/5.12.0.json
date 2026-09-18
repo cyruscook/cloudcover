@@ -21,10 +21,6 @@
         [
           "ec2",
           "SearchTransitGatewayRoutes"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -41,23 +37,16 @@
     ],
     [
       "data_source",
-      "aws_rds_cluster",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_vpclattice_service",
       "read",
       [
         [
           "vpclattice",
           "GetService"
+        ],
+        [
+          "vpclattice",
+          "ListServices"
         ],
         [
           "vpclattice",
@@ -223,21 +212,6 @@
     ],
     [
       "resource",
-      "aws_fms_admin_account",
-      "delete",
-      [
-        [
-          "fms",
-          "DisassociateAdminAccount"
-        ],
-        [
-          "fms",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_msk_cluster",
       "create",
       [
@@ -251,15 +225,19 @@
         ],
         [
           "kafka",
+          "DescribeClusterOperation"
+        ],
+        [
+          "kafka",
+          "DescribeClusterV2"
+        ],
+        [
+          "kafka",
           "GetBootstrapBrokers"
         ],
         [
           "kafka",
           "UpdateConnectivity"
-        ],
-        [
-          "kafka",
-          "new"
         ]
       ]
     ],
@@ -286,6 +264,10 @@
         [
           "kafka",
           "DeleteVpcConnection"
+        ],
+        [
+          "kafka",
+          "DescribeVpcConnection"
         ]
       ]
     ],
@@ -308,130 +290,6 @@
         [
           "kafka",
           "DescribeVpcConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "DescribeGlobalClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_activity_stream",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_instance",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_instance",
-      "update",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "DescribeDBInstances"
-        ],
-        [
-          "rds",
-          "ModifyDBInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_role_association",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
-        ],
-        [
-          "s3",
-          "PutBucketEncryption"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_server_side_encryption_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketEncryption"
-        ],
-        [
-          "s3",
-          "PutBucketEncryption"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ]

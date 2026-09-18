@@ -14,10 +14,6 @@
         [
           "codestarnotifications",
           "DescribeNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "new"
         ]
       ]
     ],
@@ -33,10 +29,6 @@
         [
           "codestarnotifications",
           "DeleteTarget"
-        ],
-        [
-          "codestarnotifications",
-          "new"
         ]
       ]
     ],
@@ -48,10 +40,6 @@
         [
           "codestarnotifications",
           "DescribeNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "new"
         ]
       ]
     ],
@@ -79,10 +67,6 @@
         [
           "codestarnotifications",
           "UpdateNotificationRule"
-        ],
-        [
-          "codestarnotifications",
-          "new"
         ]
       ]
     ],
@@ -106,10 +90,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -125,10 +105,6 @@
         [
           "gamelift",
           "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -164,10 +140,6 @@
         [
           "gamelift",
           "UpdateRuntimeConfiguration"
-        ],
-        [
-          "gamelift",
-          "new"
         ]
       ]
     ],
@@ -219,10 +191,6 @@
         [
           "neptune",
           "SetEnableLogTypes"
-        ],
-        [
-          "neptune",
-          "new"
         ]
       ]
     ],
@@ -266,10 +234,165 @@
         [
           "neptune",
           "SetEnableLogTypes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "create",
+      [
+        [
+          "s3",
+          "CreateBucket"
         ],
         [
-          "neptune",
-          "new"
+          "s3",
+          "DeleteBucketCors"
+        ],
+        [
+          "s3",
+          "DeleteBucketEncryption"
+        ],
+        [
+          "s3",
+          "DeleteBucketLifecycle"
+        ],
+        [
+          "s3",
+          "DeleteBucketPolicy"
+        ],
+        [
+          "s3",
+          "DeleteBucketReplication"
+        ],
+        [
+          "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
+          "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLocation"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "PutBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketAcl"
+        ],
+        [
+          "s3",
+          "PutBucketCors"
+        ],
+        [
+          "s3",
+          "PutBucketEncryption"
+        ],
+        [
+          "s3",
+          "PutBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketLogging"
+        ],
+        [
+          "s3",
+          "PutBucketPolicy"
+        ],
+        [
+          "s3",
+          "PutBucketReplication"
+        ],
+        [
+          "s3",
+          "PutBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
+          "PutBucketVersioning"
+        ],
+        [
+          "s3",
+          "PutBucketWebsite"
+        ],
+        [
+          "s3",
+          "PutObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "SetAnd"
+        ],
+        [
+          "s3",
+          "SetFilter"
+        ],
+        [
+          "s3",
+          "SetPrefix"
+        ],
+        [
+          "s3",
+          "SetTags"
         ]
       ]
     ],
@@ -329,10 +452,161 @@
         [
           "s3",
           "HeadBucket"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "update",
+      [
+        [
+          "s3",
+          "DeleteBucketCors"
         ],
         [
           "s3",
-          "new"
+          "DeleteBucketEncryption"
+        ],
+        [
+          "s3",
+          "DeleteBucketLifecycle"
+        ],
+        [
+          "s3",
+          "DeleteBucketPolicy"
+        ],
+        [
+          "s3",
+          "DeleteBucketReplication"
+        ],
+        [
+          "s3",
+          "DeleteBucketTagging"
+        ],
+        [
+          "s3",
+          "DeleteBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketCors"
+        ],
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "GetBucketLocation"
+        ],
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "GetBucketPolicy"
+        ],
+        [
+          "s3",
+          "GetBucketReplication"
+        ],
+        [
+          "s3",
+          "GetBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "GetBucketVersioning"
+        ],
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "GetObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "PutBucketAccelerateConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketAcl"
+        ],
+        [
+          "s3",
+          "PutBucketCors"
+        ],
+        [
+          "s3",
+          "PutBucketEncryption"
+        ],
+        [
+          "s3",
+          "PutBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "PutBucketLogging"
+        ],
+        [
+          "s3",
+          "PutBucketPolicy"
+        ],
+        [
+          "s3",
+          "PutBucketReplication"
+        ],
+        [
+          "s3",
+          "PutBucketRequestPayment"
+        ],
+        [
+          "s3",
+          "PutBucketTagging"
+        ],
+        [
+          "s3",
+          "PutBucketVersioning"
+        ],
+        [
+          "s3",
+          "PutBucketWebsite"
+        ],
+        [
+          "s3",
+          "PutObjectLockConfiguration"
+        ],
+        [
+          "s3",
+          "SetAnd"
+        ],
+        [
+          "s3",
+          "SetFilter"
+        ],
+        [
+          "s3",
+          "SetPrefix"
+        ],
+        [
+          "s3",
+          "SetTags"
         ]
       ]
     ],
@@ -348,10 +622,6 @@
         [
           "s3",
           "PutBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -367,10 +637,6 @@
         [
           "s3",
           "GetBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -382,10 +648,6 @@
         [
           "s3",
           "GetBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -401,10 +663,6 @@
         [
           "s3",
           "PutBucketAnalyticsConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -418,20 +676,12 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
         ],
         [
           "s3",
           "PutObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -445,16 +695,8 @@
           "DescribeKey"
         ],
         [
-          "kms",
-          "new"
-        ],
-        [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -466,10 +708,6 @@
         [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ],
         [
           "s3",
@@ -498,10 +736,6 @@
         [
           "s3",
           "PutObjectTagging"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ]

@@ -4,35 +4,12 @@
   "upsert": [
     [
       "data_source",
-      "aws_launch_configuration",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_redshift_cluster_credentials",
       "read",
       [
         [
           "redshift",
           "GetClusterCredentials"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -48,10 +25,6 @@
         [
           "acmpca",
           "PutPolicy"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -63,10 +36,6 @@
         [
           "acmpca",
           "DeletePolicy"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -78,10 +47,6 @@
         [
           "acmpca",
           "GetPolicy"
-        ],
-        [
-          "acmpca",
-          "new"
         ]
       ]
     ],
@@ -97,33 +62,6 @@
         [
           "acmpca",
           "PutPolicy"
-        ],
-        [
-          "acmpca",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_launch_configuration",
-      "create",
-      [
-        [
-          "autoscaling",
-          "CreateLaunchConfiguration"
-        ],
-        [
-          "autoscaling",
-          "DescribeLaunchConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -143,10 +81,6 @@
         [
           "ram",
           "ListResourceSharePermissions"
-        ],
-        [
-          "ram",
-          "new"
         ]
       ]
     ],
@@ -162,10 +96,6 @@
         [
           "ram",
           "ListResourceSharePermissions"
-        ],
-        [
-          "ram",
-          "new"
         ]
       ]
     ],
@@ -193,10 +123,6 @@
         [
           "ram",
           "UpdateResourceShare"
-        ],
-        [
-          "ram",
-          "new"
         ]
       ]
     ],
@@ -212,10 +138,6 @@
         [
           "redshift",
           "ModifyClusterIamRoles"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -226,11 +148,11 @@
       [
         [
           "redshift",
-          "ModifyClusterIamRoles"
+          "DescribeClusters"
         ],
         [
           "redshift",
-          "new"
+          "ModifyClusterIamRoles"
         ]
       ]
     ],
@@ -257,10 +179,6 @@
         [
           "redshift",
           "ModifyClusterIamRoles"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -276,10 +194,6 @@
         [
           "redshift",
           "DescribeHsmConfigurations"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -291,10 +205,6 @@
         [
           "redshift",
           "DeleteHsmConfiguration"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -306,10 +216,6 @@
         [
           "redshift",
           "DescribeHsmConfigurations"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -329,10 +235,6 @@
         [
           "redshift",
           "DescribeHsmConfigurations"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -348,10 +250,6 @@
         [
           "redshiftdataapiservice",
           "ExecuteStatement"
-        ],
-        [
-          "redshiftdataapiservice",
-          "new"
         ]
       ]
     ],
@@ -369,10 +267,6 @@
         [
           "redshiftdataapiservice",
           "DescribeStatement"
-        ],
-        [
-          "redshiftdataapiservice",
-          "new"
         ]
       ]
     ]

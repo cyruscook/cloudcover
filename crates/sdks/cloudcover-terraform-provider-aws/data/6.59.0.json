@@ -4,15 +4,14 @@
   "upsert": [
     [
       "data_source",
-      "aws_datazone_environment_blueprint",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_rds_snapshots",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeDBSnapshots"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -59,6 +58,10 @@
         [
           "vpclattice",
           "GetServiceNetwork"
+        ],
+        [
+          "vpclattice",
+          "ListServiceNetworkServiceAssociations"
         ]
       ]
     ],
@@ -66,73 +69,188 @@
       "list_resource",
       "aws_backup_plan",
       "list",
-      []
+      [
+        [
+          "backup",
+          "GetBackupPlan"
+        ],
+        [
+          "backup",
+          "ListBackupPlans"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_backup_selection",
       "list",
-      []
+      [
+        [
+          "backup",
+          "GetBackupSelection"
+        ],
+        [
+          "backup",
+          "ListBackupPlans"
+        ],
+        [
+          "backup",
+          "ListBackupSelections"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_backup_vault",
       "list",
-      []
+      [
+        [
+          "backup",
+          "DescribeBackupVault"
+        ],
+        [
+          "backup",
+          "ListBackupVaults"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_bedrockagentcore_gateway_rule",
       "list",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "ListGatewayRules"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_bedrockagentcore_harness",
+      "list",
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "ListHarnesses"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_mailmanager_ingress_point",
       "list",
-      []
+      [
+        [
+          "mailmanager",
+          "GetIngressPoint"
+        ],
+        [
+          "mailmanager",
+          "ListIngressPoints"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_neptunegraph_private_graph_endpoint",
       "list",
-      []
+      [
+        [
+          "neptunegraph",
+          "ListPrivateGraphEndpoints"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_networkfirewall_container_association",
       "list",
-      []
+      [
+        [
+          "networkfirewall",
+          "DescribeContainerAssociation"
+        ],
+        [
+          "networkfirewall",
+          "ListContainerAssociations"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_pinpointsmsvoicev2_resource_policy",
       "list",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "GetResourcePolicy"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_pinpointsmsvoicev2_sender_id",
       "list",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeSenderIds"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_service",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "GetService"
+        ],
+        [
+          "resiliencehubv2",
+          "ListServices"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_system",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "GetSystem"
+        ],
+        [
+          "resiliencehubv2",
+          "ListSystems"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ssm_patch_baseline",
       "list",
-      []
+      [
+        [
+          "ssm",
+          "DescribePatchBaselines"
+        ],
+        [
+          "ssm",
+          "GetPatchBaseline"
+        ]
+      ]
     ],
     [
       "resource",
@@ -142,6 +260,10 @@
         [
           "bedrockagentcorecontrol",
           "CreateGatewayRule"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetGatewayRule"
         ]
       ]
     ],
@@ -153,6 +275,10 @@
         [
           "bedrockagentcorecontrol",
           "DeleteGatewayRule"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetGatewayRule"
         ]
       ]
     ],
@@ -174,6 +300,10 @@
       [
         [
           "bedrockagentcorecontrol",
+          "GetGatewayRule"
+        ],
+        [
+          "bedrockagentcorecontrol",
           "UpdateGatewayRule"
         ]
       ]
@@ -186,6 +316,10 @@
         [
           "bedrockagentcorecontrol",
           "CreateHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetHarness"
         ],
         [
           "bedrockagentcorecontrol",
@@ -215,6 +349,10 @@
       [
         [
           "bedrockagentcorecontrol",
+          "GetHarness"
+        ],
+        [
+          "bedrockagentcorecontrol",
           "GetMemory"
         ],
         [
@@ -231,6 +369,10 @@
         [
           "mailmanager",
           "CreateIngressPoint"
+        ],
+        [
+          "mailmanager",
+          "GetIngressPoint"
         ]
       ]
     ],
@@ -242,6 +384,10 @@
         [
           "mailmanager",
           "DeleteIngressPoint"
+        ],
+        [
+          "mailmanager",
+          "GetIngressPoint"
         ]
       ]
     ],
@@ -261,6 +407,10 @@
       "aws_mailmanager_ingress_point",
       "update",
       [
+        [
+          "mailmanager",
+          "GetIngressPoint"
+        ],
         [
           "mailmanager",
           "UpdateIngressPoint"
@@ -290,6 +440,10 @@
         [
           "neptunegraph",
           "DeletePrivateGraphEndpoint"
+        ],
+        [
+          "neptunegraph",
+          "GetPrivateGraphEndpoint"
         ]
       ]
     ],
@@ -318,6 +472,10 @@
         [
           "networkfirewall",
           "CreateContainerAssociation"
+        ],
+        [
+          "networkfirewall",
+          "DescribeContainerAssociation"
         ]
       ]
     ],
@@ -329,6 +487,10 @@
         [
           "networkfirewall",
           "DeleteContainerAssociation"
+        ],
+        [
+          "networkfirewall",
+          "DescribeContainerAssociation"
         ]
       ]
     ],
@@ -350,6 +512,10 @@
       [
         [
           "networkfirewall",
+          "DescribeContainerAssociation"
+        ],
+        [
+          "networkfirewall",
           "UpdateContainerAssociation"
         ]
       ]
@@ -359,6 +525,10 @@
       "aws_pinpointsmsvoicev2_resource_policy",
       "create",
       [
+        [
+          "pinpointsmsvoicev2",
+          "GetResourcePolicy"
+        ],
         [
           "pinpointsmsvoicev2",
           "PutResourcePolicy"
@@ -373,6 +543,10 @@
         [
           "pinpointsmsvoicev2",
           "DeleteResourcePolicy"
+        ],
+        [
+          "pinpointsmsvoicev2",
+          "GetResourcePolicy"
         ]
       ]
     ],
@@ -392,6 +566,10 @@
       "aws_pinpointsmsvoicev2_resource_policy",
       "update",
       [
+        [
+          "pinpointsmsvoicev2",
+          "GetResourcePolicy"
+        ],
         [
           "pinpointsmsvoicev2",
           "PutResourcePolicy"
@@ -424,7 +602,12 @@
       "resource",
       "aws_pinpointsmsvoicev2_sender_id",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeSenderIds"
+        ]
+      ]
     ],
     [
       "resource",

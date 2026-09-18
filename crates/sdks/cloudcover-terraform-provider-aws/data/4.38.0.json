@@ -10,21 +10,6 @@
         [
           "connect",
           "DescribeInstanceStorageConfig"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pool",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeIpamPools"
         ]
       ]
     ],
@@ -40,10 +25,6 @@
         [
           "apprunner",
           "DescribeVpcIngressConnection"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -59,10 +40,6 @@
         [
           "apprunner",
           "DescribeVpcIngressConnection"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -74,10 +51,6 @@
         [
           "apprunner",
           "DescribeVpcIngressConnection"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -89,10 +62,6 @@
         [
           "apprunner",
           "DescribeVpcIngressConnection"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -112,10 +81,6 @@
         [
           "connect",
           "SearchAvailablePhoneNumbers"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -131,10 +96,6 @@
         [
           "connect",
           "ReleasePhoneNumber"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -146,10 +107,6 @@
         [
           "connect",
           "DescribePhoneNumber"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -165,43 +122,6 @@
         [
           "connect",
           "UpdatePhoneNumber"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeCarrierGateways"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeCarrierGateways"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_filter",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTrafficMirrorFilters"
         ]
       ]
     ],
@@ -217,21 +137,6 @@
         [
           "ec2",
           "ModifyTrafficMirrorFilterRule"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_session",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeTrafficMirrorSessions"
         ]
       ]
     ],
@@ -247,10 +152,6 @@
         [
           "ec2",
           "ModifyTrafficMirrorSession"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -266,10 +167,6 @@
         [
           "cloudwatchevidently",
           "GetSegment"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -281,10 +178,6 @@
         [
           "cloudwatchevidently",
           "DeleteSegment"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -296,10 +189,6 @@
         [
           "cloudwatchevidently",
           "GetSegment"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -311,10 +200,6 @@
         [
           "cloudwatchevidently",
           "GetSegment"
-        ],
-        [
-          "cloudwatchevidently",
-          "new"
         ]
       ]
     ],
@@ -334,10 +219,6 @@
         [
           "fsx",
           "DescribeFileCaches"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -352,7 +233,7 @@
         ],
         [
           "fsx",
-          "new"
+          "DescribeFileCaches"
         ]
       ]
     ],
@@ -387,10 +268,6 @@
         [
           "fsx",
           "UpdateFileCache"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -410,10 +287,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -429,10 +302,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -444,10 +313,6 @@
         [
           "lightsail",
           "GetDisk"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -459,10 +324,6 @@
         [
           "lightsail",
           "GetDisk"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -482,10 +343,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -513,10 +370,6 @@
         [
           "lightsail",
           "StopInstance"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -528,10 +381,6 @@
         [
           "lightsail",
           "GetDisk"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -551,10 +400,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -570,10 +415,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -585,10 +426,6 @@
         [
           "lightsail",
           "GetLoadBalancer"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -608,10 +445,6 @@
         [
           "lightsail",
           "UpdateLoadBalancerAttribute"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -631,10 +464,6 @@
         [
           "sagemaker",
           "GetSagemakerServicecatalogPortfolioStatus"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -652,10 +481,6 @@
         [
           "sagemaker",
           "GetSagemakerServicecatalogPortfolioStatus"
-        ],
-        [
-          "sagemaker",
-          "new"
         ]
       ]
     ],
@@ -675,10 +500,21 @@
         [
           "sagemaker",
           "GetSagemakerServicecatalogPortfolioStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_sagemaker_workforce",
+      "delete",
+      [
+        [
+          "sagemaker",
+          "DeleteWorkforce"
         ],
         [
           "sagemaker",
-          "new"
+          "DescribeWorkforce"
         ]
       ]
     ],
@@ -760,6 +596,10 @@
       [
         [
           "ssm",
+          "DescribePatchBaselines"
+        ],
+        [
+          "ssm",
           "RegisterDefaultPatchBaseline"
         ]
       ]
@@ -786,44 +626,26 @@
         ],
         [
           "ssm",
-          "RegisterDefaultPatchBaseline"
+          "DescribePatchBaselines"
         ],
         [
           "ssm",
-          "new"
+          "RegisterDefaultPatchBaseline"
         ]
       ]
     ],
     [
       "resource",
       "aws_vpc_ipam",
-      "read",
+      "update",
       [
         [
           "ec2",
           "DescribeIpams"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool",
-      "read",
-      [
+        ],
         [
           "ec2",
-          "DescribeIpamPools"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr_allocation",
-      "read",
-      [
-        [
-          "ec2",
-          "GetIpamPoolAllocations"
+          "ModifyIpam"
         ]
       ]
     ]

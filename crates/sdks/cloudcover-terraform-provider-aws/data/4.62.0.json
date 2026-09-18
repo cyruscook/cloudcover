@@ -54,7 +54,12 @@
       "data_source",
       "aws_oam_links",
       "read",
-      []
+      [
+        [
+          "oam",
+          "ListLinks"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -68,10 +73,6 @@
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -102,10 +103,6 @@
         [
           "appstream",
           "StartFleet"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -117,10 +114,6 @@
         [
           "appstream",
           "DescribeFleets"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -144,10 +137,6 @@
         [
           "appstream",
           "UpdateFleet"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -163,10 +152,6 @@
         [
           "appstream",
           "DescribeStacks"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -178,10 +163,6 @@
         [
           "appstream",
           "DescribeStacks"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -197,10 +178,6 @@
         [
           "appstream",
           "UpdateStack"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -212,10 +189,6 @@
         [
           "batch",
           "DescribeJobDefinitions"
-        ],
-        [
-          "batch",
-          "new"
         ]
       ]
     ],
@@ -227,10 +200,6 @@
         [
           "codestarconnections",
           "GetConnection"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -250,6 +219,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -280,6 +253,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -299,6 +276,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -329,6 +310,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -344,10 +329,6 @@
         [
           "datasync",
           "DescribeLocationSmb"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -359,10 +340,6 @@
         [
           "datasync",
           "DescribeLocationSmb"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -378,10 +355,6 @@
         [
           "datasync",
           "UpdateLocationSmb"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -393,10 +366,6 @@
         [
           "rds",
           "DescribeDBClusterSnapshots"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -508,6 +477,10 @@
         ],
         [
           "lambda",
+          "ListVersionsByFunction"
+        ],
+        [
+          "lambda",
           "PublishVersion"
         ],
         [
@@ -548,10 +521,6 @@
         [
           "lightsail",
           "UpdateDistribution"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -567,10 +536,6 @@
         [
           "lightsail",
           "GetOperation"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -582,10 +547,6 @@
         [
           "lightsail",
           "GetDistributions"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -613,10 +574,6 @@
         [
           "lightsail",
           "UpdateDistributionBundle"
-        ],
-        [
-          "lightsail",
-          "new"
         ]
       ]
     ],
@@ -898,10 +855,6 @@
         [
           "quicksight",
           "DescribeAccountSubscription"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -916,7 +869,7 @@
         ],
         [
           "quicksight",
-          "new"
+          "DescribeAccountSubscription"
         ]
       ]
     ],
@@ -928,10 +881,6 @@
         [
           "quicksight",
           "DescribeAccountSubscription"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -951,10 +900,6 @@
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -966,10 +911,6 @@
         [
           "quicksight",
           "DeleteDataSet"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -985,10 +926,6 @@
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1012,10 +949,6 @@
         [
           "quicksight",
           "UpdateDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1035,10 +968,6 @@
         [
           "quicksight",
           "DescribeFolderPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1050,10 +979,6 @@
         [
           "quicksight",
           "DeleteFolder"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1069,10 +994,6 @@
         [
           "quicksight",
           "DescribeFolderPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1096,10 +1017,6 @@
         [
           "quicksight",
           "UpdateFolderPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -1115,10 +1032,6 @@
         [
           "redshift",
           "ModifyEventSubscription"
-        ],
-        [
-          "redshift",
-          "new"
         ]
       ]
     ],
@@ -1635,6 +1548,10 @@
         [
           "vpclattice",
           "DeleteService"
+        ],
+        [
+          "vpclattice",
+          "GetService"
         ]
       ]
     ],

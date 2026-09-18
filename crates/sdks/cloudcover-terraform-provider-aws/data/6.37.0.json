@@ -6,31 +6,124 @@
       "list_resource",
       "aws_ec2_transit_gateway_metering_policy",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeTransitGatewayMeteringPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_user",
       "list",
-      []
+      [
+        [
+          "iam",
+          "ListUsers"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_lifecycle_configuration",
+      "list",
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_ownership_controls",
       "list",
-      []
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_policy",
+      "list",
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_server_side_encryption_configuration",
+      "list",
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_s3_bucket_versioning",
+      "list",
+      [
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_wafv2_web_acl_rule",
       "list",
-      []
+      [
+        [
+          "wafv2",
+          "GetWebACL"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_workmail_organization",
       "list",
-      []
+      [
+        [
+          "workmail",
+          "DescribeOrganization"
+        ],
+        [
+          "workmail",
+          "ListOrganizations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -40,6 +133,10 @@
         [
           "ec2",
           "CreateTransitGatewayMeteringPolicy"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayMeteringPolicies"
         ]
       ]
     ],
@@ -51,6 +148,10 @@
         [
           "ec2",
           "DeleteTransitGatewayMeteringPolicy"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayMeteringPolicies"
         ]
       ]
     ],
@@ -58,13 +159,22 @@
       "resource",
       "aws_ec2_transit_gateway_metering_policy",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeTransitGatewayMeteringPolicies"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_metering_policy",
       "update",
       [
+        [
+          "ec2",
+          "DescribeTransitGatewayMeteringPolicies"
+        ],
         [
           "ec2",
           "ModifyTransitGatewayMeteringPolicy"
@@ -174,6 +284,10 @@
         [
           "workmail",
           "CreateOrganization"
+        ],
+        [
+          "workmail",
+          "DescribeOrganization"
         ]
       ]
     ],
@@ -185,6 +299,10 @@
         [
           "workmail",
           "DeleteOrganization"
+        ],
+        [
+          "workmail",
+          "DescribeOrganization"
         ]
       ]
     ],

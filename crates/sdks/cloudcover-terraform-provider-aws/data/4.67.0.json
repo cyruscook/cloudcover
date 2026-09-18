@@ -17,6 +17,10 @@
         ],
         [
           "acm",
+          "ListCertificates"
+        ],
+        [
+          "acm",
           "ListTagsForCertificate"
         ]
       ]
@@ -33,10 +37,6 @@
         [
           "connect",
           "ListUsers"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -52,25 +52,6 @@
         [
           "connect",
           "SearchVocabularies"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_iam_policy",
-      "read",
-      [
-        [
-          "iam",
-          "GetPolicy"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -82,10 +63,6 @@
         [
           "organizations",
           "DescribePolicy"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -97,188 +74,6 @@
         [
           "redshiftserverless",
           "GetNamespace"
-        ],
-        [
-          "redshiftserverless",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "create",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "RequestCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "read",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "update",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "RenewCertificate"
-        ],
-        [
-          "acm",
-          "UpdateCertificateOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate_validation",
-      "create",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate_validation",
-      "read",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_policy",
-      "create",
-      [
-        [
-          "iam",
-          "CreatePolicy"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_policy",
-      "update",
-      [
-        [
-          "iam",
-          "CreatePolicyVersion"
-        ],
-        [
-          "iam",
-          "DeletePolicyVersion"
-        ],
-        [
-          "iam",
-          "ListPolicyVersions"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_service_linked_role",
-      "delete",
-      [
-        [
-          "iam",
-          "DeleteServiceLinkedRole"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_user",
-      "create",
-      [
-        [
-          "iam",
-          "CreateUser"
-        ],
-        [
-          "iam",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_user",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_user",
-      "update",
-      [
-        [
-          "iam",
-          "DeleteUserPermissionsBoundary"
-        ],
-        [
-          "iam",
-          "PutUserPermissionsBoundary"
-        ],
-        [
-          "iam",
-          "UpdateUser"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -306,10 +101,6 @@
         [
           "quicksight",
           "PutDataSetRefreshProperties"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -329,10 +120,6 @@
         [
           "quicksight",
           "DescribeDataSetRefreshProperties"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -368,10 +155,6 @@
         [
           "quicksight",
           "UpdateDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -395,10 +178,6 @@
         [
           "quicksight",
           "DescribeTemplatePermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -410,10 +189,6 @@
         [
           "quicksight",
           "DeleteTemplate"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -433,10 +208,6 @@
         [
           "quicksight",
           "DescribeTemplatePermissions"
-        ],
-        [
-          "quicksight",
-          "new"
         ]
       ]
     ],
@@ -464,142 +235,6 @@
         [
           "quicksight",
           "UpdateTemplatePermissions"
-        ],
-        [
-          "quicksight",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_encryption_config",
-      "create",
-      [
-        [
-          "xray",
-          "GetEncryptionConfig"
-        ],
-        [
-          "xray",
-          "PutEncryptionConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_encryption_config",
-      "read",
-      [
-        [
-          "xray",
-          "GetEncryptionConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_encryption_config",
-      "update",
-      [
-        [
-          "xray",
-          "GetEncryptionConfig"
-        ],
-        [
-          "xray",
-          "PutEncryptionConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_group",
-      "create",
-      [
-        [
-          "xray",
-          "CreateGroup"
-        ],
-        [
-          "xray",
-          "GetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_group",
-      "delete",
-      [
-        [
-          "xray",
-          "DeleteGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_group",
-      "read",
-      [
-        [
-          "xray",
-          "GetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_group",
-      "update",
-      [
-        [
-          "xray",
-          "GetGroup"
-        ],
-        [
-          "xray",
-          "UpdateGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_sampling_rule",
-      "create",
-      [
-        [
-          "xray",
-          "CreateSamplingRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_sampling_rule",
-      "delete",
-      [
-        [
-          "xray",
-          "DeleteSamplingRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_xray_sampling_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_xray_sampling_rule",
-      "update",
-      [
-        [
-          "xray",
-          "UpdateSamplingRule"
         ]
       ]
     ]

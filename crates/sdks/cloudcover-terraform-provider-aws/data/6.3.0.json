@@ -13,6 +13,10 @@
         ],
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ]
       ]
@@ -28,6 +32,10 @@
         ],
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ]
       ]
@@ -40,6 +48,10 @@
         [
           "amp",
           "CreateQueryLoggingConfiguration"
+        ],
+        [
+          "amp",
+          "DescribeQueryLoggingConfiguration"
         ]
       ]
     ],
@@ -51,6 +63,10 @@
         [
           "amp",
           "DeleteQueryLoggingConfiguration"
+        ],
+        [
+          "amp",
+          "DescribeQueryLoggingConfiguration"
         ]
       ]
     ],
@@ -70,6 +86,10 @@
       "aws_prometheus_query_logging_configuration",
       "update",
       [
+        [
+          "amp",
+          "DescribeQueryLoggingConfiguration"
+        ],
         [
           "amp",
           "UpdateQueryLoggingConfiguration"

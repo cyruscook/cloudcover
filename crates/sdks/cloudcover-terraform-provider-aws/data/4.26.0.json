@@ -21,10 +21,6 @@
         [
           "networkfirewall",
           "DescribeFirewall"
-        ],
-        [
-          "networkfirewall",
-          "new"
         ]
       ]
     ],
@@ -36,21 +32,6 @@
         [
           "prometheusservice",
           "DescribeWorkspace"
-        ],
-        [
-          "prometheusservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_attachment",
-      "read",
-      [
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
         ]
       ]
     ],
@@ -66,6 +47,10 @@
         [
           "autoscaling",
           "DescribeAutoScalingGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeScalingActivities"
         ],
         [
           "autoscaling",
@@ -88,8 +73,12 @@
           "UpdateAutoScalingGroup"
         ],
         [
-          "autoscaling",
-          "new"
+          "elb",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elbv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
@@ -108,11 +97,35 @@
         ],
         [
           "autoscaling",
+          "CancelInstanceRefresh"
+        ],
+        [
+          "autoscaling",
           "DeleteWarmPool"
         ],
         [
           "autoscaling",
           "DescribeAutoScalingGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeInstanceRefreshes"
+        ],
+        [
+          "autoscaling",
+          "DescribeLoadBalancerTargetGroups"
+        ],
+        [
+          "autoscaling",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
+        [
+          "autoscaling",
+          "DescribeWarmPool"
         ],
         [
           "autoscaling",
@@ -151,8 +164,12 @@
           "UpdateAutoScalingGroup"
         ],
         [
-          "autoscaling",
-          "new"
+          "elb",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elbv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
@@ -171,11 +188,11 @@
         ],
         [
           "backup",
-          "ListRecoveryPointsByBackupVault"
+          "DescribeRecoveryPoint"
         ],
         [
           "backup",
-          "new"
+          "ListRecoveryPointsByBackupVault"
         ]
       ]
     ],
@@ -199,6 +216,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -213,7 +234,27 @@
         ],
         [
           "comprehend",
+          "DescribeEntityRecognizer"
+        ],
+        [
+          "comprehend",
+          "ListEntityRecognizers"
+        ],
+        [
+          "comprehend",
           "StopTrainingEntityRecognizer"
+        ],
+        [
+          "ec2",
+          "DeleteNetworkInterface"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
+        ],
+        [
+          "ec2",
+          "DetachNetworkInterface"
         ]
       ]
     ],
@@ -260,6 +301,10 @@
         [
           "ec2",
           "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -275,10 +320,6 @@
         [
           "connect",
           "DescribeInstanceStorageConfig"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -290,10 +331,6 @@
         [
           "connect",
           "DisassociateInstanceStorageConfig"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -305,10 +342,6 @@
         [
           "connect",
           "DescribeInstanceStorageConfig"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -324,25 +357,6 @@
         [
           "connect",
           "UpdateInstanceStorageConfig"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSubnet"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
         ]
       ]
     ],
@@ -382,21 +396,6 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_directory",
-      "delete",
-      [
-        [
-          "directoryservice",
-          "DeleteDirectory"
         ]
       ]
     ],
@@ -424,10 +423,6 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -443,10 +438,6 @@
         [
           "directoryservice",
           "EnableRadius"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -458,10 +449,6 @@
         [
           "directoryservice",
           "DisableRadius"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -473,10 +460,6 @@
         [
           "directoryservice",
           "DescribeDirectories"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -492,10 +475,6 @@
         [
           "directoryservice",
           "UpdateRadius"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -519,10 +498,6 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -533,11 +508,11 @@
       [
         [
           "directoryservice",
-          "RemoveRegion"
+          "DescribeRegions"
         ],
         [
           "directoryservice",
-          "new"
+          "RemoveRegion"
         ]
       ]
     ],
@@ -549,10 +524,6 @@
         [
           "directoryservice",
           "DescribeRegions"
-        ],
-        [
-          "directoryservice",
-          "new"
         ]
       ]
     ],
@@ -572,21 +543,6 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_shared_directory_accepter",
-      "delete",
-      [
-        [
-          "directoryservice",
-          "DeleteDirectory"
         ]
       ]
     ],
@@ -610,10 +566,6 @@
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -629,10 +581,6 @@
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -648,10 +596,6 @@
         [
           "dynamodb",
           "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -675,10 +619,6 @@
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -694,10 +634,6 @@
         [
           "locationservice",
           "ListTrackerConsumers"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -709,10 +645,6 @@
         [
           "locationservice",
           "DisassociateTrackerConsumer"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -724,52 +656,6 @@
         [
           "locationservice",
           "ListTrackerConsumers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSecurityGroup"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSubnet"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
         ]
       ]
     ]

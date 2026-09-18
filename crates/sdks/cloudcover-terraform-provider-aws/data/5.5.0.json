@@ -68,10 +68,6 @@
         [
           "chimesdkvoice",
           "GetSipRule"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -83,10 +79,6 @@
         [
           "chimesdkvoice",
           "DeleteSipRule"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -98,10 +90,6 @@
         [
           "chimesdkvoice",
           "GetSipRule"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
         ]
       ]
     ],
@@ -117,96 +105,6 @@
         [
           "chimesdkvoice",
           "UpdateSipRule"
-        ],
-        [
-          "chimesdkvoice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_route_table",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateRoute"
-        ],
-        [
-          "ec2",
-          "DeleteRoute"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DisableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "ReplaceRoute"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eip",
-      "create",
-      [
-        [
-          "ec2",
-          "AllocateAddress"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eip",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_eip",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateAddress"
-        ],
-        [
-          "ec2",
-          "DisassociateAddress"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -234,10 +132,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -261,10 +155,6 @@
         [
           "networkmanager",
           "GetVpcAttachment"
-        ],
-        [
-          "networkmanager",
-          "new"
         ]
       ]
     ],
@@ -280,10 +170,6 @@
         [
           "organizations",
           "PutResourcePolicy"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -295,10 +181,6 @@
         [
           "organizations",
           "DeleteResourcePolicy"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -310,10 +192,6 @@
         [
           "organizations",
           "DescribeResourcePolicy"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -329,83 +207,6 @@
         [
           "organizations",
           "PutResourcePolicy"
-        ],
-        [
-          "organizations",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateRoute"
-        ],
-        [
-          "ec2",
-          "CreateRouteTable"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateRoute"
-        ],
-        [
-          "ec2",
-          "DeleteRoute"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DisableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "EnableVgwRoutePropagation"
-        ],
-        [
-          "ec2",
-          "ReplaceRoute"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

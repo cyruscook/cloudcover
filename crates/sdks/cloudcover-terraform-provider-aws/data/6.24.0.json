@@ -10,6 +10,10 @@
         [
           "lambda",
           "CreateCapacityProvider"
+        ],
+        [
+          "lambda",
+          "GetCapacityProvider"
         ]
       ]
     ],
@@ -21,6 +25,10 @@
         [
           "lambda",
           "DeleteCapacityProvider"
+        ],
+        [
+          "lambda",
+          "GetCapacityProvider"
         ]
       ]
     ],
@@ -40,6 +48,10 @@
       "aws_lambda_capacity_provider",
       "update",
       [
+        [
+          "lambda",
+          "GetCapacityProvider"
+        ],
         [
           "lambda",
           "UpdateCapacityProvider"
@@ -62,6 +74,10 @@
         [
           "ec2",
           "DescribeAvailabilityZones"
+        ],
+        [
+          "ec2",
+          "DescribeNatGateways"
         ],
         [
           "ec2",
@@ -231,6 +247,10 @@
         [
           "s3vectors",
           "DeleteVectorBucket"
+        ],
+        [
+          "s3vectors",
+          "ListIndexes"
         ]
       ]
     ],

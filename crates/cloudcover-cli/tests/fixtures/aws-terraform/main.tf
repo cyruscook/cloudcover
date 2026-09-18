@@ -17,3 +17,8 @@ module "storage" {
 resource "aws_s3_bucket" "root" {
   bucket = "cloudcover-root"
 }
+
+data "aws_ecr_image" "base" {
+  repository_name = "amazonlinux"
+  image_tag       = "latest"
+}

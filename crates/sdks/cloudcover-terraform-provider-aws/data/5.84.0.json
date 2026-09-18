@@ -9,6 +9,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -23,7 +27,12 @@
       "data_source",
       "aws_appstream_image",
       "read",
-      []
+      [
+        [
+          "appstream",
+          "DescribeImages"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -39,6 +48,10 @@
         [
           "auditmanager",
           "GetControl"
+        ],
+        [
+          "auditmanager",
+          "ListControls"
         ]
       ]
     ],
@@ -50,6 +63,10 @@
         [
           "auditmanager",
           "GetAssessmentFramework"
+        ],
+        [
+          "auditmanager",
+          "ListAssessmentFrameworks"
         ]
       ]
     ],
@@ -57,7 +74,12 @@
       "data_source",
       "aws_batch_job_definition",
       "read",
-      []
+      [
+        [
+          "batch",
+          "DescribeJobDefinitions"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -82,7 +104,12 @@
       "data_source",
       "aws_bedrock_custom_models",
       "read",
-      []
+      [
+        [
+          "bedrock",
+          "ListCustomModels"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -121,13 +148,23 @@
       "data_source",
       "aws_bedrock_inference_profiles",
       "read",
-      []
+      [
+        [
+          "bedrock",
+          "ListInferenceProfiles"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_bedrockagent_agent_versions",
       "read",
-      []
+      [
+        [
+          "bedrockagent",
+          "ListAgentVersions"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -205,7 +242,12 @@
       "data_source",
       "aws_cognito_user_groups",
       "read",
-      []
+      [
+        [
+          "cognitoidentityprovider",
+          "ListGroups"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -239,7 +281,12 @@
       "data_source",
       "aws_devopsguru_notification_channel",
       "read",
-      []
+      [
+        [
+          "devopsguru",
+          "ListNotificationChannels"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -256,7 +303,12 @@
       "data_source",
       "aws_ec2_capacity_block_offering",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeCapacityBlockOfferings"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -268,13 +320,23 @@
       "data_source",
       "aws_ecr_repositories",
       "read",
-      []
+      [
+        [
+          "ecr",
+          "DescribeRepositories"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_ecs_clusters",
       "read",
-      []
+      [
+        [
+          "ecs",
+          "ListClusters"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -291,13 +353,23 @@
       "data_source",
       "aws_elasticache_serverless_cache",
       "read",
-      []
+      [
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_emr_supported_instance_types",
       "read",
-      []
+      [
+        [
+          "emr",
+          "ListSupportedInstanceTypes"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -307,6 +379,10 @@
         [
           "globalaccelerator",
           "DescribeAcceleratorAttributes"
+        ],
+        [
+          "globalaccelerator",
+          "ListAccelerators"
         ],
         [
           "globalaccelerator",
@@ -329,13 +405,23 @@
       "data_source",
       "aws_guardduty_finding_ids",
       "read",
-      []
+      [
+        [
+          "guardduty",
+          "ListFindings"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_identitystore_groups",
       "read",
-      []
+      [
+        [
+          "identitystore",
+          "ListGroups"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -347,7 +433,12 @@
       "data_source",
       "aws_lb_listener_rule",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeRules"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -440,19 +531,34 @@
       "data_source",
       "aws_rds_cluster_parameter_group",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeDBClusterParameterGroups"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_redshift_data_shares",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeDataShares"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_redshift_producer_data_shares",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeDataSharesForProducer"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -475,43 +581,78 @@
       "data_source",
       "aws_resourceexplorer2_search",
       "read",
-      []
+      [
+        [
+          "resourceexplorer2",
+          "Search"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_route53_records",
       "read",
-      []
+      [
+        [
+          "route53",
+          "ListResourceRecordSets"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_route53_zones",
       "read",
-      []
+      [
+        [
+          "route53",
+          "ListHostedZones"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_route53profiles_profiles",
       "read",
-      []
+      [
+        [
+          "route53profiles",
+          "ListProfiles"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_s3_directory_buckets",
       "read",
-      []
+      [
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_secretsmanager_secret_versions",
       "read",
-      []
+      [
+        [
+          "secretsmanager",
+          "ListSecretVersionIds"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_securityhub_standards_control_associations",
       "read",
-      []
+      [
+        [
+          "securityhub",
+          "ListStandardsControlAssociations"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -551,7 +692,12 @@
       "data_source",
       "aws_servicecatalogappregistry_attribute_group_associations",
       "read",
-      []
+      [
+        [
+          "servicecatalogappregistry",
+          "ListAssociatedAttributeGroups"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -590,7 +736,12 @@
       "data_source",
       "aws_ssm_patch_baselines",
       "read",
-      []
+      [
+        [
+          "ssm",
+          "DescribePatchBaselines"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -618,25 +769,45 @@
       "data_source",
       "aws_ssoadmin_application_assignments",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListApplicationAssignments"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_ssoadmin_application_providers",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListApplicationProviders"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_ssoadmin_permission_sets",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListPermissionSets"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_ssoadmin_principal_application_assignments",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListApplicationAssignmentsForPrincipal"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -708,13 +879,23 @@
       "data_source",
       "aws_vpc_security_group_rule",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_vpc_security_group_rules",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ]
+      ]
     ],
     [
       "ephemeral_resource",
@@ -784,6 +965,18 @@
       [
         [
           "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -803,6 +996,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -812,6 +1009,10 @@
       "aws_ami",
       "update",
       [
+        [
+          "ec2",
+          "DescribeImages"
+        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -841,6 +1042,18 @@
         ],
         [
           "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -856,6 +1069,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -865,6 +1082,10 @@
       "aws_ami_copy",
       "update",
       [
+        [
+          "ec2",
+          "DescribeImages"
+        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -894,6 +1115,10 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -909,6 +1134,10 @@
       [
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -918,6 +1147,10 @@
       "aws_ami_from_instance",
       "update",
       [
+        [
+          "ec2",
+          "DescribeImages"
+        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -1071,6 +1304,10 @@
         [
           "appfabric",
           "CreateAppAuthorization"
+        ],
+        [
+          "appfabric",
+          "GetAppAuthorization"
         ]
       ]
     ],
@@ -1082,6 +1319,10 @@
         [
           "appfabric",
           "DeleteAppAuthorization"
+        ],
+        [
+          "appfabric",
+          "GetAppAuthorization"
         ]
       ]
     ],
@@ -1103,6 +1344,10 @@
       [
         [
           "appfabric",
+          "GetAppAuthorization"
+        ],
+        [
+          "appfabric",
           "UpdateAppAuthorization"
         ]
       ]
@@ -1115,6 +1360,10 @@
         [
           "appfabric",
           "ConnectAppAuthorization"
+        ],
+        [
+          "appfabric",
+          "GetAppAuthorization"
         ]
       ]
     ],
@@ -1227,6 +1476,10 @@
         [
           "appfabric",
           "CreateIngestionDestination"
+        ],
+        [
+          "appfabric",
+          "GetIngestionDestination"
         ]
       ]
     ],
@@ -1238,6 +1491,10 @@
         [
           "appfabric",
           "DeleteIngestionDestination"
+        ],
+        [
+          "appfabric",
+          "GetIngestionDestination"
         ]
       ]
     ],
@@ -1257,6 +1514,10 @@
       "aws_appfabric_ingestion_destination",
       "update",
       [
+        [
+          "appfabric",
+          "GetIngestionDestination"
+        ],
         [
           "appfabric",
           "UpdateIngestionDestination"
@@ -1284,7 +1545,12 @@
       "resource",
       "aws_apprunner_default_auto_scaling_configuration_version",
       "read",
-      []
+      [
+        [
+          "apprunner",
+          "ListAutoScalingConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1304,6 +1570,10 @@
       [
         [
           "apprunner",
+          "ListOperations"
+        ],
+        [
+          "apprunner",
           "StartDeployment"
         ]
       ]
@@ -1318,7 +1588,12 @@
       "resource",
       "aws_apprunner_deployment",
       "read",
-      []
+      [
+        [
+          "apprunner",
+          "ListOperations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1334,6 +1609,10 @@
         [
           "appsync",
           "AssociateSourceGraphqlApi"
+        ],
+        [
+          "appsync",
+          "GetSourceApiAssociation"
         ]
       ]
     ],
@@ -1345,6 +1624,10 @@
         [
           "appsync",
           "DisassociateSourceGraphqlApi"
+        ],
+        [
+          "appsync",
+          "GetSourceApiAssociation"
         ]
       ]
     ],
@@ -1364,6 +1647,10 @@
       "aws_appsync_source_api_association",
       "update",
       [
+        [
+          "appsync",
+          "GetSourceApiAssociation"
+        ],
         [
           "appsync",
           "UpdateSourceApiAssociation"
@@ -1484,7 +1771,12 @@
       "resource",
       "aws_auditmanager_assessment_delegation",
       "read",
-      []
+      [
+        [
+          "auditmanager",
+          "GetDelegations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1518,7 +1810,12 @@
       "resource",
       "aws_auditmanager_assessment_report",
       "read",
-      []
+      [
+        [
+          "auditmanager",
+          "ListAssessmentReports"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1644,7 +1941,12 @@
       "resource",
       "aws_auditmanager_framework_share",
       "read",
-      []
+      [
+        [
+          "auditmanager",
+          "ListAssessmentFrameworkShareRequests"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1699,6 +2001,10 @@
         [
           "backup",
           "CreateLogicallyAirGappedBackupVault"
+        ],
+        [
+          "backup",
+          "DescribeBackupVault"
         ]
       ]
     ],
@@ -1834,6 +2140,10 @@
         [
           "batch",
           "CreateJobQueue"
+        ],
+        [
+          "batch",
+          "DescribeJobQueues"
         ]
       ]
     ],
@@ -1848,6 +2158,10 @@
         ],
         [
           "batch",
+          "DescribeJobQueues"
+        ],
+        [
+          "batch",
           "UpdateJobQueue"
         ]
       ]
@@ -1856,13 +2170,22 @@
       "resource",
       "aws_batch_job_queue",
       "read",
-      []
+      [
+        [
+          "batch",
+          "DescribeJobQueues"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_batch_job_queue",
       "update",
       [
+        [
+          "batch",
+          "DescribeJobQueues"
+        ],
         [
           "batch",
           "UpdateJobQueue"
@@ -1877,6 +2200,10 @@
         [
           "bcmdataexports",
           "CreateExport"
+        ],
+        [
+          "bcmdataexports",
+          "GetExport"
         ]
       ]
     ],
@@ -1909,6 +2236,10 @@
       [
         [
           "bcmdataexports",
+          "GetExport"
+        ],
+        [
+          "bcmdataexports",
           "UpdateExport"
         ]
       ]
@@ -1936,6 +2267,10 @@
         [
           "bedrock",
           "DeleteCustomModel"
+        ],
+        [
+          "bedrock",
+          "GetModelCustomizationJob"
         ],
         [
           "bedrock",
@@ -1987,6 +2322,10 @@
         [
           "bedrock",
           "DeleteGuardrail"
+        ],
+        [
+          "bedrock",
+          "GetGuardrail"
         ]
       ]
     ],
@@ -2024,6 +2363,10 @@
         [
           "bedrock",
           "CreateGuardrailVersion"
+        ],
+        [
+          "bedrock",
+          "GetGuardrail"
         ]
       ]
     ],
@@ -2035,6 +2378,10 @@
         [
           "bedrock",
           "DeleteGuardrail"
+        ],
+        [
+          "bedrock",
+          "GetGuardrail"
         ]
       ]
     ],
@@ -2063,6 +2410,10 @@
         [
           "bedrock",
           "CreateInferenceProfile"
+        ],
+        [
+          "bedrock",
+          "GetInferenceProfile"
         ]
       ]
     ],
@@ -2074,6 +2425,10 @@
         [
           "bedrock",
           "DeleteInferenceProfile"
+        ],
+        [
+          "bedrock",
+          "GetInferenceProfile"
         ]
       ]
     ],
@@ -2146,6 +2501,10 @@
         [
           "bedrock",
           "CreateProvisionedModelThroughput"
+        ],
+        [
+          "bedrock",
+          "GetProvisionedModelThroughput"
         ]
       ]
     ],
@@ -2188,6 +2547,10 @@
         ],
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ]
       ]
@@ -2200,6 +2563,10 @@
         [
           "bedrockagent",
           "DeleteAgent"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
         ]
       ]
     ],
@@ -2221,6 +2588,10 @@
       [
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ],
         [
@@ -2237,6 +2608,10 @@
         [
           "bedrockagent",
           "CreateAgentActionGroup"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
         ],
         [
           "bedrockagent",
@@ -2273,6 +2648,10 @@
       [
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "GetAgentActionGroup"
         ],
         [
@@ -2293,6 +2672,14 @@
         [
           "bedrockagent",
           "CreateAgentAlias"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
+          "GetAgentAlias"
         ]
       ]
     ],
@@ -2325,6 +2712,10 @@
       [
         [
           "bedrockagent",
+          "GetAgentAlias"
+        ],
+        [
+          "bedrockagent",
           "UpdateAgentAlias"
         ]
       ]
@@ -2337,6 +2728,10 @@
         [
           "bedrockagent",
           "AssociateAgentCollaborator"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
         ],
         [
           "bedrockagent",
@@ -2385,6 +2780,10 @@
       [
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ],
         [
@@ -2401,6 +2800,10 @@
         [
           "bedrockagent",
           "AssociateAgentKnowledgeBase"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
         ],
         [
           "bedrockagent",
@@ -2437,6 +2840,10 @@
       [
         [
           "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
           "PrepareAgent"
         ],
         [
@@ -2453,6 +2860,10 @@
         [
           "bedrockagent",
           "CreateDataSource"
+        ],
+        [
+          "bedrockagent",
+          "GetDataSource"
         ]
       ]
     ],
@@ -2464,6 +2875,10 @@
         [
           "bedrockagent",
           "DeleteDataSource"
+        ],
+        [
+          "bedrockagent",
+          "GetDataSource"
         ]
       ]
     ],
@@ -2497,6 +2912,10 @@
         [
           "bedrockagent",
           "CreateKnowledgeBase"
+        ],
+        [
+          "bedrockagent",
+          "GetKnowledgeBase"
         ]
       ]
     ],
@@ -2508,6 +2927,10 @@
         [
           "bedrockagent",
           "DeleteKnowledgeBase"
+        ],
+        [
+          "bedrockagent",
+          "GetKnowledgeBase"
         ]
       ]
     ],
@@ -2529,6 +2952,10 @@
       [
         [
           "bedrockagent",
+          "GetKnowledgeBase"
+        ],
+        [
+          "bedrockagent",
           "UpdateKnowledgeBase"
         ]
       ]
@@ -2541,6 +2968,10 @@
         [
           "chatbot",
           "CreateSlackChannelConfiguration"
+        ],
+        [
+          "chatbot",
+          "DescribeSlackChannelConfigurations"
         ]
       ]
     ],
@@ -2552,6 +2983,10 @@
         [
           "chatbot",
           "DeleteSlackChannelConfiguration"
+        ],
+        [
+          "chatbot",
+          "DescribeSlackChannelConfigurations"
         ]
       ]
     ],
@@ -2559,13 +2994,22 @@
       "resource",
       "aws_chatbot_slack_channel_configuration",
       "read",
-      []
+      [
+        [
+          "chatbot",
+          "DescribeSlackChannelConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_chatbot_slack_channel_configuration",
       "update",
       [
+        [
+          "chatbot",
+          "DescribeSlackChannelConfigurations"
+        ],
         [
           "chatbot",
           "UpdateSlackChannelConfiguration"
@@ -2580,6 +3024,10 @@
         [
           "chatbot",
           "CreateMicrosoftTeamsChannelConfiguration"
+        ],
+        [
+          "chatbot",
+          "ListMicrosoftTeamsChannelConfigurations"
         ]
       ]
     ],
@@ -2591,6 +3039,10 @@
         [
           "chatbot",
           "DeleteMicrosoftTeamsChannelConfiguration"
+        ],
+        [
+          "chatbot",
+          "ListMicrosoftTeamsChannelConfigurations"
         ]
       ]
     ],
@@ -2598,13 +3050,22 @@
       "resource",
       "aws_chatbot_teams_channel_configuration",
       "read",
-      []
+      [
+        [
+          "chatbot",
+          "ListMicrosoftTeamsChannelConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_chatbot_teams_channel_configuration",
       "update",
       [
+        [
+          "chatbot",
+          "ListMicrosoftTeamsChannelConfigurations"
+        ],
         [
           "chatbot",
           "UpdateMicrosoftTeamsChannelConfiguration"
@@ -2711,6 +3172,10 @@
         [
           "cloudfront",
           "CreateKeyValueStore"
+        ],
+        [
+          "cloudfront",
+          "DescribeKeyValueStore"
         ]
       ]
     ],
@@ -2755,6 +3220,10 @@
         [
           "cloudfront",
           "CreateVpcOrigin"
+        ],
+        [
+          "cloudfront",
+          "GetVpcOrigin"
         ]
       ]
     ],
@@ -2789,6 +3258,10 @@
       "aws_cloudfront_vpc_origin",
       "update",
       [
+        [
+          "cloudfront",
+          "GetVpcOrigin"
+        ],
         [
           "cloudfront",
           "UpdateVpcOrigin"
@@ -3160,6 +3633,10 @@
         [
           "codeconnections",
           "CreateConnection"
+        ],
+        [
+          "codeconnections",
+          "GetConnection"
         ]
       ]
     ],
@@ -3171,6 +3648,10 @@
         [
           "codeconnections",
           "DeleteConnection"
+        ],
+        [
+          "codeconnections",
+          "GetConnection"
         ]
       ]
     ],
@@ -3199,6 +3680,10 @@
         [
           "codeconnections",
           "CreateHost"
+        ],
+        [
+          "codeconnections",
+          "GetHost"
         ]
       ]
     ],
@@ -3210,6 +3695,10 @@
         [
           "codeconnections",
           "DeleteHost"
+        ],
+        [
+          "codeconnections",
+          "GetHost"
         ]
       ]
     ],
@@ -3229,6 +3718,10 @@
       "aws_codeconnections_host",
       "update",
       [
+        [
+          "codeconnections",
+          "GetHost"
+        ],
         [
           "codeconnections",
           "UpdateHost"
@@ -3287,6 +3780,10 @@
         [
           "cognitoidentityprovider",
           "DescribeUserPoolClient"
+        ],
+        [
+          "cognitoidentityprovider",
+          "ListUserPoolClients"
         ],
         [
           "cognitoidentityprovider",
@@ -3373,6 +3870,10 @@
       [
         [
           "computeoptimizer",
+          "GetEnrollmentStatus"
+        ],
+        [
+          "computeoptimizer",
           "UpdateEnrollmentStatus"
         ]
       ]
@@ -3401,6 +3902,10 @@
       [
         [
           "computeoptimizer",
+          "GetEnrollmentStatus"
+        ],
+        [
+          "computeoptimizer",
           "UpdateEnrollmentStatus"
         ]
       ]
@@ -3410,6 +3915,10 @@
       "aws_computeoptimizer_recommendation_preferences",
       "create",
       [
+        [
+          "computeoptimizer",
+          "GetRecommendationPreferences"
+        ],
         [
           "computeoptimizer",
           "PutRecommendationPreferences"
@@ -3431,13 +3940,22 @@
       "resource",
       "aws_computeoptimizer_recommendation_preferences",
       "read",
-      []
+      [
+        [
+          "computeoptimizer",
+          "GetRecommendationPreferences"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_computeoptimizer_recommendation_preferences",
       "update",
       [
+        [
+          "computeoptimizer",
+          "GetRecommendationPreferences"
+        ],
         [
           "computeoptimizer",
           "PutRecommendationPreferences"
@@ -3470,7 +3988,12 @@
       "resource",
       "aws_config_retention_configuration",
       "read",
-      []
+      [
+        [
+          "configservice",
+          "DescribeRetentionConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -3579,6 +4102,10 @@
         [
           "datazone",
           "CreateAssetType"
+        ],
+        [
+          "datazone",
+          "GetAssetType"
         ]
       ]
     ],
@@ -3618,6 +4145,10 @@
         [
           "datazone",
           "CreateDomain"
+        ],
+        [
+          "datazone",
+          "GetDomain"
         ]
       ]
     ],
@@ -3629,6 +4160,10 @@
         [
           "datazone",
           "DeleteDomain"
+        ],
+        [
+          "datazone",
+          "GetDomain"
         ]
       ]
     ],
@@ -3662,6 +4197,10 @@
         [
           "datazone",
           "CreateEnvironment"
+        ],
+        [
+          "datazone",
+          "GetEnvironment"
         ]
       ]
     ],
@@ -3673,6 +4212,10 @@
         [
           "datazone",
           "DeleteEnvironment"
+        ],
+        [
+          "datazone",
+          "GetEnvironment"
         ]
       ]
     ],
@@ -3692,6 +4235,10 @@
       "aws_datazone_environment",
       "update",
       [
+        [
+          "datazone",
+          "GetEnvironment"
+        ],
         [
           "datazone",
           "UpdateEnvironment"
@@ -3794,6 +4341,10 @@
         [
           "datazone",
           "CreateFormType"
+        ],
+        [
+          "datazone",
+          "GetFormType"
         ]
       ]
     ],
@@ -3881,6 +4432,10 @@
         [
           "datazone",
           "CreateGlossaryTerm"
+        ],
+        [
+          "datazone",
+          "GetGlossaryTerm"
         ]
       ]
     ],
@@ -3929,6 +4484,10 @@
         [
           "datazone",
           "CreateProject"
+        ],
+        [
+          "datazone",
+          "GetProject"
         ]
       ]
     ],
@@ -3940,6 +4499,10 @@
         [
           "datazone",
           "DeleteProject"
+        ],
+        [
+          "datazone",
+          "GetProject"
         ]
       ]
     ],
@@ -3973,6 +4536,10 @@
         [
           "datazone",
           "CreateUserProfile"
+        ],
+        [
+          "datazone",
+          "GetUserProfile"
         ]
       ]
     ],
@@ -3998,6 +4565,10 @@
       "aws_datazone_user_profile",
       "update",
       [
+        [
+          "datazone",
+          "GetUserProfile"
+        ],
         [
           "datazone",
           "UpdateUserProfile"
@@ -4069,7 +4640,12 @@
       "resource",
       "aws_devopsguru_notification_channel",
       "read",
-      []
+      [
+        [
+          "devopsguru",
+          "ListNotificationChannels"
+        ]
+      ]
     ],
     [
       "resource",
@@ -4171,6 +4747,10 @@
         [
           "directoryservice",
           "CreateTrust"
+        ],
+        [
+          "directoryservice",
+          "DescribeTrusts"
         ]
       ]
     ],
@@ -4182,6 +4762,10 @@
         [
           "directoryservice",
           "DeleteTrust"
+        ],
+        [
+          "directoryservice",
+          "DescribeTrusts"
         ]
       ]
     ],
@@ -4193,6 +4777,10 @@
         [
           "directoryservice",
           "DescribeConditionalForwarders"
+        ],
+        [
+          "directoryservice",
+          "DescribeTrusts"
         ]
       ]
     ],
@@ -4204,6 +4792,10 @@
         [
           "directoryservice",
           "DescribeConditionalForwarders"
+        ],
+        [
+          "directoryservice",
+          "DescribeTrusts"
         ],
         [
           "directoryservice",
@@ -4223,6 +4815,10 @@
         [
           "docdbelastic",
           "CreateCluster"
+        ],
+        [
+          "docdbelastic",
+          "GetCluster"
         ]
       ]
     ],
@@ -4234,6 +4830,10 @@
         [
           "docdbelastic",
           "DeleteCluster"
+        ],
+        [
+          "docdbelastic",
+          "GetCluster"
         ]
       ]
     ],
@@ -4255,6 +4855,10 @@
       [
         [
           "docdbelastic",
+          "GetCluster"
+        ],
+        [
+          "docdbelastic",
           "UpdateCluster"
         ]
       ]
@@ -4267,6 +4871,10 @@
         [
           "drs",
           "CreateReplicationConfigurationTemplate"
+        ],
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
@@ -4278,6 +4886,10 @@
         [
           "drs",
           "DeleteReplicationConfigurationTemplate"
+        ],
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
@@ -4285,13 +4897,22 @@
       "resource",
       "aws_drs_replication_configuration_template",
       "read",
-      []
+      [
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_drs_replication_configuration_template",
       "update",
       [
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
+        ],
         [
           "drs",
           "UpdateReplicationConfigurationTemplate"
@@ -4303,6 +4924,10 @@
       "aws_dynamodb_resource_policy",
       "create",
       [
+        [
+          "dynamodb",
+          "GetResourcePolicy"
+        ],
         [
           "dynamodb",
           "PutResourcePolicy"
@@ -4349,6 +4974,10 @@
       [
         [
           "ec2",
+          "DescribeFastSnapshotRestores"
+        ],
+        [
+          "ec2",
           "EnableFastSnapshotRestores"
         ]
       ]
@@ -4360,6 +4989,10 @@
       [
         [
           "ec2",
+          "DescribeFastSnapshotRestores"
+        ],
+        [
+          "ec2",
           "DisableFastSnapshotRestores"
         ]
       ]
@@ -4368,7 +5001,12 @@
       "resource",
       "aws_ebs_fast_snapshot_restore",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeFastSnapshotRestores"
+        ]
+      ]
     ],
     [
       "resource",
@@ -4381,6 +5019,10 @@
       "aws_ec2_capacity_block_reservation",
       "create",
       [
+        [
+          "ec2",
+          "DescribeCapacityReservations"
+        ],
         [
           "ec2",
           "PurchaseCapacityBlock"
@@ -4397,7 +5039,12 @@
       "resource",
       "aws_ec2_capacity_block_reservation",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeCapacityReservations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -4413,6 +5060,10 @@
         [
           "ec2",
           "CreateInstanceConnectEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
         ]
       ]
     ],
@@ -4424,6 +5075,10 @@
         [
           "ec2",
           "DeleteInstanceConnectEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
         ]
       ]
     ],
@@ -4431,7 +5086,12 @@
       "resource",
       "aws_ec2_instance_connect_endpoint",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -4490,6 +5150,10 @@
       [
         [
           "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -4501,6 +5165,10 @@
       [
         [
           "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -4509,13 +5177,22 @@
       "resource",
       "aws_ec2_transit_gateway_default_route_table_association",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_default_route_table_association",
       "update",
       [
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
         [
           "ec2",
           "ModifyTransitGateway"
@@ -4529,6 +5206,10 @@
       [
         [
           "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -4540,6 +5221,10 @@
       [
         [
           "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -4548,13 +5233,22 @@
       "resource",
       "aws_ec2_transit_gateway_default_route_table_propagation",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_default_route_table_propagation",
       "update",
       [
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
         [
           "ec2",
           "ModifyTransitGateway"
@@ -4607,6 +5301,10 @@
       [
         [
           "ec2",
+          "DescribeAddressesAttribute"
+        ],
+        [
+          "ec2",
           "ModifyAddressAttribute"
         ]
       ]
@@ -4618,6 +5316,10 @@
       [
         [
           "ec2",
+          "DescribeAddressesAttribute"
+        ],
+        [
+          "ec2",
           "ResetAddressAttribute"
         ]
       ]
@@ -4626,13 +5328,22 @@
       "resource",
       "aws_eip_domain_name",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_eip_domain_name",
       "update",
       [
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ],
         [
           "ec2",
           "ModifyAddressAttribute"
@@ -4690,6 +5401,10 @@
       [
         [
           "elasticache",
+          "DescribeReservedCacheNodes"
+        ],
+        [
+          "elasticache",
           "PurchaseReservedCacheNodesOffering"
         ]
       ]
@@ -4725,6 +5440,10 @@
         [
           "elasticache",
           "CreateServerlessCache"
+        ],
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
         ]
       ]
     ],
@@ -4736,6 +5455,10 @@
         [
           "elasticache",
           "DeleteServerlessCache"
+        ],
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
         ]
       ]
     ],
@@ -4743,13 +5466,22 @@
       "resource",
       "aws_elasticache_serverless_cache",
       "read",
-      []
+      [
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_elasticache_serverless_cache",
       "update",
       [
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ],
         [
           "elasticache",
           "ModifyServerlessCache"
@@ -4761,6 +5493,10 @@
       "aws_fms_resource_set",
       "create",
       [
+        [
+          "fms",
+          "GetResourceSet"
+        ],
         [
           "fms",
           "PutResourceSet"
@@ -4775,6 +5511,10 @@
         [
           "fms",
           "DeleteResourceSet"
+        ],
+        [
+          "fms",
+          "GetResourceSet"
         ]
       ]
     ],
@@ -4794,6 +5534,10 @@
       "aws_fms_resource_set",
       "update",
       [
+        [
+          "fms",
+          "GetResourceSet"
+        ],
         [
           "fms",
           "PutResourceSet"
@@ -4914,7 +5658,12 @@
       "resource",
       "aws_grafana_workspace_service_account",
       "read",
-      []
+      [
+        [
+          "grafana",
+          "ListWorkspaceServiceAccounts"
+        ]
+      ]
     ],
     [
       "resource",
@@ -4930,6 +5679,10 @@
         [
           "grafana",
           "CreateWorkspaceServiceAccountToken"
+        ],
+        [
+          "grafana",
+          "ListWorkspaceServiceAccountTokens"
         ]
       ]
     ],
@@ -4948,7 +5701,12 @@
       "resource",
       "aws_grafana_workspace_service_account_token",
       "read",
-      []
+      [
+        [
+          "grafana",
+          "ListWorkspaceServiceAccountTokens"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5019,6 +5777,10 @@
         ],
         [
           "iam",
+          "ListGroupPolicies"
+        ],
+        [
+          "iam",
           "PutGroupPolicy"
         ]
       ]
@@ -5033,7 +5795,12 @@
       "resource",
       "aws_iam_group_policies_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListGroupPolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5046,6 +5813,10 @@
         ],
         [
           "iam",
+          "ListGroupPolicies"
+        ],
+        [
+          "iam",
           "PutGroupPolicy"
         ]
       ]
@@ -5062,6 +5833,10 @@
         [
           "iam",
           "DetachGroupPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
         ]
       ]
     ],
@@ -5075,7 +5850,12 @@
       "resource",
       "aws_iam_group_policy_attachments_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5089,6 +5869,10 @@
         [
           "iam",
           "DetachGroupPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
         ]
       ]
     ],
@@ -5187,6 +5971,10 @@
         ],
         [
           "iam",
+          "ListRolePolicies"
+        ],
+        [
+          "iam",
           "PutRolePolicy"
         ]
       ]
@@ -5201,7 +5989,12 @@
       "resource",
       "aws_iam_role_policies_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListRolePolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5214,6 +6007,10 @@
         ],
         [
           "iam",
+          "ListRolePolicies"
+        ],
+        [
+          "iam",
           "PutRolePolicy"
         ]
       ]
@@ -5230,6 +6027,10 @@
         [
           "iam",
           "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedRolePolicies"
         ]
       ]
     ],
@@ -5243,7 +6044,12 @@
       "resource",
       "aws_iam_role_policy_attachments_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5257,6 +6063,10 @@
         [
           "iam",
           "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedRolePolicies"
         ]
       ]
     ],
@@ -5268,6 +6078,10 @@
         [
           "iam",
           "DeleteUserPolicy"
+        ],
+        [
+          "iam",
+          "ListUserPolicies"
         ],
         [
           "iam",
@@ -5285,7 +6099,12 @@
       "resource",
       "aws_iam_user_policies_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListUserPolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5295,6 +6114,10 @@
         [
           "iam",
           "DeleteUserPolicy"
+        ],
+        [
+          "iam",
+          "ListUserPolicies"
         ],
         [
           "iam",
@@ -5314,6 +6137,10 @@
         [
           "iam",
           "DetachUserPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedUserPolicies"
         ]
       ]
     ],
@@ -5327,7 +6154,12 @@
       "resource",
       "aws_iam_user_policy_attachments_exclusive",
       "read",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedUserPolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -5341,6 +6173,10 @@
         [
           "iam",
           "DetachUserPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedUserPolicies"
         ]
       ]
     ],
@@ -5492,6 +6328,10 @@
         [
           "lakeformation",
           "CreateDataCellsFilter"
+        ],
+        [
+          "lakeformation",
+          "GetDataCellsFilter"
         ]
       ]
     ],
@@ -5540,6 +6380,10 @@
         [
           "lakeformation",
           "AddLFTagsToResource"
+        ],
+        [
+          "lakeformation",
+          "GetResourceLFTags"
         ]
       ]
     ],
@@ -5667,6 +6511,10 @@
         [
           "lexmodelsv2",
           "CreateBot"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBot"
         ]
       ]
     ],
@@ -5678,6 +6526,10 @@
         [
           "lexmodelsv2",
           "DeleteBot"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBot"
         ]
       ]
     ],
@@ -5699,6 +6551,10 @@
       [
         [
           "lexmodelsv2",
+          "DescribeBot"
+        ],
+        [
+          "lexmodelsv2",
           "UpdateBot"
         ]
       ]
@@ -5711,6 +6567,10 @@
         [
           "lexmodelsv2",
           "CreateBotLocale"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotLocale"
         ]
       ]
     ],
@@ -5722,6 +6582,10 @@
         [
           "lexmodelsv2",
           "DeleteBotLocale"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotLocale"
         ]
       ]
     ],
@@ -5743,6 +6607,10 @@
       [
         [
           "lexmodelsv2",
+          "DescribeBotLocale"
+        ],
+        [
+          "lexmodelsv2",
           "UpdateBotLocale"
         ]
       ]
@@ -5755,6 +6623,10 @@
         [
           "lexmodelsv2",
           "CreateBotVersion"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotVersion"
         ]
       ]
     ],
@@ -5766,6 +6638,10 @@
         [
           "lexmodelsv2",
           "DeleteBotVersion"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotVersion"
         ]
       ]
     ],
@@ -5794,6 +6670,10 @@
         [
           "lexmodelsv2",
           "CreateIntent"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
         ]
       ]
     ],
@@ -5805,6 +6685,10 @@
         [
           "lexmodelsv2",
           "DeleteIntent"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
         ]
       ]
     ],
@@ -5824,6 +6708,10 @@
       "aws_lexv2models_intent",
       "update",
       [
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
+        ],
         [
           "lexmodelsv2",
           "UpdateIntent"
@@ -5926,6 +6814,10 @@
         [
           "m2",
           "CreateApplication"
+        ],
+        [
+          "m2",
+          "GetApplication"
         ]
       ]
     ],
@@ -5937,6 +6829,10 @@
         [
           "m2",
           "DeleteApplication"
+        ],
+        [
+          "m2",
+          "GetApplication"
         ]
       ]
     ],
@@ -5962,6 +6858,10 @@
       [
         [
           "m2",
+          "GetApplicationVersion"
+        ],
+        [
+          "m2",
           "UpdateApplication"
         ]
       ]
@@ -5974,6 +6874,14 @@
         [
           "m2",
           "CreateDeployment"
+        ],
+        [
+          "m2",
+          "GetApplication"
+        ],
+        [
+          "m2",
+          "GetDeployment"
         ],
         [
           "m2",
@@ -6030,6 +6938,10 @@
         ],
         [
           "m2",
+          "GetDeployment"
+        ],
+        [
+          "m2",
           "StartApplication"
         ],
         [
@@ -6046,6 +6958,10 @@
         [
           "m2",
           "CreateEnvironment"
+        ],
+        [
+          "m2",
+          "GetEnvironment"
         ]
       ]
     ],
@@ -6057,6 +6973,10 @@
         [
           "m2",
           "DeleteEnvironment"
+        ],
+        [
+          "m2",
+          "GetEnvironment"
         ]
       ]
     ],
@@ -6076,6 +6996,10 @@
       "aws_m2_environment",
       "update",
       [
+        [
+          "m2",
+          "GetEnvironment"
+        ],
         [
           "m2",
           "UpdateEnvironment"
@@ -6101,6 +7025,10 @@
         [
           "mediapackagev2",
           "DeleteChannelGroup"
+        ],
+        [
+          "mediapackagev2",
+          "GetChannelGroup"
         ]
       ]
     ],
@@ -6182,6 +7110,10 @@
         [
           "memorydb",
           "CreateMultiRegionCluster"
+        ],
+        [
+          "memorydb",
+          "DescribeMultiRegionClusters"
         ]
       ]
     ],
@@ -6193,6 +7125,10 @@
         [
           "memorydb",
           "DeleteMultiRegionCluster"
+        ],
+        [
+          "memorydb",
+          "DescribeMultiRegionClusters"
         ]
       ]
     ],
@@ -6200,13 +7136,22 @@
       "resource",
       "aws_memorydb_multi_region_cluster",
       "read",
-      []
+      [
+        [
+          "memorydb",
+          "DescribeMultiRegionClusters"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_memorydb_multi_region_cluster",
       "update",
       [
+        [
+          "memorydb",
+          "DescribeMultiRegionClusters"
+        ],
         [
           "memorydb",
           "UpdateMultiRegionCluster"
@@ -6239,7 +7184,12 @@
       "resource",
       "aws_msk_single_scram_secret_association",
       "read",
-      []
+      [
+        [
+          "kafka",
+          "ListScramSecrets"
+        ]
+      ]
     ],
     [
       "resource",
@@ -6255,6 +7205,10 @@
         [
           "networkfirewall",
           "CreateTLSInspectionConfiguration"
+        ],
+        [
+          "networkfirewall",
+          "DescribeTLSInspectionConfiguration"
         ]
       ]
     ],
@@ -6266,6 +7220,10 @@
         [
           "networkfirewall",
           "DeleteTLSInspectionConfiguration"
+        ],
+        [
+          "networkfirewall",
+          "DescribeTLSInspectionConfiguration"
         ]
       ]
     ],
@@ -6287,6 +7245,10 @@
       [
         [
           "networkfirewall",
+          "DescribeTLSInspectionConfiguration"
+        ],
+        [
+          "networkfirewall",
           "UpdateTLSInspectionConfiguration"
         ]
       ]
@@ -6299,6 +7261,10 @@
         [
           "networkmanager",
           "CreateDirectConnectGatewayAttachment"
+        ],
+        [
+          "networkmanager",
+          "GetDirectConnectGatewayAttachment"
         ]
       ]
     ],
@@ -6339,6 +7305,10 @@
       [
         [
           "networkmanager",
+          "GetDirectConnectGatewayAttachment"
+        ],
+        [
+          "networkmanager",
           "UpdateDirectConnectGatewayAttachment"
         ]
       ]
@@ -6351,6 +7321,10 @@
         [
           "networkmonitor",
           "CreateMonitor"
+        ],
+        [
+          "networkmonitor",
+          "GetMonitor"
         ]
       ]
     ],
@@ -6362,6 +7336,10 @@
         [
           "networkmonitor",
           "DeleteMonitor"
+        ],
+        [
+          "networkmonitor",
+          "GetMonitor"
         ]
       ]
     ],
@@ -6383,6 +7361,10 @@
       [
         [
           "networkmonitor",
+          "GetMonitor"
+        ],
+        [
+          "networkmonitor",
           "UpdateMonitor"
         ]
       ]
@@ -6395,6 +7377,10 @@
         [
           "networkmonitor",
           "CreateProbe"
+        ],
+        [
+          "networkmonitor",
+          "GetProbe"
         ]
       ]
     ],
@@ -6406,6 +7392,10 @@
         [
           "networkmonitor",
           "DeleteProbe"
+        ],
+        [
+          "networkmonitor",
+          "GetProbe"
         ]
       ]
     ],
@@ -6425,6 +7415,10 @@
       "aws_networkmonitor_probe",
       "update",
       [
+        [
+          "networkmonitor",
+          "GetProbe"
+        ],
         [
           "networkmonitor",
           "UpdateProbe"
@@ -6521,6 +7515,10 @@
       [
         [
           "opensearchserverless",
+          "BatchGetCollection"
+        ],
+        [
+          "opensearchserverless",
           "CreateCollection"
         ]
       ]
@@ -6530,6 +7528,10 @@
       "aws_opensearchserverless_collection",
       "delete",
       [
+        [
+          "opensearchserverless",
+          "BatchGetCollection"
+        ],
         [
           "opensearchserverless",
           "DeleteCollection"
@@ -6697,6 +7699,10 @@
       [
         [
           "opensearchserverless",
+          "BatchGetVpcEndpoint"
+        ],
+        [
+          "opensearchserverless",
           "CreateVpcEndpoint"
         ]
       ]
@@ -6706,6 +7712,10 @@
       "aws_opensearchserverless_vpc_endpoint",
       "delete",
       [
+        [
+          "opensearchserverless",
+          "BatchGetVpcEndpoint"
+        ],
         [
           "opensearchserverless",
           "DeleteVpcEndpoint"
@@ -6730,6 +7740,10 @@
       [
         [
           "opensearchserverless",
+          "BatchGetVpcEndpoint"
+        ],
+        [
+          "opensearchserverless",
           "UpdateVpcEndpoint"
         ]
       ]
@@ -6742,6 +7756,10 @@
         [
           "osis",
           "CreatePipeline"
+        ],
+        [
+          "osis",
+          "GetPipeline"
         ]
       ]
     ],
@@ -6753,6 +7771,10 @@
         [
           "osis",
           "DeletePipeline"
+        ],
+        [
+          "osis",
+          "GetPipeline"
         ]
       ]
     ],
@@ -6774,6 +7796,10 @@
       [
         [
           "osis",
+          "GetPipeline"
+        ],
+        [
+          "osis",
           "UpdatePipeline"
         ]
       ]
@@ -6786,6 +7812,10 @@
         [
           "paymentcryptography",
           "CreateKey"
+        ],
+        [
+          "paymentcryptography",
+          "GetKey"
         ]
       ]
     ],
@@ -6797,6 +7827,10 @@
         [
           "paymentcryptography",
           "DeleteKey"
+        ],
+        [
+          "paymentcryptography",
+          "GetKey"
         ]
       ]
     ],
@@ -6948,7 +7982,12 @@
       "resource",
       "aws_pinpointsmsvoicev2_configuration_set",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeConfigurationSets"
+        ]
+      ]
     ],
     [
       "resource",
@@ -6999,7 +8038,12 @@
       "resource",
       "aws_pinpointsmsvoicev2_opt_out_list",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeOptOutLists"
+        ]
+      ]
     ],
     [
       "resource",
@@ -7012,6 +8056,10 @@
       "aws_pinpointsmsvoicev2_phone_number",
       "create",
       [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
         [
           "pinpointsmsvoicev2",
           "RequestPhoneNumber"
@@ -7029,6 +8077,10 @@
       [
         [
           "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
+        [
+          "pinpointsmsvoicev2",
           "ReleasePhoneNumber"
         ]
       ]
@@ -7037,13 +8089,22 @@
       "resource",
       "aws_pinpointsmsvoicev2_phone_number",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_pinpointsmsvoicev2_phone_number",
       "update",
       [
+        [
+          "pinpointsmsvoicev2",
+          "DescribePhoneNumbers"
+        ],
         [
           "pinpointsmsvoicev2",
           "UpdatePhoneNumber"
@@ -7058,6 +8119,10 @@
         [
           "amp",
           "CreateScraper"
+        ],
+        [
+          "amp",
+          "DescribeScraper"
         ]
       ]
     ],
@@ -7069,6 +8134,10 @@
         [
           "amp",
           "DeleteScraper"
+        ],
+        [
+          "amp",
+          "DescribeScraper"
         ]
       ]
     ],
@@ -7115,7 +8184,12 @@
       "resource",
       "aws_quicksight_folder_membership",
       "read",
-      []
+      [
+        [
+          "quicksight",
+          "ListFolderMembers"
+        ]
+      ]
     ],
     [
       "resource",
@@ -7131,6 +8205,10 @@
         [
           "quicksight",
           "CreateIAMPolicyAssignment"
+        ],
+        [
+          "quicksight",
+          "DescribeIAMPolicyAssignment"
         ]
       ]
     ],
@@ -7142,6 +8220,10 @@
         [
           "quicksight",
           "DeleteIAMPolicyAssignment"
+        ],
+        [
+          "quicksight",
+          "DescribeIAMPolicyAssignment"
         ]
       ]
     ],
@@ -7214,6 +8296,10 @@
         [
           "quicksight",
           "CreateNamespace"
+        ],
+        [
+          "quicksight",
+          "DescribeNamespace"
         ]
       ]
     ],
@@ -7225,6 +8311,10 @@
         [
           "quicksight",
           "DeleteNamespace"
+        ],
+        [
+          "quicksight",
+          "DescribeNamespace"
         ]
       ]
     ],
@@ -7349,6 +8439,10 @@
         [
           "quicksight",
           "CreateVPCConnection"
+        ],
+        [
+          "quicksight",
+          "DescribeVPCConnection"
         ]
       ]
     ],
@@ -7360,6 +8454,10 @@
         [
           "quicksight",
           "DeleteVPCConnection"
+        ],
+        [
+          "quicksight",
+          "DescribeVPCConnection"
         ]
       ]
     ],
@@ -7381,6 +8479,10 @@
       [
         [
           "quicksight",
+          "DescribeVPCConnection"
+        ],
+        [
+          "quicksight",
           "UpdateVPCConnection"
         ]
       ]
@@ -7393,6 +8495,10 @@
         [
           "rds",
           "CopyDBClusterSnapshot"
+        ],
+        [
+          "rds",
+          "DescribeDBClusterSnapshots"
         ],
         [
           "rds",
@@ -7419,6 +8525,10 @@
         [
           "rds",
           "DescribeDBClusterSnapshotAttributes"
+        ],
+        [
+          "rds",
+          "DescribeDBClusterSnapshots"
         ]
       ]
     ],
@@ -7440,6 +8550,10 @@
       [
         [
           "rds",
+          "DescribeExportTasks"
+        ],
+        [
+          "rds",
           "StartExportTask"
         ]
       ]
@@ -7452,6 +8566,10 @@
         [
           "rds",
           "CancelExportTask"
+        ],
+        [
+          "rds",
+          "DescribeExportTasks"
         ]
       ]
     ],
@@ -7479,6 +8597,10 @@
       [
         [
           "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
           "StartDBInstance"
         ],
         [
@@ -7497,13 +8619,22 @@
       "resource",
       "aws_rds_instance_state",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeDBInstances"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_rds_instance_state",
       "update",
       [
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
         [
           "rds",
           "StartDBInstance"
@@ -7522,6 +8653,10 @@
         [
           "rds",
           "CreateIntegration"
+        ],
+        [
+          "rds",
+          "DescribeIntegrations"
         ]
       ]
     ],
@@ -7533,6 +8668,10 @@
         [
           "rds",
           "DeleteIntegration"
+        ],
+        [
+          "rds",
+          "DescribeIntegrations"
         ]
       ]
     ],
@@ -7540,7 +8679,12 @@
       "resource",
       "aws_rds_integration",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeIntegrations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -7766,6 +8910,10 @@
         [
           "rekognition",
           "CreateCollection"
+        ],
+        [
+          "rekognition",
+          "DescribeCollection"
         ]
       ]
     ],
@@ -7805,6 +8953,10 @@
         [
           "rekognition",
           "CreateProject"
+        ],
+        [
+          "rekognition",
+          "DescribeProjects"
         ]
       ]
     ],
@@ -7816,6 +8968,10 @@
         [
           "rekognition",
           "DeleteProject"
+        ],
+        [
+          "rekognition",
+          "DescribeProjects"
         ]
       ]
     ],
@@ -7844,6 +9000,10 @@
         [
           "rekognition",
           "CreateStreamProcessor"
+        ],
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
         ]
       ]
     ],
@@ -7855,6 +9015,10 @@
         [
           "rekognition",
           "DeleteStreamProcessor"
+        ],
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
         ]
       ]
     ],
@@ -7876,6 +9040,10 @@
       [
         [
           "rekognition",
+          "DescribeStreamProcessor"
+        ],
+        [
+          "rekognition",
           "UpdateStreamProcessor"
         ]
       ]
@@ -7888,6 +9056,10 @@
         [
           "resiliencehub",
           "CreateResiliencyPolicy"
+        ],
+        [
+          "resiliencehub",
+          "DescribeResiliencyPolicy"
         ]
       ]
     ],
@@ -7899,6 +9071,10 @@
         [
           "resiliencehub",
           "DeleteResiliencyPolicy"
+        ],
+        [
+          "resiliencehub",
+          "DescribeResiliencyPolicy"
         ]
       ]
     ],
@@ -7920,6 +9096,10 @@
       [
         [
           "resiliencehub",
+          "DescribeResiliencyPolicy"
+        ],
+        [
+          "resiliencehub",
           "UpdateResiliencyPolicy"
         ]
       ]
@@ -7935,6 +9115,10 @@
         ],
         [
           "resourceexplorer2",
+          "GetIndex"
+        ],
+        [
+          "resourceexplorer2",
           "UpdateIndexType"
         ]
       ]
@@ -7947,6 +9131,10 @@
         [
           "resourceexplorer2",
           "DeleteIndex"
+        ],
+        [
+          "resourceexplorer2",
+          "GetIndex"
         ]
       ]
     ],
@@ -7966,6 +9154,10 @@
       "aws_resourceexplorer2_index",
       "update",
       [
+        [
+          "resourceexplorer2",
+          "GetIndex"
+        ],
         [
           "resourceexplorer2",
           "UpdateIndexType"
@@ -8058,7 +9250,12 @@
       "resource",
       "aws_route53_cidr_collection",
       "read",
-      []
+      [
+        [
+          "route53",
+          "ListCidrCollections"
+        ]
+      ]
     ],
     [
       "resource",
@@ -8074,6 +9271,10 @@
         [
           "route53",
           "ChangeCidrCollection"
+        ],
+        [
+          "route53",
+          "ListCidrCollections"
         ]
       ]
     ],
@@ -8085,6 +9286,10 @@
         [
           "route53",
           "ChangeCidrCollection"
+        ],
+        [
+          "route53",
+          "ListCidrCollections"
         ]
       ]
     ],
@@ -8092,7 +9297,12 @@
       "resource",
       "aws_route53_cidr_location",
       "read",
-      []
+      [
+        [
+          "route53",
+          "ListCidrBlocks"
+        ]
+      ]
     ],
     [
       "resource",
@@ -8102,6 +9312,10 @@
         [
           "route53",
           "ChangeCidrCollection"
+        ],
+        [
+          "route53",
+          "ListCidrCollections"
         ]
       ]
     ],
@@ -8117,6 +9331,10 @@
         [
           "route53domains",
           "GetDomainDetail"
+        ],
+        [
+          "route53domains",
+          "GetOperationDetail"
         ]
       ]
     ],
@@ -8128,6 +9346,10 @@
         [
           "route53domains",
           "DisassociateDelegationSignerFromDomain"
+        ],
+        [
+          "route53domains",
+          "GetOperationDetail"
         ]
       ]
     ],
@@ -8156,6 +9378,10 @@
         [
           "route53profiles",
           "AssociateProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfileAssociation"
         ]
       ]
     ],
@@ -8167,6 +9393,10 @@
         [
           "route53profiles",
           "DisassociateProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfileAssociation"
         ]
       ]
     ],
@@ -8195,6 +9425,10 @@
         [
           "route53profiles",
           "CreateProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfile"
         ]
       ]
     ],
@@ -8206,6 +9440,10 @@
         [
           "route53profiles",
           "DeleteProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfile"
         ]
       ]
     ],
@@ -8234,6 +9472,10 @@
         [
           "route53profiles",
           "AssociateResourceToProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfileResourceAssociation"
         ]
       ]
     ],
@@ -8245,6 +9487,10 @@
         [
           "route53profiles",
           "DisassociateResourceFromProfile"
+        ],
+        [
+          "route53profiles",
+          "GetProfileResourceAssociation"
         ]
       ]
     ],
@@ -8284,6 +9530,10 @@
         [
           "s3",
           "DeleteBucket"
+        ],
+        [
+          "s3",
+          "ListObjectsV2"
         ]
       ]
     ],
@@ -8872,7 +10122,12 @@
       "resource",
       "aws_securityhub_standards_control_association",
       "read",
-      []
+      [
+        [
+          "securityhub",
+          "ListStandardsControlAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -8893,6 +10148,10 @@
         [
           "securitylake",
           "CreateAwsLogSource"
+        ],
+        [
+          "securitylake",
+          "ListLogSources"
         ]
       ]
     ],
@@ -8904,6 +10163,10 @@
         [
           "securitylake",
           "DeleteAwsLogSource"
+        ],
+        [
+          "securitylake",
+          "ListLogSources"
         ]
       ]
     ],
@@ -8911,7 +10174,12 @@
       "resource",
       "aws_securitylake_aws_log_source",
       "read",
-      []
+      [
+        [
+          "securitylake",
+          "ListLogSources"
+        ]
+      ]
     ],
     [
       "resource",
@@ -8945,7 +10213,12 @@
       "resource",
       "aws_securitylake_custom_log_source",
       "read",
-      []
+      [
+        [
+          "securitylake",
+          "ListLogSources"
+        ]
+      ]
     ],
     [
       "resource",
@@ -8961,6 +10234,10 @@
         [
           "securitylake",
           "CreateDataLake"
+        ],
+        [
+          "securitylake",
+          "ListDataLakes"
         ]
       ]
     ],
@@ -8972,6 +10249,10 @@
         [
           "securitylake",
           "DeleteDataLake"
+        ],
+        [
+          "securitylake",
+          "ListDataLakes"
         ]
       ]
     ],
@@ -8997,6 +10278,10 @@
       [
         [
           "securitylake",
+          "ListDataLakes"
+        ],
+        [
+          "securitylake",
           "UpdateDataLake"
         ]
       ]
@@ -9009,6 +10294,10 @@
         [
           "securitylake",
           "CreateSubscriber"
+        ],
+        [
+          "securitylake",
+          "GetSubscriber"
         ]
       ]
     ],
@@ -9020,6 +10309,10 @@
         [
           "securitylake",
           "DeleteSubscriber"
+        ],
+        [
+          "securitylake",
+          "GetSubscriber"
         ]
       ]
     ],
@@ -9043,6 +10336,10 @@
       "aws_securitylake_subscriber",
       "update",
       [
+        [
+          "securitylake",
+          "GetSubscriber"
+        ],
         [
           "securitylake",
           "UpdateSubscriber"
@@ -9207,7 +10504,12 @@
       "resource",
       "aws_servicecatalogappregistry_attribute_group_association",
       "read",
-      []
+      [
+        [
+          "servicecatalogappregistry",
+          "ListAssociatedAttributeGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -9348,6 +10650,10 @@
       [
         [
           "shield",
+          "DescribeProtection"
+        ],
+        [
+          "shield",
           "EnableApplicationLayerAutomaticResponse"
         ]
       ]
@@ -9357,6 +10663,10 @@
       "aws_shield_application_layer_automatic_response",
       "delete",
       [
+        [
+          "shield",
+          "DescribeProtection"
+        ],
         [
           "shield",
           "DisableApplicationLayerAutomaticResponse"
@@ -9381,6 +10691,10 @@
       [
         [
           "shield",
+          "DescribeProtection"
+        ],
+        [
+          "shield",
           "UpdateApplicationLayerAutomaticResponse"
         ]
       ]
@@ -9393,6 +10707,10 @@
         [
           "shield",
           "AssociateDRTLogBucket"
+        ],
+        [
+          "shield",
+          "DescribeDRTAccess"
         ]
       ]
     ],
@@ -9401,6 +10719,10 @@
       "aws_shield_drt_access_log_bucket_association",
       "delete",
       [
+        [
+          "shield",
+          "DescribeDRTAccess"
+        ],
         [
           "shield",
           "DisassociateDRTLogBucket"
@@ -9432,6 +10754,10 @@
         [
           "shield",
           "AssociateDRTRole"
+        ],
+        [
+          "shield",
+          "DescribeDRTAccess"
         ]
       ]
     ],
@@ -9440,6 +10766,10 @@
       "aws_shield_drt_access_role_arn_association",
       "delete",
       [
+        [
+          "shield",
+          "DescribeDRTAccess"
+        ],
         [
           "shield",
           "DisassociateDRTRole"
@@ -9465,6 +10795,10 @@
         [
           "shield",
           "AssociateDRTRole"
+        ],
+        [
+          "shield",
+          "DescribeDRTAccess"
         ]
       ]
     ],
@@ -9675,6 +11009,10 @@
         [
           "ssmquicksetup",
           "CreateConfigurationManager"
+        ],
+        [
+          "ssmquicksetup",
+          "GetConfigurationManager"
         ]
       ]
     ],
@@ -9686,6 +11024,10 @@
         [
           "ssmquicksetup",
           "DeleteConfigurationManager"
+        ],
+        [
+          "ssmquicksetup",
+          "GetConfigurationManager"
         ]
       ]
     ],
@@ -9705,6 +11047,10 @@
       "aws_ssmquicksetup_configuration_manager",
       "update",
       [
+        [
+          "ssmquicksetup",
+          "GetConfigurationManager"
+        ],
         [
           "ssmquicksetup",
           "UpdateConfigurationDefinition"
@@ -9961,6 +11307,10 @@
         [
           "timestreaminfluxdb",
           "CreateDbInstance"
+        ],
+        [
+          "timestreaminfluxdb",
+          "GetDbInstance"
         ]
       ]
     ],
@@ -9972,6 +11322,10 @@
         [
           "timestreaminfluxdb",
           "DeleteDbInstance"
+        ],
+        [
+          "timestreaminfluxdb",
+          "GetDbInstance"
         ]
       ]
     ],
@@ -9991,6 +11345,10 @@
       "aws_timestreaminfluxdb_db_instance",
       "update",
       [
+        [
+          "timestreaminfluxdb",
+          "GetDbInstance"
+        ],
         [
           "timestreaminfluxdb",
           "UpdateDbInstance"
@@ -10237,6 +11595,10 @@
         [
           "ec2",
           "CreateVpcBlockPublicAccessExclusion"
+        ],
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
         ]
       ]
     ],
@@ -10248,6 +11610,10 @@
         [
           "ec2",
           "DeleteVpcBlockPublicAccessExclusion"
+        ],
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
         ]
       ]
     ],
@@ -10269,6 +11635,10 @@
       [
         [
           "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
+        ],
+        [
+          "ec2",
           "ModifyVpcBlockPublicAccessExclusion"
         ]
       ]
@@ -10280,6 +11650,10 @@
       [
         [
           "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
+        [
+          "ec2",
           "ModifyVpcBlockPublicAccessOptions"
         ]
       ]
@@ -10289,6 +11663,10 @@
       "aws_vpc_block_public_access_options",
       "delete",
       [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
         [
           "ec2",
           "ModifyVpcBlockPublicAccessOptions"
@@ -10313,6 +11691,10 @@
       [
         [
           "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
+        [
+          "ec2",
           "ModifyVpcBlockPublicAccessOptions"
         ]
       ]
@@ -10338,7 +11720,12 @@
       "resource",
       "aws_vpc_endpoint_private_dns",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -10356,6 +11743,10 @@
       "aws_vpc_endpoint_service_private_dns_verification",
       "create",
       [
+        [
+          "ec2",
+          "DescribeVpcEndpointServiceConfigurations"
+        ],
         [
           "ec2",
           "StartVpcEndpointServicePrivateDnsVerification"
@@ -10446,6 +11837,10 @@
         [
           "ec2",
           "AssociateSecurityGroupVpc"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroupVpcAssociations"
         ]
       ]
     ],
@@ -10456,6 +11851,10 @@
       [
         [
           "ec2",
+          "DescribeSecurityGroupVpcAssociations"
+        ],
+        [
+          "ec2",
           "DisassociateSecurityGroupVpc"
         ]
       ]
@@ -10464,7 +11863,12 @@
       "resource",
       "aws_vpc_security_group_vpc_association",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupVpcAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -10480,6 +11884,10 @@
         [
           "vpclattice",
           "CreateResourceGateway"
+        ],
+        [
+          "vpclattice",
+          "GetResourceGateway"
         ]
       ]
     ],
@@ -10491,6 +11899,10 @@
         [
           "vpclattice",
           "DeleteResourceGateway"
+        ],
+        [
+          "vpclattice",
+          "GetResourceGateway"
         ]
       ]
     ],
@@ -10512,6 +11924,10 @@
       [
         [
           "vpclattice",
+          "GetResourceGateway"
+        ],
+        [
+          "vpclattice",
           "UpdateResourceGateway"
         ]
       ]
@@ -10524,6 +11940,10 @@
         [
           "workspaces",
           "CreateConnectionAlias"
+        ],
+        [
+          "workspaces",
+          "DescribeConnectionAliases"
         ]
       ]
     ],
@@ -10535,6 +11955,10 @@
         [
           "workspaces",
           "DeleteConnectionAlias"
+        ],
+        [
+          "workspaces",
+          "DescribeConnectionAliases"
         ]
       ]
     ],

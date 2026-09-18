@@ -22,10 +22,6 @@
         [
           "acm",
           "ListTagsForCertificate"
-        ],
-        [
-          "acm",
-          "new"
         ]
       ]
     ],
@@ -45,10 +41,6 @@
         [
           "codestarconnections",
           "ListTagsForResource"
-        ],
-        [
-          "codestarconnections",
-          "new"
         ]
       ]
     ],
@@ -68,10 +60,6 @@
         [
           "connect",
           "ListRoutingProfiles"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -91,10 +79,6 @@
         [
           "connect",
           "ListSecurityProfiles"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -106,21 +90,6 @@
         [
           "connect",
           "DescribeUserHierarchyStructure"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ebs_volume",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ],
@@ -132,10 +101,6 @@
         [
           "locationservice",
           "DescribeMap"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -151,10 +116,6 @@
         [
           "appflow",
           "DescribeConnectorProfiles"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -170,10 +131,6 @@
         [
           "appflow",
           "DescribeConnectorProfiles"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -200,10 +157,6 @@
         [
           "appflow",
           "UpdateConnectorProfile"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -227,10 +180,6 @@
         [
           "appflow",
           "ListTagsForResource"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -246,10 +195,6 @@
         [
           "appflow",
           "ListFlows"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -269,10 +214,6 @@
         [
           "appflow",
           "ListTagsForResource"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -304,10 +245,6 @@
         [
           "appflow",
           "UpdateFlow"
-        ],
-        [
-          "appflow",
-          "new"
         ]
       ]
     ],
@@ -323,10 +260,6 @@
         [
           "appintegrationsservice",
           "GetEventIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -338,10 +271,6 @@
         [
           "appintegrationsservice",
           "DeleteEventIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -353,10 +282,6 @@
         [
           "appintegrationsservice",
           "GetEventIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -380,10 +305,6 @@
         [
           "appintegrationsservice",
           "UpdateEventIntegration"
-        ],
-        [
-          "appintegrationsservice",
-          "new"
         ]
       ]
     ],
@@ -399,10 +320,6 @@
         [
           "connect",
           "DescribeUserHierarchyGroup"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -414,10 +331,6 @@
         [
           "connect",
           "DeleteUserHierarchyGroup"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -429,10 +342,6 @@
         [
           "connect",
           "DescribeUserHierarchyGroup"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -456,32 +365,6 @@
         [
           "connect",
           "UpdateUserHierarchyGroupName"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ],
@@ -497,10 +380,6 @@
         [
           "locationservice",
           "DescribeMap"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -512,10 +391,6 @@
         [
           "locationservice",
           "DeleteMap"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -527,10 +402,6 @@
         [
           "locationservice",
           "DescribeMap"
-        ],
-        [
-          "locationservice",
-          "new"
         ]
       ]
     ],
@@ -554,59 +425,6 @@
         [
           "locationservice",
           "UpdateMap"
-        ],
-        [
-          "locationservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_provisioned_product",
-      "read",
-      [
-        [
-          "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeRecord"
-        ],
-        [
-          "servicecatalog",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_volume_attachment",
-      "delete",
-      [
-        [
-          "ec2",
-          "DetachVolume"
-        ],
-        [
-          "ec2",
-          "StopInstances"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_volume_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ]

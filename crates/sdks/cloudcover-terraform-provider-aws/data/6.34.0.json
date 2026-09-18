@@ -6,37 +6,91 @@
       "list_resource",
       "aws_ec2_secondary_network",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecondaryNetworks"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ec2_secondary_subnet",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecondarySubnets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ecs_task_definition",
       "list",
-      []
+      [
+        [
+          "ecs",
+          "DescribeTaskDefinition"
+        ],
+        [
+          "ecs",
+          "ListTaskDefinitions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_elb",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancing",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancing",
+          "DescribeLoadBalancers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_lifecycle_configuration",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketLifecycleConfiguration"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_server_side_encryption_configuration",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketEncryption"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ],
+        [
+          "s3",
+          "ListDirectoryBuckets"
+        ]
+      ]
     ],
     [
       "resource",
@@ -69,7 +123,35 @@
         ],
         [
           "ec2",
+          "DescribeImages"
+        ],
+        [
+          "ec2",
           "DescribeInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceCreditSpecifications"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceTypes"
+        ],
+        [
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplateVersions"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplates"
+        ],
+        [
+          "ec2",
+          "DescribeSpotInstanceRequests"
         ],
         [
           "ec2",
@@ -78,6 +160,14 @@
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
         ],
         [
           "ec2",
@@ -192,11 +282,43 @@
         ],
         [
           "ec2",
+          "DescribeInstanceCreditSpecifications"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceTypes"
+        ],
+        [
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplateVersions"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplates"
+        ],
+        [
+          "ec2",
+          "DescribeSpotInstanceRequests"
+        ],
+        [
+          "ec2",
           "DescribeTags"
         ],
         [
           "ec2",
           "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVolumesModifications"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
         ],
         [
           "ec2",
@@ -280,6 +402,10 @@
         [
           "networkmanager",
           "CreateCoreNetworkPrefixListAssociation"
+        ],
+        [
+          "networkmanager",
+          "GetCoreNetwork"
         ]
       ]
     ],
@@ -291,6 +417,10 @@
         [
           "networkmanager",
           "DeleteCoreNetworkPrefixListAssociation"
+        ],
+        [
+          "networkmanager",
+          "GetCoreNetwork"
         ]
       ]
     ],
@@ -298,7 +428,12 @@
       "resource",
       "aws_networkmanager_prefix_list_association",
       "read",
-      []
+      [
+        [
+          "networkmanager",
+          "ListCoreNetworkPrefixListAssociations"
+        ]
+      ]
     ],
     [
       "resource",

@@ -4,32 +4,6 @@
   "upsert": [
     [
       "resource",
-      "aws_dms_event_subscription",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteEventSubscription"
-        ],
-        [
-          "databasemigrationservice",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_event_subscription",
-      "read",
-      [
-        [
-          "databasemigrationservice",
-          "DescribeEventSubscriptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_finspace_kx_dataview",
       "create",
       [
@@ -51,6 +25,10 @@
         [
           "finspace",
           "DeleteKxDataview"
+        ],
+        [
+          "finspace",
+          "GetKxDataview"
         ]
       ]
     ],
@@ -103,6 +81,10 @@
         [
           "finspace",
           "DeleteKxScalingGroup"
+        ],
+        [
+          "finspace",
+          "GetKxScalingGroup"
         ]
       ]
     ],
@@ -159,6 +141,10 @@
         [
           "finspace",
           "DeleteKxVolume"
+        ],
+        [
+          "finspace",
+          "GetKxVolume"
         ]
       ]
     ],

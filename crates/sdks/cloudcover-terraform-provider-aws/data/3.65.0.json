@@ -10,10 +10,6 @@
         [
           "eventbridge",
           "DescribeConnection"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -25,21 +21,6 @@
         [
           "eventbridge",
           "ListEventSources"
-        ],
-        [
-          "eventbridge",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_internet_gateway",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeInternetGateways"
         ]
       ]
     ],
@@ -51,32 +32,6 @@
         [
           "ec2",
           "DescribeKeyPairs"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_network_interface",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_route",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
         ]
       ]
     ],
@@ -92,10 +47,6 @@
         [
           "cloudfront",
           "GetFieldLevelEncryptionConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -107,10 +58,6 @@
         [
           "cloudfront",
           "DeleteFieldLevelEncryptionConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -122,10 +69,6 @@
         [
           "cloudfront",
           "GetFieldLevelEncryptionConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -141,10 +84,6 @@
         [
           "cloudfront",
           "UpdateFieldLevelEncryptionConfig"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -160,10 +99,6 @@
         [
           "cloudfront",
           "GetFieldLevelEncryptionProfile"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -175,10 +110,6 @@
         [
           "cloudfront",
           "DeleteFieldLevelEncryptionProfile"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -190,10 +121,6 @@
         [
           "cloudfront",
           "GetFieldLevelEncryptionProfile"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -209,10 +136,6 @@
         [
           "cloudfront",
           "UpdateFieldLevelEncryptionProfile"
-        ],
-        [
-          "cloudfront",
-          "new"
         ]
       ]
     ],
@@ -228,10 +151,6 @@
         [
           "eventbridge",
           "DescribeApiDestination"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -243,10 +162,6 @@
         [
           "eventbridge",
           "DeleteApiDestination"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -258,10 +173,6 @@
         [
           "eventbridge",
           "DescribeApiDestination"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -277,10 +188,6 @@
         [
           "eventbridge",
           "UpdateApiDestination"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -296,10 +203,6 @@
         [
           "eventbridge",
           "DescribeArchive"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -311,10 +214,6 @@
         [
           "eventbridge",
           "DeleteArchive"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -326,10 +225,6 @@
         [
           "eventbridge",
           "DescribeArchive"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -345,10 +240,6 @@
         [
           "eventbridge",
           "UpdateArchive"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -368,10 +259,6 @@
         [
           "eventbridge",
           "ListTagsForResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -383,10 +270,6 @@
         [
           "eventbridge",
           "DeleteEventBus"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -402,10 +285,6 @@
         [
           "eventbridge",
           "ListTagsForResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -429,10 +308,6 @@
         [
           "eventbridge",
           "UntagResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -448,10 +323,6 @@
         [
           "eventbridge",
           "PutPermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -463,10 +334,6 @@
         [
           "eventbridge",
           "RemovePermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -478,10 +345,6 @@
         [
           "eventbridge",
           "DescribeEventBus"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -497,10 +360,6 @@
         [
           "eventbridge",
           "PutPermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -516,10 +375,6 @@
         [
           "eventbridge",
           "DescribeConnection"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -534,7 +389,7 @@
         ],
         [
           "eventbridge",
-          "new"
+          "DescribeConnection"
         ]
       ]
     ],
@@ -546,10 +401,6 @@
         [
           "eventbridge",
           "DescribeConnection"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -565,10 +416,6 @@
         [
           "eventbridge",
           "UpdateConnection"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -584,10 +431,6 @@
         [
           "eventbridge",
           "PutPermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -599,10 +442,6 @@
         [
           "eventbridge",
           "RemovePermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -614,10 +453,6 @@
         [
           "eventbridge",
           "DescribeEventBus"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -633,10 +468,6 @@
         [
           "eventbridge",
           "PutPermission"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -656,10 +487,6 @@
         [
           "eventbridge",
           "PutRule"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -671,10 +498,6 @@
         [
           "eventbridge",
           "DeleteRule"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -690,10 +513,6 @@
         [
           "eventbridge",
           "ListTagsForResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -721,10 +540,6 @@
         [
           "eventbridge",
           "UntagResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -740,10 +555,6 @@
         [
           "eventbridge",
           "PutTargets"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -755,10 +566,6 @@
         [
           "eventbridge",
           "RemoveTargets"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -770,10 +577,6 @@
         [
           "eventbridge",
           "ListTargetsByRule"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -789,25 +592,6 @@
         [
           "eventbridge",
           "PutTargets"
-        ],
-        [
-          "eventbridge",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
         ]
       ]
     ],
@@ -839,10 +623,6 @@
         [
           "docdb",
           "RestoreDBClusterFromSnapshot"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -862,10 +642,6 @@
         [
           "docdb",
           "RemoveFromGlobalCluster"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -885,10 +661,6 @@
         [
           "docdb",
           "ListTagsForResource"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -924,10 +696,6 @@
         [
           "docdb",
           "RemoveTagsFromResource"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -943,10 +711,6 @@
         [
           "docdb",
           "DescribeGlobalClusters"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -966,10 +730,6 @@
         [
           "docdb",
           "RemoveFromGlobalCluster"
-        ],
-        [
-          "docdb",
-          "new"
         ]
       ]
     ],
@@ -1004,29 +764,6 @@
         [
           "docdb",
           "ModifyGlobalCluster"
-        ],
-        [
-          "docdb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachInternetGateway"
-        ],
-        [
-          "ec2",
-          "CreateInternetGateway"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -1041,15 +778,13 @@
         ],
         [
           "ec2",
+          "DescribeInternetGateways"
+        ],
+        [
+          "ec2",
           "DetachInternetGateway"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "read",
-      []
     ],
     [
       "resource",
@@ -1070,74 +805,11 @@
         ],
         [
           "ec2",
+          "DescribeInternetGateways"
+        ],
+        [
+          "ec2",
           "DetachInternetGateway"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_main_route_table_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_attachment",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateRouteTable"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
         ]
       ]
     ],
@@ -1153,10 +825,6 @@
         [
           "s3",
           "PutBucketIntelligentTieringConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1168,10 +836,6 @@
         [
           "s3",
           "DeleteBucketIntelligentTieringConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1183,10 +847,6 @@
         [
           "s3",
           "GetBucketIntelligentTieringConfiguration"
-        ],
-        [
-          "s3",
-          "new"
         ]
       ]
     ],
@@ -1202,36 +862,6 @@
         [
           "s3",
           "PutBucketIntelligentTieringConfiguration"
-        ],
-        [
-          "s3",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway_route_propagation",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "EnableVgwRoutePropagation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway_route_propagation",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeRouteTables"
         ]
       ]
     ]

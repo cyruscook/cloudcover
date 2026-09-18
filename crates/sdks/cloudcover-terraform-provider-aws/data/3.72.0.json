@@ -10,10 +10,6 @@
         [
           "cognitoidentityprovider",
           "DescribeUserPoolClient"
-        ],
-        [
-          "cognitoidentityprovider",
-          "new"
         ]
       ]
     ],
@@ -65,10 +61,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -116,10 +108,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -147,10 +135,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -178,10 +162,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -217,10 +197,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -248,10 +224,6 @@
         [
           "cloudwatch",
           "UntagResource"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -279,10 +251,6 @@
         [
           "eventbridge",
           "UntagResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -310,10 +278,6 @@
         [
           "eventbridge",
           "UntagResource"
-        ],
-        [
-          "eventbridge",
-          "new"
         ]
       ]
     ],
@@ -341,10 +305,6 @@
         [
           "cloudwatch",
           "UntagResource"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -372,10 +332,6 @@
         [
           "cloudwatch",
           "UntagResource"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -403,10 +359,6 @@
         [
           "cloudwatch",
           "UntagResource"
-        ],
-        [
-          "cloudwatch",
-          "new"
         ]
       ]
     ],
@@ -422,10 +374,6 @@
         [
           "cognitoidentity",
           "SetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "new"
         ]
       ]
     ],
@@ -437,10 +385,6 @@
         [
           "cognitoidentity",
           "SetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "new"
         ]
       ]
     ],
@@ -452,10 +396,6 @@
         [
           "cognitoidentity",
           "GetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "new"
         ]
       ]
     ],
@@ -471,10 +411,6 @@
         [
           "cognitoidentity",
           "SetPrincipalTagAttributeMap"
-        ],
-        [
-          "cognitoidentity",
-          "new"
         ]
       ]
     ],
@@ -486,10 +422,6 @@
         [
           "connect",
           "DeleteContactFlow"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -505,10 +437,6 @@
         [
           "connect",
           "DescribeContactFlowModule"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -520,10 +448,6 @@
         [
           "connect",
           "DeleteContactFlowModule"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -535,10 +459,6 @@
         [
           "connect",
           "DescribeContactFlowModule"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -566,10 +486,6 @@
         [
           "connect",
           "UpdateContactFlowModuleMetadata"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -585,10 +501,6 @@
         [
           "connect",
           "DescribeQuickConnect"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -600,10 +512,6 @@
         [
           "connect",
           "DeleteQuickConnect"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -615,10 +523,6 @@
         [
           "connect",
           "DescribeQuickConnect"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -646,25 +550,6 @@
         [
           "connect",
           "UpdateQuickConnectName"
-        ],
-        [
-          "connect",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_customer_gateway",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteCustomerGateway"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -692,10 +577,6 @@
         [
           "devicefarm",
           "UntagResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -707,10 +588,6 @@
         [
           "devicefarm",
           "DeleteInstanceProfile"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -726,10 +603,6 @@
         [
           "devicefarm",
           "ListTagsForResource"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -757,10 +630,6 @@
         [
           "devicefarm",
           "UpdateInstanceProfile"
-        ],
-        [
-          "devicefarm",
-          "new"
         ]
       ]
     ],
@@ -775,15 +644,15 @@
         ],
         [
           "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
           "DescribeSnapshots"
         ],
         [
           "ec2",
           "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -802,6 +671,10 @@
         ],
         [
           "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
           "DescribeSnapshots"
         ],
         [
@@ -811,10 +684,6 @@
         [
           "ec2",
           "RestoreSnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -829,15 +698,15 @@
         ],
         [
           "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
           "DescribeSnapshots"
         ],
         [
           "ec2",
           "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -856,6 +725,10 @@
         ],
         [
           "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
           "DescribeSnapshots"
         ],
         [
@@ -865,10 +738,6 @@
         [
           "ec2",
           "RestoreSnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -877,6 +746,18 @@
       "aws_ebs_snapshot_import",
       "create",
       [
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeImportSnapshotTasks"
+        ],
+        [
+          "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
         [
           "ec2",
           "DescribeSnapshots"
@@ -888,10 +769,6 @@
         [
           "ec2",
           "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -910,6 +787,10 @@
         ],
         [
           "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
           "DescribeSnapshots"
         ],
         [
@@ -919,10 +800,6 @@
         [
           "ec2",
           "RestoreSnapshotTier"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -950,10 +827,6 @@
         [
           "ecr",
           "UntagResource"
-        ],
-        [
-          "ecr",
-          "new"
         ]
       ]
     ],
@@ -977,10 +850,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -1004,10 +873,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -1031,10 +896,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -1058,10 +919,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -1085,10 +942,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -1104,6 +957,10 @@
         [
           "iam",
           "CreateRole"
+        ],
+        [
+          "iam",
+          "GetRole"
         ],
         [
           "iam",
@@ -1128,10 +985,6 @@
         [
           "iam",
           "UntagRole"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -1155,10 +1008,6 @@
         [
           "iam",
           "UntagUser"
-        ],
-        [
-          "iam",
-          "new"
         ]
       ]
     ],
@@ -1210,10 +1059,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1261,10 +1106,6 @@
         [
           "elbv2",
           "SetSubnets"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1292,10 +1133,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1323,10 +1160,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1362,10 +1195,6 @@
         [
           "elbv2",
           "RemoveTags"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1385,10 +1214,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1403,7 +1228,7 @@
         ],
         [
           "memorydb",
-          "new"
+          "DescribeSnapshots"
         ]
       ]
     ],
@@ -1419,10 +1244,6 @@
         [
           "memorydb",
           "ListTags"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1446,10 +1267,6 @@
         [
           "memorydb",
           "UntagResource"
-        ],
-        [
-          "memorydb",
-          "new"
         ]
       ]
     ],
@@ -1465,10 +1282,6 @@
         [
           "shield",
           "DescribeProtection"
-        ],
-        [
-          "shield",
-          "new"
         ]
       ]
     ],
@@ -1480,10 +1293,6 @@
         [
           "shield",
           "DisassociateHealthCheck"
-        ],
-        [
-          "shield",
-          "new"
         ]
       ]
     ],
@@ -1495,10 +1304,6 @@
         [
           "shield",
           "DescribeProtection"
-        ],
-        [
-          "shield",
-          "new"
         ]
       ]
     ],
@@ -1530,25 +1335,6 @@
         [
           "sns",
           "UntagResource"
-        ],
-        [
-          "sns",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_connection",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpnConnection"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -1584,62 +1370,6 @@
         [
           "ec2",
           "ModifyVpnTunnelOptions"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachVpnGateway"
-        ],
-        [
-          "ec2",
-          "CreateVpnGateway"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway",
-      "update",
-      [
-        [
-          "ec2",
-          "AttachVpnGateway"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DetachVpnGateway"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ]

@@ -13,6 +13,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "DescribeTags"
         ]
       ]
@@ -29,28 +33,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_datapipeline_pipeline",
-      "read",
-      [
+        ],
         [
-          "datapipeline",
-          "DescribePipelines"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_datapipeline_pipeline_definition",
-      "read",
-      [
-        [
-          "datapipeline",
-          "GetPipelineDefinition"
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -59,6 +45,10 @@
       "aws_dms_certificate",
       "read",
       [
+        [
+          "databasemigrationservice",
+          "DescribeCertificates"
+        ],
         [
           "databasemigrationservice",
           "ListTagsForResource"
@@ -72,6 +62,10 @@
       [
         [
           "databasemigrationservice",
+          "DescribeEndpoints"
+        ],
+        [
+          "databasemigrationservice",
           "ListTagsForResource"
         ]
       ]
@@ -81,6 +75,10 @@
       "aws_dms_replication_instance",
       "read",
       [
+        [
+          "databasemigrationservice",
+          "DescribeReplicationInstances"
+        ],
         [
           "databasemigrationservice",
           "ListTagsForResource"
@@ -94,6 +92,10 @@
       [
         [
           "databasemigrationservice",
+          "DescribeReplicationSubnetGroups"
+        ],
+        [
+          "databasemigrationservice",
           "ListTagsForResource"
         ]
       ]
@@ -105,62 +107,11 @@
       [
         [
           "databasemigrationservice",
+          "DescribeReplicationTasks"
+        ],
+        [
+          "databasemigrationservice",
           "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ecs_cluster",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeClusters"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ecs_container_definition",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeTaskDefinition"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ecs_service",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeServices"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ecs_task_definition",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeTaskDefinition"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ecs_task_execution",
-      "read",
-      [
-        [
-          "ecs",
-          "RunTask"
         ]
       ]
     ],
@@ -171,21 +122,8 @@
       [
         [
           "elasticache",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_elasticache_replication_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_elasticache_subnet_group",
-      "read",
-      [
+          "DescribeCacheClusters"
+        ],
         [
           "elasticache",
           "ListTagsForResource"
@@ -194,33 +132,16 @@
     ],
     [
       "data_source",
-      "aws_elasticache_user",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_emrcontainers_virtual_cluster",
+      "aws_elasticache_subnet_group",
       "read",
       [
         [
-          "emrcontainers",
-          "DescribeVirtualCluster"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_ivs_stream_key",
-      "read",
-      [
-        [
-          "ivs",
-          "GetStreamKey"
+          "elasticache",
+          "DescribeCacheSubnetGroups"
         ],
         [
-          "ivs",
-          "ListStreamKeys"
+          "elasticache",
+          "ListTagsForResource"
         ]
       ]
     ],
@@ -232,6 +153,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -251,6 +176,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -258,7 +187,12 @@
       "data_source",
       "aws_lb_trust_store",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -267,18 +201,11 @@
       [
         [
           "elasticloadbalancingv2",
-          "DescribeTags"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_serverlessapplicationrepository_application",
-      "read",
-      [
+          "DescribeLoadBalancers"
+        ],
         [
-          "serverlessapplicationrepository",
-          "GetApplication"
+          "elasticloadbalancingv2",
+          "DescribeTags"
         ]
       ]
     ],
@@ -298,6 +225,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -340,6 +271,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -351,6 +286,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -372,63 +311,6 @@
     ],
     [
       "resource",
-      "aws_alb_listener_certificate",
-      "create",
-      [
-        [
-          "elasticloadbalancingv2",
-          "AddListenerCertificates"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_listener_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_alb_listener_rule",
-      "create",
-      [
-        [
-          "elasticloadbalancingv2",
-          "AddTags"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "CreateRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "RemoveTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_alb_listener_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_alb_listener_rule",
-      "update",
-      [
-        [
-          "elasticloadbalancingv2",
-          "ModifyRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "SetRulePriorities"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_alb_target_group",
       "create",
       [
@@ -443,6 +325,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -473,6 +359,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -484,6 +374,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -530,435 +424,175 @@
     ],
     [
       "resource",
-      "aws_dataexchange_data_set",
+      "aws_autoscaling_group",
       "create",
       [
         [
-          "dataexchange",
-          "CreateDataSet"
+          "autoscaling",
+          "CreateAutoScalingGroup"
         ],
         [
-          "dataexchange",
-          "GetDataSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_data_set",
-      "delete",
-      [
+          "autoscaling",
+          "DescribeAutoScalingGroups"
+        ],
         [
-          "dataexchange",
-          "DeleteDataSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_data_set",
-      "read",
-      [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
         [
-          "dataexchange",
-          "GetDataSet"
+          "autoscaling",
+          "EnableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "PutLifecycleHook"
+        ],
+        [
+          "autoscaling",
+          "PutWarmPool"
+        ],
+        [
+          "autoscaling",
+          "SuspendProcesses"
+        ],
+        [
+          "autoscaling",
+          "UpdateAutoScalingGroup"
+        ],
+        [
+          "elasticloadbalancing",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
     [
       "resource",
-      "aws_dataexchange_data_set",
+      "aws_autoscaling_group",
       "update",
       [
         [
-          "dataexchange",
-          "GetDataSet"
+          "autoscaling",
+          "AttachLoadBalancerTargetGroups"
         ],
         [
-          "dataexchange",
-          "UpdateDataSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_revision",
-      "create",
-      [
-        [
-          "dataexchange",
-          "CreateRevision"
+          "autoscaling",
+          "AttachLoadBalancers"
         ],
         [
-          "dataexchange",
-          "GetRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_revision",
-      "delete",
-      [
-        [
-          "dataexchange",
-          "DeleteRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_revision",
-      "read",
-      [
-        [
-          "dataexchange",
-          "GetRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dataexchange_revision",
-      "update",
-      [
-        [
-          "dataexchange",
-          "GetRevision"
+          "autoscaling",
+          "AttachTrafficSources"
         ],
         [
-          "dataexchange",
-          "UpdateRevision"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline",
-      "create",
-      [
-        [
-          "datapipeline",
-          "CreatePipeline"
+          "autoscaling",
+          "CancelInstanceRefresh"
         ],
         [
-          "datapipeline",
-          "DescribePipelines"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline",
-      "delete",
-      [
-        [
-          "datapipeline",
-          "DeletePipeline"
+          "autoscaling",
+          "CreateOrUpdateTags"
         ],
         [
-          "datapipeline",
-          "DescribePipelines"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline",
-      "read",
-      [
-        [
-          "datapipeline",
-          "DescribePipelines"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline",
-      "update",
-      [
-        [
-          "datapipeline",
-          "DescribePipelines"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline_definition",
-      "create",
-      [
-        [
-          "datapipeline",
-          "ActivatePipeline"
+          "autoscaling",
+          "DeleteTags"
         ],
         [
-          "datapipeline",
-          "GetPipelineDefinition"
+          "autoscaling",
+          "DeleteWarmPool"
         ],
         [
-          "datapipeline",
-          "PutPipelineDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline_definition",
-      "read",
-      [
-        [
-          "datapipeline",
-          "GetPipelineDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datapipeline_pipeline_definition",
-      "update",
-      [
-        [
-          "datapipeline",
-          "ActivatePipeline"
+          "autoscaling",
+          "DescribeAutoScalingGroups"
         ],
         [
-          "datapipeline",
-          "GetPipelineDefinition"
+          "autoscaling",
+          "DescribeInstanceRefreshes"
         ],
         [
-          "datapipeline",
-          "PutPipelineDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_graph",
-      "create",
-      [
-        [
-          "detective",
-          "CreateGraph"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_graph",
-      "delete",
-      [
-        [
-          "detective",
-          "DeleteGraph"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_graph",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_detective_graph",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_detective_invitation_accepter",
-      "create",
-      [
-        [
-          "detective",
-          "AcceptInvitation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_invitation_accepter",
-      "delete",
-      [
-        [
-          "detective",
-          "DisassociateMembership"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_invitation_accepter",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_detective_member",
-      "create",
-      [
-        [
-          "detective",
-          "CreateMembers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_member",
-      "delete",
-      [
-        [
-          "detective",
-          "DeleteMembers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_member",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_detective_organization_admin_account",
-      "create",
-      [
-        [
-          "detective",
-          "EnableOrganizationAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_organization_admin_account",
-      "delete",
-      [
-        [
-          "detective",
-          "DisableOrganizationAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_organization_admin_account",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_detective_organization_configuration",
-      "create",
-      [
-        [
-          "detective",
-          "DescribeOrganizationConfiguration"
+          "autoscaling",
+          "DescribeLoadBalancerTargetGroups"
         ],
         [
-          "detective",
-          "UpdateOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_organization_configuration",
-      "read",
-      [
-        [
-          "detective",
-          "DescribeOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_detective_organization_configuration",
-      "update",
-      [
-        [
-          "detective",
-          "DescribeOrganizationConfiguration"
+          "autoscaling",
+          "DescribeLoadBalancers"
         ],
         [
-          "detective",
-          "UpdateOrganizationConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_certificate",
-      "create",
-      [
+          "autoscaling",
+          "DescribeScalingActivities"
+        ],
         [
-          "databasemigrationservice",
-          "ImportCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_certificate",
-      "delete",
-      [
+          "autoscaling",
+          "DescribeTrafficSources"
+        ],
         [
-          "databasemigrationservice",
-          "DeleteCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_certificate",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_endpoint",
-      "create",
-      [
+          "autoscaling",
+          "DescribeWarmPool"
+        ],
         [
-          "databasemigrationservice",
-          "CreateEndpoint"
+          "autoscaling",
+          "DetachLoadBalancerTargetGroups"
+        ],
+        [
+          "autoscaling",
+          "DetachLoadBalancers"
+        ],
+        [
+          "autoscaling",
+          "DetachTrafficSources"
+        ],
+        [
+          "autoscaling",
+          "DisableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "EnableMetricsCollection"
+        ],
+        [
+          "autoscaling",
+          "PutWarmPool"
+        ],
+        [
+          "autoscaling",
+          "ResumeProcesses"
+        ],
+        [
+          "autoscaling",
+          "StartInstanceRefresh"
+        ],
+        [
+          "autoscaling",
+          "SuspendProcesses"
+        ],
+        [
+          "autoscaling",
+          "UpdateAutoScalingGroup"
+        ],
+        [
+          "elasticloadbalancing",
+          "DescribeInstanceHealth"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetHealth"
         ]
       ]
     ],
     [
       "resource",
       "aws_dms_endpoint",
-      "delete",
+      "update",
       [
         [
           "databasemigrationservice",
-          "DeleteEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_endpoint",
-      "update",
-      [
+          "DescribeEndpoints"
+        ],
+        [
+          "databasemigrationservice",
+          "DescribeReplicationTasks"
+        ],
         [
           "databasemigrationservice",
           "ModifyEndpoint"
@@ -979,311 +613,13 @@
     ],
     [
       "resource",
-      "aws_dms_event_subscription",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_event_subscription",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_event_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_event_subscription",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_config",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateReplicationConfig"
-        ],
-        [
-          "databasemigrationservice",
-          "StartReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_config",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationConfig"
-        ],
-        [
-          "databasemigrationservice",
-          "StopReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_config",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_replication_config",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyReplicationConfig"
-        ],
-        [
-          "databasemigrationservice",
-          "StartReplication"
-        ],
-        [
-          "databasemigrationservice",
-          "StopReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateReplicationInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_replication_instance",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyReplicationInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateReplicationSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_replication_subnet_group",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyReplicationSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_task",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "StartReplicationTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_task",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "StopReplicationTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_replication_task",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_replication_task",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "MoveReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "StartReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "StopReplicationTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_s3_endpoint",
-      "create",
-      [
-        [
-          "databasemigrationservice",
-          "CreateEndpoint"
-        ],
-        [
-          "databasemigrationservice",
-          "ModifyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_s3_endpoint",
-      "delete",
-      [
-        [
-          "databasemigrationservice",
-          "DeleteEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dms_s3_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_dms_s3_endpoint",
-      "update",
-      [
-        [
-          "databasemigrationservice",
-          "ModifyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_ecs_account_setting_default",
-      "create",
+      "update",
       [
         [
           "ecs",
-          "PutAccountSettingDefault"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_account_setting_default",
-      "delete",
-      [
-        [
-          "ecs",
-          "PutAccountSettingDefault"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_account_setting_default",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecs_account_setting_default",
-      "update",
-      [
+          "ListAccountSettings"
+        ],
         [
           "ecs",
           "PutAccountSettingDefault"
@@ -1315,43 +651,6 @@
     ],
     [
       "resource",
-      "aws_ecs_capacity_provider",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeleteCapacityProvider"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_capacity_provider",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeCapacityProviders"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_capacity_provider",
-      "update",
-      [
-        [
-          "ecs",
-          "DescribeCapacityProviders"
-        ],
-        [
-          "ecs",
-          "UpdateCapacityProvider"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_ecs_cluster",
       "create",
       [
@@ -1361,63 +660,15 @@
         ],
         [
           "ecs",
+          "DescribeClusters"
+        ],
+        [
+          "ecs",
           "TagResource"
         ],
         [
           "ecs",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_cluster",
-      "update",
-      [
-        [
-          "ecs",
-          "UpdateCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_cluster_capacity_providers",
-      "create",
-      [
-        [
-          "ecs",
-          "DescribeClusters"
-        ],
-        [
-          "ecs",
-          "PutClusterCapacityProviders"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_cluster_capacity_providers",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_cluster_capacity_providers",
-      "update",
-      [
-        [
-          "ecs",
-          "DescribeClusters"
-        ],
-        [
-          "ecs",
-          "PutClusterCapacityProviders"
         ]
       ]
     ],
@@ -1446,51 +697,6 @@
     ],
     [
       "resource",
-      "aws_ecs_service",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeleteService"
-        ],
-        [
-          "ecs",
-          "DescribeServices"
-        ],
-        [
-          "ecs",
-          "UpdateService"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_service",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeServices"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_service",
-      "update",
-      [
-        [
-          "ecs",
-          "DescribeServices"
-        ],
-        [
-          "ecs",
-          "UpdateService"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_ecs_task_definition",
       "create",
       [
@@ -1509,39 +715,6 @@
         [
           "ecs",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_task_definition",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeregisterTaskDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_task_definition",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeTaskDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_task_definition",
-      "update",
-      [
-        [
-          "ecs",
-          "DescribeTaskDefinition"
         ]
       ]
     ],
@@ -1570,43 +743,6 @@
     ],
     [
       "resource",
-      "aws_ecs_task_set",
-      "delete",
-      [
-        [
-          "ecs",
-          "DeleteTaskSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_task_set",
-      "read",
-      [
-        [
-          "ecs",
-          "DescribeTaskSets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecs_task_set",
-      "update",
-      [
-        [
-          "ecs",
-          "DescribeTaskSets"
-        ],
-        [
-          "ecs",
-          "UpdateTaskSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_elasticache_cluster",
       "create",
       [
@@ -1620,6 +756,10 @@
         ],
         [
           "elasticache",
+          "DescribeCacheClusters"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
         ]
       ]
@@ -1627,129 +767,15 @@
     [
       "resource",
       "aws_elasticache_cluster",
-      "delete",
+      "update",
       [
         [
           "elasticache",
-          "DeleteCacheCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "update",
-      [
+          "DescribeCacheClusters"
+        ],
         [
           "elasticache",
           "ModifyCacheCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "create",
-      [
-        [
-          "elasticache",
-          "CreateGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "DecreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "IncreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "ModifyGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DecreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "IncreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "ModifyGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "create",
-      [
-        [
-          "elasticache",
-          "CreateCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ],
-        [
-          "elasticache",
-          "ModifyCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "ResetCacheParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "read",
-      [
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ],
-        [
-          "elasticache",
-          "ModifyCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "ResetCacheParameterGroup"
         ]
       ]
     ],
@@ -1772,18 +798,15 @@
         ],
         [
           "elasticache",
-          "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_replication_group",
-      "read",
-      [
+          "DescribeGlobalReplicationGroups"
+        ],
         [
           "elasticache",
-          "DescribeCacheClusters"
+          "DescribeReplicationGroups"
+        ],
+        [
+          "elasticache",
+          "RemoveTagsFromResource"
         ]
       ]
     ],
@@ -1799,6 +822,10 @@
         [
           "elasticache",
           "DescribeCacheClusters"
+        ],
+        [
+          "elasticache",
+          "DescribeReplicationGroups"
         ],
         [
           "elasticache",
@@ -1829,24 +856,11 @@
         ],
         [
           "elasticache",
-          "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "update",
-      [
+          "DescribeCacheSubnetGroups"
+        ],
         [
           "elasticache",
-          "ModifyCacheSubnetGroup"
+          "RemoveTagsFromResource"
         ]
       ]
     ],
@@ -1865,29 +879,11 @@
         ],
         [
           "elasticache",
+          "DescribeUsers"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyUser"
         ]
       ]
     ],
@@ -1906,57 +902,16 @@
         ],
         [
           "elasticache",
+          "DescribeUserGroups"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticache_user_group",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteUserGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyUserGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group_association",
-      "create",
-      [
-        [
-          "elasticache",
-          "ModifyUserGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_elastictranscoder_pipeline",
       "create",
       []
@@ -1996,217 +951,6 @@
       "aws_elastictranscoder_preset",
       "read",
       []
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_job_template",
-      "create",
-      [
-        [
-          "emrcontainers",
-          "CreateJobTemplate"
-        ],
-        [
-          "emrcontainers",
-          "DescribeJobTemplate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_job_template",
-      "delete",
-      [
-        [
-          "emrcontainers",
-          "DeleteJobTemplate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_job_template",
-      "read",
-      [
-        [
-          "emrcontainers",
-          "DescribeJobTemplate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_virtual_cluster",
-      "create",
-      [
-        [
-          "emrcontainers",
-          "CreateVirtualCluster"
-        ],
-        [
-          "emrcontainers",
-          "DescribeVirtualCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_virtual_cluster",
-      "delete",
-      [
-        [
-          "emrcontainers",
-          "DeleteVirtualCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_virtual_cluster",
-      "read",
-      [
-        [
-          "emrcontainers",
-          "DescribeVirtualCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emrcontainers_virtual_cluster",
-      "update",
-      [
-        [
-          "emrcontainers",
-          "DescribeVirtualCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_channel",
-      "create",
-      [
-        [
-          "ivs",
-          "CreateChannel"
-        ],
-        [
-          "ivs",
-          "GetChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_channel",
-      "delete",
-      [
-        [
-          "ivs",
-          "DeleteChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_channel",
-      "read",
-      [
-        [
-          "ivs",
-          "GetChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_channel",
-      "update",
-      [
-        [
-          "ivs",
-          "GetChannel"
-        ],
-        [
-          "ivs",
-          "UpdateChannel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_playback_key_pair",
-      "create",
-      [
-        [
-          "ivs",
-          "GetPlaybackKeyPair"
-        ],
-        [
-          "ivs",
-          "ImportPlaybackKeyPair"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_playback_key_pair",
-      "delete",
-      [
-        [
-          "ivs",
-          "DeletePlaybackKeyPair"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_playback_key_pair",
-      "read",
-      [
-        [
-          "ivs",
-          "GetPlaybackKeyPair"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_recording_configuration",
-      "create",
-      [
-        [
-          "ivs",
-          "CreateRecordingConfiguration"
-        ],
-        [
-          "ivs",
-          "GetRecordingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_recording_configuration",
-      "delete",
-      [
-        [
-          "ivs",
-          "DeleteRecordingConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ivs_recording_configuration",
-      "read",
-      [
-        [
-          "ivs",
-          "GetRecordingConfiguration"
-        ]
-      ]
     ],
     [
       "resource",
@@ -2224,6 +968,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -2266,6 +1014,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -2277,6 +1029,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -2298,63 +1054,6 @@
     ],
     [
       "resource",
-      "aws_lb_listener_certificate",
-      "create",
-      [
-        [
-          "elasticloadbalancingv2",
-          "AddListenerCertificates"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_listener_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lb_listener_rule",
-      "create",
-      [
-        [
-          "elasticloadbalancingv2",
-          "AddTags"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "CreateRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "RemoveTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_listener_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lb_listener_rule",
-      "update",
-      [
-        [
-          "elasticloadbalancingv2",
-          "ModifyRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "SetRulePriorities"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_lb_target_group",
       "create",
       [
@@ -2369,6 +1068,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -2399,6 +1102,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -2410,6 +1117,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -2469,6 +1180,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ],
+        [
+          "elasticloadbalancingv2",
           "RemoveTags"
         ]
       ]
@@ -2481,6 +1196,10 @@
         [
           "elasticloadbalancingv2",
           "DeleteTrustStore"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreAssociations"
         ]
       ]
     ],
@@ -2488,13 +1207,22 @@
       "resource",
       "aws_lb_trust_store",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_lb_trust_store",
       "update",
       [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ],
         [
           "elasticloadbalancingv2",
           "ModifyTrustStore"
@@ -2509,6 +1237,10 @@
         [
           "elasticloadbalancingv2",
           "AddTrustStoreRevocations"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreRevocations"
         ]
       ]
     ],
@@ -2527,13 +1259,22 @@
       "resource",
       "aws_lb_trust_store_revocation",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreRevocations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_rds_certificate",
       "create",
       [
+        [
+          "rds",
+          "DescribeCertificates"
+        ],
         [
           "rds",
           "ModifyCertificates"
@@ -2555,7 +1296,12 @@
       "resource",
       "aws_rds_certificate",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeCertificates"
+        ]
+      ]
     ],
     [
       "resource",
@@ -2564,56 +1310,11 @@
       [
         [
           "rds",
+          "DescribeCertificates"
+        ],
+        [
+          "rds",
           "ModifyCertificates"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_serverlessapplicationrepository_cloudformation_stack",
-      "create",
-      [
-        [
-          "cloudformation",
-          "ExecuteChangeSet"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "CreateCloudFormationChangeSet"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "GetApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_serverlessapplicationrepository_cloudformation_stack",
-      "read",
-      [
-        [
-          "serverlessapplicationrepository",
-          "GetApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_serverlessapplicationrepository_cloudformation_stack",
-      "update",
-      [
-        [
-          "cloudformation",
-          "ExecuteChangeSet"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "CreateCloudFormationChangeSet"
-        ],
-        [
-          "serverlessapplicationrepository",
-          "GetApplication"
         ]
       ]
     ]

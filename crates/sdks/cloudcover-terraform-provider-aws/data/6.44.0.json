@@ -21,61 +21,139 @@
       "list_resource",
       "aws_appautoscaling_policy",
       "list",
-      []
+      [
+        [
+          "applicationautoscaling",
+          "DescribeScalingPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_arczonalshift_zonal_autoshift_configuration",
       "list",
-      []
+      [
+        [
+          "arczonalshift",
+          "GetManagedResource"
+        ],
+        [
+          "arczonalshift",
+          "ListManagedResources"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_dynamodb_global_secondary_index",
       "list",
-      []
+      [
+        [
+          "dynamodb",
+          "DescribeTable"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_dynamodb_table",
       "list",
-      []
+      [
+        [
+          "dynamodb",
+          "DescribeContinuousBackups"
+        ],
+        [
+          "dynamodb",
+          "DescribeTable"
+        ],
+        [
+          "dynamodb",
+          "DescribeTimeToLive"
+        ],
+        [
+          "dynamodb",
+          "ListTables"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_ecr_repository_policy",
       "list",
-      []
+      [
+        [
+          "ecr",
+          "DescribeRepositories"
+        ],
+        [
+          "ecr",
+          "GetRepositoryPolicy"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_glue_catalog",
       "list",
-      []
+      [
+        [
+          "glue",
+          "GetCatalogs"
+        ],
+        [
+          "glue",
+          "GetTags"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_lb_target_group_attachment",
       "list",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetHealth"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_s3_bucket_logging",
       "list",
-      []
+      [
+        [
+          "s3",
+          "GetBucketLogging"
+        ],
+        [
+          "s3",
+          "ListBuckets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_securityhub_standards_control",
       "list",
-      []
+      [
+        [
+          "securityhub",
+          "DescribeStandardsControls"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_vpc_endpoint_route_table_association",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -139,12 +217,35 @@
     ],
     [
       "resource",
+      "aws_ec2_client_vpn_endpoint",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateClientVpnEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeClientVpnEndpoints"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_glue_catalog",
       "create",
       [
         [
           "glue",
           "CreateCatalog"
+        ],
+        [
+          "glue",
+          "GetCatalog"
         ]
       ]
     ],
@@ -208,6 +309,10 @@
         ],
         [
           "odb",
+          "GetCloudVmCluster"
+        ],
+        [
+          "odb",
           "ListTagsForResource"
         ]
       ]
@@ -232,6 +337,10 @@
       "aws_outposts_capacity_task",
       "create",
       [
+        [
+          "outposts",
+          "GetCapacityTask"
+        ],
         [
           "outposts",
           "StartCapacityTask"
@@ -277,6 +386,14 @@
       [
         [
           "redshift",
+          "DescribeClusters"
+        ],
+        [
+          "redshift",
+          "DescribeDataShares"
+        ],
+        [
+          "redshift",
           "RegisterNamespace"
         ],
         [
@@ -301,6 +418,14 @@
       "aws_redshift_namespace_registration",
       "read",
       [
+        [
+          "redshift",
+          "DescribeClusters"
+        ],
+        [
+          "redshift",
+          "DescribeDataShares"
+        ],
         [
           "redshiftserverless",
           "GetNamespace"

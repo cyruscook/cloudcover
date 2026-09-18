@@ -6,73 +6,225 @@
       "list_resource",
       "aws_api_gateway_integration",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetIntegration"
+        ],
+        [
+          "apigateway",
+          "GetResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_api_gateway_integration_response",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetIntegration"
+        ],
+        [
+          "apigateway",
+          "GetIntegrationResponse"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_api_gateway_method",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetMethod"
+        ],
+        [
+          "apigateway",
+          "GetResource"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_api_gateway_method_response",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetMethod"
+        ],
+        [
+          "apigateway",
+          "GetMethodResponse"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_api_gateway_resource",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetResource"
+        ],
+        [
+          "apigateway",
+          "GetResources"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_api_gateway_rest_api",
       "list",
-      []
+      [
+        [
+          "apigateway",
+          "GetRestApis"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_apigatewayv2_route",
       "list",
-      []
+      [
+        [
+          "apigatewayv2",
+          "GetRoutes"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudfront_distribution",
       "list",
-      []
+      [
+        [
+          "cloudfront",
+          "GetDistribution"
+        ],
+        [
+          "cloudfront",
+          "ListDistributions"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_alarm_mute_rule",
       "list",
-      []
+      [
+        [
+          "cloudwatch",
+          "GetAlarmMuteRule"
+        ],
+        [
+          "cloudwatch",
+          "ListAlarmMuteRules"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cloudwatch_log_subscription_filter",
       "list",
-      []
+      [
+        [
+          "cloudwatchlogs",
+          "DescribeSubscriptionFilters"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_lb",
+      "list",
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeCapacityReservation"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_lb_listener",
+      "list",
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeListenerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_lb_listener_rule",
+      "list",
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeRules"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_lb_target_group",
+      "list",
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_nat_gateway",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeNatGateways"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_sns_topic_policy",
       "list",
-      []
+      [
+        [
+          "sns",
+          "GetTopicAttributes"
+        ],
+        [
+          "sns",
+          "ListTopics"
+        ]
+      ]
     ],
     [
       "resource",
@@ -141,7 +293,15 @@
         ],
         [
           "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
           "DescribeDirectoryDataAccess"
+        ],
+        [
+          "directoryservice",
+          "DescribeDomainControllers"
         ],
         [
           "directoryservice",
@@ -164,6 +324,10 @@
       [
         [
           "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
           "DescribeDirectoryDataAccess"
         ]
       ]
@@ -175,7 +339,15 @@
       [
         [
           "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
           "DescribeDirectoryDataAccess"
+        ],
+        [
+          "directoryservice",
+          "DescribeDomainControllers"
         ],
         [
           "directoryservice",

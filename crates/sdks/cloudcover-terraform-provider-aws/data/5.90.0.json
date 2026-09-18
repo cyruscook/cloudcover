@@ -76,58 +76,18 @@
       "resource",
       "aws_lakeformation_opt_in",
       "read",
-      []
+      [
+        [
+          "lakeformation",
+          "ListLakeFormationOptIns"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_lakeformation_opt_in",
       "update",
       []
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "create",
-      [
-        [
-          "simpledb",
-          "CreateDomain"
-        ],
-        [
-          "simpledb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "delete",
-      [
-        [
-          "simpledb",
-          "DeleteDomain"
-        ],
-        [
-          "simpledb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "read",
-      [
-        [
-          "simpledb",
-          "DomainMetadata"
-        ],
-        [
-          "simpledb",
-          "new"
-        ]
-      ]
     ]
   ]
 }

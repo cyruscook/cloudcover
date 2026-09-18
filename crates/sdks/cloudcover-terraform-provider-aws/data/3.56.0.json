@@ -14,10 +14,6 @@
         [
           "directconnect",
           "DescribeTags"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -25,16 +21,7 @@
       "data_source",
       "aws_dx_location",
       "read",
-      [
-        [
-          "directconnect",
-          "DescribeLocations"
-        ],
-        [
-          "directconnect",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -44,10 +31,6 @@
         [
           "directconnect",
           "DescribeLocations"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
@@ -67,10 +50,6 @@
         [
           "appstream",
           "ListTagsForResource"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -82,10 +61,6 @@
         [
           "appstream",
           "DeleteStack"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -101,10 +76,6 @@
         [
           "appstream",
           "ListTagsForResource"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -132,10 +103,6 @@
         [
           "appstream",
           "UpdateStack"
-        ],
-        [
-          "appstream",
-          "new"
         ]
       ]
     ],
@@ -155,10 +122,6 @@
         [
           "autoscaling",
           "DescribeTags"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -174,10 +137,6 @@
         [
           "autoscaling",
           "DeleteTags"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -189,10 +148,6 @@
         [
           "autoscaling",
           "DescribeTags"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -212,10 +167,6 @@
         [
           "autoscaling",
           "DescribeTags"
-        ],
-        [
-          "autoscaling",
-          "new"
         ]
       ]
     ],
@@ -227,23 +178,14 @@
         [
           "directconnect",
           "DeleteConnection"
-        ],
-        [
-          "directconnect",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_dx_connection_association",
-      "delete",
-      [
-        [
-          "directconnect",
-          "DisassociateConnectionFromLag"
-        ]
-      ]
+      "read",
+      []
     ],
     [
       "resource",
@@ -252,19 +194,11 @@
       [
         [
           "dynamodb",
-          "ListTagsOfResource"
-        ],
-        [
-          "dynamodb",
           "TagResource"
         ],
         [
           "dynamodb",
           "UntagResource"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -280,10 +214,6 @@
         [
           "dynamodb",
           "UntagResource"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -291,16 +221,7 @@
       "resource",
       "aws_dynamodb_tag",
       "read",
-      [
-        [
-          "dynamodb",
-          "ListTagsOfResource"
-        ],
-        [
-          "dynamodb",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -309,19 +230,11 @@
       [
         [
           "dynamodb",
-          "ListTagsOfResource"
-        ],
-        [
-          "dynamodb",
           "TagResource"
         ],
         [
           "dynamodb",
           "UntagResource"
-        ],
-        [
-          "dynamodb",
-          "new"
         ]
       ]
     ],
@@ -332,19 +245,11 @@
       [
         [
           "ecs",
-          "ListTagsForResource"
-        ],
-        [
-          "ecs",
           "TagResource"
         ],
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -360,10 +265,6 @@
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -371,16 +272,7 @@
       "resource",
       "aws_ecs_tag",
       "read",
-      [
-        [
-          "ecs",
-          "ListTagsForResource"
-        ],
-        [
-          "ecs",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -389,19 +281,11 @@
       [
         [
           "ecs",
-          "ListTagsForResource"
-        ],
-        [
-          "ecs",
           "TagResource"
         ],
         [
           "ecs",
           "UntagResource"
-        ],
-        [
-          "ecs",
-          "new"
         ]
       ]
     ],
@@ -421,10 +305,6 @@
         [
           "fsx",
           "DescribeFileSystems"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -444,10 +324,6 @@
         [
           "fsx",
           "DescribeFileSystems"
-        ],
-        [
-          "fsx",
-          "new"
         ]
       ]
     ],
@@ -463,10 +339,6 @@
         [
           "route53",
           "GetReusableDelegationSet"
-        ],
-        [
-          "route53",
-          "new"
         ]
       ]
     ],
@@ -482,10 +354,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeCluster"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -497,14 +365,6 @@
         [
           "route53recoverycontrolconfig",
           "DeleteCluster"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "DescribeCluster"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -516,10 +376,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeCluster"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -535,10 +391,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeControlPanel"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -550,14 +402,6 @@
         [
           "route53recoverycontrolconfig",
           "DeleteControlPanel"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "DescribeControlPanel"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -569,10 +413,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeControlPanel"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -588,10 +428,6 @@
         [
           "route53recoverycontrolconfig",
           "UpdateControlPanel"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -607,10 +443,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeRoutingControl"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -622,14 +454,6 @@
         [
           "route53recoverycontrolconfig",
           "DeleteRoutingControl"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "DescribeRoutingControl"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -641,10 +465,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeRoutingControl"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -660,10 +480,6 @@
         [
           "route53recoverycontrolconfig",
           "UpdateRoutingControl"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -679,10 +495,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeSafetyRule"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -694,14 +506,6 @@
         [
           "route53recoverycontrolconfig",
           "DeleteSafetyRule"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "DescribeSafetyRule"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -713,10 +517,6 @@
         [
           "route53recoverycontrolconfig",
           "DescribeSafetyRule"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -732,10 +532,6 @@
         [
           "route53recoverycontrolconfig",
           "UpdateSafetyRule"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "new"
         ]
       ]
     ],
@@ -763,10 +559,6 @@
         [
           "route53recoveryreadiness",
           "UntagResource"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -782,10 +574,6 @@
         [
           "route53recoveryreadiness",
           "GetCell"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -801,10 +589,6 @@
         [
           "route53recoveryreadiness",
           "ListTagsForResources"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -832,10 +616,6 @@
         [
           "route53recoveryreadiness",
           "UpdateCell"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -863,10 +643,6 @@
         [
           "route53recoveryreadiness",
           "UntagResource"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -882,10 +658,6 @@
         [
           "route53recoveryreadiness",
           "GetReadinessCheck"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -901,10 +673,6 @@
         [
           "route53recoveryreadiness",
           "ListTagsForResources"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -932,10 +700,6 @@
         [
           "route53recoveryreadiness",
           "UpdateReadinessCheck"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -963,10 +727,6 @@
         [
           "route53recoveryreadiness",
           "UntagResource"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -982,10 +742,6 @@
         [
           "route53recoveryreadiness",
           "GetRecoveryGroup"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1001,10 +757,6 @@
         [
           "route53recoveryreadiness",
           "ListTagsForResources"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1032,10 +784,6 @@
         [
           "route53recoveryreadiness",
           "UpdateRecoveryGroup"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1063,10 +811,6 @@
         [
           "route53recoveryreadiness",
           "UntagResource"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1082,10 +826,6 @@
         [
           "route53recoveryreadiness",
           "GetResourceSet"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1101,10 +841,6 @@
         [
           "route53recoveryreadiness",
           "ListTagsForResources"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ],
@@ -1132,10 +868,6 @@
         [
           "route53recoveryreadiness",
           "UpdateResourceSet"
-        ],
-        [
-          "route53recoveryreadiness",
-          "new"
         ]
       ]
     ]

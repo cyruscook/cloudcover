@@ -20,6 +20,10 @@
       [
         [
           "apigateway",
+          "GetRestApi"
+        ],
+        [
+          "apigateway",
           "PutRestApi"
         ]
       ]
@@ -46,21 +50,6 @@
       "aws_api_gateway_rest_api_put",
       "update",
       []
-    ],
-    [
-      "resource",
-      "aws_elasticache_replication_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DescribeCacheClusters"
-        ],
-        [
-          "elasticache",
-          "ModifyReplicationGroup"
-        ]
-      ]
     ]
   ]
 }

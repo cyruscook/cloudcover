@@ -6,31 +6,91 @@
       "list_resource",
       "aws_mailmanager_rule_set",
       "list",
-      []
+      [
+        [
+          "mailmanager",
+          "GetRuleSet"
+        ],
+        [
+          "mailmanager",
+          "ListRuleSets"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_prometheus_anomaly_detector",
       "list",
-      []
+      [
+        [
+          "amp",
+          "DescribeAnomalyDetector"
+        ],
+        [
+          "amp",
+          "ListAnomalyDetectors"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_prometheus_scraper",
       "list",
-      []
+      [
+        [
+          "amp",
+          "DescribeScraper"
+        ],
+        [
+          "amp",
+          "ListScrapers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_prometheus_scraper_logging_configuration",
       "list",
-      []
+      [
+        [
+          "amp",
+          "DescribeScraperLoggingConfiguration"
+        ],
+        [
+          "amp",
+          "ListScrapers"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_resiliencehubv2_policy",
       "list",
-      []
+      [
+        [
+          "resiliencehubv2",
+          "GetPolicy"
+        ],
+        [
+          "resiliencehubv2",
+          "ListPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_api_gateway_rest_api",
+      "delete",
+      [
+        [
+          "apigateway",
+          "DeleteRestApi"
+        ],
+        [
+          "apigateway",
+          "GetRestApi"
+        ]
+      ]
     ],
     [
       "resource",
@@ -92,6 +152,10 @@
         [
           "amp",
           "CreateAnomalyDetector"
+        ],
+        [
+          "amp",
+          "DescribeAnomalyDetector"
         ]
       ]
     ],
@@ -103,6 +167,10 @@
         [
           "amp",
           "DeleteAnomalyDetector"
+        ],
+        [
+          "amp",
+          "DescribeAnomalyDetector"
         ]
       ]
     ],
@@ -124,6 +192,10 @@
       [
         [
           "amp",
+          "DescribeAnomalyDetector"
+        ],
+        [
+          "amp",
           "PutAnomalyDetector"
         ]
       ]
@@ -133,6 +205,10 @@
       "aws_prometheus_scraper_logging_configuration",
       "create",
       [
+        [
+          "amp",
+          "DescribeScraperLoggingConfiguration"
+        ],
         [
           "amp",
           "UpdateScraperLoggingConfiguration"
@@ -147,6 +223,10 @@
         [
           "amp",
           "DeleteScraperLoggingConfiguration"
+        ],
+        [
+          "amp",
+          "DescribeScraperLoggingConfiguration"
         ]
       ]
     ],
@@ -166,6 +246,10 @@
       "aws_prometheus_scraper_logging_configuration",
       "update",
       [
+        [
+          "amp",
+          "DescribeScraperLoggingConfiguration"
+        ],
         [
           "amp",
           "UpdateScraperLoggingConfiguration"

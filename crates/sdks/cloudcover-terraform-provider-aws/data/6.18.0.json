@@ -6,13 +6,31 @@
       "list_resource",
       "aws_iam_policy",
       "list",
-      []
+      [
+        [
+          "iam",
+          "GetPolicyVersion"
+        ],
+        [
+          "iam",
+          "ListPolicies"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_iam_role_policy_attachment",
       "list",
-      []
+      [
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ],
+        [
+          "iam",
+          "ListRoles"
+        ]
+      ]
     ],
     [
       "resource",
@@ -22,6 +40,10 @@
         [
           "bedrockagentcorecontrol",
           "CreateMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
         ]
       ]
     ],
@@ -33,6 +55,10 @@
         [
           "bedrockagentcorecontrol",
           "DeleteMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
         ]
       ]
     ],
@@ -62,13 +88,31 @@
       "resource",
       "aws_bedrockagentcore_memory_strategy",
       "create",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "UpdateMemory"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_bedrockagentcore_memory_strategy",
       "delete",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "GetMemory"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "UpdateMemory"
+        ]
+      ]
     ],
     [
       "resource",
@@ -85,7 +129,12 @@
       "resource",
       "aws_bedrockagentcore_memory_strategy",
       "update",
-      []
+      [
+        [
+          "bedrockagentcorecontrol",
+          "UpdateMemory"
+        ]
+      ]
     ],
     [
       "resource",

@@ -34,10 +34,6 @@
         [
           "ec2",
           "RevokeSecurityGroupIngress"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -46,21 +42,6 @@
       "aws_default_security_group",
       "delete",
       []
-    ],
-    [
-      "resource",
-      "aws_default_security_group",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
     ]
   ]
 }

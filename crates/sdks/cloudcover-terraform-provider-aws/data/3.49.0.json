@@ -14,10 +14,6 @@
         [
           "eks",
           "DescribeIdentityProviderConfig"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "eks",
           "DisassociateIdentityProviderConfig"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -44,10 +36,6 @@
         [
           "eks",
           "DescribeIdentityProviderConfig"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -67,10 +55,6 @@
         [
           "eks",
           "UntagResource"
-        ],
-        [
-          "eks",
-          "new"
         ]
       ]
     ],
@@ -82,14 +66,6 @@
         [
           "rds",
           "AddRoleToDBCluster"
-        ],
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -101,10 +77,6 @@
         [
           "rds",
           "RemoveRoleFromDBCluster"
-        ],
-        [
-          "rds",
-          "new"
         ]
       ]
     ],
@@ -112,78 +84,7 @@
       "resource",
       "aws_rds_cluster_role_association",
       "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_transfer_server",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "new"
-        ],
-        [
-          "transfer",
-          "CreateServer"
-        ],
-        [
-          "transfer",
-          "DescribeServer"
-        ],
-        [
-          "transfer",
-          "StartServer"
-        ],
-        [
-          "transfer",
-          "StopServer"
-        ],
-        [
-          "transfer",
-          "UpdateServer"
-        ],
-        [
-          "transfer",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_transfer_server",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "new"
-        ],
-        [
-          "transfer",
-          "DescribeServer"
-        ],
-        [
-          "transfer",
-          "new"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -192,15 +93,7 @@
       [
         [
           "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
           "ModifyVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "new"
         ],
         [
           "transfer",
@@ -225,10 +118,6 @@
         [
           "transfer",
           "UpdateServer"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ]

@@ -17,13 +17,23 @@
       "data_source",
       "aws_vpc_ipam",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeIpams"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_vpc_ipams",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeIpams"
+        ]
+      ]
     ],
     [
       "ephemeral_resource",
@@ -115,6 +125,21 @@
     ],
     [
       "resource",
+      "aws_medialive_multiplex_program",
+      "create",
+      [
+        [
+          "medialive",
+          "CreateMultiplexProgram"
+        ],
+        [
+          "medialive",
+          "DescribeMultiplexProgram"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_route53domains_domain",
       "create",
       [
@@ -133,6 +158,10 @@
         [
           "route53domains",
           "GetDomainDetail"
+        ],
+        [
+          "route53domains",
+          "GetOperationDetail"
         ],
         [
           "route53domains",
@@ -156,6 +185,10 @@
         [
           "route53domains",
           "DeleteDomain"
+        ],
+        [
+          "route53domains",
+          "GetOperationDetail"
         ]
       ]
     ],
@@ -197,6 +230,10 @@
         ],
         [
           "route53domains",
+          "GetOperationDetail"
+        ],
+        [
+          "route53domains",
           "RenewDomain"
         ],
         [
@@ -221,6 +258,10 @@
         [
           "timestreamquery",
           "CreateScheduledQuery"
+        ],
+        [
+          "timestreamquery",
+          "DescribeScheduledQuery"
         ]
       ]
     ],
@@ -232,6 +273,10 @@
         [
           "timestreamquery",
           "DeleteScheduledQuery"
+        ],
+        [
+          "timestreamquery",
+          "DescribeScheduledQuery"
         ]
       ]
     ],
@@ -253,6 +298,10 @@
       [
         [
           "timestreamquery",
+          "DescribeScheduledQuery"
+        ],
+        [
+          "timestreamquery",
           "UpdateScheduledQuery"
         ]
       ]
@@ -265,6 +314,10 @@
         [
           "vpclattice",
           "CreateResourceConfiguration"
+        ],
+        [
+          "vpclattice",
+          "GetResourceConfiguration"
         ]
       ]
     ],
@@ -276,6 +329,10 @@
         [
           "vpclattice",
           "DeleteResourceConfiguration"
+        ],
+        [
+          "vpclattice",
+          "GetResourceConfiguration"
         ]
       ]
     ],
@@ -297,6 +354,10 @@
       [
         [
           "vpclattice",
+          "GetResourceConfiguration"
+        ],
+        [
+          "vpclattice",
           "UpdateResourceConfiguration"
         ]
       ]
@@ -309,6 +370,10 @@
         [
           "vpclattice",
           "CreateServiceNetworkResourceAssociation"
+        ],
+        [
+          "vpclattice",
+          "GetServiceNetworkResourceAssociation"
         ]
       ]
     ],
@@ -320,6 +385,10 @@
         [
           "vpclattice",
           "DeleteServiceNetworkResourceAssociation"
+        ],
+        [
+          "vpclattice",
+          "GetServiceNetworkResourceAssociation"
         ]
       ]
     ],

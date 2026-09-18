@@ -243,6 +243,16 @@ mod tests {
         );
         assert_mapping_contains(
             &mappings,
+            "list_resource",
+            "aws_acm_certificate",
+            "list",
+            TerraformProviderAwsApiMethodRef {
+                service: "acm",
+                name: "ListCertificates",
+            },
+        );
+        assert_mapping_contains(
+            &mappings,
             "action",
             "aws_ec2_stop_instance",
             "invoke",

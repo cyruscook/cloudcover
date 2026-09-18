@@ -43,10 +43,6 @@
         [
           "workspaces",
           "DescribeWorkspaceImages"
-        ],
-        [
-          "workspaces",
-          "new"
         ]
       ]
     ],
@@ -66,10 +62,6 @@
         [
           "apigatewayv2",
           "GetAuthorizer"
-        ],
-        [
-          "apigatewayv2",
-          "new"
         ]
       ]
     ],
@@ -89,10 +81,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -104,10 +92,6 @@
         [
           "datasync",
           "DeleteLocation"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -123,10 +107,6 @@
         [
           "datasync",
           "ListTagsForResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -150,10 +130,6 @@
         [
           "datasync",
           "UntagResource"
-        ],
-        [
-          "datasync",
-          "new"
         ]
       ]
     ],
@@ -173,10 +149,6 @@
         [
           "glue",
           "GetWorkflow"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -192,10 +164,6 @@
         [
           "glue",
           "GetWorkflow"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -223,10 +191,6 @@
         [
           "glue",
           "UpdateWorkflow"
-        ],
-        [
-          "glue",
-          "new"
         ]
       ]
     ],
@@ -246,10 +210,6 @@
         [
           "organizations",
           "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -265,10 +225,6 @@
         [
           "organizations",
           "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -296,10 +252,6 @@
         [
           "organizations",
           "UpdatePolicy"
-        ],
-        [
-          "organizations",
-          "new"
         ]
       ]
     ],
@@ -319,10 +271,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -334,10 +282,6 @@
         [
           "route53resolver",
           "DeleteResolverQueryLogConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -353,10 +297,6 @@
         [
           "route53resolver",
           "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -380,10 +320,6 @@
         [
           "route53resolver",
           "UntagResource"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -399,10 +335,6 @@
         [
           "route53resolver",
           "GetResolverQueryLogConfigAssociation"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -414,10 +346,6 @@
         [
           "route53resolver",
           "DisassociateResolverQueryLogConfig"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -429,10 +357,6 @@
         [
           "route53resolver",
           "GetResolverQueryLogConfigAssociation"
-        ],
-        [
-          "route53resolver",
-          "new"
         ]
       ]
     ],
@@ -460,10 +384,6 @@
         [
           "transfer",
           "UpdateServer"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ],
@@ -495,10 +415,6 @@
         [
           "transfer",
           "UpdateServer"
-        ],
-        [
-          "transfer",
-          "new"
         ]
       ]
     ],
@@ -514,10 +430,17 @@
         [
           "ec2",
           "DetachVpnGateway"
-        ],
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpn_gateway_attachment",
+      "create",
+      [
         [
           "ec2",
-          "new"
+          "AttachVpnGateway"
         ]
       ]
     ],
@@ -529,12 +452,14 @@
         [
           "ec2",
           "DetachVpnGateway"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_vpn_gateway_attachment",
+      "read",
+      []
     ]
   ]
 }

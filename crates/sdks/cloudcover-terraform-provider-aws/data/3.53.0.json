@@ -27,10 +27,6 @@
         [
           "kms",
           "UpdateAlias"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -58,21 +54,6 @@
         [
           "kms",
           "ImportKeyMaterial"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_external_key",
-      "delete",
-      [
-        [
-          "kms",
-          "ScheduleKeyDeletion"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -118,10 +99,6 @@
         [
           "kms",
           "UpdateKeyDescription"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -149,21 +126,6 @@
         [
           "kms",
           "EnableKeyRotation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_key",
-      "delete",
-      [
-        [
-          "kms",
-          "ScheduleKeyDeletion"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -209,10 +171,6 @@
         [
           "kms",
           "UpdateKeyDescription"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ]

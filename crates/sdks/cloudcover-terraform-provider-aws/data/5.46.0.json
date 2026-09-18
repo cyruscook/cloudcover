@@ -19,86 +19,18 @@
     ],
     [
       "data_source",
-      "aws_ce_tags",
-      "read",
-      [
-        [
-          "costexplorer",
-          "GetTags"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_cloudwatch_event_bus",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_cloudwatch_event_connection",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeConnection"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_cloudwatch_event_source",
-      "read",
-      [
-        [
-          "eventbridge",
-          "ListEventSources"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_eip",
       "read",
       [
         [
           "ec2",
           "DescribeAddresses"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_eips",
-      "read",
-      [
+        ],
         [
           "ec2",
-          "DescribeAddresses"
+          "DescribeAddressesAttribute"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_key_pair",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeKeyPairs"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_network_interface",
-      "read",
-      []
     ],
     [
       "resource",
@@ -108,322 +40,6 @@
         [
           "elbv2",
           "DeleteLoadBalancer"
-        ],
-        [
-          "elbv2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_monitor",
-      "create",
-      [
-        [
-          "costexplorer",
-          "CreateAnomalyMonitor"
-        ],
-        [
-          "costexplorer",
-          "GetAnomalyMonitors"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_monitor",
-      "delete",
-      [
-        [
-          "costexplorer",
-          "DeleteAnomalyMonitor"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_monitor",
-      "read",
-      [
-        [
-          "costexplorer",
-          "GetAnomalyMonitors"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_monitor",
-      "update",
-      [
-        [
-          "costexplorer",
-          "GetAnomalyMonitors"
-        ],
-        [
-          "costexplorer",
-          "UpdateAnomalyMonitor"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_subscription",
-      "create",
-      [
-        [
-          "costexplorer",
-          "CreateAnomalySubscription"
-        ],
-        [
-          "costexplorer",
-          "GetAnomalySubscriptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_subscription",
-      "delete",
-      [
-        [
-          "costexplorer",
-          "DeleteAnomalySubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_subscription",
-      "read",
-      [
-        [
-          "costexplorer",
-          "GetAnomalySubscriptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_anomaly_subscription",
-      "update",
-      [
-        [
-          "costexplorer",
-          "GetAnomalySubscriptions"
-        ],
-        [
-          "costexplorer",
-          "UpdateAnomalySubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_allocation_tag",
-      "create",
-      [
-        [
-          "costexplorer",
-          "ListCostAllocationTags"
-        ],
-        [
-          "costexplorer",
-          "UpdateCostAllocationTagsStatus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_allocation_tag",
-      "delete",
-      [
-        [
-          "costexplorer",
-          "UpdateCostAllocationTagsStatus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_allocation_tag",
-      "read",
-      [
-        [
-          "costexplorer",
-          "ListCostAllocationTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_allocation_tag",
-      "update",
-      [
-        [
-          "costexplorer",
-          "ListCostAllocationTags"
-        ],
-        [
-          "costexplorer",
-          "UpdateCostAllocationTagsStatus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_category",
-      "create",
-      [
-        [
-          "costexplorer",
-          "CreateCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "DescribeCostCategoryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_category",
-      "delete",
-      [
-        [
-          "costexplorer",
-          "DeleteCostCategoryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_category",
-      "read",
-      [
-        [
-          "costexplorer",
-          "DescribeCostCategoryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ce_cost_category",
-      "update",
-      [
-        [
-          "costexplorer",
-          "DescribeCostCategoryDefinition"
-        ],
-        [
-          "costexplorer",
-          "UpdateCostCategoryDefinition"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_api_destination",
-      "create",
-      [
-        [
-          "eventbridge",
-          "CreateApiDestination"
-        ],
-        [
-          "eventbridge",
-          "DescribeApiDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_api_destination",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteApiDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_api_destination",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeApiDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_api_destination",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeApiDestination"
-        ],
-        [
-          "eventbridge",
-          "UpdateApiDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_archive",
-      "create",
-      [
-        [
-          "eventbridge",
-          "CreateArchive"
-        ],
-        [
-          "eventbridge",
-          "DescribeArchive"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_archive",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteArchive"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_archive",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeArchive"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_archive",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeArchive"
-        ],
-        [
-          "eventbridge",
-          "UpdateArchive"
         ]
       ]
     ],
@@ -452,234 +68,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_event_bus",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteEventBus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus_policy",
-      "create",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ],
-        [
-          "eventbridge",
-          "PutPermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus_policy",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "RemovePermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus_policy",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_bus_policy",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeEventBus"
-        ],
-        [
-          "eventbridge",
-          "PutPermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_connection",
-      "create",
-      [
-        [
-          "eventbridge",
-          "CreateConnection"
-        ],
-        [
-          "eventbridge",
-          "DescribeConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_connection",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_connection",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_connection",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeConnection"
-        ],
-        [
-          "eventbridge",
-          "UpdateConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_endpoint",
-      "create",
-      [
-        [
-          "eventbridge",
-          "CreateEndpoint"
-        ],
-        [
-          "eventbridge",
-          "DescribeEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_endpoint",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "DeleteEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_endpoint",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_endpoint",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeEndpoint"
-        ],
-        [
-          "eventbridge",
-          "UpdateEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_permission",
-      "create",
-      [
-        [
-          "eventbridge",
-          "PutPermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_permission",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "RemovePermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_permission",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_permission",
-      "update",
-      [
-        [
-          "eventbridge",
-          "PutPermission"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_event_rule",
       "create",
       [
@@ -703,32 +91,6 @@
     ],
     [
       "resource",
-      "aws_cloudwatch_event_rule",
-      "read",
-      [
-        [
-          "eventbridge",
-          "DescribeRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_rule",
-      "update",
-      [
-        [
-          "eventbridge",
-          "DescribeRule"
-        ],
-        [
-          "eventbridge",
-          "PutRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_cloudwatch_event_target",
       "create",
       [
@@ -745,17 +107,6 @@
     [
       "resource",
       "aws_cloudwatch_event_target",
-      "delete",
-      [
-        [
-          "eventbridge",
-          "RemoveTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_event_target",
       "read",
       [
         [
@@ -781,23 +132,47 @@
     ],
     [
       "resource",
-      "aws_default_subnet",
+      "aws_comprehend_document_classifier",
       "delete",
       [
         [
-          "ec2",
-          "DeleteSubnet"
+          "comprehend",
+          "DeleteDocumentClassifier"
+        ],
+        [
+          "comprehend",
+          "DescribeDocumentClassifier"
+        ],
+        [
+          "comprehend",
+          "ListDocumentClassifiers"
+        ],
+        [
+          "comprehend",
+          "StopTrainingDocumentClassifier"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_instance_state",
-      "read",
+      "aws_comprehend_entity_recognizer",
+      "delete",
       [
         [
-          "ec2",
-          "DescribeInstanceStatus"
+          "comprehend",
+          "DeleteEntityRecognizer"
+        ],
+        [
+          "comprehend",
+          "DescribeEntityRecognizer"
+        ],
+        [
+          "comprehend",
+          "ListEntityRecognizers"
+        ],
+        [
+          "comprehend",
+          "StopTrainingEntityRecognizer"
         ]
       ]
     ],
@@ -809,21 +184,33 @@
         [
           "ec2",
           "AllocateAddress"
+        ],
+        [
+          "ec2",
+          "AssociateAddress"
+        ],
+        [
+          "ec2",
+          "DescribeAddresses"
+        ],
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
         ]
       ]
     ],
     [
       "resource",
       "aws_eip",
-      "delete",
+      "read",
       [
         [
           "ec2",
-          "DisassociateAddress"
+          "DescribeAddresses"
         ],
         [
           "ec2",
-          "ReleaseAddress"
+          "DescribeAddressesAttribute"
         ]
       ]
     ],
@@ -838,44 +225,15 @@
         ],
         [
           "ec2",
-          "DisassociateAddress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eip_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateAddress"
+          "DescribeAddresses"
         ],
         [
           "ec2",
-          "DescribeAddresses"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eip_association",
-      "delete",
-      [
+          "DescribeAddressesAttribute"
+        ],
         [
           "ec2",
           "DisassociateAddress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eip_association",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeAddresses"
         ]
       ]
     ],
@@ -887,99 +245,6 @@
         [
           "elb",
           "DeleteLoadBalancer"
-        ],
-        [
-          "elb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_admin_account",
-      "create",
-      [
-        [
-          "fms",
-          "AssociateAdminAccount"
-        ],
-        [
-          "fms",
-          "GetAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_admin_account",
-      "delete",
-      [
-        [
-          "fms",
-          "DisassociateAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_admin_account",
-      "read",
-      [
-        [
-          "fms",
-          "GetAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_policy",
-      "create",
-      [
-        [
-          "fms",
-          "GetPolicy"
-        ],
-        [
-          "fms",
-          "PutPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_policy",
-      "delete",
-      [
-        [
-          "fms",
-          "DeletePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_policy",
-      "read",
-      [
-        [
-          "fms",
-          "GetPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fms_policy",
-      "update",
-      [
-        [
-          "fms",
-          "GetPolicy"
-        ],
-        [
-          "fms",
-          "PutPolicy"
         ]
       ]
     ],
@@ -1000,64 +265,12 @@
     ],
     [
       "resource",
-      "aws_key_pair",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeKeyPairs"
-        ],
-        [
-          "ec2",
-          "ImportKeyPair"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_key_pair",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteKeyPair"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_key_pair",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeKeyPairs"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_key_pair",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeKeyPairs"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_lb",
       "delete",
       [
         [
           "elbv2",
           "DeleteLoadBalancer"
-        ],
-        [
-          "elbv2",
-          "new"
         ]
       ]
     ],
@@ -1080,125 +293,19 @@
         ],
         [
           "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
+          "CreateTags"
         ],
         [
           "ec2",
-          "DetachNetworkInterface"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "update",
-      [
-        [
-          "ec2",
-          "AssignIpv6Addresses"
-        ],
-        [
-          "ec2",
-          "AssignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "AttachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ],
-        [
-          "ec2",
-          "UnassignIpv6Addresses"
-        ],
-        [
-          "ec2",
-          "UnassignPrivateIpAddresses"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_attachment",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachNetworkInterface"
+          "DeleteTags"
         ],
         [
           "ec2",
           "DescribeNetworkInterfaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_attachment",
-      "delete",
-      [
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSecurityGroup"
         ],
         [
           "ec2",
-          "DescribeSecurityGroupRules"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ],
-        [
-          "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSubnet"
+          "ModifyNetworkInterfaceAttribute"
         ]
       ]
     ]

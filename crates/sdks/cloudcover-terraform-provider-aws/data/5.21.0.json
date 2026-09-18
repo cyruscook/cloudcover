@@ -3,99 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_resourcegroupstaggingapi_resources",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster",
-      "delete",
-      [
-        [
-          "docdb",
-          "DeleteDBCluster"
-        ],
-        [
-          "docdb",
-          "RemoveFromGlobalCluster"
-        ],
-        [
-          "docdb",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster",
-      "read",
-      [
-        [
-          "docdb",
-          "DescribeDBClusters"
-        ],
-        [
-          "docdb",
-          "DescribeGlobalClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster_instance",
-      "create",
-      [
-        [
-          "docdb",
-          "CreateDBInstance"
-        ],
-        [
-          "docdb",
-          "DescribeDBClusters"
-        ],
-        [
-          "docdb",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster_instance",
-      "read",
-      [
-        [
-          "docdb",
-          "DescribeDBClusters"
-        ],
-        [
-          "docdb",
-          "DescribeDBInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster_instance",
-      "update",
-      [
-        [
-          "docdb",
-          "DescribeDBClusters"
-        ],
-        [
-          "docdb",
-          "DescribeDBInstances"
-        ],
-        [
-          "docdb",
-          "ModifyDBInstance"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_dynamodb_table",
       "create",
@@ -137,16 +44,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "new"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "new"
         ]
       ]
     ],
@@ -217,10 +116,6 @@
         [
           "guardduty",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -238,10 +133,6 @@
         [
           "guardduty",
           "DescribeOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
     ],
@@ -257,124 +148,8 @@
         [
           "guardduty",
           "UpdateOrganizationConfiguration"
-        ],
-        [
-          "guardduty",
-          "new"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_group",
-      "create",
-      [
-        [
-          "resourcegroups",
-          "CreateGroup"
-        ],
-        [
-          "resourcegroups",
-          "GetGroup"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupConfiguration"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_group",
-      "delete",
-      [
-        [
-          "resourcegroups",
-          "DeleteGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_group",
-      "read",
-      [
-        [
-          "resourcegroups",
-          "GetGroup"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupConfiguration"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_group",
-      "update",
-      [
-        [
-          "resourcegroups",
-          "GetGroup"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupConfiguration"
-        ],
-        [
-          "resourcegroups",
-          "GetGroupQuery"
-        ],
-        [
-          "resourcegroups",
-          "PutGroupConfiguration"
-        ],
-        [
-          "resourcegroups",
-          "UpdateGroup"
-        ],
-        [
-          "resourcegroups",
-          "UpdateGroupQuery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_resource",
-      "create",
-      [
-        [
-          "resourcegroups",
-          "GroupResources"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_resource",
-      "delete",
-      [
-        [
-          "resourcegroups",
-          "UngroupResources"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_resourcegroups_resource",
-      "read",
-      []
     ],
     [
       "resource",
@@ -384,6 +159,10 @@
         [
           "ec2",
           "CreateVerifiedAccessGroup"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessGroups"
         ],
         [
           "ec2",
@@ -409,6 +188,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessGroups"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessGroupPolicy"
         ]
       ]
@@ -418,6 +201,10 @@
       "aws_verifiedaccess_group",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessGroups"
+        ],
         [
           "ec2",
           "GetVerifiedAccessGroupPolicy"
@@ -439,6 +226,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ],
+        [
+          "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"
         ]
       ]
@@ -458,13 +249,22 @@
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"

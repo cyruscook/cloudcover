@@ -14,10 +14,6 @@
         [
           "connect",
           "ListQueues"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -29,10 +25,6 @@
         [
           "ec2",
           "GetSerialConsoleAccessStatus"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -74,10 +66,6 @@
         [
           "apprunner",
           "ListTagsForResource"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -93,10 +81,6 @@
         [
           "apprunner",
           "DescribeVpcConnector"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -112,10 +96,6 @@
         [
           "apprunner",
           "ListTagsForResource"
-        ],
-        [
-          "apprunner",
-          "new"
         ]
       ]
     ],
@@ -135,10 +115,6 @@
         [
           "connect",
           "ListRoutingProfileQueues"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -160,10 +136,6 @@
         [
           "connect",
           "ListRoutingProfileQueues"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -207,10 +179,6 @@
         [
           "connect",
           "UpdateRoutingProfileName"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -226,10 +194,6 @@
         [
           "connect",
           "UpdateUserHierarchyStructure"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -241,10 +205,6 @@
         [
           "connect",
           "UpdateUserHierarchyStructure"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -256,10 +216,6 @@
         [
           "connect",
           "DescribeUserHierarchyStructure"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -275,10 +231,6 @@
         [
           "connect",
           "UpdateUserHierarchyStructure"
-        ],
-        [
-          "connect",
-          "new"
         ]
       ]
     ],
@@ -294,10 +246,6 @@
         [
           "ec2",
           "DescribeNetworkInsightsPaths"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -309,10 +257,6 @@
         [
           "ec2",
           "DeleteNetworkInsightsPath"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -343,10 +287,6 @@
         [
           "ec2",
           "DescribeNetworkInsightsPaths"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -366,10 +306,6 @@
         [
           "ec2",
           "GetSerialConsoleAccessStatus"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -385,10 +321,6 @@
         [
           "ec2",
           "EnableSerialConsoleAccess"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -400,10 +332,6 @@
         [
           "ec2",
           "GetSerialConsoleAccessStatus"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -423,32 +351,29 @@
         [
           "ec2",
           "GetSerialConsoleAccessStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway",
+      "update",
+      [
+        [
+          "ec2",
+          "CreateTags"
         ],
         [
           "ec2",
-          "new"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteTransitGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway",
-      "read",
-      [
+          "DeleteTags"
+        ],
         [
           "ec2",
           "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "ModifyTransitGateway"
         ]
       ]
     ],
@@ -496,10 +421,6 @@
         [
           "ec2",
           "GetTransitGatewayRouteTablePropagations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -514,7 +435,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeTransitGatewayConnects"
         ]
       ]
     ],
@@ -542,10 +463,6 @@
         [
           "ec2",
           "GetTransitGatewayRouteTablePropagations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -597,10 +514,6 @@
         [
           "ec2",
           "GetTransitGatewayRouteTablePropagations"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -616,10 +529,6 @@
         [
           "ec2",
           "DescribeTransitGatewayConnectPeers"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
@@ -634,7 +543,7 @@
         ],
         [
           "ec2",
-          "new"
+          "DescribeTransitGatewayConnectPeers"
         ]
       ]
     ],
@@ -665,33 +574,202 @@
         [
           "ec2",
           "DescribeTransitGatewayConnectPeers"
-        ],
-        [
-          "ec2",
-          "new"
         ]
       ]
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_route",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteTransitGatewayRoute"
+        ],
+        [
+          "ec2",
+          "SearchTransitGatewayRoutes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_vpc_attachment",
       "create",
       [
         [
           "ec2",
-          "CreateTransitGatewayRoute"
+          "AssociateTransitGatewayRouteTable"
         ],
         [
           "ec2",
-          "new"
+          "CreateTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayVpcAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTableAssociations"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTablePropagations"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_route",
-      "read",
-      []
+      "aws_ec2_transit_gateway_vpc_attachment",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_vpc_attachment",
+      "update",
+      [
+        [
+          "ec2",
+          "AssociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTableAssociations"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTablePropagations"
+        ],
+        [
+          "ec2",
+          "ModifyTransitGatewayVpcAttachment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_vpc_attachment_accepter",
+      "create",
+      [
+        [
+          "ec2",
+          "AcceptTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "AssociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayVpcAttachments"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGateways"
+        ],
+        [
+          "ec2",
+          "DisableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "DisassociateTransitGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "EnableTransitGatewayRouteTablePropagation"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTableAssociations"
+        ],
+        [
+          "ec2",
+          "GetTransitGatewayRouteTablePropagations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_vpc_attachment_accepter",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteTransitGatewayVpcAttachment"
+        ],
+        [
+          "ec2",
+          "DescribeTransitGatewayAttachments"
+        ]
+      ]
     ],
     [
       "resource",
@@ -705,10 +783,6 @@
         [
           "managedgrafana",
           "DescribeWorkspace"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -719,11 +793,11 @@
       [
         [
           "managedgrafana",
-          "DisassociateLicense"
+          "DescribeWorkspace"
         ],
         [
           "managedgrafana",
-          "new"
+          "DisassociateLicense"
         ]
       ]
     ],
@@ -735,10 +809,6 @@
         [
           "managedgrafana",
           "DescribeWorkspace"
-        ],
-        [
-          "managedgrafana",
-          "new"
         ]
       ]
     ],
@@ -770,6 +840,10 @@
         [
           "route53domains",
           "GetDomainDetail"
+        ],
+        [
+          "route53domains",
+          "GetOperationDetail"
         ],
         [
           "route53domains",
@@ -845,6 +919,10 @@
         ],
         [
           "route53domains",
+          "GetOperationDetail"
+        ],
+        [
+          "route53domains",
           "ListTagsForDomain"
         ],
         [
@@ -862,6 +940,29 @@
         [
           "route53domains",
           "UpdateTagsForDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_synthetics_canary",
+      "create",
+      [
+        [
+          "synthetics",
+          "CreateCanary"
+        ],
+        [
+          "synthetics",
+          "DeleteCanary"
+        ],
+        [
+          "synthetics",
+          "GetCanary"
+        ],
+        [
+          "synthetics",
+          "StartCanary"
         ]
       ]
     ]

@@ -6,28 +6,63 @@
       "data_source",
       "aws_ec2_hosts",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeHosts"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_cleanrooms_membership",
       "list",
-      []
+      [
+        [
+          "cleanrooms",
+          "GetMembership"
+        ],
+        [
+          "cleanrooms",
+          "ListMemberships"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_pinpointsmsvoicev2_event_destination",
       "list",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeConfigurationSets"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_bedrockagentcore_gateway",
-      "create",
+      "delete",
       [
         [
           "bedrockagentcorecontrol",
-          "CreateGateway"
+          "DeleteGateway"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "DeleteGatewayTarget"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetGateway"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "GetGatewayTarget"
+        ],
+        [
+          "bedrockagentcorecontrol",
+          "ListGatewayTargets"
         ]
       ]
     ],
@@ -39,6 +74,10 @@
         [
           "ec2",
           "CreateLocalGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTables"
         ]
       ]
     ],
@@ -50,6 +89,10 @@
         [
           "ec2",
           "DeleteLocalGatewayRouteTable"
+        ],
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTables"
         ]
       ]
     ],
@@ -57,7 +100,12 @@
       "resource",
       "aws_ec2_local_gateway_route_table",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTables"
+        ]
+      ]
     ],
     [
       "resource",
@@ -73,6 +121,10 @@
         [
           "ec2",
           "CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation"
+        ],
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations"
         ]
       ]
     ],
@@ -84,6 +136,10 @@
         [
           "ec2",
           "DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation"
+        ],
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations"
         ]
       ]
     ],
@@ -91,7 +147,12 @@
       "resource",
       "aws_ec2_local_gateway_route_table_virtual_interface_group_association",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -195,6 +256,44 @@
     ],
     [
       "resource",
+      "aws_lambda_provisioned_concurrency_config",
+      "create",
+      [
+        [
+          "lambda",
+          "GetAlias"
+        ],
+        [
+          "lambda",
+          "GetProvisionedConcurrencyConfig"
+        ],
+        [
+          "lambda",
+          "PutProvisionedConcurrencyConfig"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lambda_provisioned_concurrency_config",
+      "update",
+      [
+        [
+          "lambda",
+          "GetAlias"
+        ],
+        [
+          "lambda",
+          "GetProvisionedConcurrencyConfig"
+        ],
+        [
+          "lambda",
+          "PutProvisionedConcurrencyConfig"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_observabilityadmin_telemetry_rule",
       "create",
       [
@@ -283,7 +382,12 @@
       "resource",
       "aws_pinpointsmsvoicev2_event_destination",
       "read",
-      []
+      [
+        [
+          "pinpointsmsvoicev2",
+          "DescribeConfigurationSets"
+        ]
+      ]
     ],
     [
       "resource",
@@ -300,7 +404,12 @@
       "resource",
       "aws_vpc_ipam_pool_cidr_allocation",
       "update",
-      []
+      [
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
+        ]
+      ]
     ]
   ]
 }
