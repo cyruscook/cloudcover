@@ -77,21 +77,21 @@ fn build_terraform_policy(path: &OsString) -> Result<serde_json::Value, CliError
     let mut api_methods = BTreeSet::new();
     for method in analysis.methods() {
         let key = terraform_method_key(method);
-        let mapped_methods = methods_by_reference.get(&key).ok_or_else(|| {
-            CliError::Runtime(format!(
+        let Some(mapped_methods) = methods_by_reference.get(&key) else {
+            if methods_by_reference.keys().any(|(kind, type_name, _)| {
+                kind == method.kind() && type_name == method.type_name()
+            }) {
+                continue;
+            }
+            return Err(CliError::Runtime(format!(
                 "Terraform reference is not mapped by AWS provider data: {} {} {}",
                 method.kind(),
                 method.type_name(),
                 method.action()
-            ))
-        })?;
-        if mapped_methods.is_empty() {
-            return Err(CliError::Runtime(format!(
-                "Terraform reference has no AWS API mapping: {} {} {}",
-                method.kind(),
-                method.type_name(),
-                method.action()
             )));
+        };
+        if mapped_methods.is_empty() {
+            continue;
         }
         api_methods.extend(mapped_methods.iter().cloned());
     }

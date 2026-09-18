@@ -22,3 +22,7 @@ data "aws_ecr_image" "base" {
   repository_name = "amazonlinux"
   image_tag       = "latest"
 }
+
+data "aws_iam_policy_document" "local" {}
+
+resource "aws_acm_certificate_validation" "certificate" {}

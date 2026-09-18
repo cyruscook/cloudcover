@@ -9,7 +9,8 @@ fn fixture_dir() -> PathBuf {
 }
 
 #[test]
-fn analyzes_root_and_initialized_module_resources() -> Result<(), Box<dyn Error>> {
+fn analyzes_reachable_initialized_modules_and_ignores_stale_manifest_entries()
+-> Result<(), Box<dyn Error>> {
     let analysis = analyze_dir(fixture_dir())?;
 
     assert_eq!(analysis.provider_version(), "6.64.0");

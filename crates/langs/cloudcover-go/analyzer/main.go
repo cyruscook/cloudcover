@@ -207,10 +207,12 @@ type terraformSuccessResponse struct {
 }
 
 type terraformModuleManifest struct {
-	Modules []struct {
-		Key string `json:"Key"`
-		Dir string `json:"Dir"`
-	} `json:"Modules"`
+	Modules []terraformModuleManifestEntry `json:"Modules"`
+}
+
+type terraformModuleManifestEntry struct {
+	Key string `json:"Key"`
+	Dir string `json:"Dir"`
 }
 
 //export CloudCoverAnalyzeTerraform
@@ -278,6 +280,9 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 	moduleDirs := make(map[string]string, len(manifest.Modules)+1)
 	moduleDirs[""] = root
 	for _, module := range manifest.Modules {
+		if module.Key == "" {
+			continue
+		}
 		if module.Dir == "" {
 			return nil, "", fmt.Errorf("Terraform module manifest entry %q has no directory", module.Key)
 		}
@@ -288,17 +293,54 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		moduleDirs[module.Key] = filepath.Clean(dir)
 	}
 
+	rootModule, diagnostics := tfconfig.LoadModule(root)
+	if diagnostics.HasErrors() {
+		return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", root, diagnostics.Error())
+	}
+	modules := map[string]*tfconfig.Module{"": rootModule}
+	moduleKeys := []string{""}
+	for len(moduleKeys) > 0 {
+		parentKey := moduleKeys[0]
+		moduleKeys = moduleKeys[1:]
+		parent := modules[parentKey]
+
+		callNames := make([]string, 0, len(parent.ModuleCalls))
+		for callName := range parent.ModuleCalls {
+			callNames = append(callNames, callName)
+		}
+		sort.Strings(callNames)
+		for _, callName := range callNames {
+			moduleKey := callName
+			if parentKey != "" {
+				moduleKey = parentKey + "." + callName
+			}
+			if _, loaded := modules[moduleKey]; loaded {
+				continue
+			}
+			dir, ok := moduleDirs[moduleKey]
+			if !ok {
+				return nil, "", fmt.Errorf(
+					"Terraform module %q is missing from the initialized module manifest",
+					moduleKey,
+				)
+			}
+			module, diagnostics := tfconfig.LoadModule(dir)
+			if diagnostics.HasErrors() {
+				return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", dir, diagnostics.Error())
+			}
+			modules[moduleKey] = module
+			moduleKeys = append(moduleKeys, moduleKey)
+		}
+	}
+
 	seen := make(map[string]bool)
 	references := make([]terraformReference, 0)
-	for _, dir := range moduleDirs {
+	for _, module := range modules {
+		dir := module.Path
 		if seen[dir] {
 			continue
 		}
 		seen[dir] = true
-		module, diagnostics := tfconfig.LoadModule(dir)
-		if diagnostics.HasErrors() {
-			return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", dir, diagnostics.Error())
-		}
 		for _, resource := range module.ManagedResources {
 			if resource.Provider.Name != "aws" {
 				continue
