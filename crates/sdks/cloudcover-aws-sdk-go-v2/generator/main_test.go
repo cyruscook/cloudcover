@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"path/filepath"
+	"slices"
+	"strings"
 	"testing"
 )
 
@@ -98,5 +100,162 @@ func (helperClient) GetThings(context.Context) {}
 			len(row.APIMethods) != 1 || row.APIMethods[0] != got.APIMethods[0] {
 			t.Errorf("row %#v, want %#v", row, got)
 		}
+	}
+}
+
+func TestLoadFastServiceRowsExtractsOperationFromKnownArgument(t *testing.T) {
+	t.Parallel()
+
+	serviceDir := t.TempDir()
+	const source = `package example
+
+import "context"
+
+type Client struct{}
+type helperClient struct{}
+
+var helper helperClient
+
+func (c *Client) GetThing(ctx context.Context, params any) (any, error) {
+	helper.invokeOperation(ctx, "not-an-operation", params)
+	return c.invokeOperation(ctx, "GetThing", params)
+}
+
+func (c Client) GetValueThing(ctx context.Context, params any) (any, error) {
+	return c.invokeOperation(ctx, "GetValueThing", params)
+}
+`
+	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
+		t.Fatal(err)
+	}
+
+	rows, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/example")
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := []mappingRow{
+		{
+			Package:  "github.com/aws/aws-sdk-go-v2/service/example",
+			Receiver: "Client",
+			Method:   "GetThing",
+			APIMethods: []apiMethod{{
+				Service: "example",
+				Name:    "GetThing",
+			}},
+		},
+		{
+			Package:  "github.com/aws/aws-sdk-go-v2/service/example",
+			Receiver: "Client",
+			Method:   "GetValueThing",
+			APIMethods: []apiMethod{{
+				Service: "example",
+				Name:    "GetValueThing",
+			}},
+		},
+	}
+	if !slices.EqualFunc(rows, want, func(got, want mappingRow) bool {
+		return got.Package == want.Package &&
+			got.Receiver == want.Receiver &&
+			got.Method == want.Method &&
+			slices.Equal(got.APIMethods, want.APIMethods)
+	}) {
+		t.Errorf("loadFastServiceRows() = %#v, want %#v", rows, want)
+	}
+}
+
+func TestLoadFastServiceRowsSkipsHelperInvokeOperation(t *testing.T) {
+	t.Parallel()
+
+	serviceDir := t.TempDir()
+	const source = `package example
+
+import "context"
+
+type Client struct{}
+type helperClient struct{}
+
+var helper helperClient
+
+func (c Client) Helper(ctx context.Context, params any) {
+	helper.invokeOperation(ctx, "not-an-operation", params)
+}
+`
+	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	nestedDir := filepath.Join(serviceDir, "internal")
+	if err := os.Mkdir(nestedDir, 0o700); err != nil {
+		t.Fatal(err)
+	}
+	const nestedSource = `package internal
+
+type Client struct{}
+
+func (c *Client) Nested() {
+	c.invokeOperation(nil, "not-an-operation", nil)
+}
+`
+	if err := os.WriteFile(filepath.Join(nestedDir, "helper.go"), []byte(nestedSource), 0o600); err != nil {
+		t.Fatal(err)
+	}
+
+	rows, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/example")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(rows) != 0 {
+		t.Errorf("loadFastServiceRows() = %#v, want no rows", rows)
+	}
+}
+
+func TestLoadFastServiceRowsRejectsMalformedOperationCall(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name   string
+		source string
+	}{
+		{
+			name: "missing operation argument",
+			source: `package example
+
+import "context"
+
+type Client struct{}
+
+func (c *Client) Broken(ctx context.Context, params any) (any, error) {
+	return c.invokeOperation(ctx, params)
+}
+`,
+		},
+		{
+			name: "operation argument at wrong position",
+			source: `package example
+
+import "context"
+
+type Client struct{}
+
+func (c *Client) Broken(ctx context.Context, params any) (any, error) {
+	return c.invokeOperation(ctx, params, "not-an-operation")
+}
+`,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			serviceDir := t.TempDir()
+			if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(test.source), 0o600); err != nil {
+				t.Fatal(err)
+			}
+
+			_, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/example")
+			if err == nil {
+				t.Fatal("loadFastServiceRows() returned nil error")
+			}
+			if !strings.Contains(err.Error(), "Client.Broken") || !strings.Contains(err.Error(), "operation") {
+				t.Errorf("loadFastServiceRows() error = %q, want Client.Broken operation error", err)
+			}
+		})
 	}
 }

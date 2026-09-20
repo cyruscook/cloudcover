@@ -95,19 +95,13 @@ func run() error {
 
 func loadFastServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
 	service := filepath.Base(modulePath)
-	packagePath := modulePath
+	files, err := loadServiceFiles(serviceDir)
+	if err != nil {
+		return nil, err
+	}
+
 	rows := make([]mappingRow, 0)
-	err := filepath.WalkDir(serviceDir, func(path string, entry os.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
-		if entry.IsDir() || filepath.Ext(path) != ".go" {
-			return nil
-		}
-		file, err := parser.ParseFile(token.NewFileSet(), path, nil, 0)
-		if err != nil {
-			return fmt.Errorf("parse %s: %w", path, err)
-		}
+	for _, file := range files {
 		for _, declaration := range file.Decls {
 			function, ok := declaration.(*ast.FuncDecl)
 			if !ok || function.Recv == nil || !function.Name.IsExported() || len(function.Recv.List) == 0 {
@@ -116,46 +110,23 @@ func loadFastServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
 			if !isClientReceiver(function.Recv.List[0].Type) {
 				continue
 			}
-			var operation string
-			ast.Inspect(function.Body, func(node ast.Node) bool {
-				if operation != "" {
-					return false
-				}
-				call, ok := node.(*ast.CallExpr)
-				if !ok {
-					return true
-				}
-				selector, ok := call.Fun.(*ast.SelectorExpr)
-				if !ok || selector.Sel.Name != "invokeOperation" {
-					return true
-				}
-				for _, argument := range call.Args {
-					literal, ok := argument.(*ast.BasicLit)
-					if !ok || literal.Kind != token.STRING {
-						continue
-					}
-					value, err := strconv.Unquote(literal.Value)
-					if err == nil {
-						operation = value
-						break
-					}
-				}
-				return true
-			})
-			if operation != "" {
-				rows = append(rows, mappingRow{
-					Package:    packagePath,
-					Receiver:   "Client",
-					Method:     function.Name.Name,
-					APIMethods: []apiMethod{{Service: service, Name: operation}},
-				})
+
+			operation, found, err := operationFromClientMethod(function)
+			if err != nil {
+				return nil, err
 			}
+			if !found {
+				continue
+			}
+			rows = append(rows, mappingRow{
+				Package:    modulePath,
+				Receiver:   "Client",
+				Method:     function.Name.Name,
+				APIMethods: []apiMethod{{Service: service, Name: operation}},
+			})
 		}
-		return nil
-	})
-	if err != nil {
-		return nil, err
 	}
+	slices.SortFunc(rows, compareMappingRows)
 	return rows, nil
 }
 
@@ -168,6 +139,66 @@ func isClientReceiver(expression ast.Expr) bool {
 	default:
 		return false
 	}
+}
+
+func operationFromClientMethod(function *ast.FuncDecl) (string, bool, error) {
+	receiver := receiverVariableName(function.Recv)
+	if receiver == "" || function.Body == nil {
+		return "", false, nil
+	}
+
+	var operation string
+	found := false
+	var operationErr error
+	ast.Inspect(function.Body, func(node ast.Node) bool {
+		if operationErr != nil {
+			return false
+		}
+		if _, nestedFunction := node.(*ast.FuncLit); nestedFunction {
+			return false
+		}
+		call, ok := node.(*ast.CallExpr)
+		if !ok {
+			return true
+		}
+		selector, ok := call.Fun.(*ast.SelectorExpr)
+		if !ok || selector.Sel.Name != "invokeOperation" {
+			return true
+		}
+		callReceiver, ok := selector.X.(*ast.Ident)
+		if !ok || callReceiver.Name != receiver {
+			return true
+		}
+		if found {
+			operationErr = fmt.Errorf("Client.%s has multiple invokeOperation calls", function.Name.Name)
+			return false
+		}
+		found = true
+		if len(call.Args) < 3 {
+			operationErr = fmt.Errorf("Client.%s has malformed invokeOperation call: expected invokeOperation(ctx, \"operation\", params, ...), got %d arguments", function.Name.Name, len(call.Args))
+			return false
+		}
+		literal, ok := call.Args[1].(*ast.BasicLit)
+		if !ok || literal.Kind != token.STRING {
+			operationErr = fmt.Errorf("Client.%s has malformed invokeOperation call: operation argument must be a string literal", function.Name.Name)
+			return false
+		}
+		value, err := strconv.Unquote(literal.Value)
+		if err != nil {
+			operationErr = fmt.Errorf("Client.%s has malformed invokeOperation call: invalid operation string: %w", function.Name.Name, err)
+			return false
+		}
+		if value == "" {
+			operationErr = fmt.Errorf("Client.%s has malformed invokeOperation call: operation argument must not be empty", function.Name.Name)
+			return false
+		}
+		operation = value
+		return false
+	})
+	if operationErr != nil {
+		return "", false, operationErr
+	}
+	return operation, found, nil
 }
 
 // Paginator constructors only create local state. NextPage dispatches through a
