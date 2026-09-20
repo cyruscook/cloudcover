@@ -6,6 +6,7 @@ build = "build.rs"
 
 [dependencies]
 cloudcover-core = { path = "../../cloudcover-core" }
+cloudcover-aws-sdk-go-v1 = { path = "../../sdks/cloudcover-aws-sdk-go-v1" }
 cloudcover-aws-sdk-go-v2 = { path = "../../sdks/cloudcover-aws-sdk-go-v2" }
 cloudcover-terraform-provider-aws = { path = "../../sdks/cloudcover-terraform-provider-aws" }
 serde_json = "1.0"

@@ -59,6 +59,7 @@ impl CloudProvider for AwsProvider {
     fn list_sdks(&self) -> Vec<Sdk> {
         let mut sdks = vec![
             Sdk::new(cloudcover_aws_sdk_go_v2::SDK_NAME, Language::Go),
+            Sdk::new(cloudcover_aws_sdk_go_v1::SDK_NAME, Language::Go),
             Sdk::new("boto3", Language::Python),
         ];
         sdks.extend(
@@ -81,6 +82,9 @@ impl CloudProvider for AwsProvider {
         resolved_sdk: &ResolvedSdk,
     ) -> Result<Vec<SdkMethodMapping>, Self::Error> {
         let sdk = resolved_sdk.sdk();
+        if sdk.name() == cloudcover_aws_sdk_go_v1::SDK_NAME && sdk.language() == Language::Go {
+            return go_sdk_v1_method_mappings(resolved_sdk);
+        }
         if sdk.name() == cloudcover_aws_sdk_go_v2::SDK_NAME && sdk.language() == Language::Go {
             return go_sdk_method_mappings(resolved_sdk);
         }
@@ -192,6 +196,72 @@ fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMap
                 return None;
             }
 
+            Some(SdkMethodMapping::new(
+                sdk.clone(),
+                MethodReference::Go(GoMethodReference::new(
+                    row.package,
+                    Some(row.receiver.to_owned()),
+                    row.method,
+                )),
+                api_methods,
+            ))
+        }));
+    }
+    mappings.sort();
+    mappings.dedup();
+    Ok(mappings)
+}
+
+fn go_sdk_v1_method_mappings(
+    resolved_sdk: &ResolvedSdk,
+) -> Result<Vec<SdkMethodMapping>, AwsError> {
+    let sdk = resolved_sdk.sdk();
+    if let Some(version) = sdk.version() {
+        return Err(AwsError::UnsupportedSdkVersion {
+            name: sdk.name().to_owned(),
+            version: version.to_owned(),
+        });
+    }
+
+    let mut mappings = Vec::new();
+    for module in resolved_sdk.modules() {
+        if module.path() != cloudcover_aws_sdk_go_v1::MODULE_PATH {
+            continue;
+        }
+        if let Some(replacement) = module.replacement() {
+            return Err(AwsError::UnsupportedSdkModuleReplacement {
+                path: module.path().to_owned(),
+                replacement_path: replacement.path().to_owned(),
+                replacement_version: replacement.version().map(str::to_owned),
+            });
+        }
+        if module.version().is_empty() {
+            return Err(AwsError::MissingSdkModuleVersion {
+                path: module.path().to_owned(),
+            });
+        }
+        let Some(version) = module.version().strip_prefix('v') else {
+            return Err(AwsError::UnsupportedSdkModuleVersion {
+                path: module.path().to_owned(),
+                version: module.version().to_owned(),
+            });
+        };
+        let Some(rows) = cloudcover_aws_sdk_go_v1::sdk_method_mappings(version) else {
+            return Err(AwsError::UnsupportedSdkModuleVersion {
+                path: module.path().to_owned(),
+                version: module.version().to_owned(),
+            });
+        };
+        mappings.extend(rows.filter_map(|row| {
+            let api_methods = row
+                .api_methods
+                .iter()
+                .filter(|api_method| operation_exists(api_method.service, api_method.name))
+                .map(|api_method| ApiMethod::new(api_method.service, api_method.name))
+                .collect::<Vec<_>>();
+            if api_methods.is_empty() {
+                return None;
+            }
             Some(SdkMethodMapping::new(
                 sdk.clone(),
                 MethodReference::Go(GoMethodReference::new(

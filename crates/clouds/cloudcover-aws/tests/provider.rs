@@ -24,8 +24,9 @@ fn lists_known_aws_methods() {
 fn lists_supported_aws_sdks() {
     let sdks = AwsProvider::new().list_sdks();
     assert_eq!(sdks.first(), Some(&Sdk::new("aws-sdk-go-v2", Language::Go)));
-    assert_eq!(sdks[1], Sdk::new("boto3", Language::Python));
-    let terraform_sdks = &sdks[2..];
+    assert_eq!(sdks[1], Sdk::new("aws-sdk-go-v1", Language::Go));
+    assert_eq!(sdks[2], Sdk::new("boto3", Language::Python));
+    let terraform_sdks = &sdks[3..];
     assert_eq!(terraform_sdks.len(), 516);
     for version in ["0.1.0", "6.63.0", "6.64.0"] {
         assert!(terraform_sdks.contains(
@@ -35,10 +36,12 @@ fn lists_supported_aws_sdks() {
 }
 
 #[test]
+#[allow(clippy::too_many_lines)]
 fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     let provider = AwsProvider::new();
     let python_sdk = Sdk::new("boto3", Language::Python);
     let go_sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
+    let go_v1_sdk = Sdk::new("aws-sdk-go-v1", Language::Go);
     let terraform_sdk =
         Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0");
     let python_mappings = provider.sdk_method_mappings(&ResolvedSdk::new(python_sdk.clone()))?;
@@ -46,6 +49,10 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         provider.sdk_method_mappings(&ResolvedSdk::new(go_sdk.clone()).with_modules([
             SdkModule::new("github.com/aws/aws-sdk-go-v2/service/s3", "v1.104.0"),
         ]))?;
+    let go_v1_mappings = provider.sdk_method_mappings(
+        &ResolvedSdk::new(go_v1_sdk.clone())
+            .with_modules([SdkModule::new("github.com/aws/aws-sdk-go", "v1.55.8")]),
+    )?;
     let go_paginator_mappings =
         provider.sdk_method_mappings(&ResolvedSdk::new(go_sdk.clone()).with_modules([
             SdkModule::new("github.com/aws/aws-sdk-go-v2/service/ec2", "v1.335.0"),
@@ -89,6 +96,15 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         )),
         vec![ApiMethod::new("ec2", "DescribeInstances")],
     )));
+    assert!(go_v1_mappings.contains(&SdkMethodMapping::new(
+        go_v1_sdk,
+        MethodReference::Go(GoMethodReference::new(
+            "github.com/aws/aws-sdk-go/service/s3",
+            Some("S3".to_owned()),
+            "GetObject",
+        )),
+        vec![ApiMethod::new("s3", "GetObject")],
+    )));
     let terraform_bucket_create = terraform_mappings
         .iter()
         .find(|mapping| {
@@ -112,6 +128,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     let api_methods = provider.list_api_methods();
     for mapping in go_mappings
         .iter()
+        .chain(go_v1_mappings.iter())
         .chain(go_paginator_mappings.iter())
         .chain(terraform_mappings.iter())
     {
@@ -123,6 +140,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     for mappings in [
         &python_mappings,
         &go_mappings,
+        &go_v1_mappings,
         &go_paginator_mappings,
         &terraform_mappings,
     ] {

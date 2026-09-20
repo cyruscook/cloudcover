@@ -136,6 +136,7 @@ checksum = "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486"
 name = "cloudcover-aws"
 version = "0.1.0"
 dependencies = [
+ "cloudcover-aws-sdk-go-v1",
  "cloudcover-aws-sdk-go-v2",
  "cloudcover-core",
  "cloudcover-terraform-provider-aws",
@@ -143,6 +144,16 @@ dependencies = [
  "serde_json",
  "thiserror",
  "ureq",
+]
+
+[[package]]
+name = "cloudcover-aws-sdk-go-v1"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "semver",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -199,6 +210,7 @@ name = "cloudcover-terraform-provider-aws"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "cloudcover-aws-sdk-go-v1",
  "cloudcover-aws-sdk-go-v2",
  "semver",
  "serde",

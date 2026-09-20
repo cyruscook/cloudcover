@@ -30,8 +30,8 @@ const ANALYZER_SOURCE: &[u8] = include_bytes!("../../generator/main.go");
 const ANALYZER_MODULE: &[u8] = include_bytes!("../../generator/go.mod");
 const ANALYZER_SUMS: &[u8] = include_bytes!("../../generator/go.sum");
 
+const AWS_SDK_GO_V1_MODULE_PATH: &str = "github.com/aws/aws-sdk-go";
 const AWS_SDK_SERVICE_MODULE_PREFIX: &str = "github.com/aws/aws-sdk-go-v2/service/";
-const AWS_SDK_GO_V2_PROVIDER_MIN_VERSION: (u64, u64, u64) = (1, 57, 0);
 const MAX_EMPTY_HANDLER_PERCENT: usize = 20;
 
 const FORBIDDEN_SETTER_HELPERS: &[&str] =
@@ -96,7 +96,7 @@ struct ApiMethodRef {
 }
 
 #[derive(Clone, Debug, Serialize)]
-struct AwsSdkGoV2Mapping {
+struct AwsSdkGoMapping {
     package: &'static str,
     receiver: &'static str,
     method: &'static str,
@@ -145,20 +145,7 @@ fn run() -> GeneratorResult<()> {
     }
 
     let mut replacements = BTreeMap::<Version, PathBuf>::new();
-    let mut supported_versions = Vec::new();
-    let unsupported_snapshot_dir = args.work_dir.join("snapshots/unsupported");
-    for version in pending_versions {
-        if let Some(reason) = provider_unsupported_reason(&version) {
-            fs::create_dir_all(&unsupported_snapshot_dir)?;
-            persist_unsupported_snapshot(&unsupported_snapshot_dir, &version, reason)?;
-            replacements.insert(
-                version.clone(),
-                unsupported_snapshot_dir.join(format!("{version}.json")),
-            );
-        } else {
-            supported_versions.push(version);
-        }
-    }
+    let supported_versions = pending_versions;
 
     if !supported_versions.is_empty() {
         let fingerprint = analyzer_fingerprint()?;
@@ -616,20 +603,6 @@ fn persist_snapshot(
     persist_data_file(snapshot_dir, version, &file)
 }
 
-fn persist_unsupported_snapshot(
-    snapshot_dir: &Path,
-    version: &Version,
-    reason: TerraformProviderAwsUnsupportedReason,
-) -> GeneratorResult<()> {
-    let file = PermissionDataFile {
-        provider_version: version.to_string(),
-        unsupported_reason: Some(reason),
-        remove: Vec::new(),
-        upsert: Vec::new(),
-    };
-    persist_data_file(snapshot_dir, version, &file)
-}
-
 fn load_snapshot(path: &Path, version: &Version) -> GeneratorResult<Snapshot> {
     let contents = fs::read_to_string(path)?;
     let mut file: PermissionDataFile = serde_json::from_str(&contents)?;
@@ -650,24 +623,12 @@ fn validate_snapshot_policy(
     state: &MappingState,
     unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
 ) -> Result<(), String> {
-    match unsupported_reason {
-        Some(reason) if provider_is_supported(version) => Err(format!(
-            "supported provider v{version} has unsupported marker {reason:?}"
-        )),
-        Some(_) => Ok(()),
-        None if !provider_is_supported(version) => Err(format!(
-            "provider v{version} must use an explicit unsupported marker"
-        )),
-        None => validate_mapping_state(state),
+    if let Some(reason) = unsupported_reason {
+        return Err(format!(
+            "provider v{version} has obsolete unsupported marker {reason:?}"
+        ));
     }
-}
-
-fn provider_is_supported(version: &Version) -> bool {
-    (version.major, version.minor, version.patch) >= AWS_SDK_GO_V2_PROVIDER_MIN_VERSION
-}
-
-fn provider_unsupported_reason(version: &Version) -> Option<TerraformProviderAwsUnsupportedReason> {
-    (!provider_is_supported(version)).then_some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)
+    validate_mapping_state(state)
 }
 
 fn analyzer_fingerprint() -> GeneratorResult<String> {
@@ -676,6 +637,21 @@ fn analyzer_fingerprint() -> GeneratorResult<String> {
     ANALYZER_SOURCE.hash(&mut hasher);
     ANALYZER_MODULE.hash(&mut hasher);
     ANALYZER_SUMS.hash(&mut hasher);
+    AWS_SDK_GO_V1_MODULE_PATH.hash(&mut hasher);
+    for version in cloudcover_aws_sdk_go_v1::sdk_versions() {
+        version.hash(&mut hasher);
+        let mappings = cloudcover_aws_sdk_go_v1::sdk_method_mappings(version)
+            .ok_or_else(|| format!("AWS Go SDK v1 v{version} is not indexed"))?;
+        for mapping in mappings {
+            mapping.package.hash(&mut hasher);
+            mapping.receiver.hash(&mut hasher);
+            mapping.method.hash(&mut hasher);
+            for api_method in mapping.api_methods {
+                api_method.service.hash(&mut hasher);
+                api_method.name.hash(&mut hasher);
+            }
+        }
+    }
     for module_path in cloudcover_aws_sdk_go_v2::service_modules() {
         module_path.hash(&mut hasher);
         let versions = cloudcover_aws_sdk_go_v2::service_versions(module_path)
@@ -818,25 +794,45 @@ fn write_sdk_map(path: &Path, provider_dir: &Path, module_cache: &Path) -> Gener
     let mut rows = Vec::new();
     for (module_path, requested_version) in versions {
         let version = sdk_data_version(&module_path, &requested_version)?;
-        let mappings = cloudcover_aws_sdk_go_v2::service_method_mappings(&module_path, version)
-            .ok_or_else(|| {
-                format!("AWS Go SDK service module {module_path} v{version} is not indexed")
-            })?;
-        rows.extend(mappings.map(|row| {
-            AwsSdkGoV2Mapping {
-                package: row.package,
-                receiver: row.receiver,
-                method: row.method,
-                api_methods: row
-                    .api_methods
-                    .iter()
-                    .map(|api_method| ApiMethodRef {
-                        service: api_method.service,
-                        name: api_method.name,
-                    })
-                    .collect(),
-            }
-        }));
+        if module_path == AWS_SDK_GO_V1_MODULE_PATH {
+            let mappings = cloudcover_aws_sdk_go_v1::sdk_method_mappings(version)
+                .ok_or_else(|| format!("AWS Go SDK v1 v{version} is not indexed"))?;
+            rows.extend(mappings.map(|row| {
+                AwsSdkGoMapping {
+                    package: row.package,
+                    receiver: row.receiver,
+                    method: row.method,
+                    api_methods: row
+                        .api_methods
+                        .iter()
+                        .map(|api_method| ApiMethodRef {
+                            service: api_method.service,
+                            name: api_method.name,
+                        })
+                        .collect(),
+                }
+            }));
+        } else {
+            let mappings = cloudcover_aws_sdk_go_v2::service_method_mappings(&module_path, version)
+                .ok_or_else(|| {
+                    format!("AWS Go SDK service module {module_path} v{version} is not indexed")
+                })?;
+            rows.extend(mappings.map(|row| {
+                AwsSdkGoMapping {
+                    package: row.package,
+                    receiver: row.receiver,
+                    method: row.method,
+                    api_methods: row
+                        .api_methods
+                        .iter()
+                        .map(|api_method| ApiMethodRef {
+                            service: api_method.service,
+                            name: api_method.name,
+                        })
+                        .collect(),
+                }
+            }));
+        }
     }
     validate_sdk_paginator_parity(&rows)?;
     let mut file = fs::File::create(path)?;
@@ -845,7 +841,7 @@ fn write_sdk_map(path: &Path, provider_dir: &Path, module_cache: &Path) -> Gener
     Ok(())
 }
 
-fn validate_sdk_paginator_parity(rows: &[AwsSdkGoV2Mapping]) -> GeneratorResult<()> {
+fn validate_sdk_paginator_parity(rows: &[AwsSdkGoMapping]) -> GeneratorResult<()> {
     for paginator in rows
         .iter()
         .filter(|row| row.receiver.ends_with("Paginator") && row.method == "NextPage")
@@ -887,15 +883,30 @@ fn validate_sdk_paginator_parity(rows: &[AwsSdkGoV2Mapping]) -> GeneratorResult<
 /// baseline snapshot.
 fn sdk_data_version(module_path: &str, requested_version: &str) -> GeneratorResult<&'static str> {
     let requested = Version::parse(requested_version)?;
+    if module_path == AWS_SDK_GO_V1_MODULE_PATH {
+        return sdk_versions_not_newer_than(
+            cloudcover_aws_sdk_go_v1::sdk_versions(),
+            requested,
+            "AWS Go SDK v1",
+        );
+    }
     let versions = cloudcover_aws_sdk_go_v2::service_versions(module_path)
         .ok_or_else(|| format!("AWS Go SDK service module {module_path} is not indexed"))?;
+    sdk_versions_not_newer_than(versions, requested, "AWS Go SDK service module")
+}
+
+fn sdk_versions_not_newer_than(
+    versions: &'static [&'static str],
+    requested: Version,
+    label: &str,
+) -> GeneratorResult<&'static str> {
     versions
         .iter()
         .rev()
         .find(|candidate| Version::parse(candidate).is_ok_and(|version| version <= requested))
         .or_else(|| versions.first())
         .copied()
-        .ok_or_else(|| format!("AWS Go SDK service module {module_path} has no versions").into())
+        .ok_or_else(|| format!("{label} has no versions").into())
 }
 
 fn provider_service_versions(
@@ -938,11 +949,10 @@ fn service_versions_from_go_list(
     let mut versions = BTreeMap::new();
     for module in serde_json::Deserializer::from_slice(contents).into_iter::<GoModule>() {
         let module = module?;
-        if !module.path.starts_with(AWS_SDK_SERVICE_MODULE_PREFIX)
-            || indexed_modules
-                .binary_search(&module.path.as_str())
-                .is_err()
-        {
+        let is_v1 = module.path == AWS_SDK_GO_V1_MODULE_PATH;
+        let is_v2 = module.path.starts_with(AWS_SDK_SERVICE_MODULE_PREFIX)
+            && indexed_modules.binary_search(&module.path.as_str()).is_ok();
+        if !is_v1 && !is_v2 {
             continue;
         }
         let effective = module.replace.as_deref().unwrap_or(&module);
@@ -1009,8 +1019,9 @@ fn insert_service_version(
     raw_version: &str,
     indexed_modules: &[&str],
 ) -> GeneratorResult<()> {
-    if !module_path.starts_with(AWS_SDK_SERVICE_MODULE_PREFIX)
-        || indexed_modules.binary_search(&module_path).is_err()
+    if module_path != AWS_SDK_GO_V1_MODULE_PATH
+        && (!module_path.starts_with(AWS_SDK_SERVICE_MODULE_PREFIX)
+            || indexed_modules.binary_search(&module_path).is_err())
     {
         return Ok(());
     }
@@ -1481,35 +1492,6 @@ mod tests {
         );
         Ok(())
     }
-    #[test]
-    fn provider_support_classification_has_exact_boundary() -> Result<(), Box<dyn Error>> {
-        let unsupported = Version::parse("1.56.0")?;
-        let supported = Version::parse("1.57.0")?;
-        assert_eq!(
-            provider_unsupported_reason(&unsupported),
-            Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)
-        );
-        assert!(provider_unsupported_reason(&supported).is_none());
-        Ok(())
-    }
-
-    #[test]
-    fn historical_unsupported_snapshot_is_an_explicit_marker() -> Result<(), Box<dyn Error>> {
-        let directory = TempDir::new()?;
-        let version = Version::parse("1.56.0")?;
-        persist_unsupported_snapshot(
-            directory.path(),
-            &version,
-            TerraformProviderAwsUnsupportedReason::AwsSdkGoV1,
-        )?;
-        let snapshot = load_snapshot(&directory.path().join("1.56.0.json"), &version)?;
-        assert!(snapshot.state.is_empty());
-        assert_eq!(
-            snapshot.unsupported_reason,
-            Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)
-        );
-        Ok(())
-    }
 
     #[test]
     fn mapping_gates_reject_zero_rows_and_zero_operations() {
@@ -1522,29 +1504,6 @@ mod tests {
             error,
             "provider analysis has 1 total rows but 0 API references (requires more than 0)"
         );
-    }
-
-    #[test]
-    fn publish_preserves_unselected_unsupported_markers() -> Result<(), Box<dyn Error>> {
-        let work = TempDir::new()?;
-        let version = Version::parse("1.56.0")?;
-        let existing_files = BTreeMap::from([(
-            version.clone(),
-            PermissionDataFile {
-                provider_version: version.to_string(),
-                unsupported_reason: Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1),
-                remove: Vec::new(),
-                upsert: Vec::new(),
-            },
-        )]);
-        let publish_dir = prepare_publish(work.path(), existing_files, &BTreeMap::new())?;
-        let file: PermissionDataFile =
-            serde_json::from_str(&fs::read_to_string(publish_dir.join("data/1.56.0.json"))?)?;
-        assert_eq!(
-            file.unsupported_reason,
-            Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)
-        );
-        Ok(())
     }
 
     #[test]
@@ -1735,8 +1694,8 @@ mod tests {
         receiver: &'static str,
         method: &'static str,
         api_methods: Vec<ApiMethodRef>,
-    ) -> AwsSdkGoV2Mapping {
-        AwsSdkGoV2Mapping {
+    ) -> AwsSdkGoMapping {
+        AwsSdkGoMapping {
             package: "github.com/aws/aws-sdk-go-v2/service/s3",
             receiver,
             method,

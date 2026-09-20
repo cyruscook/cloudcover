@@ -198,27 +198,24 @@ func loadSDKMappings(path string) (map[sdkMethodKey][]apiMethod, error) {
 	}
 	mappings := make(map[sdkMethodKey][]apiMethod, len(rows))
 	for _, row := range rows {
-		if row.Package == "" || row.Receiver == "" || row.Method == "" {
-			return nil, fmt.Errorf("aws-sdk-go-v2 row has an incomplete method key")
-		}
-		if !isAWSV2ServicePackage(row.Package) {
-			return nil, fmt.Errorf("aws-sdk-go-v2 row has a non-service package %s", row.Package)
+		if !isAWSV2ServicePackage(row.Package) && !isAWSV1ServicePackage(row.Package) {
+			return nil, fmt.Errorf("SDK mapping row has a non-AWS service package %s", row.Package)
 		}
 		methods := append([]apiMethod(nil), row.APIMethods...)
 		slices.SortFunc(methods, compareAPIMethods)
 		methods = slices.Compact(methods)
 		if len(methods) == 0 {
-			return nil, fmt.Errorf("aws-sdk-go-v2 row %s %s.%s has no API methods", row.Package, row.Receiver, row.Method)
+			return nil, fmt.Errorf("SDK mapping row %s %s.%s has no API methods", row.Package, row.Receiver, row.Method)
 		}
 		for _, method := range methods {
 			if method.Service == "" || method.Name == "" {
-				return nil, fmt.Errorf("aws-sdk-go-v2 row %s %s.%s has an incomplete API method", row.Package, row.Receiver, row.Method)
+				return nil, fmt.Errorf("SDK mapping row %s %s.%s has an incomplete API method", row.Package, row.Receiver, row.Method)
 			}
 		}
 		key := sdkMethodKey{pkg: row.Package, receiver: row.Receiver, method: row.Method}
 		if existing, ok := mappings[key]; ok {
 			if !slices.Equal(existing, methods) {
-				return nil, fmt.Errorf("aws-sdk-go-v2 rows disagree for %s %s.%s", row.Package, row.Receiver, row.Method)
+				return nil, fmt.Errorf("SDK mapping rows disagree for %s %s.%s", row.Package, row.Receiver, row.Method)
 			}
 			continue
 		}
@@ -1804,9 +1801,6 @@ func apiMethodsForSDKCallable(obj *types.Func, sdkMappings map[sdkMethodKey][]ap
 	if methods, ok := sdkMappings[key]; ok {
 		return methods, nil
 	}
-	if method, ok := awsSDKGoV1Operation(obj); ok {
-		return []apiMethod{method}, nil
-	}
 	return nil, nil
 }
 
@@ -1828,6 +1822,11 @@ func awsSDKGoV2Operation(obj *types.Func) bool {
 		return awsSDKGoV2ClientOperationSignature(signature, obj.Pkg(), obj.Name())
 	}
 	return awsSDKGoV2PaginatorOperationSignature(signature, obj.Pkg(), obj.Name())
+}
+func isAWSV1ServicePackage(path string) bool {
+	const prefix = "github.com/aws/aws-sdk-go/service/"
+	service, ok := strings.CutPrefix(path, prefix)
+	return ok && service != "" && !strings.ContainsRune(service, '/')
 }
 
 func awsSDKGoV2ClientReceiver(signature *types.Signature, pkg *types.Package) bool {
@@ -1909,77 +1908,6 @@ func isOperationResults(results *types.Tuple, pkg *types.Package, output string)
 func isStructType(named *types.Named) bool {
 	_, ok := named.Underlying().(*types.Struct)
 	return ok
-}
-
-func awsSDKGoV1Operation(obj *types.Func) (apiMethod, bool) {
-	key, ok := sdkKeyForObject(obj)
-	if !ok {
-		return apiMethod{}, false
-	}
-	const prefix = "github.com/aws/aws-sdk-go/service/"
-	service, ok := strings.CutPrefix(key.pkg, prefix)
-	if !ok || service == "" || strings.ContainsRune(service, '/') || !obj.Exported() {
-		return apiMethod{}, false
-	}
-	named, ok := awsSDKGoV1ClientReceiver(obj)
-	if !ok {
-		return apiMethod{}, false
-	}
-	base, ok := awsSDKGoV1BaseOperation(obj.Name())
-	if !ok {
-		return apiMethod{}, false
-	}
-	request := types.NewMethodSet(types.NewPointer(named)).Lookup(nil, base+"Request")
-	if request == nil {
-		return apiMethod{}, false
-	}
-	requestObj, ok := request.Obj().(*types.Func)
-	if !ok {
-		return apiMethod{}, false
-	}
-	requestReceiver, ok := awsSDKGoV1ClientReceiver(requestObj)
-	if !ok || requestReceiver != named {
-		return apiMethod{}, false
-	}
-	return apiMethod{Service: service, Name: base}, true
-}
-
-func awsSDKGoV1ClientReceiver(obj *types.Func) (*types.Named, bool) {
-	if obj == nil || obj.Pkg() == nil {
-		return nil, false
-	}
-	signature, ok := obj.Type().(*types.Signature)
-	if !ok || signature.Recv() == nil {
-		return nil, false
-	}
-	receiver := signature.Recv().Type()
-	for {
-		pointer, ok := receiver.(*types.Pointer)
-		if !ok {
-			break
-		}
-		receiver = pointer.Elem()
-	}
-	named, ok := receiver.(*types.Named)
-	if !ok || named.Obj() == nil || named.Obj().Pkg() != obj.Pkg() || !named.Obj().Exported() {
-		return nil, false
-	}
-	if _, ok := named.Underlying().(*types.Struct); !ok {
-		return nil, false
-	}
-	return named, true
-}
-
-func awsSDKGoV1BaseOperation(method string) (string, bool) {
-	if strings.HasPrefix(method, "WaitUntil") || strings.HasPrefix(method, "Presign") {
-		return "", false
-	}
-	for _, suffix := range []string{"PagesWithContext", "WithContext", "Pages"} {
-		if base, ok := strings.CutSuffix(method, suffix); ok {
-			return base, base != ""
-		}
-	}
-	return method, method != ""
 }
 
 func sdkKeyForObject(obj *types.Func) (sdkMethodKey, bool) {

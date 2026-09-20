@@ -73,85 +73,6 @@ func TestSDKKeyForCallable(t *testing.T) {
 	}
 }
 
-func TestAWSV1OperationPredicate(t *testing.T) {
-	t.Parallel()
-
-	pkg := types.NewPackage("github.com/aws/aws-sdk-go/service/example", "example")
-	client := types.NewNamed(types.NewTypeName(token.NoPos, pkg, "Client", nil), types.NewStruct(nil, nil), nil)
-	addAWSV1Method(pkg, client, "GetThingRequest")
-	addAWSV1Method(pkg, client, "ModifySpotFleetRequest")
-	addAWSV1Method(pkg, client, "ModifySpotFleetRequestRequest")
-
-	tests := []struct {
-		name       string
-		method     string
-		want       apiMethod
-		wantMapped bool
-	}{
-		{name: "base operation", method: "GetThing", want: apiMethod{Service: "example", Name: "GetThing"}, wantMapped: true},
-		{name: "context operation", method: "GetThingWithContext", want: apiMethod{Service: "example", Name: "GetThing"}, wantMapped: true},
-		{name: "paged operation", method: "GetThingPages", want: apiMethod{Service: "example", Name: "GetThing"}, wantMapped: true},
-		{name: "paged context operation", method: "GetThingPagesWithContext", want: apiMethod{Service: "example", Name: "GetThing"}, wantMapped: true},
-		{name: "generated Request companion helper", method: "GetThingRequest"},
-		{name: "Request-suffixed operation", method: "ModifySpotFleetRequest", want: apiMethod{Service: "example", Name: "ModifySpotFleetRequest"}, wantMapped: true},
-		{name: "Request-suffixed operation helper", method: "ModifySpotFleetRequestRequest"},
-		{name: "wait helper", method: "WaitUntilThingExists"},
-		{name: "setter helper", method: "SetThing"},
-		{name: "string helper", method: "String"},
-	}
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			method := newAWSV1Method(pkg, client, test.method)
-			got, mapped := awsSDKGoV1Operation(method)
-			if mapped != test.wantMapped {
-				t.Fatalf("awsSDKGoV1Operation(%s) mapped = %v, want %v", test.method, mapped, test.wantMapped)
-			}
-			if got != test.want {
-				t.Fatalf("awsSDKGoV1Operation(%s) = %#v, want %#v", test.method, got, test.want)
-			}
-		})
-	}
-}
-
-func TestAWSV1OperationRequiresClientShape(t *testing.T) {
-	t.Parallel()
-
-	tests := []struct {
-		name     string
-		pkgPath  string
-		typeName string
-		typ      types.Type
-	}{
-		{
-			name:     "non AWS package",
-			pkgPath:  "example.com/service/example",
-			typeName: "Client",
-			typ:      types.NewStruct(nil, nil),
-		},
-		{
-			name:     "nested service package",
-			pkgPath:  "github.com/aws/aws-sdk-go/service/example/internal",
-			typeName: "Client",
-			typ:      types.NewStruct(nil, nil),
-		},
-		{
-			name:     "non struct receiver",
-			pkgPath:  "github.com/aws/aws-sdk-go/service/example",
-			typeName: "Client",
-			typ:      types.Typ[types.Int],
-		},
-	}
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			pkg := types.NewPackage(test.pkgPath, "example")
-			receiver := types.NewNamed(types.NewTypeName(token.NoPos, pkg, test.typeName, nil), test.typ, nil)
-			if _, mapped := awsSDKGoV1Operation(newAWSV1Method(pkg, receiver, "GetThing")); mapped {
-				t.Fatal("awsSDKGoV1Operation() accepted a non-client operation shape")
-			}
-		})
-	}
-}
-
 func TestAWSV2OperationShapeControlsExactMapping(t *testing.T) {
 	t.Parallel()
 
@@ -198,7 +119,7 @@ func TestAWSV2SetterHelpersDoNotMapWithoutOperationShape(t *testing.T) {
 	client := types.NewNamed(types.NewTypeName(token.NoPos, pkg, "Client", nil), types.NewStruct(nil, nil), nil)
 	for _, helperName := range []string{"SetFilter", "SetSAMLOptions", "SetEncryptionContextEquals"} {
 		t.Run(helperName, func(t *testing.T) {
-			helper := newAWSV1Method(pkg, client, helperName)
+			helper := newMethod(pkg, client, helperName)
 			mappings := map[sdkMethodKey][]apiMethod{
 				mustSDKKey(t, helper): []apiMethod{{Service: "example", Name: helperName}},
 			}
@@ -878,13 +799,7 @@ func functionDeclaration(t *testing.T, file *ast.File, info *types.Info, name st
 	return nil, nil
 }
 
-func addAWSV1Method(pkg *types.Package, receiver *types.Named, name string) *types.Func {
-	method := newAWSV1Method(pkg, receiver, name)
-	receiver.AddMethod(method)
-	return method
-}
-
-func newAWSV1Method(pkg *types.Package, receiver *types.Named, name string) *types.Func {
+func newMethod(pkg *types.Package, receiver *types.Named, name string) *types.Func {
 	recv := types.NewVar(token.NoPos, pkg, "", types.NewPointer(receiver))
 	signature := types.NewSignature(recv, types.NewTuple(), types.NewTuple(), false)
 	return types.NewFunc(token.NoPos, pkg, name, signature)

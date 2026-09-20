@@ -1,0 +1,27 @@
+[package]
+name = "cloudcover-aws-sdk-go-v1"
+version.workspace = true
+edition.workspace = true
+build = "build.rs"
+
+[features]
+default = []
+generator = ["dep:clap"]
+
+[dependencies]
+clap = { version = "4.5.60", features = ["derive"], optional = true }
+semver = "1.0.27"
+serde = { version = "1.0", features = ["derive"] }
+
+[build-dependencies]
+semver = "1.0.27"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[[bin]]
+name = "generate-aws-sdk-go-v1-data"
+path = "src/bin/generate_aws_sdk_go_v1_data.rs"
+required-features = ["generator"]
+
+[lints]
+workspace = true
