@@ -170,6 +170,30 @@ func TestCollectAPIMethodsRejectsUnresolvedHandler(t *testing.T) {
 	}
 }
 
+func TestAPIMethodAnalyzerMemoizesSharedFunctionSummaries(t *testing.T) {
+	t.Parallel()
+
+	index, handlers, mappings, sharedKey := sharedAPIMethodFixture(t)
+	analyzer := newAPIMethodAnalyzer(index, mappings)
+	want := []apiMethod{{Service: "example", Name: "ListThings"}}
+	first, err := analyzer.collect([]*ssa.Function{handlers[0]})
+	if err != nil {
+		t.Fatalf("collect(%s) error = %v", handlers[0].Name(), err)
+	}
+	if !slices.Equal(first.methods, want) {
+		t.Fatalf("collect(%s) methods = %#v, want %#v", handlers[0].Name(), first.methods, want)
+	}
+
+	delete(mappings, sharedKey)
+	second, err := analyzer.collect([]*ssa.Function{handlers[1]})
+	if err != nil {
+		t.Fatalf("collect(%s) error = %v", handlers[1].Name(), err)
+	}
+	if !slices.Equal(second.methods, want) {
+		t.Fatalf("collect(%s) methods = %#v, want %#v", handlers[1].Name(), second.methods, want)
+	}
+}
+
 func TestCollectDirectLocalCalleesSkipsBodylessInterfaceMethod(t *testing.T) {
 	t.Parallel()
 
@@ -2127,6 +2151,7 @@ func localCalleeFixture(t *testing.T, source string) (*packageIndex, *ssa.Functi
 	ssaPackage := program.CreatePackage(checked, []*ast.File{file}, info, true)
 	ssaPackage.Build()
 	handler := ssaPackage.Func("handler")
+
 	if handler == nil {
 		t.Fatal("fixture has no handler SSA function")
 	}
@@ -2150,6 +2175,95 @@ func localCalleeFixture(t *testing.T, source string) (*packageIndex, *ssa.Functi
 		}
 	}
 	return index, handler
+}
+func sharedAPIMethodFixture(t *testing.T) (*packageIndex, []*ssa.Function, map[sdkMethodKey][]apiMethod, sdkMethodKey) {
+	t.Helper()
+
+	const sdkPath = "github.com/aws/aws-sdk-go/service/example"
+	fileSet := token.NewFileSet()
+	file, err := parser.ParseFile(fileSet, "shared.go", `package flex
+
+import example "github.com/aws/aws-sdk-go/service/example"
+
+func handlerOne(client *example.Client) {
+	shared(client)
+}
+
+func handlerTwo(client *example.Client) {
+	shared(client)
+}
+
+func shared(client *example.Client) {
+	client.ListThings()
+	cycle(client)
+}
+
+func cycle(client *example.Client) {
+	shared(client)
+}`, parser.SkipObjectResolution)
+	if err != nil {
+		t.Fatalf("parse fixture: %v", err)
+	}
+
+	sdkPkg := types.NewPackage(sdkPath, "example")
+	client := types.NewNamed(types.NewTypeName(token.NoPos, sdkPkg, "Client", nil), types.NewStruct(nil, nil), nil)
+	sdkPkg.Scope().Insert(client.Obj())
+	listThings := newMethod(sdkPkg, client, "ListThings")
+	client.AddMethod(listThings)
+	sdkPkg.MarkComplete()
+
+	info := &types.Info{
+		Defs:       make(map[*ast.Ident]types.Object),
+		Types:      make(map[ast.Expr]types.TypeAndValue),
+		Uses:       make(map[*ast.Ident]types.Object),
+		Selections: make(map[*ast.SelectorExpr]*types.Selection),
+	}
+	packagePath := providerModulePath + "/internal/framework/flex"
+	checked, err := (&types.Config{Importer: packageMapImporter{sdkPath: sdkPkg}}).Check(packagePath, fileSet, []*ast.File{file}, info)
+	if err != nil {
+		t.Fatalf("type-check fixture: %v", err)
+	}
+	program := ssa.NewProgram(fileSet, 0)
+	program.CreatePackage(sdkPkg, nil, nil, true)
+	ssaPackage := program.CreatePackage(checked, []*ast.File{file}, info, true)
+	ssaPackage.Build()
+
+	sourcePkg := &packages.Package{Types: checked, TypesInfo: info}
+	index := &packageIndex{
+		prog:        program,
+		byTypes:     map[*types.Package]*packages.Package{checked: sourcePkg},
+		byPath:      map[string][]*packages.Package{packagePath: {sourcePkg}},
+		funcDecls:   map[*types.Func]*ast.FuncDecl{},
+		ssaFuncs:    map[*types.Func][]*ssa.Function{},
+		ssaBySyntax: map[ast.Node][]*ssa.Function{},
+	}
+	handlers := make([]*ssa.Function, 0, 2)
+	for _, name := range []string{"handlerOne", "handlerTwo", "shared", "cycle"} {
+		obj, decl := functionDeclaration(t, file, info, name)
+		fn := ssaPackage.Func(name)
+		if fn == nil || fn.Syntax() != decl {
+			t.Fatalf("fixture %s SSA body is missing", name)
+		}
+		index.funcDecls[obj] = decl
+		index.ssaFuncs[obj] = []*ssa.Function{fn}
+		if name == "handlerOne" || name == "handlerTwo" {
+			handlers = append(handlers, fn)
+		}
+	}
+	key := mustSDKKey(t, listThings)
+	return index, handlers, map[sdkMethodKey][]apiMethod{
+		key: {{Service: "example", Name: "ListThings"}},
+	}, key
+}
+
+type packageMapImporter map[string]*types.Package
+
+func (importer packageMapImporter) Import(path string) (*types.Package, error) {
+	pkg := importer[path]
+	if pkg == nil {
+		return nil, fmt.Errorf("package %s is not available", path)
+	}
+	return pkg, nil
 }
 
 func methodSelectionForCall(t *testing.T, index *packageIndex, fn *ssa.Function, method string) *types.Selection {

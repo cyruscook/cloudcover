@@ -109,6 +109,34 @@ type handlerAPIMethods struct {
 	methods []apiMethod
 }
 
+type apiMethodSummaryState uint8
+
+const (
+	apiMethodSummaryInProgress apiMethodSummaryState = iota + 1
+	apiMethodSummaryComplete
+)
+
+type apiMethodFunctionSummary struct {
+	state   apiMethodSummaryState
+	direct  []apiMethod
+	callees []*ssa.Function
+	methods []apiMethod
+}
+
+type apiMethodAnalyzer struct {
+	index       *packageIndex
+	sdkMappings map[sdkMethodKey][]apiMethod
+	summaries   map[*ssa.Function]*apiMethodFunctionSummary
+}
+
+func newAPIMethodAnalyzer(index *packageIndex, sdkMappings map[sdkMethodKey][]apiMethod) *apiMethodAnalyzer {
+	return &apiMethodAnalyzer{
+		index:       index,
+		sdkMappings: sdkMappings,
+		summaries:   make(map[*ssa.Function]*apiMethodFunctionSummary),
+	}
+}
+
 func main() {
 	if err := run(); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
@@ -145,6 +173,8 @@ func run() error {
 	if len(specs) == 0 {
 		return errors.New("discovered no terraform-provider-aws entrypoints")
 	}
+	analyzer := newAPIMethodAnalyzer(index, sdkMappings)
+
 
 	rows := make([]mappingRow, 0, len(specs))
 	for _, spec := range specs {
@@ -160,7 +190,7 @@ func run() error {
 			)
 		}
 		for _, handler := range handlers {
-			analysis, err := collectAPIMethods(index, handler.funcs, sdkMappings)
+			analysis, err := analyzer.collect(handler.funcs)
 			if err != nil {
 				return fmt.Errorf(
 					"collect API methods for %s %s %s handler: %w",
@@ -1508,47 +1538,103 @@ func concreteTypeFromExpr(
 }
 
 func collectAPIMethods(index *packageIndex, roots []*ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod) (handlerAPIMethods, error) {
+	return newAPIMethodAnalyzer(index, sdkMappings).collect(roots)
+}
+
+func (analyzer *apiMethodAnalyzer) collect(roots []*ssa.Function) (handlerAPIMethods, error) {
 	if len(roots) == 0 {
 		return handlerAPIMethods{}, errors.New("handler resolved no SSA functions")
 	}
-	queue := expandRootFunctions(index, roots)
-	seen := map[*ssa.Function]struct{}{}
+	pending := make(map[*ssa.Function]*apiMethodFunctionSummary)
+	expandedRoots := expandRootFunctions(analyzer.index, roots)
+	for _, root := range expandedRoots {
+		if err := analyzer.discover(root, pending); err != nil {
+			analyzer.discardInProgress(pending)
+			return handlerAPIMethods{}, err
+		}
+	}
+	analyzer.complete(pending)
+
 	methods := make([]apiMethod, 0)
-	for len(queue) > 0 {
-		fn := queue[len(queue)-1]
-		queue = queue[:len(queue)-1]
-		if fn == nil {
-			return handlerAPIMethods{}, errors.New("handler contains a missing SSA function")
-		}
-		if _, ok := seen[fn]; ok {
-			continue
-		}
-		seen[fn] = struct{}{}
-		if obj, ok := fn.Object().(*types.Func); ok {
-			resolved, err := apiMethodsForSDKCallable(obj, sdkMappings, isProviderSSAFunction(fn))
-			if err != nil {
-				return handlerAPIMethods{}, err
-			}
-			methods = append(methods, resolved...)
-		}
-		direct, err := collectDirectSDKAPIMethods(index, fn, sdkMappings)
-		if err != nil {
-			return handlerAPIMethods{}, err
-		}
-		methods = append(methods, direct...)
-		// The static call graph omits some calls inside range-over-function iterators.
-		// Preserve those provider-local edges from the type-checked AST.
-		localCallees, err := collectDirectLocalCallees(index, fn)
-		if err != nil {
-			return handlerAPIMethods{}, err
-		}
-		queue = append(queue, localCallees...)
-		queue = append(queue, index.nestedFuncs[fn]...)
-		queue = append(queue, index.callers[fn]...)
+	for _, root := range expandedRoots {
+		methods = append(methods, analyzer.summaries[root].methods...)
 	}
 	slices.SortFunc(methods, compareAPIMethods)
 	methods = slices.Compact(methods)
 	return handlerAPIMethods{methods: methods}, nil
+}
+
+func (analyzer *apiMethodAnalyzer) discover(fn *ssa.Function, pending map[*ssa.Function]*apiMethodFunctionSummary) error {
+	if fn == nil {
+		return errors.New("handler contains a missing SSA function")
+	}
+	if summary := analyzer.summaries[fn]; summary != nil {
+		return nil
+	}
+	summary := &apiMethodFunctionSummary{state: apiMethodSummaryInProgress}
+	analyzer.summaries[fn] = summary
+	pending[fn] = summary
+
+	if obj, ok := fn.Object().(*types.Func); ok {
+		resolved, err := apiMethodsForSDKCallable(obj, analyzer.sdkMappings, isProviderSSAFunction(fn))
+		if err != nil {
+			return err
+		}
+		summary.direct = append(summary.direct, resolved...)
+	}
+	direct, err := collectDirectSDKAPIMethods(analyzer.index, fn, analyzer.sdkMappings)
+	if err != nil {
+		return err
+	}
+	summary.direct = append(summary.direct, direct...)
+
+	// The static call graph omits some calls inside range-over-function iterators.
+	// Preserve those provider-local edges from the type-checked AST.
+	localCallees, err := collectDirectLocalCallees(analyzer.index, fn)
+	if err != nil {
+		return err
+	}
+	summary.callees = append(summary.callees, localCallees...)
+	summary.callees = append(summary.callees, analyzer.index.nestedFuncs[fn]...)
+	summary.callees = append(summary.callees, analyzer.index.callers[fn]...)
+	for _, callee := range summary.callees {
+		if err := analyzer.discover(callee, pending); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (analyzer *apiMethodAnalyzer) complete(pending map[*ssa.Function]*apiMethodFunctionSummary) {
+	for {
+		changed := false
+		for _, summary := range pending {
+			methods := append([]apiMethod(nil), summary.direct...)
+			for _, callee := range summary.callees {
+				methods = append(methods, analyzer.summaries[callee].methods...)
+			}
+			slices.SortFunc(methods, compareAPIMethods)
+			methods = slices.Compact(methods)
+			if !slices.Equal(summary.methods, methods) {
+				summary.methods = methods
+				changed = true
+			}
+		}
+		if !changed {
+			break
+		}
+	}
+	for _, summary := range pending {
+		summary.state = apiMethodSummaryComplete
+	}
+}
+
+func (analyzer *apiMethodAnalyzer) discardInProgress(pending map[*ssa.Function]*apiMethodFunctionSummary) {
+	for fn, summary := range pending {
+		if summary.state == apiMethodSummaryInProgress {
+			delete(analyzer.summaries, fn)
+		}
+	}
 }
 
 func expandRootFunctions(index *packageIndex, roots []*ssa.Function) []*ssa.Function {
