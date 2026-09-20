@@ -150,24 +150,32 @@ func changedServices(repository, previous, current string, first bool) ([]string
 }
 
 func updateService(batch *gitBatch, tag, service string, state sdkState) error {
-	prefix := "github.com/aws/aws-sdk-go/service/" + service + "/"
-	for key := range state {
-		if strings.HasPrefix(key, prefix) {
-			delete(state, key)
-		}
-	}
 	content, err := batch.show(tag, "service/"+service+"/api.go")
 	if err != nil {
-		return nil
+		if errors.Is(err, errGitObjectMissing) {
+			removeServiceMappings(service, state)
+			return nil
+		}
+		return fmt.Errorf("read %s at %s: %w", service, tag, err)
 	}
 	rows, err := parseService(content, service)
 	if err != nil {
 		return fmt.Errorf("parse %s at %s: %w", service, tag, err)
 	}
+	removeServiceMappings(service, state)
 	for _, row := range rows {
 		state[rowKey(row)] = row
 	}
 	return nil
+}
+
+func removeServiceMappings(service string, state sdkState) {
+	prefix := "github.com/aws/aws-sdk-go/service/" + service + "\x00"
+	for key := range state {
+		if strings.HasPrefix(key, prefix) {
+			delete(state, key)
+		}
+	}
 }
 
 func parseService(content []byte, service string) ([]mappingRow, error) {
@@ -305,6 +313,22 @@ type gitBatch struct {
 	cmd    *exec.Cmd
 }
 
+var errGitObjectMissing = errors.New("git object missing")
+
+type gitObjectMissingError struct {
+	object string
+}
+
+func (err *gitObjectMissingError) Error() string {
+	return fmt.Sprintf("git object %s is missing", err.object)
+}
+
+func (*gitObjectMissingError) MissingObject() {}
+
+func (*gitObjectMissingError) Unwrap() error {
+	return errGitObjectMissing
+}
+
 func newGitBatch(repository string) (*gitBatch, error) {
 	cmd := exec.Command("git", "--git-dir", repository, "cat-file", "--batch")
 	input, err := cmd.StdinPipe()
@@ -322,27 +346,41 @@ func newGitBatch(repository string) (*gitBatch, error) {
 }
 
 func (batch *gitBatch) show(tag, file string) ([]byte, error) {
-	if _, err := fmt.Fprintf(batch.input, "%s:%s\n", tag, file); err != nil {
-		return nil, err
+	object := tag + ":" + file
+	if _, err := fmt.Fprintf(batch.input, "%s\n", object); err != nil {
+		return nil, fmt.Errorf("request git object %s: %w", object, err)
 	}
 	header, err := batch.output.ReadString('\n')
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("read git object header %s: %w", object, err)
 	}
 	fields := strings.Fields(header)
-	if len(fields) != 3 || fields[1] != "blob" {
-		return nil, fmt.Errorf("git object %s:%s is unavailable", tag, file)
+	if len(fields) == 2 && fields[1] == "missing" {
+		return nil, &gitObjectMissingError{object: object}
+	}
+	if len(fields) != 3 {
+		return nil, fmt.Errorf("malformed git object header for %s: %q", object, header)
+	}
+	if fields[1] != "blob" {
+		return nil, fmt.Errorf("git object %s has type %q, want blob", object, fields[1])
+	}
+	if fields[2] == "" || strings.ContainsAny(fields[2], "+-") {
+		return nil, fmt.Errorf("invalid git blob size for %s: %q", object, fields[2])
 	}
 	size, err := strconv.Atoi(fields[2])
-	if err != nil {
-		return nil, err
+	if err != nil || size < 0 {
+		return nil, fmt.Errorf("invalid git blob size for %s: %q", object, fields[2])
 	}
 	content := make([]byte, size)
 	if _, err := io.ReadFull(batch.output, content); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("read git blob %s: %w", object, err)
 	}
-	if _, err := batch.output.ReadByte(); err != nil {
-		return nil, err
+	terminator, err := batch.output.ReadByte()
+	if err != nil {
+		return nil, fmt.Errorf("read git blob terminator %s: %w", object, err)
+	}
+	if terminator != '\n' {
+		return nil, fmt.Errorf("malformed git blob terminator for %s", object)
 	}
 	return content, nil
 }
