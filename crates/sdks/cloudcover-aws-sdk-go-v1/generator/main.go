@@ -37,7 +37,12 @@ type dataFile struct {
 	ModulePath string    `json:"module_path"`
 	Releases   []release `json:"releases"`
 }
-type sdkState map[string]mappingRow
+type sdkState map[string]map[string]mappingRow
+
+type serviceDelta struct {
+	Remove [][3]string
+	Upsert [][]any
+}
 
 type version struct {
 	raw                 string
@@ -84,13 +89,17 @@ func run() error {
 		if err != nil {
 			return err
 		}
-		before := cloneState(state)
+		currentRelease := release{ModuleVersion: strings.TrimPrefix(current.raw, "v")}
 		for _, service := range changed {
-			if err := updateService(batch, current.raw, service, state); err != nil {
+			change, err := updateService(batch, current.raw, service, state)
+			if err != nil {
 				return err
 			}
+			currentRelease.Remove = append(currentRelease.Remove, change.Remove...)
+			currentRelease.Upsert = append(currentRelease.Upsert, change.Upsert...)
 		}
-		result.Releases = append(result.Releases, delta(before, state, current.raw))
+		sortRelease(&currentRelease)
+		result.Releases = append(result.Releases, currentRelease)
 		previous = current.raw
 	}
 	encoded, err := json.MarshalIndent(result, "", "  ")
@@ -100,27 +109,10 @@ func run() error {
 	encoded = append(encoded, '\n')
 	return os.WriteFile(*output, encoded, 0o644)
 }
-func delta(previous sdkState, current sdkState, raw string) release {
-	result := release{
-		ModuleVersion: strings.TrimPrefix(raw, "v"),
-		Remove:        make([][3]string, 0),
-		Upsert:        make([][]any, 0),
-	}
-	for key := range previous {
-		if _, ok := current[key]; !ok {
-			result.Remove = append(result.Remove, splitKey(key))
-		}
-	}
-	for key, row := range current {
-		old, ok := previous[key]
-		if ok && equalRow(old, row) {
-			continue
-		}
-		result.Upsert = append(result.Upsert, rowJSON(row))
-	}
-	sort.Slice(result.Remove, func(i, j int) bool { return fmt.Sprint(result.Remove[i]) < fmt.Sprint(result.Remove[j]) })
-	sort.Slice(result.Upsert, func(i, j int) bool { return fmt.Sprint(result.Upsert[i]) < fmt.Sprint(result.Upsert[j]) })
-	return result
+
+func sortRelease(release *release) {
+	sort.Slice(release.Remove, func(i, j int) bool { return fmt.Sprint(release.Remove[i]) < fmt.Sprint(release.Remove[j]) })
+	sort.Slice(release.Upsert, func(i, j int) bool { return fmt.Sprint(release.Upsert[i]) < fmt.Sprint(release.Upsert[j]) })
 }
 
 func changedServices(repository, previous, current string, first bool) ([]string, error) {
@@ -149,33 +141,51 @@ func changedServices(repository, previous, current string, first bool) ([]string
 	return result, nil
 }
 
-func updateService(batch *gitBatch, tag, service string, state sdkState) error {
+func updateService(batch *gitBatch, tag, service string, state sdkState) (serviceDelta, error) {
 	content, err := batch.show(tag, "service/"+service+"/api.go")
 	if err != nil {
 		if errors.Is(err, errGitObjectMissing) {
-			removeServiceMappings(service, state)
-			return nil
+			return replaceServiceMappings(service, nil, state), nil
 		}
-		return fmt.Errorf("read %s at %s: %w", service, tag, err)
+		return serviceDelta{}, fmt.Errorf("read %s at %s: %w", service, tag, err)
 	}
 	rows, err := parseService(content, service)
 	if err != nil {
-		return fmt.Errorf("parse %s at %s: %w", service, tag, err)
+		return serviceDelta{}, fmt.Errorf("parse %s at %s: %w", service, tag, err)
 	}
-	removeServiceMappings(service, state)
-	for _, row := range rows {
-		state[rowKey(row)] = row
-	}
-	return nil
+	return replaceServiceMappings(service, rows, state), nil
 }
-
-func removeServiceMappings(service string, state sdkState) {
-	prefix := "github.com/aws/aws-sdk-go/service/" + service + "\x00"
-	for key := range state {
-		if strings.HasPrefix(key, prefix) {
-			delete(state, key)
+func replaceServiceMappings(service string, rows []mappingRow, state sdkState) serviceDelta {
+	previous := removeServiceMappings(service, state)
+	result := serviceDelta{
+		Remove: make([][3]string, 0, len(previous)),
+		Upsert: make([][]any, 0, len(rows)),
+	}
+	current := make(map[string]mappingRow, len(rows))
+	for _, row := range rows {
+		current[rowKey(row)] = row
+	}
+	if len(current) > 0 {
+		state[service] = current
+	}
+	for key, row := range previous {
+		if _, ok := current[key]; !ok {
+			result.Remove = append(result.Remove, [3]string{row.Package, row.Receiver, row.Method})
 		}
 	}
+	for key, row := range current {
+		old, ok := previous[key]
+		if !ok || !equalRow(old, row) {
+			result.Upsert = append(result.Upsert, rowJSON(row))
+		}
+	}
+	return result
+}
+
+func removeServiceMappings(service string, state sdkState) map[string]mappingRow {
+	previous := state[service]
+	delete(state, service)
+	return previous
 }
 
 func parseService(content []byte, service string) ([]mappingRow, error) {
@@ -238,12 +248,7 @@ func baseOperation(name string) (string, bool) {
 	}
 	return name, name != ""
 }
-func rowKey(row mappingRow) string   { return row.Package + "\x00" + row.Receiver + "\x00" + row.Method }
-func keyString(key [3]string) string { return key[0] + "\x00" + key[1] + "\x00" + key[2] }
-func splitKey(key string) [3]string {
-	parts := strings.SplitN(key, "\x00", 3)
-	return [3]string{parts[0], parts[1], parts[2]}
-}
+func rowKey(row mappingRow) string { return row.Package + "\x00" + row.Receiver + "\x00" + row.Method }
 func equalRow(a, b mappingRow) bool {
 	return rowKey(a) == rowKey(b) && a.APIMethods[0] == b.APIMethods[0]
 }
@@ -253,13 +258,6 @@ func rowJSON(row mappingRow) []any {
 		methods[i] = []string{method.Service, method.Name}
 	}
 	return []any{row.Package, row.Receiver, row.Method, methods}
-}
-func cloneState(state sdkState) sdkState {
-	clone := sdkState{}
-	for k, v := range state {
-		clone[k] = v
-	}
-	return clone
 }
 func parseVersion(tag string) (version, bool) {
 	if !strings.HasPrefix(tag, "v1.") {

@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"io"
+	"reflect"
 	"strconv"
 	"strings"
 	"testing"
@@ -44,7 +45,17 @@ func serviceState(service, method string) sdkState {
 		Method:     method,
 		APIMethods: []apiMethod{{Service: service, Name: method}},
 	}
-	return sdkState{rowKey(row): row}
+	return sdkState{service: map[string]mappingRow{rowKey(row): row}}
+}
+
+func mergeStates(states ...sdkState) sdkState {
+	merged := sdkState{}
+	for _, state := range states {
+		for service, rows := range state {
+			merged[service] = rows
+		}
+	}
+	return merged
 }
 
 func TestUpdateServiceReadsValidBlob(t *testing.T) {
@@ -61,7 +72,7 @@ func (c *Client) ListWidgetsRequest() {}
 	batch := testGitBatch("object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n")
 	state := serviceState(service, "OldMethod")
 
-	if err := updateService(batch, "v1.2.3", service, state); err != nil {
+	if _, err := updateService(batch, "v1.2.3", service, state); err != nil {
 		t.Fatal(err)
 	}
 
@@ -78,7 +89,7 @@ func TestUpdateServiceTreatsExplicitMissingBlobAsDeletedService(t *testing.T) {
 	state := serviceState(service, "OldMethod")
 	batch := testGitBatch("v1.2.3:service/widgets/api.go missing\n")
 
-	if err := updateService(batch, "v1.2.3", service, state); err != nil {
+	if _, err := updateService(batch, "v1.2.3", service, state); err != nil {
 		t.Fatal(err)
 	}
 	if len(state) != 0 {
@@ -91,12 +102,28 @@ func TestUpdateServiceTreatsExplicitMissingBlobAsDeletedService(t *testing.T) {
 		t.Errorf("show() error = %v, want a typed missing-object error", err)
 	}
 }
+func TestUpdateServiceLeavesStateUntouchedOnParseError(t *testing.T) {
+	t.Parallel()
+
+	const source = "package widgets\nfunc (\n"
+	state := serviceState("widgets", "OldMethod")
+	want := serviceState("widgets", "OldMethod")
+	batch := testGitBatch("object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n")
+
+	if _, err := updateService(batch, "v1.2.3", "widgets", state); err == nil {
+		t.Fatal("updateService() error = nil, want parse failure")
+	}
+	if !equalStates(state, want) {
+		t.Errorf("updateService() modified state after parse failure: %#v", state)
+	}
+}
 
 func TestUpdateServiceReturnsGitBatchFailures(t *testing.T) {
 	t.Parallel()
 
 	for _, test := range []struct {
-		name     string
+		name string
+
 		response string
 	}{
 		{name: "malformed header", response: "not a cat-file header\n"},
@@ -108,7 +135,7 @@ func TestUpdateServiceReturnsGitBatchFailures(t *testing.T) {
 	} {
 		t.Run(test.name, func(t *testing.T) {
 			state := serviceState("widgets", "OldMethod")
-			err := updateService(testGitBatch(test.response), "v1.2.3", "widgets", state)
+			_, err := updateService(testGitBatch(test.response), "v1.2.3", "widgets", state)
 			if err == nil {
 				t.Fatal("updateService() error = nil, want Git batch failure")
 			}
@@ -132,7 +159,7 @@ func TestUpdateServiceReturnsGitBatchWriteError(t *testing.T) {
 		output: bufio.NewReader(strings.NewReader("")),
 	}
 
-	err := updateService(batch, "v1.2.3", "widgets", state)
+	_, err := updateService(batch, "v1.2.3", "widgets", state)
 	if !errors.Is(err, io.ErrClosedPipe) {
 		t.Fatalf("updateService() error = %v, want errors.Is(err, io.ErrClosedPipe)", err)
 	}
@@ -145,11 +172,80 @@ func equalStates(got, want sdkState) bool {
 	if len(got) != len(want) {
 		return false
 	}
-	for key, wantRow := range want {
-		gotRow, ok := got[key]
-		if !ok || !equalRow(gotRow, wantRow) {
+	for service, wantRows := range want {
+		gotRows, ok := got[service]
+		if !ok || len(gotRows) != len(wantRows) {
 			return false
+		}
+		for key, wantRow := range wantRows {
+			gotRow, ok := gotRows[key]
+			if !ok || !equalRow(gotRow, wantRow) {
+				return false
+			}
 		}
 	}
 	return true
+}
+
+func TestUpdateServiceProducesChangedServiceDelta(t *testing.T) {
+	t.Parallel()
+
+	const addedSource = `package added
+
+type Client struct{}
+
+func (c *Client) CreateAdded() {}
+func (c *Client) CreateAddedRequest() {}
+`
+	const updatedSource = `package updated
+
+type Client struct{}
+
+func (c *Client) NewMethod() {}
+func (c *Client) NewMethodRequest() {}
+`
+	batch := testGitBatch(
+		"object blob " + strconv.Itoa(len(addedSource)) + "\n" + addedSource + "\n" +
+			"v1.2.3:service/deleted/api.go missing\n" +
+			"object blob " + strconv.Itoa(len(updatedSource)) + "\n" + updatedSource + "\n",
+	)
+	state := mergeStates(
+		serviceState("unchanged", "ListUnchanged"),
+		serviceState("deleted", "OldMethod"),
+		serviceState("updated", "OldMethod"),
+	)
+	got := release{ModuleVersion: "1.2.3"}
+	for _, service := range []string{"added", "deleted", "updated"} {
+		change, err := updateService(batch, "v1.2.3", service, state)
+		if err != nil {
+			t.Fatalf("updateService(%q): %v", service, err)
+		}
+		got.Remove = append(got.Remove, change.Remove...)
+		got.Upsert = append(got.Upsert, change.Upsert...)
+	}
+	sortRelease(&got)
+
+	want := release{
+		ModuleVersion: "1.2.3",
+		Remove: [][3]string{
+			{"github.com/aws/aws-sdk-go/service/deleted", "Client", "OldMethod"},
+			{"github.com/aws/aws-sdk-go/service/updated", "Client", "OldMethod"},
+		},
+		Upsert: [][]any{
+			{"github.com/aws/aws-sdk-go/service/added", "Client", "CreateAdded", [][]string{{"added", "CreateAdded"}}},
+			{"github.com/aws/aws-sdk-go/service/updated", "Client", "NewMethod", [][]string{{"updated", "NewMethod"}}},
+		},
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("release delta = %#v, want %#v", got, want)
+	}
+
+	wantState := mergeStates(
+		serviceState("unchanged", "ListUnchanged"),
+		serviceState("added", "CreateAdded"),
+		serviceState("updated", "NewMethod"),
+	)
+	if !equalStates(state, wantState) {
+		t.Errorf("final state = %#v, want %#v", state, wantState)
+	}
 }
