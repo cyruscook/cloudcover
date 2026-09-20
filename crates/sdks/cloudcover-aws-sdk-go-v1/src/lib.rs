@@ -1,5 +1,12 @@
 use std::iter::FusedIterator;
 
+#[cfg(test)]
+#[path = "build_index.rs"]
+mod build_index;
+#[cfg(test)]
+#[path = "data.rs"]
+mod data;
+
 pub const SDK_NAME: &str = "aws-sdk-go-v1";
 pub const MODULE_PATH: &str = "github.com/aws/aws-sdk-go";
 
@@ -180,7 +187,7 @@ fn read_u32(offset: usize) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    use super::{AwsSdkGoV1ApiMethodRef, sdk_method_mappings, sdk_versions};
+    use super::{sdk_method_mappings, sdk_versions, AwsSdkGoV1ApiMethodRef};
 
     #[test]
     fn versions_are_sorted_and_exact() {
@@ -203,10 +210,9 @@ mod tests {
     fn exact_versions_control_operations() -> Result<(), &'static str> {
         let old = sdk_method_mappings("1.0.0").ok_or("missing v1.0.0")?;
         let current = sdk_method_mappings("1.55.8").ok_or("missing v1.55.8")?;
-        assert!(
-            !old.into_iter()
-                .any(|row| row.package.ends_with("/accessanalyzer"))
-        );
+        assert!(!old
+            .into_iter()
+            .any(|row| row.package.ends_with("/accessanalyzer")));
         assert!(current.into_iter().any(|row| {
             row.package == "github.com/aws/aws-sdk-go/service/s3"
                 && row.receiver == "S3"
