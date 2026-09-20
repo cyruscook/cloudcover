@@ -112,6 +112,48 @@ func TestAWSV2OperationShapeControlsExactMapping(t *testing.T) {
 	}
 }
 
+func TestAWSV1OperationFallbackUsesRequestMethodShape(t *testing.T) {
+	t.Parallel()
+
+	pkg := types.NewPackage("github.com/aws/aws-sdk-go/service/example", "example")
+	client := types.NewNamed(types.NewTypeName(token.NoPos, pkg, "Example", nil), types.NewStruct(nil, nil), nil)
+	operation := newMethod(pkg, client, "DescribeThings")
+	request := newMethod(pkg, client, "DescribeThingsRequest")
+	client.AddMethod(operation)
+	client.AddMethod(request)
+	pkg.Scope().Insert(client.Obj())
+
+	got, err := apiMethodsForSDKCallable(operation, nil, true)
+	if err != nil {
+		t.Fatalf("apiMethodsForSDKCallable() error = %v", err)
+	}
+	want := []apiMethod{{Service: "example", Name: "DescribeThings"}}
+	if !slices.Equal(got, want) {
+		t.Fatalf("apiMethodsForSDKCallable() = %#v, want %#v", got, want)
+	}
+
+	withoutRequest := newMethod(pkg, client, "DescribeWithoutRequest")
+	client.AddMethod(withoutRequest)
+	got, err = apiMethodsForSDKCallable(withoutRequest, nil, true)
+	if err != nil {
+		t.Fatalf("apiMethodsForSDKCallable() without request error = %v", err)
+	}
+	if len(got) != 0 {
+		t.Fatalf("apiMethodsForSDKCallable() without request = %#v, want no API methods", got)
+	}
+	helper := newMethod(pkg, client, "String")
+	helperRequest := newMethod(pkg, client, "StringRequest")
+	client.AddMethod(helper)
+	client.AddMethod(helperRequest)
+	got, err = apiMethodsForSDKCallable(helper, nil, true)
+	if err != nil {
+		t.Fatalf("apiMethodsForSDKCallable() helper error = %v", err)
+	}
+	if len(got) != 0 {
+		t.Fatalf("apiMethodsForSDKCallable() helper = %#v, want no API methods", got)
+	}
+}
+
 func TestAWSV2SetterHelpersDoNotMapWithoutOperationShape(t *testing.T) {
 	t.Parallel()
 
@@ -273,6 +315,34 @@ func TestIsProviderPackageExcludesVendoredDependencies(t *testing.T) {
 			t.Parallel()
 			if got := isProviderPackage(test.path); got != test.want {
 				t.Fatalf("isProviderPackage(%q) = %v, want %v", test.path, got, test.want)
+			}
+		})
+	}
+}
+
+func TestIsFrameworkConversionMethod(t *testing.T) {
+	t.Parallel()
+
+	flexPackage := types.NewPackage(providerModulePath+"/internal/framework/flex", "flex")
+	otherPackage := types.NewPackage(providerModulePath+"/internal/service/example", "example")
+	signature := types.NewSignature(nil, types.NewTuple(), types.NewTuple(), false)
+	tests := []struct {
+		name   string
+		method *types.Func
+		want   bool
+	}{
+		{name: "expand", method: types.NewFunc(token.NoPos, flexPackage, "Expand", signature), want: true},
+		{name: "expand to", method: types.NewFunc(token.NoPos, flexPackage, "ExpandTo", signature), want: true},
+		{name: "flatten", method: types.NewFunc(token.NoPos, flexPackage, "Flatten", signature), want: true},
+		{name: "elements", method: types.NewFunc(token.NoPos, flexPackage, "Elements", signature), want: true},
+		{name: "other method", method: types.NewFunc(token.NoPos, flexPackage, "Other", signature)},
+		{name: "other package", method: types.NewFunc(token.NoPos, otherPackage, "Expand", signature)},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			t.Parallel()
+			if got := isFrameworkConversionMethod(test.method); got != test.want {
+				t.Fatalf("isFrameworkConversionMethod(%s) = %v, want %v", test.method.Name(), got, test.want)
 			}
 		})
 	}

@@ -175,6 +175,14 @@ fn run() -> GeneratorResult<()> {
             eprintln!("Analyzing Terraform AWS provider v{version}");
             with_clean_provider_checkout(&provider_dir, || {
                 checkout_provider_version(&provider_dir, &version)?;
+                if !provider_dir.join("go.mod").is_file() {
+                    persist_unsupported_snapshot(
+                        &snapshot_dir,
+                        &version,
+                        TerraformProviderAwsUnsupportedReason::AwsSdkGoV1,
+                    )?;
+                    return Ok(());
+                }
                 let sdk_map_path = args.work_dir.join("cloudcover-aws-sdk-go-v2-mappings.json");
                 write_sdk_map(&sdk_map_path, &provider_dir, &module_cache)?;
                 let mut mappings =
@@ -576,9 +584,26 @@ fn persist_snapshot(
     version: &Version,
     state: &MappingState,
 ) -> GeneratorResult<()> {
+    persist_snapshot_with_reason(snapshot_dir, version, state, None)
+}
+
+fn persist_unsupported_snapshot(
+    snapshot_dir: &Path,
+    version: &Version,
+    reason: TerraformProviderAwsUnsupportedReason,
+) -> GeneratorResult<()> {
+    persist_snapshot_with_reason(snapshot_dir, version, &MappingState::new(), Some(reason))
+}
+
+fn persist_snapshot_with_reason(
+    snapshot_dir: &Path,
+    version: &Version,
+    state: &MappingState,
+    unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
+) -> GeneratorResult<()> {
     let file = PermissionDataFile {
         provider_version: version.to_string(),
-        unsupported_reason: None,
+        unsupported_reason,
         remove: Vec::new(),
         upsert: state
             .iter()
@@ -614,14 +639,12 @@ fn load_snapshot(path: &Path, version: &Version) -> GeneratorResult<Snapshot> {
 }
 
 fn validate_snapshot_policy(
-    version: &Version,
+    _version: &Version,
     state: &MappingState,
     unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
 ) -> Result<(), String> {
-    if let Some(reason) = unsupported_reason {
-        return Err(format!(
-            "provider v{version} has obsolete unsupported marker {reason:?}"
-        ));
+    if unsupported_reason.is_some() {
+        return Ok(());
     }
     validate_mapping_state(state)
 }
@@ -1434,6 +1457,28 @@ mod tests {
         )?;
 
         load_existing_files(&publish_dir.join("data"), &BTreeSet::new())?;
+        Ok(())
+    }
+
+    #[test]
+    fn unsupported_snapshot_round_trips() -> Result<(), Box<dyn Error>> {
+        let work = TempDir::new()?;
+        let version = Version::parse("0.1.0")?;
+        let snapshot_dir = work.path().join("snapshots");
+        fs::create_dir(&snapshot_dir)?;
+
+        persist_unsupported_snapshot(
+            &snapshot_dir,
+            &version,
+            TerraformProviderAwsUnsupportedReason::AwsSdkGoV1,
+        )?;
+        let snapshot = load_snapshot(&snapshot_dir.join(format!("{version}.json")), &version)?;
+
+        assert!(snapshot.state.is_empty());
+        assert_eq!(
+            snapshot.unsupported_reason,
+            Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)
+        );
         Ok(())
     }
 

@@ -64,18 +64,18 @@ type entrypointSpec struct {
 }
 
 type packageIndex struct {
-	prog                     *ssa.Program
-	byTypes                  map[*types.Package]*packages.Package
-	byPath                   map[string][]*packages.Package
-	byFile                   map[string]*packages.Package
-	funcDecls                map[*types.Func]*ast.FuncDecl
-	funcDeclsByIdentity      map[functionIdentity][]*ast.FuncDecl
-	ssaFuncs                 map[*types.Func][]*ssa.Function
-	ssaFuncsByIdentity       map[functionIdentity][]*ssa.Function
-	ssaBySyntax              map[ast.Node][]*ssa.Function
-	nestedFuncs              map[*ssa.Function][]*ssa.Function
-	callers                  map[*ssa.Function][]*ssa.Function
-	interfaceCalleeCache     map[functionIdentity]providerInterfaceCalleeResolution
+	prog                 *ssa.Program
+	byTypes              map[*types.Package]*packages.Package
+	byPath               map[string][]*packages.Package
+	byFile               map[string]*packages.Package
+	funcDecls            map[*types.Func]*ast.FuncDecl
+	funcDeclsByIdentity  map[functionIdentity][]*ast.FuncDecl
+	ssaFuncs             map[*types.Func][]*ssa.Function
+	ssaFuncsByIdentity   map[functionIdentity][]*ssa.Function
+	ssaBySyntax          map[ast.Node][]*ssa.Function
+	nestedFuncs          map[*ssa.Function][]*ssa.Function
+	callers              map[*ssa.Function][]*ssa.Function
+	interfaceCalleeCache map[functionIdentity]providerInterfaceCalleeResolution
 }
 
 type functionIdentity struct {
@@ -181,7 +181,6 @@ func run() error {
 		return errors.New("discovered no terraform-provider-aws entrypoints")
 	}
 	analyzer := newAPIMethodAnalyzer(index, sdkMappings)
-
 
 	rows := make([]mappingRow, 0, len(specs))
 	for _, spec := range specs {
@@ -313,17 +312,17 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 	cg := static.CallGraph(prog)
 
 	index := &packageIndex{
-		prog:                prog,
-		byTypes:             map[*types.Package]*packages.Package{},
-		byPath:              map[string][]*packages.Package{},
-		byFile:              map[string]*packages.Package{},
-		funcDecls:           map[*types.Func]*ast.FuncDecl{},
-		funcDeclsByIdentity: map[functionIdentity][]*ast.FuncDecl{},
-		ssaFuncs:            map[*types.Func][]*ssa.Function{},
-		ssaFuncsByIdentity:  map[functionIdentity][]*ssa.Function{},
-		ssaBySyntax:         map[ast.Node][]*ssa.Function{},
-		nestedFuncs:         map[*ssa.Function][]*ssa.Function{},
-		callers:             map[*ssa.Function][]*ssa.Function{},
+		prog:                 prog,
+		byTypes:              map[*types.Package]*packages.Package{},
+		byPath:               map[string][]*packages.Package{},
+		byFile:               map[string]*packages.Package{},
+		funcDecls:            map[*types.Func]*ast.FuncDecl{},
+		funcDeclsByIdentity:  map[functionIdentity][]*ast.FuncDecl{},
+		ssaFuncs:             map[*types.Func][]*ssa.Function{},
+		ssaFuncsByIdentity:   map[functionIdentity][]*ssa.Function{},
+		ssaBySyntax:          map[ast.Node][]*ssa.Function{},
+		nestedFuncs:          map[*ssa.Function][]*ssa.Function{},
+		callers:              map[*ssa.Function][]*ssa.Function{},
 		interfaceCalleeCache: map[functionIdentity]providerInterfaceCalleeResolution{},
 	}
 
@@ -1746,6 +1745,9 @@ func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *type
 	if !ok {
 		return nil, false, fmt.Errorf("unresolved provider interface dispatch for %s: selected object is not a function", name)
 	}
+	if isFrameworkConversionMethod(method) {
+		return nil, false, nil
+	}
 	identity, ok := canonicalFunctionIdentity(method)
 	if !ok {
 		return collectProviderLocalInterfaceCallees(index, interfaceSelection, name)
@@ -1855,6 +1857,21 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 		)
 	}
 	return callees, true, nil
+}
+
+func isFrameworkConversionMethod(method *types.Func) bool {
+	if method == nil || method.Pkg() == nil {
+		return false
+	}
+	if method.Pkg().Path() != providerModulePath+"/internal/framework/flex" {
+		return false
+	}
+	switch method.Name() {
+	case "Elements", "Expand", "ExpandTo", "Flatten":
+		return true
+	default:
+		return false
+	}
 }
 
 func isProviderPackage(path string) bool {
@@ -2024,6 +2041,9 @@ func apiMethodsForSDKCallable(obj *types.Func, sdkMappings map[sdkMethodKey][]ap
 	if methods, ok := sdkMappings[key]; ok {
 		return methods, nil
 	}
+	if operation, ok := awsSDKGoV1Operation(obj); ok {
+		return []apiMethod{operation}, nil
+	}
 	return nil, nil
 }
 
@@ -2050,6 +2070,59 @@ func isAWSV1ServicePackage(path string) bool {
 	const prefix = "github.com/aws/aws-sdk-go/service/"
 	service, ok := strings.CutPrefix(path, prefix)
 	return ok && service != "" && !strings.ContainsRune(service, '/')
+}
+
+func awsSDKGoV1Operation(obj *types.Func) (apiMethod, bool) {
+	if obj == nil || obj.Pkg() == nil || !obj.Exported() || !isAWSV1ServicePackage(obj.Pkg().Path()) {
+		return apiMethod{}, false
+	}
+	if isForbiddenSDKOperationName(obj.Name()) {
+		return apiMethod{}, false
+	}
+	operation, ok := awsSDKGoV1OperationName(obj.Name())
+	if !ok {
+		return apiMethod{}, false
+	}
+	signature, ok := obj.Type().(*types.Signature)
+	if !ok || signature.Recv() == nil {
+		return apiMethod{}, false
+	}
+	receiver, ok := types.Unalias(signature.Recv().Type()).(*types.Pointer)
+	if !ok {
+		return apiMethod{}, false
+	}
+	named, ok := types.Unalias(receiver.Elem()).(*types.Named)
+	if !ok || named.Obj() == nil || named.Obj().Pkg() != obj.Pkg() {
+		return apiMethod{}, false
+	}
+	if types.NewMethodSet(types.NewPointer(named)).Lookup(nil, operation+"Request") == nil {
+		return apiMethod{}, false
+	}
+	service, _ := strings.CutPrefix(obj.Pkg().Path(), "github.com/aws/aws-sdk-go/service/")
+	return apiMethod{Service: service, Name: operation}, true
+}
+
+func awsSDKGoV1OperationName(method string) (string, bool) {
+	for _, prefix := range []string{"WaitUntil", "Presign"} {
+		if strings.HasPrefix(method, prefix) {
+			return "", false
+		}
+	}
+	for _, suffix := range []string{"PagesWithContext", "WithContext", "Pages"} {
+		if operation, ok := strings.CutSuffix(method, suffix); ok {
+			return operation, operation != ""
+		}
+	}
+	return method, method != ""
+}
+
+func isForbiddenSDKOperationName(name string) bool {
+	return name == "String" ||
+		name == "Validate" ||
+		name == "New" ||
+		name == "newClient" ||
+		name == "NormalizeBucketLocation" ||
+		strings.HasSuffix(name, "_Values")
 }
 
 func awsSDKGoV2ClientReceiver(signature *types.Signature, pkg *types.Package) bool {
