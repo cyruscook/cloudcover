@@ -874,8 +874,7 @@ fn validate_sdk_paginator_parity(rows: &[AwsSdkGoMapping]) -> GeneratorResult<()
 }
 
 /// Select the newest generated SDK snapshot not newer than the provider's
-/// resolved module. If the provider predates the first snapshot, use that
-/// baseline snapshot.
+/// resolved module. Return an error if no indexed snapshot is compatible.
 fn sdk_data_version(module_path: &str, requested_version: &str) -> GeneratorResult<&'static str> {
     let requested = Version::parse(requested_version)?;
     if module_path == AWS_SDK_GO_V1_MODULE_PATH {
@@ -883,25 +882,39 @@ fn sdk_data_version(module_path: &str, requested_version: &str) -> GeneratorResu
             cloudcover_aws_sdk_go_v1::sdk_versions(),
             requested,
             "AWS Go SDK v1",
+            None,
         );
     }
     let versions = cloudcover_aws_sdk_go_v2::service_versions(module_path)
         .ok_or_else(|| format!("AWS Go SDK service module {module_path} is not indexed"))?;
-    sdk_versions_not_newer_than(versions, requested, "AWS Go SDK service module")
+    sdk_versions_not_newer_than(
+        versions,
+        requested,
+        "AWS Go SDK service module",
+        Some(module_path),
+    )
 }
 
 fn sdk_versions_not_newer_than(
     versions: &'static [&'static str],
     requested: Version,
     label: &str,
+    module_path: Option<&str>,
 ) -> GeneratorResult<&'static str> {
     versions
         .iter()
         .rev()
         .find(|candidate| Version::parse(candidate).is_ok_and(|version| version <= requested))
-        .or_else(|| versions.first())
         .copied()
-        .ok_or_else(|| format!("{label} has no versions").into())
+        .ok_or_else(|| {
+            let module_path = module_path
+                .map(|module_path| format!(" {module_path}"))
+                .unwrap_or_default();
+            format!(
+                "{label}{module_path} has no compatible snapshot for requested version {requested}"
+            )
+            .into()
+        })
 }
 
 fn provider_service_versions(
@@ -1500,7 +1513,6 @@ mod tests {
             versions.len() >= 2,
             "S3 must have enough indexed releases to test compatible selection"
         );
-        let first = versions[0];
         let latest = *versions.last().expect("S3 versions must not be empty");
         let (compatible, requested) = versions
             .windows(2)
@@ -1523,10 +1535,12 @@ mod tests {
             latest,
             "must select the newest compatible indexed snapshot"
         );
+        let error = sdk_data_version(MODULE_PATH, "0.0.0").unwrap_err();
         assert_eq!(
-            sdk_data_version(MODULE_PATH, "0.0.0")?,
-            first,
-            "must use the earliest indexed snapshot when the provider predates it"
+            error.to_string(),
+            format!(
+                "AWS Go SDK service module {MODULE_PATH} has no compatible snapshot for requested version 0.0.0"
+            )
         );
         Ok(())
     }
