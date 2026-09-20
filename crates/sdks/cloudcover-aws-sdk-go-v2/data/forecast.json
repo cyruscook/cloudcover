@@ -1,0 +1,1925 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/forecast",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateDataset",
+          [
+            [
+              "forecast",
+              "CreateDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateDatasetGroup",
+          [
+            [
+              "forecast",
+              "CreateDatasetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateDatasetImportJob",
+          [
+            [
+              "forecast",
+              "CreateDatasetImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateForecast",
+          [
+            [
+              "forecast",
+              "CreateForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateForecastExportJob",
+          [
+            [
+              "forecast",
+              "CreateForecastExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreatePredictor",
+          [
+            [
+              "forecast",
+              "CreatePredictor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteDataset",
+          [
+            [
+              "forecast",
+              "DeleteDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteDatasetGroup",
+          [
+            [
+              "forecast",
+              "DeleteDatasetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteDatasetImportJob",
+          [
+            [
+              "forecast",
+              "DeleteDatasetImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteForecast",
+          [
+            [
+              "forecast",
+              "DeleteForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteForecastExportJob",
+          [
+            [
+              "forecast",
+              "DeleteForecastExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeletePredictor",
+          [
+            [
+              "forecast",
+              "DeletePredictor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeDataset",
+          [
+            [
+              "forecast",
+              "DescribeDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeDatasetGroup",
+          [
+            [
+              "forecast",
+              "DescribeDatasetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeDatasetImportJob",
+          [
+            [
+              "forecast",
+              "DescribeDatasetImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeForecast",
+          [
+            [
+              "forecast",
+              "DescribeForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeForecastExportJob",
+          [
+            [
+              "forecast",
+              "DescribeForecastExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribePredictor",
+          [
+            [
+              "forecast",
+              "DescribePredictor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "GetAccuracyMetrics",
+          [
+            [
+              "forecast",
+              "GetAccuracyMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListDatasetGroups",
+          [
+            [
+              "forecast",
+              "ListDatasetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListDatasetImportJobs",
+          [
+            [
+              "forecast",
+              "ListDatasetImportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListDatasets",
+          [
+            [
+              "forecast",
+              "ListDatasets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListForecastExportJobs",
+          [
+            [
+              "forecast",
+              "ListForecastExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListForecasts",
+          [
+            [
+              "forecast",
+              "ListForecasts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListPredictors",
+          [
+            [
+              "forecast",
+              "ListPredictors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "forecast",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "TagResource",
+          [
+            [
+              "forecast",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "forecast",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "UpdateDatasetGroup",
+          [
+            [
+              "forecast",
+              "UpdateDatasetGroup"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListDatasetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListDatasetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListDatasetImportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListDatasetImportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListDatasetsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListDatasets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListForecastExportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListForecastExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListForecastsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListForecasts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListPredictorsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListPredictors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreatePredictorBacktestExportJob",
+          [
+            [
+              "forecast",
+              "CreatePredictorBacktestExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeletePredictorBacktestExportJob",
+          [
+            [
+              "forecast",
+              "DeletePredictorBacktestExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribePredictorBacktestExportJob",
+          [
+            [
+              "forecast",
+              "DescribePredictorBacktestExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListPredictorBacktestExportJobs",
+          [
+            [
+              "forecast",
+              "ListPredictorBacktestExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListPredictorBacktestExportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListPredictorBacktestExportJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "StopResource",
+          [
+            [
+              "forecast",
+              "StopResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteResourceTree",
+          [
+            [
+              "forecast",
+              "DeleteResourceTree"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateAutoPredictor",
+          [
+            [
+              "forecast",
+              "CreateAutoPredictor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateExplainability",
+          [
+            [
+              "forecast",
+              "CreateExplainability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateExplainabilityExport",
+          [
+            [
+              "forecast",
+              "CreateExplainabilityExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteExplainability",
+          [
+            [
+              "forecast",
+              "DeleteExplainability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteExplainabilityExport",
+          [
+            [
+              "forecast",
+              "DeleteExplainabilityExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeAutoPredictor",
+          [
+            [
+              "forecast",
+              "DescribeAutoPredictor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeExplainability",
+          [
+            [
+              "forecast",
+              "DescribeExplainability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeExplainabilityExport",
+          [
+            [
+              "forecast",
+              "DescribeExplainabilityExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListExplainabilities",
+          [
+            [
+              "forecast",
+              "ListExplainabilities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListExplainabilityExports",
+          [
+            [
+              "forecast",
+              "ListExplainabilityExports"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateMonitor",
+          [
+            [
+              "forecast",
+              "CreateMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteMonitor",
+          [
+            [
+              "forecast",
+              "DeleteMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeMonitor",
+          [
+            [
+              "forecast",
+              "DescribeMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListMonitorEvaluations",
+          [
+            [
+              "forecast",
+              "ListMonitorEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListMonitors",
+          [
+            [
+              "forecast",
+              "ListMonitors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ResumeResource",
+          [
+            [
+              "forecast",
+              "ResumeResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListExplainabilitiesPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListExplainabilities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListExplainabilityExportsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListExplainabilityExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListMonitorEvaluationsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListMonitorEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListMonitorsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListMonitors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateWhatIfAnalysis",
+          [
+            [
+              "forecast",
+              "CreateWhatIfAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateWhatIfForecast",
+          [
+            [
+              "forecast",
+              "CreateWhatIfForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "CreateWhatIfForecastExport",
+          [
+            [
+              "forecast",
+              "CreateWhatIfForecastExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteWhatIfAnalysis",
+          [
+            [
+              "forecast",
+              "DeleteWhatIfAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteWhatIfForecast",
+          [
+            [
+              "forecast",
+              "DeleteWhatIfForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DeleteWhatIfForecastExport",
+          [
+            [
+              "forecast",
+              "DeleteWhatIfForecastExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeWhatIfAnalysis",
+          [
+            [
+              "forecast",
+              "DescribeWhatIfAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeWhatIfForecast",
+          [
+            [
+              "forecast",
+              "DescribeWhatIfForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "DescribeWhatIfForecastExport",
+          [
+            [
+              "forecast",
+              "DescribeWhatIfForecastExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListWhatIfAnalyses",
+          [
+            [
+              "forecast",
+              "ListWhatIfAnalyses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListWhatIfForecastExports",
+          [
+            [
+              "forecast",
+              "ListWhatIfForecastExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "Client",
+          "ListWhatIfForecasts",
+          [
+            [
+              "forecast",
+              "ListWhatIfForecasts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListWhatIfAnalysesPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListWhatIfAnalyses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListWhatIfForecastExportsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListWhatIfForecastExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecast",
+          "ListWhatIfForecastsPaginator",
+          "NextPage",
+          [
+            [
+              "forecast",
+              "ListWhatIfForecasts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

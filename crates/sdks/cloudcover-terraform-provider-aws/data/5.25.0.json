@@ -29,6 +29,30 @@
       ]
     ],
     [
+      "data_source",
+      "aws_eks_addon_version",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_eks_clusters",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_eks_node_groups",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_sns_topic",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_athena_prepared_statement",
       "create",
@@ -268,6 +292,48 @@
         [
           "databasemigrationservice",
           "TestConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_cluster",
+      "create",
+      [
+        [
+          "eks",
+          "CreateCluster"
+        ],
+        [
+          "eks",
+          "DescribeCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_cluster",
+      "update",
+      [
+        [
+          "eks",
+          "AssociateEncryptionConfig"
+        ],
+        [
+          "eks",
+          "DescribeCluster"
+        ],
+        [
+          "eks",
+          "DescribeUpdate"
+        ],
+        [
+          "eks",
+          "UpdateClusterConfig"
+        ],
+        [
+          "eks",
+          "UpdateClusterVersion"
         ]
       ]
     ],

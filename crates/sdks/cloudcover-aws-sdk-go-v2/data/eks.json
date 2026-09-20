@@ -1,0 +1,2296 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/eks",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "eks",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateFargateProfile",
+          [
+            [
+              "eks",
+              "CreateFargateProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateNodegroup",
+          [
+            [
+              "eks",
+              "CreateNodegroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "eks",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteFargateProfile",
+          [
+            [
+              "eks",
+              "DeleteFargateProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteNodegroup",
+          [
+            [
+              "eks",
+              "DeleteNodegroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeCluster",
+          [
+            [
+              "eks",
+              "DescribeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeFargateProfile",
+          [
+            [
+              "eks",
+              "DescribeFargateProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeNodegroup",
+          [
+            [
+              "eks",
+              "DescribeNodegroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeUpdate",
+          [
+            [
+              "eks",
+              "DescribeUpdate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListClusters",
+          [
+            [
+              "eks",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListFargateProfiles",
+          [
+            [
+              "eks",
+              "ListFargateProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListNodegroups",
+          [
+            [
+              "eks",
+              "ListNodegroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "eks",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListUpdates",
+          [
+            [
+              "eks",
+              "ListUpdates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "TagResource",
+          [
+            [
+              "eks",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "eks",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateClusterConfig",
+          [
+            [
+              "eks",
+              "UpdateClusterConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateClusterVersion",
+          [
+            [
+              "eks",
+              "UpdateClusterVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateNodegroupConfig",
+          [
+            [
+              "eks",
+              "UpdateNodegroupConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateNodegroupVersion",
+          [
+            [
+              "eks",
+              "UpdateNodegroupVersion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListClustersPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListFargateProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListFargateProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListNodegroupsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListNodegroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListUpdatesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListUpdates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateAddon",
+          [
+            [
+              "eks",
+              "CreateAddon"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteAddon",
+          [
+            [
+              "eks",
+              "DeleteAddon"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeAddon",
+          [
+            [
+              "eks",
+              "DescribeAddon"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeAddonVersions",
+          [
+            [
+              "eks",
+              "DescribeAddonVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListAddons",
+          [
+            [
+              "eks",
+              "ListAddons"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateAddon",
+          [
+            [
+              "eks",
+              "UpdateAddon"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "DescribeAddonVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "DescribeAddonVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListAddonsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListAddons"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "AssociateEncryptionConfig",
+          [
+            [
+              "eks",
+              "AssociateEncryptionConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "AssociateIdentityProviderConfig",
+          [
+            [
+              "eks",
+              "AssociateIdentityProviderConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeIdentityProviderConfig",
+          [
+            [
+              "eks",
+              "DescribeIdentityProviderConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DisassociateIdentityProviderConfig",
+          [
+            [
+              "eks",
+              "DisassociateIdentityProviderConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListIdentityProviderConfigs",
+          [
+            [
+              "eks",
+              "ListIdentityProviderConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListIdentityProviderConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListIdentityProviderConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeregisterCluster",
+          [
+            [
+              "eks",
+              "DeregisterCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "RegisterCluster",
+          [
+            [
+              "eks",
+              "RegisterCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeAddonConfiguration",
+          [
+            [
+              "eks",
+              "DescribeAddonConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateEksAnywhereSubscription",
+          [
+            [
+              "eks",
+              "CreateEksAnywhereSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteEksAnywhereSubscription",
+          [
+            [
+              "eks",
+              "DeleteEksAnywhereSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeEksAnywhereSubscription",
+          [
+            [
+              "eks",
+              "DescribeEksAnywhereSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListEksAnywhereSubscriptions",
+          [
+            [
+              "eks",
+              "ListEksAnywhereSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateEksAnywhereSubscription",
+          [
+            [
+              "eks",
+              "UpdateEksAnywhereSubscription"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreatePodIdentityAssociation",
+          [
+            [
+              "eks",
+              "CreatePodIdentityAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeletePodIdentityAssociation",
+          [
+            [
+              "eks",
+              "DeletePodIdentityAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribePodIdentityAssociation",
+          [
+            [
+              "eks",
+              "DescribePodIdentityAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListPodIdentityAssociations",
+          [
+            [
+              "eks",
+              "ListPodIdentityAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdatePodIdentityAssociation",
+          [
+            [
+              "eks",
+              "UpdatePodIdentityAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListEksAnywhereSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListEksAnywhereSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListPodIdentityAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListPodIdentityAssociations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "AssociateAccessPolicy",
+          [
+            [
+              "eks",
+              "AssociateAccessPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateAccessEntry",
+          [
+            [
+              "eks",
+              "CreateAccessEntry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteAccessEntry",
+          [
+            [
+              "eks",
+              "DeleteAccessEntry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeAccessEntry",
+          [
+            [
+              "eks",
+              "DescribeAccessEntry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DisassociateAccessPolicy",
+          [
+            [
+              "eks",
+              "DisassociateAccessPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListAccessEntries",
+          [
+            [
+              "eks",
+              "ListAccessEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListAccessPolicies",
+          [
+            [
+              "eks",
+              "ListAccessPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListAssociatedAccessPolicies",
+          [
+            [
+              "eks",
+              "ListAssociatedAccessPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateAccessEntry",
+          [
+            [
+              "eks",
+              "UpdateAccessEntry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListAccessEntriesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListAccessEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListAccessPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListAccessPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListAssociatedAccessPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListAssociatedAccessPolicies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeInsight",
+          [
+            [
+              "eks",
+              "DescribeInsight"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListInsights",
+          [
+            [
+              "eks",
+              "ListInsights"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListInsightsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListInsights"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeClusterVersions",
+          [
+            [
+              "eks",
+              "DescribeClusterVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "DescribeClusterVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "DescribeClusterVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeInsightsRefresh",
+          [
+            [
+              "eks",
+              "DescribeInsightsRefresh"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "StartInsightsRefresh",
+          [
+            [
+              "eks",
+              "StartInsightsRefresh"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateCapability",
+          [
+            [
+              "eks",
+              "CreateCapability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteCapability",
+          [
+            [
+              "eks",
+              "DeleteCapability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeCapability",
+          [
+            [
+              "eks",
+              "DescribeCapability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListCapabilities",
+          [
+            [
+              "eks",
+              "ListCapabilities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "UpdateCapability",
+          [
+            [
+              "eks",
+              "UpdateCapability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListCapabilitiesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListCapabilities"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CancelUpdate",
+          [
+            [
+              "eks",
+              "CancelUpdate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.88.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ActivateCertificateAuthority",
+          [
+            [
+              "eks",
+              "ActivateCertificateAuthority"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "CreateCertificateAuthority",
+          [
+            [
+              "eks",
+              "CreateCertificateAuthority"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DeleteCertificateAuthority",
+          [
+            [
+              "eks",
+              "DeleteCertificateAuthority"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "DescribeCertificateAuthority",
+          [
+            [
+              "eks",
+              "DescribeCertificateAuthority"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "Client",
+          "ListCertificateAuthorities",
+          [
+            [
+              "eks",
+              "ListCertificateAuthorities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/eks",
+          "ListCertificateAuthoritiesPaginator",
+          "NextPage",
+          [
+            [
+              "eks",
+              "ListCertificateAuthorities"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

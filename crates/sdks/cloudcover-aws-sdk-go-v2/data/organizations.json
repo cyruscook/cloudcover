@@ -1,0 +1,2072 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/organizations",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "AcceptHandshake",
+          [
+            [
+              "organizations",
+              "AcceptHandshake"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "AttachPolicy",
+          [
+            [
+              "organizations",
+              "AttachPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CancelHandshake",
+          [
+            [
+              "organizations",
+              "CancelHandshake"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CreateAccount",
+          [
+            [
+              "organizations",
+              "CreateAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CreateGovCloudAccount",
+          [
+            [
+              "organizations",
+              "CreateGovCloudAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CreateOrganization",
+          [
+            [
+              "organizations",
+              "CreateOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CreateOrganizationalUnit",
+          [
+            [
+              "organizations",
+              "CreateOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CreatePolicy",
+          [
+            [
+              "organizations",
+              "CreatePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeclineHandshake",
+          [
+            [
+              "organizations",
+              "DeclineHandshake"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeleteOrganization",
+          [
+            [
+              "organizations",
+              "DeleteOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeleteOrganizationalUnit",
+          [
+            [
+              "organizations",
+              "DeleteOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeletePolicy",
+          [
+            [
+              "organizations",
+              "DeletePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeregisterDelegatedAdministrator",
+          [
+            [
+              "organizations",
+              "DeregisterDelegatedAdministrator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeAccount",
+          [
+            [
+              "organizations",
+              "DescribeAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeCreateAccountStatus",
+          [
+            [
+              "organizations",
+              "DescribeCreateAccountStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeEffectivePolicy",
+          [
+            [
+              "organizations",
+              "DescribeEffectivePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeHandshake",
+          [
+            [
+              "organizations",
+              "DescribeHandshake"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeOrganization",
+          [
+            [
+              "organizations",
+              "DescribeOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeOrganizationalUnit",
+          [
+            [
+              "organizations",
+              "DescribeOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribePolicy",
+          [
+            [
+              "organizations",
+              "DescribePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DetachPolicy",
+          [
+            [
+              "organizations",
+              "DetachPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DisableAWSServiceAccess",
+          [
+            [
+              "organizations",
+              "DisableAWSServiceAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DisablePolicyType",
+          [
+            [
+              "organizations",
+              "DisablePolicyType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "EnableAWSServiceAccess",
+          [
+            [
+              "organizations",
+              "EnableAWSServiceAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "EnableAllFeatures",
+          [
+            [
+              "organizations",
+              "EnableAllFeatures"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "EnablePolicyType",
+          [
+            [
+              "organizations",
+              "EnablePolicyType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "InviteAccountToOrganization",
+          [
+            [
+              "organizations",
+              "InviteAccountToOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "LeaveOrganization",
+          [
+            [
+              "organizations",
+              "LeaveOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListAWSServiceAccessForOrganization",
+          [
+            [
+              "organizations",
+              "ListAWSServiceAccessForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListAccounts",
+          [
+            [
+              "organizations",
+              "ListAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListAccountsForParent",
+          [
+            [
+              "organizations",
+              "ListAccountsForParent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListChildren",
+          [
+            [
+              "organizations",
+              "ListChildren"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListCreateAccountStatus",
+          [
+            [
+              "organizations",
+              "ListCreateAccountStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListDelegatedAdministrators",
+          [
+            [
+              "organizations",
+              "ListDelegatedAdministrators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListDelegatedServicesForAccount",
+          [
+            [
+              "organizations",
+              "ListDelegatedServicesForAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListHandshakesForAccount",
+          [
+            [
+              "organizations",
+              "ListHandshakesForAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListHandshakesForOrganization",
+          [
+            [
+              "organizations",
+              "ListHandshakesForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListOrganizationalUnitsForParent",
+          [
+            [
+              "organizations",
+              "ListOrganizationalUnitsForParent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListParents",
+          [
+            [
+              "organizations",
+              "ListParents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListPolicies",
+          [
+            [
+              "organizations",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListPoliciesForTarget",
+          [
+            [
+              "organizations",
+              "ListPoliciesForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListRoots",
+          [
+            [
+              "organizations",
+              "ListRoots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "organizations",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListTargetsForPolicy",
+          [
+            [
+              "organizations",
+              "ListTargetsForPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "MoveAccount",
+          [
+            [
+              "organizations",
+              "MoveAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "RegisterDelegatedAdministrator",
+          [
+            [
+              "organizations",
+              "RegisterDelegatedAdministrator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "RemoveAccountFromOrganization",
+          [
+            [
+              "organizations",
+              "RemoveAccountFromOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "TagResource",
+          [
+            [
+              "organizations",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "organizations",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "UpdateOrganizationalUnit",
+          [
+            [
+              "organizations",
+              "UpdateOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "UpdatePolicy",
+          [
+            [
+              "organizations",
+              "UpdatePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListAWSServiceAccessForOrganizationPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListAWSServiceAccessForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListAccountsForParentPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListAccountsForParent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListChildrenPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListChildren"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListCreateAccountStatusPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListCreateAccountStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListDelegatedAdministratorsPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListDelegatedAdministrators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListDelegatedServicesForAccountPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListDelegatedServicesForAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListHandshakesForAccountPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListHandshakesForAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListHandshakesForOrganizationPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListHandshakesForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListOrganizationalUnitsForParentPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListOrganizationalUnitsForParent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListParentsPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListParents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListPoliciesForTargetPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListPoliciesForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListRootsPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListRoots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListTargetsForPolicyPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListTargetsForPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "CloseAccount",
+          [
+            [
+              "organizations",
+              "CloseAccount"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "organizations",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeResourcePolicy",
+          [
+            [
+              "organizations",
+              "DescribeResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "organizations",
+              "PutResourcePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListAccountsWithInvalidEffectivePolicy",
+          [
+            [
+              "organizations",
+              "ListAccountsWithInvalidEffectivePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListEffectivePolicyValidationErrors",
+          [
+            [
+              "organizations",
+              "ListEffectivePolicyValidationErrors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListAccountsWithInvalidEffectivePolicyPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListAccountsWithInvalidEffectivePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "ListEffectivePolicyValidationErrorsPaginator",
+          "NextPage",
+          [
+            [
+              "organizations",
+              "ListEffectivePolicyValidationErrors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "DescribeResponsibilityTransfer",
+          [
+            [
+              "organizations",
+              "DescribeResponsibilityTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "InviteOrganizationToTransferResponsibility",
+          [
+            [
+              "organizations",
+              "InviteOrganizationToTransferResponsibility"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListInboundResponsibilityTransfers",
+          [
+            [
+              "organizations",
+              "ListInboundResponsibilityTransfers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "ListOutboundResponsibilityTransfers",
+          [
+            [
+              "organizations",
+              "ListOutboundResponsibilityTransfers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "TerminateResponsibilityTransfer",
+          [
+            [
+              "organizations",
+              "TerminateResponsibilityTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/organizations",
+          "Client",
+          "UpdateResponsibilityTransfer",
+          [
+            [
+              "organizations",
+              "UpdateResponsibilityTransfer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -1,0 +1,1376 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "AssociateAccounts",
+          [
+            [
+              "billingconductor",
+              "AssociateAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "AssociatePricingRules",
+          [
+            [
+              "billingconductor",
+              "AssociatePricingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "BatchAssociateResourcesToCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "BatchAssociateResourcesToCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "BatchDisassociateResourcesFromCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "BatchDisassociateResourcesFromCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "CreateBillingGroup",
+          [
+            [
+              "billingconductor",
+              "CreateBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "CreateCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "CreateCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "CreatePricingPlan",
+          [
+            [
+              "billingconductor",
+              "CreatePricingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "CreatePricingRule",
+          [
+            [
+              "billingconductor",
+              "CreatePricingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DeleteBillingGroup",
+          [
+            [
+              "billingconductor",
+              "DeleteBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DeleteCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "DeleteCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DeletePricingPlan",
+          [
+            [
+              "billingconductor",
+              "DeletePricingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DeletePricingRule",
+          [
+            [
+              "billingconductor",
+              "DeletePricingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DisassociateAccounts",
+          [
+            [
+              "billingconductor",
+              "DisassociateAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "DisassociatePricingRules",
+          [
+            [
+              "billingconductor",
+              "DisassociatePricingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListAccountAssociations",
+          [
+            [
+              "billingconductor",
+              "ListAccountAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListBillingGroupCostReports",
+          [
+            [
+              "billingconductor",
+              "ListBillingGroupCostReports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListBillingGroups",
+          [
+            [
+              "billingconductor",
+              "ListBillingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListCustomLineItems",
+          [
+            [
+              "billingconductor",
+              "ListCustomLineItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListPricingPlans",
+          [
+            [
+              "billingconductor",
+              "ListPricingPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListPricingPlansAssociatedWithPricingRule",
+          [
+            [
+              "billingconductor",
+              "ListPricingPlansAssociatedWithPricingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListPricingRules",
+          [
+            [
+              "billingconductor",
+              "ListPricingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListPricingRulesAssociatedToPricingPlan",
+          [
+            [
+              "billingconductor",
+              "ListPricingRulesAssociatedToPricingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListResourcesAssociatedToCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "ListResourcesAssociatedToCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "billingconductor",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "TagResource",
+          [
+            [
+              "billingconductor",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "billingconductor",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "UpdateBillingGroup",
+          [
+            [
+              "billingconductor",
+              "UpdateBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "UpdateCustomLineItem",
+          [
+            [
+              "billingconductor",
+              "UpdateCustomLineItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "UpdatePricingPlan",
+          [
+            [
+              "billingconductor",
+              "UpdatePricingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "UpdatePricingRule",
+          [
+            [
+              "billingconductor",
+              "UpdatePricingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListAccountAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListAccountAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListBillingGroupCostReportsPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListBillingGroupCostReports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListBillingGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListBillingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListCustomLineItemsPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListCustomLineItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListPricingPlansAssociatedWithPricingRulePaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListPricingPlansAssociatedWithPricingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListPricingPlansPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListPricingPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListPricingRulesAssociatedToPricingPlanPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListPricingRulesAssociatedToPricingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListPricingRulesPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListPricingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListResourcesAssociatedToCustomLineItemPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListResourcesAssociatedToCustomLineItem"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "ListCustomLineItemVersions",
+          [
+            [
+              "billingconductor",
+              "ListCustomLineItemVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "ListCustomLineItemVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "ListCustomLineItemVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "Client",
+          "GetBillingGroupCostReport",
+          [
+            [
+              "billingconductor",
+              "GetBillingGroupCostReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billingconductor",
+          "GetBillingGroupCostReportPaginator",
+          "NextPage",
+          [
+            [
+              "billingconductor",
+              "GetBillingGroupCostReport"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

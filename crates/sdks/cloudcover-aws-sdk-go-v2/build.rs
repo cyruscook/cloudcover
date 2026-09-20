@@ -1,446 +1,365 @@
 use std::{
-    collections::{BTreeMap, hash_map::DefaultHasher},
+    collections::BTreeMap,
     env,
     error::Error,
-    fmt::{self, Write as _},
+    fmt::Write as _,
     fs,
-    hash::{Hash, Hasher},
     path::{Path, PathBuf},
-    process::{Command, Output},
 };
 
-use serde::Deserialize;
+#[path = "src/data.rs"]
+mod data;
 
-const SDK_REPOSITORY: &str = "https://github.com/aws/aws-sdk-go-v2";
-const SDK_BRANCH: &str = "main";
-const MINIMUM_GO_MINOR: u32 = 24;
-const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
-const CACHE_FILE_NAME: &str = "sdk_mappings.rs";
-const SDK_CHECKOUT_DIR_NAME: &str = "aws-sdk-go-v2";
-const REFRESH_ENV: &str = "CLOUDCOVER_AWS_GO_V2_REFRESH";
-
-// These rows are JSON objects emitted by generator/main.go. The Go analyzer
-// discovers SDK method references. Then we validate, deduplicate, and bake
-// them into a Rust static.
-#[derive(Clone, Debug, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
-struct ApiMethodRefRow {
-    service: String,
-    name: String,
-}
-
-#[derive(Clone, Debug, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
-struct SdkMethodMappingRow {
-    package: String,
-    receiver: String,
-    method: String,
-    api_methods: Vec<ApiMethodRefRow>,
-}
+use data::MappingState;
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
+type EncodedApiMethod = (u16, u16);
+type EncodedRow = (u16, u16, u16, u16);
+
+const MAGIC: &[u8; 8] = b"CCGO001\0";
+const HEADER_LEN: usize = 32;
+
+#[derive(Clone, Copy)]
+struct VersionIndex {
+    start: u32,
+    len: u32,
+}
+
+#[derive(Default)]
+struct IndexBuilder {
+    string_ids: BTreeMap<String, u16>,
+    strings: Vec<String>,
+    api_list_ids: BTreeMap<Vec<EncodedApiMethod>, u16>,
+    api_lists: Vec<Vec<EncodedApiMethod>>,
+    row_ids: BTreeMap<EncodedRow, u16>,
+    rows: Vec<EncodedRow>,
+    snapshot_rows: Vec<u16>,
+    snapshot_ids: BTreeMap<Vec<u16>, VersionIndex>,
+}
 
 fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=generator/go.mod");
-    println!("cargo:rerun-if-changed=generator/go.sum");
-    println!("cargo:rerun-if-changed=generator/main.go");
-    println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
+    println!("cargo:rerun-if-changed=src/data.rs");
 
+    let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR")?);
+    let data_dir = manifest_dir.join("data");
+    println!("cargo:rerun-if-changed={}", data_dir.display());
+
+    let paths = data_paths(&data_dir)?;
+    let mut builder = IndexBuilder::default();
+    let mut versions = Vec::<(String, String, VersionIndex)>::new();
+
+    for (module_path, path) in paths {
+        println!("cargo:rerun-if-changed={}", path.display());
+        let contents = fs::read_to_string(&path)?;
+        let mut file: data::SdkDataFile = serde_json::from_str(&contents)
+            .map_err(|error| format!("{}: invalid JSON: {error}", path.display()))?;
+        let mut validation_state = MappingState::new();
+        data::validate_and_apply_file(&mut file.clone(), Some(&module_path), &mut validation_state)
+            .map_err(|error| format!("{}: {error}", path.display()))?;
+        let mut state = MappingState::new();
+        for release in &mut file.releases {
+            let version = data::validate_and_apply_release(release, &mut state)
+                .map_err(|error| format!("{}: {error}", path.display()))?;
+            let index = builder.add_snapshot(&state)?;
+            versions.push((module_path.clone(), version.to_string(), index));
+        }
+    }
+
+    let (binary, offsets) = builder.encode(versions.len())?;
+    let generated = generate_code(&builder.strings, &versions, offsets)?;
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws-sdk-go-v2");
-    fs::create_dir_all(&cache_dir)?;
-
-    let refresh = env_var_requested(REFRESH_ENV);
-    let cache_key = generator_fingerprint()?;
-    let cached_output_path = cache_dir.join(format!("{cache_key}-{CACHE_FILE_NAME}"));
-    if !refresh && cached_output_path.exists() {
-        let generated = fs::read_to_string(&cached_output_path)?;
-        write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
-        return Ok(());
-    }
-
-    ensure_command_available(
-        "git",
-        &[
-            "git is required to clone github.com/aws/aws-sdk-go-v2 during build.",
-            "Install git and retry.",
-        ],
-    )?;
-    ensure_go_available()?;
-
-    let sdk_dir = cache_dir.join(SDK_CHECKOUT_DIR_NAME);
-    refresh_sdk_checkout(&sdk_dir, refresh)?;
-
-    let mut rows = load_rows(&sdk_dir)?;
-    validate_and_normalize_rows(&mut rows)?;
-
-    let generated = generate_code(&rows)?;
-    write_if_changed(&cached_output_path, &generated)?;
-    if sdk_dir.exists() {
-        fs::remove_dir_all(&sdk_dir)?;
-    }
-    write_if_changed(&out_dir.join(CACHE_FILE_NAME), &generated)?;
-
+    write_bytes_if_changed(&out_dir.join("sdk_mappings.bin"), &binary)?;
+    write_string_if_changed(&out_dir.join("sdk_mappings.rs"), &generated)?;
     Ok(())
 }
 
-fn ensure_command_available(command: &str, missing_help: &[&str]) -> BuildResult<()> {
-    match Command::new(command).arg("--version").output() {
-        Ok(output) if output.status.success() => Ok(()),
-        Ok(output) => Err(format_command_failure(command, &output, missing_help).into()),
-        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
-            Err(format_missing_executable(command, missing_help).into())
+fn data_paths(data_dir: &Path) -> BuildResult<Vec<(String, PathBuf)>> {
+    let allow_empty = env::var_os("CARGO_FEATURE_GENERATOR").is_some();
+    if !data_dir.is_dir() {
+        if allow_empty {
+            return Ok(Vec::new());
         }
-        Err(error) => Err(format!("failed to execute {command}: {error}").into()),
+        return Err(format!("SDK data directory is missing: {}", data_dir.display()).into());
     }
-}
 
-fn ensure_go_available() -> BuildResult<()> {
-    let help = [
-        "go is required to run the aws-sdk-go-v2 analyzer during build.",
-        "Go 1.24+ is required because github.com/aws/aws-sdk-go-v2 service modules declare go 1.24.",
-    ];
-    let output = match Command::new("go").arg("version").output() {
-        Ok(output) => output,
-        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
-            return Err(format_missing_executable("go", &help).into());
+    let mut paths = Vec::new();
+    for entry in fs::read_dir(data_dir)? {
+        let path = entry?.path();
+        if path.extension().is_none_or(|extension| extension != "json") {
+            continue;
         }
-        Err(error) => return Err(format!("failed to execute go: {error}").into()),
-    };
-    if !output.status.success() {
-        return Err(format_command_failure("go", &output, &help).into());
+        let service = path
+            .file_stem()
+            .and_then(|stem| stem.to_str())
+            .ok_or_else(|| format!("SDK data filename is not valid UTF-8: {}", path.display()))?;
+        paths.push((
+            format!("github.com/aws/aws-sdk-go-v2/service/{service}"),
+            path,
+        ));
     }
-
-    let stdout = String::from_utf8(output.stdout)?;
-    let version = stdout
-        .split_whitespace()
-        .nth(2)
-        .ok_or_else(|| format!("unable to parse go version output: {stdout:?}"))?;
-    let version = version
-        .strip_prefix("go")
-        .ok_or_else(|| format!("unexpected go version string: {version}"))?;
-    let mut parts = version.split('.');
-    let major = parts
-        .next()
-        .ok_or_else(|| format!("missing go major version in {version}"))?
-        .parse::<u32>()?;
-    let minor = parts
-        .next()
-        .ok_or_else(|| format!("missing go minor version in {version}"))?
-        .parse::<u32>()?;
-    if major > 1 || (major == 1 && minor >= MINIMUM_GO_MINOR) {
-        return Ok(());
-    }
-
-    Err(format!(
-        "go 1.{MINIMUM_GO_MINOR}+ is required because github.com/aws/aws-sdk-go-v2 service modules declare go 1.24; found go{version}"
-    )
-    .into())
-}
-
-fn refresh_sdk_checkout(sdk_dir: &Path, refresh: bool) -> BuildResult<()> {
-    if !sdk_dir.join(".git").exists() {
-        if sdk_dir.exists() {
-            fs::remove_dir_all(sdk_dir)?;
-        }
-        return clone_sdk_checkout(sdk_dir);
-    }
-
-    if !refresh {
-        return Ok(());
-    }
-
-    let fetch_output = Command::new("git")
-        .args([
-            "-C",
-            sdk_dir.to_str().ok_or("invalid sdk path")?,
-            "fetch",
-            "--depth=1",
-            "origin",
-            SDK_BRANCH,
-        ])
-        .output()?;
-    if !fetch_output.status.success() {
-        return Err(format_command_failure(
-            "git fetch",
-            &fetch_output,
-            &["failed to refresh github.com/aws/aws-sdk-go-v2"],
+    if paths.is_empty() && !allow_empty {
+        return Err(format!(
+            "SDK data directory has no service JSON files: {}",
+            data_dir.display()
         )
         .into());
     }
-
-    let reset_output = Command::new("git")
-        .args([
-            "-C",
-            sdk_dir.to_str().ok_or("invalid sdk path")?,
-            "reset",
-            "--hard",
-            "FETCH_HEAD",
-        ])
-        .output()?;
-    if !reset_output.status.success() {
-        return Err(format_command_failure(
-            "git reset --hard",
-            &reset_output,
-            &["failed to update github.com/aws/aws-sdk-go-v2 checkout"],
-        )
-        .into());
-    }
-
-    let clean_output = Command::new("git")
-        .args([
-            "-C",
-            sdk_dir.to_str().ok_or("invalid sdk path")?,
-            "clean",
-            "-fdx",
-        ])
-        .output()?;
-    if clean_output.status.success() {
-        Ok(())
-    } else {
-        Err(format_command_failure(
-            "git clean -fdx",
-            &clean_output,
-            &["failed to clean github.com/aws/aws-sdk-go-v2 checkout"],
-        )
-        .into())
-    }
+    paths.sort();
+    Ok(paths)
 }
 
-fn clone_sdk_checkout(sdk_dir: &Path) -> BuildResult<()> {
-    let output = Command::new("git")
-        .args(["clone", "--depth=1", "--branch", SDK_BRANCH, SDK_REPOSITORY])
-        .arg(sdk_dir)
-        .output()?;
-    if output.status.success() {
-        Ok(())
-    } else {
-        Err(format_command_failure(
-            "git clone",
-            &output,
-            &["failed to clone github.com/aws/aws-sdk-go-v2"],
-        )
-        .into())
-    }
-}
-
-fn load_rows(sdk_dir: &Path) -> BuildResult<Vec<SdkMethodMappingRow>> {
-    let output = Command::new("go")
-        .args(["run", "-mod=readonly", "./main.go", "--sdk-dir"])
-        .arg(sdk_dir)
-        .current_dir("generator")
-        .output()?;
-    if !output.status.success() {
-        return Err(format_command_failure(
-            "go run",
-            &output,
-            &["failed to run aws-sdk-go-v2 analyzer"],
-        )
-        .into());
-    }
-
-    let stdout = String::from_utf8(output.stdout)?;
-    serde_json::from_str(&stdout).map_err(|error| {
-        format!(
-            "failed to parse analyzer output as JSON: {error}
-stdout:
-{stdout}"
-        )
-        .into()
-    })
-}
-
-fn validate_and_normalize_rows(rows: &mut Vec<SdkMethodMappingRow>) -> BuildResult<()> {
-    // The Go analyzer emits one row per discovered call edge. Collapse that to
-    // the public method reference we expose from Rust, and fail fast if two
-    // edges imply different API methods for the same package/receiver/method.
-    if rows.is_empty() {
-        return Err("aws-sdk-go-v2 analyzer returned no method mappings".into());
+impl IndexBuilder {
+    fn add_snapshot(&mut self, state: &MappingState) -> BuildResult<VersionIndex> {
+        let mut snapshot = Vec::with_capacity(state.len());
+        for ((package, receiver, method), api_methods) in state {
+            let package = self.intern_string(package)?;
+            let receiver = self.intern_string(receiver)?;
+            let method = self.intern_string(method)?;
+            let encoded_api_methods = api_methods
+                .iter()
+                .map(|api_method| {
+                    Ok((
+                        self.intern_string(&api_method.service)?,
+                        self.intern_string(&api_method.name)?,
+                    ))
+                })
+                .collect::<BuildResult<Vec<_>>>()?;
+            let api_list = self.intern_api_list(encoded_api_methods)?;
+            let row = self.intern_row((package, receiver, method, api_list))?;
+            snapshot.push(row);
+        }
+        if let Some(index) = self.snapshot_ids.get(&snapshot) {
+            return Ok(*index);
+        }
+        let index = VersionIndex {
+            start: to_u32(self.snapshot_rows.len(), "snapshot row offset")?,
+            len: to_u32(snapshot.len(), "snapshot row count")?,
+        };
+        self.snapshot_rows.extend_from_slice(&snapshot);
+        self.snapshot_ids.insert(snapshot, index);
+        Ok(index)
     }
 
-    for row in rows.iter_mut() {
-        if row.package.is_empty() {
-            return Err("aws-sdk-go-v2 mapping row has empty package".into());
+    fn intern_string(&mut self, value: &str) -> BuildResult<u16> {
+        if let Some(id) = self.string_ids.get(value) {
+            return Ok(*id);
         }
-        if row.receiver != "Client" {
-            return Err(format!(
-                "aws-sdk-go-v2 mapping row has unexpected receiver {} for {}.{}",
-                row.receiver, row.package, row.method
-            )
-            .into());
-        }
-        if row.method.is_empty() {
-            return Err(format!(
-                "aws-sdk-go-v2 mapping row has empty method for package {}",
-                row.package
-            )
-            .into());
-        }
-        if row.api_methods.is_empty() {
-            return Err(format!(
-                "aws-sdk-go-v2 mapping row {}.{} has no api_methods",
-                row.package, row.method
-            )
-            .into());
-        }
-
-        row.api_methods.sort();
-        row.api_methods.dedup();
-
-        for api_method in &row.api_methods {
-            if api_method.service.is_empty() || api_method.name.is_empty() {
-                return Err(format!(
-                    "aws-sdk-go-v2 mapping row {}.{} has empty api_method fields",
-                    row.package, row.method
-                )
-                .into());
-            }
-        }
+        let id = to_u16(self.strings.len(), "string count")?;
+        let owned = value.to_owned();
+        self.strings.push(owned.clone());
+        self.string_ids.insert(owned, id);
+        Ok(id)
     }
 
-    let mut by_key = BTreeMap::<(String, String, String), Vec<ApiMethodRefRow>>::new();
-    for row in rows.iter() {
-        let key = (
-            row.package.clone(),
-            row.receiver.clone(),
-            row.method.clone(),
+    fn intern_api_list(&mut self, value: Vec<EncodedApiMethod>) -> BuildResult<u16> {
+        if let Some(id) = self.api_list_ids.get(&value) {
+            return Ok(*id);
+        }
+        let id = to_u16(self.api_lists.len(), "API method list count")?;
+        self.api_lists.push(value.clone());
+        self.api_list_ids.insert(value, id);
+        Ok(id)
+    }
+
+    fn intern_row(&mut self, value: EncodedRow) -> BuildResult<u16> {
+        if let Some(id) = self.row_ids.get(&value) {
+            return Ok(*id);
+        }
+        let id = to_u16(self.rows.len(), "mapping row count")?;
+        self.rows.push(value);
+        self.row_ids.insert(value, id);
+        Ok(id)
+    }
+
+    fn encode(&self, version_count: usize) -> BuildResult<(Vec<u8>, BinaryOffsets)> {
+        let api_method_count = self.api_lists.iter().map(Vec::len).sum::<usize>();
+        let api_methods_offset = HEADER_LEN;
+        let api_lists_offset = checked_section_end(api_methods_offset, api_method_count, 4)?;
+        let rows_offset = checked_section_end(api_lists_offset, self.api_lists.len(), 8)?;
+        let row_ids_offset = checked_section_end(rows_offset, self.rows.len(), 8)?;
+        let binary_len = checked_section_end(row_ids_offset, self.snapshot_rows.len(), 2)?;
+        let mut binary = Vec::with_capacity(binary_len);
+
+        binary.extend_from_slice(MAGIC);
+        push_u32(&mut binary, to_u32(self.strings.len(), "string count")?);
+        push_u32(&mut binary, to_u32(api_method_count, "API method count")?);
+        push_u32(
+            &mut binary,
+            to_u32(self.api_lists.len(), "API method list count")?,
         );
-        match by_key.get(&key) {
-            Some(existing) if existing != &row.api_methods => {
-                return Err(format!(
-                    "aws-sdk-go-v2 mapping rows disagree for {} {}.{}",
-                    row.package, row.receiver, row.method
-                )
-                .into());
-            }
-            Some(_) => {}
-            None => {
-                by_key.insert(key, row.api_methods.clone());
+        push_u32(&mut binary, to_u32(self.rows.len(), "mapping row count")?);
+        push_u32(
+            &mut binary,
+            to_u32(self.snapshot_rows.len(), "snapshot row count")?,
+        );
+        push_u32(&mut binary, to_u32(version_count, "version count")?);
+
+        let mut api_start = 0_u32;
+        for list in &self.api_lists {
+            for &(service, name) in list {
+                push_u16(&mut binary, service);
+                push_u16(&mut binary, name);
             }
         }
+        for list in &self.api_lists {
+            push_u32(&mut binary, api_start);
+            let len = to_u32(list.len(), "API method list length")?;
+            push_u32(&mut binary, len);
+            api_start = api_start
+                .checked_add(len)
+                .ok_or("API method offset exceeds u32")?;
+        }
+        for &(package, receiver, method, api_list) in &self.rows {
+            push_u16(&mut binary, package);
+            push_u16(&mut binary, receiver);
+            push_u16(&mut binary, method);
+            push_u16(&mut binary, api_list);
+        }
+        for &row in &self.snapshot_rows {
+            push_u16(&mut binary, row);
+        }
+        if binary.len() != binary_len {
+            return Err(format!(
+                "encoded binary length {} does not match calculated length {binary_len}",
+                binary.len()
+            )
+            .into());
+        }
+
+        Ok((
+            binary,
+            BinaryOffsets {
+                api_methods: api_methods_offset,
+                api_lists: api_lists_offset,
+                rows: rows_offset,
+                row_ids: row_ids_offset,
+            },
+        ))
     }
-
-    rows.sort_by(|left, right| {
-        (
-            left.package.as_str(),
-            left.receiver.as_str(),
-            left.method.as_str(),
-            &left.api_methods,
-        )
-            .cmp(&(
-                right.package.as_str(),
-                right.receiver.as_str(),
-                right.method.as_str(),
-                &right.api_methods,
-            ))
-    });
-    rows.dedup();
-
-    Ok(())
 }
 
-fn generate_code(rows: &[SdkMethodMappingRow]) -> Result<String, fmt::Error> {
+#[derive(Clone, Copy)]
+struct BinaryOffsets {
+    api_methods: usize,
+    api_lists: usize,
+    rows: usize,
+    row_ids: usize,
+}
+
+fn generate_code(
+    strings: &[String],
+    versions: &[(String, String, VersionIndex)],
+    offsets: BinaryOffsets,
+) -> Result<String, std::fmt::Error> {
     let mut generated = String::new();
-    generated.push_str(
-        "pub const SDK_METHOD_MAPPINGS: &[AwsSdkGoV2MethodMapping] = &[
-",
-    );
-    for row in rows {
-        generated.push_str(
-            "    AwsSdkGoV2MethodMapping {
-",
-        );
-        writeln!(generated, "        package: {:?},", row.package)?;
-        writeln!(generated, "        receiver: {:?},", row.receiver)?;
-        writeln!(generated, "        method: {:?},", row.method)?;
-        generated.push_str(
-            "        api_methods: &[
-",
-        );
-        for api_method in &row.api_methods {
-            generated.push_str("            AwsSdkGoV2ApiMethodRef { ");
-            write!(
-                generated,
-                "service: {:?}, name: {:?}",
-                api_method.service, api_method.name
-            )?;
-            generated.push_str(
-                " },
-",
-            );
-        }
-        generated.push_str(
-            "        ],
-",
-        );
-        generated.push_str(
-            "    },
-",
-        );
+    generated.push_str("const STRINGS: &[&str] = &[\n");
+    for value in strings {
+        writeln!(generated, "    {value:?},")?;
     }
-    generated.push_str(
-        "];
-",
-    );
+
+    generated.push_str("];\n\nconst SERVICE_MODULES: &[&str] = &[\n");
+    let mut module_ranges = Vec::<(&str, usize, usize)>::new();
+    let mut offset = 0;
+    while offset < versions.len() {
+        let module_path = versions[offset].0.as_str();
+        let start = offset;
+        while offset < versions.len() && versions[offset].0 == module_path {
+            offset += 1;
+        }
+        writeln!(generated, "    {module_path:?},")?;
+        module_ranges.push((module_path, start, offset - start));
+    }
+
+    generated.push_str("];\n\nconst MODULE_VERSIONS: &[&str] = &[\n");
+    for (_, version, _) in versions {
+        writeln!(generated, "    {version:?},")?;
+    }
+    generated.push_str("];\n\nconst MODULE_VERSION_RANGES: &[(&str, usize, usize)] = &[\n");
+    for (module_path, start, len) in module_ranges {
+        writeln!(generated, "    ({module_path:?}, {start}, {len}),")?;
+    }
+
+    generated.push_str("];\n\nconst VERSION_INDEX: &[VersionIndex] = &[\n");
+    for (_, _, index) in versions {
+        writeln!(
+            generated,
+            "    VersionIndex {{ start: {}, len: {} }},",
+            format_number(&index.start),
+            format_number(&index.len)
+        )?;
+    }
+    generated.push_str("];\n\nconst VERSION_LOOKUP: &[(&str, &str, usize)] = &[\n");
+    let mut lookup = versions
+        .iter()
+        .enumerate()
+        .map(|(index, (module_path, version, _))| (module_path.as_str(), version.as_str(), index))
+        .collect::<Vec<_>>();
+    lookup.sort_by(|left, right| (&left.0, &left.1).cmp(&(&right.0, &right.1)));
+    for (module_path, version, index) in lookup {
+        writeln!(generated, "    ({module_path:?}, {version:?}, {index}),")?;
+    }
+    generated.push_str("];\n\n");
+    writeln!(
+        generated,
+        "const API_METHODS_OFFSET: usize = {};",
+        format_number(&offsets.api_methods)
+    )?;
+    writeln!(
+        generated,
+        "const API_LISTS_OFFSET: usize = {};",
+        format_number(&offsets.api_lists)
+    )?;
+    writeln!(
+        generated,
+        "const ROWS_OFFSET: usize = {};",
+        format_number(&offsets.rows)
+    )?;
+    writeln!(
+        generated,
+        "const ROW_IDS_OFFSET: usize = {};",
+        format_number(&offsets.row_ids)
+    )?;
     Ok(generated)
 }
 
-fn generator_fingerprint() -> BuildResult<String> {
-    let mut hasher = DefaultHasher::new();
-    SDK_REPOSITORY.hash(&mut hasher);
-    SDK_BRANCH.hash(&mut hasher);
-    for path in [
-        "build.rs",
-        "generator/go.mod",
-        "generator/go.sum",
-        "generator/main.go",
-    ] {
-        path.hash(&mut hasher);
-        fs::read(path)?.hash(&mut hasher);
+fn format_number(value: &impl ToString) -> String {
+    let digits = value.to_string();
+    let mut formatted = String::with_capacity(digits.len() + digits.len() / 3);
+    for (index, character) in digits.chars().enumerate() {
+        if index != 0 && (digits.len() - index).is_multiple_of(3) {
+            formatted.push('_');
+        }
+        formatted.push(character);
     }
-    Ok(format!("{:016x}", hasher.finish()))
+    formatted
 }
 
-fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
-    if let Some(target_dir) = env::var_os("CARGO_TARGET_DIR") {
-        return Ok(PathBuf::from(target_dir).join(CACHE_DIR_NAME));
-    }
-
-    let profile = env::var("PROFILE")?;
-    let target = env::var("TARGET")?;
-    let profile_dir = out_dir
-        .ancestors()
-        .find(|ancestor| {
-            ancestor.file_name().and_then(|name| name.to_str()) == Some(profile.as_str())
-        })
-        .ok_or_else(|| {
-            format!(
-                "failed to infer target directory from {}",
-                out_dir.display()
-            )
-        })?;
-    let parent = profile_dir.parent().ok_or_else(|| {
-        format!(
-            "failed to infer target directory parent from {}",
-            profile_dir.display()
-        )
-    })?;
-
-    if parent.file_name().and_then(|name| name.to_str()) == Some(target.as_str()) {
-        return Ok(parent
-            .parent()
-            .ok_or_else(|| format!("failed to infer target root from {}", out_dir.display()))?
-            .join(CACHE_DIR_NAME));
-    }
-
-    Ok(parent.join(CACHE_DIR_NAME))
+fn checked_section_end(start: usize, count: usize, width: usize) -> BuildResult<usize> {
+    count
+        .checked_mul(width)
+        .and_then(|length| start.checked_add(length))
+        .ok_or_else(|| "binary index size exceeds usize".into())
 }
 
-fn env_var_requested(name: &str) -> bool {
-    env::var_os(name).is_some_and(|value| !value.is_empty() && value != "0")
+fn to_u32(value: usize, description: &str) -> BuildResult<u32> {
+    u32::try_from(value).map_err(|_| format!("{description} exceeds u32").into())
 }
 
-fn write_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
-    match fs::read_to_string(path) {
+fn to_u16(value: usize, description: &str) -> BuildResult<u16> {
+    u16::try_from(value).map_err(|_| format!("{description} exceeds u16").into())
+}
+
+fn push_u32(output: &mut Vec<u8>, value: u32) {
+    output.extend_from_slice(&value.to_le_bytes());
+}
+
+fn push_u16(output: &mut Vec<u8>, value: u16) {
+    output.extend_from_slice(&value.to_le_bytes());
+}
+
+fn write_bytes_if_changed(path: &Path, contents: &[u8]) -> BuildResult<()> {
+    match fs::read(path) {
         Ok(existing) if existing == contents => Ok(()),
         Ok(_) | Err(_) => {
             fs::write(path, contents)?;
@@ -449,30 +368,6 @@ fn write_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
     }
 }
 
-fn format_missing_executable(command: &str, help: &[&str]) -> String {
-    let mut message = format!("missing required executable `{command}`");
-    for line in help {
-        message.push('\n');
-        message.push_str(line);
-    }
-    message
-}
-
-fn format_command_failure(command: &str, output: &Output, help: &[&str]) -> String {
-    let mut message = format!("{command} failed with status {}", output.status);
-    let stdout = String::from_utf8_lossy(&output.stdout);
-    if !stdout.trim().is_empty() {
-        message.push_str("\nstdout:\n");
-        message.push_str(stdout.trim_end());
-    }
-    let stderr = String::from_utf8_lossy(&output.stderr);
-    if !stderr.trim().is_empty() {
-        message.push_str("\nstderr:\n");
-        message.push_str(stderr.trim_end());
-    }
-    for line in help {
-        message.push('\n');
-        message.push_str(line);
-    }
-    message
+fn write_string_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
+    write_bytes_if_changed(path, contents.as_bytes())
 }

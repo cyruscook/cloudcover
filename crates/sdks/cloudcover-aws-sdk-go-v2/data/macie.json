@@ -1,0 +1,521 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/macie",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "AssociateMemberAccount",
+          [
+            [
+              "macie",
+              "AssociateMemberAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "AssociateS3Resources",
+          [
+            [
+              "macie",
+              "AssociateS3Resources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "DisassociateMemberAccount",
+          [
+            [
+              "macie",
+              "DisassociateMemberAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "DisassociateS3Resources",
+          [
+            [
+              "macie",
+              "DisassociateS3Resources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "ListMemberAccounts",
+          [
+            [
+              "macie",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "ListS3Resources",
+          [
+            [
+              "macie",
+              "ListS3Resources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "Client",
+          "UpdateS3Resources",
+          [
+            [
+              "macie",
+              "UpdateS3Resources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "ListMemberAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "macie",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie",
+          "ListS3ResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "macie",
+              "ListS3Resources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

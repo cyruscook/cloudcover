@@ -1,0 +1,1889 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteAlarms",
+          [
+            [
+              "cloudwatch",
+              "DeleteAlarms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteAnomalyDetector",
+          [
+            [
+              "cloudwatch",
+              "DeleteAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteDashboards",
+          [
+            [
+              "cloudwatch",
+              "DeleteDashboards"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteInsightRules",
+          [
+            [
+              "cloudwatch",
+              "DeleteInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeAlarmHistory",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarmHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeAlarms",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeAlarmsForMetric",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarmsForMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeAnomalyDetectors",
+          [
+            [
+              "cloudwatch",
+              "DescribeAnomalyDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeInsightRules",
+          [
+            [
+              "cloudwatch",
+              "DescribeInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DisableAlarmActions",
+          [
+            [
+              "cloudwatch",
+              "DisableAlarmActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DisableInsightRules",
+          [
+            [
+              "cloudwatch",
+              "DisableInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "EnableAlarmActions",
+          [
+            [
+              "cloudwatch",
+              "EnableAlarmActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "EnableInsightRules",
+          [
+            [
+              "cloudwatch",
+              "EnableInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetDashboard",
+          [
+            [
+              "cloudwatch",
+              "GetDashboard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetInsightRuleReport",
+          [
+            [
+              "cloudwatch",
+              "GetInsightRuleReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetMetricData",
+          [
+            [
+              "cloudwatch",
+              "GetMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetMetricStatistics",
+          [
+            [
+              "cloudwatch",
+              "GetMetricStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetMetricWidgetImage",
+          [
+            [
+              "cloudwatch",
+              "GetMetricWidgetImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListDashboards",
+          [
+            [
+              "cloudwatch",
+              "ListDashboards"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListMetrics",
+          [
+            [
+              "cloudwatch",
+              "ListMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "cloudwatch",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutAnomalyDetector",
+          [
+            [
+              "cloudwatch",
+              "PutAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutCompositeAlarm",
+          [
+            [
+              "cloudwatch",
+              "PutCompositeAlarm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutDashboard",
+          [
+            [
+              "cloudwatch",
+              "PutDashboard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutInsightRule",
+          [
+            [
+              "cloudwatch",
+              "PutInsightRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutMetricAlarm",
+          [
+            [
+              "cloudwatch",
+              "PutMetricAlarm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutMetricData",
+          [
+            [
+              "cloudwatch",
+              "PutMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "SetAlarmState",
+          [
+            [
+              "cloudwatch",
+              "SetAlarmState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "TagResource",
+          [
+            [
+              "cloudwatch",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "cloudwatch",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "DescribeAlarmHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarmHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "DescribeAlarmsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "DescribeInsightRulesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "DescribeInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "GetMetricDataPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "GetMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "ListDashboardsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "ListDashboards"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "ListMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "ListMetrics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteMetricStream",
+          [
+            [
+              "cloudwatch",
+              "DeleteMetricStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetMetricStream",
+          [
+            [
+              "cloudwatch",
+              "GetMetricStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListMetricStreams",
+          [
+            [
+              "cloudwatch",
+              "ListMetricStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutMetricStream",
+          [
+            [
+              "cloudwatch",
+              "PutMetricStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "StartMetricStreams",
+          [
+            [
+              "cloudwatch",
+              "StartMetricStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "StopMetricStreams",
+          [
+            [
+              "cloudwatch",
+              "StopMetricStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "ListMetricStreamsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "ListMetricStreams"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListManagedInsightRules",
+          [
+            [
+              "cloudwatch",
+              "ListManagedInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutManagedInsightRules",
+          [
+            [
+              "cloudwatch",
+              "PutManagedInsightRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "DescribeAnomalyDetectorsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "DescribeAnomalyDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "ListManagedInsightRulesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "ListManagedInsightRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DescribeAlarmContributors",
+          [
+            [
+              "cloudwatch",
+              "DescribeAlarmContributors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DeleteAlarmMuteRule",
+          [
+            [
+              "cloudwatch",
+              "DeleteAlarmMuteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetAlarmMuteRule",
+          [
+            [
+              "cloudwatch",
+              "GetAlarmMuteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "ListAlarmMuteRules",
+          [
+            [
+              "cloudwatch",
+              "ListAlarmMuteRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutAlarmMuteRule",
+          [
+            [
+              "cloudwatch",
+              "PutAlarmMuteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "ListAlarmMuteRulesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatch",
+              "ListAlarmMuteRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetOTelEnrichment",
+          [
+            [
+              "cloudwatch",
+              "GetOTelEnrichment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "StartOTelEnrichment",
+          [
+            [
+              "cloudwatch",
+              "StartOTelEnrichment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "StopOTelEnrichment",
+          [
+            [
+              "cloudwatch",
+              "StopOTelEnrichment"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "AssociateDatasetKmsKey",
+          [
+            [
+              "cloudwatch",
+              "AssociateDatasetKmsKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "DisassociateDatasetKmsKey",
+          [
+            [
+              "cloudwatch",
+              "DisassociateDatasetKmsKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "GetDataset",
+          [
+            [
+              "cloudwatch",
+              "GetDataset"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+          "Client",
+          "PutLogAlarm",
+          [
+            [
+              "cloudwatch",
+              "PutLogAlarm"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

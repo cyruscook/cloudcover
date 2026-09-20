@@ -1,0 +1,2837 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/backup",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateBackupPlan",
+          [
+            [
+              "backup",
+              "CreateBackupPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateBackupSelection",
+          [
+            [
+              "backup",
+              "CreateBackupSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateBackupVault",
+          [
+            [
+              "backup",
+              "CreateBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupPlan",
+          [
+            [
+              "backup",
+              "DeleteBackupPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupSelection",
+          [
+            [
+              "backup",
+              "DeleteBackupSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupVault",
+          [
+            [
+              "backup",
+              "DeleteBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupVaultAccessPolicy",
+          [
+            [
+              "backup",
+              "DeleteBackupVaultAccessPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupVaultNotifications",
+          [
+            [
+              "backup",
+              "DeleteBackupVaultNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteRecoveryPoint",
+          [
+            [
+              "backup",
+              "DeleteRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeBackupJob",
+          [
+            [
+              "backup",
+              "DescribeBackupJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeBackupVault",
+          [
+            [
+              "backup",
+              "DescribeBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeCopyJob",
+          [
+            [
+              "backup",
+              "DescribeCopyJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeProtectedResource",
+          [
+            [
+              "backup",
+              "DescribeProtectedResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeRecoveryPoint",
+          [
+            [
+              "backup",
+              "DescribeRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeRegionSettings",
+          [
+            [
+              "backup",
+              "DescribeRegionSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeRestoreJob",
+          [
+            [
+              "backup",
+              "DescribeRestoreJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ExportBackupPlanTemplate",
+          [
+            [
+              "backup",
+              "ExportBackupPlanTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupPlan",
+          [
+            [
+              "backup",
+              "GetBackupPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupPlanFromJSON",
+          [
+            [
+              "backup",
+              "GetBackupPlanFromJSON"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupPlanFromTemplate",
+          [
+            [
+              "backup",
+              "GetBackupPlanFromTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupSelection",
+          [
+            [
+              "backup",
+              "GetBackupSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupVaultAccessPolicy",
+          [
+            [
+              "backup",
+              "GetBackupVaultAccessPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetBackupVaultNotifications",
+          [
+            [
+              "backup",
+              "GetBackupVaultNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRecoveryPointRestoreMetadata",
+          [
+            [
+              "backup",
+              "GetRecoveryPointRestoreMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetSupportedResourceTypes",
+          [
+            [
+              "backup",
+              "GetSupportedResourceTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupJobs",
+          [
+            [
+              "backup",
+              "ListBackupJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupPlanTemplates",
+          [
+            [
+              "backup",
+              "ListBackupPlanTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupPlanVersions",
+          [
+            [
+              "backup",
+              "ListBackupPlanVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupPlans",
+          [
+            [
+              "backup",
+              "ListBackupPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupSelections",
+          [
+            [
+              "backup",
+              "ListBackupSelections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupVaults",
+          [
+            [
+              "backup",
+              "ListBackupVaults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListCopyJobs",
+          [
+            [
+              "backup",
+              "ListCopyJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListProtectedResources",
+          [
+            [
+              "backup",
+              "ListProtectedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRecoveryPointsByBackupVault",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRecoveryPointsByResource",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreJobs",
+          [
+            [
+              "backup",
+              "ListRestoreJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListTags",
+          [
+            [
+              "backup",
+              "ListTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "PutBackupVaultAccessPolicy",
+          [
+            [
+              "backup",
+              "PutBackupVaultAccessPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "PutBackupVaultNotifications",
+          [
+            [
+              "backup",
+              "PutBackupVaultNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StartBackupJob",
+          [
+            [
+              "backup",
+              "StartBackupJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StartCopyJob",
+          [
+            [
+              "backup",
+              "StartCopyJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StartRestoreJob",
+          [
+            [
+              "backup",
+              "StartRestoreJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StopBackupJob",
+          [
+            [
+              "backup",
+              "StopBackupJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "TagResource",
+          [
+            [
+              "backup",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "backup",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateBackupPlan",
+          [
+            [
+              "backup",
+              "UpdateBackupPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateRecoveryPointLifecycle",
+          [
+            [
+              "backup",
+              "UpdateRecoveryPointLifecycle"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateRegionSettings",
+          [
+            [
+              "backup",
+              "UpdateRegionSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeGlobalSettings",
+          [
+            [
+              "backup",
+              "DescribeGlobalSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateGlobalSettings",
+          [
+            [
+              "backup",
+              "UpdateGlobalSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupJobsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupPlanTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupPlanTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupPlanVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupPlanVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupPlansPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupSelectionsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupSelections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupVaultsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupVaults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListCopyJobsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListCopyJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListProtectedResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListProtectedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRecoveryPointsByBackupVaultPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRecoveryPointsByResourcePaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreJobsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListTagsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DisassociateRecoveryPoint",
+          [
+            [
+              "backup",
+              "DisassociateRecoveryPoint"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateFramework",
+          [
+            [
+              "backup",
+              "CreateFramework"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateReportPlan",
+          [
+            [
+              "backup",
+              "CreateReportPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteFramework",
+          [
+            [
+              "backup",
+              "DeleteFramework"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteReportPlan",
+          [
+            [
+              "backup",
+              "DeleteReportPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeFramework",
+          [
+            [
+              "backup",
+              "DescribeFramework"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeReportJob",
+          [
+            [
+              "backup",
+              "DescribeReportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeReportPlan",
+          [
+            [
+              "backup",
+              "DescribeReportPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListFrameworks",
+          [
+            [
+              "backup",
+              "ListFrameworks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListReportJobs",
+          [
+            [
+              "backup",
+              "ListReportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListReportPlans",
+          [
+            [
+              "backup",
+              "ListReportPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StartReportJob",
+          [
+            [
+              "backup",
+              "StartReportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateFramework",
+          [
+            [
+              "backup",
+              "UpdateFramework"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateReportPlan",
+          [
+            [
+              "backup",
+              "UpdateReportPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListFrameworksPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListFrameworks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListReportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListReportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListReportPlansPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListReportPlans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupVaultLockConfiguration",
+          [
+            [
+              "backup",
+              "DeleteBackupVaultLockConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "PutBackupVaultLockConfiguration",
+          [
+            [
+              "backup",
+              "PutBackupVaultLockConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CancelLegalHold",
+          [
+            [
+              "backup",
+              "CancelLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateLegalHold",
+          [
+            [
+              "backup",
+              "CreateLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DisassociateRecoveryPointFromParent",
+          [
+            [
+              "backup",
+              "DisassociateRecoveryPointFromParent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetLegalHold",
+          [
+            [
+              "backup",
+              "GetLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListLegalHolds",
+          [
+            [
+              "backup",
+              "ListLegalHolds"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRecoveryPointsByLegalHold",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListLegalHoldsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListLegalHolds"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRecoveryPointsByLegalHoldPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRecoveryPointsByLegalHold"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateLogicallyAirGappedBackupVault",
+          [
+            [
+              "backup",
+              "CreateLogicallyAirGappedBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListProtectedResourcesByBackupVault",
+          [
+            [
+              "backup",
+              "ListProtectedResourcesByBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListProtectedResourcesByBackupVaultPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListProtectedResourcesByBackupVault"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupJobSummaries",
+          [
+            [
+              "backup",
+              "ListBackupJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListCopyJobSummaries",
+          [
+            [
+              "backup",
+              "ListCopyJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreJobSummaries",
+          [
+            [
+              "backup",
+              "ListRestoreJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupJobSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListCopyJobSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListCopyJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreJobSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreJobSummaries"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateRestoreTestingPlan",
+          [
+            [
+              "backup",
+              "CreateRestoreTestingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateRestoreTestingSelection",
+          [
+            [
+              "backup",
+              "CreateRestoreTestingSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteRestoreTestingPlan",
+          [
+            [
+              "backup",
+              "DeleteRestoreTestingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteRestoreTestingSelection",
+          [
+            [
+              "backup",
+              "DeleteRestoreTestingSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRestoreJobMetadata",
+          [
+            [
+              "backup",
+              "GetRestoreJobMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRestoreTestingInferredMetadata",
+          [
+            [
+              "backup",
+              "GetRestoreTestingInferredMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRestoreTestingPlan",
+          [
+            [
+              "backup",
+              "GetRestoreTestingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRestoreTestingSelection",
+          [
+            [
+              "backup",
+              "GetRestoreTestingSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreJobsByProtectedResource",
+          [
+            [
+              "backup",
+              "ListRestoreJobsByProtectedResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreTestingPlans",
+          [
+            [
+              "backup",
+              "ListRestoreTestingPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreTestingSelections",
+          [
+            [
+              "backup",
+              "ListRestoreTestingSelections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "PutRestoreValidationResult",
+          [
+            [
+              "backup",
+              "PutRestoreValidationResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateRestoreTestingPlan",
+          [
+            [
+              "backup",
+              "UpdateRestoreTestingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateRestoreTestingSelection",
+          [
+            [
+              "backup",
+              "UpdateRestoreTestingSelection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreJobsByProtectedResourcePaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreJobsByProtectedResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreTestingPlansPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreTestingPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreTestingSelectionsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreTestingSelections"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetRecoveryPointIndexDetails",
+          [
+            [
+              "backup",
+              "GetRecoveryPointIndexDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListIndexedRecoveryPoints",
+          [
+            [
+              "backup",
+              "ListIndexedRecoveryPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateRecoveryPointIndexSettings",
+          [
+            [
+              "backup",
+              "UpdateRecoveryPointIndexSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListIndexedRecoveryPointsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListIndexedRecoveryPoints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "AssociateBackupVaultMpaApprovalTeam",
+          [
+            [
+              "backup",
+              "AssociateBackupVaultMpaApprovalTeam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateRestoreAccessBackupVault",
+          [
+            [
+              "backup",
+              "CreateRestoreAccessBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DisassociateBackupVaultMpaApprovalTeam",
+          [
+            [
+              "backup",
+              "DisassociateBackupVaultMpaApprovalTeam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListRestoreAccessBackupVaults",
+          [
+            [
+              "backup",
+              "ListRestoreAccessBackupVaults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "RevokeRestoreAccessBackupVault",
+          [
+            [
+              "backup",
+              "RevokeRestoreAccessBackupVault"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListRestoreAccessBackupVaultsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListRestoreAccessBackupVaults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateTieringConfiguration",
+          [
+            [
+              "backup",
+              "CreateTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteTieringConfiguration",
+          [
+            [
+              "backup",
+              "DeleteTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetTieringConfiguration",
+          [
+            [
+              "backup",
+              "GetTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListTieringConfigurations",
+          [
+            [
+              "backup",
+              "ListTieringConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "UpdateTieringConfiguration",
+          [
+            [
+              "backup",
+              "UpdateTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListTieringConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListTieringConfigurations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeScanJob",
+          [
+            [
+              "backup",
+              "DescribeScanJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListScanJobSummaries",
+          [
+            [
+              "backup",
+              "ListScanJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListScanJobs",
+          [
+            [
+              "backup",
+              "ListScanJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "StartScanJob",
+          [
+            [
+              "backup",
+              "StartScanJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListScanJobSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListScanJobSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListScanJobsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListScanJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "GetPITRMalwareScanResults",
+          [
+            [
+              "backup",
+              "GetPITRMalwareScanResults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "CreateBackupAccessPoint",
+          [
+            [
+              "backup",
+              "CreateBackupAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DeleteBackupAccessPoint",
+          [
+            [
+              "backup",
+              "DeleteBackupAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "DescribeBackupAccessPoint",
+          [
+            [
+              "backup",
+              "DescribeBackupAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupAccessPoints",
+          [
+            [
+              "backup",
+              "ListBackupAccessPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupAccessPointsByRecoveryPoint",
+          [
+            [
+              "backup",
+              "ListBackupAccessPointsByRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "Client",
+          "ListBackupAccessPointsByResource",
+          [
+            [
+              "backup",
+              "ListBackupAccessPointsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupAccessPointsByRecoveryPointPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupAccessPointsByRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupAccessPointsByResourcePaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupAccessPointsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/backup",
+          "ListBackupAccessPointsPaginator",
+          "NextPage",
+          [
+            [
+              "backup",
+              "ListBackupAccessPoints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

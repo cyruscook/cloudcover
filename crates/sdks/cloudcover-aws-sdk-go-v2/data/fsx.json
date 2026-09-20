@@ -1,0 +1,1918 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/fsx",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CancelDataRepositoryTask",
+          [
+            [
+              "fsx",
+              "CancelDataRepositoryTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateBackup",
+          [
+            [
+              "fsx",
+              "CreateBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateDataRepositoryTask",
+          [
+            [
+              "fsx",
+              "CreateDataRepositoryTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateFileSystem",
+          [
+            [
+              "fsx",
+              "CreateFileSystem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateFileSystemFromBackup",
+          [
+            [
+              "fsx",
+              "CreateFileSystemFromBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteBackup",
+          [
+            [
+              "fsx",
+              "DeleteBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteFileSystem",
+          [
+            [
+              "fsx",
+              "DeleteFileSystem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeBackups",
+          [
+            [
+              "fsx",
+              "DescribeBackups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeDataRepositoryTasks",
+          [
+            [
+              "fsx",
+              "DescribeDataRepositoryTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeFileSystems",
+          [
+            [
+              "fsx",
+              "DescribeFileSystems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "fsx",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "TagResource",
+          [
+            [
+              "fsx",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "fsx",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateFileSystem",
+          [
+            [
+              "fsx",
+              "UpdateFileSystem"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "AssociateFileSystemAliases",
+          [
+            [
+              "fsx",
+              "AssociateFileSystemAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeFileSystemAliases",
+          [
+            [
+              "fsx",
+              "DescribeFileSystemAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DisassociateFileSystemAliases",
+          [
+            [
+              "fsx",
+              "DisassociateFileSystemAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeBackupsPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeBackups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeDataRepositoryTasksPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeDataRepositoryTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeFileSystemAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeFileSystemAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeFileSystemsPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeFileSystems"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CopyBackup",
+          [
+            [
+              "fsx",
+              "CopyBackup"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateStorageVirtualMachine",
+          [
+            [
+              "fsx",
+              "CreateStorageVirtualMachine"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateVolume",
+          [
+            [
+              "fsx",
+              "CreateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateVolumeFromBackup",
+          [
+            [
+              "fsx",
+              "CreateVolumeFromBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteStorageVirtualMachine",
+          [
+            [
+              "fsx",
+              "DeleteStorageVirtualMachine"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteVolume",
+          [
+            [
+              "fsx",
+              "DeleteVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeStorageVirtualMachines",
+          [
+            [
+              "fsx",
+              "DescribeStorageVirtualMachines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeVolumes",
+          [
+            [
+              "fsx",
+              "DescribeVolumes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateStorageVirtualMachine",
+          [
+            [
+              "fsx",
+              "UpdateStorageVirtualMachine"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateVolume",
+          [
+            [
+              "fsx",
+              "UpdateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeStorageVirtualMachinesPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeStorageVirtualMachines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeVolumesPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeVolumes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "ListTagsForResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateDataRepositoryAssociation",
+          [
+            [
+              "fsx",
+              "CreateDataRepositoryAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateSnapshot",
+          [
+            [
+              "fsx",
+              "CreateSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteDataRepositoryAssociation",
+          [
+            [
+              "fsx",
+              "DeleteDataRepositoryAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteSnapshot",
+          [
+            [
+              "fsx",
+              "DeleteSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeDataRepositoryAssociations",
+          [
+            [
+              "fsx",
+              "DescribeDataRepositoryAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeSnapshots",
+          [
+            [
+              "fsx",
+              "DescribeSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "ReleaseFileSystemNfsV3Locks",
+          [
+            [
+              "fsx",
+              "ReleaseFileSystemNfsV3Locks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "RestoreVolumeFromSnapshot",
+          [
+            [
+              "fsx",
+              "RestoreVolumeFromSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateDataRepositoryAssociation",
+          [
+            [
+              "fsx",
+              "UpdateDataRepositoryAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateSnapshot",
+          [
+            [
+              "fsx",
+              "UpdateSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeDataRepositoryAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeDataRepositoryAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeSnapshots"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateFileCache",
+          [
+            [
+              "fsx",
+              "CreateFileCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DeleteFileCache",
+          [
+            [
+              "fsx",
+              "DeleteFileCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeFileCaches",
+          [
+            [
+              "fsx",
+              "DescribeFileCaches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateFileCache",
+          [
+            [
+              "fsx",
+              "UpdateFileCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeFileCachesPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeFileCaches"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "StartMisconfiguredStateRecovery",
+          [
+            [
+              "fsx",
+              "StartMisconfiguredStateRecovery"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CopySnapshotAndUpdateVolume",
+          [
+            [
+              "fsx",
+              "CopySnapshotAndUpdateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeSharedVpcConfiguration",
+          [
+            [
+              "fsx",
+              "DescribeSharedVpcConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "UpdateSharedVpcConfiguration",
+          [
+            [
+              "fsx",
+              "UpdateSharedVpcConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "CreateAndAttachS3AccessPoint",
+          [
+            [
+              "fsx",
+              "CreateAndAttachS3AccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DescribeS3AccessPointAttachments",
+          [
+            [
+              "fsx",
+              "DescribeS3AccessPointAttachments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "Client",
+          "DetachAndDeleteS3AccessPoint",
+          [
+            [
+              "fsx",
+              "DetachAndDeleteS3AccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fsx",
+          "DescribeS3AccessPointAttachmentsPaginator",
+          "NextPage",
+          [
+            [
+              "fsx",
+              "DescribeS3AccessPointAttachments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

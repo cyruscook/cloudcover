@@ -1,0 +1,2040 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "BatchCreateVariable",
+          [
+            [
+              "frauddetector",
+              "BatchCreateVariable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "BatchGetVariable",
+          [
+            [
+              "frauddetector",
+              "BatchGetVariable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateDetectorVersion",
+          [
+            [
+              "frauddetector",
+              "CreateDetectorVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateModel",
+          [
+            [
+              "frauddetector",
+              "CreateModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateModelVersion",
+          [
+            [
+              "frauddetector",
+              "CreateModelVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateRule",
+          [
+            [
+              "frauddetector",
+              "CreateRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateVariable",
+          [
+            [
+              "frauddetector",
+              "CreateVariable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteDetector",
+          [
+            [
+              "frauddetector",
+              "DeleteDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteDetectorVersion",
+          [
+            [
+              "frauddetector",
+              "DeleteDetectorVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteEvent",
+          [
+            [
+              "frauddetector",
+              "DeleteEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteRule",
+          [
+            [
+              "frauddetector",
+              "DeleteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DescribeDetector",
+          [
+            [
+              "frauddetector",
+              "DescribeDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DescribeModelVersions",
+          [
+            [
+              "frauddetector",
+              "DescribeModelVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetDetectorVersion",
+          [
+            [
+              "frauddetector",
+              "GetDetectorVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetDetectors",
+          [
+            [
+              "frauddetector",
+              "GetDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetEntityTypes",
+          [
+            [
+              "frauddetector",
+              "GetEntityTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetEventPrediction",
+          [
+            [
+              "frauddetector",
+              "GetEventPrediction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetEventTypes",
+          [
+            [
+              "frauddetector",
+              "GetEventTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetExternalModels",
+          [
+            [
+              "frauddetector",
+              "GetExternalModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetKMSEncryptionKey",
+          [
+            [
+              "frauddetector",
+              "GetKMSEncryptionKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetLabels",
+          [
+            [
+              "frauddetector",
+              "GetLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetModelVersion",
+          [
+            [
+              "frauddetector",
+              "GetModelVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetModels",
+          [
+            [
+              "frauddetector",
+              "GetModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetOutcomes",
+          [
+            [
+              "frauddetector",
+              "GetOutcomes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetRules",
+          [
+            [
+              "frauddetector",
+              "GetRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetVariables",
+          [
+            [
+              "frauddetector",
+              "GetVariables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "frauddetector",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutDetector",
+          [
+            [
+              "frauddetector",
+              "PutDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutEntityType",
+          [
+            [
+              "frauddetector",
+              "PutEntityType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutEventType",
+          [
+            [
+              "frauddetector",
+              "PutEventType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutExternalModel",
+          [
+            [
+              "frauddetector",
+              "PutExternalModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutKMSEncryptionKey",
+          [
+            [
+              "frauddetector",
+              "PutKMSEncryptionKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutLabel",
+          [
+            [
+              "frauddetector",
+              "PutLabel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "PutOutcome",
+          [
+            [
+              "frauddetector",
+              "PutOutcome"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "TagResource",
+          [
+            [
+              "frauddetector",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "frauddetector",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateDetectorVersion",
+          [
+            [
+              "frauddetector",
+              "UpdateDetectorVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateDetectorVersionMetadata",
+          [
+            [
+              "frauddetector",
+              "UpdateDetectorVersionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateDetectorVersionStatus",
+          [
+            [
+              "frauddetector",
+              "UpdateDetectorVersionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateModel",
+          [
+            [
+              "frauddetector",
+              "UpdateModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateModelVersion",
+          [
+            [
+              "frauddetector",
+              "UpdateModelVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateModelVersionStatus",
+          [
+            [
+              "frauddetector",
+              "UpdateModelVersionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateRuleMetadata",
+          [
+            [
+              "frauddetector",
+              "UpdateRuleMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateRuleVersion",
+          [
+            [
+              "frauddetector",
+              "UpdateRuleVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateVariable",
+          [
+            [
+              "frauddetector",
+              "UpdateVariable"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteEntityType",
+          [
+            [
+              "frauddetector",
+              "DeleteEntityType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteEventType",
+          [
+            [
+              "frauddetector",
+              "DeleteEventType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteExternalModel",
+          [
+            [
+              "frauddetector",
+              "DeleteExternalModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteLabel",
+          [
+            [
+              "frauddetector",
+              "DeleteLabel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteModel",
+          [
+            [
+              "frauddetector",
+              "DeleteModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteModelVersion",
+          [
+            [
+              "frauddetector",
+              "DeleteModelVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteOutcome",
+          [
+            [
+              "frauddetector",
+              "DeleteOutcome"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteVariable",
+          [
+            [
+              "frauddetector",
+              "DeleteVariable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "DescribeModelVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "DescribeModelVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetDetectorsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetEntityTypesPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetEntityTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetEventTypesPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetEventTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetExternalModelsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetExternalModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetLabelsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetModelsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetOutcomesPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetOutcomes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetRulesPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetVariablesPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetVariables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "ListTagsForResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CancelBatchPredictionJob",
+          [
+            [
+              "frauddetector",
+              "CancelBatchPredictionJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateBatchPredictionJob",
+          [
+            [
+              "frauddetector",
+              "CreateBatchPredictionJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteBatchPredictionJob",
+          [
+            [
+              "frauddetector",
+              "DeleteBatchPredictionJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetBatchPredictionJobs",
+          [
+            [
+              "frauddetector",
+              "GetBatchPredictionJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetBatchPredictionJobsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetBatchPredictionJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CancelBatchImportJob",
+          [
+            [
+              "frauddetector",
+              "CancelBatchImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateBatchImportJob",
+          [
+            [
+              "frauddetector",
+              "CreateBatchImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteBatchImportJob",
+          [
+            [
+              "frauddetector",
+              "DeleteBatchImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteEventsByEventType",
+          [
+            [
+              "frauddetector",
+              "DeleteEventsByEventType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetBatchImportJobs",
+          [
+            [
+              "frauddetector",
+              "GetBatchImportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetDeleteEventsByEventTypeStatus",
+          [
+            [
+              "frauddetector",
+              "GetDeleteEventsByEventTypeStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetEvent",
+          [
+            [
+              "frauddetector",
+              "GetEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "SendEvent",
+          [
+            [
+              "frauddetector",
+              "SendEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateEventLabel",
+          [
+            [
+              "frauddetector",
+              "UpdateEventLabel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetBatchImportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetBatchImportJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetEventPredictionMetadata",
+          [
+            [
+              "frauddetector",
+              "GetEventPredictionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "ListEventPredictions",
+          [
+            [
+              "frauddetector",
+              "ListEventPredictions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "ListEventPredictionsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "ListEventPredictions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "CreateList",
+          [
+            [
+              "frauddetector",
+              "CreateList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "DeleteList",
+          [
+            [
+              "frauddetector",
+              "DeleteList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetListElements",
+          [
+            [
+              "frauddetector",
+              "GetListElements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "GetListsMetadata",
+          [
+            [
+              "frauddetector",
+              "GetListsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "Client",
+          "UpdateList",
+          [
+            [
+              "frauddetector",
+              "UpdateList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetListElementsPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetListElements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/frauddetector",
+          "GetListsMetadataPaginator",
+          "NextPage",
+          [
+            [
+              "frauddetector",
+              "GetListsMetadata"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -1,0 +1,2533 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CancelUpdateStack",
+          [
+            [
+              "cloudformation",
+              "CancelUpdateStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ContinueUpdateRollback",
+          [
+            [
+              "cloudformation",
+              "ContinueUpdateRollback"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateChangeSet",
+          [
+            [
+              "cloudformation",
+              "CreateChangeSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateStack",
+          [
+            [
+              "cloudformation",
+              "CreateStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateStackInstances",
+          [
+            [
+              "cloudformation",
+              "CreateStackInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateStackSet",
+          [
+            [
+              "cloudformation",
+              "CreateStackSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeleteChangeSet",
+          [
+            [
+              "cloudformation",
+              "DeleteChangeSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeleteStack",
+          [
+            [
+              "cloudformation",
+              "DeleteStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeleteStackInstances",
+          [
+            [
+              "cloudformation",
+              "DeleteStackInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeleteStackSet",
+          [
+            [
+              "cloudformation",
+              "DeleteStackSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeregisterType",
+          [
+            [
+              "cloudformation",
+              "DeregisterType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeAccountLimits",
+          [
+            [
+              "cloudformation",
+              "DescribeAccountLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeChangeSet",
+          [
+            [
+              "cloudformation",
+              "DescribeChangeSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackDriftDetectionStatus",
+          [
+            [
+              "cloudformation",
+              "DescribeStackDriftDetectionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackEvents",
+          [
+            [
+              "cloudformation",
+              "DescribeStackEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackInstance",
+          [
+            [
+              "cloudformation",
+              "DescribeStackInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackResource",
+          [
+            [
+              "cloudformation",
+              "DescribeStackResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackResourceDrifts",
+          [
+            [
+              "cloudformation",
+              "DescribeStackResourceDrifts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackResources",
+          [
+            [
+              "cloudformation",
+              "DescribeStackResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackSet",
+          [
+            [
+              "cloudformation",
+              "DescribeStackSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackSetOperation",
+          [
+            [
+              "cloudformation",
+              "DescribeStackSetOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStacks",
+          [
+            [
+              "cloudformation",
+              "DescribeStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeType",
+          [
+            [
+              "cloudformation",
+              "DescribeType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeTypeRegistration",
+          [
+            [
+              "cloudformation",
+              "DescribeTypeRegistration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DetectStackDrift",
+          [
+            [
+              "cloudformation",
+              "DetectStackDrift"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DetectStackResourceDrift",
+          [
+            [
+              "cloudformation",
+              "DetectStackResourceDrift"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DetectStackSetDrift",
+          [
+            [
+              "cloudformation",
+              "DetectStackSetDrift"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "EstimateTemplateCost",
+          [
+            [
+              "cloudformation",
+              "EstimateTemplateCost"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ExecuteChangeSet",
+          [
+            [
+              "cloudformation",
+              "ExecuteChangeSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "GetStackPolicy",
+          [
+            [
+              "cloudformation",
+              "GetStackPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "GetTemplate",
+          [
+            [
+              "cloudformation",
+              "GetTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "GetTemplateSummary",
+          [
+            [
+              "cloudformation",
+              "GetTemplateSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListChangeSets",
+          [
+            [
+              "cloudformation",
+              "ListChangeSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListExports",
+          [
+            [
+              "cloudformation",
+              "ListExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListImports",
+          [
+            [
+              "cloudformation",
+              "ListImports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackInstances",
+          [
+            [
+              "cloudformation",
+              "ListStackInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackResources",
+          [
+            [
+              "cloudformation",
+              "ListStackResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackSetOperationResults",
+          [
+            [
+              "cloudformation",
+              "ListStackSetOperationResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackSetOperations",
+          [
+            [
+              "cloudformation",
+              "ListStackSetOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackSets",
+          [
+            [
+              "cloudformation",
+              "ListStackSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStacks",
+          [
+            [
+              "cloudformation",
+              "ListStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListTypeRegistrations",
+          [
+            [
+              "cloudformation",
+              "ListTypeRegistrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListTypeVersions",
+          [
+            [
+              "cloudformation",
+              "ListTypeVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListTypes",
+          [
+            [
+              "cloudformation",
+              "ListTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "RecordHandlerProgress",
+          [
+            [
+              "cloudformation",
+              "RecordHandlerProgress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "RegisterType",
+          [
+            [
+              "cloudformation",
+              "RegisterType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "SetStackPolicy",
+          [
+            [
+              "cloudformation",
+              "SetStackPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "SetTypeDefaultVersion",
+          [
+            [
+              "cloudformation",
+              "SetTypeDefaultVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "SignalResource",
+          [
+            [
+              "cloudformation",
+              "SignalResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "StopStackSetOperation",
+          [
+            [
+              "cloudformation",
+              "StopStackSetOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "UpdateStack",
+          [
+            [
+              "cloudformation",
+              "UpdateStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "UpdateStackInstances",
+          [
+            [
+              "cloudformation",
+              "UpdateStackInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "UpdateStackSet",
+          [
+            [
+              "cloudformation",
+              "UpdateStackSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "UpdateTerminationProtection",
+          [
+            [
+              "cloudformation",
+              "UpdateTerminationProtection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ValidateTemplate",
+          [
+            [
+              "cloudformation",
+              "ValidateTemplate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeAccountLimitsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeAccountLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeStackEventsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeStackEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeStackResourceDriftsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeStackResourceDrifts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeStacksPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListChangeSetsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListChangeSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListExportsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListImportsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListImports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackSetOperationResultsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackSetOperationResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackSetOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackSetOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackSetsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStacksPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListTypeRegistrationsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListTypeRegistrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListTypeVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListTypeVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListTypesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListTypes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ActivateType",
+          [
+            [
+              "cloudformation",
+              "ActivateType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "BatchDescribeTypeConfigurations",
+          [
+            [
+              "cloudformation",
+              "BatchDescribeTypeConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeactivateType",
+          [
+            [
+              "cloudformation",
+              "DeactivateType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribePublisher",
+          [
+            [
+              "cloudformation",
+              "DescribePublisher"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "PublishType",
+          [
+            [
+              "cloudformation",
+              "PublishType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "RegisterPublisher",
+          [
+            [
+              "cloudformation",
+              "RegisterPublisher"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "SetTypeConfiguration",
+          [
+            [
+              "cloudformation",
+              "SetTypeConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "TestType",
+          [
+            [
+              "cloudformation",
+              "TestType"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ImportStacksToStackSet",
+          [
+            [
+              "cloudformation",
+              "ImportStacksToStackSet"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "RollbackStack",
+          [
+            [
+              "cloudformation",
+              "RollbackStack"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeChangeSetHooks",
+          [
+            [
+              "cloudformation",
+              "DescribeChangeSetHooks"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ActivateOrganizationsAccess",
+          [
+            [
+              "cloudformation",
+              "ActivateOrganizationsAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeactivateOrganizationsAccess",
+          [
+            [
+              "cloudformation",
+              "DeactivateOrganizationsAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeOrganizationsAccess",
+          [
+            [
+              "cloudformation",
+              "DescribeOrganizationsAccess"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackInstanceResourceDrifts",
+          [
+            [
+              "cloudformation",
+              "ListStackInstanceResourceDrifts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateGeneratedTemplate",
+          [
+            [
+              "cloudformation",
+              "CreateGeneratedTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DeleteGeneratedTemplate",
+          [
+            [
+              "cloudformation",
+              "DeleteGeneratedTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeGeneratedTemplate",
+          [
+            [
+              "cloudformation",
+              "DescribeGeneratedTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeResourceScan",
+          [
+            [
+              "cloudformation",
+              "DescribeResourceScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "GetGeneratedTemplate",
+          [
+            [
+              "cloudformation",
+              "GetGeneratedTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListGeneratedTemplates",
+          [
+            [
+              "cloudformation",
+              "ListGeneratedTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListResourceScanRelatedResources",
+          [
+            [
+              "cloudformation",
+              "ListResourceScanRelatedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListResourceScanResources",
+          [
+            [
+              "cloudformation",
+              "ListResourceScanResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListResourceScans",
+          [
+            [
+              "cloudformation",
+              "ListResourceScans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "StartResourceScan",
+          [
+            [
+              "cloudformation",
+              "StartResourceScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "UpdateGeneratedTemplate",
+          [
+            [
+              "cloudformation",
+              "UpdateGeneratedTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListGeneratedTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListGeneratedTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListResourceScanRelatedResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListResourceScanRelatedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListResourceScanResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListResourceScanResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListResourceScansPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListResourceScans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackSetAutoDeploymentTargets",
+          [
+            [
+              "cloudformation",
+              "ListStackSetAutoDeploymentTargets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListHookResults",
+          [
+            [
+              "cloudformation",
+              "ListHookResults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "CreateStackRefactor",
+          [
+            [
+              "cloudformation",
+              "CreateStackRefactor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeStackRefactor",
+          [
+            [
+              "cloudformation",
+              "DescribeStackRefactor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ExecuteStackRefactor",
+          [
+            [
+              "cloudformation",
+              "ExecuteStackRefactor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackRefactorActions",
+          [
+            [
+              "cloudformation",
+              "ListStackRefactorActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "ListStackRefactors",
+          [
+            [
+              "cloudformation",
+              "ListStackRefactors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackRefactorActionsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackRefactorActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "ListStackRefactorsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "ListStackRefactors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "GetHookResult",
+          [
+            [
+              "cloudformation",
+              "GetHookResult"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "Client",
+          "DescribeEvents",
+          [
+            [
+              "cloudformation",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeChangeSetPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeChangeSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudformation",
+          "DescribeEventsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudformation",
+              "DescribeEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

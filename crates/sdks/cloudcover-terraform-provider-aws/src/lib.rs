@@ -1,4 +1,4 @@
-use std::iter::FusedIterator;
+use std::{fmt, iter::FusedIterator};
 
 pub const SDK_NAME: &str = "terraform-provider-aws";
 
@@ -6,6 +6,40 @@ static MAPPING_INDEX: &[u8] = include_bytes!(concat!(
     env!("OUT_DIR"),
     "/terraform_provider_aws_mappings.bin"
 ));
+
+#[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
+pub enum TerraformProviderAwsUnsupportedReason {
+    AwsSdkGoV1,
+}
+
+impl TerraformProviderAwsUnsupportedReason {
+    #[must_use]
+    pub const fn as_str(self) -> &'static str {
+        match self {
+            Self::AwsSdkGoV1 => "aws_sdk_go_v1",
+        }
+    }
+}
+
+impl fmt::Display for TerraformProviderAwsUnsupportedReason {
+    fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
+        formatter.write_str(self.as_str())
+    }
+}
+
+#[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
+pub enum TerraformProviderAwsMappingsLookup {
+    Supported(TerraformProviderAwsMappings),
+    Unsupported(TerraformProviderAwsUnsupportedReason),
+    Unknown,
+}
+
+#[derive(Clone, Copy, Debug)]
+struct VersionIndex {
+    start: u32,
+    len: u32,
+    unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
+}
 
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct TerraformProviderAwsApiMethodRef {
@@ -32,13 +66,6 @@ pub struct TerraformProviderAwsMappings {
     next: u32,
     end: u32,
 }
-
-#[derive(Clone, Copy)]
-struct VersionIndex {
-    start: u32,
-    len: u32,
-}
-
 include!(concat!(
     env!("OUT_DIR"),
     "/terraform_provider_aws_mappings.rs"
@@ -50,15 +77,21 @@ pub const fn provider_versions() -> &'static [&'static str] {
 }
 
 #[must_use]
-pub fn sdk_method_mappings(version: &str) -> Option<TerraformProviderAwsMappings> {
-    let lookup_index = VERSION_LOOKUP
+pub fn sdk_method_mappings(version: &str) -> TerraformProviderAwsMappingsLookup {
+    let Some(lookup_index) = VERSION_LOOKUP
         .binary_search_by(|(candidate, _)| candidate.cmp(&version))
-        .ok()?;
+        .ok()
+    else {
+        return TerraformProviderAwsMappingsLookup::Unknown;
+    };
     let version_index = VERSION_INDEX[VERSION_LOOKUP[lookup_index].1];
-    Some(TerraformProviderAwsMappings {
-        next: version_index.start,
-        end: version_index.start + version_index.len,
-    })
+    match version_index.unsupported_reason {
+        Some(reason) => TerraformProviderAwsMappingsLookup::Unsupported(reason),
+        None => TerraformProviderAwsMappingsLookup::Supported(TerraformProviderAwsMappings {
+            next: version_index.start,
+            end: version_index.start + version_index.len,
+        }),
+    }
 }
 
 impl TerraformProviderAwsMappings {
@@ -186,7 +219,10 @@ fn read_u32(offset: usize) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    use super::{TerraformProviderAwsApiMethodRef, provider_versions, sdk_method_mappings};
+    use super::{
+        TerraformProviderAwsApiMethodRef, TerraformProviderAwsMappingsLookup,
+        TerraformProviderAwsUnsupportedReason, provider_versions, sdk_method_mappings,
+    };
 
     #[test]
     fn provider_versions_are_sorted_and_unique() {
@@ -201,7 +237,13 @@ mod tests {
     #[test]
     fn mappings_and_api_methods_are_sorted_and_unique() -> Result<(), &'static str> {
         for version in provider_versions() {
-            let mappings = sdk_method_mappings(version).ok_or("missing indexed version")?;
+            let mappings = match sdk_method_mappings(version) {
+                TerraformProviderAwsMappingsLookup::Supported(mappings) => mappings,
+                TerraformProviderAwsMappingsLookup::Unsupported(_) => continue,
+                TerraformProviderAwsMappingsLookup::Unknown => {
+                    return Err("missing indexed version");
+                }
+            };
             let rows = mappings.collect::<Vec<_>>();
             assert!(rows.windows(2).all(|window| {
                 let left = (window[0].kind, window[0].type_name, window[0].action);
@@ -218,9 +260,11 @@ mod tests {
 
     #[test]
     fn exact_lookup_retrieves_known_version_only() -> Result<(), &'static str> {
-        let mappings = sdk_method_mappings("6.64.0")
-            .ok_or("missing v6.64.0 mappings")?
-            .collect::<Vec<_>>();
+        let TerraformProviderAwsMappingsLookup::Supported(mappings) = sdk_method_mappings("6.64.0")
+        else {
+            return Err("missing v6.64.0 mappings");
+        };
+        let mappings = mappings.collect::<Vec<_>>();
         assert_mapping_contains(
             &mappings,
             "resource",
@@ -261,10 +305,32 @@ mod tests {
                 name: "StopInstances",
             },
         );
-        assert!(sdk_method_mappings("7.0.0").is_none());
-        assert!(sdk_method_mappings("6.64").is_none());
-        assert!(sdk_method_mappings("v6.64.0").is_none());
-        assert!(sdk_method_mappings("6.64.0+local").is_none());
+        assert!(matches!(
+            sdk_method_mappings("1.56.0"),
+            TerraformProviderAwsMappingsLookup::Unsupported(
+                TerraformProviderAwsUnsupportedReason::AwsSdkGoV1
+            )
+        ));
+        assert!(matches!(
+            sdk_method_mappings("1.57.0"),
+            TerraformProviderAwsMappingsLookup::Supported(_)
+        ));
+        assert!(matches!(
+            sdk_method_mappings("7.0.0"),
+            TerraformProviderAwsMappingsLookup::Unknown
+        ));
+        assert!(matches!(
+            sdk_method_mappings("6.64"),
+            TerraformProviderAwsMappingsLookup::Unknown
+        ));
+        assert!(matches!(
+            sdk_method_mappings("v6.64.0"),
+            TerraformProviderAwsMappingsLookup::Unknown
+        ));
+        assert!(matches!(
+            sdk_method_mappings("6.64.0+local"),
+            TerraformProviderAwsMappingsLookup::Unknown
+        ));
         Ok(())
     }
 

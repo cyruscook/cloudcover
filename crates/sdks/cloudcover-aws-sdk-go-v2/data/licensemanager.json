@@ -1,0 +1,1793 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "DeleteLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "GetLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetServiceSettings",
+          [
+            [
+              "licensemanager",
+              "GetServiceSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListAssociationsForLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "ListAssociationsForLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListFailuresForLicenseConfigurationOperations",
+          [
+            [
+              "licensemanager",
+              "ListFailuresForLicenseConfigurationOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseConfigurations",
+          [
+            [
+              "licensemanager",
+              "ListLicenseConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseSpecificationsForResource",
+          [
+            [
+              "licensemanager",
+              "ListLicenseSpecificationsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListResourceInventory",
+          [
+            [
+              "licensemanager",
+              "ListResourceInventory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "licensemanager",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListUsageForLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "ListUsageForLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "TagResource",
+          [
+            [
+              "licensemanager",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "licensemanager",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateLicenseConfiguration",
+          [
+            [
+              "licensemanager",
+              "UpdateLicenseConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateLicenseSpecificationsForResource",
+          [
+            [
+              "licensemanager",
+              "UpdateLicenseSpecificationsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateServiceSettings",
+          [
+            [
+              "licensemanager",
+              "UpdateServiceSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "AcceptGrant",
+          [
+            [
+              "licensemanager",
+              "AcceptGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CheckInLicense",
+          [
+            [
+              "licensemanager",
+              "CheckInLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CheckoutBorrowLicense",
+          [
+            [
+              "licensemanager",
+              "CheckoutBorrowLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CheckoutLicense",
+          [
+            [
+              "licensemanager",
+              "CheckoutLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateGrant",
+          [
+            [
+              "licensemanager",
+              "CreateGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateGrantVersion",
+          [
+            [
+              "licensemanager",
+              "CreateGrantVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicense",
+          [
+            [
+              "licensemanager",
+              "CreateLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseVersion",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateToken",
+          [
+            [
+              "licensemanager",
+              "CreateToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteGrant",
+          [
+            [
+              "licensemanager",
+              "DeleteGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteLicense",
+          [
+            [
+              "licensemanager",
+              "DeleteLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteToken",
+          [
+            [
+              "licensemanager",
+              "DeleteToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ExtendLicenseConsumption",
+          [
+            [
+              "licensemanager",
+              "ExtendLicenseConsumption"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetAccessToken",
+          [
+            [
+              "licensemanager",
+              "GetAccessToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetGrant",
+          [
+            [
+              "licensemanager",
+              "GetGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicense",
+          [
+            [
+              "licensemanager",
+              "GetLicense"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseUsage",
+          [
+            [
+              "licensemanager",
+              "GetLicenseUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListDistributedGrants",
+          [
+            [
+              "licensemanager",
+              "ListDistributedGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseVersions",
+          [
+            [
+              "licensemanager",
+              "ListLicenseVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenses",
+          [
+            [
+              "licensemanager",
+              "ListLicenses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListReceivedGrants",
+          [
+            [
+              "licensemanager",
+              "ListReceivedGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListReceivedLicenses",
+          [
+            [
+              "licensemanager",
+              "ListReceivedLicenses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListTokens",
+          [
+            [
+              "licensemanager",
+              "ListTokens"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "RejectGrant",
+          [
+            [
+              "licensemanager",
+              "RejectGrant"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseManagerReportGenerator",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseManagerReportGenerator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteLicenseManagerReportGenerator",
+          [
+            [
+              "licensemanager",
+              "DeleteLicenseManagerReportGenerator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseManagerReportGenerator",
+          [
+            [
+              "licensemanager",
+              "GetLicenseManagerReportGenerator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseManagerReportGenerators",
+          [
+            [
+              "licensemanager",
+              "ListLicenseManagerReportGenerators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateLicenseManagerReportGenerator",
+          [
+            [
+              "licensemanager",
+              "UpdateLicenseManagerReportGenerator"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseConversionTaskForResource",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseConversionTaskForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseConversionTask",
+          [
+            [
+              "licensemanager",
+              "GetLicenseConversionTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseConversionTasks",
+          [
+            [
+              "licensemanager",
+              "ListLicenseConversionTasks"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListReceivedGrantsForOrganization",
+          [
+            [
+              "licensemanager",
+              "ListReceivedGrantsForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListReceivedLicensesForOrganization",
+          [
+            [
+              "licensemanager",
+              "ListReceivedLicensesForOrganization"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseAssetGroup",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseAssetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "CreateLicenseAssetRuleset",
+          [
+            [
+              "licensemanager",
+              "CreateLicenseAssetRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteLicenseAssetGroup",
+          [
+            [
+              "licensemanager",
+              "DeleteLicenseAssetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "DeleteLicenseAssetRuleset",
+          [
+            [
+              "licensemanager",
+              "DeleteLicenseAssetRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseAssetGroup",
+          [
+            [
+              "licensemanager",
+              "GetLicenseAssetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "GetLicenseAssetRuleset",
+          [
+            [
+              "licensemanager",
+              "GetLicenseAssetRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListAssetsForLicenseAssetGroup",
+          [
+            [
+              "licensemanager",
+              "ListAssetsForLicenseAssetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseAssetGroups",
+          [
+            [
+              "licensemanager",
+              "ListLicenseAssetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseAssetRulesets",
+          [
+            [
+              "licensemanager",
+              "ListLicenseAssetRulesets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "ListLicenseConfigurationsForOrganization",
+          [
+            [
+              "licensemanager",
+              "ListLicenseConfigurationsForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateLicenseAssetGroup",
+          [
+            [
+              "licensemanager",
+              "UpdateLicenseAssetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/licensemanager",
+          "Client",
+          "UpdateLicenseAssetRuleset",
+          [
+            [
+              "licensemanager",
+              "UpdateLicenseAssetRuleset"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

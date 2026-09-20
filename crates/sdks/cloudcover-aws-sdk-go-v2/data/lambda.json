@@ -1,0 +1,2704 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/lambda",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "AddLayerVersionPermission",
+          [
+            [
+              "lambda",
+              "AddLayerVersionPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "AddPermission",
+          [
+            [
+              "lambda",
+              "AddPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateAlias",
+          [
+            [
+              "lambda",
+              "CreateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateEventSourceMapping",
+          [
+            [
+              "lambda",
+              "CreateEventSourceMapping"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateFunction",
+          [
+            [
+              "lambda",
+              "CreateFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteAlias",
+          [
+            [
+              "lambda",
+              "DeleteAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteEventSourceMapping",
+          [
+            [
+              "lambda",
+              "DeleteEventSourceMapping"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunction",
+          [
+            [
+              "lambda",
+              "DeleteFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionConcurrency",
+          [
+            [
+              "lambda",
+              "DeleteFunctionConcurrency"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionEventInvokeConfig",
+          [
+            [
+              "lambda",
+              "DeleteFunctionEventInvokeConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteLayerVersion",
+          [
+            [
+              "lambda",
+              "DeleteLayerVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteProvisionedConcurrencyConfig",
+          [
+            [
+              "lambda",
+              "DeleteProvisionedConcurrencyConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetAccountSettings",
+          [
+            [
+              "lambda",
+              "GetAccountSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetAlias",
+          [
+            [
+              "lambda",
+              "GetAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetEventSourceMapping",
+          [
+            [
+              "lambda",
+              "GetEventSourceMapping"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunction",
+          [
+            [
+              "lambda",
+              "GetFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionConcurrency",
+          [
+            [
+              "lambda",
+              "GetFunctionConcurrency"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionConfiguration",
+          [
+            [
+              "lambda",
+              "GetFunctionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionEventInvokeConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionEventInvokeConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetLayerVersion",
+          [
+            [
+              "lambda",
+              "GetLayerVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetLayerVersionByArn",
+          [
+            [
+              "lambda",
+              "GetLayerVersionByArn"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetLayerVersionPolicy",
+          [
+            [
+              "lambda",
+              "GetLayerVersionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetPolicy",
+          [
+            [
+              "lambda",
+              "GetPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetProvisionedConcurrencyConfig",
+          [
+            [
+              "lambda",
+              "GetProvisionedConcurrencyConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "Invoke",
+          [
+            [
+              "lambda",
+              "Invoke"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "InvokeAsync",
+          [
+            [
+              "lambda",
+              "InvokeAsync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListAliases",
+          [
+            [
+              "lambda",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListEventSourceMappings",
+          [
+            [
+              "lambda",
+              "ListEventSourceMappings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionEventInvokeConfigs",
+          [
+            [
+              "lambda",
+              "ListFunctionEventInvokeConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctions",
+          [
+            [
+              "lambda",
+              "ListFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListLayerVersions",
+          [
+            [
+              "lambda",
+              "ListLayerVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListLayers",
+          [
+            [
+              "lambda",
+              "ListLayers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListProvisionedConcurrencyConfigs",
+          [
+            [
+              "lambda",
+              "ListProvisionedConcurrencyConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListTags",
+          [
+            [
+              "lambda",
+              "ListTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListVersionsByFunction",
+          [
+            [
+              "lambda",
+              "ListVersionsByFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PublishLayerVersion",
+          [
+            [
+              "lambda",
+              "PublishLayerVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PublishVersion",
+          [
+            [
+              "lambda",
+              "PublishVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutFunctionConcurrency",
+          [
+            [
+              "lambda",
+              "PutFunctionConcurrency"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutFunctionEventInvokeConfig",
+          [
+            [
+              "lambda",
+              "PutFunctionEventInvokeConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutProvisionedConcurrencyConfig",
+          [
+            [
+              "lambda",
+              "PutProvisionedConcurrencyConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "RemoveLayerVersionPermission",
+          [
+            [
+              "lambda",
+              "RemoveLayerVersionPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "RemovePermission",
+          [
+            [
+              "lambda",
+              "RemovePermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "TagResource",
+          [
+            [
+              "lambda",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "lambda",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateAlias",
+          [
+            [
+              "lambda",
+              "UpdateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateEventSourceMapping",
+          [
+            [
+              "lambda",
+              "UpdateEventSourceMapping"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionCode",
+          [
+            [
+              "lambda",
+              "UpdateFunctionCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionConfiguration",
+          [
+            [
+              "lambda",
+              "UpdateFunctionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionEventInvokeConfig",
+          [
+            [
+              "lambda",
+              "UpdateFunctionEventInvokeConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListEventSourceMappingsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListEventSourceMappings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionEventInvokeConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctionEventInvokeConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListLayerVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListLayerVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListLayersPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListLayers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListProvisionedConcurrencyConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListProvisionedConcurrencyConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListVersionsByFunctionPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListVersionsByFunction"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "CreateCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "DeleteCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "DeleteFunctionCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "GetCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListCodeSigningConfigs",
+          [
+            [
+              "lambda",
+              "ListCodeSigningConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionsByCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "ListFunctionsByCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutFunctionCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "PutFunctionCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateCodeSigningConfig",
+          [
+            [
+              "lambda",
+              "UpdateCodeSigningConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListCodeSigningConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListCodeSigningConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionsByCodeSigningConfigPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctionsByCodeSigningConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "CreateFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "DeleteFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionUrlConfigs",
+          [
+            [
+              "lambda",
+              "ListFunctionUrlConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "UpdateFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionUrlConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctionUrlConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateFunctionUrlConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionUrlConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionUrlConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionUrlConfigs"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionUrlConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionUrlConfigsPaginator",
+          "NextPage"
+        ]
+      ],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "CreateFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "DeleteFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionUrlConfigs",
+          [
+            [
+              "lambda",
+              "ListFunctionUrlConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateFunctionUrlConfig",
+          [
+            [
+              "lambda",
+              "UpdateFunctionUrlConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionUrlConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctionUrlConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetRuntimeManagementConfig",
+          [
+            [
+              "lambda",
+              "GetRuntimeManagementConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutRuntimeManagementConfig",
+          [
+            [
+              "lambda",
+              "PutRuntimeManagementConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "InvokeWithResponseStream",
+          [
+            [
+              "lambda",
+              "InvokeWithResponseStream"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionRecursionConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionRecursionConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutFunctionRecursionConfig",
+          [
+            [
+              "lambda",
+              "PutFunctionRecursionConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "lambda",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetPublicAccessBlockConfig",
+          [
+            [
+              "lambda",
+              "GetPublicAccessBlockConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "lambda",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutPublicAccessBlockConfig",
+          [
+            [
+              "lambda",
+              "PutPublicAccessBlockConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "lambda",
+              "PutResourcePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteResourcePolicy"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetPublicAccessBlockConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetResourcePolicy"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutPublicAccessBlockConfig"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutResourcePolicy"
+        ]
+      ],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CreateCapacityProvider",
+          [
+            [
+              "lambda",
+              "CreateCapacityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteCapacityProvider",
+          [
+            [
+              "lambda",
+              "DeleteCapacityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetCapacityProvider",
+          [
+            [
+              "lambda",
+              "GetCapacityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetFunctionScalingConfig",
+          [
+            [
+              "lambda",
+              "GetFunctionScalingConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListCapacityProviders",
+          [
+            [
+              "lambda",
+              "ListCapacityProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListFunctionVersionsByCapacityProvider",
+          [
+            [
+              "lambda",
+              "ListFunctionVersionsByCapacityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutFunctionScalingConfig",
+          [
+            [
+              "lambda",
+              "PutFunctionScalingConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "UpdateCapacityProvider",
+          [
+            [
+              "lambda",
+              "UpdateCapacityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListCapacityProvidersPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListCapacityProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListFunctionVersionsByCapacityProviderPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListFunctionVersionsByCapacityProvider"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "CheckpointDurableExecution",
+          [
+            [
+              "lambda",
+              "CheckpointDurableExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetDurableExecution",
+          [
+            [
+              "lambda",
+              "GetDurableExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetDurableExecutionHistory",
+          [
+            [
+              "lambda",
+              "GetDurableExecutionHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetDurableExecutionState",
+          [
+            [
+              "lambda",
+              "GetDurableExecutionState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "ListDurableExecutionsByFunction",
+          [
+            [
+              "lambda",
+              "ListDurableExecutionsByFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "SendDurableExecutionCallbackFailure",
+          [
+            [
+              "lambda",
+              "SendDurableExecutionCallbackFailure"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "SendDurableExecutionCallbackHeartbeat",
+          [
+            [
+              "lambda",
+              "SendDurableExecutionCallbackHeartbeat"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "SendDurableExecutionCallbackSuccess",
+          [
+            [
+              "lambda",
+              "SendDurableExecutionCallbackSuccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "StopDurableExecution",
+          [
+            [
+              "lambda",
+              "StopDurableExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "GetDurableExecutionHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "GetDurableExecutionHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "GetDurableExecutionStatePaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "GetDurableExecutionState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "ListDurableExecutionsByFunctionPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListDurableExecutionsByFunction"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "lambda",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "lambda",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambda",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "lambda",
+              "PutResourcePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

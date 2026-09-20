@@ -12,7 +12,7 @@ use semver::Version;
 #[path = "src/data.rs"]
 mod data;
 
-use data::{MappingState, PermissionDataFile};
+use data::{MappingState, PermissionDataFile, TerraformProviderAwsUnsupportedReason};
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 type EncodedApiMethod = (u16, u16);
@@ -25,6 +25,7 @@ const HEADER_LEN: usize = 32;
 struct VersionIndex {
     start: u32,
     len: u32,
+    unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
 }
 
 #[derive(Default)]
@@ -56,6 +57,7 @@ fn main() -> BuildResult<()> {
         let contents = fs::read_to_string(&path)?;
         let mut file: PermissionDataFile = serde_json::from_str(&contents)
             .map_err(|error| format!("{}: invalid JSON: {error}", path.display()))?;
+        let unsupported_reason = file.unsupported_reason;
         let validated =
             data::validate_and_apply_file(&mut file, Some(&version.to_string()), &mut state)
                 .map_err(|error| format!("{}: {error}", path.display()))?;
@@ -66,7 +68,14 @@ fn main() -> BuildResult<()> {
             )
             .into());
         }
-        let index = builder.add_snapshot(&state)?;
+        let index = match unsupported_reason {
+            Some(reason) => VersionIndex {
+                start: 0,
+                len: 0,
+                unsupported_reason: Some(reason),
+            },
+            None => builder.add_snapshot(&state)?,
+        };
         versions.push((version, index));
     }
 
@@ -147,6 +156,7 @@ impl IndexBuilder {
         Ok(VersionIndex {
             start,
             len: to_u32(state.len(), "snapshot row count")?,
+            unsupported_reason: None,
         })
     }
 
@@ -275,11 +285,18 @@ fn generate_code(
     }
     generated.push_str("];\n\nconst VERSION_INDEX: &[VersionIndex] = &[\n");
     for (_, index) in versions {
+        let unsupported_reason = match index.unsupported_reason {
+            Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1) => {
+                "Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1)"
+            }
+            None => "None",
+        };
         writeln!(
             generated,
-            "    VersionIndex {{ start: {}, len: {} }},",
+            "    VersionIndex {{ start: {}, len: {}, unsupported_reason: {} }},",
             format_number(&index.start),
-            format_number(&index.len)
+            format_number(&index.len),
+            unsupported_reason,
         )?;
     }
     generated.push_str("];\n\nconst VERSION_LOOKUP: &[(&str, usize)] = &[\n");

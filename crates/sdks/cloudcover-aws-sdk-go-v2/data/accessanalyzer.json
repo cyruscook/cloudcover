@@ -1,0 +1,1859 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreateAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "CreateAnalyzer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreateArchiveRule",
+          [
+            [
+              "accessanalyzer",
+              "CreateArchiveRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "DeleteAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "DeleteAnalyzer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "DeleteArchiveRule",
+          [
+            [
+              "accessanalyzer",
+              "DeleteArchiveRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetAnalyzedResource",
+          [
+            [
+              "accessanalyzer",
+              "GetAnalyzedResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "GetAnalyzer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetArchiveRule",
+          [
+            [
+              "accessanalyzer",
+              "GetArchiveRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetFinding",
+          [
+            [
+              "accessanalyzer",
+              "GetFinding"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListAnalyzedResources",
+          [
+            [
+              "accessanalyzer",
+              "ListAnalyzedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListAnalyzers",
+          [
+            [
+              "accessanalyzer",
+              "ListAnalyzers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListArchiveRules",
+          [
+            [
+              "accessanalyzer",
+              "ListArchiveRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListFindings",
+          [
+            [
+              "accessanalyzer",
+              "ListFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "accessanalyzer",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "StartResourceScan",
+          [
+            [
+              "accessanalyzer",
+              "StartResourceScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "TagResource",
+          [
+            [
+              "accessanalyzer",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "accessanalyzer",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "UpdateArchiveRule",
+          [
+            [
+              "accessanalyzer",
+              "UpdateArchiveRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "UpdateFindings",
+          [
+            [
+              "accessanalyzer",
+              "UpdateFindings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListAnalyzedResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListAnalyzedResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListAnalyzersPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListAnalyzers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListArchiveRulesPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListArchiveRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListFindings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ApplyArchiveRule",
+          [
+            [
+              "accessanalyzer",
+              "ApplyArchiveRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreateAccessPreview",
+          [
+            [
+              "accessanalyzer",
+              "CreateAccessPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetAccessPreview",
+          [
+            [
+              "accessanalyzer",
+              "GetAccessPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListAccessPreviewFindings",
+          [
+            [
+              "accessanalyzer",
+              "ListAccessPreviewFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListAccessPreviews",
+          [
+            [
+              "accessanalyzer",
+              "ListAccessPreviews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ValidatePolicy",
+          [
+            [
+              "accessanalyzer",
+              "ValidatePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListAccessPreviewFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListAccessPreviewFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListAccessPreviewsPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListAccessPreviews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ValidatePolicyPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ValidatePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CancelPolicyGeneration",
+          [
+            [
+              "accessanalyzer",
+              "CancelPolicyGeneration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetGeneratedPolicy",
+          [
+            [
+              "accessanalyzer",
+              "GetGeneratedPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListPolicyGenerations",
+          [
+            [
+              "accessanalyzer",
+              "ListPolicyGenerations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "StartPolicyGeneration",
+          [
+            [
+              "accessanalyzer",
+              "StartPolicyGeneration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListPolicyGenerationsPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListPolicyGenerations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CheckAccessNotGranted",
+          [
+            [
+              "accessanalyzer",
+              "CheckAccessNotGranted"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CheckNoNewAccess",
+          [
+            [
+              "accessanalyzer",
+              "CheckNoNewAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetFindingV2",
+          [
+            [
+              "accessanalyzer",
+              "GetFindingV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListFindingsV2",
+          [
+            [
+              "accessanalyzer",
+              "ListFindingsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "GetFindingV2Paginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "GetFindingV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListFindingsV2Paginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListFindingsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CheckNoPublicAccess",
+          [
+            [
+              "accessanalyzer",
+              "CheckNoPublicAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GenerateFindingRecommendation",
+          [
+            [
+              "accessanalyzer",
+              "GenerateFindingRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetFindingRecommendation",
+          [
+            [
+              "accessanalyzer",
+              "GetFindingRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "GetFindingRecommendationPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "GetFindingRecommendation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "UpdateAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "UpdateAnalyzer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetFindingsStatistics",
+          [
+            [
+              "accessanalyzer",
+              "GetFindingsStatistics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CancelPolicyPreviewJob",
+          [
+            [
+              "accessanalyzer",
+              "CancelPolicyPreviewJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreatePolicyPreviewConfiguration",
+          [
+            [
+              "accessanalyzer",
+              "CreatePolicyPreviewConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "DeletePolicyPreviewConfiguration",
+          [
+            [
+              "accessanalyzer",
+              "DeletePolicyPreviewConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetPolicyPreviewConfiguration",
+          [
+            [
+              "accessanalyzer",
+              "GetPolicyPreviewConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetPolicyPreviewJob",
+          [
+            [
+              "accessanalyzer",
+              "GetPolicyPreviewJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListPolicyPreviewJobs",
+          [
+            [
+              "accessanalyzer",
+              "ListPolicyPreviewJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "StartPolicyPreviewJob",
+          [
+            [
+              "accessanalyzer",
+              "StartPolicyPreviewJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListPolicyPreviewJobsPaginator",
+          "NextPage",
+          [
+            [
+              "accessanalyzer",
+              "ListPolicyPreviewJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CancelPolicyPreviewJob"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreatePolicyPreviewConfiguration"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "DeletePolicyPreviewConfiguration"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetPolicyPreviewConfiguration"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "GetPolicyPreviewJob"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "ListPolicyPreviewJobs"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "StartPolicyPreviewJob"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "ListPolicyPreviewJobsPaginator",
+          "NextPage"
+        ]
+      ],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "CreateServiceLinkedAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "CreateServiceLinkedAnalyzer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accessanalyzer",
+          "Client",
+          "DeleteServiceLinkedAnalyzer",
+          [
+            [
+              "accessanalyzer",
+              "DeleteServiceLinkedAnalyzer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

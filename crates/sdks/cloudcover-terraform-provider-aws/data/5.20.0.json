@@ -3,6 +3,27 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_servicequotas_service",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_servicequotas_service_quota",
+      "read",
+      [
+        [
+          "servicequotas",
+          "GetAWSDefaultServiceQuota"
+        ],
+        [
+          "servicequotas",
+          "GetServiceQuota"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_guardduty_detector_feature",
       "create",
@@ -109,10 +130,6 @@
         [
           "ec2",
           "AttachVerifiedAccessTrustProvider"
-        ],
-        [
-          "ec2",
-          "DescribeVerifiedAccessInstances"
         ]
       ]
     ],
@@ -131,12 +148,7 @@
       "resource",
       "aws_verifiedaccess_instance_trust_provider_attachment",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeVerifiedAccessInstances"
-        ]
-      ]
+      []
     ]
   ]
 }

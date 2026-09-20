@@ -1,0 +1,1661 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/fms",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "AssociateAdminAccount",
+          [
+            [
+              "fms",
+              "AssociateAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DeleteAppsList",
+          [
+            [
+              "fms",
+              "DeleteAppsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DeleteNotificationChannel",
+          [
+            [
+              "fms",
+              "DeleteNotificationChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DeletePolicy",
+          [
+            [
+              "fms",
+              "DeletePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DeleteProtocolsList",
+          [
+            [
+              "fms",
+              "DeleteProtocolsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DisassociateAdminAccount",
+          [
+            [
+              "fms",
+              "DisassociateAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetAdminAccount",
+          [
+            [
+              "fms",
+              "GetAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetAppsList",
+          [
+            [
+              "fms",
+              "GetAppsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetComplianceDetail",
+          [
+            [
+              "fms",
+              "GetComplianceDetail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetNotificationChannel",
+          [
+            [
+              "fms",
+              "GetNotificationChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetPolicy",
+          [
+            [
+              "fms",
+              "GetPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetProtectionStatus",
+          [
+            [
+              "fms",
+              "GetProtectionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetProtocolsList",
+          [
+            [
+              "fms",
+              "GetProtocolsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetViolationDetails",
+          [
+            [
+              "fms",
+              "GetViolationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListAppsLists",
+          [
+            [
+              "fms",
+              "ListAppsLists"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListComplianceStatus",
+          [
+            [
+              "fms",
+              "ListComplianceStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListMemberAccounts",
+          [
+            [
+              "fms",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListPolicies",
+          [
+            [
+              "fms",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListProtocolsLists",
+          [
+            [
+              "fms",
+              "ListProtocolsLists"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "fms",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutAppsList",
+          [
+            [
+              "fms",
+              "PutAppsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutNotificationChannel",
+          [
+            [
+              "fms",
+              "PutNotificationChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutPolicy",
+          [
+            [
+              "fms",
+              "PutPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutProtocolsList",
+          [
+            [
+              "fms",
+              "PutProtocolsList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "TagResource",
+          [
+            [
+              "fms",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "fms",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListComplianceStatusPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListComplianceStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListMemberAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListPolicies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListAppsListsPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListAppsLists"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListProtocolsListsPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListProtocolsLists"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "AssociateThirdPartyFirewall",
+          [
+            [
+              "fms",
+              "AssociateThirdPartyFirewall"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DisassociateThirdPartyFirewall",
+          [
+            [
+              "fms",
+              "DisassociateThirdPartyFirewall"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetThirdPartyFirewallAssociationStatus",
+          [
+            [
+              "fms",
+              "GetThirdPartyFirewallAssociationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListThirdPartyFirewallFirewallPolicies",
+          [
+            [
+              "fms",
+              "ListThirdPartyFirewallFirewallPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListThirdPartyFirewallFirewallPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListThirdPartyFirewallFirewallPolicies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "BatchAssociateResource",
+          [
+            [
+              "fms",
+              "BatchAssociateResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "BatchDisassociateResource",
+          [
+            [
+              "fms",
+              "BatchDisassociateResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "DeleteResourceSet",
+          [
+            [
+              "fms",
+              "DeleteResourceSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetResourceSet",
+          [
+            [
+              "fms",
+              "GetResourceSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListDiscoveredResources",
+          [
+            [
+              "fms",
+              "ListDiscoveredResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListResourceSetResources",
+          [
+            [
+              "fms",
+              "ListResourceSetResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListResourceSets",
+          [
+            [
+              "fms",
+              "ListResourceSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutResourceSet",
+          [
+            [
+              "fms",
+              "PutResourceSet"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "GetAdminScope",
+          [
+            [
+              "fms",
+              "GetAdminScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListAdminAccountsForOrganization",
+          [
+            [
+              "fms",
+              "ListAdminAccountsForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "ListAdminsManagingAccount",
+          [
+            [
+              "fms",
+              "ListAdminsManagingAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "Client",
+          "PutAdminAccount",
+          [
+            [
+              "fms",
+              "PutAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListAdminAccountsForOrganizationPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListAdminAccountsForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/fms",
+          "ListAdminsManagingAccountPaginator",
+          "NextPage",
+          [
+            [
+              "fms",
+              "ListAdminsManagingAccount"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

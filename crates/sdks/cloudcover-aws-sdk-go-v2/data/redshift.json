@@ -1,0 +1,3272 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/redshift",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AcceptReservedNodeExchange",
+          [
+            [
+              "redshift",
+              "AcceptReservedNodeExchange"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AuthorizeClusterSecurityGroupIngress",
+          [
+            [
+              "redshift",
+              "AuthorizeClusterSecurityGroupIngress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AuthorizeSnapshotAccess",
+          [
+            [
+              "redshift",
+              "AuthorizeSnapshotAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "BatchDeleteClusterSnapshots",
+          [
+            [
+              "redshift",
+              "BatchDeleteClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "BatchModifyClusterSnapshots",
+          [
+            [
+              "redshift",
+              "BatchModifyClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CancelResize",
+          [
+            [
+              "redshift",
+              "CancelResize"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CopyClusterSnapshot",
+          [
+            [
+              "redshift",
+              "CopyClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "redshift",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateClusterParameterGroup",
+          [
+            [
+              "redshift",
+              "CreateClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateClusterSecurityGroup",
+          [
+            [
+              "redshift",
+              "CreateClusterSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateClusterSnapshot",
+          [
+            [
+              "redshift",
+              "CreateClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateClusterSubnetGroup",
+          [
+            [
+              "redshift",
+              "CreateClusterSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateEventSubscription",
+          [
+            [
+              "redshift",
+              "CreateEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateHsmClientCertificate",
+          [
+            [
+              "redshift",
+              "CreateHsmClientCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateHsmConfiguration",
+          [
+            [
+              "redshift",
+              "CreateHsmConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateScheduledAction",
+          [
+            [
+              "redshift",
+              "CreateScheduledAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateSnapshotCopyGrant",
+          [
+            [
+              "redshift",
+              "CreateSnapshotCopyGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateSnapshotSchedule",
+          [
+            [
+              "redshift",
+              "CreateSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateTags",
+          [
+            [
+              "redshift",
+              "CreateTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateUsageLimit",
+          [
+            [
+              "redshift",
+              "CreateUsageLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "redshift",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteClusterParameterGroup",
+          [
+            [
+              "redshift",
+              "DeleteClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteClusterSecurityGroup",
+          [
+            [
+              "redshift",
+              "DeleteClusterSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteClusterSnapshot",
+          [
+            [
+              "redshift",
+              "DeleteClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteClusterSubnetGroup",
+          [
+            [
+              "redshift",
+              "DeleteClusterSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteEventSubscription",
+          [
+            [
+              "redshift",
+              "DeleteEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteHsmClientCertificate",
+          [
+            [
+              "redshift",
+              "DeleteHsmClientCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteHsmConfiguration",
+          [
+            [
+              "redshift",
+              "DeleteHsmConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteScheduledAction",
+          [
+            [
+              "redshift",
+              "DeleteScheduledAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteSnapshotCopyGrant",
+          [
+            [
+              "redshift",
+              "DeleteSnapshotCopyGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteSnapshotSchedule",
+          [
+            [
+              "redshift",
+              "DeleteSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteTags",
+          [
+            [
+              "redshift",
+              "DeleteTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteUsageLimit",
+          [
+            [
+              "redshift",
+              "DeleteUsageLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeAccountAttributes",
+          [
+            [
+              "redshift",
+              "DescribeAccountAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterDbRevisions",
+          [
+            [
+              "redshift",
+              "DescribeClusterDbRevisions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterParameterGroups",
+          [
+            [
+              "redshift",
+              "DescribeClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterParameters",
+          [
+            [
+              "redshift",
+              "DescribeClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterSecurityGroups",
+          [
+            [
+              "redshift",
+              "DescribeClusterSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterSnapshots",
+          [
+            [
+              "redshift",
+              "DescribeClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterSubnetGroups",
+          [
+            [
+              "redshift",
+              "DescribeClusterSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterTracks",
+          [
+            [
+              "redshift",
+              "DescribeClusterTracks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusterVersions",
+          [
+            [
+              "redshift",
+              "DescribeClusterVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeClusters",
+          [
+            [
+              "redshift",
+              "DescribeClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeDefaultClusterParameters",
+          [
+            [
+              "redshift",
+              "DescribeDefaultClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeEventCategories",
+          [
+            [
+              "redshift",
+              "DescribeEventCategories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeEventSubscriptions",
+          [
+            [
+              "redshift",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeEvents",
+          [
+            [
+              "redshift",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeHsmClientCertificates",
+          [
+            [
+              "redshift",
+              "DescribeHsmClientCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeHsmConfigurations",
+          [
+            [
+              "redshift",
+              "DescribeHsmConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeLoggingStatus",
+          [
+            [
+              "redshift",
+              "DescribeLoggingStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeNodeConfigurationOptions",
+          [
+            [
+              "redshift",
+              "DescribeNodeConfigurationOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeOrderableClusterOptions",
+          [
+            [
+              "redshift",
+              "DescribeOrderableClusterOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeReservedNodeOfferings",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodeOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeReservedNodes",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeResize",
+          [
+            [
+              "redshift",
+              "DescribeResize"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeScheduledActions",
+          [
+            [
+              "redshift",
+              "DescribeScheduledActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeSnapshotCopyGrants",
+          [
+            [
+              "redshift",
+              "DescribeSnapshotCopyGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeSnapshotSchedules",
+          [
+            [
+              "redshift",
+              "DescribeSnapshotSchedules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeStorage",
+          [
+            [
+              "redshift",
+              "DescribeStorage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeTableRestoreStatus",
+          [
+            [
+              "redshift",
+              "DescribeTableRestoreStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeTags",
+          [
+            [
+              "redshift",
+              "DescribeTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeUsageLimits",
+          [
+            [
+              "redshift",
+              "DescribeUsageLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DisableLogging",
+          [
+            [
+              "redshift",
+              "DisableLogging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DisableSnapshotCopy",
+          [
+            [
+              "redshift",
+              "DisableSnapshotCopy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "EnableLogging",
+          [
+            [
+              "redshift",
+              "EnableLogging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "EnableSnapshotCopy",
+          [
+            [
+              "redshift",
+              "EnableSnapshotCopy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetClusterCredentials",
+          [
+            [
+              "redshift",
+              "GetClusterCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetReservedNodeExchangeOfferings",
+          [
+            [
+              "redshift",
+              "GetReservedNodeExchangeOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyCluster",
+          [
+            [
+              "redshift",
+              "ModifyCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterDbRevision",
+          [
+            [
+              "redshift",
+              "ModifyClusterDbRevision"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterIamRoles",
+          [
+            [
+              "redshift",
+              "ModifyClusterIamRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterMaintenance",
+          [
+            [
+              "redshift",
+              "ModifyClusterMaintenance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterParameterGroup",
+          [
+            [
+              "redshift",
+              "ModifyClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterSnapshot",
+          [
+            [
+              "redshift",
+              "ModifyClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterSnapshotSchedule",
+          [
+            [
+              "redshift",
+              "ModifyClusterSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyClusterSubnetGroup",
+          [
+            [
+              "redshift",
+              "ModifyClusterSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyEventSubscription",
+          [
+            [
+              "redshift",
+              "ModifyEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyScheduledAction",
+          [
+            [
+              "redshift",
+              "ModifyScheduledAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifySnapshotCopyRetentionPeriod",
+          [
+            [
+              "redshift",
+              "ModifySnapshotCopyRetentionPeriod"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifySnapshotSchedule",
+          [
+            [
+              "redshift",
+              "ModifySnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyUsageLimit",
+          [
+            [
+              "redshift",
+              "ModifyUsageLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "PauseCluster",
+          [
+            [
+              "redshift",
+              "PauseCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "PurchaseReservedNodeOffering",
+          [
+            [
+              "redshift",
+              "PurchaseReservedNodeOffering"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RebootCluster",
+          [
+            [
+              "redshift",
+              "RebootCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ResetClusterParameterGroup",
+          [
+            [
+              "redshift",
+              "ResetClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ResizeCluster",
+          [
+            [
+              "redshift",
+              "ResizeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RestoreFromClusterSnapshot",
+          [
+            [
+              "redshift",
+              "RestoreFromClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RestoreTableFromClusterSnapshot",
+          [
+            [
+              "redshift",
+              "RestoreTableFromClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ResumeCluster",
+          [
+            [
+              "redshift",
+              "ResumeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RevokeClusterSecurityGroupIngress",
+          [
+            [
+              "redshift",
+              "RevokeClusterSecurityGroupIngress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RevokeSnapshotAccess",
+          [
+            [
+              "redshift",
+              "RevokeSnapshotAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RotateEncryptionKey",
+          [
+            [
+              "redshift",
+              "RotateEncryptionKey"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterDbRevisionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterDbRevisions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterParameterGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterParametersPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterSecurityGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterSubnetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterTracksPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterTracks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClusterVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusterVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeClustersPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeDefaultClusterParametersPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeDefaultClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeEventSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeEventsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeHsmClientCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeHsmClientCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeHsmConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeHsmConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeNodeConfigurationOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeNodeConfigurationOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeOrderableClusterOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeOrderableClusterOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeReservedNodeOfferingsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodeOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeReservedNodesPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeScheduledActionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeScheduledActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeSnapshotCopyGrantsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeSnapshotCopyGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeSnapshotSchedulesPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeSnapshotSchedules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeTableRestoreStatusPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeTableRestoreStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeTagsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeUsageLimitsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeUsageLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "GetReservedNodeExchangeOfferingsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "GetReservedNodeExchangeOfferings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AuthorizeEndpointAccess",
+          [
+            [
+              "redshift",
+              "AuthorizeEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateEndpointAccess",
+          [
+            [
+              "redshift",
+              "CreateEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteEndpointAccess",
+          [
+            [
+              "redshift",
+              "DeleteEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeEndpointAccess",
+          [
+            [
+              "redshift",
+              "DescribeEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeEndpointAuthorization",
+          [
+            [
+              "redshift",
+              "DescribeEndpointAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyEndpointAccess",
+          [
+            [
+              "redshift",
+              "ModifyEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RevokeEndpointAccess",
+          [
+            [
+              "redshift",
+              "RevokeEndpointAccess"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyAquaConfiguration",
+          [
+            [
+              "redshift",
+              "ModifyAquaConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AddPartner",
+          [
+            [
+              "redshift",
+              "AddPartner"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeletePartner",
+          [
+            [
+              "redshift",
+              "DeletePartner"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribePartners",
+          [
+            [
+              "redshift",
+              "DescribePartners"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "UpdatePartnerStatus",
+          [
+            [
+              "redshift",
+              "UpdatePartnerStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeEndpointAccessPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeEndpointAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeEndpointAuthorizationPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeEndpointAuthorization"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateAuthenticationProfile",
+          [
+            [
+              "redshift",
+              "CreateAuthenticationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteAuthenticationProfile",
+          [
+            [
+              "redshift",
+              "DeleteAuthenticationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeAuthenticationProfiles",
+          [
+            [
+              "redshift",
+              "DescribeAuthenticationProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyAuthenticationProfile",
+          [
+            [
+              "redshift",
+              "ModifyAuthenticationProfile"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AssociateDataShareConsumer",
+          [
+            [
+              "redshift",
+              "AssociateDataShareConsumer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "AuthorizeDataShare",
+          [
+            [
+              "redshift",
+              "AuthorizeDataShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeauthorizeDataShare",
+          [
+            [
+              "redshift",
+              "DeauthorizeDataShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeDataShares",
+          [
+            [
+              "redshift",
+              "DescribeDataShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeDataSharesForConsumer",
+          [
+            [
+              "redshift",
+              "DescribeDataSharesForConsumer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeDataSharesForProducer",
+          [
+            [
+              "redshift",
+              "DescribeDataSharesForProducer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DisassociateDataShareConsumer",
+          [
+            [
+              "redshift",
+              "DisassociateDataShareConsumer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RejectDataShare",
+          [
+            [
+              "redshift",
+              "RejectDataShare"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeReservedNodeExchangeStatus",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodeExchangeStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetReservedNodeExchangeConfigurationOptions",
+          [
+            [
+              "redshift",
+              "GetReservedNodeExchangeConfigurationOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeDataSharesForConsumerPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeDataSharesForConsumer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeDataSharesForProducerPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeDataSharesForProducer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeDataSharesPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeDataShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeReservedNodeExchangeStatusPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeReservedNodeExchangeStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "GetReservedNodeExchangeConfigurationOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "GetReservedNodeExchangeConfigurationOptions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetClusterCredentialsWithIAM",
+          [
+            [
+              "redshift",
+              "GetClusterCredentialsWithIAM"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateCustomDomainAssociation",
+          [
+            [
+              "redshift",
+              "CreateCustomDomainAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteCustomDomainAssociation",
+          [
+            [
+              "redshift",
+              "DeleteCustomDomainAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeCustomDomainAssociations",
+          [
+            [
+              "redshift",
+              "DescribeCustomDomainAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyCustomDomainAssociation",
+          [
+            [
+              "redshift",
+              "ModifyCustomDomainAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeCustomDomainAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeCustomDomainAssociations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "redshift",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeInboundIntegrations",
+          [
+            [
+              "redshift",
+              "DescribeInboundIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "redshift",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "redshift",
+              "PutResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeInboundIntegrationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeInboundIntegrations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "FailoverPrimaryCompute",
+          [
+            [
+              "redshift",
+              "FailoverPrimaryCompute"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateRedshiftIdcApplication",
+          [
+            [
+              "redshift",
+              "CreateRedshiftIdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteRedshiftIdcApplication",
+          [
+            [
+              "redshift",
+              "DeleteRedshiftIdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeRedshiftIdcApplications",
+          [
+            [
+              "redshift",
+              "DescribeRedshiftIdcApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyRedshiftIdcApplication",
+          [
+            [
+              "redshift",
+              "ModifyRedshiftIdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeRedshiftIdcApplicationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeRedshiftIdcApplications"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ListRecommendations",
+          [
+            [
+              "redshift",
+              "ListRecommendations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "ListRecommendationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "ListRecommendations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateIntegration",
+          [
+            [
+              "redshift",
+              "CreateIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteIntegration",
+          [
+            [
+              "redshift",
+              "DeleteIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeIntegrations",
+          [
+            [
+              "redshift",
+              "DescribeIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyIntegration",
+          [
+            [
+              "redshift",
+              "ModifyIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeIntegrationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeIntegrations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeregisterNamespace",
+          [
+            [
+              "redshift",
+              "DeregisterNamespace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "RegisterNamespace",
+          [
+            [
+              "redshift",
+              "RegisterNamespace"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "GetIdentityCenterAuthToken",
+          [
+            [
+              "redshift",
+              "GetIdentityCenterAuthToken"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyLakehouseConfiguration",
+          [
+            [
+              "redshift",
+              "ModifyLakehouseConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "CreateQev2IdcApplication",
+          [
+            [
+              "redshift",
+              "CreateQev2IdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DeleteQev2IdcApplication",
+          [
+            [
+              "redshift",
+              "DeleteQev2IdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "DescribeQev2IdcApplications",
+          [
+            [
+              "redshift",
+              "DescribeQev2IdcApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "Client",
+          "ModifyQev2IdcApplication",
+          [
+            [
+              "redshift",
+              "ModifyQev2IdcApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/redshift",
+          "DescribeQev2IdcApplicationsPaginator",
+          "NextPage",
+          [
+            [
+              "redshift",
+              "DescribeQev2IdcApplications"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

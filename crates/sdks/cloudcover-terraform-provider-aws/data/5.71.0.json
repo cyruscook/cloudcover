@@ -1,44 +1,5 @@
 {
   "provider_version": "5.71.0",
   "remove": [],
-  "upsert": [
-    [
-      "resource",
-      "aws_eip",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateAddress"
-        ],
-        [
-          "ec2",
-          "GetIpamPoolAllocations"
-        ],
-        [
-          "ec2",
-          "ReleaseAddress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateIpamPool"
-        ],
-        [
-          "ec2",
-          "DescribeIpamPools"
-        ],
-        [
-          "ec2",
-          "DescribeIpamScopes"
-        ]
-      ]
-    ]
-  ]
+  "upsert": []
 }

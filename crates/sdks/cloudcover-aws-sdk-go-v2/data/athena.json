@@ -1,0 +1,2165 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/athena",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "BatchGetNamedQuery",
+          [
+            [
+              "athena",
+              "BatchGetNamedQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "BatchGetQueryExecution",
+          [
+            [
+              "athena",
+              "BatchGetQueryExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreateDataCatalog",
+          [
+            [
+              "athena",
+              "CreateDataCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreateNamedQuery",
+          [
+            [
+              "athena",
+              "CreateNamedQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreateWorkGroup",
+          [
+            [
+              "athena",
+              "CreateWorkGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeleteDataCatalog",
+          [
+            [
+              "athena",
+              "DeleteDataCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeleteNamedQuery",
+          [
+            [
+              "athena",
+              "DeleteNamedQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeleteWorkGroup",
+          [
+            [
+              "athena",
+              "DeleteWorkGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetDataCatalog",
+          [
+            [
+              "athena",
+              "GetDataCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetDatabase",
+          [
+            [
+              "athena",
+              "GetDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetNamedQuery",
+          [
+            [
+              "athena",
+              "GetNamedQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetQueryExecution",
+          [
+            [
+              "athena",
+              "GetQueryExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetQueryResults",
+          [
+            [
+              "athena",
+              "GetQueryResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetTableMetadata",
+          [
+            [
+              "athena",
+              "GetTableMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetWorkGroup",
+          [
+            [
+              "athena",
+              "GetWorkGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListDataCatalogs",
+          [
+            [
+              "athena",
+              "ListDataCatalogs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListDatabases",
+          [
+            [
+              "athena",
+              "ListDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListNamedQueries",
+          [
+            [
+              "athena",
+              "ListNamedQueries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListQueryExecutions",
+          [
+            [
+              "athena",
+              "ListQueryExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListTableMetadata",
+          [
+            [
+              "athena",
+              "ListTableMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "athena",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListWorkGroups",
+          [
+            [
+              "athena",
+              "ListWorkGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "StartQueryExecution",
+          [
+            [
+              "athena",
+              "StartQueryExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "StopQueryExecution",
+          [
+            [
+              "athena",
+              "StopQueryExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "TagResource",
+          [
+            [
+              "athena",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "athena",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateDataCatalog",
+          [
+            [
+              "athena",
+              "UpdateDataCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateWorkGroup",
+          [
+            [
+              "athena",
+              "UpdateWorkGroup"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "GetQueryResultsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "GetQueryResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListDataCatalogsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListDataCatalogs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListDatabasesPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListNamedQueriesPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListNamedQueries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListQueryExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListQueryExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListTableMetadataPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListTableMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListWorkGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListWorkGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreatePreparedStatement",
+          [
+            [
+              "athena",
+              "CreatePreparedStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeletePreparedStatement",
+          [
+            [
+              "athena",
+              "DeletePreparedStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetPreparedStatement",
+          [
+            [
+              "athena",
+              "GetPreparedStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListEngineVersions",
+          [
+            [
+              "athena",
+              "ListEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListPreparedStatements",
+          [
+            [
+              "athena",
+              "ListPreparedStatements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdatePreparedStatement",
+          [
+            [
+              "athena",
+              "UpdatePreparedStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListPreparedStatementsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListPreparedStatements"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateNamedQuery",
+          [
+            [
+              "athena",
+              "UpdateNamedQuery"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "BatchGetPreparedStatement",
+          [
+            [
+              "athena",
+              "BatchGetPreparedStatement"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetQueryRuntimeStatistics",
+          [
+            [
+              "athena",
+              "GetQueryRuntimeStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListEngineVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListEngineVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreateNotebook",
+          [
+            [
+              "athena",
+              "CreateNotebook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreatePresignedNotebookUrl",
+          [
+            [
+              "athena",
+              "CreatePresignedNotebookUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeleteNotebook",
+          [
+            [
+              "athena",
+              "DeleteNotebook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ExportNotebook",
+          [
+            [
+              "athena",
+              "ExportNotebook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetCalculationExecution",
+          [
+            [
+              "athena",
+              "GetCalculationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetCalculationExecutionCode",
+          [
+            [
+              "athena",
+              "GetCalculationExecutionCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetCalculationExecutionStatus",
+          [
+            [
+              "athena",
+              "GetCalculationExecutionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetNotebookMetadata",
+          [
+            [
+              "athena",
+              "GetNotebookMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetSession",
+          [
+            [
+              "athena",
+              "GetSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetSessionStatus",
+          [
+            [
+              "athena",
+              "GetSessionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ImportNotebook",
+          [
+            [
+              "athena",
+              "ImportNotebook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListApplicationDPUSizes",
+          [
+            [
+              "athena",
+              "ListApplicationDPUSizes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListCalculationExecutions",
+          [
+            [
+              "athena",
+              "ListCalculationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListExecutors",
+          [
+            [
+              "athena",
+              "ListExecutors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListNotebookMetadata",
+          [
+            [
+              "athena",
+              "ListNotebookMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListNotebookSessions",
+          [
+            [
+              "athena",
+              "ListNotebookSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListSessions",
+          [
+            [
+              "athena",
+              "ListSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "StartCalculationExecution",
+          [
+            [
+              "athena",
+              "StartCalculationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "StartSession",
+          [
+            [
+              "athena",
+              "StartSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "StopCalculationExecution",
+          [
+            [
+              "athena",
+              "StopCalculationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "TerminateSession",
+          [
+            [
+              "athena",
+              "TerminateSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateNotebook",
+          [
+            [
+              "athena",
+              "UpdateNotebook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateNotebookMetadata",
+          [
+            [
+              "athena",
+              "UpdateNotebookMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListApplicationDPUSizesPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListApplicationDPUSizes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListCalculationExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListCalculationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListExecutorsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListExecutors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListSessions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CancelCapacityReservation",
+          [
+            [
+              "athena",
+              "CancelCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "CreateCapacityReservation",
+          [
+            [
+              "athena",
+              "CreateCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetCapacityAssignmentConfiguration",
+          [
+            [
+              "athena",
+              "GetCapacityAssignmentConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetCapacityReservation",
+          [
+            [
+              "athena",
+              "GetCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "ListCapacityReservations",
+          [
+            [
+              "athena",
+              "ListCapacityReservations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "PutCapacityAssignmentConfiguration",
+          [
+            [
+              "athena",
+              "PutCapacityAssignmentConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "UpdateCapacityReservation",
+          [
+            [
+              "athena",
+              "UpdateCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "ListCapacityReservationsPaginator",
+          "NextPage",
+          [
+            [
+              "athena",
+              "ListCapacityReservations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "DeleteCapacityReservation",
+          [
+            [
+              "athena",
+              "DeleteCapacityReservation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetResourceDashboard",
+          [
+            [
+              "athena",
+              "GetResourceDashboard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/athena",
+          "Client",
+          "GetSessionEndpoint",
+          [
+            [
+              "athena",
+              "GetSessionEndpoint"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

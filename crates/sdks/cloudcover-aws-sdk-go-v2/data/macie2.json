@@ -1,0 +1,2213 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/macie2",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "AcceptInvitation",
+          [
+            [
+              "macie2",
+              "AcceptInvitation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "BatchGetCustomDataIdentifiers",
+          [
+            [
+              "macie2",
+              "BatchGetCustomDataIdentifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateClassificationJob",
+          [
+            [
+              "macie2",
+              "CreateClassificationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateCustomDataIdentifier",
+          [
+            [
+              "macie2",
+              "CreateCustomDataIdentifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateFindingsFilter",
+          [
+            [
+              "macie2",
+              "CreateFindingsFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateInvitations",
+          [
+            [
+              "macie2",
+              "CreateInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateMember",
+          [
+            [
+              "macie2",
+              "CreateMember"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateSampleFindings",
+          [
+            [
+              "macie2",
+              "CreateSampleFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeclineInvitations",
+          [
+            [
+              "macie2",
+              "DeclineInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeleteCustomDataIdentifier",
+          [
+            [
+              "macie2",
+              "DeleteCustomDataIdentifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeleteFindingsFilter",
+          [
+            [
+              "macie2",
+              "DeleteFindingsFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeleteInvitations",
+          [
+            [
+              "macie2",
+              "DeleteInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeleteMember",
+          [
+            [
+              "macie2",
+              "DeleteMember"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DescribeBuckets",
+          [
+            [
+              "macie2",
+              "DescribeBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DescribeClassificationJob",
+          [
+            [
+              "macie2",
+              "DescribeClassificationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DescribeOrganizationConfiguration",
+          [
+            [
+              "macie2",
+              "DescribeOrganizationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DisableMacie",
+          [
+            [
+              "macie2",
+              "DisableMacie"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DisableOrganizationAdminAccount",
+          [
+            [
+              "macie2",
+              "DisableOrganizationAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DisassociateFromMasterAccount",
+          [
+            [
+              "macie2",
+              "DisassociateFromMasterAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DisassociateMember",
+          [
+            [
+              "macie2",
+              "DisassociateMember"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "EnableMacie",
+          [
+            [
+              "macie2",
+              "EnableMacie"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "EnableOrganizationAdminAccount",
+          [
+            [
+              "macie2",
+              "EnableOrganizationAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetBucketStatistics",
+          [
+            [
+              "macie2",
+              "GetBucketStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetClassificationExportConfiguration",
+          [
+            [
+              "macie2",
+              "GetClassificationExportConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetCustomDataIdentifier",
+          [
+            [
+              "macie2",
+              "GetCustomDataIdentifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetFindingStatistics",
+          [
+            [
+              "macie2",
+              "GetFindingStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetFindings",
+          [
+            [
+              "macie2",
+              "GetFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetFindingsFilter",
+          [
+            [
+              "macie2",
+              "GetFindingsFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetInvitationsCount",
+          [
+            [
+              "macie2",
+              "GetInvitationsCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetMacieSession",
+          [
+            [
+              "macie2",
+              "GetMacieSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetMasterAccount",
+          [
+            [
+              "macie2",
+              "GetMasterAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetMember",
+          [
+            [
+              "macie2",
+              "GetMember"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetUsageStatistics",
+          [
+            [
+              "macie2",
+              "GetUsageStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetUsageTotals",
+          [
+            [
+              "macie2",
+              "GetUsageTotals"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListClassificationJobs",
+          [
+            [
+              "macie2",
+              "ListClassificationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListCustomDataIdentifiers",
+          [
+            [
+              "macie2",
+              "ListCustomDataIdentifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListFindings",
+          [
+            [
+              "macie2",
+              "ListFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListFindingsFilters",
+          [
+            [
+              "macie2",
+              "ListFindingsFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListInvitations",
+          [
+            [
+              "macie2",
+              "ListInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListMembers",
+          [
+            [
+              "macie2",
+              "ListMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListOrganizationAdminAccounts",
+          [
+            [
+              "macie2",
+              "ListOrganizationAdminAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "macie2",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "PutClassificationExportConfiguration",
+          [
+            [
+              "macie2",
+              "PutClassificationExportConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "TagResource",
+          [
+            [
+              "macie2",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "TestCustomDataIdentifier",
+          [
+            [
+              "macie2",
+              "TestCustomDataIdentifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "macie2",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateClassificationJob",
+          [
+            [
+              "macie2",
+              "UpdateClassificationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateFindingsFilter",
+          [
+            [
+              "macie2",
+              "UpdateFindingsFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateMacieSession",
+          [
+            [
+              "macie2",
+              "UpdateMacieSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateMemberSession",
+          [
+            [
+              "macie2",
+              "UpdateMemberSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateOrganizationConfiguration",
+          [
+            [
+              "macie2",
+              "UpdateOrganizationConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "DescribeBucketsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "DescribeBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "GetUsageStatisticsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "GetUsageStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListClassificationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListClassificationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListCustomDataIdentifiersPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListCustomDataIdentifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListFindingsFiltersPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListFindingsFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListInvitationsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListMembersPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListOrganizationAdminAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListOrganizationAdminAccounts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DisassociateFromAdministratorAccount",
+          [
+            [
+              "macie2",
+              "DisassociateFromAdministratorAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetAdministratorAccount",
+          [
+            [
+              "macie2",
+              "GetAdministratorAccount"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetFindingsPublicationConfiguration",
+          [
+            [
+              "macie2",
+              "GetFindingsPublicationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "PutFindingsPublicationConfiguration",
+          [
+            [
+              "macie2",
+              "PutFindingsPublicationConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "SearchResources",
+          [
+            [
+              "macie2",
+              "SearchResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "SearchResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "SearchResources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListManagedDataIdentifiers",
+          [
+            [
+              "macie2",
+              "ListManagedDataIdentifiers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetRevealConfiguration",
+          [
+            [
+              "macie2",
+              "GetRevealConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetSensitiveDataOccurrences",
+          [
+            [
+              "macie2",
+              "GetSensitiveDataOccurrences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetSensitiveDataOccurrencesAvailability",
+          [
+            [
+              "macie2",
+              "GetSensitiveDataOccurrencesAvailability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateRevealConfiguration",
+          [
+            [
+              "macie2",
+              "UpdateRevealConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "CreateAllowList",
+          [
+            [
+              "macie2",
+              "CreateAllowList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "DeleteAllowList",
+          [
+            [
+              "macie2",
+              "DeleteAllowList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetAllowList",
+          [
+            [
+              "macie2",
+              "GetAllowList"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListAllowLists",
+          [
+            [
+              "macie2",
+              "ListAllowLists"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateAllowList",
+          [
+            [
+              "macie2",
+              "UpdateAllowList"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetAutomatedDiscoveryConfiguration",
+          [
+            [
+              "macie2",
+              "GetAutomatedDiscoveryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetClassificationScope",
+          [
+            [
+              "macie2",
+              "GetClassificationScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetResourceProfile",
+          [
+            [
+              "macie2",
+              "GetResourceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "GetSensitivityInspectionTemplate",
+          [
+            [
+              "macie2",
+              "GetSensitivityInspectionTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListClassificationScopes",
+          [
+            [
+              "macie2",
+              "ListClassificationScopes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListResourceProfileArtifacts",
+          [
+            [
+              "macie2",
+              "ListResourceProfileArtifacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListResourceProfileDetections",
+          [
+            [
+              "macie2",
+              "ListResourceProfileDetections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListSensitivityInspectionTemplates",
+          [
+            [
+              "macie2",
+              "ListSensitivityInspectionTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateAutomatedDiscoveryConfiguration",
+          [
+            [
+              "macie2",
+              "UpdateAutomatedDiscoveryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateClassificationScope",
+          [
+            [
+              "macie2",
+              "UpdateClassificationScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateResourceProfile",
+          [
+            [
+              "macie2",
+              "UpdateResourceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateResourceProfileDetections",
+          [
+            [
+              "macie2",
+              "UpdateResourceProfileDetections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "UpdateSensitivityInspectionTemplate",
+          [
+            [
+              "macie2",
+              "UpdateSensitivityInspectionTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListAllowListsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListAllowLists"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListClassificationScopesPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListClassificationScopes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListManagedDataIdentifiersPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListManagedDataIdentifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListResourceProfileArtifactsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListResourceProfileArtifacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListResourceProfileDetectionsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListResourceProfileDetections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListSensitivityInspectionTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListSensitivityInspectionTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "BatchUpdateAutomatedDiscoveryAccounts",
+          [
+            [
+              "macie2",
+              "BatchUpdateAutomatedDiscoveryAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "Client",
+          "ListAutomatedDiscoveryAccounts",
+          [
+            [
+              "macie2",
+              "ListAutomatedDiscoveryAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/macie2",
+          "ListAutomatedDiscoveryAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "macie2",
+              "ListAutomatedDiscoveryAccounts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

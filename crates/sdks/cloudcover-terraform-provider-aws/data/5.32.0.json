@@ -38,6 +38,27 @@
     ],
     [
       "data_source",
+      "aws_kinesis_stream_consumer",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_mq_broker",
+      "read",
+      [
+        [
+          "mq",
+          "DescribeBroker"
+        ],
+        [
+          "mq",
+          "DescribeUser"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_mq_broker_engine_types",
       "read",
       [
@@ -68,6 +89,40 @@
           "GetBootstrapBrokers"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_msk_broker_nodes",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_msk_cluster",
+      "read",
+      [
+        [
+          "kafka",
+          "GetBootstrapBrokers"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_msk_configuration",
+      "read",
+      [
+        [
+          "kafka",
+          "DescribeConfigurationRevision"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_msk_kafka_version",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -168,6 +223,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -183,8 +242,20 @@
           "UpdateTimeToLive"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -328,8 +399,40 @@
     [
       "resource",
       "aws_msk_scram_secret_association",
+      "create",
+      [
+        [
+          "kafka",
+          "BatchAssociateScramSecret"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_msk_scram_secret_association",
       "delete",
       [
+        [
+          "kafka",
+          "BatchDisassociateScramSecret"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_msk_scram_secret_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_msk_scram_secret_association",
+      "update",
+      [
+        [
+          "kafka",
+          "BatchAssociateScramSecret"
+        ],
         [
           "kafka",
           "BatchDisassociateScramSecret"
@@ -896,10 +999,6 @@
         ],
         [
           "ec2",
-          "DescribeVerifiedAccessEndpoints"
-        ],
-        [
-          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ]
       ]
@@ -911,10 +1010,6 @@
       [
         [
           "ec2",
-          "DescribeVerifiedAccessEndpoints"
-        ],
-        [
-          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ]
       ]
@@ -924,10 +1019,6 @@
       "aws_verifiedaccess_endpoint",
       "update",
       [
-        [
-          "ec2",
-          "DescribeVerifiedAccessEndpoints"
-        ],
         [
           "ec2",
           "GetVerifiedAccessEndpointPolicy"

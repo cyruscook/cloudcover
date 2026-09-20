@@ -2267,10 +2267,6 @@
         [
           "identitystore",
           "GetGroupId"
-        ],
-        [
-          "identitystore",
-          "ListGroups"
         ]
       ]
     ],
@@ -2286,10 +2282,6 @@
         [
           "identitystore",
           "GetUserId"
-        ],
-        [
-          "identitystore",
-          "ListUsers"
         ]
       ]
     ],
@@ -2800,10 +2792,6 @@
         [
           "lambda",
           "GetFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ]
       ]
     ],
@@ -3987,6 +3975,10 @@
         [
           "s3",
           "HeadBucket"
+        ],
+        [
+          "s3",
+          "NormalizeBucketLocation"
         ]
       ]
     ],
@@ -5041,6 +5033,10 @@
         ],
         [
           "acm",
+          "KeyAlgorithm_Values"
+        ],
+        [
+          "acm",
           "RequestCertificate"
         ]
       ]
@@ -5064,6 +5060,10 @@
         [
           "acm",
           "DescribeCertificate"
+        ],
+        [
+          "acm",
+          "KeyAlgorithm_Values"
         ]
       ]
     ],
@@ -5079,6 +5079,10 @@
         [
           "acm",
           "ImportCertificate"
+        ],
+        [
+          "acm",
+          "KeyAlgorithm_Values"
         ],
         [
           "acm",
@@ -19392,7 +19396,15 @@
         ],
         [
           "rds",
+          "New"
+        ],
+        [
+          "rds",
           "StopDBInstanceAutomatedBackupsReplication"
+        ],
+        [
+          "rds",
+          "newClient"
         ]
       ]
     ],
@@ -21150,7 +21162,15 @@
         ],
         [
           "directoryservice",
+          "New"
+        ],
+        [
+          "directoryservice",
           "UpdateNumberOfDomainControllers"
+        ],
+        [
+          "directoryservice",
+          "newClient"
         ]
       ]
     ],
@@ -21161,7 +21181,15 @@
       [
         [
           "directoryservice",
+          "New"
+        ],
+        [
+          "directoryservice",
           "RemoveRegion"
+        ],
+        [
+          "directoryservice",
+          "newClient"
         ]
       ]
     ],
@@ -21169,7 +21197,16 @@
       "resource",
       "aws_directory_service_region",
       "read",
-      []
+      [
+        [
+          "directoryservice",
+          "New"
+        ],
+        [
+          "directoryservice",
+          "newClient"
+        ]
+      ]
     ],
     [
       "resource",
@@ -21182,7 +21219,15 @@
         ],
         [
           "directoryservice",
+          "New"
+        ],
+        [
+          "directoryservice",
           "UpdateNumberOfDomainControllers"
+        ],
+        [
+          "directoryservice",
+          "newClient"
         ]
       ]
     ],
@@ -23203,6 +23248,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -23218,8 +23267,20 @@
           "UpdateTimeToLive"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -23260,8 +23321,24 @@
           "DescribeTimeToLive"
         ],
         [
+          "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -23284,6 +23361,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
@@ -23295,8 +23376,20 @@
           "UpdateTimeToLive"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -23371,6 +23464,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
@@ -23378,8 +23475,20 @@
           "UpdateTable"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -23394,7 +23503,15 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "UpdateTable"
+        ],
+        [
+          "dynamodb",
+          "newClient"
         ]
       ]
     ],
@@ -23412,8 +23529,24 @@
           "DescribeTable"
         ],
         [
+          "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -23432,6 +23565,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
@@ -23439,8 +23576,20 @@
           "UpdateTable"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -27299,6 +27448,14 @@
         [
           "efs",
           "DescribeReplicationConfigurations"
+        ],
+        [
+          "efs",
+          "New"
+        ],
+        [
+          "efs",
+          "newClient"
         ]
       ]
     ],
@@ -27534,6 +27691,10 @@
         [
           "eks",
           "DescribeCluster"
+        ],
+        [
+          "eks",
+          "LogType_Values"
         ]
       ]
     ],
@@ -27579,6 +27740,10 @@
         [
           "eks",
           "DescribeUpdate"
+        ],
+        [
+          "eks",
+          "LogType_Values"
         ],
         [
           "eks",
@@ -29595,6 +29760,10 @@
       "aws_emrserverless_application",
       "delete",
       [
+        [
+          "emrserverless",
+          "ApplicationState_Values"
+        ],
         [
           "emrserverless",
           "DeleteApplication"
@@ -35290,10 +35459,6 @@
         [
           "inspector2",
           "EnableDelegatedAdminAccount"
-        ],
-        [
-          "inspector2",
-          "ListDelegatedAdminAccounts"
         ]
       ]
     ],
@@ -35305,10 +35470,6 @@
         [
           "inspector2",
           "DisableDelegatedAdminAccount"
-        ],
-        [
-          "inspector2",
-          "ListDelegatedAdminAccounts"
         ]
       ]
     ],
@@ -35316,12 +35477,7 @@
       "resource",
       "aws_inspector2_delegated_admin_account",
       "read",
-      [
-        [
-          "inspector2",
-          "ListDelegatedAdminAccounts"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -38676,7 +38832,15 @@
         ],
         [
           "kms",
+          "New"
+        ],
+        [
+          "kms",
           "ReplicateKey"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -38784,7 +38948,15 @@
         ],
         [
           "kms",
+          "New"
+        ],
+        [
+          "kms",
           "ReplicateKey"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -39263,10 +39435,6 @@
         ],
         [
           "lambda",
-          "ListVersionsByFunction"
-        ],
-        [
-          "lambda",
           "PutFunctionConcurrency"
         ]
       ]
@@ -39306,10 +39474,6 @@
         [
           "lambda",
           "GetFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ]
       ]
     ],
@@ -39333,10 +39497,6 @@
         [
           "lambda",
           "GetFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ],
         [
           "lambda",
@@ -42397,6 +42557,14 @@
         [
           "mediaconvert",
           "GetQueue"
+        ],
+        [
+          "mediaconvert",
+          "New"
+        ],
+        [
+          "mediaconvert",
+          "newClient"
         ]
       ]
     ],
@@ -42412,6 +42580,14 @@
         [
           "mediaconvert",
           "DescribeEndpoints"
+        ],
+        [
+          "mediaconvert",
+          "New"
+        ],
+        [
+          "mediaconvert",
+          "newClient"
         ]
       ]
     ],
@@ -42427,6 +42603,14 @@
         [
           "mediaconvert",
           "GetQueue"
+        ],
+        [
+          "mediaconvert",
+          "New"
+        ],
+        [
+          "mediaconvert",
+          "newClient"
         ]
       ]
     ],
@@ -42445,7 +42629,15 @@
         ],
         [
           "mediaconvert",
+          "New"
+        ],
+        [
+          "mediaconvert",
           "UpdateQueue"
+        ],
+        [
+          "mediaconvert",
+          "newClient"
         ]
       ]
     ],
@@ -47746,6 +47938,14 @@
         [
           "opsworks",
           "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -47757,6 +47957,14 @@
         [
           "opsworks",
           "DeleteStack"
+        ],
+        [
+          "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -47768,6 +47976,14 @@
         [
           "opsworks",
           "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -47782,7 +47998,15 @@
         ],
         [
           "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
           "UpdateStack"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -50234,6 +50458,14 @@
         [
           "rds",
           "ModifyGlobalCluster"
+        ],
+        [
+          "rds",
+          "New"
+        ],
+        [
+          "rds",
+          "newClient"
         ]
       ]
     ],
@@ -61779,10 +62011,6 @@
       [
         [
           "ssm",
-          "DescribePatchBaselines"
-        ],
-        [
-          "ssm",
           "RegisterDefaultPatchBaseline"
         ]
       ]
@@ -62145,10 +62373,6 @@
         [
           "ssm",
           "DeletePatchBaseline"
-        ],
-        [
-          "ssm",
-          "DescribePatchBaselines"
         ],
         [
           "ssm",
@@ -63971,6 +64195,10 @@
         [
           "transfer",
           "ListUsers"
+        ],
+        [
+          "transfer",
+          "State_Values"
         ]
       ]
     ],
@@ -65495,10 +65723,6 @@
       [
         [
           "ec2",
-          "DescribeAwsNetworkPerformanceMetricSubscriptions"
-        ],
-        [
-          "ec2",
           "EnableAwsNetworkPerformanceMetricSubscription"
         ]
       ]
@@ -65518,12 +65742,7 @@
       "resource",
       "aws_vpc_network_performance_metric_subscription",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeAwsNetworkPerformanceMetricSubscriptions"
-        ]
-      ]
+      []
     ],
     [
       "resource",

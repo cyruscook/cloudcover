@@ -69,10 +69,6 @@
         [
           "iam",
           "GetRolePolicy"
-        ],
-        [
-          "iam",
-          "ListRolePolicies"
         ]
       ]
     ],
@@ -92,14 +88,6 @@
         [
           "lambda",
           "GetFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "ListFunctions"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ]
       ]
     ],
@@ -167,10 +155,6 @@
         ],
         [
           "ssoadmin",
-          "ListCustomerManagedPolicyReferencesInPermissionSet"
-        ],
-        [
-          "ssoadmin",
           "ProvisionPermissionSet"
         ]
       ]
@@ -185,12 +169,7 @@
       "resource",
       "aws_ssoadmin_customer_managed_policy_attachments_exclusive",
       "read",
-      [
-        [
-          "ssoadmin",
-          "ListCustomerManagedPolicyReferencesInPermissionSet"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -208,10 +187,6 @@
         [
           "ssoadmin",
           "DetachCustomerManagedPolicyReferenceFromPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ListCustomerManagedPolicyReferencesInPermissionSet"
         ],
         [
           "ssoadmin",

@@ -1,0 +1,1925 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/kms",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "CancelKeyDeletion",
+          [
+            [
+              "kms",
+              "CancelKeyDeletion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ConnectCustomKeyStore",
+          [
+            [
+              "kms",
+              "ConnectCustomKeyStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "CreateAlias",
+          [
+            [
+              "kms",
+              "CreateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "CreateCustomKeyStore",
+          [
+            [
+              "kms",
+              "CreateCustomKeyStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "CreateGrant",
+          [
+            [
+              "kms",
+              "CreateGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "CreateKey",
+          [
+            [
+              "kms",
+              "CreateKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Decrypt",
+          [
+            [
+              "kms",
+              "Decrypt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DeleteAlias",
+          [
+            [
+              "kms",
+              "DeleteAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DeleteCustomKeyStore",
+          [
+            [
+              "kms",
+              "DeleteCustomKeyStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DeleteImportedKeyMaterial",
+          [
+            [
+              "kms",
+              "DeleteImportedKeyMaterial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DescribeCustomKeyStores",
+          [
+            [
+              "kms",
+              "DescribeCustomKeyStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DescribeKey",
+          [
+            [
+              "kms",
+              "DescribeKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DisableKey",
+          [
+            [
+              "kms",
+              "DisableKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DisableKeyRotation",
+          [
+            [
+              "kms",
+              "DisableKeyRotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DisconnectCustomKeyStore",
+          [
+            [
+              "kms",
+              "DisconnectCustomKeyStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "EnableKey",
+          [
+            [
+              "kms",
+              "EnableKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "EnableKeyRotation",
+          [
+            [
+              "kms",
+              "EnableKeyRotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Encrypt",
+          [
+            [
+              "kms",
+              "Encrypt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateDataKey",
+          [
+            [
+              "kms",
+              "GenerateDataKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateDataKeyPair",
+          [
+            [
+              "kms",
+              "GenerateDataKeyPair"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateDataKeyPairWithoutPlaintext",
+          [
+            [
+              "kms",
+              "GenerateDataKeyPairWithoutPlaintext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateDataKeyWithoutPlaintext",
+          [
+            [
+              "kms",
+              "GenerateDataKeyWithoutPlaintext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateRandom",
+          [
+            [
+              "kms",
+              "GenerateRandom"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GetKeyPolicy",
+          [
+            [
+              "kms",
+              "GetKeyPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GetKeyRotationStatus",
+          [
+            [
+              "kms",
+              "GetKeyRotationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GetParametersForImport",
+          [
+            [
+              "kms",
+              "GetParametersForImport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GetPublicKey",
+          [
+            [
+              "kms",
+              "GetPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ImportKeyMaterial",
+          [
+            [
+              "kms",
+              "ImportKeyMaterial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListAliases",
+          [
+            [
+              "kms",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListGrants",
+          [
+            [
+              "kms",
+              "ListGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListKeyPolicies",
+          [
+            [
+              "kms",
+              "ListKeyPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListKeys",
+          [
+            [
+              "kms",
+              "ListKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListResourceTags",
+          [
+            [
+              "kms",
+              "ListResourceTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListRetirableGrants",
+          [
+            [
+              "kms",
+              "ListRetirableGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "PutKeyPolicy",
+          [
+            [
+              "kms",
+              "PutKeyPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ReEncrypt",
+          [
+            [
+              "kms",
+              "ReEncrypt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "RetireGrant",
+          [
+            [
+              "kms",
+              "RetireGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "RevokeGrant",
+          [
+            [
+              "kms",
+              "RevokeGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ScheduleKeyDeletion",
+          [
+            [
+              "kms",
+              "ScheduleKeyDeletion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Sign",
+          [
+            [
+              "kms",
+              "Sign"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "TagResource",
+          [
+            [
+              "kms",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "kms",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "UpdateAlias",
+          [
+            [
+              "kms",
+              "UpdateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "UpdateCustomKeyStore",
+          [
+            [
+              "kms",
+              "UpdateCustomKeyStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "UpdateKeyDescription",
+          [
+            [
+              "kms",
+              "UpdateKeyDescription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Verify",
+          [
+            [
+              "kms",
+              "Verify"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListGrantsPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListKeyPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListKeyPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListKeysPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListKeys"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ReplicateKey",
+          [
+            [
+              "kms",
+              "ReplicateKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "UpdatePrimaryRegion",
+          [
+            [
+              "kms",
+              "UpdatePrimaryRegion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GenerateMac",
+          [
+            [
+              "kms",
+              "GenerateMac"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "VerifyMac",
+          [
+            [
+              "kms",
+              "VerifyMac"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "DescribeCustomKeyStoresPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "DescribeCustomKeyStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListResourceTagsPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListResourceTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListRetirableGrantsPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListRetirableGrants"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "ListKeyRotations",
+          [
+            [
+              "kms",
+              "ListKeyRotations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "RotateKeyOnDemand",
+          [
+            [
+              "kms",
+              "RotateKeyOnDemand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "ListKeyRotationsPaginator",
+          "NextPage",
+          [
+            [
+              "kms",
+              "ListKeyRotations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "DeriveSharedSecret",
+          [
+            [
+              "kms",
+              "DeriveSharedSecret"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "GetKeyLastUsage",
+          [
+            [
+              "kms",
+              "GetKeyLastUsage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

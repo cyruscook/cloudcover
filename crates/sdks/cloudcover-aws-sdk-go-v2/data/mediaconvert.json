@@ -1,0 +1,1779 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "AssociateCertificate",
+          [
+            [
+              "mediaconvert",
+              "AssociateCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CancelJob",
+          [
+            [
+              "mediaconvert",
+              "CancelJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CreateJob",
+          [
+            [
+              "mediaconvert",
+              "CreateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CreateJobTemplate",
+          [
+            [
+              "mediaconvert",
+              "CreateJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CreatePreset",
+          [
+            [
+              "mediaconvert",
+              "CreatePreset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CreateQueue",
+          [
+            [
+              "mediaconvert",
+              "CreateQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DeleteJobTemplate",
+          [
+            [
+              "mediaconvert",
+              "DeleteJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DeletePreset",
+          [
+            [
+              "mediaconvert",
+              "DeletePreset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DeleteQueue",
+          [
+            [
+              "mediaconvert",
+              "DeleteQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DescribeEndpoints",
+          [
+            [
+              "mediaconvert",
+              "DescribeEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DisassociateCertificate",
+          [
+            [
+              "mediaconvert",
+              "DisassociateCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetJob",
+          [
+            [
+              "mediaconvert",
+              "GetJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetJobTemplate",
+          [
+            [
+              "mediaconvert",
+              "GetJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetPreset",
+          [
+            [
+              "mediaconvert",
+              "GetPreset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetQueue",
+          [
+            [
+              "mediaconvert",
+              "GetQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListJobTemplates",
+          [
+            [
+              "mediaconvert",
+              "ListJobTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListJobs",
+          [
+            [
+              "mediaconvert",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListPresets",
+          [
+            [
+              "mediaconvert",
+              "ListPresets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListQueues",
+          [
+            [
+              "mediaconvert",
+              "ListQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "mediaconvert",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "TagResource",
+          [
+            [
+              "mediaconvert",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "mediaconvert",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "UpdateJobTemplate",
+          [
+            [
+              "mediaconvert",
+              "UpdateJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "UpdatePreset",
+          [
+            [
+              "mediaconvert",
+              "UpdatePreset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "UpdateQueue",
+          [
+            [
+              "mediaconvert",
+              "UpdateQueue"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "DescribeEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "DescribeEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "ListJobTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "ListJobTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "ListJobsPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "ListPresetsPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "ListPresets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "ListQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "ListQueues"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "DeletePolicy",
+          [
+            [
+              "mediaconvert",
+              "DeletePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetPolicy",
+          [
+            [
+              "mediaconvert",
+              "GetPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "PutPolicy",
+          [
+            [
+              "mediaconvert",
+              "PutPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "SearchJobs",
+          [
+            [
+              "mediaconvert",
+              "SearchJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "SearchJobsPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "SearchJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "ListVersions",
+          [
+            [
+              "mediaconvert",
+              "ListVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "ListVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "mediaconvert",
+              "ListVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "Probe",
+          [
+            [
+              "mediaconvert",
+              "Probe"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "CreateResourceShare",
+          [
+            [
+              "mediaconvert",
+              "CreateResourceShare"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "GetJobsQueryResults",
+          [
+            [
+              "mediaconvert",
+              "GetJobsQueryResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediaconvert",
+          "Client",
+          "StartJobsQuery",
+          [
+            [
+              "mediaconvert",
+              "StartJobsQuery"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -7649,12 +7649,6 @@
     ],
     [
       "data_source",
-      "aws_alb_listener",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_alb_target_group",
       "read",
       []
@@ -7662,12 +7656,6 @@
     [
       "data_source",
       "aws_ami",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ami_ids",
       "read",
       []
     ],
@@ -8177,49 +8165,7 @@
     ],
     [
       "data_source",
-      "aws_db_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_db_event_categories",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_instance",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_proxy",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_subnet_group",
       "read",
       []
     ],
@@ -8256,18 +8202,6 @@
     [
       "data_source",
       "aws_dms_replication_task",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_docdb_engine_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_docdb_orderable_db_instance",
       "read",
       []
     ],
@@ -8327,235 +8261,7 @@
     ],
     [
       "data_source",
-      "aws_ebs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_snapshot_ids",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_volume",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_volumes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_client_vpn_endpoint",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_coip_pool",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_coip_pools",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_host",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_instance_type",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_instance_type_offering",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_instance_type_offerings",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_instance_types",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_route_table",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_route_tables",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateway_virtual_interface_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_local_gateways",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_managed_prefix_list",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_managed_prefix_lists",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_network_insights_analysis",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_network_insights_path",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_public_ipv4_pool",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_public_ipv4_pools",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ec2_serial_console_access",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_spot_price",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_attachment",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_attachments",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_connect",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_connect_peer",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_dx_gateway_attachment",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_multicast_domain",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_peering_attachment",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_peering_attachments",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_route_table",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_route_table_associations",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_route_table_propagations",
       "read",
       []
     ],
@@ -8567,55 +8273,7 @@
     ],
     [
       "data_source",
-      "aws_ec2_transit_gateway_route_tables",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_vpc_attachment",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_vpc_attachments",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_transit_gateway_vpn_attachment",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ecr_authorization_token",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ecr_image",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ecr_pull_through_cache_rule",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ecr_repository",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ecr_repository_creation_template",
       "read",
       []
     ],
@@ -8657,18 +8315,6 @@
     ],
     [
       "data_source",
-      "aws_efs_access_point",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_efs_access_points",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_efs_file_system",
       "read",
       []
@@ -8705,31 +8351,13 @@
     ],
     [
       "data_source",
-      "aws_eks_addon_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_eks_cluster",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_eks_clusters",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_eks_node_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_eks_node_groups",
       "read",
       []
     ],
@@ -8753,19 +8381,7 @@
     ],
     [
       "data_source",
-      "aws_elasticache_replication_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_elasticache_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_elasticache_user",
       "read",
       []
     ],
@@ -8783,43 +8399,7 @@
     ],
     [
       "data_source",
-      "aws_emr_release_labels",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_emrcontainers_virtual_cluster",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_ontap_file_system",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_ontap_storage_virtual_machines",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_openzfs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_windows_file_system",
       "read",
       []
     ],
@@ -8867,31 +8447,7 @@
     ],
     [
       "data_source",
-      "aws_iam_access_keys",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_iam_account_alias",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_iam_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_iam_instance_profile",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_iam_instance_profiles",
       "read",
       []
     ],
@@ -8916,12 +8472,6 @@
     [
       "data_source",
       "aws_iam_role",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_iam_roles",
       "read",
       []
     ],
@@ -8957,19 +8507,7 @@
     ],
     [
       "data_source",
-      "aws_iam_users",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_imagebuilder_component",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_components",
       "read",
       []
     ],
@@ -8981,19 +8519,7 @@
     ],
     [
       "data_source",
-      "aws_imagebuilder_container_recipes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_imagebuilder_distribution_configuration",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_distribution_configurations",
       "read",
       []
     ],
@@ -9011,19 +8537,7 @@
     ],
     [
       "data_source",
-      "aws_imagebuilder_image_pipelines",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_imagebuilder_image_recipe",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_imagebuilder_image_recipes",
       "read",
       []
     ],
@@ -9035,31 +8549,7 @@
     ],
     [
       "data_source",
-      "aws_imagebuilder_infrastructure_configurations",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_inspector_rules_packages",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_instance",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_internet_gateway",
       "read",
       []
     ],
@@ -9125,12 +8615,6 @@
     ],
     [
       "data_source",
-      "aws_kinesis_stream_consumer",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_kms_alias",
       "read",
       []
@@ -9138,12 +8622,6 @@
     [
       "data_source",
       "aws_kms_ciphertext",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_kms_custom_key_store",
       "read",
       []
     ],
@@ -9168,12 +8646,6 @@
     [
       "data_source",
       "aws_lakeformation_data_lake_settings",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_lakeformation_permissions",
       "read",
       []
     ],
@@ -9209,12 +8681,6 @@
     ],
     [
       "data_source",
-      "aws_lambda_functions",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_lambda_invocation",
       "read",
       []
@@ -9233,31 +8699,13 @@
     ],
     [
       "data_source",
-      "aws_launch_template",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_lb",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_lb_listener",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_lb_target_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_lb_trust_store",
       "read",
       []
     ],
@@ -9341,54 +8789,6 @@
     ],
     [
       "data_source",
-      "aws_location_tracker_association",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_location_tracker_associations",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_acl",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_cluster",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_user",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_mq_broker",
       "read",
       []
@@ -9413,12 +8813,6 @@
     ],
     [
       "data_source",
-      "aws_msk_broker_nodes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_msk_cluster",
       "read",
       []
@@ -9431,73 +8825,13 @@
     ],
     [
       "data_source",
-      "aws_msk_kafka_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_msk_vpc_connection",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_mskconnect_connector",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_mskconnect_custom_plugin",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_mskconnect_worker_configuration",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_nat_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_nat_gateways",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_neptune_engine_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_neptune_orderable_db_instance",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_network_acls",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_network_interface",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_network_interfaces",
       "read",
       []
     ],
@@ -9516,66 +8850,6 @@
     [
       "data_source",
       "aws_networkfirewall_resource_policy",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_connection",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_connections",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_device",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_devices",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_global_network",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_global_networks",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_link",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_links",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_site",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_sites",
       "read",
       []
     ],
@@ -9605,79 +8879,13 @@
     ],
     [
       "data_source",
-      "aws_organizations_delegated_administrators",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_delegated_services",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_organizations_organization",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_organizations_organizational_unit",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_organizational_unit_child_accounts",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_organizational_unit_descendant_accounts",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_organizational_unit_descendant_organizational_units",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_organizational_units",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_policies",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_policies_for_target",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_organizations_policy",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_organizations_resource_tags",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_prefix_list",
       "read",
       []
     ],
@@ -9690,6 +8898,12 @@
     [
       "data_source",
       "aws_prometheus_workspaces",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_qldb_ledger",
       "read",
       []
     ],
@@ -9725,48 +8939,6 @@
     ],
     [
       "data_source",
-      "aws_ram_resource_share",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_certificate",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_cluster",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_clusters",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_engine_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_orderable_db_instance",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_reserved_instance_offering",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_redshift_cluster",
       "read",
       []
@@ -9774,18 +8946,6 @@
     [
       "data_source",
       "aws_redshift_cluster_credentials",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_redshift_orderable_cluster",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_redshift_subnet_group",
       "read",
       []
     ],
@@ -9809,19 +8969,7 @@
     ],
     [
       "data_source",
-      "aws_route",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_route53_delegation_set",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_endpoint",
       "read",
       []
     ],
@@ -9851,25 +8999,7 @@
     ],
     [
       "data_source",
-      "aws_route53_resolver_firewall_rules",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_query_log_config",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_route53_resolver_rule",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_rules",
       "read",
       []
     ],
@@ -9882,12 +9012,6 @@
     [
       "data_source",
       "aws_route_table",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_route_tables",
       "read",
       []
     ],
@@ -9911,12 +9035,6 @@
     ],
     [
       "data_source",
-      "aws_s3_bucket_objects",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_s3_bucket_policy",
       "read",
       []
@@ -9924,12 +9042,6 @@
     [
       "data_source",
       "aws_s3_object",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_s3_objects",
       "read",
       []
     ],
@@ -9965,24 +9077,6 @@
     ],
     [
       "data_source",
-      "aws_secretsmanager_secrets",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_security_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_security_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_serverlessapplicationrepository_application",
       "read",
       []
@@ -10013,19 +9107,7 @@
     ],
     [
       "data_source",
-      "aws_servicecatalog_launch_paths",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_servicecatalog_portfolio",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_servicecatalog_portfolio_constraints",
       "read",
       []
     ],
@@ -10121,19 +9203,7 @@
     ],
     [
       "data_source",
-      "aws_sns_topic",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_sqs_queue",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_sqs_queues",
       "read",
       []
     ],
@@ -10145,25 +9215,7 @@
     ],
     [
       "data_source",
-      "aws_ssm_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ssm_maintenance_windows",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ssm_parameter",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ssm_parameters_by_path",
       "read",
       []
     ],
@@ -10205,12 +9257,6 @@
     ],
     [
       "data_source",
-      "aws_ssoadmin_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ssoadmin_permission_set",
       "read",
       []
@@ -10218,18 +9264,6 @@
     [
       "data_source",
       "aws_storagegateway_local_disk",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_subnet",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_subnets",
       "read",
       []
     ],
@@ -10247,55 +9281,13 @@
     ],
     [
       "data_source",
-      "aws_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_endpoint",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_vpc_endpoint_service",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_vpc_ipam_pool",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pool_cidrs",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pools",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_vpc_ipam_preview_next_cidr",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_peering_connection",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_peering_connections",
       "read",
       []
     ],
@@ -10326,12 +9318,6 @@
     [
       "data_source",
       "aws_vpclattice_service_network",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpcs",
       "read",
       []
     ],
@@ -10427,25 +9413,7 @@
     ],
     [
       "data_source",
-      "aws_workspaces_bundle",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_workspaces_directory",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_workspaces_image",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_workspaces_workspace",
       "read",
       []
     ],
@@ -10457,10 +9425,6 @@
         [
           "observabilityadmin",
           "GetTelemetryRule"
-        ],
-        [
-          "observabilityadmin",
-          "ListTelemetryRules"
         ]
       ]
     ],
@@ -10740,12 +9704,6 @@
     [
       "resource",
       "aws_alb_listener_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_alb_listener_rule",
       "update",
       []
     ],
@@ -16860,12 +15818,6 @@
     [
       "resource",
       "aws_db_event_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
       "update",
       []
     ],
@@ -16879,12 +15831,6 @@
       "resource",
       "aws_db_instance",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_instance",
-      "read",
       []
     ],
     [
@@ -16907,12 +15853,6 @@
     ],
     [
       "resource",
-      "aws_db_instance_automated_backups_replication",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_db_instance_role_association",
       "create",
       []
@@ -16925,12 +15865,6 @@
     ],
     [
       "resource",
-      "aws_db_instance_role_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_db_option_group",
       "create",
       []
@@ -16939,12 +15873,6 @@
       "resource",
       "aws_db_option_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_option_group",
-      "read",
       []
     ],
     [
@@ -16968,12 +15896,6 @@
     [
       "resource",
       "aws_db_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_parameter_group",
       "update",
       []
     ],
@@ -16987,12 +15909,6 @@
       "resource",
       "aws_db_proxy",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
-      "read",
       []
     ],
     [
@@ -17005,12 +15921,6 @@
       "resource",
       "aws_db_proxy_default_target_group",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "read",
       []
     ],
     [
@@ -17029,12 +15939,6 @@
       "resource",
       "aws_db_proxy_endpoint",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "read",
       []
     ],
     [
@@ -17057,12 +15961,6 @@
     ],
     [
       "resource",
-      "aws_db_proxy_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_db_snapshot",
       "create",
       []
@@ -17119,12 +16017,6 @@
       "resource",
       "aws_db_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "read",
       []
     ],
     [
@@ -17142,12 +16034,6 @@
     [
       "resource",
       "aws_default_network_acl",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_network_acl",
       "update",
       []
     ],
@@ -17160,12 +16046,6 @@
     [
       "resource",
       "aws_default_route_table",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_route_table",
       "update",
       []
     ],
@@ -17173,12 +16053,6 @@
       "resource",
       "aws_default_security_group",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_security_group",
-      "read",
       []
     ],
     [
@@ -17197,12 +16071,6 @@
       "resource",
       "aws_default_subnet",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "read",
       []
     ],
     [
@@ -17232,24 +16100,6 @@
     [
       "resource",
       "aws_default_vpc",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
       "update",
       []
     ],
@@ -17778,12 +16628,6 @@
     [
       "resource",
       "aws_docdb_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster",
       "update",
       []
     ],
@@ -17802,12 +16646,6 @@
     [
       "resource",
       "aws_docdb_cluster_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster_instance",
       "update",
       []
     ],
@@ -17821,12 +16659,6 @@
       "resource",
       "aws_docdb_cluster_parameter_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_cluster_parameter_group",
-      "read",
       []
     ],
     [
@@ -17849,12 +16681,6 @@
     ],
     [
       "resource",
-      "aws_docdb_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_docdb_event_subscription",
       "create",
       []
@@ -17863,12 +16689,6 @@
       "resource",
       "aws_docdb_event_subscription",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_event_subscription",
-      "read",
       []
     ],
     [
@@ -17892,12 +16712,6 @@
     [
       "resource",
       "aws_docdb_global_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_global_cluster",
       "update",
       []
     ],
@@ -17911,12 +16725,6 @@
       "resource",
       "aws_docdb_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_docdb_subnet_group",
-      "read",
       []
     ],
     [
@@ -18528,12 +17336,6 @@
     [
       "resource",
       "aws_ebs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot",
       "update",
       []
     ],
@@ -18576,12 +17378,6 @@
     [
       "resource",
       "aws_ebs_snapshot_copy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
       "update",
       []
     ],
@@ -18595,12 +17391,6 @@
       "resource",
       "aws_ebs_snapshot_import",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_import",
-      "read",
       []
     ],
     [
@@ -18619,12 +17409,6 @@
       "resource",
       "aws_ebs_volume",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "read",
       []
     ],
     [
@@ -18666,12 +17450,6 @@
     [
       "resource",
       "aws_ec2_capacity_reservation",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_capacity_reservation",
       "update",
       []
     ],
@@ -18689,18 +17467,6 @@
     ],
     [
       "resource",
-      "aws_ec2_carrier_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_client_vpn_authorization_rule",
       "create",
       []
@@ -18713,12 +17479,6 @@
     ],
     [
       "resource",
-      "aws_ec2_client_vpn_authorization_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_client_vpn_endpoint",
       "create",
       []
@@ -18727,12 +17487,6 @@
       "resource",
       "aws_ec2_client_vpn_endpoint",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "read",
       []
     ],
     [
@@ -18755,12 +17509,6 @@
     ],
     [
       "resource",
-      "aws_ec2_client_vpn_network_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_client_vpn_route",
       "create",
       []
@@ -18773,12 +17521,6 @@
     ],
     [
       "resource",
-      "aws_ec2_client_vpn_route",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_fleet",
       "create",
       []
@@ -18787,12 +17529,6 @@
       "resource",
       "aws_ec2_fleet",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_fleet",
-      "read",
       []
     ],
     [
@@ -18811,12 +17547,6 @@
       "resource",
       "aws_ec2_host",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_host",
-      "read",
       []
     ],
     [
@@ -18852,12 +17582,6 @@
     [
       "resource",
       "aws_ec2_instance_state",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_instance_state",
       "update",
       []
     ],
@@ -18875,12 +17599,6 @@
     ],
     [
       "resource",
-      "aws_ec2_local_gateway_route",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_local_gateway_route_table_vpc_association",
       "create",
       []
@@ -18893,18 +17611,6 @@
     ],
     [
       "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_local_gateway_route_table_vpc_association",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_managed_prefix_list",
       "create",
       []
@@ -18913,12 +17619,6 @@
       "resource",
       "aws_ec2_managed_prefix_list",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "read",
       []
     ],
     [
@@ -18941,12 +17641,6 @@
     ],
     [
       "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_network_insights_analysis",
       "create",
       []
@@ -18959,18 +17653,6 @@
     ],
     [
       "resource",
-      "aws_ec2_network_insights_analysis",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_analysis",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_network_insights_path",
       "create",
       []
@@ -18979,18 +17661,6 @@
       "resource",
       "aws_ec2_network_insights_path",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_path",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_path",
-      "update",
       []
     ],
     [
@@ -19074,12 +17744,6 @@
     [
       "resource",
       "aws_ec2_traffic_mirror_filter",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_filter",
       "update",
       []
     ],
@@ -19093,12 +17757,6 @@
       "resource",
       "aws_ec2_traffic_mirror_filter_rule",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_filter_rule",
-      "read",
       []
     ],
     [
@@ -19122,12 +17780,6 @@
     [
       "resource",
       "aws_ec2_traffic_mirror_session",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_session",
       "update",
       []
     ],
@@ -19145,18 +17797,6 @@
     ],
     [
       "resource",
-      "aws_ec2_traffic_mirror_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_target",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway",
       "create",
       []
@@ -19165,12 +17805,6 @@
       "resource",
       "aws_ec2_transit_gateway",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway",
-      "read",
       []
     ],
     [
@@ -19194,12 +17828,6 @@
     [
       "resource",
       "aws_ec2_transit_gateway_connect",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_connect",
       "update",
       []
     ],
@@ -19217,18 +17845,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_connect_peer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_connect_peer",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_multicast_domain",
       "create",
       []
@@ -19237,18 +17853,6 @@
       "resource",
       "aws_ec2_transit_gateway_multicast_domain",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_multicast_domain",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_multicast_domain",
-      "update",
       []
     ],
     [
@@ -19265,12 +17869,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_multicast_domain_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_multicast_group_member",
       "create",
       []
@@ -19279,12 +17877,6 @@
       "resource",
       "aws_ec2_transit_gateway_multicast_group_member",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_multicast_group_member",
-      "read",
       []
     ],
     [
@@ -19301,12 +17893,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_multicast_group_source",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_peering_attachment",
       "create",
       []
@@ -19315,18 +17901,6 @@
       "resource",
       "aws_ec2_transit_gateway_peering_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_peering_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_peering_attachment",
-      "update",
       []
     ],
     [
@@ -19343,18 +17917,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_peering_attachment_accepter",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_peering_attachment_accepter",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_policy_table",
       "create",
       []
@@ -19363,18 +17925,6 @@
       "resource",
       "aws_ec2_transit_gateway_policy_table",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_policy_table",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_policy_table",
-      "update",
       []
     ],
     [
@@ -19391,12 +17941,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_policy_table_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_prefix_list_reference",
       "create",
       []
@@ -19405,12 +17949,6 @@
       "resource",
       "aws_ec2_transit_gateway_prefix_list_reference",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_prefix_list_reference",
-      "read",
       []
     ],
     [
@@ -19451,18 +17989,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_route_table",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_route_table",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_route_table_association",
       "create",
       []
@@ -19471,12 +17997,6 @@
       "resource",
       "aws_ec2_transit_gateway_route_table_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_route_table_association",
-      "read",
       []
     ],
     [
@@ -19493,12 +18013,6 @@
     ],
     [
       "resource",
-      "aws_ec2_transit_gateway_route_table_propagation",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ec2_transit_gateway_vpc_attachment",
       "create",
       []
@@ -19507,12 +18021,6 @@
       "resource",
       "aws_ec2_transit_gateway_vpc_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_vpc_attachment",
-      "read",
       []
     ],
     [
@@ -19531,12 +18039,6 @@
       "resource",
       "aws_ec2_transit_gateway_vpc_attachment_accepter",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_transit_gateway_vpc_attachment_accepter",
-      "read",
       []
     ],
     [
@@ -19578,12 +18080,6 @@
     [
       "resource",
       "aws_ecr_pull_through_cache_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecr_pull_through_cache_rule",
       "update",
       []
     ],
@@ -19669,12 +18165,6 @@
       "resource",
       "aws_ecr_repository",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecr_repository",
-      "read",
       []
     ],
     [
@@ -19693,12 +18183,6 @@
       "resource",
       "aws_ecr_repository_creation_template",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecr_repository_creation_template",
-      "read",
       []
     ],
     [
@@ -19789,12 +18273,6 @@
       "resource",
       "aws_ecs_account_setting_default",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecs_account_setting_default",
-      "read",
       []
     ],
     [
@@ -19981,18 +18459,6 @@
       "resource",
       "aws_efs_access_point",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_efs_access_point",
-      "update",
       []
     ],
     [
@@ -20105,12 +18571,6 @@
     ],
     [
       "resource",
-      "aws_efs_replication_configuration",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_egress_only_internet_gateway",
       "create",
       []
@@ -20119,18 +18579,6 @@
       "resource",
       "aws_egress_only_internet_gateway",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "update",
       []
     ],
     [
@@ -20213,12 +18661,6 @@
     ],
     [
       "resource",
-      "aws_eks_access_policy_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_eks_addon",
       "create",
       []
@@ -20443,12 +18885,6 @@
       "resource",
       "aws_elasticache_cluster",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "read",
       []
     ],
     [
@@ -20467,12 +18903,6 @@
       "resource",
       "aws_elasticache_global_replication_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "read",
       []
     ],
     [
@@ -20539,12 +18969,6 @@
       "resource",
       "aws_elasticache_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "read",
       []
     ],
     [
@@ -20563,12 +18987,6 @@
       "resource",
       "aws_elasticache_user",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "read",
       []
     ],
     [
@@ -20587,12 +19005,6 @@
       "resource",
       "aws_elasticache_user_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group",
-      "read",
       []
     ],
     [
@@ -20611,12 +19023,6 @@
       "resource",
       "aws_elasticache_user_group_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group_association",
-      "read",
       []
     ],
     [
@@ -20814,12 +19220,6 @@
     [
       "resource",
       "aws_emr_instance_fleet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_emr_instance_fleet",
       "update",
       []
     ],
@@ -20833,12 +19233,6 @@
       "resource",
       "aws_emr_instance_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_emr_instance_group",
-      "read",
       []
     ],
     [
@@ -20999,6 +19393,102 @@
     ],
     [
       "resource",
+      "aws_evidently_feature",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_feature",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_feature",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_feature",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_launch",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_launch",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_launch",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_launch",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_project",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_project",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_project",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_project",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_segment",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_segment",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_segment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_evidently_segment",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_finspace_kx_cluster",
       "create",
       []
@@ -21199,18 +19689,6 @@
       "resource",
       "aws_flow_log",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_flow_log",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_flow_log",
-      "update",
       []
     ],
     [
@@ -21269,18 +19747,6 @@
     ],
     [
       "resource",
-      "aws_fsx_backup",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_backup",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_fsx_data_repository_association",
       "create",
       []
@@ -21289,12 +19755,6 @@
       "resource",
       "aws_fsx_data_repository_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_data_repository_association",
-      "read",
       []
     ],
     [
@@ -21318,12 +19778,6 @@
     [
       "resource",
       "aws_fsx_file_cache",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_file_cache",
       "update",
       []
     ],
@@ -21337,12 +19791,6 @@
       "resource",
       "aws_fsx_lustre_file_system",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_lustre_file_system",
-      "read",
       []
     ],
     [
@@ -21361,12 +19809,6 @@
       "resource",
       "aws_fsx_ontap_file_system",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_file_system",
-      "read",
       []
     ],
     [
@@ -21385,12 +19827,6 @@
       "resource",
       "aws_fsx_ontap_storage_virtual_machine",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "read",
       []
     ],
     [
@@ -21409,12 +19845,6 @@
       "resource",
       "aws_fsx_ontap_volume",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_volume",
-      "read",
       []
     ],
     [
@@ -21433,12 +19863,6 @@
       "resource",
       "aws_fsx_openzfs_file_system",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_file_system",
-      "read",
       []
     ],
     [
@@ -21457,12 +19881,6 @@
       "resource",
       "aws_fsx_openzfs_snapshot",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_snapshot",
-      "read",
       []
     ],
     [
@@ -21481,12 +19899,6 @@
       "resource",
       "aws_fsx_openzfs_volume",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_volume",
-      "read",
       []
     ],
     [
@@ -21505,12 +19917,6 @@
       "resource",
       "aws_fsx_windows_file_system",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_windows_file_system",
-      "read",
       []
     ],
     [
@@ -21625,12 +20031,6 @@
       "resource",
       "aws_gamelift_game_session_queue",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_gamelift_game_session_queue",
-      "read",
       []
     ],
     [
@@ -22121,12 +20521,6 @@
     ],
     [
       "resource",
-      "aws_glue_partition_index",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_glue_registry",
       "create",
       []
@@ -22291,12 +20685,6 @@
       "resource",
       "aws_grafana_role_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_grafana_role_association",
-      "read",
       []
     ],
     [
@@ -22505,12 +20893,6 @@
     ],
     [
       "resource",
-      "aws_guardduty_organization_admin_account",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_guardduty_organization_configuration",
       "create",
       []
@@ -22608,12 +20990,6 @@
     [
       "resource",
       "aws_iam_access_key",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_access_key",
       "update",
       []
     ],
@@ -22627,12 +21003,6 @@
       "resource",
       "aws_iam_account_alias",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_account_alias",
-      "read",
       []
     ],
     [
@@ -22693,12 +21063,6 @@
       "resource",
       "aws_iam_group_membership",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_group_membership",
-      "read",
       []
     ],
     [
@@ -22741,12 +21105,6 @@
       "resource",
       "aws_iam_group_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_group_policy_attachment",
-      "read",
       []
     ],
     [
@@ -22831,12 +21189,6 @@
       "resource",
       "aws_iam_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_policy_attachment",
-      "read",
       []
     ],
     [
@@ -22903,12 +21255,6 @@
       "resource",
       "aws_iam_role_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_role_policy_attachment",
-      "read",
       []
     ],
     [
@@ -23040,12 +21386,6 @@
     [
       "resource",
       "aws_iam_signing_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_signing_certificate",
       "update",
       []
     ],
@@ -23153,12 +21493,6 @@
     ],
     [
       "resource",
-      "aws_iam_user_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_iam_user_ssh_key",
       "create",
       []
@@ -23191,18 +21525,6 @@
       "resource",
       "aws_iam_virtual_mfa_device",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_virtual_mfa_device",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iam_virtual_mfa_device",
-      "update",
       []
     ],
     [
@@ -23496,12 +21818,6 @@
     [
       "resource",
       "aws_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
       "update",
       []
     ],
@@ -23515,12 +21831,6 @@
       "resource",
       "aws_internet_gateway_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_internet_gateway_attachment",
-      "read",
       []
     ],
     [
@@ -23735,12 +22045,6 @@
     ],
     [
       "resource",
-      "aws_iot_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_iot_provisioning_template",
       "create",
       []
@@ -23849,12 +22153,6 @@
     ],
     [
       "resource",
-      "aws_iot_thing_group_membership",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_iot_thing_principal_attachment",
       "create",
       []
@@ -23863,12 +22161,6 @@
       "resource",
       "aws_iot_thing_principal_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_iot_thing_principal_attachment",
-      "read",
       []
     ],
     [
@@ -24307,12 +22599,6 @@
       "resource",
       "aws_kms_alias",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_alias",
-      "read",
       []
     ],
     [
@@ -24342,12 +22628,6 @@
     [
       "resource",
       "aws_kms_custom_key_store",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_custom_key_store",
       "update",
       []
     ],
@@ -24385,12 +22665,6 @@
       "resource",
       "aws_kms_grant",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "read",
       []
     ],
     [
@@ -24547,12 +22821,6 @@
       "resource",
       "aws_lakeformation_permissions",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_lakeformation_permissions",
-      "read",
       []
     ],
     [
@@ -24864,12 +23132,6 @@
     [
       "resource",
       "aws_launch_template",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_launch_template",
       "update",
       []
     ],
@@ -24972,12 +23234,6 @@
     [
       "resource",
       "aws_lb_listener_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lb_listener_rule",
       "update",
       []
     ],
@@ -25056,12 +23312,6 @@
     [
       "resource",
       "aws_lb_trust_store",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lb_trust_store",
       "update",
       []
     ],
@@ -25075,12 +23325,6 @@
       "resource",
       "aws_lb_trust_store_revocation",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_lb_trust_store_revocation",
-      "read",
       []
     ],
     [
@@ -25937,12 +24181,6 @@
     ],
     [
       "resource",
-      "aws_location_tracker_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_main_route_table_association",
       "create",
       []
@@ -25951,12 +24189,6 @@
       "resource",
       "aws_main_route_table_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_main_route_table_association",
-      "read",
       []
     ],
     [
@@ -26100,12 +24332,6 @@
     [
       "resource",
       "aws_memorydb_acl",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_acl",
       "update",
       []
     ],
@@ -26119,12 +24345,6 @@
       "resource",
       "aws_memorydb_cluster",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_cluster",
-      "read",
       []
     ],
     [
@@ -26148,12 +24368,6 @@
     [
       "resource",
       "aws_memorydb_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_parameter_group",
       "update",
       []
     ],
@@ -26167,18 +24381,6 @@
       "resource",
       "aws_memorydb_snapshot",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_snapshot",
-      "update",
       []
     ],
     [
@@ -26191,12 +24393,6 @@
       "resource",
       "aws_memorydb_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_subnet_group",
-      "read",
       []
     ],
     [
@@ -26215,12 +24411,6 @@
       "resource",
       "aws_memorydb_user",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_user",
-      "read",
       []
     ],
     [
@@ -26383,12 +24573,6 @@
       "resource",
       "aws_msk_scram_secret_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "read",
       []
     ],
     [
@@ -26551,12 +24735,6 @@
       "resource",
       "aws_nat_gateway",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_nat_gateway",
-      "read",
       []
     ],
     [
@@ -26575,12 +24753,6 @@
       "resource",
       "aws_neptune_cluster",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster",
-      "read",
       []
     ],
     [
@@ -26599,12 +24771,6 @@
       "resource",
       "aws_neptune_cluster_endpoint",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_endpoint",
-      "read",
       []
     ],
     [
@@ -26623,12 +24789,6 @@
       "resource",
       "aws_neptune_cluster_instance",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_instance",
-      "read",
       []
     ],
     [
@@ -26647,12 +24807,6 @@
       "resource",
       "aws_neptune_cluster_parameter_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_parameter_group",
-      "read",
       []
     ],
     [
@@ -26675,12 +24829,6 @@
     ],
     [
       "resource",
-      "aws_neptune_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_neptune_event_subscription",
       "create",
       []
@@ -26689,12 +24837,6 @@
       "resource",
       "aws_neptune_event_subscription",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_event_subscription",
-      "read",
       []
     ],
     [
@@ -26718,12 +24860,6 @@
     [
       "resource",
       "aws_neptune_global_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_global_cluster",
       "update",
       []
     ],
@@ -26742,12 +24878,6 @@
     [
       "resource",
       "aws_neptune_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_parameter_group",
       "update",
       []
     ],
@@ -26761,12 +24891,6 @@
       "resource",
       "aws_neptune_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_subnet_group",
-      "read",
       []
     ],
     [
@@ -26785,12 +24909,6 @@
       "resource",
       "aws_network_acl",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "read",
       []
     ],
     [
@@ -26813,12 +24931,6 @@
     ],
     [
       "resource",
-      "aws_network_acl_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_network_acl_rule",
       "create",
       []
@@ -26831,12 +24943,6 @@
     ],
     [
       "resource",
-      "aws_network_acl_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_network_interface",
       "create",
       []
@@ -26845,12 +24951,6 @@
       "resource",
       "aws_network_interface",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "read",
       []
     ],
     [
@@ -26873,12 +24973,6 @@
     ],
     [
       "resource",
-      "aws_network_interface_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_network_interface_sg_attachment",
       "create",
       []
@@ -26887,12 +24981,6 @@
       "resource",
       "aws_network_interface_sg_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "read",
       []
     ],
     [
@@ -27096,12 +25184,6 @@
     [
       "resource",
       "aws_networkmanager_connection",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_connection",
       "update",
       []
     ],
@@ -27161,12 +25243,6 @@
     ],
     [
       "resource",
-      "aws_networkmanager_customer_gateway_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_networkmanager_device",
       "create",
       []
@@ -27175,12 +25251,6 @@
       "resource",
       "aws_networkmanager_device",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_device",
-      "read",
       []
     ],
     [
@@ -27204,12 +25274,6 @@
     [
       "resource",
       "aws_networkmanager_global_network",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_global_network",
       "update",
       []
     ],
@@ -27223,12 +25287,6 @@
       "resource",
       "aws_networkmanager_link",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link",
-      "read",
       []
     ],
     [
@@ -27251,12 +25309,6 @@
     ],
     [
       "resource",
-      "aws_networkmanager_link_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_networkmanager_site",
       "create",
       []
@@ -27265,12 +25317,6 @@
       "resource",
       "aws_networkmanager_site",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_site",
-      "read",
       []
     ],
     [
@@ -27317,12 +25363,6 @@
     ],
     [
       "resource",
-      "aws_networkmanager_transit_gateway_connect_peer_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_networkmanager_transit_gateway_peering",
       "create",
       []
@@ -27355,12 +25395,6 @@
       "resource",
       "aws_networkmanager_transit_gateway_registration",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_registration",
-      "read",
       []
     ],
     [
@@ -27635,12 +25669,6 @@
     ],
     [
       "resource",
-      "aws_opensearch_inbound_connection_accepter",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_opensearch_outbound_connection",
       "create",
       []
@@ -27653,12 +25681,6 @@
     ],
     [
       "resource",
-      "aws_opensearch_outbound_connection",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_opensearch_package",
       "create",
       []
@@ -27667,12 +25689,6 @@
       "resource",
       "aws_opensearch_package",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opensearch_package",
-      "read",
       []
     ],
     [
@@ -27691,12 +25707,6 @@
       "resource",
       "aws_opensearch_package_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opensearch_package_association",
-      "read",
       []
     ],
     [
@@ -27761,12 +25771,6 @@
     ],
     [
       "resource",
-      "aws_organizations_delegated_administrator",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_organizations_organization",
       "create",
       []
@@ -27847,18 +25851,6 @@
       "resource",
       "aws_organizations_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_organizations_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_organizations_policy_attachment",
-      "update",
       []
     ],
     [
@@ -27895,12 +25887,6 @@
       "resource",
       "aws_organizations_tag",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_organizations_tag",
-      "read",
       []
     ],
     [
@@ -28314,6 +26300,54 @@
     [
       "resource",
       "aws_proxy_protocol_policy",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_ledger",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_ledger",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_ledger",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_ledger",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_stream",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_stream",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_stream",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_qldb_stream",
       "update",
       []
     ],
@@ -28493,12 +26527,6 @@
     ],
     [
       "resource",
-      "aws_quicksight_group_membership",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_quicksight_template",
       "create",
       []
@@ -28583,12 +26611,6 @@
     ],
     [
       "resource",
-      "aws_ram_principal_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ram_resource_association",
       "create",
       []
@@ -28601,12 +26623,6 @@
     ],
     [
       "resource",
-      "aws_ram_resource_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ram_resource_share",
       "create",
       []
@@ -28615,12 +26631,6 @@
       "resource",
       "aws_ram_resource_share",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ram_resource_share",
-      "read",
       []
     ],
     [
@@ -28639,12 +26649,6 @@
       "resource",
       "aws_ram_resource_share_accepter",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ram_resource_share_accepter",
-      "read",
       []
     ],
     [
@@ -28668,12 +26672,6 @@
     [
       "resource",
       "aws_rds_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_certificate",
       "update",
       []
     ],
@@ -28687,12 +26685,6 @@
       "resource",
       "aws_rds_cluster",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster",
-      "read",
       []
     ],
     [
@@ -28715,12 +26707,6 @@
     ],
     [
       "resource",
-      "aws_rds_cluster_activity_stream",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_rds_cluster_endpoint",
       "create",
       []
@@ -28729,12 +26715,6 @@
       "resource",
       "aws_rds_cluster_endpoint",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "read",
       []
     ],
     [
@@ -28758,12 +26738,6 @@
     [
       "resource",
       "aws_rds_cluster_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_instance",
       "update",
       []
     ],
@@ -28777,12 +26751,6 @@
       "resource",
       "aws_rds_cluster_parameter_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_parameter_group",
-      "read",
       []
     ],
     [
@@ -28805,12 +26773,6 @@
     ],
     [
       "resource",
-      "aws_rds_cluster_role_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_rds_custom_db_engine_version",
       "create",
       []
@@ -28819,12 +26781,6 @@
       "resource",
       "aws_rds_custom_db_engine_version",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_custom_db_engine_version",
-      "read",
       []
     ],
     [
@@ -28843,12 +26799,6 @@
       "resource",
       "aws_rds_global_cluster",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_global_cluster",
-      "read",
       []
     ],
     [
@@ -28865,18 +26815,6 @@
     ],
     [
       "resource",
-      "aws_rds_reserved_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_reserved_instance",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_redshift_authentication_profile",
       "create",
       []
@@ -28914,12 +26852,6 @@
     [
       "resource",
       "aws_redshift_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster",
       "update",
       []
     ],
@@ -28933,12 +26865,6 @@
       "resource",
       "aws_redshift_cluster_iam_roles",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_iam_roles",
-      "read",
       []
     ],
     [
@@ -28962,12 +26888,6 @@
     [
       "resource",
       "aws_redshift_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_snapshot",
       "update",
       []
     ],
@@ -28981,12 +26901,6 @@
       "resource",
       "aws_redshift_endpoint_access",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_access",
-      "read",
       []
     ],
     [
@@ -29010,12 +26924,6 @@
     [
       "resource",
       "aws_redshift_endpoint_authorization",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_authorization",
       "update",
       []
     ],
@@ -29029,12 +26937,6 @@
       "resource",
       "aws_redshift_event_subscription",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_event_subscription",
-      "read",
       []
     ],
     [
@@ -29057,18 +26959,6 @@
     ],
     [
       "resource",
-      "aws_redshift_hsm_client_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_client_certificate",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_redshift_hsm_configuration",
       "create",
       []
@@ -29077,18 +26967,6 @@
       "resource",
       "aws_redshift_hsm_configuration",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_configuration",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_configuration",
-      "update",
       []
     ],
     [
@@ -29101,12 +26979,6 @@
       "resource",
       "aws_redshift_parameter_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_parameter_group",
-      "read",
       []
     ],
     [
@@ -29172,12 +27044,6 @@
     [
       "resource",
       "aws_redshift_scheduled_action",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_scheduled_action",
       "update",
       []
     ],
@@ -29195,18 +27061,6 @@
     ],
     [
       "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_redshift_snapshot_schedule",
       "create",
       []
@@ -29215,12 +27069,6 @@
       "resource",
       "aws_redshift_snapshot_schedule",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule",
-      "read",
       []
     ],
     [
@@ -29243,12 +27091,6 @@
     ],
     [
       "resource",
-      "aws_redshift_snapshot_schedule_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_redshift_subnet_group",
       "create",
       []
@@ -29257,12 +27099,6 @@
       "resource",
       "aws_redshift_subnet_group",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_subnet_group",
-      "read",
       []
     ],
     [
@@ -29281,12 +27117,6 @@
       "resource",
       "aws_redshift_usage_limit",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_usage_limit",
-      "read",
       []
     ],
     [
@@ -29477,12 +27307,6 @@
     ],
     [
       "resource",
-      "aws_resourcegroups_resource",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_route",
       "create",
       []
@@ -29640,12 +27464,6 @@
     [
       "resource",
       "aws_route53_resolver_config",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_config",
       "update",
       []
     ],
@@ -29659,12 +27477,6 @@
       "resource",
       "aws_route53_resolver_dnssec_config",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_dnssec_config",
-      "read",
       []
     ],
     [
@@ -29701,12 +27513,6 @@
       "resource",
       "aws_route53_resolver_firewall_config",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_config",
-      "read",
       []
     ],
     [
@@ -29749,12 +27555,6 @@
       "resource",
       "aws_route53_resolver_firewall_rule",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_rule",
-      "read",
       []
     ],
     [
@@ -30132,12 +27932,6 @@
     [
       "resource",
       "aws_route_table",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route_table",
       "update",
       []
     ],
@@ -30151,12 +27945,6 @@
       "resource",
       "aws_route_table_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_route_table_association",
-      "read",
       []
     ],
     [
@@ -30199,12 +27987,6 @@
       "resource",
       "aws_rum_metrics_destination",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_rum_metrics_destination",
-      "read",
       []
     ],
     [
@@ -31980,12 +29762,6 @@
     [
       "resource",
       "aws_security_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_security_group",
       "update",
       []
     ],
@@ -31999,12 +29775,6 @@
       "resource",
       "aws_security_group_rule",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "read",
       []
     ],
     [
@@ -32267,12 +30037,6 @@
     ],
     [
       "resource",
-      "aws_servicecatalog_budget_resource_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_servicecatalog_constraint",
       "create",
       []
@@ -32352,12 +30116,6 @@
     [
       "resource",
       "aws_servicecatalog_portfolio_share",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_portfolio_share",
       "update",
       []
     ],
@@ -32371,12 +30129,6 @@
       "resource",
       "aws_servicecatalog_principal_portfolio_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_principal_portfolio_association",
-      "read",
       []
     ],
     [
@@ -32413,12 +30165,6 @@
       "resource",
       "aws_servicecatalog_product_portfolio_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_product_portfolio_association",
-      "read",
       []
     ],
     [
@@ -32527,12 +30273,6 @@
       "resource",
       "aws_servicecatalog_tag_option_resource_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_servicecatalog_tag_option_resource_association",
-      "read",
       []
     ],
     [
@@ -33438,12 +31178,6 @@
     [
       "resource",
       "aws_spot_fleet_request",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
       "update",
       []
     ],
@@ -33581,12 +31315,6 @@
     ],
     [
       "resource",
-      "aws_ssm_activation",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ssm_association",
       "create",
       []
@@ -33690,12 +31418,6 @@
     [
       "resource",
       "aws_ssm_maintenance_window_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssm_maintenance_window_target",
       "update",
       []
     ],
@@ -33785,12 +31507,6 @@
     ],
     [
       "resource",
-      "aws_ssm_patch_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ssm_resource_data_sync",
       "create",
       []
@@ -33799,12 +31515,6 @@
       "resource",
       "aws_ssm_resource_data_sync",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssm_resource_data_sync",
-      "read",
       []
     ],
     [
@@ -33965,12 +31675,6 @@
     ],
     [
       "resource",
-      "aws_ssoadmin_account_assignment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_ssoadmin_customer_managed_policy_attachment",
       "create",
       []
@@ -33979,12 +31683,6 @@
       "resource",
       "aws_ssoadmin_customer_managed_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "read",
       []
     ],
     [
@@ -34021,12 +31719,6 @@
       "resource",
       "aws_ssoadmin_managed_policy_attachment",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "read",
       []
     ],
     [
@@ -34265,18 +31957,6 @@
     ],
     [
       "resource",
-      "aws_storagegateway_tape_pool",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_storagegateway_tape_pool",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_storagegateway_upload_buffer",
       "create",
       []
@@ -34314,12 +31994,6 @@
     [
       "resource",
       "aws_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_subnet",
       "update",
       []
     ],
@@ -34734,12 +32408,6 @@
     [
       "resource",
       "aws_transfer_tag",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_transfer_tag",
       "update",
       []
     ],
@@ -34849,12 +32517,6 @@
       "resource",
       "aws_verifiedaccess_instance",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_verifiedaccess_instance",
-      "read",
       []
     ],
     [
@@ -34873,12 +32535,6 @@
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_verifiedaccess_instance_logging_configuration",
-      "read",
       []
     ],
     [
@@ -34901,12 +32557,6 @@
     ],
     [
       "resource",
-      "aws_verifiedaccess_instance_trust_provider_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_verifiedaccess_trust_provider",
       "create",
       []
@@ -34915,12 +32565,6 @@
       "resource",
       "aws_verifiedaccess_trust_provider",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_verifiedaccess_trust_provider",
-      "read",
       []
     ],
     [
@@ -34943,12 +32587,6 @@
     ],
     [
       "resource",
-      "aws_volume_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc",
       "create",
       []
@@ -34985,18 +32623,6 @@
     ],
     [
       "resource",
-      "aws_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_dhcp_options_association",
       "create",
       []
@@ -35005,12 +32631,6 @@
       "resource",
       "aws_vpc_dhcp_options_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "read",
       []
     ],
     [
@@ -35029,12 +32649,6 @@
       "resource",
       "aws_vpc_endpoint",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint",
-      "read",
       []
     ],
     [
@@ -35057,12 +32671,6 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint_connection_accepter",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_endpoint_connection_notification",
       "create",
       []
@@ -35071,12 +32679,6 @@
       "resource",
       "aws_vpc_endpoint_connection_notification",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_connection_notification",
-      "read",
       []
     ],
     [
@@ -35100,12 +32702,6 @@
     [
       "resource",
       "aws_vpc_endpoint_policy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_policy",
       "update",
       []
     ],
@@ -35123,12 +32719,6 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint_route_table_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_endpoint_security_group_association",
       "create",
       []
@@ -35141,12 +32731,6 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint_security_group_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_endpoint_service",
       "create",
       []
@@ -35155,12 +32739,6 @@
       "resource",
       "aws_vpc_endpoint_service",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint_service",
-      "read",
       []
     ],
     [
@@ -35183,12 +32761,6 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint_service_allowed_principal",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_endpoint_subnet_association",
       "create",
       []
@@ -35201,12 +32773,6 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint_subnet_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_ipam",
       "create",
       []
@@ -35215,12 +32781,6 @@
       "resource",
       "aws_vpc_ipam",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam",
-      "read",
       []
     ],
     [
@@ -35256,12 +32816,6 @@
     [
       "resource",
       "aws_vpc_ipam_pool",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool",
       "update",
       []
     ],
@@ -35279,12 +32833,6 @@
     ],
     [
       "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_ipam_pool_cidr_allocation",
       "create",
       []
@@ -35293,12 +32841,6 @@
       "resource",
       "aws_vpc_ipam_pool_cidr_allocation",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr_allocation",
-      "read",
       []
     ],
     [
@@ -35322,12 +32864,6 @@
     [
       "resource",
       "aws_vpc_ipam_resource_discovery",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery",
       "update",
       []
     ],
@@ -35345,18 +32881,6 @@
     ],
     [
       "resource",
-      "aws_vpc_ipam_resource_discovery_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery_association",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_ipam_scope",
       "create",
       []
@@ -35365,12 +32889,6 @@
       "resource",
       "aws_vpc_ipam_scope",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "read",
       []
     ],
     [
@@ -35393,12 +32911,6 @@
     ],
     [
       "resource",
-      "aws_vpc_ipv4_cidr_block_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_ipv6_cidr_block_association",
       "create",
       []
@@ -35407,12 +32919,6 @@
       "resource",
       "aws_vpc_ipv6_cidr_block_association",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv6_cidr_block_association",
-      "read",
       []
     ],
     [
@@ -35429,12 +32935,6 @@
     ],
     [
       "resource",
-      "aws_vpc_network_performance_metric_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpc_peering_connection",
       "create",
       []
@@ -35443,12 +32943,6 @@
       "resource",
       "aws_vpc_peering_connection",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "read",
       []
     ],
     [
@@ -35461,12 +32955,6 @@
       "resource",
       "aws_vpc_peering_connection_accepter",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_accepter",
-      "read",
       []
     ],
     [
@@ -35479,12 +32967,6 @@
       "resource",
       "aws_vpc_peering_connection_options",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_options",
-      "read",
       []
     ],
     [
@@ -35747,12 +33229,6 @@
     ],
     [
       "resource",
-      "aws_vpclattice_target_group_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_vpn_connection",
       "create",
       []
@@ -35845,12 +33321,6 @@
       "resource",
       "aws_vpn_gateway_route_propagation",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpn_gateway_route_propagation",
-      "read",
       []
     ],
     [
@@ -36600,12 +34070,6 @@
     [
       "resource",
       "aws_workspaces_directory",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_directory",
       "update",
       []
     ],
@@ -36643,12 +34107,6 @@
       "resource",
       "aws_workspaces_workspace",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "read",
       []
     ],
     [
@@ -36709,12 +34167,6 @@
       "resource",
       "aws_xray_sampling_rule",
       "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_xray_sampling_rule",
-      "read",
       []
     ],
     [

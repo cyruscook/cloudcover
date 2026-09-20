@@ -6,12 +6,7 @@
       "list_resource",
       "aws_ecr_repository",
       "list",
-      [
-        [
-          "ecr",
-          "DescribeRepositories"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -43,10 +38,6 @@
         [
           "route53resolver",
           "GetResolverRuleAssociation"
-        ],
-        [
-          "route53resolver",
-          "ListResolverRuleAssociations"
         ]
       ]
     ],
@@ -54,35 +45,7 @@
       "list_resource",
       "aws_route_table",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ]
-      ]
-    ],
-    [
-      "list_resource",
-      "aws_s3_bucket_policy",
-      "list",
-      [
-        [
-          "s3",
-          "GetBucketPolicy"
-        ],
-        [
-          "s3",
-          "ListBuckets"
-        ],
-        [
-          "s3",
-          "ListDirectoryBuckets"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -92,10 +55,6 @@
         [
           "s3",
           "HeadBucket"
-        ],
-        [
-          "s3",
-          "ListDirectoryBuckets"
         ]
       ]
     ],
@@ -111,10 +70,6 @@
         [
           "secretsmanager",
           "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "ListSecrets"
         ]
       ]
     ],
@@ -126,10 +81,6 @@
         [
           "secretsmanager",
           "GetSecretValue"
-        ],
-        [
-          "secretsmanager",
-          "ListSecretVersionIds"
         ]
       ]
     ],
@@ -137,23 +88,13 @@
       "list_resource",
       "aws_vpc_security_group_egress_rule",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroupRules"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_vpc_security_group_ingress_rule",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroupRules"
-        ]
-      ]
+      []
     ],
     [
       "resource",

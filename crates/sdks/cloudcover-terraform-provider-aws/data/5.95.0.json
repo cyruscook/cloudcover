@@ -25,10 +25,6 @@
         [
           "redshift",
           "CreateIntegration"
-        ],
-        [
-          "redshift",
-          "DescribeIntegrations"
         ]
       ]
     ],
@@ -40,10 +36,6 @@
         [
           "redshift",
           "DeleteIntegration"
-        ],
-        [
-          "redshift",
-          "DescribeIntegrations"
         ]
       ]
     ],
@@ -51,22 +43,13 @@
       "resource",
       "aws_redshift_integration",
       "read",
-      [
-        [
-          "redshift",
-          "DescribeIntegrations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_redshift_integration",
       "update",
       [
-        [
-          "redshift",
-          "DescribeIntegrations"
-        ],
         [
           "redshift",
           "ModifyIntegration"

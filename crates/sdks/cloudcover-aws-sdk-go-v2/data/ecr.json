@@ -1,0 +1,1950 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/ecr",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "BatchCheckLayerAvailability",
+          [
+            [
+              "ecr",
+              "BatchCheckLayerAvailability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "BatchDeleteImage",
+          [
+            [
+              "ecr",
+              "BatchDeleteImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "BatchGetImage",
+          [
+            [
+              "ecr",
+              "BatchGetImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "CompleteLayerUpload",
+          [
+            [
+              "ecr",
+              "CompleteLayerUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "CreateRepository",
+          [
+            [
+              "ecr",
+              "CreateRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteLifecyclePolicy",
+          [
+            [
+              "ecr",
+              "DeleteLifecyclePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteRepository",
+          [
+            [
+              "ecr",
+              "DeleteRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteRepositoryPolicy",
+          [
+            [
+              "ecr",
+              "DeleteRepositoryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeImageScanFindings",
+          [
+            [
+              "ecr",
+              "DescribeImageScanFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeImages",
+          [
+            [
+              "ecr",
+              "DescribeImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeRepositories",
+          [
+            [
+              "ecr",
+              "DescribeRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetAuthorizationToken",
+          [
+            [
+              "ecr",
+              "GetAuthorizationToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetDownloadUrlForLayer",
+          [
+            [
+              "ecr",
+              "GetDownloadUrlForLayer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetLifecyclePolicy",
+          [
+            [
+              "ecr",
+              "GetLifecyclePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetLifecyclePolicyPreview",
+          [
+            [
+              "ecr",
+              "GetLifecyclePolicyPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetRepositoryPolicy",
+          [
+            [
+              "ecr",
+              "GetRepositoryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "InitiateLayerUpload",
+          [
+            [
+              "ecr",
+              "InitiateLayerUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ListImages",
+          [
+            [
+              "ecr",
+              "ListImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "ecr",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutImage",
+          [
+            [
+              "ecr",
+              "PutImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutImageScanningConfiguration",
+          [
+            [
+              "ecr",
+              "PutImageScanningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutImageTagMutability",
+          [
+            [
+              "ecr",
+              "PutImageTagMutability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutLifecyclePolicy",
+          [
+            [
+              "ecr",
+              "PutLifecyclePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "SetRepositoryPolicy",
+          [
+            [
+              "ecr",
+              "SetRepositoryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "StartImageScan",
+          [
+            [
+              "ecr",
+              "StartImageScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "StartLifecyclePolicyPreview",
+          [
+            [
+              "ecr",
+              "StartLifecyclePolicyPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "TagResource",
+          [
+            [
+              "ecr",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "ecr",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "UploadLayerPart",
+          [
+            [
+              "ecr",
+              "UploadLayerPart"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribeImageScanFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribeImageScanFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribeImagesPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribeImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribeRepositoriesPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribeRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "GetLifecyclePolicyPreviewPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "GetLifecyclePolicyPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "ListImagesPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "ListImages"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteRegistryPolicy",
+          [
+            [
+              "ecr",
+              "DeleteRegistryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeRegistry",
+          [
+            [
+              "ecr",
+              "DescribeRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetRegistryPolicy",
+          [
+            [
+              "ecr",
+              "GetRegistryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutRegistryPolicy",
+          [
+            [
+              "ecr",
+              "PutRegistryPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutReplicationConfiguration",
+          [
+            [
+              "ecr",
+              "PutReplicationConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeImageReplicationStatus",
+          [
+            [
+              "ecr",
+              "DescribeImageReplicationStatus"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "BatchGetRepositoryScanningConfiguration",
+          [
+            [
+              "ecr",
+              "BatchGetRepositoryScanningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "CreatePullThroughCacheRule",
+          [
+            [
+              "ecr",
+              "CreatePullThroughCacheRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeletePullThroughCacheRule",
+          [
+            [
+              "ecr",
+              "DeletePullThroughCacheRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribePullThroughCacheRules",
+          [
+            [
+              "ecr",
+              "DescribePullThroughCacheRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetRegistryScanningConfiguration",
+          [
+            [
+              "ecr",
+              "GetRegistryScanningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutRegistryScanningConfiguration",
+          [
+            [
+              "ecr",
+              "PutRegistryScanningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribePullThroughCacheRulesPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribePullThroughCacheRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "UpdatePullThroughCacheRule",
+          [
+            [
+              "ecr",
+              "UpdatePullThroughCacheRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ValidatePullThroughCacheRule",
+          [
+            [
+              "ecr",
+              "ValidatePullThroughCacheRule"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "CreateRepositoryCreationTemplate",
+          [
+            [
+              "ecr",
+              "CreateRepositoryCreationTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteRepositoryCreationTemplate",
+          [
+            [
+              "ecr",
+              "DeleteRepositoryCreationTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeRepositoryCreationTemplates",
+          [
+            [
+              "ecr",
+              "DescribeRepositoryCreationTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "UpdateRepositoryCreationTemplate",
+          [
+            [
+              "ecr",
+              "UpdateRepositoryCreationTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribeRepositoryCreationTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribeRepositoryCreationTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetAccountSetting",
+          [
+            [
+              "ecr",
+              "GetAccountSetting"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutAccountSetting",
+          [
+            [
+              "ecr",
+              "PutAccountSetting"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeregisterPullTimeUpdateExclusion",
+          [
+            [
+              "ecr",
+              "DeregisterPullTimeUpdateExclusion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ListImageReferrers",
+          [
+            [
+              "ecr",
+              "ListImageReferrers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ListPullTimeUpdateExclusions",
+          [
+            [
+              "ecr",
+              "ListPullTimeUpdateExclusions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "RegisterPullTimeUpdateExclusion",
+          [
+            [
+              "ecr",
+              "RegisterPullTimeUpdateExclusion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "UpdateImageStorageClass",
+          [
+            [
+              "ecr",
+              "UpdateImageStorageClass"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DeleteSigningConfiguration",
+          [
+            [
+              "ecr",
+              "DeleteSigningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeImageSigningStatus",
+          [
+            [
+              "ecr",
+              "DescribeImageSigningStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "GetSigningConfiguration",
+          [
+            [
+              "ecr",
+              "GetSigningConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "PutSigningConfiguration",
+          [
+            [
+              "ecr",
+              "PutSigningConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

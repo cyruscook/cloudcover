@@ -3,6 +3,12 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_lambda_functions",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_cloudfront_distribution",
       "delete",

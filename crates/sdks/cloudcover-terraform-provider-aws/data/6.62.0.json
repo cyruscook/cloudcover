@@ -6,12 +6,7 @@
       "list_resource",
       "aws_db_instance",
       "list",
-      [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -25,10 +20,6 @@
         [
           "dsql",
           "GetVpcEndpointServiceName"
-        ],
-        [
-          "dsql",
-          "ListClusters"
         ]
       ]
     ],
@@ -40,10 +31,6 @@
         [
           "dsql",
           "GetClusterPolicy"
-        ],
-        [
-          "dsql",
-          "ListClusters"
         ]
       ]
     ],
@@ -52,10 +39,6 @@
       "aws_ecr_lifecycle_policy",
       "list",
       [
-        [
-          "ecr",
-          "DescribeRepositories"
-        ],
         [
           "ecr",
           "GetLifecyclePolicy"
@@ -70,10 +53,6 @@
         [
           "ecs",
           "DescribeClusters"
-        ],
-        [
-          "ecs",
-          "ListClusters"
         ]
       ]
     ],
@@ -81,12 +60,7 @@
       "list_resource",
       "aws_pinpointsmsvoicev2_keyword",
       "list",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeKeywords"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -107,10 +81,6 @@
         [
           "pinpointsmsvoicev2",
           "DeleteKeyword"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribeKeywords"
         ]
       ]
     ],
@@ -118,12 +88,7 @@
       "resource",
       "aws_pinpointsmsvoicev2_keyword",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeKeywords"
-        ]
-      ]
+      []
     ],
     [
       "resource",

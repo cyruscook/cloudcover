@@ -4,29 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_mq_broker",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeSharedResources"
-        ],
-        [
-          "mq",
-          "DescribeUser"
-        ],
-        [
-          "mq",
-          "ListBrokers"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_quicksight_data_set",
       "read",
       [
@@ -48,10 +25,6 @@
         [
           "route53profiles",
           "GetProfile"
-        ],
-        [
-          "route53profiles",
-          "ListProfiles"
         ],
         [
           "route53profiles",
@@ -96,10 +69,6 @@
         ],
         [
           "lambda",
-          "ListCapacityProviders"
-        ],
-        [
-          "lambda",
           "ListFunctionVersionsByCapacityProvider"
         ]
       ]
@@ -112,10 +81,6 @@
         [
           "scheduler",
           "GetSchedule"
-        ],
-        [
-          "scheduler",
-          "ListSchedules"
         ]
       ]
     ],
@@ -123,12 +88,7 @@
       "list_resource",
       "aws_ssoadmin_region",
       "list",
-      [
-        [
-          "ssoadmin",
-          "ListRegions"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -270,10 +230,6 @@
         ],
         [
           "mq",
-          "DescribeSharedResources"
-        ],
-        [
-          "mq",
           "DescribeUser"
         ],
         [
@@ -283,60 +239,6 @@
         [
           "mq",
           "UpdateBroker"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeSharedResources"
-        ],
-        [
-          "mq",
-          "DescribeUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_mq_broker",
-      "update",
-      [
-        [
-          "mq",
-          "CreateUser"
-        ],
-        [
-          "mq",
-          "DeleteUser"
-        ],
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeSharedResources"
-        ],
-        [
-          "mq",
-          "RebootBroker"
-        ],
-        [
-          "mq",
-          "UpdateBroker"
-        ],
-        [
-          "mq",
-          "UpdateUser"
         ]
       ]
     ],

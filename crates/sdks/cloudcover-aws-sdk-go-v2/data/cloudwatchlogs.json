@@ -1,0 +1,2872 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "AssociateKmsKey",
+          [
+            [
+              "cloudwatchlogs",
+              "AssociateKmsKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CancelExportTask",
+          [
+            [
+              "cloudwatchlogs",
+              "CancelExportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateExportTask",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateExportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateLogGroup",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateLogGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateLogStream",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateLogStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDestination",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteLogGroup",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteLogGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteLogStream",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteLogStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteMetricFilter",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteMetricFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteQueryDefinition",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteQueryDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteRetentionPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteRetentionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteSubscriptionFilter",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteSubscriptionFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeDestinations",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeExportTasks",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeExportTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeLogGroups",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeLogGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeLogStreams",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeLogStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeMetricFilters",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeMetricFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeQueries",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeQueries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeQueryDefinitions",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeQueryDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeResourcePolicies",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeSubscriptionFilters",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeSubscriptionFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DisassociateKmsKey",
+          [
+            [
+              "cloudwatchlogs",
+              "DisassociateKmsKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "FilterLogEvents",
+          [
+            [
+              "cloudwatchlogs",
+              "FilterLogEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogEvents",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogGroupFields",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogGroupFields"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogRecord",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetQueryResults",
+          [
+            [
+              "cloudwatchlogs",
+              "GetQueryResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListTagsLogGroup",
+          [
+            [
+              "cloudwatchlogs",
+              "ListTagsLogGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDestination",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDestinationPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDestinationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutLogEvents",
+          [
+            [
+              "cloudwatchlogs",
+              "PutLogEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutMetricFilter",
+          [
+            [
+              "cloudwatchlogs",
+              "PutMetricFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutQueryDefinition",
+          [
+            [
+              "cloudwatchlogs",
+              "PutQueryDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutRetentionPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutRetentionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutSubscriptionFilter",
+          [
+            [
+              "cloudwatchlogs",
+              "PutSubscriptionFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "StartQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "StartQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "StopQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "StopQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "TagLogGroup",
+          [
+            [
+              "cloudwatchlogs",
+              "TagLogGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "TestMetricFilter",
+          [
+            [
+              "cloudwatchlogs",
+              "TestMetricFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UntagLogGroup",
+          [
+            [
+              "cloudwatchlogs",
+              "UntagLogGroup"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeDestinationsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeLogGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeLogGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeLogStreamsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeLogStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeMetricFiltersPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeMetricFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeSubscriptionFiltersPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeSubscriptionFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "FilterLogEventsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "FilterLogEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "GetLogEventsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "cloudwatchlogs",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "TagResource",
+          [
+            [
+              "cloudwatchlogs",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "cloudwatchlogs",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDataProtectionPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDataProtectionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetDataProtectionPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "GetDataProtectionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDataProtectionPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDataProtectionPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteAccountPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteAccountPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeAccountPolicies",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeAccountPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutAccountPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutAccountPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateDelivery",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateDelivery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDelivery",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDelivery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDeliveryDestination",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDeliveryDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDeliveryDestinationPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDeliveryDestinationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteDeliverySource",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteDeliverySource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeDeliveries",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliveries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeDeliveryDestinations",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliveryDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeDeliverySources",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliverySources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetDelivery",
+          [
+            [
+              "cloudwatchlogs",
+              "GetDelivery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetDeliveryDestination",
+          [
+            [
+              "cloudwatchlogs",
+              "GetDeliveryDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetDeliveryDestinationPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "GetDeliveryDestinationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetDeliverySource",
+          [
+            [
+              "cloudwatchlogs",
+              "GetDeliverySource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDeliveryDestination",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDeliveryDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDeliveryDestinationPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDeliveryDestinationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutDeliverySource",
+          [
+            [
+              "cloudwatchlogs",
+              "PutDeliverySource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeDeliveriesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliveries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeDeliveryDestinationsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliveryDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeDeliverySourcesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeDeliverySources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateLogAnomalyDetector",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateLogAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteLogAnomalyDetector",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteLogAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogAnomalyDetector",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListAnomalies",
+          [
+            [
+              "cloudwatchlogs",
+              "ListAnomalies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListLogAnomalyDetectors",
+          [
+            [
+              "cloudwatchlogs",
+              "ListLogAnomalyDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UpdateAnomaly",
+          [
+            [
+              "cloudwatchlogs",
+              "UpdateAnomaly"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UpdateLogAnomalyDetector",
+          [
+            [
+              "cloudwatchlogs",
+              "UpdateLogAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListAnomaliesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListAnomalies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListLogAnomalyDetectorsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListLogAnomalyDetectors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "StartLiveTail",
+          [
+            [
+              "cloudwatchlogs",
+              "StartLiveTail"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeConfigurationTemplates",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeConfigurationTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UpdateDeliveryConfiguration",
+          [
+            [
+              "cloudwatchlogs",
+              "UpdateDeliveryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "DescribeConfigurationTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeConfigurationTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteIndexPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteIndexPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteTransformer",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteTransformer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeFieldIndexes",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeFieldIndexes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeIndexPolicies",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeIndexPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetTransformer",
+          [
+            [
+              "cloudwatchlogs",
+              "GetTransformer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListLogGroupsForQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "ListLogGroupsForQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutIndexPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutIndexPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutTransformer",
+          [
+            [
+              "cloudwatchlogs",
+              "PutTransformer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "TestTransformer",
+          [
+            [
+              "cloudwatchlogs",
+              "TestTransformer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListLogGroupsForQueryPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListLogGroupsForQuery"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "GetIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListIntegrations",
+          [
+            [
+              "cloudwatchlogs",
+              "ListIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "PutIntegration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListLogGroups",
+          [
+            [
+              "cloudwatchlogs",
+              "ListLogGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogObject",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogObject"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateScheduledQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateScheduledQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteScheduledQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteScheduledQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetScheduledQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "GetScheduledQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetScheduledQueryHistory",
+          [
+            [
+              "cloudwatchlogs",
+              "GetScheduledQueryHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListScheduledQueries",
+          [
+            [
+              "cloudwatchlogs",
+              "ListScheduledQueries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UpdateScheduledQuery",
+          [
+            [
+              "cloudwatchlogs",
+              "UpdateScheduledQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "GetScheduledQueryHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "GetScheduledQueryHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListScheduledQueriesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListScheduledQueries"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutLogGroupDeletionProtection",
+          [
+            [
+              "cloudwatchlogs",
+              "PutLogGroupDeletionProtection"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "AssociateSourceToS3TableIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "AssociateSourceToS3TableIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DisassociateSourceFromS3TableIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "DisassociateSourceFromS3TableIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLogFields",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLogFields"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListAggregateLogGroupSummaries",
+          [
+            [
+              "cloudwatchlogs",
+              "ListAggregateLogGroupSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListSourcesForS3TableIntegration",
+          [
+            [
+              "cloudwatchlogs",
+              "ListSourcesForS3TableIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListSourcesForS3TableIntegrationPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListSourcesForS3TableIntegration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CancelImportTask",
+          [
+            [
+              "cloudwatchlogs",
+              "CancelImportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateImportTask",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateImportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeImportTaskBatches",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeImportTaskBatches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeImportTasks",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeImportTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "ListAggregateLogGroupSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudwatchlogs",
+              "ListAggregateLogGroupSummaries"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutBearerTokenAuthentication",
+          [
+            [
+              "cloudwatchlogs",
+              "PutBearerTokenAuthentication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "CreateLookupTable",
+          [
+            [
+              "cloudwatchlogs",
+              "CreateLookupTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteLookupTable",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteLookupTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DescribeLookupTables",
+          [
+            [
+              "cloudwatchlogs",
+              "DescribeLookupTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetLookupTable",
+          [
+            [
+              "cloudwatchlogs",
+              "GetLookupTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "UpdateLookupTable",
+          [
+            [
+              "cloudwatchlogs",
+              "UpdateLookupTable"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "DeleteSyslogConfiguration",
+          [
+            [
+              "cloudwatchlogs",
+              "DeleteSyslogConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "ListSyslogConfigurations",
+          [
+            [
+              "cloudwatchlogs",
+              "ListSyslogConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutSyslogConfiguration",
+          [
+            [
+              "cloudwatchlogs",
+              "PutSyslogConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "GetStorageTierPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "GetStorageTierPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+          "Client",
+          "PutStorageTierPolicy",
+          [
+            [
+              "cloudwatchlogs",
+              "PutStorageTierPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.79.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

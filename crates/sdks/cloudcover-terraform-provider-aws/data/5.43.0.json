@@ -3,6 +3,128 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_iam_access_keys",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_iam_group",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_iam_instance_profiles",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_iam_policy",
+      "read",
+      [
+        [
+          "iam",
+          "GetPolicy"
+        ],
+        [
+          "iam",
+          "GetPolicyVersion"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_iam_roles",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_iam_server_certificate",
+      "read",
+      [
+        [
+          "iam",
+          "GetServerCertificate"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_iam_users",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_access_key",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_access_key",
+      "update",
+      [
+        [
+          "iam",
+          "UpdateAccessKey"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_membership",
+      "create",
+      [
+        [
+          "iam",
+          "AddUserToGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_membership",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_group_membership",
+      "update",
+      [
+        [
+          "iam",
+          "AddUserToGroup"
+        ],
+        [
+          "iam",
+          "RemoveUserFromGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachment",
+      "create",
+      [
+        [
+          "iam",
+          "AttachGroupPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachment",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_iam_instance_profile",
       "create",
@@ -89,6 +211,100 @@
     ],
     [
       "resource",
+      "aws_iam_policy",
+      "delete",
+      [
+        [
+          "iam",
+          "DeletePolicy"
+        ],
+        [
+          "iam",
+          "DeletePolicyVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_policy",
+      "update",
+      [
+        [
+          "iam",
+          "CreatePolicyVersion"
+        ],
+        [
+          "iam",
+          "DeletePolicyVersion"
+        ],
+        [
+          "iam",
+          "GetPolicy"
+        ],
+        [
+          "iam",
+          "GetPolicyVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_policy_attachment",
+      "create",
+      [
+        [
+          "iam",
+          "AttachGroupPolicy"
+        ],
+        [
+          "iam",
+          "AttachRolePolicy"
+        ],
+        [
+          "iam",
+          "AttachUserPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_policy_attachment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_policy_attachment",
+      "update",
+      [
+        [
+          "iam",
+          "AttachGroupPolicy"
+        ],
+        [
+          "iam",
+          "AttachRolePolicy"
+        ],
+        [
+          "iam",
+          "AttachUserPolicy"
+        ],
+        [
+          "iam",
+          "DetachGroupPolicy"
+        ],
+        [
+          "iam",
+          "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "DetachUserPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_iam_role",
       "create",
       [
@@ -110,14 +326,6 @@
         ],
         [
           "iam",
-          "ListAttachedRolePolicies"
-        ],
-        [
-          "iam",
-          "ListRolePolicies"
-        ],
-        [
-          "iam",
           "PutRolePolicy"
         ],
         [
@@ -129,6 +337,112 @@
           "UntagRole"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_iam_role",
+      "delete",
+      [
+        [
+          "iam",
+          "DeleteRole"
+        ],
+        [
+          "iam",
+          "DeleteRolePolicy"
+        ],
+        [
+          "iam",
+          "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "RemoveRoleFromInstanceProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role",
+      "read",
+      [
+        [
+          "iam",
+          "GetRole"
+        ],
+        [
+          "iam",
+          "GetRolePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role",
+      "update",
+      [
+        [
+          "iam",
+          "AttachRolePolicy"
+        ],
+        [
+          "iam",
+          "DeleteRolePermissionsBoundary"
+        ],
+        [
+          "iam",
+          "DeleteRolePolicy"
+        ],
+        [
+          "iam",
+          "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "GetRole"
+        ],
+        [
+          "iam",
+          "GetRolePolicy"
+        ],
+        [
+          "iam",
+          "PutRolePermissionsBoundary"
+        ],
+        [
+          "iam",
+          "PutRolePolicy"
+        ],
+        [
+          "iam",
+          "UpdateAssumeRolePolicy"
+        ],
+        [
+          "iam",
+          "UpdateRole"
+        ],
+        [
+          "iam",
+          "UpdateRoleDescription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachment",
+      "create",
+      [
+        [
+          "iam",
+          "AttachRolePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachment",
+      "read",
+      []
     ],
     [
       "resource",
@@ -224,6 +538,38 @@
     ],
     [
       "resource",
+      "aws_iam_user",
+      "delete",
+      [
+        [
+          "iam",
+          "DeleteUser"
+        ],
+        [
+          "iam",
+          "RemoveUserFromGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachment",
+      "create",
+      [
+        [
+          "iam",
+          "AttachUserPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachment",
+      "read",
+      []
+    ],
+    [
+      "resource",
       "aws_iam_virtual_mfa_device",
       "create",
       [
@@ -237,15 +583,33 @@
         ],
         [
           "iam",
-          "ListVirtualMFADevices"
-        ],
-        [
-          "iam",
           "TagMFADevice"
         ],
         [
           "iam",
           "UntagMFADevice"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_virtual_mfa_device",
+      "read",
+      [
+        [
+          "iam",
+          "ListMFADeviceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_virtual_mfa_device",
+      "update",
+      [
+        [
+          "iam",
+          "ListMFADeviceTags"
         ]
       ]
     ]

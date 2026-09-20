@@ -13,5 +13,5 @@ pub use method_reference::{
     GoMethodReference, MethodReference, PythonMethodReference, TerraformMethodReference,
 };
 pub use provider::CloudProvider;
-pub use sdk::Sdk;
+pub use sdk::{ResolvedSdk, Sdk, SdkModule, SdkModuleReplacement};
 pub use sdk_method_mapping::SdkMethodMapping;

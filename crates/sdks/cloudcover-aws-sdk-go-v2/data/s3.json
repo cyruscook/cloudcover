@@ -1,0 +1,2810 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/s3",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "AbortMultipartUpload",
+          [
+            [
+              "s3",
+              "AbortMultipartUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CompleteMultipartUpload",
+          [
+            [
+              "s3",
+              "CompleteMultipartUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CopyObject",
+          [
+            [
+              "s3",
+              "CopyObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CreateBucket",
+          [
+            [
+              "s3",
+              "CreateBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CreateMultipartUpload",
+          [
+            [
+              "s3",
+              "CreateMultipartUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucket",
+          [
+            [
+              "s3",
+              "DeleteBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketAnalyticsConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketAnalyticsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketCors",
+          [
+            [
+              "s3",
+              "DeleteBucketCors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketEncryption",
+          [
+            [
+              "s3",
+              "DeleteBucketEncryption"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketInventoryConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketInventoryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketLifecycle",
+          [
+            [
+              "s3",
+              "DeleteBucketLifecycle"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketMetricsConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketMetricsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketPolicy",
+          [
+            [
+              "s3",
+              "DeleteBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketReplication",
+          [
+            [
+              "s3",
+              "DeleteBucketReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketTagging",
+          [
+            [
+              "s3",
+              "DeleteBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketWebsite",
+          [
+            [
+              "s3",
+              "DeleteBucketWebsite"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteObject",
+          [
+            [
+              "s3",
+              "DeleteObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteObjectTagging",
+          [
+            [
+              "s3",
+              "DeleteObjectTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteObjects",
+          [
+            [
+              "s3",
+              "DeleteObjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeletePublicAccessBlock",
+          [
+            [
+              "s3",
+              "DeletePublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketAccelerateConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketAccelerateConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketAcl",
+          [
+            [
+              "s3",
+              "GetBucketAcl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketAnalyticsConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketAnalyticsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketCors",
+          [
+            [
+              "s3",
+              "GetBucketCors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketEncryption",
+          [
+            [
+              "s3",
+              "GetBucketEncryption"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketInventoryConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketInventoryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketLifecycleConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketLifecycleConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketLocation",
+          [
+            [
+              "s3",
+              "GetBucketLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketLogging",
+          [
+            [
+              "s3",
+              "GetBucketLogging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketMetricsConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketMetricsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketNotificationConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketPolicy",
+          [
+            [
+              "s3",
+              "GetBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketPolicyStatus",
+          [
+            [
+              "s3",
+              "GetBucketPolicyStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketReplication",
+          [
+            [
+              "s3",
+              "GetBucketReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketRequestPayment",
+          [
+            [
+              "s3",
+              "GetBucketRequestPayment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketTagging",
+          [
+            [
+              "s3",
+              "GetBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketVersioning",
+          [
+            [
+              "s3",
+              "GetBucketVersioning"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketWebsite",
+          [
+            [
+              "s3",
+              "GetBucketWebsite"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObject",
+          [
+            [
+              "s3",
+              "GetObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectAcl",
+          [
+            [
+              "s3",
+              "GetObjectAcl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectLegalHold",
+          [
+            [
+              "s3",
+              "GetObjectLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectLockConfiguration",
+          [
+            [
+              "s3",
+              "GetObjectLockConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectRetention",
+          [
+            [
+              "s3",
+              "GetObjectRetention"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectTagging",
+          [
+            [
+              "s3",
+              "GetObjectTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectTorrent",
+          [
+            [
+              "s3",
+              "GetObjectTorrent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetPublicAccessBlock",
+          [
+            [
+              "s3",
+              "GetPublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "HeadBucket",
+          [
+            [
+              "s3",
+              "HeadBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "HeadObject",
+          [
+            [
+              "s3",
+              "HeadObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListBucketAnalyticsConfigurations",
+          [
+            [
+              "s3",
+              "ListBucketAnalyticsConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListBucketInventoryConfigurations",
+          [
+            [
+              "s3",
+              "ListBucketInventoryConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListBucketMetricsConfigurations",
+          [
+            [
+              "s3",
+              "ListBucketMetricsConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListBuckets",
+          [
+            [
+              "s3",
+              "ListBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListMultipartUploads",
+          [
+            [
+              "s3",
+              "ListMultipartUploads"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListObjectVersions",
+          [
+            [
+              "s3",
+              "ListObjectVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListObjects",
+          [
+            [
+              "s3",
+              "ListObjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListObjectsV2",
+          [
+            [
+              "s3",
+              "ListObjectsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListParts",
+          [
+            [
+              "s3",
+              "ListParts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketAccelerateConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketAccelerateConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketAcl",
+          [
+            [
+              "s3",
+              "PutBucketAcl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketAnalyticsConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketAnalyticsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketCors",
+          [
+            [
+              "s3",
+              "PutBucketCors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketEncryption",
+          [
+            [
+              "s3",
+              "PutBucketEncryption"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketInventoryConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketInventoryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketLifecycleConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketLifecycleConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketLogging",
+          [
+            [
+              "s3",
+              "PutBucketLogging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketMetricsConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketMetricsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketNotificationConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketPolicy",
+          [
+            [
+              "s3",
+              "PutBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketReplication",
+          [
+            [
+              "s3",
+              "PutBucketReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketRequestPayment",
+          [
+            [
+              "s3",
+              "PutBucketRequestPayment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketTagging",
+          [
+            [
+              "s3",
+              "PutBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketVersioning",
+          [
+            [
+              "s3",
+              "PutBucketVersioning"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketWebsite",
+          [
+            [
+              "s3",
+              "PutBucketWebsite"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObject",
+          [
+            [
+              "s3",
+              "PutObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectAcl",
+          [
+            [
+              "s3",
+              "PutObjectAcl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectLegalHold",
+          [
+            [
+              "s3",
+              "PutObjectLegalHold"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectLockConfiguration",
+          [
+            [
+              "s3",
+              "PutObjectLockConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectRetention",
+          [
+            [
+              "s3",
+              "PutObjectRetention"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectTagging",
+          [
+            [
+              "s3",
+              "PutObjectTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutPublicAccessBlock",
+          [
+            [
+              "s3",
+              "PutPublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "RestoreObject",
+          [
+            [
+              "s3",
+              "RestoreObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UploadPart",
+          [
+            [
+              "s3",
+              "UploadPart"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UploadPartCopy",
+          [
+            [
+              "s3",
+              "UploadPartCopy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketOwnershipControls",
+          [
+            [
+              "s3",
+              "DeleteBucketOwnershipControls"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketOwnershipControls",
+          [
+            [
+              "s3",
+              "GetBucketOwnershipControls"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketOwnershipControls",
+          [
+            [
+              "s3",
+              "PutBucketOwnershipControls"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListObjectsV2Paginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListObjectsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketIntelligentTieringConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketIntelligentTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketIntelligentTieringConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketIntelligentTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListBucketIntelligentTieringConfigurations",
+          [
+            [
+              "s3",
+              "ListBucketIntelligentTieringConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketIntelligentTieringConfiguration",
+          [
+            [
+              "s3",
+              "PutBucketIntelligentTieringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListPartsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListParts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "WriteGetObjectResponse",
+          [
+            [
+              "s3",
+              "WriteGetObjectResponse"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "SelectObjectContent",
+          [
+            [
+              "s3",
+              "SelectObjectContent"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectAttributes",
+          [
+            [
+              "s3",
+              "GetObjectAttributes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListMultipartUploadsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListMultipartUploads"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListObjectVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListObjectVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CreateSession",
+          [
+            [
+              "s3",
+              "CreateSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListDirectoryBuckets",
+          [
+            [
+              "s3",
+              "ListDirectoryBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListDirectoryBucketsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListDirectoryBuckets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListBucketsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListBuckets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CreateBucketMetadataTableConfiguration",
+          [
+            [
+              "s3",
+              "CreateBucketMetadataTableConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketMetadataTableConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketMetadataTableConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketMetadataTableConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketMetadataTableConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "RenameObject",
+          [
+            [
+              "s3",
+              "RenameObject"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "CreateBucketMetadataConfiguration",
+          [
+            [
+              "s3",
+              "CreateBucketMetadataConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteBucketMetadataConfiguration",
+          [
+            [
+              "s3",
+              "DeleteBucketMetadataConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketMetadataConfiguration",
+          [
+            [
+              "s3",
+              "GetBucketMetadataConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UpdateBucketMetadataInventoryTableConfiguration",
+          [
+            [
+              "s3",
+              "UpdateBucketMetadataInventoryTableConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UpdateBucketMetadataJournalTableConfiguration",
+          [
+            [
+              "s3",
+              "UpdateBucketMetadataJournalTableConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetBucketAbac",
+          [
+            [
+              "s3",
+              "GetBucketAbac"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutBucketAbac",
+          [
+            [
+              "s3",
+              "PutBucketAbac"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UpdateObjectEncryption",
+          [
+            [
+              "s3",
+              "UpdateObjectEncryption"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.96.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "DeleteObjectAnnotation",
+          [
+            [
+              "s3",
+              "DeleteObjectAnnotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "GetObjectAnnotation",
+          [
+            [
+              "s3",
+              "GetObjectAnnotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "ListObjectAnnotations",
+          [
+            [
+              "s3",
+              "ListObjectAnnotations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "PutObjectAnnotation",
+          [
+            [
+              "s3",
+              "PutObjectAnnotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "Client",
+          "UpdateBucketMetadataAnnotationTableConfiguration",
+          [
+            [
+              "s3",
+              "UpdateBucketMetadataAnnotationTableConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3",
+          "ListObjectAnnotationsPaginator",
+          "NextPage",
+          [
+            [
+              "s3",
+              "ListObjectAnnotations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.112.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.1",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

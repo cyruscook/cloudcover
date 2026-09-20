@@ -17,12 +17,7 @@
       "data_source",
       "aws_opensearchserverless_collection_groups",
       "read",
-      [
-        [
-          "opensearchserverless",
-          "ListCollectionGroups"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -83,12 +78,7 @@
       "list_resource",
       "aws_glue_job",
       "list",
-      [
-        [
-          "glue",
-          "GetJobs"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -98,10 +88,6 @@
         [
           "opensearchserverless",
           "BatchGetCollectionGroup"
-        ],
-        [
-          "opensearchserverless",
-          "ListCollectionGroups"
         ]
       ]
     ],
@@ -110,18 +96,6 @@
       "aws_route_table_association",
       "list",
       [
-        [
-          "ec2",
-          "DescribeInternetGateways"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSubnets"
-        ],
         [
           "ec2",
           "DescribeVpnGateways"
@@ -136,10 +110,6 @@
         [
           "s3files",
           "GetAccessPoint"
-        ],
-        [
-          "s3files",
-          "ListAccessPoints"
         ]
       ]
     ],
@@ -177,10 +147,6 @@
         [
           "s3files",
           "GetMountTarget"
-        ],
-        [
-          "s3files",
-          "ListMountTargets"
         ]
       ]
     ],
@@ -203,10 +169,6 @@
         [
           "ssm",
           "DescribeAssociation"
-        ],
-        [
-          "ssm",
-          "ListAssociations"
         ]
       ]
     ],
@@ -214,12 +176,7 @@
       "list_resource",
       "aws_ssm_patch_group",
       "list",
-      [
-        [
-          "ssm",
-          "DescribePatchGroups"
-        ]
-      ]
+      []
     ],
     [
       "resource",

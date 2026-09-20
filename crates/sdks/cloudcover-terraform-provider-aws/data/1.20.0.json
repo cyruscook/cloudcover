@@ -1,42 +1,4 @@
 {
   "provider_version": "1.20.0",
-  "remove": [],
-  "upsert": [
-    [
-      "data_source",
-      "aws_glue_script",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_glue_trigger",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_glue_trigger",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_glue_trigger",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_glue_trigger",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_guardduty_member",
-      "update",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

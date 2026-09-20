@@ -70,10 +70,6 @@
         [
           "dynamodb",
           "DescribeTimeToLive"
-        ],
-        [
-          "dynamodb",
-          "ListTables"
         ]
       ]
     ],
@@ -82,10 +78,6 @@
       "aws_ecr_repository_policy",
       "list",
       [
-        [
-          "ecr",
-          "DescribeRepositories"
-        ],
         [
           "ecr",
           "GetRepositoryPolicy"
@@ -137,23 +129,13 @@
       "list_resource",
       "aws_securityhub_standards_control",
       "list",
-      [
-        [
-          "securityhub",
-          "DescribeStandardsControls"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_vpc_endpoint_route_table_association",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -212,25 +194,6 @@
         [
           "arczonalshift",
           "UpdateZonalAutoshiftConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateClientVpnEndpoint"
-        ],
-        [
-          "ec2",
-          "DescribeClientVpnEndpoints"
-        ],
-        [
-          "ec2",
-          "DescribeTransitGatewayAttachments"
         ]
       ]
     ],
@@ -386,14 +349,6 @@
       [
         [
           "redshift",
-          "DescribeClusters"
-        ],
-        [
-          "redshift",
-          "DescribeDataShares"
-        ],
-        [
-          "redshift",
           "RegisterNamespace"
         ],
         [
@@ -418,14 +373,6 @@
       "aws_redshift_namespace_registration",
       "read",
       [
-        [
-          "redshift",
-          "DescribeClusters"
-        ],
-        [
-          "redshift",
-          "DescribeDataShares"
-        ],
         [
           "redshiftserverless",
           "GetNamespace"

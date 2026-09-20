@@ -1,0 +1,1703 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "AcknowledgeJob",
+          [
+            [
+              "codepipeline",
+              "AcknowledgeJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "AcknowledgeThirdPartyJob",
+          [
+            [
+              "codepipeline",
+              "AcknowledgeThirdPartyJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "CreateCustomActionType",
+          [
+            [
+              "codepipeline",
+              "CreateCustomActionType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "CreatePipeline",
+          [
+            [
+              "codepipeline",
+              "CreatePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "DeleteCustomActionType",
+          [
+            [
+              "codepipeline",
+              "DeleteCustomActionType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "DeletePipeline",
+          [
+            [
+              "codepipeline",
+              "DeletePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "DeleteWebhook",
+          [
+            [
+              "codepipeline",
+              "DeleteWebhook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "DeregisterWebhookWithThirdParty",
+          [
+            [
+              "codepipeline",
+              "DeregisterWebhookWithThirdParty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "DisableStageTransition",
+          [
+            [
+              "codepipeline",
+              "DisableStageTransition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "EnableStageTransition",
+          [
+            [
+              "codepipeline",
+              "EnableStageTransition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetJobDetails",
+          [
+            [
+              "codepipeline",
+              "GetJobDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetPipeline",
+          [
+            [
+              "codepipeline",
+              "GetPipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetPipelineExecution",
+          [
+            [
+              "codepipeline",
+              "GetPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetPipelineState",
+          [
+            [
+              "codepipeline",
+              "GetPipelineState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetThirdPartyJobDetails",
+          [
+            [
+              "codepipeline",
+              "GetThirdPartyJobDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListActionExecutions",
+          [
+            [
+              "codepipeline",
+              "ListActionExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListActionTypes",
+          [
+            [
+              "codepipeline",
+              "ListActionTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListPipelineExecutions",
+          [
+            [
+              "codepipeline",
+              "ListPipelineExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListPipelines",
+          [
+            [
+              "codepipeline",
+              "ListPipelines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "codepipeline",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListWebhooks",
+          [
+            [
+              "codepipeline",
+              "ListWebhooks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PollForJobs",
+          [
+            [
+              "codepipeline",
+              "PollForJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PollForThirdPartyJobs",
+          [
+            [
+              "codepipeline",
+              "PollForThirdPartyJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutActionRevision",
+          [
+            [
+              "codepipeline",
+              "PutActionRevision"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutApprovalResult",
+          [
+            [
+              "codepipeline",
+              "PutApprovalResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutJobFailureResult",
+          [
+            [
+              "codepipeline",
+              "PutJobFailureResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutJobSuccessResult",
+          [
+            [
+              "codepipeline",
+              "PutJobSuccessResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutThirdPartyJobFailureResult",
+          [
+            [
+              "codepipeline",
+              "PutThirdPartyJobFailureResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutThirdPartyJobSuccessResult",
+          [
+            [
+              "codepipeline",
+              "PutThirdPartyJobSuccessResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "PutWebhook",
+          [
+            [
+              "codepipeline",
+              "PutWebhook"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "RegisterWebhookWithThirdParty",
+          [
+            [
+              "codepipeline",
+              "RegisterWebhookWithThirdParty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "RetryStageExecution",
+          [
+            [
+              "codepipeline",
+              "RetryStageExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "StartPipelineExecution",
+          [
+            [
+              "codepipeline",
+              "StartPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "StopPipelineExecution",
+          [
+            [
+              "codepipeline",
+              "StopPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "TagResource",
+          [
+            [
+              "codepipeline",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "codepipeline",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "UpdatePipeline",
+          [
+            [
+              "codepipeline",
+              "UpdatePipeline"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListActionExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListActionExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListActionTypesPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListActionTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListPipelineExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListPipelineExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListPipelinesPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListPipelines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListWebhooksPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListWebhooks"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "GetActionType",
+          [
+            [
+              "codepipeline",
+              "GetActionType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "UpdateActionType",
+          [
+            [
+              "codepipeline",
+              "UpdateActionType"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "RollbackStage",
+          [
+            [
+              "codepipeline",
+              "RollbackStage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListRuleExecutions",
+          [
+            [
+              "codepipeline",
+              "ListRuleExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListRuleTypes",
+          [
+            [
+              "codepipeline",
+              "ListRuleTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "OverrideStageCondition",
+          [
+            [
+              "codepipeline",
+              "OverrideStageCondition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListRuleExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListRuleExecutions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "Client",
+          "ListDeployActionExecutionTargets",
+          [
+            [
+              "codepipeline",
+              "ListDeployActionExecutionTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codepipeline",
+          "ListDeployActionExecutionTargetsPaginator",
+          "NextPage",
+          [
+            [
+              "codepipeline",
+              "ListDeployActionExecutionTargets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

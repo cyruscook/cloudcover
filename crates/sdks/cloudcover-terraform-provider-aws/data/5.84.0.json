@@ -9,10 +9,6 @@
       [
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -303,12 +299,7 @@
       "data_source",
       "aws_ec2_capacity_block_offering",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeCapacityBlockOfferings"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -320,23 +311,13 @@
       "data_source",
       "aws_ecr_repositories",
       "read",
-      [
-        [
-          "ecr",
-          "DescribeRepositories"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_ecs_clusters",
       "read",
-      [
-        [
-          "ecs",
-          "ListClusters"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -353,23 +334,13 @@
       "data_source",
       "aws_elasticache_serverless_cache",
       "read",
-      [
-        [
-          "elasticache",
-          "DescribeServerlessCaches"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_emr_supported_instance_types",
       "read",
-      [
-        [
-          "emr",
-          "ListSupportedInstanceTypes"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -379,10 +350,6 @@
         [
           "globalaccelerator",
           "DescribeAcceleratorAttributes"
-        ],
-        [
-          "globalaccelerator",
-          "ListAccelerators"
         ],
         [
           "globalaccelerator",
@@ -405,23 +372,13 @@
       "data_source",
       "aws_guardduty_finding_ids",
       "read",
-      [
-        [
-          "guardduty",
-          "ListFindings"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_identitystore_groups",
       "read",
-      [
-        [
-          "identitystore",
-          "ListGroups"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -433,12 +390,7 @@
       "data_source",
       "aws_lb_listener_rule",
       "read",
-      [
-        [
-          "elasticloadbalancingv2",
-          "DescribeRules"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -531,34 +483,19 @@
       "data_source",
       "aws_rds_cluster_parameter_group",
       "read",
-      [
-        [
-          "rds",
-          "DescribeDBClusterParameterGroups"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_redshift_data_shares",
       "read",
-      [
-        [
-          "redshift",
-          "DescribeDataShares"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_redshift_producer_data_shares",
       "read",
-      [
-        [
-          "redshift",
-          "DescribeDataSharesForProducer"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -581,78 +518,43 @@
       "data_source",
       "aws_resourceexplorer2_search",
       "read",
-      [
-        [
-          "resourceexplorer2",
-          "Search"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_route53_records",
       "read",
-      [
-        [
-          "route53",
-          "ListResourceRecordSets"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_route53_zones",
       "read",
-      [
-        [
-          "route53",
-          "ListHostedZones"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_route53profiles_profiles",
       "read",
-      [
-        [
-          "route53profiles",
-          "ListProfiles"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_s3_directory_buckets",
       "read",
-      [
-        [
-          "s3",
-          "ListDirectoryBuckets"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_secretsmanager_secret_versions",
       "read",
-      [
-        [
-          "secretsmanager",
-          "ListSecretVersionIds"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_securityhub_standards_control_associations",
       "read",
-      [
-        [
-          "securityhub",
-          "ListStandardsControlAssociations"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -692,12 +594,7 @@
       "data_source",
       "aws_servicecatalogappregistry_attribute_group_associations",
       "read",
-      [
-        [
-          "servicecatalogappregistry",
-          "ListAssociatedAttributeGroups"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -736,12 +633,7 @@
       "data_source",
       "aws_ssm_patch_baselines",
       "read",
-      [
-        [
-          "ssm",
-          "DescribePatchBaselines"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -769,45 +661,25 @@
       "data_source",
       "aws_ssoadmin_application_assignments",
       "read",
-      [
-        [
-          "ssoadmin",
-          "ListApplicationAssignments"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_ssoadmin_application_providers",
       "read",
-      [
-        [
-          "ssoadmin",
-          "ListApplicationProviders"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_ssoadmin_permission_sets",
       "read",
-      [
-        [
-          "ssoadmin",
-          "ListPermissionSets"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_ssoadmin_principal_application_assignments",
       "read",
-      [
-        [
-          "ssoadmin",
-          "ListApplicationAssignmentsForPrincipal"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -879,23 +751,13 @@
       "data_source",
       "aws_vpc_security_group_rule",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroupRules"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_vpc_security_group_rules",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroupRules"
-        ]
-      ]
+      []
     ],
     [
       "ephemeral_resource",
@@ -973,10 +835,6 @@
         ],
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -996,10 +854,6 @@
       [
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -1009,10 +863,6 @@
       "aws_ami",
       "update",
       [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -1050,10 +900,6 @@
         ],
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -1069,10 +915,6 @@
       [
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -1082,10 +924,6 @@
       "aws_ami_copy",
       "update",
       [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -1115,10 +953,6 @@
         ],
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "EnableImageDeprecation"
         ],
         [
@@ -1134,10 +968,6 @@
       [
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "GetInstanceUefiData"
         ]
       ]
@@ -1147,10 +977,6 @@
       "aws_ami_from_instance",
       "update",
       [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
         [
           "ec2",
           "DisableImageDeprecation"
@@ -4871,10 +4697,6 @@
         [
           "drs",
           "CreateReplicationConfigurationTemplate"
-        ],
-        [
-          "drs",
-          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
@@ -4886,10 +4708,6 @@
         [
           "drs",
           "DeleteReplicationConfigurationTemplate"
-        ],
-        [
-          "drs",
-          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
@@ -4897,22 +4715,13 @@
       "resource",
       "aws_drs_replication_configuration_template",
       "read",
-      [
-        [
-          "drs",
-          "DescribeReplicationConfigurationTemplates"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_drs_replication_configuration_template",
       "update",
       [
-        [
-          "drs",
-          "DescribeReplicationConfigurationTemplates"
-        ],
         [
           "drs",
           "UpdateReplicationConfigurationTemplate"
@@ -4974,10 +4783,6 @@
       [
         [
           "ec2",
-          "DescribeFastSnapshotRestores"
-        ],
-        [
-          "ec2",
           "EnableFastSnapshotRestores"
         ]
       ]
@@ -4989,10 +4794,6 @@
       [
         [
           "ec2",
-          "DescribeFastSnapshotRestores"
-        ],
-        [
-          "ec2",
           "DisableFastSnapshotRestores"
         ]
       ]
@@ -5001,12 +4802,7 @@
       "resource",
       "aws_ebs_fast_snapshot_restore",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeFastSnapshotRestores"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5019,10 +4815,6 @@
       "aws_ec2_capacity_block_reservation",
       "create",
       [
-        [
-          "ec2",
-          "DescribeCapacityReservations"
-        ],
         [
           "ec2",
           "PurchaseCapacityBlock"
@@ -5039,12 +4831,7 @@
       "resource",
       "aws_ec2_capacity_block_reservation",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeCapacityReservations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5060,10 +4847,6 @@
         [
           "ec2",
           "CreateInstanceConnectEndpoint"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceConnectEndpoints"
         ]
       ]
     ],
@@ -5075,10 +4858,6 @@
         [
           "ec2",
           "DeleteInstanceConnectEndpoint"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceConnectEndpoints"
         ]
       ]
     ],
@@ -5086,12 +4865,7 @@
       "resource",
       "aws_ec2_instance_connect_endpoint",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeInstanceConnectEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5150,10 +4924,6 @@
       [
         [
           "ec2",
-          "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -5165,10 +4935,6 @@
       [
         [
           "ec2",
-          "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -5177,22 +4943,13 @@
       "resource",
       "aws_ec2_transit_gateway_default_route_table_association",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_default_route_table_association",
       "update",
       [
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ],
         [
           "ec2",
           "ModifyTransitGateway"
@@ -5206,10 +4963,6 @@
       [
         [
           "ec2",
-          "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -5221,10 +4974,6 @@
       [
         [
           "ec2",
-          "DescribeTransitGateways"
-        ],
-        [
-          "ec2",
           "ModifyTransitGateway"
         ]
       ]
@@ -5233,22 +4982,13 @@
       "resource",
       "aws_ec2_transit_gateway_default_route_table_propagation",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_ec2_transit_gateway_default_route_table_propagation",
       "update",
       [
-        [
-          "ec2",
-          "DescribeTransitGateways"
-        ],
         [
           "ec2",
           "ModifyTransitGateway"
@@ -5301,10 +5041,6 @@
       [
         [
           "ec2",
-          "DescribeAddressesAttribute"
-        ],
-        [
-          "ec2",
           "ModifyAddressAttribute"
         ]
       ]
@@ -5316,10 +5052,6 @@
       [
         [
           "ec2",
-          "DescribeAddressesAttribute"
-        ],
-        [
-          "ec2",
           "ResetAddressAttribute"
         ]
       ]
@@ -5328,22 +5060,13 @@
       "resource",
       "aws_eip_domain_name",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeAddressesAttribute"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_eip_domain_name",
       "update",
       [
-        [
-          "ec2",
-          "DescribeAddressesAttribute"
-        ],
         [
           "ec2",
           "ModifyAddressAttribute"
@@ -5440,10 +5163,6 @@
         [
           "elasticache",
           "CreateServerlessCache"
-        ],
-        [
-          "elasticache",
-          "DescribeServerlessCaches"
         ]
       ]
     ],
@@ -5455,10 +5174,6 @@
         [
           "elasticache",
           "DeleteServerlessCache"
-        ],
-        [
-          "elasticache",
-          "DescribeServerlessCaches"
         ]
       ]
     ],
@@ -5466,22 +5181,13 @@
       "resource",
       "aws_elasticache_serverless_cache",
       "read",
-      [
-        [
-          "elasticache",
-          "DescribeServerlessCaches"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_elasticache_serverless_cache",
       "update",
       [
-        [
-          "elasticache",
-          "DescribeServerlessCaches"
-        ],
         [
           "elasticache",
           "ModifyServerlessCache"
@@ -5658,12 +5364,7 @@
       "resource",
       "aws_grafana_workspace_service_account",
       "read",
-      [
-        [
-          "grafana",
-          "ListWorkspaceServiceAccounts"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5679,10 +5380,6 @@
         [
           "grafana",
           "CreateWorkspaceServiceAccountToken"
-        ],
-        [
-          "grafana",
-          "ListWorkspaceServiceAccountTokens"
         ]
       ]
     ],
@@ -5701,12 +5398,7 @@
       "resource",
       "aws_grafana_workspace_service_account_token",
       "read",
-      [
-        [
-          "grafana",
-          "ListWorkspaceServiceAccountTokens"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5777,10 +5469,6 @@
         ],
         [
           "iam",
-          "ListGroupPolicies"
-        ],
-        [
-          "iam",
           "PutGroupPolicy"
         ]
       ]
@@ -5795,12 +5483,7 @@
       "resource",
       "aws_iam_group_policies_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListGroupPolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5813,10 +5496,6 @@
         ],
         [
           "iam",
-          "ListGroupPolicies"
-        ],
-        [
-          "iam",
           "PutGroupPolicy"
         ]
       ]
@@ -5833,10 +5512,6 @@
         [
           "iam",
           "DetachGroupPolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedGroupPolicies"
         ]
       ]
     ],
@@ -5850,12 +5525,7 @@
       "resource",
       "aws_iam_group_policy_attachments_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListAttachedGroupPolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -5869,10 +5539,6 @@
         [
           "iam",
           "DetachGroupPolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedGroupPolicies"
         ]
       ]
     ],
@@ -5971,10 +5637,6 @@
         ],
         [
           "iam",
-          "ListRolePolicies"
-        ],
-        [
-          "iam",
           "PutRolePolicy"
         ]
       ]
@@ -5989,12 +5651,7 @@
       "resource",
       "aws_iam_role_policies_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListRolePolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -6007,10 +5664,6 @@
         ],
         [
           "iam",
-          "ListRolePolicies"
-        ],
-        [
-          "iam",
           "PutRolePolicy"
         ]
       ]
@@ -6027,10 +5680,6 @@
         [
           "iam",
           "DetachRolePolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedRolePolicies"
         ]
       ]
     ],
@@ -6044,12 +5693,7 @@
       "resource",
       "aws_iam_role_policy_attachments_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListAttachedRolePolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -6063,10 +5707,6 @@
         [
           "iam",
           "DetachRolePolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedRolePolicies"
         ]
       ]
     ],
@@ -6078,10 +5718,6 @@
         [
           "iam",
           "DeleteUserPolicy"
-        ],
-        [
-          "iam",
-          "ListUserPolicies"
         ],
         [
           "iam",
@@ -6099,12 +5735,7 @@
       "resource",
       "aws_iam_user_policies_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListUserPolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -6114,10 +5745,6 @@
         [
           "iam",
           "DeleteUserPolicy"
-        ],
-        [
-          "iam",
-          "ListUserPolicies"
         ],
         [
           "iam",
@@ -6137,10 +5764,6 @@
         [
           "iam",
           "DetachUserPolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedUserPolicies"
         ]
       ]
     ],
@@ -6154,12 +5777,7 @@
       "resource",
       "aws_iam_user_policy_attachments_exclusive",
       "read",
-      [
-        [
-          "iam",
-          "ListAttachedUserPolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -6173,10 +5791,6 @@
         [
           "iam",
           "DetachUserPolicy"
-        ],
-        [
-          "iam",
-          "ListAttachedUserPolicies"
         ]
       ]
     ],
@@ -7110,10 +6724,6 @@
         [
           "memorydb",
           "CreateMultiRegionCluster"
-        ],
-        [
-          "memorydb",
-          "DescribeMultiRegionClusters"
         ]
       ]
     ],
@@ -7125,10 +6735,6 @@
         [
           "memorydb",
           "DeleteMultiRegionCluster"
-        ],
-        [
-          "memorydb",
-          "DescribeMultiRegionClusters"
         ]
       ]
     ],
@@ -7136,22 +6742,13 @@
       "resource",
       "aws_memorydb_multi_region_cluster",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeMultiRegionClusters"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_memorydb_multi_region_cluster",
       "update",
       [
-        [
-          "memorydb",
-          "DescribeMultiRegionClusters"
-        ],
         [
           "memorydb",
           "UpdateMultiRegionCluster"
@@ -7184,12 +6781,7 @@
       "resource",
       "aws_msk_single_scram_secret_association",
       "read",
-      [
-        [
-          "kafka",
-          "ListScramSecrets"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -7982,12 +7574,7 @@
       "resource",
       "aws_pinpointsmsvoicev2_configuration_set",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeConfigurationSets"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -8038,12 +7625,7 @@
       "resource",
       "aws_pinpointsmsvoicev2_opt_out_list",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeOptOutLists"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -8056,10 +7638,6 @@
       "aws_pinpointsmsvoicev2_phone_number",
       "create",
       [
-        [
-          "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
         [
           "pinpointsmsvoicev2",
           "RequestPhoneNumber"
@@ -8077,10 +7655,6 @@
       [
         [
           "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
-        [
-          "pinpointsmsvoicev2",
           "ReleasePhoneNumber"
         ]
       ]
@@ -8089,22 +7663,13 @@
       "resource",
       "aws_pinpointsmsvoicev2_phone_number",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_pinpointsmsvoicev2_phone_number",
       "update",
       [
-        [
-          "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
         [
           "pinpointsmsvoicev2",
           "UpdatePhoneNumber"
@@ -8184,12 +7749,7 @@
       "resource",
       "aws_quicksight_folder_membership",
       "read",
-      [
-        [
-          "quicksight",
-          "ListFolderMembers"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -8498,10 +8058,6 @@
         ],
         [
           "rds",
-          "DescribeDBClusterSnapshots"
-        ],
-        [
-          "rds",
           "ModifyDBClusterSnapshotAttribute"
         ]
       ]
@@ -8525,10 +8081,6 @@
         [
           "rds",
           "DescribeDBClusterSnapshotAttributes"
-        ],
-        [
-          "rds",
-          "DescribeDBClusterSnapshots"
         ]
       ]
     ],
@@ -8597,10 +8149,6 @@
       [
         [
           "rds",
-          "DescribeDBInstances"
-        ],
-        [
-          "rds",
           "StartDBInstance"
         ],
         [
@@ -8619,22 +8167,13 @@
       "resource",
       "aws_rds_instance_state",
       "read",
-      [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_rds_instance_state",
       "update",
       [
-        [
-          "rds",
-          "DescribeDBInstances"
-        ],
         [
           "rds",
           "StartDBInstance"
@@ -8653,10 +8192,6 @@
         [
           "rds",
           "CreateIntegration"
-        ],
-        [
-          "rds",
-          "DescribeIntegrations"
         ]
       ]
     ],
@@ -8668,10 +8203,6 @@
         [
           "rds",
           "DeleteIntegration"
-        ],
-        [
-          "rds",
-          "DescribeIntegrations"
         ]
       ]
     ],
@@ -8679,12 +8210,7 @@
       "resource",
       "aws_rds_integration",
       "read",
-      [
-        [
-          "rds",
-          "DescribeIntegrations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -9250,12 +8776,7 @@
       "resource",
       "aws_route53_cidr_collection",
       "read",
-      [
-        [
-          "route53",
-          "ListCidrCollections"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -9271,10 +8792,6 @@
         [
           "route53",
           "ChangeCidrCollection"
-        ],
-        [
-          "route53",
-          "ListCidrCollections"
         ]
       ]
     ],
@@ -9286,10 +8803,6 @@
         [
           "route53",
           "ChangeCidrCollection"
-        ],
-        [
-          "route53",
-          "ListCidrCollections"
         ]
       ]
     ],
@@ -9297,12 +8810,7 @@
       "resource",
       "aws_route53_cidr_location",
       "read",
-      [
-        [
-          "route53",
-          "ListCidrBlocks"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -9312,10 +8820,6 @@
         [
           "route53",
           "ChangeCidrCollection"
-        ],
-        [
-          "route53",
-          "ListCidrCollections"
         ]
       ]
     ],
@@ -9530,10 +9034,6 @@
         [
           "s3",
           "DeleteBucket"
-        ],
-        [
-          "s3",
-          "ListObjectsV2"
         ]
       ]
     ],
@@ -10122,12 +9622,7 @@
       "resource",
       "aws_securityhub_standards_control_association",
       "read",
-      [
-        [
-          "securityhub",
-          "ListStandardsControlAssociations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -10148,10 +9643,6 @@
         [
           "securitylake",
           "CreateAwsLogSource"
-        ],
-        [
-          "securitylake",
-          "ListLogSources"
         ]
       ]
     ],
@@ -10163,10 +9654,6 @@
         [
           "securitylake",
           "DeleteAwsLogSource"
-        ],
-        [
-          "securitylake",
-          "ListLogSources"
         ]
       ]
     ],
@@ -10174,12 +9661,7 @@
       "resource",
       "aws_securitylake_aws_log_source",
       "read",
-      [
-        [
-          "securitylake",
-          "ListLogSources"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -10213,12 +9695,7 @@
       "resource",
       "aws_securitylake_custom_log_source",
       "read",
-      [
-        [
-          "securitylake",
-          "ListLogSources"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -10504,12 +9981,7 @@
       "resource",
       "aws_servicecatalogappregistry_attribute_group_association",
       "read",
-      [
-        [
-          "servicecatalogappregistry",
-          "ListAssociatedAttributeGroups"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -10926,6 +10398,14 @@
         [
           "simpledb",
           "CreateDomain"
+        ],
+        [
+          "simpledb",
+          "New"
+        ],
+        [
+          "simpledb",
+          "newClient"
         ]
       ]
     ],
@@ -10937,6 +10417,14 @@
         [
           "simpledb",
           "DeleteDomain"
+        ],
+        [
+          "simpledb",
+          "New"
+        ],
+        [
+          "simpledb",
+          "newClient"
         ]
       ]
     ],
@@ -10948,6 +10436,14 @@
         [
           "simpledb",
           "DomainMetadata"
+        ],
+        [
+          "simpledb",
+          "New"
+        ],
+        [
+          "simpledb",
+          "newClient"
         ]
       ]
     ],
@@ -11720,12 +11216,7 @@
       "resource",
       "aws_vpc_endpoint_private_dns",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -11743,10 +11234,6 @@
       "aws_vpc_endpoint_service_private_dns_verification",
       "create",
       [
-        [
-          "ec2",
-          "DescribeVpcEndpointServiceConfigurations"
-        ],
         [
           "ec2",
           "StartVpcEndpointServicePrivateDnsVerification"
@@ -11837,10 +11324,6 @@
         [
           "ec2",
           "AssociateSecurityGroupVpc"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroupVpcAssociations"
         ]
       ]
     ],
@@ -11851,10 +11334,6 @@
       [
         [
           "ec2",
-          "DescribeSecurityGroupVpcAssociations"
-        ],
-        [
-          "ec2",
           "DisassociateSecurityGroupVpc"
         ]
       ]
@@ -11863,12 +11342,7 @@
       "resource",
       "aws_vpc_security_group_vpc_association",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroupVpcAssociations"
-        ]
-      ]
+      []
     ],
     [
       "resource",

@@ -14,6 +14,12 @@
       ]
     ],
     [
+      "data_source",
+      "aws_secretsmanager_secrets",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_eks_access_entry",
       "create",
@@ -73,10 +79,6 @@
         [
           "eks",
           "AssociateAccessPolicy"
-        ],
-        [
-          "eks",
-          "ListAssociatedAccessPolicies"
         ]
       ]
     ],
@@ -95,12 +97,7 @@
       "resource",
       "aws_eks_access_policy_association",
       "read",
-      [
-        [
-          "eks",
-          "ListAssociatedAccessPolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -125,25 +122,6 @@
         [
           "secretsmanager",
           "GetSecretValue"
-        ],
-        [
-          "secretsmanager",
-          "UpdateSecretVersionStage"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_secretsmanager_secret_version",
-      "update",
-      [
-        [
-          "secretsmanager",
-          "GetSecretValue"
-        ],
-        [
-          "secretsmanager",
-          "ListSecretVersionIds"
         ],
         [
           "secretsmanager",

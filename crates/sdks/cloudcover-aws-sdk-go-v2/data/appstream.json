@@ -1,0 +1,2238 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/appstream",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "AssociateFleet",
+          [
+            [
+              "appstream",
+              "AssociateFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "BatchAssociateUserStack",
+          [
+            [
+              "appstream",
+              "BatchAssociateUserStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "BatchDisassociateUserStack",
+          [
+            [
+              "appstream",
+              "BatchDisassociateUserStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CopyImage",
+          [
+            [
+              "appstream",
+              "CopyImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateDirectoryConfig",
+          [
+            [
+              "appstream",
+              "CreateDirectoryConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateFleet",
+          [
+            [
+              "appstream",
+              "CreateFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateImageBuilder",
+          [
+            [
+              "appstream",
+              "CreateImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateImageBuilderStreamingURL",
+          [
+            [
+              "appstream",
+              "CreateImageBuilderStreamingURL"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateStack",
+          [
+            [
+              "appstream",
+              "CreateStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateStreamingURL",
+          [
+            [
+              "appstream",
+              "CreateStreamingURL"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateUsageReportSubscription",
+          [
+            [
+              "appstream",
+              "CreateUsageReportSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateUser",
+          [
+            [
+              "appstream",
+              "CreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteDirectoryConfig",
+          [
+            [
+              "appstream",
+              "DeleteDirectoryConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteFleet",
+          [
+            [
+              "appstream",
+              "DeleteFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteImage",
+          [
+            [
+              "appstream",
+              "DeleteImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteImageBuilder",
+          [
+            [
+              "appstream",
+              "DeleteImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteImagePermissions",
+          [
+            [
+              "appstream",
+              "DeleteImagePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteStack",
+          [
+            [
+              "appstream",
+              "DeleteStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteUsageReportSubscription",
+          [
+            [
+              "appstream",
+              "DeleteUsageReportSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "appstream",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeDirectoryConfigs",
+          [
+            [
+              "appstream",
+              "DescribeDirectoryConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeFleets",
+          [
+            [
+              "appstream",
+              "DescribeFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeImageBuilders",
+          [
+            [
+              "appstream",
+              "DescribeImageBuilders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeImagePermissions",
+          [
+            [
+              "appstream",
+              "DescribeImagePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeImages",
+          [
+            [
+              "appstream",
+              "DescribeImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeSessions",
+          [
+            [
+              "appstream",
+              "DescribeSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeStacks",
+          [
+            [
+              "appstream",
+              "DescribeStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeUsageReportSubscriptions",
+          [
+            [
+              "appstream",
+              "DescribeUsageReportSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeUserStackAssociations",
+          [
+            [
+              "appstream",
+              "DescribeUserStackAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeUsers",
+          [
+            [
+              "appstream",
+              "DescribeUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisableUser",
+          [
+            [
+              "appstream",
+              "DisableUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisassociateFleet",
+          [
+            [
+              "appstream",
+              "DisassociateFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "EnableUser",
+          [
+            [
+              "appstream",
+              "EnableUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ExpireSession",
+          [
+            [
+              "appstream",
+              "ExpireSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ListAssociatedFleets",
+          [
+            [
+              "appstream",
+              "ListAssociatedFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ListAssociatedStacks",
+          [
+            [
+              "appstream",
+              "ListAssociatedStacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "appstream",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StartFleet",
+          [
+            [
+              "appstream",
+              "StartFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StartImageBuilder",
+          [
+            [
+              "appstream",
+              "StartImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StopFleet",
+          [
+            [
+              "appstream",
+              "StopFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StopImageBuilder",
+          [
+            [
+              "appstream",
+              "StopImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "TagResource",
+          [
+            [
+              "appstream",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "appstream",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateDirectoryConfig",
+          [
+            [
+              "appstream",
+              "UpdateDirectoryConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateFleet",
+          [
+            [
+              "appstream",
+              "UpdateFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateImagePermissions",
+          [
+            [
+              "appstream",
+              "UpdateImagePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateStack",
+          [
+            [
+              "appstream",
+              "UpdateStack"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "DescribeImagePermissionsPaginator",
+          "NextPage",
+          [
+            [
+              "appstream",
+              "DescribeImagePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "DescribeImagesPaginator",
+          "NextPage",
+          [
+            [
+              "appstream",
+              "DescribeImages"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateUpdatedImage",
+          [
+            [
+              "appstream",
+              "CreateUpdatedImage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "AssociateApplicationFleet",
+          [
+            [
+              "appstream",
+              "AssociateApplicationFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateAppBlock",
+          [
+            [
+              "appstream",
+              "CreateAppBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateApplication",
+          [
+            [
+              "appstream",
+              "CreateApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteAppBlock",
+          [
+            [
+              "appstream",
+              "DeleteAppBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteApplication",
+          [
+            [
+              "appstream",
+              "DeleteApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeAppBlocks",
+          [
+            [
+              "appstream",
+              "DescribeAppBlocks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeApplicationFleetAssociations",
+          [
+            [
+              "appstream",
+              "DescribeApplicationFleetAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeApplications",
+          [
+            [
+              "appstream",
+              "DescribeApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisassociateApplicationFleet",
+          [
+            [
+              "appstream",
+              "DisassociateApplicationFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateApplication",
+          [
+            [
+              "appstream",
+              "UpdateApplication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "AssociateApplicationToEntitlement",
+          [
+            [
+              "appstream",
+              "AssociateApplicationToEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateEntitlement",
+          [
+            [
+              "appstream",
+              "CreateEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteEntitlement",
+          [
+            [
+              "appstream",
+              "DeleteEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeEntitlements",
+          [
+            [
+              "appstream",
+              "DescribeEntitlements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisassociateApplicationFromEntitlement",
+          [
+            [
+              "appstream",
+              "DisassociateApplicationFromEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ListEntitledApplications",
+          [
+            [
+              "appstream",
+              "ListEntitledApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateEntitlement",
+          [
+            [
+              "appstream",
+              "UpdateEntitlement"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "AssociateAppBlockBuilderAppBlock",
+          [
+            [
+              "appstream",
+              "AssociateAppBlockBuilderAppBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateAppBlockBuilder",
+          [
+            [
+              "appstream",
+              "CreateAppBlockBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateAppBlockBuilderStreamingURL",
+          [
+            [
+              "appstream",
+              "CreateAppBlockBuilderStreamingURL"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteAppBlockBuilder",
+          [
+            [
+              "appstream",
+              "DeleteAppBlockBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeAppBlockBuilderAppBlockAssociations",
+          [
+            [
+              "appstream",
+              "DescribeAppBlockBuilderAppBlockAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeAppBlockBuilders",
+          [
+            [
+              "appstream",
+              "DescribeAppBlockBuilders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisassociateAppBlockBuilderAppBlock",
+          [
+            [
+              "appstream",
+              "DisassociateAppBlockBuilderAppBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StartAppBlockBuilder",
+          [
+            [
+              "appstream",
+              "StartAppBlockBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StopAppBlockBuilder",
+          [
+            [
+              "appstream",
+              "StopAppBlockBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateAppBlockBuilder",
+          [
+            [
+              "appstream",
+              "UpdateAppBlockBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "DescribeAppBlockBuilderAppBlockAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "appstream",
+              "DescribeAppBlockBuilderAppBlockAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "DescribeAppBlockBuildersPaginator",
+          "NextPage",
+          [
+            [
+              "appstream",
+              "DescribeAppBlockBuilders"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateThemeForStack",
+          [
+            [
+              "appstream",
+              "CreateThemeForStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DeleteThemeForStack",
+          [
+            [
+              "appstream",
+              "DeleteThemeForStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeThemeForStack",
+          [
+            [
+              "appstream",
+              "DescribeThemeForStack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "UpdateThemeForStack",
+          [
+            [
+              "appstream",
+              "UpdateThemeForStack"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "AssociateSoftwareToImageBuilder",
+          [
+            [
+              "appstream",
+              "AssociateSoftwareToImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeAppLicenseUsage",
+          [
+            [
+              "appstream",
+              "DescribeAppLicenseUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DescribeSoftwareAssociations",
+          [
+            [
+              "appstream",
+              "DescribeSoftwareAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DisassociateSoftwareFromImageBuilder",
+          [
+            [
+              "appstream",
+              "DisassociateSoftwareFromImageBuilder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "StartSoftwareDeploymentToImageBuilder",
+          [
+            [
+              "appstream",
+              "StartSoftwareDeploymentToImageBuilder"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateExportImageTask",
+          [
+            [
+              "appstream",
+              "CreateExportImageTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "CreateImportedImage",
+          [
+            [
+              "appstream",
+              "CreateImportedImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "GetExportImageTask",
+          [
+            [
+              "appstream",
+              "GetExportImageTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "ListExportImageTasks",
+          [
+            [
+              "appstream",
+              "ListExportImageTasks"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appstream",
+          "Client",
+          "DrainSessionInstance",
+          [
+            [
+              "appstream",
+              "DrainSessionInstance"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

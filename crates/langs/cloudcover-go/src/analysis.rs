@@ -1,6 +1,6 @@
 use std::{ffi::CString, path::Path};
 
-use cloudcover_core::GoMethodReference;
+use cloudcover_core::{GoMethodReference, SdkModule};
 
 use crate::{
     GoAnalysisError,
@@ -8,11 +8,29 @@ use crate::{
     response::AnalyzerResponse,
 };
 
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct GoAnalysis {
+    methods: Vec<GoMethodReference>,
+    modules: Vec<SdkModule>,
+}
+
+impl GoAnalysis {
+    #[must_use]
+    pub fn methods(&self) -> &[GoMethodReference] {
+        &self.methods
+    }
+
+    #[must_use]
+    pub fn modules(&self) -> &[SdkModule] {
+        &self.modules
+    }
+}
+
 /// # Errors
 ///
 /// Returns [`GoAnalysisError`] when the path is invalid for analysis, the FFI
 /// analyzer fails, or the analyzer response cannot be parsed.
-pub fn analyze_dir(path: impl AsRef<Path>) -> Result<Vec<GoMethodReference>, GoAnalysisError> {
+pub fn analyze_dir(path: impl AsRef<Path>) -> Result<GoAnalysis, GoAnalysisError> {
     let path = path.as_ref();
     if !path.is_dir() {
         return Err(GoAnalysisError::NotDirectory(path.to_path_buf()));
@@ -35,5 +53,8 @@ pub fn analyze_dir(path: impl AsRef<Path>) -> Result<Vec<GoMethodReference>, GoA
     let response: AnalyzerResponse =
         serde_json::from_str(response).map_err(GoAnalysisError::InvalidResponse)?;
 
-    response.into_methods().map_err(GoAnalysisError::Analyzer)
+    let (methods, modules) = response
+        .into_analysis()
+        .map_err(GoAnalysisError::Analyzer)?;
+    Ok(GoAnalysis { methods, modules })
 }

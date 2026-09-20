@@ -6,69 +6,254 @@
       "data_source",
       "aws_memorydb_acl",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeACLs"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_memorydb_cluster",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeClusters"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_memorydb_parameter_group",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeParameterGroups"
-        ],
-        [
-          "memorydb",
-          "DescribeParameters"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_memorydb_snapshot",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeSnapshots"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_memorydb_subnet_group",
       "read",
-      [
-        [
-          "memorydb",
-          "DescribeSubnetGroups"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_memorydb_user",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_acl",
+      "create",
       [
         [
           "memorydb",
-          "DescribeUsers"
+          "CreateACL"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_acl",
+      "delete",
+      [
+        [
+          "memorydb",
+          "DeleteACL"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_acl",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_acl",
+      "update",
+      [
+        [
+          "memorydb",
+          "UpdateACL"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_cluster",
+      "create",
+      [
+        [
+          "memorydb",
+          "CreateCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_cluster",
+      "delete",
+      [
+        [
+          "memorydb",
+          "DeleteCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_cluster",
+      "update",
+      [
+        [
+          "memorydb",
+          "UpdateCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_parameter_group",
+      "create",
+      [
+        [
+          "memorydb",
+          "CreateParameterGroup"
+        ],
+        [
+          "memorydb",
+          "ResetParameterGroup"
+        ],
+        [
+          "memorydb",
+          "UpdateParameterGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_parameter_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_parameter_group",
+      "update",
+      [
+        [
+          "memorydb",
+          "ResetParameterGroup"
+        ],
+        [
+          "memorydb",
+          "UpdateParameterGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_snapshot",
+      "create",
+      [
+        [
+          "memorydb",
+          "CreateSnapshot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_snapshot",
+      "delete",
+      [
+        [
+          "memorydb",
+          "DeleteSnapshot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_snapshot",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_snapshot",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_subnet_group",
+      "create",
+      [
+        [
+          "memorydb",
+          "CreateSubnetGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_subnet_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_subnet_group",
+      "update",
+      [
+        [
+          "memorydb",
+          "UpdateSubnetGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_user",
+      "create",
+      [
+        [
+          "memorydb",
+          "CreateUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_user",
+      "delete",
+      [
+        [
+          "memorydb",
+          "DeleteUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_memorydb_user",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_memorydb_user",
+      "update",
+      [
+        [
+          "memorydb",
+          "UpdateUser"
         ]
       ]
     ]

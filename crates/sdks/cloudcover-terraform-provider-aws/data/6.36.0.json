@@ -4,6 +4,17 @@
   "upsert": [
     [
       "data_source",
+      "aws_glue_catalog_table",
+      "read",
+      [
+        [
+          "glue",
+          "GetTable"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_iam_outbound_web_identity_federation",
       "read",
       [
@@ -51,12 +62,77 @@
         [
           "s3",
           "ListBuckets"
-        ],
-        [
-          "s3",
-          "ListDirectoryBuckets"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_glue_catalog_table",
+      "create",
+      [
+        [
+          "glue",
+          "CreateTable"
+        ],
+        [
+          "glue",
+          "GetTable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_catalog_table",
+      "read",
+      [
+        [
+          "glue",
+          "GetTable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_catalog_table",
+      "update",
+      [
+        [
+          "glue",
+          "GetTable"
+        ],
+        [
+          "glue",
+          "UpdateTable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_partition_index",
+      "create",
+      [
+        [
+          "glue",
+          "CreatePartitionIndex"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_partition_index",
+      "delete",
+      [
+        [
+          "glue",
+          "DeletePartitionIndex"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_glue_partition_index",
+      "read",
+      []
     ]
   ]
 }

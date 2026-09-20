@@ -1,30 +1,4 @@
 {
   "provider_version": "1.36.0",
-  "remove": [],
-  "upsert": [
-    [
-      "resource",
-      "aws_cloudfront_public_key",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudfront_public_key",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudfront_public_key",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudfront_public_key",
-      "update",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

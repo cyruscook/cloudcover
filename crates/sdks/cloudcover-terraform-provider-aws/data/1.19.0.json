@@ -1,42 +1,4 @@
 {
   "provider_version": "1.19.0",
-  "remove": [],
-  "upsert": [
-    [
-      "data_source",
-      "aws_arn",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_lambda_invocation",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sns_sms_preferences",
-      "update",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

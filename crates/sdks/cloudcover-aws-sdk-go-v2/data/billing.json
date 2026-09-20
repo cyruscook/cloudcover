@@ -1,0 +1,669 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/billing",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListBillingViews",
+          [
+            [
+              "billing",
+              "ListBillingViews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListBillingViewsPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListBillingViews"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "CreateBillingView",
+          [
+            [
+              "billing",
+              "CreateBillingView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "DeleteBillingView",
+          [
+            [
+              "billing",
+              "DeleteBillingView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetBillingView",
+          [
+            [
+              "billing",
+              "GetBillingView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "billing",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListSourceViewsForBillingView",
+          [
+            [
+              "billing",
+              "ListSourceViewsForBillingView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "billing",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "TagResource",
+          [
+            [
+              "billing",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "billing",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "UpdateBillingView",
+          [
+            [
+              "billing",
+              "UpdateBillingView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListSourceViewsForBillingViewPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListSourceViewsForBillingView"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "AssociateSourceViews",
+          [
+            [
+              "billing",
+              "AssociateSourceViews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "DisassociateSourceViews",
+          [
+            [
+              "billing",
+              "DisassociateSourceViews"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetBillingPreferences",
+          [
+            [
+              "billing",
+              "GetBillingPreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetCreditAllocationHistory",
+          [
+            [
+              "billing",
+              "GetCreditAllocationHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetCredits",
+          [
+            [
+              "billing",
+              "GetCredits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "RedeemCredits",
+          [
+            [
+              "billing",
+              "RedeemCredits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "UpdateBillingPreferences",
+          [
+            [
+              "billing",
+              "UpdateBillingPreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "GetCreditAllocationHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "GetCreditAllocationHistory"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetEnterpriseSupportChargeSummary",
+          [
+            [
+              "billing",
+              "GetEnterpriseSupportChargeSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "GetEnterpriseSupportContractDetails",
+          [
+            [
+              "billing",
+              "GetEnterpriseSupportContractDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListEnterpriseSupportLinkedAccountCharges",
+          [
+            [
+              "billing",
+              "ListEnterpriseSupportLinkedAccountCharges"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListEnterpriseSupportLinkedAccountChargesPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListEnterpriseSupportLinkedAccountCharges"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

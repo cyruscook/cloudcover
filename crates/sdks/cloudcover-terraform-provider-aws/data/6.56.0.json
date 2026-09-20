@@ -10,10 +10,6 @@
         [
           "elasticache",
           "BatchApplyUpdateAction"
-        ],
-        [
-          "elasticache",
-          "DescribeUpdateActions"
         ]
       ]
     ],
@@ -21,23 +17,13 @@
       "data_source",
       "aws_elasticache_service_update_actions",
       "read",
-      [
-        [
-          "elasticache",
-          "DescribeUpdateActions"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_s3_buckets",
       "read",
-      [
-        [
-          "s3",
-          "ListBuckets"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -51,10 +37,6 @@
         [
           "eks",
           "DescribePodIdentityAssociation"
-        ],
-        [
-          "eks",
-          "ListAddons"
         ]
       ]
     ],
@@ -81,10 +63,6 @@
         [
           "secretsmanager",
           "GetResourcePolicy"
-        ],
-        [
-          "secretsmanager",
-          "ListSecrets"
         ]
       ]
     ],
@@ -100,107 +78,6 @@
         [
           "bedrockagent",
           "UpdateDataSource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DeleteSubnet"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "GetIpamPoolAllocations"
-        ],
-        [
-          "ec2",
-          "ModifyVpcEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DeleteSubnet"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "GetIpamPoolAllocations"
-        ],
-        [
-          "ec2",
-          "ModifyVpcEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateIpamPool"
-        ],
-        [
-          "ec2",
-          "DescribeIpamPools"
-        ],
-        [
-          "ec2",
-          "DescribeIpamScopes"
-        ],
-        [
-          "ec2",
-          "GetIpamResourceCidrs"
         ]
       ]
     ]

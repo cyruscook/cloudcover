@@ -24,59 +24,6 @@
           "SetTypeDefaultVersion"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "create",
-      [
-        [
-          "sns",
-          "GetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "ListSubscriptionsByTopic"
-        ],
-        [
-          "sns",
-          "Subscribe"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "read",
-      [
-        [
-          "sns",
-          "GetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "ListSubscriptionsByTopic"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sns_topic_subscription",
-      "update",
-      [
-        [
-          "sns",
-          "GetSubscriptionAttributes"
-        ],
-        [
-          "sns",
-          "ListSubscriptionsByTopic"
-        ],
-        [
-          "sns",
-          "SetSubscriptionAttributes"
-        ]
-      ]
     ]
   ]
 }

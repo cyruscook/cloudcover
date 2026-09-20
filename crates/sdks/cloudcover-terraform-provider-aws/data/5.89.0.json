@@ -134,12 +134,7 @@
       "resource",
       "aws_quicksight_role_membership",
       "read",
-      [
-        [
-          "quicksight",
-          "ListRoleMemberships"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -158,10 +153,6 @@
         ],
         [
           "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
           "DescribeDBShardGroups"
         ]
       ]
@@ -174,10 +165,6 @@
         [
           "rds",
           "DeleteDBShardGroup"
-        ],
-        [
-          "rds",
-          "DescribeDBClusters"
         ],
         [
           "rds",
@@ -201,10 +188,6 @@
       "aws_rds_shard_group",
       "update",
       [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
         [
           "rds",
           "DescribeDBShardGroups"
@@ -234,10 +217,6 @@
         [
           "xray",
           "DeleteResourcePolicy"
-        ],
-        [
-          "xray",
-          "ListResourcePolicies"
         ]
       ]
     ],
@@ -245,12 +224,7 @@
       "resource",
       "aws_xray_resource_policy",
       "read",
-      [
-        [
-          "xray",
-          "ListResourcePolicies"
-        ]
-      ]
+      []
     ],
     [
       "resource",

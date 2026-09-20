@@ -1,0 +1,2023 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/route53",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "AssociateVPCWithHostedZone",
+          [
+            [
+              "route53",
+              "AssociateVPCWithHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ChangeResourceRecordSets",
+          [
+            [
+              "route53",
+              "ChangeResourceRecordSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ChangeTagsForResource",
+          [
+            [
+              "route53",
+              "ChangeTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateHealthCheck",
+          [
+            [
+              "route53",
+              "CreateHealthCheck"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateHostedZone",
+          [
+            [
+              "route53",
+              "CreateHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateQueryLoggingConfig",
+          [
+            [
+              "route53",
+              "CreateQueryLoggingConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateReusableDelegationSet",
+          [
+            [
+              "route53",
+              "CreateReusableDelegationSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateTrafficPolicy",
+          [
+            [
+              "route53",
+              "CreateTrafficPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateTrafficPolicyInstance",
+          [
+            [
+              "route53",
+              "CreateTrafficPolicyInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateTrafficPolicyVersion",
+          [
+            [
+              "route53",
+              "CreateTrafficPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateVPCAssociationAuthorization",
+          [
+            [
+              "route53",
+              "CreateVPCAssociationAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteHealthCheck",
+          [
+            [
+              "route53",
+              "DeleteHealthCheck"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteHostedZone",
+          [
+            [
+              "route53",
+              "DeleteHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteQueryLoggingConfig",
+          [
+            [
+              "route53",
+              "DeleteQueryLoggingConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteReusableDelegationSet",
+          [
+            [
+              "route53",
+              "DeleteReusableDelegationSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteTrafficPolicy",
+          [
+            [
+              "route53",
+              "DeleteTrafficPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteTrafficPolicyInstance",
+          [
+            [
+              "route53",
+              "DeleteTrafficPolicyInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteVPCAssociationAuthorization",
+          [
+            [
+              "route53",
+              "DeleteVPCAssociationAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DisassociateVPCFromHostedZone",
+          [
+            [
+              "route53",
+              "DisassociateVPCFromHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetAccountLimit",
+          [
+            [
+              "route53",
+              "GetAccountLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetChange",
+          [
+            [
+              "route53",
+              "GetChange"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetCheckerIpRanges",
+          [
+            [
+              "route53",
+              "GetCheckerIpRanges"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetGeoLocation",
+          [
+            [
+              "route53",
+              "GetGeoLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHealthCheck",
+          [
+            [
+              "route53",
+              "GetHealthCheck"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHealthCheckCount",
+          [
+            [
+              "route53",
+              "GetHealthCheckCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHealthCheckLastFailureReason",
+          [
+            [
+              "route53",
+              "GetHealthCheckLastFailureReason"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHealthCheckStatus",
+          [
+            [
+              "route53",
+              "GetHealthCheckStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHostedZone",
+          [
+            [
+              "route53",
+              "GetHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHostedZoneCount",
+          [
+            [
+              "route53",
+              "GetHostedZoneCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetHostedZoneLimit",
+          [
+            [
+              "route53",
+              "GetHostedZoneLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetQueryLoggingConfig",
+          [
+            [
+              "route53",
+              "GetQueryLoggingConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetReusableDelegationSet",
+          [
+            [
+              "route53",
+              "GetReusableDelegationSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetReusableDelegationSetLimit",
+          [
+            [
+              "route53",
+              "GetReusableDelegationSetLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetTrafficPolicy",
+          [
+            [
+              "route53",
+              "GetTrafficPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetTrafficPolicyInstance",
+          [
+            [
+              "route53",
+              "GetTrafficPolicyInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetTrafficPolicyInstanceCount",
+          [
+            [
+              "route53",
+              "GetTrafficPolicyInstanceCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListGeoLocations",
+          [
+            [
+              "route53",
+              "ListGeoLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListHealthChecks",
+          [
+            [
+              "route53",
+              "ListHealthChecks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListHostedZones",
+          [
+            [
+              "route53",
+              "ListHostedZones"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListHostedZonesByName",
+          [
+            [
+              "route53",
+              "ListHostedZonesByName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListHostedZonesByVPC",
+          [
+            [
+              "route53",
+              "ListHostedZonesByVPC"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListQueryLoggingConfigs",
+          [
+            [
+              "route53",
+              "ListQueryLoggingConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListResourceRecordSets",
+          [
+            [
+              "route53",
+              "ListResourceRecordSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListReusableDelegationSets",
+          [
+            [
+              "route53",
+              "ListReusableDelegationSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "route53",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTagsForResources",
+          [
+            [
+              "route53",
+              "ListTagsForResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTrafficPolicies",
+          [
+            [
+              "route53",
+              "ListTrafficPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTrafficPolicyInstances",
+          [
+            [
+              "route53",
+              "ListTrafficPolicyInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTrafficPolicyInstancesByHostedZone",
+          [
+            [
+              "route53",
+              "ListTrafficPolicyInstancesByHostedZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTrafficPolicyInstancesByPolicy",
+          [
+            [
+              "route53",
+              "ListTrafficPolicyInstancesByPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListTrafficPolicyVersions",
+          [
+            [
+              "route53",
+              "ListTrafficPolicyVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListVPCAssociationAuthorizations",
+          [
+            [
+              "route53",
+              "ListVPCAssociationAuthorizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "TestDNSAnswer",
+          [
+            [
+              "route53",
+              "TestDNSAnswer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "UpdateHealthCheck",
+          [
+            [
+              "route53",
+              "UpdateHealthCheck"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "UpdateHostedZoneComment",
+          [
+            [
+              "route53",
+              "UpdateHostedZoneComment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "UpdateTrafficPolicyComment",
+          [
+            [
+              "route53",
+              "UpdateTrafficPolicyComment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "UpdateTrafficPolicyInstance",
+          [
+            [
+              "route53",
+              "UpdateTrafficPolicyInstance"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ActivateKeySigningKey",
+          [
+            [
+              "route53",
+              "ActivateKeySigningKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateKeySigningKey",
+          [
+            [
+              "route53",
+              "CreateKeySigningKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeactivateKeySigningKey",
+          [
+            [
+              "route53",
+              "DeactivateKeySigningKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteKeySigningKey",
+          [
+            [
+              "route53",
+              "DeleteKeySigningKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DisableHostedZoneDNSSEC",
+          [
+            [
+              "route53",
+              "DisableHostedZoneDNSSEC"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "EnableHostedZoneDNSSEC",
+          [
+            [
+              "route53",
+              "EnableHostedZoneDNSSEC"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "GetDNSSEC",
+          [
+            [
+              "route53",
+              "GetDNSSEC"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListHealthChecksPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListHealthChecks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListHostedZonesPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListHostedZones"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListQueryLoggingConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListQueryLoggingConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ChangeCidrCollection",
+          [
+            [
+              "route53",
+              "ChangeCidrCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateCidrCollection",
+          [
+            [
+              "route53",
+              "CreateCidrCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteCidrCollection",
+          [
+            [
+              "route53",
+              "DeleteCidrCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListCidrBlocks",
+          [
+            [
+              "route53",
+              "ListCidrBlocks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListCidrCollections",
+          [
+            [
+              "route53",
+              "ListCidrCollections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListCidrLocations",
+          [
+            [
+              "route53",
+              "ListCidrLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListCidrBlocksPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListCidrBlocks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListCidrCollectionsPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListCidrCollections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListCidrLocationsPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListCidrLocations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListResourceRecordSetsPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListResourceRecordSets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "UpdateHostedZoneFeatures",
+          [
+            [
+              "route53",
+              "UpdateHostedZoneFeatures"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

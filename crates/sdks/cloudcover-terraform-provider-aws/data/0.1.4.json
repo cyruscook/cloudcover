@@ -1,42 +1,4 @@
 {
   "provider_version": "0.1.4",
-  "remove": [],
-  "upsert": [
-    [
-      "data_source",
-      "aws_efs_mount_target",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_dashboard",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_dashboard",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_dashboard",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_cloudwatch_dashboard",
-      "update",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

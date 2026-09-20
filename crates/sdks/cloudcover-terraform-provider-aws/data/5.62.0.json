@@ -4,6 +4,12 @@
   "upsert": [
     [
       "data_source",
+      "aws_db_parameter_group",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_dx_connection",
       "read",
       [
@@ -14,6 +20,17 @@
         [
           "directconnect",
           "DescribeTags"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_guardduty_detector",
+      "read",
+      [
+        [
+          "guardduty",
+          "GetDetector"
         ]
       ]
     ],
@@ -76,23 +93,13 @@
       "data_source",
       "aws_location_tracker_association",
       "read",
-      [
-        [
-          "location",
-          "ListTrackerConsumers"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_location_tracker_associations",
       "read",
-      [
-        [
-          "location",
-          "ListTrackerConsumers"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -187,6 +194,48 @@
           "ListTags"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_rds_certificate",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_rds_cluster",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_rds_clusters",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_rds_engine_version",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_rds_orderable_db_instance",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_servicecatalog_launch_paths",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_servicecatalog_portfolio_constraints",
+      "read",
+      []
     ],
     [
       "resource",
@@ -335,6 +384,49 @@
           "GetSnapshotBlockPublicAccessState"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_guardduty_invite_accepter",
+      "create",
+      [
+        [
+          "guardduty",
+          "AcceptInvitation"
+        ],
+        [
+          "guardduty",
+          "GetMasterAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_guardduty_organization_admin_account",
+      "create",
+      [
+        [
+          "guardduty",
+          "EnableOrganizationAdminAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_guardduty_organization_admin_account",
+      "delete",
+      [
+        [
+          "guardduty",
+          "DisableOrganizationAdminAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_guardduty_organization_admin_account",
+      "read",
+      []
     ],
     [
       "resource",
@@ -604,10 +696,6 @@
         [
           "location",
           "AssociateTrackerConsumer"
-        ],
-        [
-          "location",
-          "ListTrackerConsumers"
         ]
       ]
     ],
@@ -626,12 +714,343 @@
       "resource",
       "aws_location_tracker_association",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "create",
       [
         [
-          "location",
-          "ListTrackerConsumers"
+          "rds",
+          "AddRoleToDBCluster"
+        ],
+        [
+          "rds",
+          "CreateDBCluster"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterFromS3"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterFromSnapshot"
+        ],
+        [
+          "rds",
+          "RestoreDBClusterToPointInTime"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "delete",
+      [
+        [
+          "rds",
+          "DeleteDBCluster"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_cluster",
+      "update",
+      [
+        [
+          "rds",
+          "AddRoleToDBCluster"
+        ],
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "RemoveFromGlobalCluster"
+        ],
+        [
+          "rds",
+          "RemoveRoleFromDBCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster_activity_stream",
+      "create",
+      [
+        [
+          "rds",
+          "StartActivityStream"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster_activity_stream",
+      "delete",
+      [
+        [
+          "rds",
+          "StopActivityStream"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_cluster_activity_stream",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_global_cluster",
+      "create",
+      [
+        [
+          "rds",
+          "CreateGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_global_cluster",
+      "delete",
+      [
+        [
+          "rds",
+          "DeleteGlobalCluster"
+        ],
+        [
+          "rds",
+          "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_global_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_global_cluster",
+      "update",
+      [
+        [
+          "rds",
+          "ModifyDBCluster"
+        ],
+        [
+          "rds",
+          "ModifyGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_reserved_instance",
+      "create",
+      [
+        [
+          "rds",
+          "PurchaseReservedDBInstancesOffering"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_reserved_instance",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_reserved_instance",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_budget_resource_association",
+      "create",
+      [
+        [
+          "servicecatalog",
+          "AssociateBudgetWithResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_budget_resource_association",
+      "delete",
+      [
+        [
+          "servicecatalog",
+          "DisassociateBudgetFromResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_budget_resource_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_portfolio_share",
+      "create",
+      [
+        [
+          "servicecatalog",
+          "CreatePortfolioShare"
+        ],
+        [
+          "servicecatalog",
+          "DescribePortfolioShareStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_portfolio_share",
+      "delete",
+      [
+        [
+          "servicecatalog",
+          "DeletePortfolioShare"
+        ],
+        [
+          "servicecatalog",
+          "DescribePortfolioShareStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_portfolio_share",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_portfolio_share",
+      "update",
+      [
+        [
+          "servicecatalog",
+          "UpdatePortfolioShare"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_principal_portfolio_association",
+      "create",
+      [
+        [
+          "servicecatalog",
+          "AssociatePrincipalWithPortfolio"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_principal_portfolio_association",
+      "delete",
+      [
+        [
+          "servicecatalog",
+          "DisassociatePrincipalFromPortfolio"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_principal_portfolio_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_product_portfolio_association",
+      "create",
+      [
+        [
+          "servicecatalog",
+          "AssociateProductWithPortfolio"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_product_portfolio_association",
+      "delete",
+      [
+        [
+          "servicecatalog",
+          "DisassociateProductFromPortfolio"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_product_portfolio_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_tag_option_resource_association",
+      "create",
+      [
+        [
+          "servicecatalog",
+          "AssociateTagOptionWithResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_tag_option_resource_association",
+      "delete",
+      [
+        [
+          "servicecatalog",
+          "DisassociateTagOptionFromResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicecatalog_tag_option_resource_association",
+      "read",
+      []
     ]
   ]
 }

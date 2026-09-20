@@ -1,0 +1,7570 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "AddTags",
+          [
+            [
+              "sagemaker",
+              "AddTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "AssociateTrialComponent",
+          [
+            [
+              "sagemaker",
+              "AssociateTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAlgorithm",
+          [
+            [
+              "sagemaker",
+              "CreateAlgorithm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateApp",
+          [
+            [
+              "sagemaker",
+              "CreateApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAutoMLJob",
+          [
+            [
+              "sagemaker",
+              "CreateAutoMLJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateCodeRepository",
+          [
+            [
+              "sagemaker",
+              "CreateCodeRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateCompilationJob",
+          [
+            [
+              "sagemaker",
+              "CreateCompilationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateDomain",
+          [
+            [
+              "sagemaker",
+              "CreateDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateEndpoint",
+          [
+            [
+              "sagemaker",
+              "CreateEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateEndpointConfig",
+          [
+            [
+              "sagemaker",
+              "CreateEndpointConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateExperiment",
+          [
+            [
+              "sagemaker",
+              "CreateExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateFlowDefinition",
+          [
+            [
+              "sagemaker",
+              "CreateFlowDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateHumanTaskUi",
+          [
+            [
+              "sagemaker",
+              "CreateHumanTaskUi"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateHyperParameterTuningJob",
+          [
+            [
+              "sagemaker",
+              "CreateHyperParameterTuningJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateLabelingJob",
+          [
+            [
+              "sagemaker",
+              "CreateLabelingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModel",
+          [
+            [
+              "sagemaker",
+              "CreateModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelPackage",
+          [
+            [
+              "sagemaker",
+              "CreateModelPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "CreateMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "CreateNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateNotebookInstanceLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "CreateNotebookInstanceLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePresignedDomainUrl",
+          [
+            [
+              "sagemaker",
+              "CreatePresignedDomainUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePresignedNotebookInstanceUrl",
+          [
+            [
+              "sagemaker",
+              "CreatePresignedNotebookInstanceUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateProcessingJob",
+          [
+            [
+              "sagemaker",
+              "CreateProcessingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTrainingJob",
+          [
+            [
+              "sagemaker",
+              "CreateTrainingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTransformJob",
+          [
+            [
+              "sagemaker",
+              "CreateTransformJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTrial",
+          [
+            [
+              "sagemaker",
+              "CreateTrial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTrialComponent",
+          [
+            [
+              "sagemaker",
+              "CreateTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateUserProfile",
+          [
+            [
+              "sagemaker",
+              "CreateUserProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateWorkforce",
+          [
+            [
+              "sagemaker",
+              "CreateWorkforce"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateWorkteam",
+          [
+            [
+              "sagemaker",
+              "CreateWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAlgorithm",
+          [
+            [
+              "sagemaker",
+              "DeleteAlgorithm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteApp",
+          [
+            [
+              "sagemaker",
+              "DeleteApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteCodeRepository",
+          [
+            [
+              "sagemaker",
+              "DeleteCodeRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteDomain",
+          [
+            [
+              "sagemaker",
+              "DeleteDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteEndpoint",
+          [
+            [
+              "sagemaker",
+              "DeleteEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteEndpointConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteEndpointConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteExperiment",
+          [
+            [
+              "sagemaker",
+              "DeleteExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteFlowDefinition",
+          [
+            [
+              "sagemaker",
+              "DeleteFlowDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteHumanTaskUi",
+          [
+            [
+              "sagemaker",
+              "DeleteHumanTaskUi"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModel",
+          [
+            [
+              "sagemaker",
+              "DeleteModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelPackage",
+          [
+            [
+              "sagemaker",
+              "DeleteModelPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "DeleteMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "DeleteNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteNotebookInstanceLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteNotebookInstanceLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteTags",
+          [
+            [
+              "sagemaker",
+              "DeleteTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteTrial",
+          [
+            [
+              "sagemaker",
+              "DeleteTrial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteTrialComponent",
+          [
+            [
+              "sagemaker",
+              "DeleteTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteUserProfile",
+          [
+            [
+              "sagemaker",
+              "DeleteUserProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteWorkforce",
+          [
+            [
+              "sagemaker",
+              "DeleteWorkforce"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteWorkteam",
+          [
+            [
+              "sagemaker",
+              "DeleteWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAlgorithm",
+          [
+            [
+              "sagemaker",
+              "DescribeAlgorithm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeApp",
+          [
+            [
+              "sagemaker",
+              "DescribeApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAutoMLJob",
+          [
+            [
+              "sagemaker",
+              "DescribeAutoMLJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeCodeRepository",
+          [
+            [
+              "sagemaker",
+              "DescribeCodeRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeCompilationJob",
+          [
+            [
+              "sagemaker",
+              "DescribeCompilationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeDomain",
+          [
+            [
+              "sagemaker",
+              "DescribeDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeEndpoint",
+          [
+            [
+              "sagemaker",
+              "DescribeEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeEndpointConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeEndpointConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeExperiment",
+          [
+            [
+              "sagemaker",
+              "DescribeExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeFlowDefinition",
+          [
+            [
+              "sagemaker",
+              "DescribeFlowDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeHumanTaskUi",
+          [
+            [
+              "sagemaker",
+              "DescribeHumanTaskUi"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeHyperParameterTuningJob",
+          [
+            [
+              "sagemaker",
+              "DescribeHyperParameterTuningJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeLabelingJob",
+          [
+            [
+              "sagemaker",
+              "DescribeLabelingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModel",
+          [
+            [
+              "sagemaker",
+              "DescribeModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelPackage",
+          [
+            [
+              "sagemaker",
+              "DescribeModelPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "DescribeMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "DescribeNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeNotebookInstanceLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeNotebookInstanceLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeProcessingJob",
+          [
+            [
+              "sagemaker",
+              "DescribeProcessingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeSubscribedWorkteam",
+          [
+            [
+              "sagemaker",
+              "DescribeSubscribedWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrainingJob",
+          [
+            [
+              "sagemaker",
+              "DescribeTrainingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTransformJob",
+          [
+            [
+              "sagemaker",
+              "DescribeTransformJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrial",
+          [
+            [
+              "sagemaker",
+              "DescribeTrial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrialComponent",
+          [
+            [
+              "sagemaker",
+              "DescribeTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeUserProfile",
+          [
+            [
+              "sagemaker",
+              "DescribeUserProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeWorkforce",
+          [
+            [
+              "sagemaker",
+              "DescribeWorkforce"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeWorkteam",
+          [
+            [
+              "sagemaker",
+              "DescribeWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DisassociateTrialComponent",
+          [
+            [
+              "sagemaker",
+              "DisassociateTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetSearchSuggestions",
+          [
+            [
+              "sagemaker",
+              "GetSearchSuggestions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAlgorithms",
+          [
+            [
+              "sagemaker",
+              "ListAlgorithms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListApps",
+          [
+            [
+              "sagemaker",
+              "ListApps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAutoMLJobs",
+          [
+            [
+              "sagemaker",
+              "ListAutoMLJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListCandidatesForAutoMLJob",
+          [
+            [
+              "sagemaker",
+              "ListCandidatesForAutoMLJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListCodeRepositories",
+          [
+            [
+              "sagemaker",
+              "ListCodeRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListCompilationJobs",
+          [
+            [
+              "sagemaker",
+              "ListCompilationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListDomains",
+          [
+            [
+              "sagemaker",
+              "ListDomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListEndpointConfigs",
+          [
+            [
+              "sagemaker",
+              "ListEndpointConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListEndpoints",
+          [
+            [
+              "sagemaker",
+              "ListEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListExperiments",
+          [
+            [
+              "sagemaker",
+              "ListExperiments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListFlowDefinitions",
+          [
+            [
+              "sagemaker",
+              "ListFlowDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListHumanTaskUis",
+          [
+            [
+              "sagemaker",
+              "ListHumanTaskUis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListHyperParameterTuningJobs",
+          [
+            [
+              "sagemaker",
+              "ListHyperParameterTuningJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListLabelingJobs",
+          [
+            [
+              "sagemaker",
+              "ListLabelingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListLabelingJobsForWorkteam",
+          [
+            [
+              "sagemaker",
+              "ListLabelingJobsForWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelPackages",
+          [
+            [
+              "sagemaker",
+              "ListModelPackages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModels",
+          [
+            [
+              "sagemaker",
+              "ListModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMonitoringExecutions",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMonitoringSchedules",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringSchedules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListNotebookInstanceLifecycleConfigs",
+          [
+            [
+              "sagemaker",
+              "ListNotebookInstanceLifecycleConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListNotebookInstances",
+          [
+            [
+              "sagemaker",
+              "ListNotebookInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListProcessingJobs",
+          [
+            [
+              "sagemaker",
+              "ListProcessingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListSubscribedWorkteams",
+          [
+            [
+              "sagemaker",
+              "ListSubscribedWorkteams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTags",
+          [
+            [
+              "sagemaker",
+              "ListTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrainingJobs",
+          [
+            [
+              "sagemaker",
+              "ListTrainingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrainingJobsForHyperParameterTuningJob",
+          [
+            [
+              "sagemaker",
+              "ListTrainingJobsForHyperParameterTuningJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTransformJobs",
+          [
+            [
+              "sagemaker",
+              "ListTransformJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrialComponents",
+          [
+            [
+              "sagemaker",
+              "ListTrialComponents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrials",
+          [
+            [
+              "sagemaker",
+              "ListTrials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListUserProfiles",
+          [
+            [
+              "sagemaker",
+              "ListUserProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListWorkforces",
+          [
+            [
+              "sagemaker",
+              "ListWorkforces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListWorkteams",
+          [
+            [
+              "sagemaker",
+              "ListWorkteams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "RenderUiTemplate",
+          [
+            [
+              "sagemaker",
+              "RenderUiTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "Search",
+          [
+            [
+              "sagemaker",
+              "Search"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "StartMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "StartNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopAutoMLJob",
+          [
+            [
+              "sagemaker",
+              "StopAutoMLJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopCompilationJob",
+          [
+            [
+              "sagemaker",
+              "StopCompilationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopHyperParameterTuningJob",
+          [
+            [
+              "sagemaker",
+              "StopHyperParameterTuningJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopLabelingJob",
+          [
+            [
+              "sagemaker",
+              "StopLabelingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "StopMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "StopNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopProcessingJob",
+          [
+            [
+              "sagemaker",
+              "StopProcessingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopTrainingJob",
+          [
+            [
+              "sagemaker",
+              "StopTrainingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopTransformJob",
+          [
+            [
+              "sagemaker",
+              "StopTransformJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateCodeRepository",
+          [
+            [
+              "sagemaker",
+              "UpdateCodeRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateDomain",
+          [
+            [
+              "sagemaker",
+              "UpdateDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateEndpoint",
+          [
+            [
+              "sagemaker",
+              "UpdateEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateEndpointWeightsAndCapacities",
+          [
+            [
+              "sagemaker",
+              "UpdateEndpointWeightsAndCapacities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateExperiment",
+          [
+            [
+              "sagemaker",
+              "UpdateExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateMonitoringSchedule",
+          [
+            [
+              "sagemaker",
+              "UpdateMonitoringSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateNotebookInstance",
+          [
+            [
+              "sagemaker",
+              "UpdateNotebookInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateNotebookInstanceLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "UpdateNotebookInstanceLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateTrial",
+          [
+            [
+              "sagemaker",
+              "UpdateTrial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateTrialComponent",
+          [
+            [
+              "sagemaker",
+              "UpdateTrialComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateUserProfile",
+          [
+            [
+              "sagemaker",
+              "UpdateUserProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateWorkforce",
+          [
+            [
+              "sagemaker",
+              "UpdateWorkforce"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateWorkteam",
+          [
+            [
+              "sagemaker",
+              "UpdateWorkteam"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAppImageConfig",
+          [
+            [
+              "sagemaker",
+              "CreateAppImageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateImage",
+          [
+            [
+              "sagemaker",
+              "CreateImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateImageVersion",
+          [
+            [
+              "sagemaker",
+              "CreateImageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAppImageConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteAppImageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteImage",
+          [
+            [
+              "sagemaker",
+              "DeleteImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteImageVersion",
+          [
+            [
+              "sagemaker",
+              "DeleteImageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAppImageConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeAppImageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeImage",
+          [
+            [
+              "sagemaker",
+              "DescribeImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeImageVersion",
+          [
+            [
+              "sagemaker",
+              "DescribeImageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAppImageConfigs",
+          [
+            [
+              "sagemaker",
+              "ListAppImageConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListImageVersions",
+          [
+            [
+              "sagemaker",
+              "ListImageVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListImages",
+          [
+            [
+              "sagemaker",
+              "ListImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateAppImageConfig",
+          [
+            [
+              "sagemaker",
+              "UpdateAppImageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateImage",
+          [
+            [
+              "sagemaker",
+              "UpdateImage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAlgorithmsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAlgorithms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAppsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListApps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAutoMLJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAutoMLJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListCandidatesForAutoMLJobPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListCandidatesForAutoMLJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListCodeRepositoriesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListCodeRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListCompilationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListCompilationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListDomainsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListDomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListEndpointConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListEndpointConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListExperimentsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListExperiments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListFlowDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListFlowDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListHumanTaskUisPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListHumanTaskUis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListHyperParameterTuningJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListHyperParameterTuningJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListImageVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListImageVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListImagesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListImages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListLabelingJobsForWorkteamPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListLabelingJobsForWorkteam"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListLabelingJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListLabelingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelPackagesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelPackages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMonitoringExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMonitoringSchedulesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringSchedules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListNotebookInstanceLifecycleConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListNotebookInstanceLifecycleConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListNotebookInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListNotebookInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListProcessingJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListProcessingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListSubscribedWorkteamsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListSubscribedWorkteams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTagsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrainingJobsForHyperParameterTuningJobPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrainingJobsForHyperParameterTuningJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrainingJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrainingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTransformJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTransformJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrialComponentsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrialComponents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrialsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListUserProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListUserProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListWorkforcesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListWorkforces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListWorkteamsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListWorkteams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "SearchPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "Search"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "AddAssociation",
+          [
+            [
+              "sagemaker",
+              "AddAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAction",
+          [
+            [
+              "sagemaker",
+              "CreateAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateArtifact",
+          [
+            [
+              "sagemaker",
+              "CreateArtifact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateContext",
+          [
+            [
+              "sagemaker",
+              "CreateContext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateDataQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "CreateDataQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateDeviceFleet",
+          [
+            [
+              "sagemaker",
+              "CreateDeviceFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateEdgePackagingJob",
+          [
+            [
+              "sagemaker",
+              "CreateEdgePackagingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateFeatureGroup",
+          [
+            [
+              "sagemaker",
+              "CreateFeatureGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelBiasJobDefinition",
+          [
+            [
+              "sagemaker",
+              "CreateModelBiasJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelExplainabilityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "CreateModelExplainabilityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelPackageGroup",
+          [
+            [
+              "sagemaker",
+              "CreateModelPackageGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "CreateModelQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePipeline",
+          [
+            [
+              "sagemaker",
+              "CreatePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateProject",
+          [
+            [
+              "sagemaker",
+              "CreateProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAction",
+          [
+            [
+              "sagemaker",
+              "DeleteAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteArtifact",
+          [
+            [
+              "sagemaker",
+              "DeleteArtifact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAssociation",
+          [
+            [
+              "sagemaker",
+              "DeleteAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteContext",
+          [
+            [
+              "sagemaker",
+              "DeleteContext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteDataQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DeleteDataQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteDeviceFleet",
+          [
+            [
+              "sagemaker",
+              "DeleteDeviceFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteFeatureGroup",
+          [
+            [
+              "sagemaker",
+              "DeleteFeatureGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelBiasJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DeleteModelBiasJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelExplainabilityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DeleteModelExplainabilityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelPackageGroup",
+          [
+            [
+              "sagemaker",
+              "DeleteModelPackageGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelPackageGroupPolicy",
+          [
+            [
+              "sagemaker",
+              "DeleteModelPackageGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DeleteModelQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeletePipeline",
+          [
+            [
+              "sagemaker",
+              "DeletePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteProject",
+          [
+            [
+              "sagemaker",
+              "DeleteProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeregisterDevices",
+          [
+            [
+              "sagemaker",
+              "DeregisterDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAction",
+          [
+            [
+              "sagemaker",
+              "DescribeAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeArtifact",
+          [
+            [
+              "sagemaker",
+              "DescribeArtifact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeContext",
+          [
+            [
+              "sagemaker",
+              "DescribeContext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeDataQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DescribeDataQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeDevice",
+          [
+            [
+              "sagemaker",
+              "DescribeDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeDeviceFleet",
+          [
+            [
+              "sagemaker",
+              "DescribeDeviceFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeEdgePackagingJob",
+          [
+            [
+              "sagemaker",
+              "DescribeEdgePackagingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeFeatureGroup",
+          [
+            [
+              "sagemaker",
+              "DescribeFeatureGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelBiasJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DescribeModelBiasJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelExplainabilityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DescribeModelExplainabilityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelPackageGroup",
+          [
+            [
+              "sagemaker",
+              "DescribeModelPackageGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelQualityJobDefinition",
+          [
+            [
+              "sagemaker",
+              "DescribeModelQualityJobDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribePipeline",
+          [
+            [
+              "sagemaker",
+              "DescribePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribePipelineDefinitionForExecution",
+          [
+            [
+              "sagemaker",
+              "DescribePipelineDefinitionForExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribePipelineExecution",
+          [
+            [
+              "sagemaker",
+              "DescribePipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeProject",
+          [
+            [
+              "sagemaker",
+              "DescribeProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DisableSagemakerServicecatalogPortfolio",
+          [
+            [
+              "sagemaker",
+              "DisableSagemakerServicecatalogPortfolio"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "EnableSagemakerServicecatalogPortfolio",
+          [
+            [
+              "sagemaker",
+              "EnableSagemakerServicecatalogPortfolio"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetDeviceFleetReport",
+          [
+            [
+              "sagemaker",
+              "GetDeviceFleetReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetModelPackageGroupPolicy",
+          [
+            [
+              "sagemaker",
+              "GetModelPackageGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetSagemakerServicecatalogPortfolioStatus",
+          [
+            [
+              "sagemaker",
+              "GetSagemakerServicecatalogPortfolioStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListActions",
+          [
+            [
+              "sagemaker",
+              "ListActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListArtifacts",
+          [
+            [
+              "sagemaker",
+              "ListArtifacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAssociations",
+          [
+            [
+              "sagemaker",
+              "ListAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListContexts",
+          [
+            [
+              "sagemaker",
+              "ListContexts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListDataQualityJobDefinitions",
+          [
+            [
+              "sagemaker",
+              "ListDataQualityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListDeviceFleets",
+          [
+            [
+              "sagemaker",
+              "ListDeviceFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListDevices",
+          [
+            [
+              "sagemaker",
+              "ListDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListEdgePackagingJobs",
+          [
+            [
+              "sagemaker",
+              "ListEdgePackagingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListFeatureGroups",
+          [
+            [
+              "sagemaker",
+              "ListFeatureGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelBiasJobDefinitions",
+          [
+            [
+              "sagemaker",
+              "ListModelBiasJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelExplainabilityJobDefinitions",
+          [
+            [
+              "sagemaker",
+              "ListModelExplainabilityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelPackageGroups",
+          [
+            [
+              "sagemaker",
+              "ListModelPackageGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelQualityJobDefinitions",
+          [
+            [
+              "sagemaker",
+              "ListModelQualityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPipelineExecutionSteps",
+          [
+            [
+              "sagemaker",
+              "ListPipelineExecutionSteps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPipelineExecutions",
+          [
+            [
+              "sagemaker",
+              "ListPipelineExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPipelineParametersForExecution",
+          [
+            [
+              "sagemaker",
+              "ListPipelineParametersForExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPipelines",
+          [
+            [
+              "sagemaker",
+              "ListPipelines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListProjects",
+          [
+            [
+              "sagemaker",
+              "ListProjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "PutModelPackageGroupPolicy",
+          [
+            [
+              "sagemaker",
+              "PutModelPackageGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "RegisterDevices",
+          [
+            [
+              "sagemaker",
+              "RegisterDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartPipelineExecution",
+          [
+            [
+              "sagemaker",
+              "StartPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopEdgePackagingJob",
+          [
+            [
+              "sagemaker",
+              "StopEdgePackagingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopPipelineExecution",
+          [
+            [
+              "sagemaker",
+              "StopPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateAction",
+          [
+            [
+              "sagemaker",
+              "UpdateAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateArtifact",
+          [
+            [
+              "sagemaker",
+              "UpdateArtifact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateContext",
+          [
+            [
+              "sagemaker",
+              "UpdateContext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateDeviceFleet",
+          [
+            [
+              "sagemaker",
+              "UpdateDeviceFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateDevices",
+          [
+            [
+              "sagemaker",
+              "UpdateDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateModelPackage",
+          [
+            [
+              "sagemaker",
+              "UpdateModelPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdatePipeline",
+          [
+            [
+              "sagemaker",
+              "UpdatePipeline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdatePipelineExecution",
+          [
+            [
+              "sagemaker",
+              "UpdatePipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateTrainingJob",
+          [
+            [
+              "sagemaker",
+              "UpdateTrainingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListActionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAppImageConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAppImageConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListArtifactsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListArtifacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListContextsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListContexts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListDataQualityJobDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListDataQualityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListDeviceFleetsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListDeviceFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListDevicesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListEdgePackagingJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListEdgePackagingJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelBiasJobDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelBiasJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelExplainabilityJobDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelExplainabilityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelPackageGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelPackageGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelQualityJobDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelQualityJobDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPipelineExecutionStepsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPipelineExecutionSteps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPipelineExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPipelineExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPipelineParametersForExecutionPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPipelineParametersForExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPipelinesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPipelines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListProjectsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListProjects"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "SendPipelineExecutionStepFailure",
+          [
+            [
+              "sagemaker",
+              "SendPipelineExecutionStepFailure"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "SendPipelineExecutionStepSuccess",
+          [
+            [
+              "sagemaker",
+              "SendPipelineExecutionStepSuccess"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateStudioLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "CreateStudioLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteStudioLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteStudioLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeStudioLifecycleConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeStudioLifecycleConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListStudioLifecycleConfigs",
+          [
+            [
+              "sagemaker",
+              "ListStudioLifecycleConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "RetryPipelineExecution",
+          [
+            [
+              "sagemaker",
+              "RetryPipelineExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListStudioLifecycleConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListStudioLifecycleConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "BatchDescribeModelPackage",
+          [
+            [
+              "sagemaker",
+              "BatchDescribeModelPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateProject",
+          [
+            [
+              "sagemaker",
+              "UpdateProject"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateInferenceRecommendationsJob",
+          [
+            [
+              "sagemaker",
+              "CreateInferenceRecommendationsJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeInferenceRecommendationsJob",
+          [
+            [
+              "sagemaker",
+              "DescribeInferenceRecommendationsJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeLineageGroup",
+          [
+            [
+              "sagemaker",
+              "DescribeLineageGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetLineageGroupPolicy",
+          [
+            [
+              "sagemaker",
+              "GetLineageGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListInferenceRecommendationsJobs",
+          [
+            [
+              "sagemaker",
+              "ListInferenceRecommendationsJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListLineageGroups",
+          [
+            [
+              "sagemaker",
+              "ListLineageGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelMetadata",
+          [
+            [
+              "sagemaker",
+              "ListModelMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "QueryLineage",
+          [
+            [
+              "sagemaker",
+              "QueryLineage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopInferenceRecommendationsJob",
+          [
+            [
+              "sagemaker",
+              "StopInferenceRecommendationsJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListInferenceRecommendationsJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListInferenceRecommendationsJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListLineageGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListLineageGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelMetadataPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "QueryLineagePaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "QueryLineage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeFeatureMetadata",
+          [
+            [
+              "sagemaker",
+              "DescribeFeatureMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateFeatureGroup",
+          [
+            [
+              "sagemaker",
+              "UpdateFeatureGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateFeatureMetadata",
+          [
+            [
+              "sagemaker",
+              "UpdateFeatureMetadata"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateEdgeDeploymentPlan",
+          [
+            [
+              "sagemaker",
+              "CreateEdgeDeploymentPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateEdgeDeploymentStage",
+          [
+            [
+              "sagemaker",
+              "CreateEdgeDeploymentStage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteEdgeDeploymentPlan",
+          [
+            [
+              "sagemaker",
+              "DeleteEdgeDeploymentPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteEdgeDeploymentStage",
+          [
+            [
+              "sagemaker",
+              "DeleteEdgeDeploymentStage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeEdgeDeploymentPlan",
+          [
+            [
+              "sagemaker",
+              "DescribeEdgeDeploymentPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListEdgeDeploymentPlans",
+          [
+            [
+              "sagemaker",
+              "ListEdgeDeploymentPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListStageDevices",
+          [
+            [
+              "sagemaker",
+              "ListStageDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartEdgeDeploymentStage",
+          [
+            [
+              "sagemaker",
+              "StartEdgeDeploymentStage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopEdgeDeploymentStage",
+          [
+            [
+              "sagemaker",
+              "StopEdgeDeploymentStage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListEdgeDeploymentPlansPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListEdgeDeploymentPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListStageDevicesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListStageDevices"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListInferenceRecommendationsJobSteps",
+          [
+            [
+              "sagemaker",
+              "ListInferenceRecommendationsJobSteps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListInferenceRecommendationsJobStepsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListInferenceRecommendationsJobSteps"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateHub",
+          [
+            [
+              "sagemaker",
+              "CreateHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "CreateInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelCard",
+          [
+            [
+              "sagemaker",
+              "CreateModelCard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateModelCardExportJob",
+          [
+            [
+              "sagemaker",
+              "CreateModelCardExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateSpace",
+          [
+            [
+              "sagemaker",
+              "CreateSpace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteHub",
+          [
+            [
+              "sagemaker",
+              "DeleteHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteHubContent",
+          [
+            [
+              "sagemaker",
+              "DeleteHubContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "DeleteInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteModelCard",
+          [
+            [
+              "sagemaker",
+              "DeleteModelCard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteSpace",
+          [
+            [
+              "sagemaker",
+              "DeleteSpace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeHub",
+          [
+            [
+              "sagemaker",
+              "DescribeHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeHubContent",
+          [
+            [
+              "sagemaker",
+              "DescribeHubContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "DescribeInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelCard",
+          [
+            [
+              "sagemaker",
+              "DescribeModelCard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeModelCardExportJob",
+          [
+            [
+              "sagemaker",
+              "DescribeModelCardExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeSpace",
+          [
+            [
+              "sagemaker",
+              "DescribeSpace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ImportHubContent",
+          [
+            [
+              "sagemaker",
+              "ImportHubContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListHubContentVersions",
+          [
+            [
+              "sagemaker",
+              "ListHubContentVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListHubContents",
+          [
+            [
+              "sagemaker",
+              "ListHubContents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListHubs",
+          [
+            [
+              "sagemaker",
+              "ListHubs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListInferenceExperiments",
+          [
+            [
+              "sagemaker",
+              "ListInferenceExperiments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelCardExportJobs",
+          [
+            [
+              "sagemaker",
+              "ListModelCardExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelCardVersions",
+          [
+            [
+              "sagemaker",
+              "ListModelCardVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListModelCards",
+          [
+            [
+              "sagemaker",
+              "ListModelCards"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMonitoringAlertHistory",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringAlertHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMonitoringAlerts",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListSpaces",
+          [
+            [
+              "sagemaker",
+              "ListSpaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "StartInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "StopInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateHub",
+          [
+            [
+              "sagemaker",
+              "UpdateHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateInferenceExperiment",
+          [
+            [
+              "sagemaker",
+              "UpdateInferenceExperiment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateModelCard",
+          [
+            [
+              "sagemaker",
+              "UpdateModelCard"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateMonitoringAlert",
+          [
+            [
+              "sagemaker",
+              "UpdateMonitoringAlert"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateSpace",
+          [
+            [
+              "sagemaker",
+              "UpdateSpace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListInferenceExperimentsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListInferenceExperiments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelCardExportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelCardExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelCardVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelCardVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListModelCardsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListModelCards"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMonitoringAlertHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringAlertHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMonitoringAlertsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMonitoringAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListSpacesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListSpaces"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAliases",
+          [
+            [
+              "sagemaker",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateImageVersion",
+          [
+            [
+              "sagemaker",
+              "UpdateImageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAliases"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAutoMLJobV2",
+          [
+            [
+              "sagemaker",
+              "CreateAutoMLJobV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAutoMLJobV2",
+          [
+            [
+              "sagemaker",
+              "DescribeAutoMLJobV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListResourceCatalogs",
+          [
+            [
+              "sagemaker",
+              "ListResourceCatalogs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListResourceCatalogsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListResourceCatalogs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "GetScalingConfigurationRecommendation",
+          [
+            [
+              "sagemaker",
+              "GetScalingConfigurationRecommendation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.112.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.114.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.117.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.117.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "sagemaker",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateInferenceComponent",
+          [
+            [
+              "sagemaker",
+              "CreateInferenceComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "sagemaker",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteInferenceComponent",
+          [
+            [
+              "sagemaker",
+              "DeleteInferenceComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeCluster",
+          [
+            [
+              "sagemaker",
+              "DescribeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeClusterNode",
+          [
+            [
+              "sagemaker",
+              "DescribeClusterNode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeInferenceComponent",
+          [
+            [
+              "sagemaker",
+              "DescribeInferenceComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterNodes",
+          [
+            [
+              "sagemaker",
+              "ListClusterNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusters",
+          [
+            [
+              "sagemaker",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListInferenceComponents",
+          [
+            [
+              "sagemaker",
+              "ListInferenceComponents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateCluster",
+          [
+            [
+              "sagemaker",
+              "UpdateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateInferenceComponent",
+          [
+            [
+              "sagemaker",
+              "UpdateInferenceComponent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateInferenceComponentRuntimeConfig",
+          [
+            [
+              "sagemaker",
+              "UpdateInferenceComponentRuntimeConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListInferenceComponentsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListInferenceComponents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.119.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.121.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteCompilationJob",
+          [
+            [
+              "sagemaker",
+              "DeleteCompilationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListFeatureGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListFeatureGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.122.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.122.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.125.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteHyperParameterTuningJob",
+          [
+            [
+              "sagemaker",
+              "DeleteHyperParameterTuningJob"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.127.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateClusterSoftware",
+          [
+            [
+              "sagemaker",
+              "UpdateClusterSoftware"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.130.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.133.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.133.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.134.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.135.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.136.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.137.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.138.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.141.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.141.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.143.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.144.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.145.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.145.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.146.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "CreateMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePresignedMlflowTrackingServerUrl",
+          [
+            [
+              "sagemaker",
+              "CreatePresignedMlflowTrackingServerUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "DeleteMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "DescribeMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMlflowTrackingServers",
+          [
+            [
+              "sagemaker",
+              "ListMlflowTrackingServers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "StartMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "StopMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateMlflowTrackingServer",
+          [
+            [
+              "sagemaker",
+              "UpdateMlflowTrackingServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMlflowTrackingServersPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMlflowTrackingServers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.146.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.147.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateHubContentReference",
+          [
+            [
+              "sagemaker",
+              "CreateHubContentReference"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteHubContentReference",
+          [
+            [
+              "sagemaker",
+              "DeleteHubContentReference"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.148.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.149.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.149.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.150.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateOptimizationJob",
+          [
+            [
+              "sagemaker",
+              "CreateOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteOptimizationJob",
+          [
+            [
+              "sagemaker",
+              "DeleteOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeOptimizationJob",
+          [
+            [
+              "sagemaker",
+              "DescribeOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListOptimizationJobs",
+          [
+            [
+              "sagemaker",
+              "ListOptimizationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopOptimizationJob",
+          [
+            [
+              "sagemaker",
+              "StopOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListOptimizationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListOptimizationJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.150.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.150.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.151.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.152.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.154.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.155.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.155.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.156.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.157.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.157.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.158.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.159.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.159.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.160.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.160.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.161.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.161.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.162.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.162.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.164.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.165.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.166.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "BatchDeleteClusterNodes",
+          [
+            [
+              "sagemaker",
+              "BatchDeleteClusterNodes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.166.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.166.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.167.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.167.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.168.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.168.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.169.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateClusterSchedulerConfig",
+          [
+            [
+              "sagemaker",
+              "CreateClusterSchedulerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateComputeQuota",
+          [
+            [
+              "sagemaker",
+              "CreateComputeQuota"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePartnerApp",
+          [
+            [
+              "sagemaker",
+              "CreatePartnerApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePartnerAppPresignedUrl",
+          [
+            [
+              "sagemaker",
+              "CreatePartnerAppPresignedUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTrainingPlan",
+          [
+            [
+              "sagemaker",
+              "CreateTrainingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteClusterSchedulerConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteClusterSchedulerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteComputeQuota",
+          [
+            [
+              "sagemaker",
+              "DeleteComputeQuota"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeletePartnerApp",
+          [
+            [
+              "sagemaker",
+              "DeletePartnerApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeClusterSchedulerConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeClusterSchedulerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeComputeQuota",
+          [
+            [
+              "sagemaker",
+              "DescribeComputeQuota"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribePartnerApp",
+          [
+            [
+              "sagemaker",
+              "DescribePartnerApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrainingPlan",
+          [
+            [
+              "sagemaker",
+              "DescribeTrainingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterSchedulerConfigs",
+          [
+            [
+              "sagemaker",
+              "ListClusterSchedulerConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListComputeQuotas",
+          [
+            [
+              "sagemaker",
+              "ListComputeQuotas"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPartnerApps",
+          [
+            [
+              "sagemaker",
+              "ListPartnerApps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrainingPlans",
+          [
+            [
+              "sagemaker",
+              "ListTrainingPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "SearchTrainingPlanOfferings",
+          [
+            [
+              "sagemaker",
+              "SearchTrainingPlanOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateClusterSchedulerConfig",
+          [
+            [
+              "sagemaker",
+              "UpdateClusterSchedulerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateComputeQuota",
+          [
+            [
+              "sagemaker",
+              "UpdateComputeQuota"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdatePartnerApp",
+          [
+            [
+              "sagemaker",
+              "UpdatePartnerApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterSchedulerConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterSchedulerConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListComputeQuotasPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListComputeQuotas"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPartnerAppsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPartnerApps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrainingPlansPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrainingPlans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.169.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.170.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.171.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.172.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.172.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.172.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.172.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.173.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.173.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.173.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.173.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.174.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.174.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.174.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.174.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.176.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.177.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.178.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.179.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateHubContent",
+          [
+            [
+              "sagemaker",
+              "UpdateHubContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateHubContentReference",
+          [
+            [
+              "sagemaker",
+              "UpdateHubContentReference"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.180.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.180.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.180.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.181.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterNodesPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClustersPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusters"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.182.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.183.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.184.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.185.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.185.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.186.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.187.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.188.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.189.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.190.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.191.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.192.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.193.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.194.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.195.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.195.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.196.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.196.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.197.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.198.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.199.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.200.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateHubContentPresignedUrls",
+          [
+            [
+              "sagemaker",
+              "CreateHubContentPresignedUrls"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartSession",
+          [
+            [
+              "sagemaker",
+              "StartSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "CreateHubContentPresignedUrlsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "CreateHubContentPresignedUrls"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.200.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.201.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListPipelineVersions",
+          [
+            [
+              "sagemaker",
+              "ListPipelineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdatePipelineVersion",
+          [
+            [
+              "sagemaker",
+              "UpdatePipelineVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListPipelineVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListPipelineVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.201.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.202.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.203.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.203.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.204.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "AttachClusterNodeVolume",
+          [
+            [
+              "sagemaker",
+              "AttachClusterNodeVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DetachClusterNodeVolume",
+          [
+            [
+              "sagemaker",
+              "DetachClusterNodeVolume"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.205.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "BatchAddClusterNodes",
+          [
+            [
+              "sagemaker",
+              "BatchAddClusterNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeClusterEvent",
+          [
+            [
+              "sagemaker",
+              "DescribeClusterEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterEvents",
+          [
+            [
+              "sagemaker",
+              "ListClusterEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterEventsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.206.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeReservedCapacity",
+          [
+            [
+              "sagemaker",
+              "DescribeReservedCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListUltraServersByReservedCapacity",
+          [
+            [
+              "sagemaker",
+              "ListUltraServersByReservedCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListUltraServersByReservedCapacityPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListUltraServersByReservedCapacity"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.207.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.208.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.209.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.210.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.211.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.211.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.212.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.213.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.213.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.214.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.214.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.215.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.215.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.215.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.215.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.215.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.216.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.217.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.218.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteProcessingJob",
+          [
+            [
+              "sagemaker",
+              "DeleteProcessingJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteTrainingJob",
+          [
+            [
+              "sagemaker",
+              "DeleteTrainingJob"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.218.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.219.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.219.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.220.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.221.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.221.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.222.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.223.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.224.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.224.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.225.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "BatchRebootClusterNodes",
+          [
+            [
+              "sagemaker",
+              "BatchRebootClusterNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "BatchReplaceClusterNodes",
+          [
+            [
+              "sagemaker",
+              "BatchReplaceClusterNodes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.226.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.226.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.227.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateMlflowApp",
+          [
+            [
+              "sagemaker",
+              "CreateMlflowApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreatePresignedMlflowAppUrl",
+          [
+            [
+              "sagemaker",
+              "CreatePresignedMlflowAppUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteMlflowApp",
+          [
+            [
+              "sagemaker",
+              "DeleteMlflowApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeMlflowApp",
+          [
+            [
+              "sagemaker",
+              "DescribeMlflowApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListMlflowApps",
+          [
+            [
+              "sagemaker",
+              "ListMlflowApps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateMlflowApp",
+          [
+            [
+              "sagemaker",
+              "UpdateMlflowApp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListMlflowAppsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListMlflowApps"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.228.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.228.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.228.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.229.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.229.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.230.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.230.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.231.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.232.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.233.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.233.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.234.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.235.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.236.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrainingPlanExtensionHistory",
+          [
+            [
+              "sagemaker",
+              "DescribeTrainingPlanExtensionHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ExtendTrainingPlan",
+          [
+            [
+              "sagemaker",
+              "ExtendTrainingPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "DescribeTrainingPlanExtensionHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "DescribeTrainingPlanExtensionHistory"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.236.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.237.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.238.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.239.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.240.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StartClusterHealthCheck",
+          [
+            [
+              "sagemaker",
+              "StartClusterHealthCheck"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.241.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.242.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAIBenchmarkJob",
+          [
+            [
+              "sagemaker",
+              "CreateAIBenchmarkJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAIRecommendationJob",
+          [
+            [
+              "sagemaker",
+              "CreateAIRecommendationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateAIWorkloadConfig",
+          [
+            [
+              "sagemaker",
+              "CreateAIWorkloadConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAIBenchmarkJob",
+          [
+            [
+              "sagemaker",
+              "DeleteAIBenchmarkJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAIRecommendationJob",
+          [
+            [
+              "sagemaker",
+              "DeleteAIRecommendationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteAIWorkloadConfig",
+          [
+            [
+              "sagemaker",
+              "DeleteAIWorkloadConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAIBenchmarkJob",
+          [
+            [
+              "sagemaker",
+              "DescribeAIBenchmarkJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAIRecommendationJob",
+          [
+            [
+              "sagemaker",
+              "DescribeAIRecommendationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeAIWorkloadConfig",
+          [
+            [
+              "sagemaker",
+              "DescribeAIWorkloadConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAIBenchmarkJobs",
+          [
+            [
+              "sagemaker",
+              "ListAIBenchmarkJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAIRecommendationJobs",
+          [
+            [
+              "sagemaker",
+              "ListAIRecommendationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListAIWorkloadConfigs",
+          [
+            [
+              "sagemaker",
+              "ListAIWorkloadConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopAIBenchmarkJob",
+          [
+            [
+              "sagemaker",
+              "StopAIBenchmarkJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopAIRecommendationJob",
+          [
+            [
+              "sagemaker",
+              "StopAIRecommendationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAIBenchmarkJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAIBenchmarkJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAIRecommendationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAIRecommendationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListAIWorkloadConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListAIWorkloadConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.243.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.243.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.244.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.245.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.246.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.247.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.248.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.249.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.250.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.250.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.250.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.251.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateJob",
+          [
+            [
+              "sagemaker",
+              "CreateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteJob",
+          [
+            [
+              "sagemaker",
+              "DeleteJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeJob",
+          [
+            [
+              "sagemaker",
+              "DescribeJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeJobSchemaVersion",
+          [
+            [
+              "sagemaker",
+              "DescribeJobSchemaVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListJobSchemaVersions",
+          [
+            [
+              "sagemaker",
+              "ListJobSchemaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListJobs",
+          [
+            [
+              "sagemaker",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopJob",
+          [
+            [
+              "sagemaker",
+              "StopJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListJobSchemaVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListJobSchemaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListJobsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.251.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.252.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.253.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.253.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.254.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.255.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.256.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.256.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.256.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.257.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.258.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.258.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.259.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.260.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.261.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.262.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.262.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.262.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.263.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.263.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.263.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.264.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.265.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.266.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.267.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.268.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.268.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.269.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.270.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.270.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.271.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.272.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.273.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.274.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.275.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.276.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.277.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "AttachClusterNodeNetworkInterface",
+          [
+            [
+              "sagemaker",
+              "AttachClusterNodeNetworkInterface"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.278.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

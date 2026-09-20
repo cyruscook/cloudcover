@@ -1,0 +1,2316 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ActivateGateway",
+          [
+            [
+              "storagegateway",
+              "ActivateGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AddCache",
+          [
+            [
+              "storagegateway",
+              "AddCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AddTagsToResource",
+          [
+            [
+              "storagegateway",
+              "AddTagsToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AddUploadBuffer",
+          [
+            [
+              "storagegateway",
+              "AddUploadBuffer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AddWorkingStorage",
+          [
+            [
+              "storagegateway",
+              "AddWorkingStorage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AssignTapePool",
+          [
+            [
+              "storagegateway",
+              "AssignTapePool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AttachVolume",
+          [
+            [
+              "storagegateway",
+              "AttachVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CancelArchival",
+          [
+            [
+              "storagegateway",
+              "CancelArchival"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CancelRetrieval",
+          [
+            [
+              "storagegateway",
+              "CancelRetrieval"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateCachediSCSIVolume",
+          [
+            [
+              "storagegateway",
+              "CreateCachediSCSIVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateNFSFileShare",
+          [
+            [
+              "storagegateway",
+              "CreateNFSFileShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateSMBFileShare",
+          [
+            [
+              "storagegateway",
+              "CreateSMBFileShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateSnapshot",
+          [
+            [
+              "storagegateway",
+              "CreateSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateSnapshotFromVolumeRecoveryPoint",
+          [
+            [
+              "storagegateway",
+              "CreateSnapshotFromVolumeRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateStorediSCSIVolume",
+          [
+            [
+              "storagegateway",
+              "CreateStorediSCSIVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateTapeWithBarcode",
+          [
+            [
+              "storagegateway",
+              "CreateTapeWithBarcode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateTapes",
+          [
+            [
+              "storagegateway",
+              "CreateTapes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteAutomaticTapeCreationPolicy",
+          [
+            [
+              "storagegateway",
+              "DeleteAutomaticTapeCreationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteBandwidthRateLimit",
+          [
+            [
+              "storagegateway",
+              "DeleteBandwidthRateLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteChapCredentials",
+          [
+            [
+              "storagegateway",
+              "DeleteChapCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteFileShare",
+          [
+            [
+              "storagegateway",
+              "DeleteFileShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteGateway",
+          [
+            [
+              "storagegateway",
+              "DeleteGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteSnapshotSchedule",
+          [
+            [
+              "storagegateway",
+              "DeleteSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteTape",
+          [
+            [
+              "storagegateway",
+              "DeleteTape"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteTapeArchive",
+          [
+            [
+              "storagegateway",
+              "DeleteTapeArchive"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteVolume",
+          [
+            [
+              "storagegateway",
+              "DeleteVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeAvailabilityMonitorTest",
+          [
+            [
+              "storagegateway",
+              "DescribeAvailabilityMonitorTest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeBandwidthRateLimit",
+          [
+            [
+              "storagegateway",
+              "DescribeBandwidthRateLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeCache",
+          [
+            [
+              "storagegateway",
+              "DescribeCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeCachediSCSIVolumes",
+          [
+            [
+              "storagegateway",
+              "DescribeCachediSCSIVolumes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeChapCredentials",
+          [
+            [
+              "storagegateway",
+              "DescribeChapCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeGatewayInformation",
+          [
+            [
+              "storagegateway",
+              "DescribeGatewayInformation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeMaintenanceStartTime",
+          [
+            [
+              "storagegateway",
+              "DescribeMaintenanceStartTime"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeNFSFileShares",
+          [
+            [
+              "storagegateway",
+              "DescribeNFSFileShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeSMBFileShares",
+          [
+            [
+              "storagegateway",
+              "DescribeSMBFileShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeSMBSettings",
+          [
+            [
+              "storagegateway",
+              "DescribeSMBSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeSnapshotSchedule",
+          [
+            [
+              "storagegateway",
+              "DescribeSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeStorediSCSIVolumes",
+          [
+            [
+              "storagegateway",
+              "DescribeStorediSCSIVolumes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeTapeArchives",
+          [
+            [
+              "storagegateway",
+              "DescribeTapeArchives"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeTapeRecoveryPoints",
+          [
+            [
+              "storagegateway",
+              "DescribeTapeRecoveryPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeTapes",
+          [
+            [
+              "storagegateway",
+              "DescribeTapes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeUploadBuffer",
+          [
+            [
+              "storagegateway",
+              "DescribeUploadBuffer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeVTLDevices",
+          [
+            [
+              "storagegateway",
+              "DescribeVTLDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeWorkingStorage",
+          [
+            [
+              "storagegateway",
+              "DescribeWorkingStorage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DetachVolume",
+          [
+            [
+              "storagegateway",
+              "DetachVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DisableGateway",
+          [
+            [
+              "storagegateway",
+              "DisableGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "JoinDomain",
+          [
+            [
+              "storagegateway",
+              "JoinDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListAutomaticTapeCreationPolicies",
+          [
+            [
+              "storagegateway",
+              "ListAutomaticTapeCreationPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListFileShares",
+          [
+            [
+              "storagegateway",
+              "ListFileShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListGateways",
+          [
+            [
+              "storagegateway",
+              "ListGateways"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListLocalDisks",
+          [
+            [
+              "storagegateway",
+              "ListLocalDisks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "storagegateway",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListTapes",
+          [
+            [
+              "storagegateway",
+              "ListTapes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListVolumeInitiators",
+          [
+            [
+              "storagegateway",
+              "ListVolumeInitiators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListVolumeRecoveryPoints",
+          [
+            [
+              "storagegateway",
+              "ListVolumeRecoveryPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListVolumes",
+          [
+            [
+              "storagegateway",
+              "ListVolumes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "NotifyWhenUploaded",
+          [
+            [
+              "storagegateway",
+              "NotifyWhenUploaded"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "RefreshCache",
+          [
+            [
+              "storagegateway",
+              "RefreshCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "RemoveTagsFromResource",
+          [
+            [
+              "storagegateway",
+              "RemoveTagsFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ResetCache",
+          [
+            [
+              "storagegateway",
+              "ResetCache"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "RetrieveTapeArchive",
+          [
+            [
+              "storagegateway",
+              "RetrieveTapeArchive"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "RetrieveTapeRecoveryPoint",
+          [
+            [
+              "storagegateway",
+              "RetrieveTapeRecoveryPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "SetLocalConsolePassword",
+          [
+            [
+              "storagegateway",
+              "SetLocalConsolePassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "SetSMBGuestPassword",
+          [
+            [
+              "storagegateway",
+              "SetSMBGuestPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ShutdownGateway",
+          [
+            [
+              "storagegateway",
+              "ShutdownGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "StartAvailabilityMonitorTest",
+          [
+            [
+              "storagegateway",
+              "StartAvailabilityMonitorTest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "StartGateway",
+          [
+            [
+              "storagegateway",
+              "StartGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateAutomaticTapeCreationPolicy",
+          [
+            [
+              "storagegateway",
+              "UpdateAutomaticTapeCreationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateBandwidthRateLimit",
+          [
+            [
+              "storagegateway",
+              "UpdateBandwidthRateLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateChapCredentials",
+          [
+            [
+              "storagegateway",
+              "UpdateChapCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateGatewayInformation",
+          [
+            [
+              "storagegateway",
+              "UpdateGatewayInformation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateGatewaySoftwareNow",
+          [
+            [
+              "storagegateway",
+              "UpdateGatewaySoftwareNow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateMaintenanceStartTime",
+          [
+            [
+              "storagegateway",
+              "UpdateMaintenanceStartTime"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateNFSFileShare",
+          [
+            [
+              "storagegateway",
+              "UpdateNFSFileShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateSMBFileShare",
+          [
+            [
+              "storagegateway",
+              "UpdateSMBFileShare"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateSMBSecurityStrategy",
+          [
+            [
+              "storagegateway",
+              "UpdateSMBSecurityStrategy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateSnapshotSchedule",
+          [
+            [
+              "storagegateway",
+              "UpdateSnapshotSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateVTLDeviceType",
+          [
+            [
+              "storagegateway",
+              "UpdateVTLDeviceType"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CreateTapePool",
+          [
+            [
+              "storagegateway",
+              "CreateTapePool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteTapePool",
+          [
+            [
+              "storagegateway",
+              "DeleteTapePool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListTapePools",
+          [
+            [
+              "storagegateway",
+              "ListTapePools"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateSMBFileShareVisibility",
+          [
+            [
+              "storagegateway",
+              "UpdateSMBFileShareVisibility"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeBandwidthRateLimitSchedule",
+          [
+            [
+              "storagegateway",
+              "DescribeBandwidthRateLimitSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateBandwidthRateLimitSchedule",
+          [
+            [
+              "storagegateway",
+              "UpdateBandwidthRateLimitSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "DescribeTapeArchivesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "DescribeTapeArchives"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "DescribeTapeRecoveryPointsPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "DescribeTapeRecoveryPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "DescribeTapesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "DescribeTapes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "DescribeVTLDevicesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "DescribeVTLDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListFileSharesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListFileShares"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListGatewaysPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListGateways"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListTapePoolsPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListTapePools"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListTapesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListTapes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListVolumesPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListVolumes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "AssociateFileSystem",
+          [
+            [
+              "storagegateway",
+              "AssociateFileSystem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeFileSystemAssociations",
+          [
+            [
+              "storagegateway",
+              "DescribeFileSystemAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DisassociateFileSystem",
+          [
+            [
+              "storagegateway",
+              "DisassociateFileSystem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListFileSystemAssociations",
+          [
+            [
+              "storagegateway",
+              "ListFileSystemAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateFileSystemAssociation",
+          [
+            [
+              "storagegateway",
+              "UpdateFileSystemAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListFileSystemAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListFileSystemAssociations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "UpdateSMBLocalGroups",
+          [
+            [
+              "storagegateway",
+              "UpdateSMBLocalGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "CancelCacheReport",
+          [
+            [
+              "storagegateway",
+              "CancelCacheReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DeleteCacheReport",
+          [
+            [
+              "storagegateway",
+              "DeleteCacheReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "DescribeCacheReport",
+          [
+            [
+              "storagegateway",
+              "DescribeCacheReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "ListCacheReports",
+          [
+            [
+              "storagegateway",
+              "ListCacheReports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "StartCacheReport",
+          [
+            [
+              "storagegateway",
+              "StartCacheReport"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "Client",
+          "EvictFilesFailingUpload",
+          [
+            [
+              "storagegateway",
+              "EvictFilesFailingUpload"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/storagegateway",
+          "ListCacheReportsPaginator",
+          "NextPage",
+          [
+            [
+              "storagegateway",
+              "ListCacheReports"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

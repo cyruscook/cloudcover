@@ -17,10 +17,16 @@
       "data_source",
       "aws_lakeformation_permissions",
       "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_vpc",
+      "read",
       [
         [
-          "lakeformation",
-          "ListPermissions"
+          "ec2",
+          "DescribeVpcAttribute"
         ]
       ]
     ],
@@ -340,12 +346,14 @@
         [
           "lakeformation",
           "GrantPermissions"
-        ],
-        [
-          "lakeformation",
-          "ListPermissions"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_permissions",
+      "read",
+      []
     ],
     [
       "resource",
@@ -361,6 +369,23 @@
           "GetResourceLFTags"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_securityhub_action_target",
+      "create",
+      [
+        [
+          "securityhub",
+          "CreateActionTarget"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securityhub_action_target",
+      "read",
+      []
     ],
     [
       "resource",
@@ -463,6 +488,34 @@
         [
           "securityhub",
           "StartConfigurationPolicyAssociation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securityhub_insight",
+      "create",
+      [
+        [
+          "securityhub",
+          "CreateInsight"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securityhub_insight",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_securityhub_insight",
+      "update",
+      [
+        [
+          "securityhub",
+          "UpdateInsight"
         ]
       ]
     ],

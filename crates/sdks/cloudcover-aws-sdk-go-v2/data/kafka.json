@@ -1,0 +1,2063 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/kafka",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "kafka",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateConfiguration",
+          [
+            [
+              "kafka",
+              "CreateConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "kafka",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeCluster",
+          [
+            [
+              "kafka",
+              "DescribeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeClusterOperation",
+          [
+            [
+              "kafka",
+              "DescribeClusterOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeConfiguration",
+          [
+            [
+              "kafka",
+              "DescribeConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeConfigurationRevision",
+          [
+            [
+              "kafka",
+              "DescribeConfigurationRevision"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "GetBootstrapBrokers",
+          [
+            [
+              "kafka",
+              "GetBootstrapBrokers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "GetCompatibleKafkaVersions",
+          [
+            [
+              "kafka",
+              "GetCompatibleKafkaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListClusterOperations",
+          [
+            [
+              "kafka",
+              "ListClusterOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListClusters",
+          [
+            [
+              "kafka",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListConfigurationRevisions",
+          [
+            [
+              "kafka",
+              "ListConfigurationRevisions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListConfigurations",
+          [
+            [
+              "kafka",
+              "ListConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListKafkaVersions",
+          [
+            [
+              "kafka",
+              "ListKafkaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListNodes",
+          [
+            [
+              "kafka",
+              "ListNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "kafka",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "RebootBroker",
+          [
+            [
+              "kafka",
+              "RebootBroker"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "TagResource",
+          [
+            [
+              "kafka",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "kafka",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateBrokerCount",
+          [
+            [
+              "kafka",
+              "UpdateBrokerCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateBrokerStorage",
+          [
+            [
+              "kafka",
+              "UpdateBrokerStorage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateClusterConfiguration",
+          [
+            [
+              "kafka",
+              "UpdateClusterConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateClusterKafkaVersion",
+          [
+            [
+              "kafka",
+              "UpdateClusterKafkaVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateMonitoring",
+          [
+            [
+              "kafka",
+              "UpdateMonitoring"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "BatchAssociateScramSecret",
+          [
+            [
+              "kafka",
+              "BatchAssociateScramSecret"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "BatchDisassociateScramSecret",
+          [
+            [
+              "kafka",
+              "BatchDisassociateScramSecret"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteConfiguration",
+          [
+            [
+              "kafka",
+              "DeleteConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListScramSecrets",
+          [
+            [
+              "kafka",
+              "ListScramSecrets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateConfiguration",
+          [
+            [
+              "kafka",
+              "UpdateConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListClusterOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListClusterOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListClustersPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListConfigurationRevisionsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListConfigurationRevisions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListKafkaVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListKafkaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListNodesPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListScramSecretsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListScramSecrets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateBrokerType",
+          [
+            [
+              "kafka",
+              "UpdateBrokerType"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateSecurity",
+          [
+            [
+              "kafka",
+              "UpdateSecurity"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateConnectivity",
+          [
+            [
+              "kafka",
+              "UpdateConnectivity"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateClusterV2",
+          [
+            [
+              "kafka",
+              "CreateClusterV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeClusterV2",
+          [
+            [
+              "kafka",
+              "DescribeClusterV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListClustersV2",
+          [
+            [
+              "kafka",
+              "ListClustersV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListClustersV2Paginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListClustersV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateStorage",
+          [
+            [
+              "kafka",
+              "UpdateStorage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateVpcConnection",
+          [
+            [
+              "kafka",
+              "CreateVpcConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteClusterPolicy",
+          [
+            [
+              "kafka",
+              "DeleteClusterPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteVpcConnection",
+          [
+            [
+              "kafka",
+              "DeleteVpcConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeVpcConnection",
+          [
+            [
+              "kafka",
+              "DescribeVpcConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "GetClusterPolicy",
+          [
+            [
+              "kafka",
+              "GetClusterPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListClientVpcConnections",
+          [
+            [
+              "kafka",
+              "ListClientVpcConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListVpcConnections",
+          [
+            [
+              "kafka",
+              "ListVpcConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "PutClusterPolicy",
+          [
+            [
+              "kafka",
+              "PutClusterPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "RejectClientVpcConnection",
+          [
+            [
+              "kafka",
+              "RejectClientVpcConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListClientVpcConnectionsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListClientVpcConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListVpcConnectionsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListVpcConnections"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeClusterOperationV2",
+          [
+            [
+              "kafka",
+              "DescribeClusterOperationV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListClusterOperationsV2",
+          [
+            [
+              "kafka",
+              "ListClusterOperationsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListClusterOperationsV2Paginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListClusterOperationsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateReplicator",
+          [
+            [
+              "kafka",
+              "CreateReplicator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteReplicator",
+          [
+            [
+              "kafka",
+              "DeleteReplicator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeReplicator",
+          [
+            [
+              "kafka",
+              "DescribeReplicator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListReplicators",
+          [
+            [
+              "kafka",
+              "ListReplicators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateReplicationInfo",
+          [
+            [
+              "kafka",
+              "UpdateReplicationInfo"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListReplicatorsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListReplicators"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateRebalancing",
+          [
+            [
+              "kafka",
+              "UpdateRebalancing"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeTopic",
+          [
+            [
+              "kafka",
+              "DescribeTopic"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeTopicPartitions",
+          [
+            [
+              "kafka",
+              "DescribeTopicPartitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListTopics",
+          [
+            [
+              "kafka",
+              "ListTopics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "DescribeTopicPartitionsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "DescribeTopicPartitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "ListTopicsPaginator",
+          "NextPage",
+          [
+            [
+              "kafka",
+              "ListTopics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateTopic",
+          [
+            [
+              "kafka",
+              "CreateTopic"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteTopic",
+          [
+            [
+              "kafka",
+              "DeleteTopic"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateTopic",
+          [
+            [
+              "kafka",
+              "UpdateTopic"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "CreateChannel",
+          [
+            [
+              "kafka",
+              "CreateChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DeleteChannel",
+          [
+            [
+              "kafka",
+              "DeleteChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "DescribeChannel",
+          [
+            [
+              "kafka",
+              "DescribeChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "ListChannels",
+          [
+            [
+              "kafka",
+              "ListChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafka",
+          "Client",
+          "UpdateChannel",
+          [
+            [
+              "kafka",
+              "UpdateChannel"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

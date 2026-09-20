@@ -6,12 +6,7 @@
       "data_source",
       "aws_eks_access_policies",
       "read",
-      [
-        [
-          "eks",
-          "ListAccessPolicies"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -36,10 +31,6 @@
         [
           "eks",
           "DescribeAccessEntry"
-        ],
-        [
-          "eks",
-          "ListAccessEntries"
         ]
       ]
     ],
@@ -47,12 +38,7 @@
       "list_resource",
       "aws_eks_access_policy_association",
       "list",
-      [
-        [
-          "eks",
-          "ListAssociatedAccessPolicies"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -62,10 +48,6 @@
         [
           "eks",
           "DescribeNodegroup"
-        ],
-        [
-          "eks",
-          "ListNodegroups"
         ]
       ]
     ],
@@ -73,12 +55,7 @@
       "list_resource",
       "aws_flow_log",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeFlowLogs"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -88,10 +65,6 @@
         [
           "mailmanager",
           "GetTrafficPolicy"
-        ],
-        [
-          "mailmanager",
-          "ListTrafficPolicies"
         ]
       ]
     ],
@@ -103,10 +76,6 @@
         [
           "osis",
           "GetPipeline"
-        ],
-        [
-          "osis",
-          "ListPipelines"
         ]
       ]
     ],
@@ -114,12 +83,7 @@
       "list_resource",
       "aws_osis_pipeline_endpoint",
       "list",
-      [
-        [
-          "osis",
-          "ListPipelineEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -129,10 +93,6 @@
         [
           "osis",
           "GetResourcePolicy"
-        ],
-        [
-          "osis",
-          "ListPipelines"
         ]
       ]
     ],
@@ -144,10 +104,6 @@
         [
           "rekognition",
           "DescribeCollection"
-        ],
-        [
-          "rekognition",
-          "ListCollections"
         ]
       ]
     ],
@@ -332,10 +288,6 @@
         [
           "osis",
           "CreatePipelineEndpoint"
-        ],
-        [
-          "osis",
-          "ListPipelineEndpoints"
         ]
       ]
     ],
@@ -347,10 +299,6 @@
         [
           "osis",
           "DeletePipelineEndpoint"
-        ],
-        [
-          "osis",
-          "ListPipelineEndpoints"
         ]
       ]
     ],
@@ -358,12 +306,7 @@
       "resource",
       "aws_osis_pipeline_endpoint",
       "read",
-      [
-        [
-          "osis",
-          "ListPipelineEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "resource",

@@ -1,0 +1,1892 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/appconfig",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateApplication",
+          [
+            [
+              "appconfig",
+              "CreateApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateConfigurationProfile",
+          [
+            [
+              "appconfig",
+              "CreateConfigurationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateDeploymentStrategy",
+          [
+            [
+              "appconfig",
+              "CreateDeploymentStrategy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateEnvironment",
+          [
+            [
+              "appconfig",
+              "CreateEnvironment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateHostedConfigurationVersion",
+          [
+            [
+              "appconfig",
+              "CreateHostedConfigurationVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteApplication",
+          [
+            [
+              "appconfig",
+              "DeleteApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteConfigurationProfile",
+          [
+            [
+              "appconfig",
+              "DeleteConfigurationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteDeploymentStrategy",
+          [
+            [
+              "appconfig",
+              "DeleteDeploymentStrategy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteEnvironment",
+          [
+            [
+              "appconfig",
+              "DeleteEnvironment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteHostedConfigurationVersion",
+          [
+            [
+              "appconfig",
+              "DeleteHostedConfigurationVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetApplication",
+          [
+            [
+              "appconfig",
+              "GetApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetConfiguration",
+          [
+            [
+              "appconfig",
+              "GetConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetConfigurationProfile",
+          [
+            [
+              "appconfig",
+              "GetConfigurationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetDeployment",
+          [
+            [
+              "appconfig",
+              "GetDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetDeploymentStrategy",
+          [
+            [
+              "appconfig",
+              "GetDeploymentStrategy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetEnvironment",
+          [
+            [
+              "appconfig",
+              "GetEnvironment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetHostedConfigurationVersion",
+          [
+            [
+              "appconfig",
+              "GetHostedConfigurationVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListApplications",
+          [
+            [
+              "appconfig",
+              "ListApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListConfigurationProfiles",
+          [
+            [
+              "appconfig",
+              "ListConfigurationProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListDeploymentStrategies",
+          [
+            [
+              "appconfig",
+              "ListDeploymentStrategies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListDeployments",
+          [
+            [
+              "appconfig",
+              "ListDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListEnvironments",
+          [
+            [
+              "appconfig",
+              "ListEnvironments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListHostedConfigurationVersions",
+          [
+            [
+              "appconfig",
+              "ListHostedConfigurationVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "appconfig",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "StartDeployment",
+          [
+            [
+              "appconfig",
+              "StartDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "StopDeployment",
+          [
+            [
+              "appconfig",
+              "StopDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "TagResource",
+          [
+            [
+              "appconfig",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "appconfig",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateApplication",
+          [
+            [
+              "appconfig",
+              "UpdateApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateConfigurationProfile",
+          [
+            [
+              "appconfig",
+              "UpdateConfigurationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateDeploymentStrategy",
+          [
+            [
+              "appconfig",
+              "UpdateDeploymentStrategy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateEnvironment",
+          [
+            [
+              "appconfig",
+              "UpdateEnvironment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ValidateConfiguration",
+          [
+            [
+              "appconfig",
+              "ValidateConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListApplicationsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListConfigurationProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListConfigurationProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListDeploymentStrategiesPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListDeploymentStrategies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListDeploymentsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListEnvironmentsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListEnvironments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListHostedConfigurationVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListHostedConfigurationVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateExtension",
+          [
+            [
+              "appconfig",
+              "CreateExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateExtensionAssociation",
+          [
+            [
+              "appconfig",
+              "CreateExtensionAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteExtension",
+          [
+            [
+              "appconfig",
+              "DeleteExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteExtensionAssociation",
+          [
+            [
+              "appconfig",
+              "DeleteExtensionAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetExtension",
+          [
+            [
+              "appconfig",
+              "GetExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetExtensionAssociation",
+          [
+            [
+              "appconfig",
+              "GetExtensionAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListExtensionAssociations",
+          [
+            [
+              "appconfig",
+              "ListExtensionAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListExtensions",
+          [
+            [
+              "appconfig",
+              "ListExtensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateExtension",
+          [
+            [
+              "appconfig",
+              "UpdateExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateExtensionAssociation",
+          [
+            [
+              "appconfig",
+              "UpdateExtensionAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListExtensionAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListExtensionAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListExtensionsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListExtensions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetAccountSettings",
+          [
+            [
+              "appconfig",
+              "GetAccountSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateAccountSettings",
+          [
+            [
+              "appconfig",
+              "UpdateAccountSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "CreateExperimentDefinition",
+          [
+            [
+              "appconfig",
+              "CreateExperimentDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "DeleteExperimentDefinition",
+          [
+            [
+              "appconfig",
+              "DeleteExperimentDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetExperimentDefinition",
+          [
+            [
+              "appconfig",
+              "GetExperimentDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "GetExperimentRun",
+          [
+            [
+              "appconfig",
+              "GetExperimentRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListExperimentDefinitions",
+          [
+            [
+              "appconfig",
+              "ListExperimentDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListExperimentRunEvents",
+          [
+            [
+              "appconfig",
+              "ListExperimentRunEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "ListExperimentRuns",
+          [
+            [
+              "appconfig",
+              "ListExperimentRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "StartExperimentRun",
+          [
+            [
+              "appconfig",
+              "StartExperimentRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "StopExperimentRun",
+          [
+            [
+              "appconfig",
+              "StopExperimentRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateExperimentDefinition",
+          [
+            [
+              "appconfig",
+              "UpdateExperimentDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "Client",
+          "UpdateExperimentRun",
+          [
+            [
+              "appconfig",
+              "UpdateExperimentRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListExperimentDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListExperimentDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListExperimentRunEventsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListExperimentRunEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/appconfig",
+          "ListExperimentRunsPaginator",
+          "NextPage",
+          [
+            [
+              "appconfig",
+              "ListExperimentRuns"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

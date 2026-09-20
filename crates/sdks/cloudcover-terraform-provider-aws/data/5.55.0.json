@@ -63,6 +63,18 @@
       ]
     ],
     [
+      "data_source",
+      "aws_ec2_network_insights_analysis",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_network_insights_path",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_docdb_cluster",
       "create",
@@ -70,14 +82,6 @@
         [
           "docdb",
           "CreateDBCluster"
-        ],
-        [
-          "docdb",
-          "DescribeDBClusters"
-        ],
-        [
-          "docdb",
-          "DescribeGlobalClusters"
         ],
         [
           "docdb",
@@ -92,6 +96,52 @@
           "RestoreDBClusterToPointInTime"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_analysis",
+      "create",
+      [
+        [
+          "ec2",
+          "StartNetworkInsightsAnalysis"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_analysis",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_analysis",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_path",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateNetworkInsightsPath"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_path",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_network_insights_path",
+      "update",
+      []
     ],
     [
       "resource",
@@ -152,10 +202,6 @@
       [
         [
           "rum",
-          "ListRumMetricsDestinations"
-        ],
-        [
-          "rum",
           "PutRumMetricsDestination"
         ]
       ]
@@ -175,22 +221,13 @@
       "resource",
       "aws_rum_metrics_destination",
       "read",
-      [
-        [
-          "rum",
-          "ListRumMetricsDestinations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_rum_metrics_destination",
       "update",
       [
-        [
-          "rum",
-          "ListRumMetricsDestinations"
-        ],
         [
           "rum",
           "PutRumMetricsDestination"

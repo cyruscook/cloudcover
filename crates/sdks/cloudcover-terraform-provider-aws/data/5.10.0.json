@@ -25,23 +25,7 @@
         ],
         [
           "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
           "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
         ],
         [
           "ec2",
@@ -50,6 +34,70 @@
         [
           "ec2",
           "ModifyVpcAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_vpc",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpc"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_vpc",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_default_vpc",
+      "update",
+      [
+        [
+          "ec2",
+          "AssociateVpcCidrBlock"
+        ],
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ],
+        [
+          "ec2",
+          "DisassociateVpcCidrBlock"
+        ],
+        [
+          "ec2",
+          "ModifyVpcAttribute"
+        ],
+        [
+          "ec2",
+          "ModifyVpcTenancy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_emrserverless_application",
+      "delete",
+      [
+        [
+          "emrserverless",
+          "DeleteApplication"
+        ],
+        [
+          "emrserverless",
+          "GetApplication"
         ]
       ]
     ],
@@ -124,6 +172,74 @@
         [
           "ec2",
           "UnassignPrivateNatGatewayAddress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateVpc"
+        ],
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ],
+        [
+          "ec2",
+          "ModifyVpcAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpc"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc",
+      "update",
+      [
+        [
+          "ec2",
+          "AssociateVpcCidrBlock"
+        ],
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ],
+        [
+          "ec2",
+          "DisassociateVpcCidrBlock"
+        ],
+        [
+          "ec2",
+          "ModifyVpcAttribute"
+        ],
+        [
+          "ec2",
+          "ModifyVpcTenancy"
         ]
       ]
     ]

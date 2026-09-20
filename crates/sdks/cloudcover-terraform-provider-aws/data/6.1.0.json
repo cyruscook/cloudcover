@@ -39,29 +39,6 @@
     ],
     [
       "resource",
-      "aws_ebs_volume",
-      "delete",
-      [
-        [
-          "ec2",
-          "CreateSnapshot"
-        ],
-        [
-          "ec2",
-          "DeleteVolume"
-        ],
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_lambda_function",
       "update",
       [
@@ -84,10 +61,6 @@
         [
           "lambda",
           "GetFunctionConfiguration"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ],
         [
           "lambda",

@@ -3,6 +3,18 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_identitystore_group",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_db_instance",
       "delete",

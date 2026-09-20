@@ -1,0 +1,1609 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/amp",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateWorkspace",
+          [
+            [
+              "amp",
+              "CreateWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteWorkspace",
+          [
+            [
+              "amp",
+              "DeleteWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeWorkspace",
+          [
+            [
+              "amp",
+              "DescribeWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "ListWorkspaces",
+          [
+            [
+              "amp",
+              "ListWorkspaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateWorkspaceAlias",
+          [
+            [
+              "amp",
+              "UpdateWorkspaceAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "ListWorkspacesPaginator",
+          "NextPage",
+          [
+            [
+              "amp",
+              "ListWorkspaces"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "amp",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "TagResource",
+          [
+            [
+              "amp",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "amp",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateAlertManagerDefinition",
+          [
+            [
+              "amp",
+              "CreateAlertManagerDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateRuleGroupsNamespace",
+          [
+            [
+              "amp",
+              "CreateRuleGroupsNamespace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteAlertManagerDefinition",
+          [
+            [
+              "amp",
+              "DeleteAlertManagerDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteRuleGroupsNamespace",
+          [
+            [
+              "amp",
+              "DeleteRuleGroupsNamespace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeAlertManagerDefinition",
+          [
+            [
+              "amp",
+              "DescribeAlertManagerDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeRuleGroupsNamespace",
+          [
+            [
+              "amp",
+              "DescribeRuleGroupsNamespace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "ListRuleGroupsNamespaces",
+          [
+            [
+              "amp",
+              "ListRuleGroupsNamespaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "PutAlertManagerDefinition",
+          [
+            [
+              "amp",
+              "PutAlertManagerDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "PutRuleGroupsNamespace",
+          [
+            [
+              "amp",
+              "PutRuleGroupsNamespace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "ListRuleGroupsNamespacesPaginator",
+          "NextPage",
+          [
+            [
+              "amp",
+              "ListRuleGroupsNamespaces"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateLoggingConfiguration",
+          [
+            [
+              "amp",
+              "CreateLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DeleteLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DescribeLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateLoggingConfiguration",
+          [
+            [
+              "amp",
+              "UpdateLoggingConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateScraper",
+          [
+            [
+              "amp",
+              "CreateScraper"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteScraper",
+          [
+            [
+              "amp",
+              "DeleteScraper"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeScraper",
+          [
+            [
+              "amp",
+              "DescribeScraper"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "GetDefaultScraperConfiguration",
+          [
+            [
+              "amp",
+              "GetDefaultScraperConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "ListScrapers",
+          [
+            [
+              "amp",
+              "ListScrapers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "ListScrapersPaginator",
+          "NextPage",
+          [
+            [
+              "amp",
+              "ListScrapers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateScraper",
+          [
+            [
+              "amp",
+              "UpdateScraper"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeWorkspaceConfiguration",
+          [
+            [
+              "amp",
+              "DescribeWorkspaceConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateWorkspaceConfiguration",
+          [
+            [
+              "amp",
+              "UpdateWorkspaceConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateQueryLoggingConfiguration",
+          [
+            [
+              "amp",
+              "CreateQueryLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteQueryLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DeleteQueryLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeQueryLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DescribeQueryLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateQueryLoggingConfiguration",
+          [
+            [
+              "amp",
+              "UpdateQueryLoggingConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "amp",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeResourcePolicy",
+          [
+            [
+              "amp",
+              "DescribeResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "amp",
+              "PutResourcePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteScraperLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DeleteScraperLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeScraperLoggingConfiguration",
+          [
+            [
+              "amp",
+              "DescribeScraperLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "UpdateScraperLoggingConfiguration",
+          [
+            [
+              "amp",
+              "UpdateScraperLoggingConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "CreateAnomalyDetector",
+          [
+            [
+              "amp",
+              "CreateAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DeleteAnomalyDetector",
+          [
+            [
+              "amp",
+              "DeleteAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "DescribeAnomalyDetector",
+          [
+            [
+              "amp",
+              "DescribeAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "ListAnomalyDetectors",
+          [
+            [
+              "amp",
+              "ListAnomalyDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "Client",
+          "PutAnomalyDetector",
+          [
+            [
+              "amp",
+              "PutAnomalyDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/amp",
+          "ListAnomalyDetectorsPaginator",
+          "NextPage",
+          [
+            [
+              "amp",
+              "ListAnomalyDetectors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

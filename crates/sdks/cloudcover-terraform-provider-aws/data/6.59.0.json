@@ -6,12 +6,7 @@
       "data_source",
       "aws_rds_snapshots",
       "read",
-      [
-        [
-          "rds",
-          "DescribeDBSnapshots"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -58,10 +53,6 @@
         [
           "vpclattice",
           "GetServiceNetwork"
-        ],
-        [
-          "vpclattice",
-          "ListServiceNetworkServiceAssociations"
         ]
       ]
     ],
@@ -152,10 +143,6 @@
         [
           "mailmanager",
           "GetIngressPoint"
-        ],
-        [
-          "mailmanager",
-          "ListIngressPoints"
         ]
       ]
     ],
@@ -163,12 +150,7 @@
       "list_resource",
       "aws_neptunegraph_private_graph_endpoint",
       "list",
-      [
-        [
-          "neptunegraph",
-          "ListPrivateGraphEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -178,10 +160,6 @@
         [
           "networkfirewall",
           "DescribeContainerAssociation"
-        ],
-        [
-          "networkfirewall",
-          "ListContainerAssociations"
         ]
       ]
     ],
@@ -200,12 +178,7 @@
       "list_resource",
       "aws_pinpointsmsvoicev2_sender_id",
       "list",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeSenderIds"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -215,10 +188,6 @@
         [
           "resiliencehubv2",
           "GetService"
-        ],
-        [
-          "resiliencehubv2",
-          "ListServices"
         ]
       ]
     ],
@@ -230,10 +199,6 @@
         [
           "resiliencehubv2",
           "GetSystem"
-        ],
-        [
-          "resiliencehubv2",
-          "ListSystems"
         ]
       ]
     ],
@@ -242,10 +207,6 @@
       "aws_ssm_patch_baseline",
       "list",
       [
-        [
-          "ssm",
-          "DescribePatchBaselines"
-        ],
         [
           "ssm",
           "GetPatchBaseline"
@@ -602,12 +563,7 @@
       "resource",
       "aws_pinpointsmsvoicev2_sender_id",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribeSenderIds"
-        ]
-      ]
+      []
     ],
     [
       "resource",

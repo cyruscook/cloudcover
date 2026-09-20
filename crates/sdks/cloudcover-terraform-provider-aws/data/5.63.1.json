@@ -4,6 +4,66 @@
   "upsert": [
     [
       "data_source",
+      "aws_networkmanager_connection",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_connections",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_device",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_devices",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_global_network",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_global_networks",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_link",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_links",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_site",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_networkmanager_sites",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_opensearch_domain",
       "read",
       [
@@ -20,6 +80,390 @@
           "ListTags"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_outposts_asset",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_assets",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_outpost",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_outpost_instance_type",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_outpost_instance_types",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_outposts",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_site",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_outposts_sites",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_redshift_cluster",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeLoggingStatus"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_redshift_orderable_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connection",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connection",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeleteConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connection",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_connection",
+      "update",
+      [
+        [
+          "networkmanager",
+          "UpdateConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_customer_gateway_association",
+      "create",
+      [
+        [
+          "networkmanager",
+          "AssociateCustomerGateway"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_customer_gateway_association",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DisassociateCustomerGateway"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_customer_gateway_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_device",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateDevice"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_device",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeleteDevice"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_device",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_device",
+      "update",
+      [
+        [
+          "networkmanager",
+          "UpdateDevice"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_global_network",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateGlobalNetwork"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_global_network",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeleteGlobalNetwork"
+        ],
+        [
+          "networkmanager",
+          "DeregisterTransitGateway"
+        ],
+        [
+          "networkmanager",
+          "DisassociateCustomerGateway"
+        ],
+        [
+          "networkmanager",
+          "DisassociateTransitGatewayConnectPeer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_global_network",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_global_network",
+      "update",
+      [
+        [
+          "networkmanager",
+          "UpdateGlobalNetwork"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeleteLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link",
+      "update",
+      [
+        [
+          "networkmanager",
+          "UpdateLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link_association",
+      "create",
+      [
+        [
+          "networkmanager",
+          "AssociateLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link_association",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DisassociateLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_link_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site",
+      "create",
+      [
+        [
+          "networkmanager",
+          "CreateSite"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeleteSite"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_site",
+      "update",
+      [
+        [
+          "networkmanager",
+          "UpdateSite"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_connect_peer_association",
+      "create",
+      [
+        [
+          "networkmanager",
+          "AssociateTransitGatewayConnectPeer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_connect_peer_association",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DisassociateTransitGatewayConnectPeer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_connect_peer_association",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_registration",
+      "create",
+      [
+        [
+          "networkmanager",
+          "RegisterTransitGateway"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_registration",
+      "delete",
+      [
+        [
+          "networkmanager",
+          "DeregisterTransitGateway"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmanager_transit_gateway_registration",
+      "read",
+      []
     ],
     [
       "resource",
@@ -225,10 +669,6 @@
         [
           "opensearch",
           "AcceptInboundConnection"
-        ],
-        [
-          "opensearch",
-          "DescribeInboundConnections"
         ]
       ]
     ],
@@ -243,10 +683,6 @@
         ],
         [
           "opensearch",
-          "DescribeInboundConnections"
-        ],
-        [
-          "opensearch",
           "RejectInboundConnection"
         ]
       ]
@@ -255,12 +691,7 @@
       "resource",
       "aws_opensearch_inbound_connection_accepter",
       "read",
-      [
-        [
-          "opensearch",
-          "DescribeInboundConnections"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -274,14 +705,6 @@
         [
           "opensearch",
           "CreateOutboundConnection"
-        ],
-        [
-          "opensearch",
-          "DescribeInboundConnections"
-        ],
-        [
-          "opensearch",
-          "DescribeOutboundConnections"
         ]
       ]
     ],
@@ -293,10 +716,6 @@
         [
           "opensearch",
           "DeleteOutboundConnection"
-        ],
-        [
-          "opensearch",
-          "DescribeOutboundConnections"
         ]
       ]
     ],
@@ -304,12 +723,7 @@
       "resource",
       "aws_opensearch_outbound_connection",
       "read",
-      [
-        [
-          "opensearch",
-          "DescribeOutboundConnections"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -319,10 +733,6 @@
         [
           "opensearch",
           "CreatePackage"
-        ],
-        [
-          "opensearch",
-          "DescribePackages"
         ]
       ]
     ],
@@ -341,22 +751,13 @@
       "resource",
       "aws_opensearch_package",
       "read",
-      [
-        [
-          "opensearch",
-          "DescribePackages"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_opensearch_package",
       "update",
       [
-        [
-          "opensearch",
-          "DescribePackages"
-        ],
         [
           "opensearch",
           "UpdatePackage"
@@ -371,10 +772,6 @@
         [
           "opensearch",
           "AssociatePackage"
-        ],
-        [
-          "opensearch",
-          "ListPackagesForDomain"
         ]
       ]
     ],
@@ -386,10 +783,6 @@
         [
           "opensearch",
           "DissociatePackage"
-        ],
-        [
-          "opensearch",
-          "ListPackagesForDomain"
         ]
       ]
     ],
@@ -397,12 +790,7 @@
       "resource",
       "aws_opensearch_package_association",
       "read",
-      [
-        [
-          "opensearch",
-          "ListPackagesForDomain"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -462,405 +850,728 @@
     ],
     [
       "resource",
-      "aws_opsworks_application",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_application",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_application",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_application",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_opsworks_custom_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_custom_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_custom_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_custom_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ecs_cluster_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ecs_cluster_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ecs_cluster_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ecs_cluster_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_ganglia_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ganglia_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ganglia_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_ganglia_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_haproxy_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_haproxy_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_haproxy_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_haproxy_layer",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_instance",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_instance",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_instance",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_java_app_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_java_app_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_java_app_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_java_app_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_memcached_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_memcached_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_memcached_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_memcached_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_mysql_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_mysql_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_mysql_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_mysql_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_nodejs_app_layer",
       "create",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_opsworks_nodejs_app_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_nodejs_app_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_nodejs_app_layer",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_permission",
+      "aws_opsworks_php_app_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_permission",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_permission",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_php_app_layer",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_php_app_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_php_app_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_php_app_layer",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_rails_app_layer",
       "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rails_app_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rails_app_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rails_app_layer",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rds_db_instance",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rds_db_instance",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rds_db_instance",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_rds_db_instance",
-      "update",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_stack",
       "create",
-      []
+      [
+        [
+          "opsworks",
+          "CreateStack"
+        ],
+        [
+          "opsworks",
+          "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_stack",
       "delete",
-      []
+      [
+        [
+          "opsworks",
+          "DeleteStack"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_stack",
       "read",
-      []
+      [
+        [
+          "opsworks",
+          "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_stack",
       "update",
-      []
+      [
+        [
+          "opsworks",
+          "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "ListTags"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ],
+        [
+          "opsworks",
+          "UpdateStack"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opsworks_static_web_layer",
       "create",
-      []
+      [
+        [
+          "opsworks",
+          "AttachElasticLoadBalancer"
+        ],
+        [
+          "opsworks",
+          "CreateLayer"
+        ],
+        [
+          "opsworks",
+          "DescribeElasticLoadBalancers"
+        ],
+        [
+          "opsworks",
+          "DescribeLayers"
+        ],
+        [
+          "opsworks",
+          "DescribeLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "RegisterEcsCluster"
+        ],
+        [
+          "opsworks",
+          "SetLoadBasedAutoScaling"
+        ],
+        [
+          "opsworks",
+          "TagResource"
+        ],
+        [
+          "opsworks",
+          "UntagResource"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_opsworks_static_web_layer",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_static_web_layer",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_static_web_layer",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_opsworks_user_profile",
+      "aws_redshift_cluster",
       "create",
-      []
+      [
+        [
+          "redshift",
+          "CreateCluster"
+        ],
+        [
+          "redshift",
+          "DescribeLoggingStatus"
+        ],
+        [
+          "redshift",
+          "EnableLogging"
+        ],
+        [
+          "redshift",
+          "EnableSnapshotCopy"
+        ],
+        [
+          "redshift",
+          "RestoreFromClusterSnapshot"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_opsworks_user_profile",
+      "aws_redshift_cluster",
       "delete",
-      []
+      [
+        [
+          "redshift",
+          "DeleteCluster"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_opsworks_user_profile",
+      "aws_redshift_cluster",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeLoggingStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_cluster",
+      "update",
+      [
+        [
+          "redshift",
+          "DescribeLoggingStatus"
+        ],
+        [
+          "redshift",
+          "DisableLogging"
+        ],
+        [
+          "redshift",
+          "DisableSnapshotCopy"
+        ],
+        [
+          "redshift",
+          "EnableLogging"
+        ],
+        [
+          "redshift",
+          "EnableSnapshotCopy"
+        ],
+        [
+          "redshift",
+          "ModifyAquaConfiguration"
+        ],
+        [
+          "redshift",
+          "ModifyCluster"
+        ],
+        [
+          "redshift",
+          "ModifyClusterIamRoles"
+        ],
+        [
+          "redshift",
+          "RebootCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_cluster_iam_roles",
+      "create",
+      [
+        [
+          "redshift",
+          "ModifyClusterIamRoles"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_cluster_iam_roles",
+      "delete",
+      [
+        [
+          "redshift",
+          "ModifyClusterIamRoles"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_cluster_iam_roles",
       "read",
       []
     ],
     [
       "resource",
-      "aws_opsworks_user_profile",
+      "aws_redshift_cluster_iam_roles",
       "update",
-      []
+      [
+        [
+          "redshift",
+          "ModifyClusterIamRoles"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_wafv2_web_acl",
+      "create",
+      [
+        [
+          "wafv2",
+          "CreateWebACL"
+        ],
+        [
+          "wafv2",
+          "GetWebACL"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_wafv2_web_acl",
+      "read",
+      [
+        [
+          "wafv2",
+          "GetWebACL"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_wafv2_web_acl",
+      "update",
+      [
+        [
+          "wafv2",
+          "GetWebACL"
+        ],
+        [
+          "wafv2",
+          "UpdateWebACL"
+        ]
+      ]
     ]
   ]
 }

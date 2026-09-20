@@ -1,0 +1,1665 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/xray",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "BatchGetTraces",
+          [
+            [
+              "xray",
+              "BatchGetTraces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "CreateGroup",
+          [
+            [
+              "xray",
+              "CreateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "CreateSamplingRule",
+          [
+            [
+              "xray",
+              "CreateSamplingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "DeleteGroup",
+          [
+            [
+              "xray",
+              "DeleteGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "DeleteSamplingRule",
+          [
+            [
+              "xray",
+              "DeleteSamplingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetEncryptionConfig",
+          [
+            [
+              "xray",
+              "GetEncryptionConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetGroup",
+          [
+            [
+              "xray",
+              "GetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetGroups",
+          [
+            [
+              "xray",
+              "GetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetSamplingRules",
+          [
+            [
+              "xray",
+              "GetSamplingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetSamplingStatisticSummaries",
+          [
+            [
+              "xray",
+              "GetSamplingStatisticSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetSamplingTargets",
+          [
+            [
+              "xray",
+              "GetSamplingTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetServiceGraph",
+          [
+            [
+              "xray",
+              "GetServiceGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetTimeSeriesServiceStatistics",
+          [
+            [
+              "xray",
+              "GetTimeSeriesServiceStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetTraceGraph",
+          [
+            [
+              "xray",
+              "GetTraceGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetTraceSummaries",
+          [
+            [
+              "xray",
+              "GetTraceSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "PutEncryptionConfig",
+          [
+            [
+              "xray",
+              "PutEncryptionConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "PutTelemetryRecords",
+          [
+            [
+              "xray",
+              "PutTelemetryRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "PutTraceSegments",
+          [
+            [
+              "xray",
+              "PutTraceSegments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "UpdateGroup",
+          [
+            [
+              "xray",
+              "UpdateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "UpdateSamplingRule",
+          [
+            [
+              "xray",
+              "UpdateSamplingRule"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "xray",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "TagResource",
+          [
+            [
+              "xray",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "xray",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "BatchGetTracesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "BatchGetTraces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetInsight",
+          [
+            [
+              "xray",
+              "GetInsight"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetInsightEvents",
+          [
+            [
+              "xray",
+              "GetInsightEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetInsightImpactGraph",
+          [
+            [
+              "xray",
+              "GetInsightImpactGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetInsightSummaries",
+          [
+            [
+              "xray",
+              "GetInsightSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetInsightEventsPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetInsightEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetInsightSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetInsightSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetSamplingRulesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetSamplingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetSamplingStatisticSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetSamplingStatisticSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetServiceGraphPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetServiceGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetTimeSeriesServiceStatisticsPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetTimeSeriesServiceStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetTraceGraphPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetTraceGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "GetTraceSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "GetTraceSummaries"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "xray",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "ListResourcePolicies",
+          [
+            [
+              "xray",
+              "ListResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "xray",
+              "PutResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "ListResourcePoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "ListResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "xray",
+              "ListTagsForResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "CancelTraceRetrieval",
+          [
+            [
+              "xray",
+              "CancelTraceRetrieval"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetIndexingRules",
+          [
+            [
+              "xray",
+              "GetIndexingRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetRetrievedTracesGraph",
+          [
+            [
+              "xray",
+              "GetRetrievedTracesGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "GetTraceSegmentDestination",
+          [
+            [
+              "xray",
+              "GetTraceSegmentDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "ListRetrievedTraces",
+          [
+            [
+              "xray",
+              "ListRetrievedTraces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "StartTraceRetrieval",
+          [
+            [
+              "xray",
+              "StartTraceRetrieval"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "UpdateIndexingRule",
+          [
+            [
+              "xray",
+              "UpdateIndexingRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/xray",
+          "Client",
+          "UpdateTraceSegmentDestination",
+          [
+            [
+              "xray",
+              "UpdateTraceSegmentDestination"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

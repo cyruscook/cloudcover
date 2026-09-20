@@ -1,0 +1,1852 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "CreateCostCategoryDefinition",
+          [
+            [
+              "costexplorer",
+              "CreateCostCategoryDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "DeleteCostCategoryDefinition",
+          [
+            [
+              "costexplorer",
+              "DeleteCostCategoryDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "DescribeCostCategoryDefinition",
+          [
+            [
+              "costexplorer",
+              "DescribeCostCategoryDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostAndUsage",
+          [
+            [
+              "costexplorer",
+              "GetCostAndUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostAndUsageWithResources",
+          [
+            [
+              "costexplorer",
+              "GetCostAndUsageWithResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostForecast",
+          [
+            [
+              "costexplorer",
+              "GetCostForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetDimensionValues",
+          [
+            [
+              "costexplorer",
+              "GetDimensionValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetReservationCoverage",
+          [
+            [
+              "costexplorer",
+              "GetReservationCoverage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetReservationPurchaseRecommendation",
+          [
+            [
+              "costexplorer",
+              "GetReservationPurchaseRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetReservationUtilization",
+          [
+            [
+              "costexplorer",
+              "GetReservationUtilization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetRightsizingRecommendation",
+          [
+            [
+              "costexplorer",
+              "GetRightsizingRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetSavingsPlansCoverage",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansCoverage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetSavingsPlansPurchaseRecommendation",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansPurchaseRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetSavingsPlansUtilization",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansUtilization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetSavingsPlansUtilizationDetails",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansUtilizationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetTags",
+          [
+            [
+              "costexplorer",
+              "GetTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetUsageForecast",
+          [
+            [
+              "costexplorer",
+              "GetUsageForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListCostCategoryDefinitions",
+          [
+            [
+              "costexplorer",
+              "ListCostCategoryDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "UpdateCostCategoryDefinition",
+          [
+            [
+              "costexplorer",
+              "UpdateCostCategoryDefinition"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "CreateAnomalyMonitor",
+          [
+            [
+              "costexplorer",
+              "CreateAnomalyMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "CreateAnomalySubscription",
+          [
+            [
+              "costexplorer",
+              "CreateAnomalySubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "DeleteAnomalyMonitor",
+          [
+            [
+              "costexplorer",
+              "DeleteAnomalyMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "DeleteAnomalySubscription",
+          [
+            [
+              "costexplorer",
+              "DeleteAnomalySubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetAnomalies",
+          [
+            [
+              "costexplorer",
+              "GetAnomalies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetAnomalyMonitors",
+          [
+            [
+              "costexplorer",
+              "GetAnomalyMonitors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetAnomalySubscriptions",
+          [
+            [
+              "costexplorer",
+              "GetAnomalySubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ProvideAnomalyFeedback",
+          [
+            [
+              "costexplorer",
+              "ProvideAnomalyFeedback"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "UpdateAnomalyMonitor",
+          [
+            [
+              "costexplorer",
+              "UpdateAnomalyMonitor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "UpdateAnomalySubscription",
+          [
+            [
+              "costexplorer",
+              "UpdateAnomalySubscription"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetSavingsPlansCoveragePaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansCoverage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetSavingsPlansUtilizationDetailsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlansUtilizationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListCostCategoryDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListCostCategoryDefinitions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostCategories",
+          [
+            [
+              "costexplorer",
+              "GetCostCategories"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "costexplorer",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "TagResource",
+          [
+            [
+              "costexplorer",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "costexplorer",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListCostAllocationTags",
+          [
+            [
+              "costexplorer",
+              "ListCostAllocationTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "UpdateCostAllocationTagsStatus",
+          [
+            [
+              "costexplorer",
+              "UpdateCostAllocationTagsStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListCostAllocationTagsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListCostAllocationTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListSavingsPlansPurchaseRecommendationGeneration",
+          [
+            [
+              "costexplorer",
+              "ListSavingsPlansPurchaseRecommendationGeneration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "StartSavingsPlansPurchaseRecommendationGeneration",
+          [
+            [
+              "costexplorer",
+              "StartSavingsPlansPurchaseRecommendationGeneration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetSavingsPlanPurchaseRecommendationDetails",
+          [
+            [
+              "costexplorer",
+              "GetSavingsPlanPurchaseRecommendationDetails"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetApproximateUsageRecords",
+          [
+            [
+              "costexplorer",
+              "GetApproximateUsageRecords"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListCostAllocationTagBackfillHistory",
+          [
+            [
+              "costexplorer",
+              "ListCostAllocationTagBackfillHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "StartCostAllocationTagBackfill",
+          [
+            [
+              "costexplorer",
+              "StartCostAllocationTagBackfill"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListCostAllocationTagBackfillHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListCostAllocationTagBackfillHistory"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCommitmentPurchaseAnalysis",
+          [
+            [
+              "costexplorer",
+              "GetCommitmentPurchaseAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListCommitmentPurchaseAnalyses",
+          [
+            [
+              "costexplorer",
+              "ListCommitmentPurchaseAnalyses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "StartCommitmentPurchaseAnalysis",
+          [
+            [
+              "costexplorer",
+              "StartCommitmentPurchaseAnalysis"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetAnomaliesPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetAnomalies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetAnomalyMonitorsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetAnomalyMonitors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetAnomalySubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetAnomalySubscriptions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostAndUsageComparisons",
+          [
+            [
+              "costexplorer",
+              "GetCostAndUsageComparisons"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "GetCostComparisonDrivers",
+          [
+            [
+              "costexplorer",
+              "GetCostComparisonDrivers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetCostAndUsageComparisonsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetCostAndUsageComparisons"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetCostComparisonDriversPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetCostComparisonDrivers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "Client",
+          "ListCostCategoryResourceAssociations",
+          [
+            [
+              "costexplorer",
+              "ListCostCategoryResourceAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListCostCategoryResourceAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListCostCategoryResourceAssociations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetReservationPurchaseRecommendationPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetReservationPurchaseRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "GetRightsizingRecommendationPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "GetRightsizingRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListCommitmentPurchaseAnalysesPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListCommitmentPurchaseAnalyses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costexplorer",
+          "ListSavingsPlansPurchaseRecommendationGenerationPaginator",
+          "NextPage",
+          [
+            [
+              "costexplorer",
+              "ListSavingsPlansPurchaseRecommendationGeneration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

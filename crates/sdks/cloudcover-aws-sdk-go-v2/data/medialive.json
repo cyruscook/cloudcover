@@ -1,0 +1,2945 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/medialive",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "BatchUpdateSchedule",
+          [
+            [
+              "medialive",
+              "BatchUpdateSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateChannel",
+          [
+            [
+              "medialive",
+              "CreateChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateInput",
+          [
+            [
+              "medialive",
+              "CreateInput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateInputSecurityGroup",
+          [
+            [
+              "medialive",
+              "CreateInputSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateMultiplex",
+          [
+            [
+              "medialive",
+              "CreateMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateMultiplexProgram",
+          [
+            [
+              "medialive",
+              "CreateMultiplexProgram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateTags",
+          [
+            [
+              "medialive",
+              "CreateTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteChannel",
+          [
+            [
+              "medialive",
+              "DeleteChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteInput",
+          [
+            [
+              "medialive",
+              "DeleteInput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteInputSecurityGroup",
+          [
+            [
+              "medialive",
+              "DeleteInputSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteMultiplex",
+          [
+            [
+              "medialive",
+              "DeleteMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteMultiplexProgram",
+          [
+            [
+              "medialive",
+              "DeleteMultiplexProgram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteReservation",
+          [
+            [
+              "medialive",
+              "DeleteReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteSchedule",
+          [
+            [
+              "medialive",
+              "DeleteSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteTags",
+          [
+            [
+              "medialive",
+              "DeleteTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeChannel",
+          [
+            [
+              "medialive",
+              "DescribeChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeInput",
+          [
+            [
+              "medialive",
+              "DescribeInput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeInputDevice",
+          [
+            [
+              "medialive",
+              "DescribeInputDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeInputDeviceThumbnail",
+          [
+            [
+              "medialive",
+              "DescribeInputDeviceThumbnail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeInputSecurityGroup",
+          [
+            [
+              "medialive",
+              "DescribeInputSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeMultiplex",
+          [
+            [
+              "medialive",
+              "DescribeMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeMultiplexProgram",
+          [
+            [
+              "medialive",
+              "DescribeMultiplexProgram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeOffering",
+          [
+            [
+              "medialive",
+              "DescribeOffering"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeReservation",
+          [
+            [
+              "medialive",
+              "DescribeReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeSchedule",
+          [
+            [
+              "medialive",
+              "DescribeSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListChannels",
+          [
+            [
+              "medialive",
+              "ListChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListInputDevices",
+          [
+            [
+              "medialive",
+              "ListInputDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListInputSecurityGroups",
+          [
+            [
+              "medialive",
+              "ListInputSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListInputs",
+          [
+            [
+              "medialive",
+              "ListInputs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListMultiplexPrograms",
+          [
+            [
+              "medialive",
+              "ListMultiplexPrograms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListMultiplexes",
+          [
+            [
+              "medialive",
+              "ListMultiplexes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListOfferings",
+          [
+            [
+              "medialive",
+              "ListOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListReservations",
+          [
+            [
+              "medialive",
+              "ListReservations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "medialive",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "PurchaseOffering",
+          [
+            [
+              "medialive",
+              "PurchaseOffering"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartChannel",
+          [
+            [
+              "medialive",
+              "StartChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartMultiplex",
+          [
+            [
+              "medialive",
+              "StartMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StopChannel",
+          [
+            [
+              "medialive",
+              "StopChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StopMultiplex",
+          [
+            [
+              "medialive",
+              "StopMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateChannel",
+          [
+            [
+              "medialive",
+              "UpdateChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateChannelClass",
+          [
+            [
+              "medialive",
+              "UpdateChannelClass"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateInput",
+          [
+            [
+              "medialive",
+              "UpdateInput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateInputDevice",
+          [
+            [
+              "medialive",
+              "UpdateInputDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateInputSecurityGroup",
+          [
+            [
+              "medialive",
+              "UpdateInputSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateMultiplex",
+          [
+            [
+              "medialive",
+              "UpdateMultiplex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateMultiplexProgram",
+          [
+            [
+              "medialive",
+              "UpdateMultiplexProgram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateReservation",
+          [
+            [
+              "medialive",
+              "UpdateReservation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "AcceptInputDeviceTransfer",
+          [
+            [
+              "medialive",
+              "AcceptInputDeviceTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "BatchDelete",
+          [
+            [
+              "medialive",
+              "BatchDelete"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "BatchStart",
+          [
+            [
+              "medialive",
+              "BatchStart"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "BatchStop",
+          [
+            [
+              "medialive",
+              "BatchStop"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CancelInputDeviceTransfer",
+          [
+            [
+              "medialive",
+              "CancelInputDeviceTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListInputDeviceTransfers",
+          [
+            [
+              "medialive",
+              "ListInputDeviceTransfers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "RejectInputDeviceTransfer",
+          [
+            [
+              "medialive",
+              "RejectInputDeviceTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "TransferInputDevice",
+          [
+            [
+              "medialive",
+              "TransferInputDevice"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "DescribeSchedulePaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "DescribeSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListChannelsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListInputDeviceTransfersPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListInputDeviceTransfers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListInputDevicesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListInputDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListInputSecurityGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListInputSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListInputsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListInputs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListMultiplexProgramsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListMultiplexPrograms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListMultiplexesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListMultiplexes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListOfferingsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListReservationsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListReservations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreatePartnerInput",
+          [
+            [
+              "medialive",
+              "CreatePartnerInput"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ClaimDevice",
+          [
+            [
+              "medialive",
+              "ClaimDevice"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "RebootInputDevice",
+          [
+            [
+              "medialive",
+              "RebootInputDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartInputDeviceMaintenanceWindow",
+          [
+            [
+              "medialive",
+              "StartInputDeviceMaintenanceWindow"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeAccountConfiguration",
+          [
+            [
+              "medialive",
+              "DescribeAccountConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeThumbnails",
+          [
+            [
+              "medialive",
+              "DescribeThumbnails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateAccountConfiguration",
+          [
+            [
+              "medialive",
+              "UpdateAccountConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartInputDevice",
+          [
+            [
+              "medialive",
+              "StartInputDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StopInputDevice",
+          [
+            [
+              "medialive",
+              "StopInputDevice"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "RestartChannelPipelines",
+          [
+            [
+              "medialive",
+              "RestartChannelPipelines"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateCloudWatchAlarmTemplate",
+          [
+            [
+              "medialive",
+              "CreateCloudWatchAlarmTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateCloudWatchAlarmTemplateGroup",
+          [
+            [
+              "medialive",
+              "CreateCloudWatchAlarmTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateEventBridgeRuleTemplate",
+          [
+            [
+              "medialive",
+              "CreateEventBridgeRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateEventBridgeRuleTemplateGroup",
+          [
+            [
+              "medialive",
+              "CreateEventBridgeRuleTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateSignalMap",
+          [
+            [
+              "medialive",
+              "CreateSignalMap"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteCloudWatchAlarmTemplate",
+          [
+            [
+              "medialive",
+              "DeleteCloudWatchAlarmTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteCloudWatchAlarmTemplateGroup",
+          [
+            [
+              "medialive",
+              "DeleteCloudWatchAlarmTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteEventBridgeRuleTemplate",
+          [
+            [
+              "medialive",
+              "DeleteEventBridgeRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteEventBridgeRuleTemplateGroup",
+          [
+            [
+              "medialive",
+              "DeleteEventBridgeRuleTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteSignalMap",
+          [
+            [
+              "medialive",
+              "DeleteSignalMap"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "GetCloudWatchAlarmTemplate",
+          [
+            [
+              "medialive",
+              "GetCloudWatchAlarmTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "GetCloudWatchAlarmTemplateGroup",
+          [
+            [
+              "medialive",
+              "GetCloudWatchAlarmTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "GetEventBridgeRuleTemplate",
+          [
+            [
+              "medialive",
+              "GetEventBridgeRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "GetEventBridgeRuleTemplateGroup",
+          [
+            [
+              "medialive",
+              "GetEventBridgeRuleTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "GetSignalMap",
+          [
+            [
+              "medialive",
+              "GetSignalMap"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListCloudWatchAlarmTemplateGroups",
+          [
+            [
+              "medialive",
+              "ListCloudWatchAlarmTemplateGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListCloudWatchAlarmTemplates",
+          [
+            [
+              "medialive",
+              "ListCloudWatchAlarmTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListEventBridgeRuleTemplateGroups",
+          [
+            [
+              "medialive",
+              "ListEventBridgeRuleTemplateGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListEventBridgeRuleTemplates",
+          [
+            [
+              "medialive",
+              "ListEventBridgeRuleTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListSignalMaps",
+          [
+            [
+              "medialive",
+              "ListSignalMaps"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartDeleteMonitorDeployment",
+          [
+            [
+              "medialive",
+              "StartDeleteMonitorDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartMonitorDeployment",
+          [
+            [
+              "medialive",
+              "StartMonitorDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "StartUpdateSignalMap",
+          [
+            [
+              "medialive",
+              "StartUpdateSignalMap"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateCloudWatchAlarmTemplate",
+          [
+            [
+              "medialive",
+              "UpdateCloudWatchAlarmTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateCloudWatchAlarmTemplateGroup",
+          [
+            [
+              "medialive",
+              "UpdateCloudWatchAlarmTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateEventBridgeRuleTemplate",
+          [
+            [
+              "medialive",
+              "UpdateEventBridgeRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateEventBridgeRuleTemplateGroup",
+          [
+            [
+              "medialive",
+              "UpdateEventBridgeRuleTemplateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListCloudWatchAlarmTemplateGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListCloudWatchAlarmTemplateGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListCloudWatchAlarmTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListCloudWatchAlarmTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListEventBridgeRuleTemplateGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListEventBridgeRuleTemplateGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListEventBridgeRuleTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListEventBridgeRuleTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListSignalMapsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListSignalMaps"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateChannelPlacementGroup",
+          [
+            [
+              "medialive",
+              "CreateChannelPlacementGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "medialive",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateNetwork",
+          [
+            [
+              "medialive",
+              "CreateNetwork"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateNode",
+          [
+            [
+              "medialive",
+              "CreateNode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateNodeRegistrationScript",
+          [
+            [
+              "medialive",
+              "CreateNodeRegistrationScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteChannelPlacementGroup",
+          [
+            [
+              "medialive",
+              "DeleteChannelPlacementGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "medialive",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteNetwork",
+          [
+            [
+              "medialive",
+              "DeleteNetwork"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteNode",
+          [
+            [
+              "medialive",
+              "DeleteNode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeChannelPlacementGroup",
+          [
+            [
+              "medialive",
+              "DescribeChannelPlacementGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeCluster",
+          [
+            [
+              "medialive",
+              "DescribeCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeNetwork",
+          [
+            [
+              "medialive",
+              "DescribeNetwork"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeNode",
+          [
+            [
+              "medialive",
+              "DescribeNode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListChannelPlacementGroups",
+          [
+            [
+              "medialive",
+              "ListChannelPlacementGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListClusters",
+          [
+            [
+              "medialive",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListNetworks",
+          [
+            [
+              "medialive",
+              "ListNetworks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListNodes",
+          [
+            [
+              "medialive",
+              "ListNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateChannelPlacementGroup",
+          [
+            [
+              "medialive",
+              "UpdateChannelPlacementGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateCluster",
+          [
+            [
+              "medialive",
+              "UpdateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateNetwork",
+          [
+            [
+              "medialive",
+              "UpdateNetwork"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateNode",
+          [
+            [
+              "medialive",
+              "UpdateNode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateNodeState",
+          [
+            [
+              "medialive",
+              "UpdateNodeState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListChannelPlacementGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListChannelPlacementGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListClustersPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListNetworksPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListNetworks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListNodesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListNodes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListVersions",
+          [
+            [
+              "medialive",
+              "ListVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "CreateSdiSource",
+          [
+            [
+              "medialive",
+              "CreateSdiSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DeleteSdiSource",
+          [
+            [
+              "medialive",
+              "DeleteSdiSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "DescribeSdiSource",
+          [
+            [
+              "medialive",
+              "DescribeSdiSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListSdiSources",
+          [
+            [
+              "medialive",
+              "ListSdiSources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "UpdateSdiSource",
+          [
+            [
+              "medialive",
+              "UpdateSdiSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListSdiSourcesPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListSdiSources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListAlerts",
+          [
+            [
+              "medialive",
+              "ListAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListClusterAlerts",
+          [
+            [
+              "medialive",
+              "ListClusterAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "Client",
+          "ListMultiplexAlerts",
+          [
+            [
+              "medialive",
+              "ListMultiplexAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListAlertsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListClusterAlertsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListClusterAlerts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/medialive",
+          "ListMultiplexAlertsPaginator",
+          "NextPage",
+          [
+            [
+              "medialive",
+              "ListMultiplexAlerts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.85.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

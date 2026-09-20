@@ -1,0 +1,4076 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/rds",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "AddRoleToDBCluster",
+          [
+            [
+              "rds",
+              "AddRoleToDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "AddRoleToDBInstance",
+          [
+            [
+              "rds",
+              "AddRoleToDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "AddSourceIdentifierToSubscription",
+          [
+            [
+              "rds",
+              "AddSourceIdentifierToSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "AddTagsToResource",
+          [
+            [
+              "rds",
+              "AddTagsToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ApplyPendingMaintenanceAction",
+          [
+            [
+              "rds",
+              "ApplyPendingMaintenanceAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "AuthorizeDBSecurityGroupIngress",
+          [
+            [
+              "rds",
+              "AuthorizeDBSecurityGroupIngress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "BacktrackDBCluster",
+          [
+            [
+              "rds",
+              "BacktrackDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CancelExportTask",
+          [
+            [
+              "rds",
+              "CancelExportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CopyDBClusterParameterGroup",
+          [
+            [
+              "rds",
+              "CopyDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CopyDBClusterSnapshot",
+          [
+            [
+              "rds",
+              "CopyDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CopyDBParameterGroup",
+          [
+            [
+              "rds",
+              "CopyDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CopyDBSnapshot",
+          [
+            [
+              "rds",
+              "CopyDBSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CopyOptionGroup",
+          [
+            [
+              "rds",
+              "CopyOptionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateCustomAvailabilityZone",
+          [
+            [
+              "rds",
+              "CreateCustomAvailabilityZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBCluster",
+          [
+            [
+              "rds",
+              "CreateDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBClusterEndpoint",
+          [
+            [
+              "rds",
+              "CreateDBClusterEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBClusterParameterGroup",
+          [
+            [
+              "rds",
+              "CreateDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBClusterSnapshot",
+          [
+            [
+              "rds",
+              "CreateDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBInstance",
+          [
+            [
+              "rds",
+              "CreateDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBInstanceReadReplica",
+          [
+            [
+              "rds",
+              "CreateDBInstanceReadReplica"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBParameterGroup",
+          [
+            [
+              "rds",
+              "CreateDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBProxy",
+          [
+            [
+              "rds",
+              "CreateDBProxy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBSecurityGroup",
+          [
+            [
+              "rds",
+              "CreateDBSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBSnapshot",
+          [
+            [
+              "rds",
+              "CreateDBSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBSubnetGroup",
+          [
+            [
+              "rds",
+              "CreateDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateEventSubscription",
+          [
+            [
+              "rds",
+              "CreateEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateGlobalCluster",
+          [
+            [
+              "rds",
+              "CreateGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateOptionGroup",
+          [
+            [
+              "rds",
+              "CreateOptionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteCustomAvailabilityZone",
+          [
+            [
+              "rds",
+              "DeleteCustomAvailabilityZone"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBCluster",
+          [
+            [
+              "rds",
+              "DeleteDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBClusterEndpoint",
+          [
+            [
+              "rds",
+              "DeleteDBClusterEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBClusterParameterGroup",
+          [
+            [
+              "rds",
+              "DeleteDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBClusterSnapshot",
+          [
+            [
+              "rds",
+              "DeleteDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBInstance",
+          [
+            [
+              "rds",
+              "DeleteDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBInstanceAutomatedBackup",
+          [
+            [
+              "rds",
+              "DeleteDBInstanceAutomatedBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBParameterGroup",
+          [
+            [
+              "rds",
+              "DeleteDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBProxy",
+          [
+            [
+              "rds",
+              "DeleteDBProxy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBSecurityGroup",
+          [
+            [
+              "rds",
+              "DeleteDBSecurityGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBSnapshot",
+          [
+            [
+              "rds",
+              "DeleteDBSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBSubnetGroup",
+          [
+            [
+              "rds",
+              "DeleteDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteEventSubscription",
+          [
+            [
+              "rds",
+              "DeleteEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteGlobalCluster",
+          [
+            [
+              "rds",
+              "DeleteGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteInstallationMedia",
+          [
+            [
+              "rds",
+              "DeleteInstallationMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteOptionGroup",
+          [
+            [
+              "rds",
+              "DeleteOptionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeregisterDBProxyTargets",
+          [
+            [
+              "rds",
+              "DeregisterDBProxyTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeAccountAttributes",
+          [
+            [
+              "rds",
+              "DescribeAccountAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeCertificates",
+          [
+            [
+              "rds",
+              "DescribeCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeCustomAvailabilityZones",
+          [
+            [
+              "rds",
+              "DescribeCustomAvailabilityZones"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterBacktracks",
+          [
+            [
+              "rds",
+              "DescribeDBClusterBacktracks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterEndpoints",
+          [
+            [
+              "rds",
+              "DescribeDBClusterEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterParameterGroups",
+          [
+            [
+              "rds",
+              "DescribeDBClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterParameters",
+          [
+            [
+              "rds",
+              "DescribeDBClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterSnapshotAttributes",
+          [
+            [
+              "rds",
+              "DescribeDBClusterSnapshotAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterSnapshots",
+          [
+            [
+              "rds",
+              "DescribeDBClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusters",
+          [
+            [
+              "rds",
+              "DescribeDBClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBEngineVersions",
+          [
+            [
+              "rds",
+              "DescribeDBEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBInstanceAutomatedBackups",
+          [
+            [
+              "rds",
+              "DescribeDBInstanceAutomatedBackups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBInstances",
+          [
+            [
+              "rds",
+              "DescribeDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBLogFiles",
+          [
+            [
+              "rds",
+              "DescribeDBLogFiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBParameterGroups",
+          [
+            [
+              "rds",
+              "DescribeDBParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBParameters",
+          [
+            [
+              "rds",
+              "DescribeDBParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBProxies",
+          [
+            [
+              "rds",
+              "DescribeDBProxies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBProxyTargetGroups",
+          [
+            [
+              "rds",
+              "DescribeDBProxyTargetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBProxyTargets",
+          [
+            [
+              "rds",
+              "DescribeDBProxyTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBSecurityGroups",
+          [
+            [
+              "rds",
+              "DescribeDBSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBSnapshotAttributes",
+          [
+            [
+              "rds",
+              "DescribeDBSnapshotAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBSnapshots",
+          [
+            [
+              "rds",
+              "DescribeDBSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBSubnetGroups",
+          [
+            [
+              "rds",
+              "DescribeDBSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeEngineDefaultClusterParameters",
+          [
+            [
+              "rds",
+              "DescribeEngineDefaultClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeEngineDefaultParameters",
+          [
+            [
+              "rds",
+              "DescribeEngineDefaultParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeEventCategories",
+          [
+            [
+              "rds",
+              "DescribeEventCategories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeEventSubscriptions",
+          [
+            [
+              "rds",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeEvents",
+          [
+            [
+              "rds",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeExportTasks",
+          [
+            [
+              "rds",
+              "DescribeExportTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeGlobalClusters",
+          [
+            [
+              "rds",
+              "DescribeGlobalClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeInstallationMedia",
+          [
+            [
+              "rds",
+              "DescribeInstallationMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeOptionGroupOptions",
+          [
+            [
+              "rds",
+              "DescribeOptionGroupOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeOptionGroups",
+          [
+            [
+              "rds",
+              "DescribeOptionGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeOrderableDBInstanceOptions",
+          [
+            [
+              "rds",
+              "DescribeOrderableDBInstanceOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribePendingMaintenanceActions",
+          [
+            [
+              "rds",
+              "DescribePendingMaintenanceActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeReservedDBInstances",
+          [
+            [
+              "rds",
+              "DescribeReservedDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeReservedDBInstancesOfferings",
+          [
+            [
+              "rds",
+              "DescribeReservedDBInstancesOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeSourceRegions",
+          [
+            [
+              "rds",
+              "DescribeSourceRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeValidDBInstanceModifications",
+          [
+            [
+              "rds",
+              "DescribeValidDBInstanceModifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DownloadDBLogFilePortion",
+          [
+            [
+              "rds",
+              "DownloadDBLogFilePortion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "FailoverDBCluster",
+          [
+            [
+              "rds",
+              "FailoverDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ImportInstallationMedia",
+          [
+            [
+              "rds",
+              "ImportInstallationMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "rds",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyCertificates",
+          [
+            [
+              "rds",
+              "ModifyCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyCurrentDBClusterCapacity",
+          [
+            [
+              "rds",
+              "ModifyCurrentDBClusterCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBCluster",
+          [
+            [
+              "rds",
+              "ModifyDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBClusterEndpoint",
+          [
+            [
+              "rds",
+              "ModifyDBClusterEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBClusterParameterGroup",
+          [
+            [
+              "rds",
+              "ModifyDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBClusterSnapshotAttribute",
+          [
+            [
+              "rds",
+              "ModifyDBClusterSnapshotAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBInstance",
+          [
+            [
+              "rds",
+              "ModifyDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBParameterGroup",
+          [
+            [
+              "rds",
+              "ModifyDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBProxy",
+          [
+            [
+              "rds",
+              "ModifyDBProxy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBProxyTargetGroup",
+          [
+            [
+              "rds",
+              "ModifyDBProxyTargetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBSnapshot",
+          [
+            [
+              "rds",
+              "ModifyDBSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBSnapshotAttribute",
+          [
+            [
+              "rds",
+              "ModifyDBSnapshotAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBSubnetGroup",
+          [
+            [
+              "rds",
+              "ModifyDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyEventSubscription",
+          [
+            [
+              "rds",
+              "ModifyEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyGlobalCluster",
+          [
+            [
+              "rds",
+              "ModifyGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyOptionGroup",
+          [
+            [
+              "rds",
+              "ModifyOptionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "PromoteReadReplica",
+          [
+            [
+              "rds",
+              "PromoteReadReplica"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "PromoteReadReplicaDBCluster",
+          [
+            [
+              "rds",
+              "PromoteReadReplicaDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "PurchaseReservedDBInstancesOffering",
+          [
+            [
+              "rds",
+              "PurchaseReservedDBInstancesOffering"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RebootDBInstance",
+          [
+            [
+              "rds",
+              "RebootDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RegisterDBProxyTargets",
+          [
+            [
+              "rds",
+              "RegisterDBProxyTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RemoveFromGlobalCluster",
+          [
+            [
+              "rds",
+              "RemoveFromGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RemoveRoleFromDBCluster",
+          [
+            [
+              "rds",
+              "RemoveRoleFromDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RemoveRoleFromDBInstance",
+          [
+            [
+              "rds",
+              "RemoveRoleFromDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RemoveSourceIdentifierFromSubscription",
+          [
+            [
+              "rds",
+              "RemoveSourceIdentifierFromSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RemoveTagsFromResource",
+          [
+            [
+              "rds",
+              "RemoveTagsFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ResetDBClusterParameterGroup",
+          [
+            [
+              "rds",
+              "ResetDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ResetDBParameterGroup",
+          [
+            [
+              "rds",
+              "ResetDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBClusterFromS3",
+          [
+            [
+              "rds",
+              "RestoreDBClusterFromS3"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBClusterFromSnapshot",
+          [
+            [
+              "rds",
+              "RestoreDBClusterFromSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBClusterToPointInTime",
+          [
+            [
+              "rds",
+              "RestoreDBClusterToPointInTime"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBInstanceFromDBSnapshot",
+          [
+            [
+              "rds",
+              "RestoreDBInstanceFromDBSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBInstanceFromS3",
+          [
+            [
+              "rds",
+              "RestoreDBInstanceFromS3"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RestoreDBInstanceToPointInTime",
+          [
+            [
+              "rds",
+              "RestoreDBInstanceToPointInTime"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RevokeDBSecurityGroupIngress",
+          [
+            [
+              "rds",
+              "RevokeDBSecurityGroupIngress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StartActivityStream",
+          [
+            [
+              "rds",
+              "StartActivityStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StartDBCluster",
+          [
+            [
+              "rds",
+              "StartDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StartDBInstance",
+          [
+            [
+              "rds",
+              "StartDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StartExportTask",
+          [
+            [
+              "rds",
+              "StartExportTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StopActivityStream",
+          [
+            [
+              "rds",
+              "StopActivityStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StopDBCluster",
+          [
+            [
+              "rds",
+              "StopDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StopDBInstance",
+          [
+            [
+              "rds",
+              "StopDBInstance"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeCustomAvailabilityZonesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeCustomAvailabilityZones"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterBacktracksPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterBacktracks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterParameterGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterParametersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClustersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBEngineVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBInstanceAutomatedBackupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBInstanceAutomatedBackups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBLogFilesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBLogFiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBParameterGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBParametersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBProxiesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBProxies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBProxyTargetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBProxyTargetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBProxyTargetsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBProxyTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBSecurityGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBSecurityGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBSubnetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeEngineDefaultParametersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeEngineDefaultParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeEventSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeEventsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeExportTasksPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeExportTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeGlobalClustersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeGlobalClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeInstallationMediaPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeInstallationMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeOptionGroupOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeOptionGroupOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeOptionGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeOptionGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeOrderableDBInstanceOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeOrderableDBInstanceOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribePendingMaintenanceActionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribePendingMaintenanceActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeReservedDBInstancesOfferingsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeReservedDBInstancesOfferings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeReservedDBInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeReservedDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeSourceRegionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeSourceRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DownloadDBLogFilePortionPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DownloadDBLogFilePortion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StartDBInstanceAutomatedBackupsReplication",
+          [
+            [
+              "rds",
+              "StartDBInstanceAutomatedBackupsReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "StopDBInstanceAutomatedBackupsReplication",
+          [
+            [
+              "rds",
+              "StopDBInstanceAutomatedBackupsReplication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBProxyEndpoint",
+          [
+            [
+              "rds",
+              "CreateDBProxyEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBProxyEndpoint",
+          [
+            [
+              "rds",
+              "DeleteDBProxyEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBProxyEndpoints",
+          [
+            [
+              "rds",
+              "DescribeDBProxyEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "FailoverGlobalCluster",
+          [
+            [
+              "rds",
+              "FailoverGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBProxyEndpoint",
+          [
+            [
+              "rds",
+              "ModifyDBProxyEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBProxyEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBProxyEndpoints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateCustomDBEngineVersion",
+          [
+            [
+              "rds",
+              "CreateCustomDBEngineVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteCustomDBEngineVersion",
+          [
+            [
+              "rds",
+              "DeleteCustomDBEngineVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyCustomDBEngineVersion",
+          [
+            [
+              "rds",
+              "ModifyCustomDBEngineVersion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RebootDBCluster",
+          [
+            [
+              "rds",
+              "RebootDBCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateCustomAvailabilityZone"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteCustomAvailabilityZone"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteInstallationMedia"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeCustomAvailabilityZones"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeInstallationMedia"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ImportInstallationMedia"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeCustomAvailabilityZonesPaginator",
+          "NextPage"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeInstallationMediaPaginator",
+          "NextPage"
+        ]
+      ],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyActivityStream",
+          [
+            [
+              "rds",
+              "ModifyActivityStream"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "SwitchoverReadReplica",
+          [
+            [
+              "rds",
+              "SwitchoverReadReplica"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateBlueGreenDeployment",
+          [
+            [
+              "rds",
+              "CreateBlueGreenDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteBlueGreenDeployment",
+          [
+            [
+              "rds",
+              "DeleteBlueGreenDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeBlueGreenDeployments",
+          [
+            [
+              "rds",
+              "DescribeBlueGreenDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "SwitchoverBlueGreenDeployment",
+          [
+            [
+              "rds",
+              "SwitchoverBlueGreenDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeBlueGreenDeploymentsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeBlueGreenDeployments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBClusterAutomatedBackup",
+          [
+            [
+              "rds",
+              "DeleteDBClusterAutomatedBackup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBClusterAutomatedBackups",
+          [
+            [
+              "rds",
+              "DescribeDBClusterAutomatedBackups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "SwitchoverGlobalCluster",
+          [
+            [
+              "rds",
+              "SwitchoverGlobalCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBClusterAutomatedBackupsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBClusterAutomatedBackups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateIntegration",
+          [
+            [
+              "rds",
+              "CreateIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteIntegration",
+          [
+            [
+              "rds",
+              "DeleteIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeIntegrations",
+          [
+            [
+              "rds",
+              "DescribeIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeIntegrationsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeIntegrations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateTenantDatabase",
+          [
+            [
+              "rds",
+              "CreateTenantDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteTenantDatabase",
+          [
+            [
+              "rds",
+              "DeleteTenantDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBSnapshotTenantDatabases",
+          [
+            [
+              "rds",
+              "DescribeDBSnapshotTenantDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeTenantDatabases",
+          [
+            [
+              "rds",
+              "DescribeTenantDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyTenantDatabase",
+          [
+            [
+              "rds",
+              "ModifyTenantDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBSnapshotTenantDatabasesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBSnapshotTenantDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeTenantDatabasesPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeTenantDatabases"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBRecommendations",
+          [
+            [
+              "rds",
+              "DescribeDBRecommendations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBRecommendation",
+          [
+            [
+              "rds",
+              "ModifyDBRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBRecommendationsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBRecommendations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DisableHttpEndpoint",
+          [
+            [
+              "rds",
+              "DisableHttpEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "EnableHttpEndpoint",
+          [
+            [
+              "rds",
+              "EnableHttpEndpoint"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBShardGroup",
+          [
+            [
+              "rds",
+              "CreateDBShardGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DeleteDBShardGroup",
+          [
+            [
+              "rds",
+              "DeleteDBShardGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBShardGroups",
+          [
+            [
+              "rds",
+              "DescribeDBShardGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBShardGroup",
+          [
+            [
+              "rds",
+              "ModifyDBShardGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "RebootDBShardGroup",
+          [
+            [
+              "rds",
+              "RebootDBShardGroup"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyIntegration",
+          [
+            [
+              "rds",
+              "ModifyIntegration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBMajorEngineVersions",
+          [
+            [
+              "rds",
+              "DescribeDBMajorEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBMajorEngineVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBMajorEngineVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.112.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.114.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeEngineDefaultClusterParametersPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeEngineDefaultClusterParameters"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.115.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.117.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.117.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeServerlessV2PlatformVersions",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeServerlessV2PlatformVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.118.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.121.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.122.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.125.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.127.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

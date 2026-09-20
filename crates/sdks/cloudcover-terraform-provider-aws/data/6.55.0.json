@@ -6,12 +6,7 @@
       "data_source",
       "aws_elasticache_service_updates",
       "read",
-      [
-        [
-          "elasticache",
-          "DescribeServiceUpdates"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -54,49 +49,25 @@
       "list_resource",
       "aws_network_interface",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_rds_cluster",
       "list",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "DescribeGlobalClusters"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_route53_record",
       "list",
-      [
-        [
-          "route53",
-          "ListResourceRecordSets"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_route53_resolver_rule_association",
       "list",
-      [
-        [
-          "route53resolver",
-          "ListResolverRuleAssociations"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -110,10 +81,6 @@
         [
           "sfn",
           "ListStateMachineVersions"
-        ],
-        [
-          "sfn",
-          "ListStateMachines"
         ]
       ]
     ]

@@ -3,6 +3,12 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_resourcegroupstaggingapi_resources",
+      "read",
+      []
+    ],
+    [
       "resource",
       "aws_dynamodb_table",
       "create",
@@ -29,6 +35,10 @@
         ],
         [
           "dynamodb",
+          "New"
+        ],
+        [
+          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -44,8 +54,20 @@
           "UpdateTimeToLive"
         ],
         [
+          "dynamodb",
+          "newClient"
+        ],
+        [
           "kms",
           "DescribeKey"
+        ],
+        [
+          "kms",
+          "New"
+        ],
+        [
+          "kms",
+          "newClient"
         ]
       ]
     ],
@@ -150,6 +172,34 @@
           "UpdateOrganizationConfiguration"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_resourcegroups_resource",
+      "create",
+      [
+        [
+          "resourcegroups",
+          "GroupResources"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourcegroups_resource",
+      "delete",
+      [
+        [
+          "resourcegroups",
+          "UngroupResources"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourcegroups_resource",
+      "read",
+      []
     ],
     [
       "resource",
@@ -159,10 +209,6 @@
         [
           "ec2",
           "CreateVerifiedAccessGroup"
-        ],
-        [
-          "ec2",
-          "DescribeVerifiedAccessGroups"
         ],
         [
           "ec2",
@@ -188,10 +234,6 @@
       [
         [
           "ec2",
-          "DescribeVerifiedAccessGroups"
-        ],
-        [
-          "ec2",
           "GetVerifiedAccessGroupPolicy"
         ]
       ]
@@ -201,10 +243,6 @@
       "aws_verifiedaccess_group",
       "update",
       [
-        [
-          "ec2",
-          "DescribeVerifiedAccessGroups"
-        ],
         [
           "ec2",
           "GetVerifiedAccessGroupPolicy"
@@ -226,10 +264,6 @@
       [
         [
           "ec2",
-          "DescribeVerifiedAccessInstanceLoggingConfigurations"
-        ],
-        [
-          "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"
         ]
       ]
@@ -249,22 +283,13 @@
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeVerifiedAccessInstanceLoggingConfigurations"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "update",
       [
-        [
-          "ec2",
-          "DescribeVerifiedAccessInstanceLoggingConfigurations"
-        ],
         [
           "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"

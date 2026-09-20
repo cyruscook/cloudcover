@@ -1,6 +1,6 @@
 use cloudcover_core::{
     ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, PythonMethodReference,
-    Sdk, SdkMethodMapping, TerraformMethodReference,
+    ResolvedSdk, Sdk, SdkMethodMapping, TerraformMethodReference,
 };
 
 use crate::{generated, policy};
@@ -23,8 +23,27 @@ pub enum AwsError {
     UnsupportedSdk { name: String, language: Language },
     #[error("SDK {name:?} requires a version")]
     MissingSdkVersion { name: String },
+    #[error("Terraform provider AWS version {version:?} is unsupported: {reason}")]
+    UnsupportedTerraformProviderAwsVersion {
+        version: String,
+        reason: cloudcover_terraform_provider_aws::TerraformProviderAwsUnsupportedReason,
+    },
     #[error("unsupported version {version:?} for SDK {name:?}")]
     UnsupportedSdkVersion { name: String, version: String },
+    #[error("unsupported AWS Go SDK service module {path:?}")]
+    UnsupportedSdkModule { path: String },
+    #[error("AWS Go SDK service module {path:?} requires a version")]
+    MissingSdkModuleVersion { path: String },
+    #[error("unsupported version {version:?} for AWS Go SDK service module {path:?}")]
+    UnsupportedSdkModuleVersion { path: String, version: String },
+    #[error(
+        "AWS Go SDK service module {path:?} uses unsupported replacement {replacement_path:?} {replacement_version:?}"
+    )]
+    UnsupportedSdkModuleReplacement {
+        path: String,
+        replacement_path: String,
+        replacement_version: Option<String>,
+    },
 }
 
 impl CloudProvider for AwsProvider {
@@ -57,15 +76,13 @@ impl CloudProvider for AwsProvider {
         sdks
     }
 
-    fn sdk_method_mappings(&self, sdk: &Sdk) -> Result<Vec<SdkMethodMapping>, Self::Error> {
+    fn sdk_method_mappings(
+        &self,
+        resolved_sdk: &ResolvedSdk,
+    ) -> Result<Vec<SdkMethodMapping>, Self::Error> {
+        let sdk = resolved_sdk.sdk();
         if sdk.name() == cloudcover_aws_sdk_go_v2::SDK_NAME && sdk.language() == Language::Go {
-            return match sdk.version() {
-                None => Ok(go_sdk_method_mappings().collect()),
-                Some(version) => Err(AwsError::UnsupportedSdkVersion {
-                    name: sdk.name().to_owned(),
-                    version: version.to_owned(),
-                }),
-            };
+            return go_sdk_method_mappings(resolved_sdk);
         }
         if sdk.name() == "boto3" && sdk.language() == Language::Python {
             return match sdk.version() {
@@ -114,10 +131,57 @@ fn python_sdk_method_mappings() -> Vec<SdkMethodMapping> {
         .collect()
 }
 
-fn go_sdk_method_mappings() -> impl Iterator<Item = SdkMethodMapping> {
-    cloudcover_aws_sdk_go_v2::SDK_METHOD_MAPPINGS
-        .iter()
-        .filter_map(|row| {
+fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMapping>, AwsError> {
+    const SERVICE_PREFIX: &str = "github.com/aws/aws-sdk-go-v2/service/";
+
+    let sdk = resolved_sdk.sdk();
+    if let Some(version) = sdk.version() {
+        return Err(AwsError::UnsupportedSdkVersion {
+            name: sdk.name().to_owned(),
+            version: version.to_owned(),
+        });
+    }
+
+    let mut mappings = Vec::new();
+    for module in resolved_sdk.modules() {
+        let Some(service) = module.path().strip_prefix(SERVICE_PREFIX) else {
+            continue;
+        };
+        if service.contains('/') {
+            continue;
+        }
+        if !cloudcover_aws_sdk_go_v2::service_modules().contains(&module.path()) {
+            return Err(AwsError::UnsupportedSdkModule {
+                path: module.path().to_owned(),
+            });
+        }
+        if let Some(replacement) = module.replacement() {
+            return Err(AwsError::UnsupportedSdkModuleReplacement {
+                path: module.path().to_owned(),
+                replacement_path: replacement.path().to_owned(),
+                replacement_version: replacement.version().map(str::to_owned),
+            });
+        }
+        if module.version().is_empty() {
+            return Err(AwsError::MissingSdkModuleVersion {
+                path: module.path().to_owned(),
+            });
+        }
+        let Some(version) = module.version().strip_prefix('v') else {
+            return Err(AwsError::UnsupportedSdkModuleVersion {
+                path: module.path().to_owned(),
+                version: module.version().to_owned(),
+            });
+        };
+        let Some(rows) = cloudcover_aws_sdk_go_v2::service_method_mappings(module.path(), version)
+        else {
+            return Err(AwsError::UnsupportedSdkModuleVersion {
+                path: module.path().to_owned(),
+                version: module.version().to_owned(),
+            });
+        };
+
+        mappings.extend(rows.filter_map(|row| {
             let api_methods = row
                 .api_methods
                 .iter()
@@ -129,7 +193,7 @@ fn go_sdk_method_mappings() -> impl Iterator<Item = SdkMethodMapping> {
             }
 
             Some(SdkMethodMapping::new(
-                Sdk::new(cloudcover_aws_sdk_go_v2::SDK_NAME, Language::Go),
+                sdk.clone(),
                 MethodReference::Go(GoMethodReference::new(
                     row.package,
                     Some(row.receiver.to_owned()),
@@ -137,17 +201,34 @@ fn go_sdk_method_mappings() -> impl Iterator<Item = SdkMethodMapping> {
                 )),
                 api_methods,
             ))
-        })
+        }));
+    }
+    mappings.sort();
+    mappings.dedup();
+    Ok(mappings)
 }
 
 fn terraform_provider_aws_sdk_method_mappings(
     version: &str,
 ) -> Result<Vec<SdkMethodMapping>, AwsError> {
-    let Some(rows) = cloudcover_terraform_provider_aws::sdk_method_mappings(version) else {
-        return Err(AwsError::UnsupportedSdkVersion {
-            name: cloudcover_terraform_provider_aws::SDK_NAME.to_owned(),
-            version: version.to_owned(),
-        });
+    let rows = match cloudcover_terraform_provider_aws::sdk_method_mappings(version) {
+        cloudcover_terraform_provider_aws::TerraformProviderAwsMappingsLookup::Supported(rows) => {
+            rows
+        }
+        cloudcover_terraform_provider_aws::TerraformProviderAwsMappingsLookup::Unsupported(
+            reason,
+        ) => {
+            return Err(AwsError::UnsupportedTerraformProviderAwsVersion {
+                version: version.to_owned(),
+                reason,
+            });
+        }
+        cloudcover_terraform_provider_aws::TerraformProviderAwsMappingsLookup::Unknown => {
+            return Err(AwsError::UnsupportedSdkVersion {
+                name: cloudcover_terraform_provider_aws::SDK_NAME.to_owned(),
+                version: version.to_owned(),
+            });
+        }
     };
 
     Ok(rows

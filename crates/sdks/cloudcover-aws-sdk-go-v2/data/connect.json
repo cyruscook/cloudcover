@@ -1,0 +1,7200 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/connect",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateUser",
+          [
+            [
+              "connect",
+              "CreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "connect",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeUser",
+          [
+            [
+              "connect",
+              "DescribeUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeUserHierarchyGroup",
+          [
+            [
+              "connect",
+              "DescribeUserHierarchyGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeUserHierarchyStructure",
+          [
+            [
+              "connect",
+              "DescribeUserHierarchyStructure"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetContactAttributes",
+          [
+            [
+              "connect",
+              "GetContactAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetCurrentMetricData",
+          [
+            [
+              "connect",
+              "GetCurrentMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetFederationToken",
+          [
+            [
+              "connect",
+              "GetFederationToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetMetricData",
+          [
+            [
+              "connect",
+              "GetMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlows",
+          [
+            [
+              "connect",
+              "ListContactFlows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListHoursOfOperations",
+          [
+            [
+              "connect",
+              "ListHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListPhoneNumbers",
+          [
+            [
+              "connect",
+              "ListPhoneNumbers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListQueues",
+          [
+            [
+              "connect",
+              "ListQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListRoutingProfiles",
+          [
+            [
+              "connect",
+              "ListRoutingProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityProfiles",
+          [
+            [
+              "connect",
+              "ListSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "connect",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListUserHierarchyGroups",
+          [
+            [
+              "connect",
+              "ListUserHierarchyGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListUsers",
+          [
+            [
+              "connect",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ResumeContactRecording",
+          [
+            [
+              "connect",
+              "ResumeContactRecording"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartChatContact",
+          [
+            [
+              "connect",
+              "StartChatContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartContactRecording",
+          [
+            [
+              "connect",
+              "StartContactRecording"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartOutboundVoiceContact",
+          [
+            [
+              "connect",
+              "StartOutboundVoiceContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StopContact",
+          [
+            [
+              "connect",
+              "StopContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StopContactRecording",
+          [
+            [
+              "connect",
+              "StopContactRecording"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SuspendContactRecording",
+          [
+            [
+              "connect",
+              "SuspendContactRecording"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "TagResource",
+          [
+            [
+              "connect",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "connect",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactAttributes",
+          [
+            [
+              "connect",
+              "UpdateContactAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserHierarchy",
+          [
+            [
+              "connect",
+              "UpdateUserHierarchy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserIdentityInfo",
+          [
+            [
+              "connect",
+              "UpdateUserIdentityInfo"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserPhoneConfig",
+          [
+            [
+              "connect",
+              "UpdateUserPhoneConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserRoutingProfile",
+          [
+            [
+              "connect",
+              "UpdateUserRoutingProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserSecurityProfiles",
+          [
+            [
+              "connect",
+              "UpdateUserSecurityProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateRoutingProfileQueues",
+          [
+            [
+              "connect",
+              "AssociateRoutingProfileQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlow",
+          [
+            [
+              "connect",
+              "CreateContactFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateRoutingProfile",
+          [
+            [
+              "connect",
+              "CreateRoutingProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContactFlow",
+          [
+            [
+              "connect",
+              "DescribeContactFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeRoutingProfile",
+          [
+            [
+              "connect",
+              "DescribeRoutingProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateRoutingProfileQueues",
+          [
+            [
+              "connect",
+              "DisassociateRoutingProfileQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListPrompts",
+          [
+            [
+              "connect",
+              "ListPrompts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListRoutingProfileQueues",
+          [
+            [
+              "connect",
+              "ListRoutingProfileQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowContent",
+          [
+            [
+              "connect",
+              "UpdateContactFlowContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowName",
+          [
+            [
+              "connect",
+              "UpdateContactFlowName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRoutingProfileConcurrency",
+          [
+            [
+              "connect",
+              "UpdateRoutingProfileConcurrency"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRoutingProfileDefaultOutboundQueue",
+          [
+            [
+              "connect",
+              "UpdateRoutingProfileDefaultOutboundQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRoutingProfileName",
+          [
+            [
+              "connect",
+              "UpdateRoutingProfileName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRoutingProfileQueues",
+          [
+            [
+              "connect",
+              "UpdateRoutingProfileQueues"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateApprovedOrigin",
+          [
+            [
+              "connect",
+              "AssociateApprovedOrigin"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateInstanceStorageConfig",
+          [
+            [
+              "connect",
+              "AssociateInstanceStorageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateLambdaFunction",
+          [
+            [
+              "connect",
+              "AssociateLambdaFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateLexBot",
+          [
+            [
+              "connect",
+              "AssociateLexBot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateSecurityKey",
+          [
+            [
+              "connect",
+              "AssociateSecurityKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateInstance",
+          [
+            [
+              "connect",
+              "CreateInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateUserHierarchyGroup",
+          [
+            [
+              "connect",
+              "CreateUserHierarchyGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteInstance",
+          [
+            [
+              "connect",
+              "DeleteInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteUserHierarchyGroup",
+          [
+            [
+              "connect",
+              "DeleteUserHierarchyGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeInstance",
+          [
+            [
+              "connect",
+              "DescribeInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeInstanceAttribute",
+          [
+            [
+              "connect",
+              "DescribeInstanceAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeInstanceStorageConfig",
+          [
+            [
+              "connect",
+              "DescribeInstanceStorageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateApprovedOrigin",
+          [
+            [
+              "connect",
+              "DisassociateApprovedOrigin"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateInstanceStorageConfig",
+          [
+            [
+              "connect",
+              "DisassociateInstanceStorageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateLambdaFunction",
+          [
+            [
+              "connect",
+              "DisassociateLambdaFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateLexBot",
+          [
+            [
+              "connect",
+              "DisassociateLexBot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateSecurityKey",
+          [
+            [
+              "connect",
+              "DisassociateSecurityKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListApprovedOrigins",
+          [
+            [
+              "connect",
+              "ListApprovedOrigins"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListInstanceAttributes",
+          [
+            [
+              "connect",
+              "ListInstanceAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListInstanceStorageConfigs",
+          [
+            [
+              "connect",
+              "ListInstanceStorageConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListInstances",
+          [
+            [
+              "connect",
+              "ListInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListLambdaFunctions",
+          [
+            [
+              "connect",
+              "ListLambdaFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListLexBots",
+          [
+            [
+              "connect",
+              "ListLexBots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityKeys",
+          [
+            [
+              "connect",
+              "ListSecurityKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateInstanceAttribute",
+          [
+            [
+              "connect",
+              "UpdateInstanceAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateInstanceStorageConfig",
+          [
+            [
+              "connect",
+              "UpdateInstanceStorageConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserHierarchyGroupName",
+          [
+            [
+              "connect",
+              "UpdateUserHierarchyGroupName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserHierarchyStructure",
+          [
+            [
+              "connect",
+              "UpdateUserHierarchyStructure"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "GetCurrentMetricDataPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "GetCurrentMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "GetMetricDataPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "GetMetricData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListApprovedOriginsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListApprovedOrigins"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListHoursOfOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListInstanceAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListInstanceAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListInstanceStorageConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListInstanceStorageConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListLambdaFunctionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListLambdaFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListLexBotsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListLexBots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListPhoneNumbersPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListPhoneNumbers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListPromptsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListPrompts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListRoutingProfileQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListRoutingProfileQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListRoutingProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListRoutingProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityKeysPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListUserHierarchyGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListUserHierarchyGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListUsersPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateIntegrationAssociation",
+          [
+            [
+              "connect",
+              "CreateIntegrationAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateQuickConnect",
+          [
+            [
+              "connect",
+              "CreateQuickConnect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateUseCase",
+          [
+            [
+              "connect",
+              "CreateUseCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteIntegrationAssociation",
+          [
+            [
+              "connect",
+              "DeleteIntegrationAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteQuickConnect",
+          [
+            [
+              "connect",
+              "DeleteQuickConnect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteUseCase",
+          [
+            [
+              "connect",
+              "DeleteUseCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeQuickConnect",
+          [
+            [
+              "connect",
+              "DescribeQuickConnect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListIntegrationAssociations",
+          [
+            [
+              "connect",
+              "ListIntegrationAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListQuickConnects",
+          [
+            [
+              "connect",
+              "ListQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListUseCases",
+          [
+            [
+              "connect",
+              "ListUseCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartTaskContact",
+          [
+            [
+              "connect",
+              "StartTaskContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQuickConnectConfig",
+          [
+            [
+              "connect",
+              "UpdateQuickConnectConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQuickConnectName",
+          [
+            [
+              "connect",
+              "UpdateQuickConnectName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListIntegrationAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListIntegrationAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListQuickConnectsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListUseCasesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListUseCases"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateQueueQuickConnects",
+          [
+            [
+              "connect",
+              "AssociateQueueQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateQueue",
+          [
+            [
+              "connect",
+              "CreateQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeHoursOfOperation",
+          [
+            [
+              "connect",
+              "DescribeHoursOfOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeQueue",
+          [
+            [
+              "connect",
+              "DescribeQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateQueueQuickConnects",
+          [
+            [
+              "connect",
+              "DisassociateQueueQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListQueueQuickConnects",
+          [
+            [
+              "connect",
+              "ListQueueQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueHoursOfOperation",
+          [
+            [
+              "connect",
+              "UpdateQueueHoursOfOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueMaxContacts",
+          [
+            [
+              "connect",
+              "UpdateQueueMaxContacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueName",
+          [
+            [
+              "connect",
+              "UpdateQueueName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueOutboundCallerConfig",
+          [
+            [
+              "connect",
+              "UpdateQueueOutboundCallerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueStatus",
+          [
+            [
+              "connect",
+              "UpdateQueueStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListQueueQuickConnectsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListQueueQuickConnects"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateBot",
+          [
+            [
+              "connect",
+              "AssociateBot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateBot",
+          [
+            [
+              "connect",
+              "DisassociateBot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListBots",
+          [
+            [
+              "connect",
+              "ListBots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListBotsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListBots"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateAgentStatus",
+          [
+            [
+              "connect",
+              "CreateAgentStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateHoursOfOperation",
+          [
+            [
+              "connect",
+              "CreateHoursOfOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteHoursOfOperation",
+          [
+            [
+              "connect",
+              "DeleteHoursOfOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeAgentStatus",
+          [
+            [
+              "connect",
+              "DescribeAgentStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAgentStatuses",
+          [
+            [
+              "connect",
+              "ListAgentStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateAgentStatus",
+          [
+            [
+              "connect",
+              "UpdateAgentStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateHoursOfOperation",
+          [
+            [
+              "connect",
+              "UpdateHoursOfOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListAgentStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListAgentStatuses"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartContactStreaming",
+          [
+            [
+              "connect",
+              "StartContactStreaming"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StopContactStreaming",
+          [
+            [
+              "connect",
+              "StopContactStreaming"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateSecurityProfile",
+          [
+            [
+              "connect",
+              "CreateSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteSecurityProfile",
+          [
+            [
+              "connect",
+              "DeleteSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeSecurityProfile",
+          [
+            [
+              "connect",
+              "DescribeSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityProfilePermissions",
+          [
+            [
+              "connect",
+              "ListSecurityProfilePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateSecurityProfile",
+          [
+            [
+              "connect",
+              "UpdateSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityProfilePermissionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityProfilePermissions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContact",
+          [
+            [
+              "connect",
+              "DescribeContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactReferences",
+          [
+            [
+              "connect",
+              "ListContactReferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContact",
+          [
+            [
+              "connect",
+              "UpdateContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactSchedule",
+          [
+            [
+              "connect",
+              "UpdateContactSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactReferencesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactReferences"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlowModule",
+          [
+            [
+              "connect",
+              "CreateContactFlowModule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlow",
+          [
+            [
+              "connect",
+              "DeleteContactFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlowModule",
+          [
+            [
+              "connect",
+              "DeleteContactFlowModule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContactFlowModule",
+          [
+            [
+              "connect",
+              "DescribeContactFlowModule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlowModules",
+          [
+            [
+              "connect",
+              "ListContactFlowModules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowMetadata",
+          [
+            [
+              "connect",
+              "UpdateContactFlowMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowModuleContent",
+          [
+            [
+              "connect",
+              "UpdateContactFlowModuleContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowModuleMetadata",
+          [
+            [
+              "connect",
+              "UpdateContactFlowModuleMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowModulesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlowModules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateDefaultVocabulary",
+          [
+            [
+              "connect",
+              "AssociateDefaultVocabulary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateVocabulary",
+          [
+            [
+              "connect",
+              "CreateVocabulary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteVocabulary",
+          [
+            [
+              "connect",
+              "DeleteVocabulary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeVocabulary",
+          [
+            [
+              "connect",
+              "DescribeVocabulary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListDefaultVocabularies",
+          [
+            [
+              "connect",
+              "ListDefaultVocabularies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchVocabularies",
+          [
+            [
+              "connect",
+              "SearchVocabularies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListDefaultVocabulariesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListDefaultVocabularies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchVocabulariesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchVocabularies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociatePhoneNumberContactFlow",
+          [
+            [
+              "connect",
+              "AssociatePhoneNumberContactFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ClaimPhoneNumber",
+          [
+            [
+              "connect",
+              "ClaimPhoneNumber"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribePhoneNumber",
+          [
+            [
+              "connect",
+              "DescribePhoneNumber"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociatePhoneNumberContactFlow",
+          [
+            [
+              "connect",
+              "DisassociatePhoneNumberContactFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListPhoneNumbersV2",
+          [
+            [
+              "connect",
+              "ListPhoneNumbersV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ReleasePhoneNumber",
+          [
+            [
+              "connect",
+              "ReleasePhoneNumber"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchAvailablePhoneNumbers",
+          [
+            [
+              "connect",
+              "SearchAvailablePhoneNumbers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdatePhoneNumber",
+          [
+            [
+              "connect",
+              "UpdatePhoneNumber"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListPhoneNumbersV2Paginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListPhoneNumbersV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchAvailablePhoneNumbersPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchAvailablePhoneNumbers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchUsers",
+          [
+            [
+              "connect",
+              "SearchUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchUsersPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "PutUserStatus",
+          [
+            [
+              "connect",
+              "PutUserStatus"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateTaskTemplate",
+          [
+            [
+              "connect",
+              "CreateTaskTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteTaskTemplate",
+          [
+            [
+              "connect",
+              "DeleteTaskTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetTaskTemplate",
+          [
+            [
+              "connect",
+              "GetTaskTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTaskTemplates",
+          [
+            [
+              "connect",
+              "ListTaskTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "TransferContact",
+          [
+            [
+              "connect",
+              "TransferContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateTaskTemplate",
+          [
+            [
+              "connect",
+              "UpdateTaskTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListTaskTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListTaskTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetCurrentUserData",
+          [
+            [
+              "connect",
+              "GetCurrentUserData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "GetCurrentUserDataPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "GetCurrentUserData"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchSecurityProfiles",
+          [
+            [
+              "connect",
+              "SearchSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchSecurityProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchSecurityProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchQueues",
+          [
+            [
+              "connect",
+              "SearchQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchRoutingProfiles",
+          [
+            [
+              "connect",
+              "SearchRoutingProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchRoutingProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchRoutingProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateTrafficDistributionGroup",
+          [
+            [
+              "connect",
+              "CreateTrafficDistributionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteTrafficDistributionGroup",
+          [
+            [
+              "connect",
+              "DeleteTrafficDistributionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeTrafficDistributionGroup",
+          [
+            [
+              "connect",
+              "DescribeTrafficDistributionGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetTrafficDistribution",
+          [
+            [
+              "connect",
+              "GetTrafficDistribution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTrafficDistributionGroups",
+          [
+            [
+              "connect",
+              "ListTrafficDistributionGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ReplicateInstance",
+          [
+            [
+              "connect",
+              "ReplicateInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateTrafficDistribution",
+          [
+            [
+              "connect",
+              "UpdateTrafficDistribution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListTrafficDistributionGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListTrafficDistributionGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DismissUserContact",
+          [
+            [
+              "connect",
+              "DismissUserContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "MonitorContact",
+          [
+            [
+              "connect",
+              "MonitorContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateRule",
+          [
+            [
+              "connect",
+              "CreateRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteRule",
+          [
+            [
+              "connect",
+              "DeleteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeRule",
+          [
+            [
+              "connect",
+              "DescribeRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListRules",
+          [
+            [
+              "connect",
+              "ListRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRule",
+          [
+            [
+              "connect",
+              "UpdateRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListRulesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateParticipantRoleConfig",
+          [
+            [
+              "connect",
+              "UpdateParticipantRoleConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetMetricDataV2",
+          [
+            [
+              "connect",
+              "GetMetricDataV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "GetMetricDataV2Paginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "GetMetricDataV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateParticipant",
+          [
+            [
+              "connect",
+              "CreateParticipant"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ActivateEvaluationForm",
+          [
+            [
+              "connect",
+              "ActivateEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateEvaluationForm",
+          [
+            [
+              "connect",
+              "CreateEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeactivateEvaluationForm",
+          [
+            [
+              "connect",
+              "DeactivateEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactEvaluation",
+          [
+            [
+              "connect",
+              "DeleteContactEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteEvaluationForm",
+          [
+            [
+              "connect",
+              "DeleteEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContactEvaluation",
+          [
+            [
+              "connect",
+              "DescribeContactEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeEvaluationForm",
+          [
+            [
+              "connect",
+              "DescribeEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactEvaluations",
+          [
+            [
+              "connect",
+              "ListContactEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListEvaluationFormVersions",
+          [
+            [
+              "connect",
+              "ListEvaluationFormVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListEvaluationForms",
+          [
+            [
+              "connect",
+              "ListEvaluationForms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartContactEvaluation",
+          [
+            [
+              "connect",
+              "StartContactEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SubmitContactEvaluation",
+          [
+            [
+              "connect",
+              "SubmitContactEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactEvaluation",
+          [
+            [
+              "connect",
+              "UpdateContactEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateEvaluationForm",
+          [
+            [
+              "connect",
+              "UpdateEvaluationForm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactEvaluationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListEvaluationFormVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListEvaluationFormVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListEvaluationFormsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListEvaluationForms"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreatePrompt",
+          [
+            [
+              "connect",
+              "CreatePrompt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeletePrompt",
+          [
+            [
+              "connect",
+              "DeletePrompt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribePrompt",
+          [
+            [
+              "connect",
+              "DescribePrompt"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetPromptFile",
+          [
+            [
+              "connect",
+              "GetPromptFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdatePrompt",
+          [
+            [
+              "connect",
+              "UpdatePrompt"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchHoursOfOperations",
+          [
+            [
+              "connect",
+              "SearchHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchPrompts",
+          [
+            [
+              "connect",
+              "SearchPrompts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchQuickConnects",
+          [
+            [
+              "connect",
+              "SearchQuickConnects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchHoursOfOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchPromptsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchPrompts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchQuickConnectsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchQuickConnects"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchResourceTags",
+          [
+            [
+              "connect",
+              "SearchResourceTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchResourceTagsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchResourceTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteQueue",
+          [
+            [
+              "connect",
+              "DeleteQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteRoutingProfile",
+          [
+            [
+              "connect",
+              "DeleteRoutingProfile"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateRoutingProfileAgentAvailabilityTimer",
+          [
+            [
+              "connect",
+              "UpdateRoutingProfileAgentAvailabilityTimer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateTrafficDistributionGroupUser",
+          [
+            [
+              "connect",
+              "AssociateTrafficDistributionGroupUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateTrafficDistributionGroupUser",
+          [
+            [
+              "connect",
+              "DisassociateTrafficDistributionGroupUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTrafficDistributionGroupUsers",
+          [
+            [
+              "connect",
+              "ListTrafficDistributionGroupUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListTrafficDistributionGroupUsersPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListTrafficDistributionGroupUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateView",
+          [
+            [
+              "connect",
+              "CreateView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateViewVersion",
+          [
+            [
+              "connect",
+              "CreateViewVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteView",
+          [
+            [
+              "connect",
+              "DeleteView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteViewVersion",
+          [
+            [
+              "connect",
+              "DeleteViewVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeView",
+          [
+            [
+              "connect",
+              "DescribeView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListViewVersions",
+          [
+            [
+              "connect",
+              "ListViewVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListViews",
+          [
+            [
+              "connect",
+              "ListViews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateViewContent",
+          [
+            [
+              "connect",
+              "UpdateViewContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateViewMetadata",
+          [
+            [
+              "connect",
+              "UpdateViewMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListViewVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListViewVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListViewsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListViews"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityProfileApplications",
+          [
+            [
+              "connect",
+              "ListSecurityProfileApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityProfileApplicationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityProfileApplications"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdatePhoneNumberMetadata",
+          [
+            [
+              "connect",
+              "UpdatePhoneNumberMetadata"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchGetFlowAssociation",
+          [
+            [
+              "connect",
+              "BatchGetFlowAssociation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreatePersistentContactAssociation",
+          [
+            [
+              "connect",
+              "CreatePersistentContactAssociation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchPutContact",
+          [
+            [
+              "connect",
+              "BatchPutContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateAnalyticsDataSet",
+          [
+            [
+              "connect",
+              "AssociateAnalyticsDataSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateFlow",
+          [
+            [
+              "connect",
+              "AssociateFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchAssociateAnalyticsDataSet",
+          [
+            [
+              "connect",
+              "BatchAssociateAnalyticsDataSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchDisassociateAnalyticsDataSet",
+          [
+            [
+              "connect",
+              "BatchDisassociateAnalyticsDataSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateAnalyticsDataSet",
+          [
+            [
+              "connect",
+              "DisassociateAnalyticsDataSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateFlow",
+          [
+            [
+              "connect",
+              "DisassociateFlow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetFlowAssociation",
+          [
+            [
+              "connect",
+              "GetFlowAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ImportPhoneNumber",
+          [
+            [
+              "connect",
+              "ImportPhoneNumber"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAnalyticsDataAssociations",
+          [
+            [
+              "connect",
+              "ListAnalyticsDataAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListFlowAssociations",
+          [
+            [
+              "connect",
+              "ListFlowAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListRealtimeContactAnalysisSegmentsV2",
+          [
+            [
+              "connect",
+              "ListRealtimeContactAnalysisSegmentsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SendChatIntegrationEvent",
+          [
+            [
+              "connect",
+              "SendChatIntegrationEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartWebRTCContact",
+          [
+            [
+              "connect",
+              "StartWebRTCContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListFlowAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListFlowAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListRealtimeContactAnalysisSegmentsV2Paginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListRealtimeContactAnalysisSegmentsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "TagContact",
+          [
+            [
+              "connect",
+              "TagContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UntagContact",
+          [
+            [
+              "connect",
+              "UntagContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "PauseContact",
+          [
+            [
+              "connect",
+              "PauseContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ResumeContact",
+          [
+            [
+              "connect",
+              "ResumeContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateUserProficiencies",
+          [
+            [
+              "connect",
+              "AssociateUserProficiencies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreatePredefinedAttribute",
+          [
+            [
+              "connect",
+              "CreatePredefinedAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeletePredefinedAttribute",
+          [
+            [
+              "connect",
+              "DeletePredefinedAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribePredefinedAttribute",
+          [
+            [
+              "connect",
+              "DescribePredefinedAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateUserProficiencies",
+          [
+            [
+              "connect",
+              "DisassociateUserProficiencies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListPredefinedAttributes",
+          [
+            [
+              "connect",
+              "ListPredefinedAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListUserProficiencies",
+          [
+            [
+              "connect",
+              "ListUserProficiencies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchContacts",
+          [
+            [
+              "connect",
+              "SearchContacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchPredefinedAttributes",
+          [
+            [
+              "connect",
+              "SearchPredefinedAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactRoutingData",
+          [
+            [
+              "connect",
+              "UpdateContactRoutingData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdatePredefinedAttribute",
+          [
+            [
+              "connect",
+              "UpdatePredefinedAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserProficiencies",
+          [
+            [
+              "connect",
+              "UpdateUserProficiencies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListPredefinedAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListPredefinedAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListUserProficienciesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListUserProficiencies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchContactsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchContacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchPredefinedAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchPredefinedAttributes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchGetAttachedFileMetadata",
+          [
+            [
+              "connect",
+              "BatchGetAttachedFileMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CompleteAttachedFileUpload",
+          [
+            [
+              "connect",
+              "CompleteAttachedFileUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteAttachedFile",
+          [
+            [
+              "connect",
+              "DeleteAttachedFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetAttachedFile",
+          [
+            [
+              "connect",
+              "GetAttachedFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartAttachedFileUpload",
+          [
+            [
+              "connect",
+              "StartAttachedFileUpload"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.97.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchContactFlowModules",
+          [
+            [
+              "connect",
+              "SearchContactFlowModules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchContactFlows",
+          [
+            [
+              "connect",
+              "SearchContactFlows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchContactFlowModulesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchContactFlowModules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchContactFlowsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchContactFlows"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.98.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.98.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeAuthenticationProfile",
+          [
+            [
+              "connect",
+              "DescribeAuthenticationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAuthenticationProfiles",
+          [
+            [
+              "connect",
+              "ListAuthenticationProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateAuthenticationProfile",
+          [
+            [
+              "connect",
+              "UpdateAuthenticationProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListAuthenticationProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListAuthenticationProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchAgentStatuses",
+          [
+            [
+              "connect",
+              "SearchAgentStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchUserHierarchyGroups",
+          [
+            [
+              "connect",
+              "SearchUserHierarchyGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchAgentStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchAgentStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchUserHierarchyGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchUserHierarchyGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartOutboundChatContact",
+          [
+            [
+              "connect",
+              "StartOutboundChatContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.112.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.114.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartScreenSharing",
+          [
+            [
+              "connect",
+              "StartScreenSharing"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.114.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlowVersion",
+          [
+            [
+              "connect",
+              "CreateContactFlowVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlowVersions",
+          [
+            [
+              "connect",
+              "ListContactFlowVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlowVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.117.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContact",
+          [
+            [
+              "connect",
+              "CreateContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateEmailAddress",
+          [
+            [
+              "connect",
+              "CreateEmailAddress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteEmailAddress",
+          [
+            [
+              "connect",
+              "DeleteEmailAddress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeEmailAddress",
+          [
+            [
+              "connect",
+              "DescribeEmailAddress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAssociatedContacts",
+          [
+            [
+              "connect",
+              "ListAssociatedContacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchEmailAddresses",
+          [
+            [
+              "connect",
+              "SearchEmailAddresses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SendOutboundEmail",
+          [
+            [
+              "connect",
+              "SendOutboundEmail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartEmailContact",
+          [
+            [
+              "connect",
+              "StartEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartOutboundEmailContact",
+          [
+            [
+              "connect",
+              "StartOutboundEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateEmailAddressMetadata",
+          [
+            [
+              "connect",
+              "UpdateEmailAddressMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateQueueOutboundEmailConfig",
+          [
+            [
+              "connect",
+              "UpdateQueueOutboundEmailConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.118.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreatePushNotificationRegistration",
+          [
+            [
+              "connect",
+              "CreatePushNotificationRegistration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeletePushNotificationRegistration",
+          [
+            [
+              "connect",
+              "DeletePushNotificationRegistration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.121.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateHoursOfOperationOverride",
+          [
+            [
+              "connect",
+              "CreateHoursOfOperationOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteHoursOfOperationOverride",
+          [
+            [
+              "connect",
+              "DeleteHoursOfOperationOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeHoursOfOperationOverride",
+          [
+            [
+              "connect",
+              "DescribeHoursOfOperationOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetEffectiveHoursOfOperations",
+          [
+            [
+              "connect",
+              "GetEffectiveHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListHoursOfOperationOverrides",
+          [
+            [
+              "connect",
+              "ListHoursOfOperationOverrides"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchHoursOfOperationOverrides",
+          [
+            [
+              "connect",
+              "SearchHoursOfOperationOverrides"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateHoursOfOperationOverride",
+          [
+            [
+              "connect",
+              "UpdateHoursOfOperationOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListHoursOfOperationOverridesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListHoursOfOperationOverrides"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchHoursOfOperationOverridesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchHoursOfOperationOverrides"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.122.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateParticipantAuthentication",
+          [
+            [
+              "connect",
+              "UpdateParticipantAuthentication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.122.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlowVersion",
+          [
+            [
+              "connect",
+              "DeleteContactFlowVersion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.124.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.125.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAnalyticsDataLakeDataSets",
+          [
+            [
+              "connect",
+              "ListAnalyticsDataLakeDataSets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.125.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.127.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.127.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.133.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.134.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetContactMetrics",
+          [
+            [
+              "connect",
+              "GetContactMetrics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.135.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.136.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.136.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.137.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.137.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.138.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.138.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.138.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.141.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateContactWithUser",
+          [
+            [
+              "connect",
+              "AssociateContactWithUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListRoutingProfileManualAssignmentQueues",
+          [
+            [
+              "connect",
+              "ListRoutingProfileManualAssignmentQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListRoutingProfileManualAssignmentQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListRoutingProfileManualAssignmentQueues"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.142.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.143.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateEmailAddressAlias",
+          [
+            [
+              "connect",
+              "AssociateEmailAddressAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateEmailAddressAlias",
+          [
+            [
+              "connect",
+              "DisassociateEmailAddressAlias"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.143.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.143.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.143.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.144.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchContactEvaluations",
+          [
+            [
+              "connect",
+              "SearchContactEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchEvaluationForms",
+          [
+            [
+              "connect",
+              "SearchEvaluationForms"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.144.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.145.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.146.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.146.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.147.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.148.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlowModuleAlias",
+          [
+            [
+              "connect",
+              "CreateContactFlowModuleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlowModuleVersion",
+          [
+            [
+              "connect",
+              "CreateContactFlowModuleVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlowModuleAlias",
+          [
+            [
+              "connect",
+              "DeleteContactFlowModuleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlowModuleVersion",
+          [
+            [
+              "connect",
+              "DeleteContactFlowModuleVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContactFlowModuleAlias",
+          [
+            [
+              "connect",
+              "DescribeContactFlowModuleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlowModuleAliases",
+          [
+            [
+              "connect",
+              "ListContactFlowModuleAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlowModuleVersions",
+          [
+            [
+              "connect",
+              "ListContactFlowModuleVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowModuleAlias",
+          [
+            [
+              "connect",
+              "UpdateContactFlowModuleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowModuleAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlowModuleAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowModuleVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlowModuleVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.148.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.149.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateSecurityProfiles",
+          [
+            [
+              "connect",
+              "AssociateSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateWorkspace",
+          [
+            [
+              "connect",
+              "AssociateWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchCreateDataTableValue",
+          [
+            [
+              "connect",
+              "BatchCreateDataTableValue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchDeleteDataTableValue",
+          [
+            [
+              "connect",
+              "BatchDeleteDataTableValue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchDescribeDataTableValue",
+          [
+            [
+              "connect",
+              "BatchDescribeDataTableValue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "BatchUpdateDataTableValue",
+          [
+            [
+              "connect",
+              "BatchUpdateDataTableValue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateDataTable",
+          [
+            [
+              "connect",
+              "CreateDataTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateDataTableAttribute",
+          [
+            [
+              "connect",
+              "CreateDataTableAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateWorkspace",
+          [
+            [
+              "connect",
+              "CreateWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateWorkspacePage",
+          [
+            [
+              "connect",
+              "CreateWorkspacePage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteDataTable",
+          [
+            [
+              "connect",
+              "DeleteDataTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteDataTableAttribute",
+          [
+            [
+              "connect",
+              "DeleteDataTableAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteWorkspace",
+          [
+            [
+              "connect",
+              "DeleteWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteWorkspaceMedia",
+          [
+            [
+              "connect",
+              "DeleteWorkspaceMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteWorkspacePage",
+          [
+            [
+              "connect",
+              "DeleteWorkspacePage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeDataTable",
+          [
+            [
+              "connect",
+              "DescribeDataTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeDataTableAttribute",
+          [
+            [
+              "connect",
+              "DescribeDataTableAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeWorkspace",
+          [
+            [
+              "connect",
+              "DescribeWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateSecurityProfiles",
+          [
+            [
+              "connect",
+              "DisassociateSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateWorkspace",
+          [
+            [
+              "connect",
+              "DisassociateWorkspace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "EvaluateDataTableValues",
+          [
+            [
+              "connect",
+              "EvaluateDataTableValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ImportWorkspaceMedia",
+          [
+            [
+              "connect",
+              "ImportWorkspaceMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListDataTableAttributes",
+          [
+            [
+              "connect",
+              "ListDataTableAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListDataTablePrimaryValues",
+          [
+            [
+              "connect",
+              "ListDataTablePrimaryValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListDataTableValues",
+          [
+            [
+              "connect",
+              "ListDataTableValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListDataTables",
+          [
+            [
+              "connect",
+              "ListDataTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListEntitySecurityProfiles",
+          [
+            [
+              "connect",
+              "ListEntitySecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityProfileFlowModules",
+          [
+            [
+              "connect",
+              "ListSecurityProfileFlowModules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListWorkspaceMedia",
+          [
+            [
+              "connect",
+              "ListWorkspaceMedia"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListWorkspacePages",
+          [
+            [
+              "connect",
+              "ListWorkspacePages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListWorkspaces",
+          [
+            [
+              "connect",
+              "ListWorkspaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchDataTables",
+          [
+            [
+              "connect",
+              "SearchDataTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchViews",
+          [
+            [
+              "connect",
+              "SearchViews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchWorkspaceAssociations",
+          [
+            [
+              "connect",
+              "SearchWorkspaceAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchWorkspaces",
+          [
+            [
+              "connect",
+              "SearchWorkspaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartContactMediaProcessing",
+          [
+            [
+              "connect",
+              "StartContactMediaProcessing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StopContactMediaProcessing",
+          [
+            [
+              "connect",
+              "StopContactMediaProcessing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateDataTableAttribute",
+          [
+            [
+              "connect",
+              "UpdateDataTableAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateDataTableMetadata",
+          [
+            [
+              "connect",
+              "UpdateDataTableMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateDataTablePrimaryValues",
+          [
+            [
+              "connect",
+              "UpdateDataTablePrimaryValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateWorkspaceMetadata",
+          [
+            [
+              "connect",
+              "UpdateWorkspaceMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateWorkspacePage",
+          [
+            [
+              "connect",
+              "UpdateWorkspacePage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateWorkspaceTheme",
+          [
+            [
+              "connect",
+              "UpdateWorkspaceTheme"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateWorkspaceVisibility",
+          [
+            [
+              "connect",
+              "UpdateWorkspaceVisibility"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "EvaluateDataTableValuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "EvaluateDataTableValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListDataTableAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListDataTableAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListDataTablePrimaryValuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListDataTablePrimaryValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListDataTableValuesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListDataTableValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListDataTablesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListDataTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListWorkspacePagesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListWorkspacePages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListWorkspacesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListWorkspaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchDataTablesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchDataTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchViewsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchViews"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchWorkspaceAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchWorkspaceAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchWorkspacesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchWorkspaces"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.149.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.149.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.150.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.151.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.152.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.154.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListEntitySecurityProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListEntitySecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityProfileFlowModulesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityProfileFlowModules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.154.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.155.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateHoursOfOperations",
+          [
+            [
+              "connect",
+              "AssociateHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateHoursOfOperations",
+          [
+            [
+              "connect",
+              "DisassociateHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListChildHoursOfOperations",
+          [
+            [
+              "connect",
+              "ListChildHoursOfOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListChildHoursOfOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListChildHoursOfOperations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.156.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.157.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateTestCase",
+          [
+            [
+              "connect",
+              "CreateTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteTestCase",
+          [
+            [
+              "connect",
+              "DeleteTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeTestCase",
+          [
+            [
+              "connect",
+              "DescribeTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetTestCaseExecutionSummary",
+          [
+            [
+              "connect",
+              "GetTestCaseExecutionSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTestCaseExecutionRecords",
+          [
+            [
+              "connect",
+              "ListTestCaseExecutionRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTestCaseExecutions",
+          [
+            [
+              "connect",
+              "ListTestCaseExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListTestCases",
+          [
+            [
+              "connect",
+              "ListTestCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchTestCases",
+          [
+            [
+              "connect",
+              "SearchTestCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartTestCaseExecution",
+          [
+            [
+              "connect",
+              "StartTestCaseExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StopTestCaseExecution",
+          [
+            [
+              "connect",
+              "StopTestCaseExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateTestCase",
+          [
+            [
+              "connect",
+              "UpdateTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListTestCasesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListTestCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchTestCasesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchTestCases"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.158.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.159.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.160.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.161.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserConfig",
+          [
+            [
+              "connect",
+              "UpdateUserConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.162.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateNotification",
+          [
+            [
+              "connect",
+              "CreateNotification"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteNotification",
+          [
+            [
+              "connect",
+              "DeleteNotification"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeNotification",
+          [
+            [
+              "connect",
+              "DescribeNotification"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListNotifications",
+          [
+            [
+              "connect",
+              "ListNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListUserNotifications",
+          [
+            [
+              "connect",
+              "ListUserNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchNotifications",
+          [
+            [
+              "connect",
+              "SearchNotifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateNotificationContent",
+          [
+            [
+              "connect",
+              "UpdateNotificationContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateUserNotificationStatus",
+          [
+            [
+              "connect",
+              "UpdateUserNotificationStatus"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.162.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.162.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.163.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.164.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "AssociateQueueEmailAddresses",
+          [
+            [
+              "connect",
+              "AssociateQueueEmailAddresses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DisassociateQueueEmailAddresses",
+          [
+            [
+              "connect",
+              "DisassociateQueueEmailAddresses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListQueueEmailAddresses",
+          [
+            [
+              "connect",
+              "ListQueueEmailAddresses"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.165.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.166.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.166.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.167.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.168.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.169.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.170.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.171.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.172.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeAttachedFilesConfiguration",
+          [
+            [
+              "connect",
+              "DescribeAttachedFilesConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListAttachedFilesConfigurations",
+          [
+            [
+              "connect",
+              "ListAttachedFilesConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateAttachedFilesConfiguration",
+          [
+            [
+              "connect",
+              "UpdateAttachedFilesConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListAttachedFilesConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListAttachedFilesConfigurations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.172.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.173.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.174.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.176.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.176.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.176.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.177.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetEvaluationFormValidation",
+          [
+            [
+              "connect",
+              "GetEvaluationFormValidation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartEvaluationFormValidation",
+          [
+            [
+              "connect",
+              "StartEvaluationFormValidation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.177.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.178.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateAttachedFile",
+          [
+            [
+              "connect",
+              "CreateAttachedFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartContactConversationalAnalyticsJob",
+          [
+            [
+              "connect",
+              "StartContactConversationalAnalyticsJob"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.179.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SendOutboundWebNotification",
+          [
+            [
+              "connect",
+              "SendOutboundWebNotification"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.180.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.181.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateAuthCode",
+          [
+            [
+              "connect",
+              "CreateAuthCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteSession",
+          [
+            [
+              "connect",
+              "DeleteSession"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.182.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactData",
+          [
+            [
+              "connect",
+              "DeleteContactData"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.182.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.183.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchRules",
+          [
+            [
+              "connect",
+              "SearchRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchRulesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.184.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.184.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.184.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.184.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.184.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.185.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactTaskTemplate",
+          [
+            [
+              "connect",
+              "UpdateContactTaskTemplate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.186.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.187.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateMetric",
+          [
+            [
+              "connect",
+              "CreateMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteMetric",
+          [
+            [
+              "connect",
+              "DeleteMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeMetric",
+          [
+            [
+              "connect",
+              "DescribeMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListMetrics",
+          [
+            [
+              "connect",
+              "ListMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "SearchMetrics",
+          [
+            [
+              "connect",
+              "SearchMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateMetricContent",
+          [
+            [
+              "connect",
+              "UpdateMetricContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateMetricMetadata",
+          [
+            [
+              "connect",
+              "UpdateMetricMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "SearchMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "SearchMetrics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.188.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "StartAssistantContact",
+          [
+            [
+              "connect",
+              "StartAssistantContact"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.188.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.189.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateExtractionDefinition",
+          [
+            [
+              "connect",
+              "CreateExtractionDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteExtractionDefinition",
+          [
+            [
+              "connect",
+              "DeleteExtractionDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeExtractionDefinition",
+          [
+            [
+              "connect",
+              "DescribeExtractionDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListExtractionDefinitions",
+          [
+            [
+              "connect",
+              "ListExtractionDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateExtractionDefinition",
+          [
+            [
+              "connect",
+              "UpdateExtractionDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListExtractionDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListExtractionDefinitions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.189.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.190.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.190.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.191.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.192.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.192.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.193.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "GetCrossRegionRouting",
+          [
+            [
+              "connect",
+              "GetCrossRegionRouting"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateCrossRegionRouting",
+          [
+            [
+              "connect",
+              "UpdateCrossRegionRouting"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.194.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.195.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.196.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.197.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.198.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListEvaluationFormAIVersions",
+          [
+            [
+              "connect",
+              "ListEvaluationFormAIVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.199.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.200.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.201.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListSecurityProfileAIAgents",
+          [
+            [
+              "connect",
+              "ListSecurityProfileAIAgents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListSecurityProfileAIAgentsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListSecurityProfileAIAgents"
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

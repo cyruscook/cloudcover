@@ -28,27 +28,13 @@
       "data_source",
       "aws_ec2_capacity_block_reservation",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeCapacityReservations"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_pinpointsmsvoicev2_pool",
       "list",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribePools"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "ListPoolOriginationIdentities"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -229,10 +215,6 @@
       [
         [
           "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
-        [
-          "pinpointsmsvoicev2",
           "DisassociateOriginationIdentity"
         ],
         [
@@ -256,22 +238,6 @@
         ],
         [
           "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribePools"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribeSenderIds"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "ListPoolOriginationIdentities"
-        ],
-        [
-          "pinpointsmsvoicev2",
           "UpdatePool"
         ]
       ]
@@ -284,10 +250,6 @@
         [
           "pinpointsmsvoicev2",
           "DeletePool"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribePools"
         ]
       ]
     ],
@@ -295,16 +257,7 @@
       "resource",
       "aws_pinpointsmsvoicev2_pool",
       "read",
-      [
-        [
-          "pinpointsmsvoicev2",
-          "DescribePools"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "ListPoolOriginationIdentities"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -317,23 +270,7 @@
         ],
         [
           "pinpointsmsvoicev2",
-          "DescribePhoneNumbers"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribePools"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "DescribeSenderIds"
-        ],
-        [
-          "pinpointsmsvoicev2",
           "DisassociateOriginationIdentity"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "ListPoolOriginationIdentities"
         ],
         [
           "pinpointsmsvoicev2",

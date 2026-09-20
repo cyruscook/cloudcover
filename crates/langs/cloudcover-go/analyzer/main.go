@@ -30,8 +30,20 @@ type method struct {
 	Name     string  `json:"name"`
 }
 
+type moduleReplacement struct {
+	Path    string `json:"path"`
+	Version string `json:"version,omitempty"`
+}
+
+type module struct {
+	Path    string             `json:"path"`
+	Version string             `json:"version"`
+	Replace *moduleReplacement `json:"replace,omitempty"`
+}
+
 type successResponse struct {
 	Methods []method `json:"methods"`
+	Modules []module `json:"modules"`
 }
 
 type errorResponse struct {
@@ -44,11 +56,11 @@ func CloudCoverAnalyzeGo(path *C.char) *C.char {
 		return mustCString(marshalError("path is required"))
 	}
 	dir := C.GoString(path)
-	methods, err := analyzeDir(dir)
+	methods, modules, err := analyzeDir(dir)
 	if err != nil {
 		return mustCString(marshalError(err.Error()))
 	}
-	payload, marshalErr := json.Marshal(successResponse{Methods: methods})
+	payload, marshalErr := json.Marshal(successResponse{Methods: methods, Modules: modules})
 	if marshalErr != nil {
 		return mustCString(marshalError(marshalErr.Error()))
 	}
@@ -62,24 +74,28 @@ func CloudCoverFreeCString(ptr *C.char) {
 	}
 }
 
-func analyzeDir(dir string) ([]method, error) {
+func analyzeDir(dir string) ([]method, []module, error) {
 	initial, err := packages.Load(&packages.Config{
-		Mode:  packages.LoadAllSyntax,
+		Mode:  packages.LoadAllSyntax | packages.NeedModule,
 		Dir:   dir,
 		Tests: false,
 	}, "./...")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 
 	loadErrors := make([]string, 0)
+	modulesByPath := make(map[string]module)
 	packages.Visit(initial, nil, func(pkg *packages.Package) {
 		for _, pkgErr := range pkg.Errors {
 			loadErrors = append(loadErrors, pkgErr.Error())
 		}
+		if pkg.Module != nil && !pkg.Module.Main {
+			modulesByPath[pkg.Module.Path] = resolvedModule(pkg.Module)
+		}
 	})
 	if len(loadErrors) > 0 {
-		return nil, stringError(strings.Join(loadErrors, "; "))
+		return nil, nil, stringError(strings.Join(loadErrors, "; "))
 	}
 
 	prog, ssaPackages := ssautil.AllPackages(initial, ssa.InstantiateGenerics)
@@ -98,12 +114,47 @@ func analyzeDir(dir string) ([]method, error) {
 		return nil
 	})
 	if visitErr != nil {
-		return nil, visitErr
+		return nil, nil, visitErr
 	}
 
 	slices.SortFunc(methods, compareMethods)
-	methods = slices.Compact(methods)
-	return methods, nil
+	methods = slices.CompactFunc(methods, func(left, right method) bool {
+		return compareMethods(left, right) == 0
+	})
+	modules := make([]module, 0, len(modulesByPath))
+	for _, dependency := range modulesByPath {
+		modules = append(modules, dependency)
+	}
+	slices.SortFunc(modules, compareModules)
+	return methods, modules, nil
+}
+
+func resolvedModule(value *packages.Module) module {
+	result := module{Path: value.Path, Version: value.Version}
+	if value.Replace != nil {
+		result.Replace = &moduleReplacement{
+			Path:    value.Replace.Path,
+			Version: value.Replace.Version,
+		}
+	}
+	return result
+}
+
+func compareModules(left, right module) int {
+	if cmp := compareStrings(left.Path, right.Path); cmp != 0 {
+		return cmp
+	}
+	return compareStrings(left.Version, right.Version)
+}
+
+func compareStrings(left, right string) int {
+	if left < right {
+		return -1
+	}
+	if left > right {
+		return 1
+	}
+	return 0
 }
 
 func edgeToMethod(edge *callgraph.Edge) (method, bool) {

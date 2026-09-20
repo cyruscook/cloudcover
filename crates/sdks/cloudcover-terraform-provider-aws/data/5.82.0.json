@@ -4,25 +4,6 @@
   "upsert": [
     [
       "resource",
-      "aws_memorydb_cluster",
-      "create",
-      [
-        [
-          "memorydb",
-          "CreateCluster"
-        ],
-        [
-          "memorydb",
-          "DescribeClusters"
-        ],
-        [
-          "memorydb",
-          "DescribeMultiRegionClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_networkmanager_attachment_accepter",
       "create",
       [

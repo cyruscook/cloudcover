@@ -5,7 +5,7 @@ use std::{
 
 use cloudcover_aws::AwsProvider;
 use cloudcover_core::{
-    ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, Sdk,
+    ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, ResolvedSdk, Sdk,
     TerraformMethodReference,
 };
 
@@ -26,10 +26,13 @@ pub(crate) fn build_policy(
 
 fn build_go_policy(path: OsString) -> Result<serde_json::Value, CliError> {
     let provider = AwsProvider::new();
-    let sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
+    let analysis = cloudcover_go::analyze_dir(path)
+        .map_err(|error| CliError::Runtime(format!("failed to analyze Go code: {error}")))?;
+    let resolved_sdk = ResolvedSdk::new(Sdk::new("aws-sdk-go-v2", Language::Go))
+        .with_modules(analysis.modules().iter().cloned());
     let mut methods_by_sdk = BTreeMap::<(String, Option<String>, String), Vec<ApiMethod>>::new();
     for mapping in provider
-        .sdk_method_mappings(&sdk)
+        .sdk_method_mappings(&resolved_sdk)
         .map_err(|error| CliError::Runtime(error.to_string()))?
     {
         let MethodReference::Go(go_method) = mapping.method() else {
@@ -42,10 +45,8 @@ fn build_go_policy(path: OsString) -> Result<serde_json::Value, CliError> {
     }
 
     let mut api_methods = BTreeSet::new();
-    for go_method in cloudcover_go::analyze_dir(path)
-        .map_err(|error| CliError::Runtime(format!("failed to analyze Go code: {error}")))?
-    {
-        if let Some(mapped_methods) = methods_by_sdk.get(&go_method_key(&go_method)) {
+    for go_method in analysis.methods() {
+        if let Some(mapped_methods) = methods_by_sdk.get(&go_method_key(go_method)) {
             api_methods.extend(mapped_methods.iter().cloned());
         }
     }
@@ -60,9 +61,10 @@ fn build_terraform_policy(path: &OsString) -> Result<serde_json::Value, CliError
         .map_err(|error| CliError::Runtime(format!("failed to analyze Terraform code: {error}")))?;
     let sdk = Sdk::new("terraform-provider-aws", Language::Terraform)
         .with_version(analysis.provider_version());
+    let resolved_sdk = ResolvedSdk::new(sdk);
     let mut methods_by_reference = BTreeMap::<(String, String, String), Vec<ApiMethod>>::new();
     for mapping in provider
-        .sdk_method_mappings(&sdk)
+        .sdk_method_mappings(&resolved_sdk)
         .map_err(|error| CliError::Runtime(error.to_string()))?
     {
         let MethodReference::Terraform(terraform_method) = mapping.method() else {

@@ -1,0 +1,2471 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/s3control",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateAccessPoint",
+          [
+            [
+              "s3control",
+              "CreateAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateBucket",
+          [
+            [
+              "s3control",
+              "CreateBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateJob",
+          [
+            [
+              "s3control",
+              "CreateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessPoint",
+          [
+            [
+              "s3control",
+              "DeleteAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessPointPolicy",
+          [
+            [
+              "s3control",
+              "DeleteAccessPointPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteBucket",
+          [
+            [
+              "s3control",
+              "DeleteBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteBucketLifecycleConfiguration",
+          [
+            [
+              "s3control",
+              "DeleteBucketLifecycleConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteBucketPolicy",
+          [
+            [
+              "s3control",
+              "DeleteBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteBucketTagging",
+          [
+            [
+              "s3control",
+              "DeleteBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteJobTagging",
+          [
+            [
+              "s3control",
+              "DeleteJobTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeletePublicAccessBlock",
+          [
+            [
+              "s3control",
+              "DeletePublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DescribeJob",
+          [
+            [
+              "s3control",
+              "DescribeJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPoint",
+          [
+            [
+              "s3control",
+              "GetAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointPolicy",
+          [
+            [
+              "s3control",
+              "GetAccessPointPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointPolicyStatus",
+          [
+            [
+              "s3control",
+              "GetAccessPointPolicyStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucket",
+          [
+            [
+              "s3control",
+              "GetBucket"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucketLifecycleConfiguration",
+          [
+            [
+              "s3control",
+              "GetBucketLifecycleConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucketPolicy",
+          [
+            [
+              "s3control",
+              "GetBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucketTagging",
+          [
+            [
+              "s3control",
+              "GetBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetJobTagging",
+          [
+            [
+              "s3control",
+              "GetJobTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetPublicAccessBlock",
+          [
+            [
+              "s3control",
+              "GetPublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessPoints",
+          [
+            [
+              "s3control",
+              "ListAccessPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListJobs",
+          [
+            [
+              "s3control",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListRegionalBuckets",
+          [
+            [
+              "s3control",
+              "ListRegionalBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutAccessPointPolicy",
+          [
+            [
+              "s3control",
+              "PutAccessPointPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutBucketLifecycleConfiguration",
+          [
+            [
+              "s3control",
+              "PutBucketLifecycleConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutBucketPolicy",
+          [
+            [
+              "s3control",
+              "PutBucketPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutBucketTagging",
+          [
+            [
+              "s3control",
+              "PutBucketTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutJobTagging",
+          [
+            [
+              "s3control",
+              "PutJobTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutPublicAccessBlock",
+          [
+            [
+              "s3control",
+              "PutPublicAccessBlock"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "UpdateJobPriority",
+          [
+            [
+              "s3control",
+              "UpdateJobPriority"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "UpdateJobStatus",
+          [
+            [
+              "s3control",
+              "UpdateJobStatus"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteStorageLensConfiguration",
+          [
+            [
+              "s3control",
+              "DeleteStorageLensConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteStorageLensConfigurationTagging",
+          [
+            [
+              "s3control",
+              "DeleteStorageLensConfigurationTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetStorageLensConfiguration",
+          [
+            [
+              "s3control",
+              "GetStorageLensConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetStorageLensConfigurationTagging",
+          [
+            [
+              "s3control",
+              "GetStorageLensConfigurationTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListStorageLensConfigurations",
+          [
+            [
+              "s3control",
+              "ListStorageLensConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutStorageLensConfiguration",
+          [
+            [
+              "s3control",
+              "PutStorageLensConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutStorageLensConfigurationTagging",
+          [
+            [
+              "s3control",
+              "PutStorageLensConfigurationTagging"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessPointsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListJobsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListRegionalBucketsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListRegionalBuckets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateAccessPointForObjectLambda",
+          [
+            [
+              "s3control",
+              "CreateAccessPointForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessPointForObjectLambda",
+          [
+            [
+              "s3control",
+              "DeleteAccessPointForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessPointPolicyForObjectLambda",
+          [
+            [
+              "s3control",
+              "DeleteAccessPointPolicyForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointConfigurationForObjectLambda",
+          [
+            [
+              "s3control",
+              "GetAccessPointConfigurationForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointForObjectLambda",
+          [
+            [
+              "s3control",
+              "GetAccessPointForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointPolicyForObjectLambda",
+          [
+            [
+              "s3control",
+              "GetAccessPointPolicyForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointPolicyStatusForObjectLambda",
+          [
+            [
+              "s3control",
+              "GetAccessPointPolicyStatusForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessPointsForObjectLambda",
+          [
+            [
+              "s3control",
+              "ListAccessPointsForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutAccessPointConfigurationForObjectLambda",
+          [
+            [
+              "s3control",
+              "PutAccessPointConfigurationForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutAccessPointPolicyForObjectLambda",
+          [
+            [
+              "s3control",
+              "PutAccessPointPolicyForObjectLambda"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessPointsForObjectLambdaPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessPointsForObjectLambda"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListStorageLensConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListStorageLensConfigurations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateMultiRegionAccessPoint",
+          [
+            [
+              "s3control",
+              "CreateMultiRegionAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteMultiRegionAccessPoint",
+          [
+            [
+              "s3control",
+              "DeleteMultiRegionAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DescribeMultiRegionAccessPointOperation",
+          [
+            [
+              "s3control",
+              "DescribeMultiRegionAccessPointOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetMultiRegionAccessPoint",
+          [
+            [
+              "s3control",
+              "GetMultiRegionAccessPoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetMultiRegionAccessPointPolicy",
+          [
+            [
+              "s3control",
+              "GetMultiRegionAccessPointPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetMultiRegionAccessPointPolicyStatus",
+          [
+            [
+              "s3control",
+              "GetMultiRegionAccessPointPolicyStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListMultiRegionAccessPoints",
+          [
+            [
+              "s3control",
+              "ListMultiRegionAccessPoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutMultiRegionAccessPointPolicy",
+          [
+            [
+              "s3control",
+              "PutMultiRegionAccessPointPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListMultiRegionAccessPointsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListMultiRegionAccessPoints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucketVersioning",
+          [
+            [
+              "s3control",
+              "GetBucketVersioning"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutBucketVersioning",
+          [
+            [
+              "s3control",
+              "PutBucketVersioning"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetMultiRegionAccessPointRoutes",
+          [
+            [
+              "s3control",
+              "GetMultiRegionAccessPointRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "SubmitMultiRegionAccessPointRoutes",
+          [
+            [
+              "s3control",
+              "SubmitMultiRegionAccessPointRoutes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteBucketReplication",
+          [
+            [
+              "s3control",
+              "DeleteBucketReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetBucketReplication",
+          [
+            [
+              "s3control",
+              "GetBucketReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutBucketReplication",
+          [
+            [
+              "s3control",
+              "PutBucketReplication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateStorageLensGroup",
+          [
+            [
+              "s3control",
+              "CreateStorageLensGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteStorageLensGroup",
+          [
+            [
+              "s3control",
+              "DeleteStorageLensGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetStorageLensGroup",
+          [
+            [
+              "s3control",
+              "GetStorageLensGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListStorageLensGroups",
+          [
+            [
+              "s3control",
+              "ListStorageLensGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "s3control",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "TagResource",
+          [
+            [
+              "s3control",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "s3control",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "UpdateStorageLensGroup",
+          [
+            [
+              "s3control",
+              "UpdateStorageLensGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListStorageLensGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListStorageLensGroups"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "AssociateAccessGrantsIdentityCenter",
+          [
+            [
+              "s3control",
+              "AssociateAccessGrantsIdentityCenter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateAccessGrant",
+          [
+            [
+              "s3control",
+              "CreateAccessGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateAccessGrantsInstance",
+          [
+            [
+              "s3control",
+              "CreateAccessGrantsInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "CreateAccessGrantsLocation",
+          [
+            [
+              "s3control",
+              "CreateAccessGrantsLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessGrant",
+          [
+            [
+              "s3control",
+              "DeleteAccessGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessGrantsInstance",
+          [
+            [
+              "s3control",
+              "DeleteAccessGrantsInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessGrantsInstanceResourcePolicy",
+          [
+            [
+              "s3control",
+              "DeleteAccessGrantsInstanceResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessGrantsLocation",
+          [
+            [
+              "s3control",
+              "DeleteAccessGrantsLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DissociateAccessGrantsIdentityCenter",
+          [
+            [
+              "s3control",
+              "DissociateAccessGrantsIdentityCenter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessGrant",
+          [
+            [
+              "s3control",
+              "GetAccessGrant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessGrantsInstance",
+          [
+            [
+              "s3control",
+              "GetAccessGrantsInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessGrantsInstanceForPrefix",
+          [
+            [
+              "s3control",
+              "GetAccessGrantsInstanceForPrefix"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessGrantsInstanceResourcePolicy",
+          [
+            [
+              "s3control",
+              "GetAccessGrantsInstanceResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessGrantsLocation",
+          [
+            [
+              "s3control",
+              "GetAccessGrantsLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetDataAccess",
+          [
+            [
+              "s3control",
+              "GetDataAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessGrants",
+          [
+            [
+              "s3control",
+              "ListAccessGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessGrantsInstances",
+          [
+            [
+              "s3control",
+              "ListAccessGrantsInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessGrantsLocations",
+          [
+            [
+              "s3control",
+              "ListAccessGrantsLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutAccessGrantsInstanceResourcePolicy",
+          [
+            [
+              "s3control",
+              "PutAccessGrantsInstanceResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "UpdateAccessGrantsLocation",
+          [
+            [
+              "s3control",
+              "UpdateAccessGrantsLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessGrantsInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessGrantsInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessGrantsLocationsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessGrantsLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessGrantsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessGrants"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListCallerAccessGrants",
+          [
+            [
+              "s3control",
+              "ListCallerAccessGrants"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListCallerAccessGrantsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListCallerAccessGrants"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "DeleteAccessPointScope",
+          [
+            [
+              "s3control",
+              "DeleteAccessPointScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "GetAccessPointScope",
+          [
+            [
+              "s3control",
+              "GetAccessPointScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "ListAccessPointsForDirectoryBuckets",
+          [
+            [
+              "s3control",
+              "ListAccessPointsForDirectoryBuckets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "Client",
+          "PutAccessPointScope",
+          [
+            [
+              "s3control",
+              "PutAccessPointScope"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3control",
+          "ListAccessPointsForDirectoryBucketsPaginator",
+          "NextPage",
+          [
+            [
+              "s3control",
+              "ListAccessPointsForDirectoryBuckets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

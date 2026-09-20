@@ -1,48 +1,4 @@
 {
   "provider_version": "1.51.0",
-  "remove": [],
-  "upsert": [
-    [
-      "resource",
-      "aws_appmesh_mesh",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_mesh",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_mesh",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_appmesh_virtual_router",
-      "update",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

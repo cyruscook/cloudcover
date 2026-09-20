@@ -6,23 +6,13 @@
       "data_source",
       "aws_iam_role_policies",
       "read",
-      [
-        [
-          "iam",
-          "ListRolePolicies"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_iam_role_policy_attachments",
       "read",
-      [
-        [
-          "iam",
-          "ListAttachedRolePolicies"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -39,12 +29,7 @@
       "data_source",
       "aws_uxc_services",
       "read",
-      [
-        [
-          "uxc",
-          "ListServices"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -54,10 +39,6 @@
         [
           "eks",
           "DescribeCluster"
-        ],
-        [
-          "eks",
-          "ListClusters"
         ]
       ]
     ],
@@ -65,12 +46,7 @@
       "list_resource",
       "aws_organizations_aws_service_access",
       "list",
-      [
-        [
-          "organizations",
-          "ListAWSServiceAccessForOrganization"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -80,10 +56,6 @@
         [
           "sagemaker",
           "DescribeTrainingJob"
-        ],
-        [
-          "sagemaker",
-          "ListTrainingJobs"
         ]
       ]
     ],
@@ -95,10 +67,6 @@
         [
           "workmail",
           "DescribeGroup"
-        ],
-        [
-          "workmail",
-          "ListGroups"
         ]
       ]
     ],
@@ -110,10 +78,6 @@
         [
           "workmail",
           "DescribeUser"
-        ],
-        [
-          "workmail",
-          "ListUsers"
         ]
       ]
     ],
@@ -125,10 +89,6 @@
         [
           "organizations",
           "EnableAWSServiceAccess"
-        ],
-        [
-          "organizations",
-          "ListAWSServiceAccessForOrganization"
         ]
       ]
     ],
@@ -147,12 +107,7 @@
       "resource",
       "aws_organizations_aws_service_access",
       "read",
-      [
-        [
-          "organizations",
-          "ListAWSServiceAccessForOrganization"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -191,10 +146,6 @@
         [
           "sagemaker",
           "DescribeTrainingJob"
-        ],
-        [
-          "sagemaker",
-          "ListModelPackages"
         ],
         [
           "sagemaker",

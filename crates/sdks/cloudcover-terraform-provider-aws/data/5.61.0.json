@@ -111,10 +111,69 @@
       "data_source",
       "aws_ecr_repository_creation_template",
       "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_instance_automated_backups_replication",
+      "create",
       [
         [
-          "ecr",
-          "DescribeRepositoryCreationTemplates"
+          "rds",
+          "StartDBInstanceAutomatedBackupsReplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_instance_automated_backups_replication",
+      "delete",
+      [
+        [
+          "rds",
+          "DescribeDBInstances"
+        ],
+        [
+          "rds",
+          "StopDBInstanceAutomatedBackupsReplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_instance_automated_backups_replication",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_option_group",
+      "create",
+      [
+        [
+          "rds",
+          "CreateOptionGroup"
+        ],
+        [
+          "rds",
+          "ModifyOptionGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_db_option_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_db_option_group",
+      "update",
+      [
+        [
+          "rds",
+          "ModifyOptionGroup"
         ]
       ]
     ],
@@ -126,10 +185,6 @@
         [
           "ecr",
           "CreateRepositoryCreationTemplate"
-        ],
-        [
-          "ecr",
-          "DescribeRepositoryCreationTemplates"
         ]
       ]
     ],
@@ -148,12 +203,7 @@
       "resource",
       "aws_ecr_repository_creation_template",
       "read",
-      [
-        [
-          "ecr",
-          "DescribeRepositoryCreationTemplates"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -162,13 +212,71 @@
       [
         [
           "ecr",
-          "DescribeRepositoryCreationTemplates"
-        ],
-        [
-          "ecr",
           "UpdateRepositoryCreationTemplate"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_rds_custom_db_engine_version",
+      "create",
+      [
+        [
+          "rds",
+          "CreateCustomDBEngineVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_custom_db_engine_version",
+      "delete",
+      [
+        [
+          "rds",
+          "DeleteCustomDBEngineVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rds_custom_db_engine_version",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_rds_custom_db_engine_version",
+      "update",
+      [
+        [
+          "rds",
+          "ModifyCustomDBEngineVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_storagegateway_tape_pool",
+      "create",
+      [
+        [
+          "storagegateway",
+          "CreateTapePool"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_storagegateway_tape_pool",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_storagegateway_tape_pool",
+      "update",
+      []
     ]
   ]
 }

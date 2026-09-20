@@ -58,10 +58,6 @@
         [
           "kafka",
           "GetBootstrapBrokers"
-        ],
-        [
-          "kafka",
-          "ListClusters"
         ]
       ]
     ],
@@ -73,10 +69,6 @@
         [
           "kafka",
           "GetBootstrapBrokers"
-        ],
-        [
-          "kafka",
-          "ListClustersV2"
         ]
       ]
     ],
@@ -88,10 +80,6 @@
         [
           "kafka",
           "DescribeTopic"
-        ],
-        [
-          "kafka",
-          "ListTopics"
         ]
       ]
     ],
@@ -99,16 +87,7 @@
       "list_resource",
       "aws_route53_resolver_rule",
       "list",
-      [
-        [
-          "route53resolver",
-          "ListResolverRules"
-        ],
-        [
-          "route53resolver",
-          "ListTagsForResource"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -118,10 +97,6 @@
         [
           "sagemaker",
           "DescribeAlgorithm"
-        ],
-        [
-          "sagemaker",
-          "ListAlgorithms"
         ]
       ]
     ],
@@ -141,10 +116,6 @@
         [
           "ssm",
           "GetDocument"
-        ],
-        [
-          "ssm",
-          "ListDocuments"
         ]
       ]
     ],
@@ -152,31 +123,13 @@
       "list_resource",
       "aws_ssoadmin_account_assignment",
       "list",
-      [
-        [
-          "ssoadmin",
-          "ListAccountAssignments"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_vpc_endpoint",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -186,10 +139,6 @@
         [
           "workmail",
           "GetMailDomain"
-        ],
-        [
-          "workmail",
-          "ListMailDomains"
         ]
       ]
     ],
@@ -361,59 +310,6 @@
     ],
     [
       "resource",
-      "aws_route53_resolver_rule",
-      "create",
-      [
-        [
-          "route53resolver",
-          "CreateResolverRule"
-        ],
-        [
-          "route53resolver",
-          "GetResolverRule"
-        ],
-        [
-          "route53resolver",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetResolverRule"
-        ],
-        [
-          "route53resolver",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_rule",
-      "update",
-      [
-        [
-          "route53resolver",
-          "GetResolverRule"
-        ],
-        [
-          "route53resolver",
-          "ListTagsForResource"
-        ],
-        [
-          "route53resolver",
-          "UpdateResolverRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_sagemaker_algorithm",
       "create",
       [
@@ -480,12 +376,7 @@
       "resource",
       "aws_workmail_default_domain",
       "read",
-      [
-        [
-          "workmail",
-          "ListMailDomains"
-        ]
-      ]
+      []
     ],
     [
       "resource",

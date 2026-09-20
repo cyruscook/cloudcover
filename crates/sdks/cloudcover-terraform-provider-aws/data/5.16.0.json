@@ -4,41 +4,9 @@
   "upsert": [
     [
       "data_source",
-      "aws_identitystore_group",
+      "aws_s3_objects",
       "read",
-      [
-        [
-          "identitystore",
-          "DescribeGroup"
-        ],
-        [
-          "identitystore",
-          "GetGroupId"
-        ],
-        [
-          "identitystore",
-          "ListGroups"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_identitystore_user",
-      "read",
-      [
-        [
-          "identitystore",
-          "DescribeUser"
-        ],
-        [
-          "identitystore",
-          "GetUserId"
-        ],
-        [
-          "identitystore",
-          "ListUsers"
-        ]
-      ]
+      []
     ],
     [
       "resource",

@@ -24,44 +24,6 @@
   ],
   "upsert": [
     [
-      "data_source",
-      "aws_identitystore_group",
-      "read",
-      [
-        [
-          "identitystore",
-          "DescribeGroup"
-        ],
-        [
-          "identitystore",
-          "GetGroupId"
-        ],
-        [
-          "identitystore",
-          "ListGroups"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_identitystore_user",
-      "read",
-      [
-        [
-          "identitystore",
-          "DescribeUser"
-        ],
-        [
-          "identitystore",
-          "GetUserId"
-        ],
-        [
-          "identitystore",
-          "ListUsers"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_datasync_location_object_storage",
       "create",

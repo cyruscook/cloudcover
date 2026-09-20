@@ -1,0 +1,2234 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/workmail",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "AssociateDelegateToResource",
+          [
+            [
+              "workmail",
+              "AssociateDelegateToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "AssociateMemberToGroup",
+          [
+            [
+              "workmail",
+              "AssociateMemberToGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateAlias",
+          [
+            [
+              "workmail",
+              "CreateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateGroup",
+          [
+            [
+              "workmail",
+              "CreateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateResource",
+          [
+            [
+              "workmail",
+              "CreateResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateUser",
+          [
+            [
+              "workmail",
+              "CreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteAlias",
+          [
+            [
+              "workmail",
+              "DeleteAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteGroup",
+          [
+            [
+              "workmail",
+              "DeleteGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteMailboxPermissions",
+          [
+            [
+              "workmail",
+              "DeleteMailboxPermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteResource",
+          [
+            [
+              "workmail",
+              "DeleteResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "workmail",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeregisterFromWorkMail",
+          [
+            [
+              "workmail",
+              "DeregisterFromWorkMail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeGroup",
+          [
+            [
+              "workmail",
+              "DescribeGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeOrganization",
+          [
+            [
+              "workmail",
+              "DescribeOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeResource",
+          [
+            [
+              "workmail",
+              "DescribeResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeUser",
+          [
+            [
+              "workmail",
+              "DescribeUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DisassociateDelegateFromResource",
+          [
+            [
+              "workmail",
+              "DisassociateDelegateFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DisassociateMemberFromGroup",
+          [
+            [
+              "workmail",
+              "DisassociateMemberFromGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetMailboxDetails",
+          [
+            [
+              "workmail",
+              "GetMailboxDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListAliases",
+          [
+            [
+              "workmail",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListGroupMembers",
+          [
+            [
+              "workmail",
+              "ListGroupMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListGroups",
+          [
+            [
+              "workmail",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListMailboxPermissions",
+          [
+            [
+              "workmail",
+              "ListMailboxPermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListOrganizations",
+          [
+            [
+              "workmail",
+              "ListOrganizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListResourceDelegates",
+          [
+            [
+              "workmail",
+              "ListResourceDelegates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListResources",
+          [
+            [
+              "workmail",
+              "ListResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListUsers",
+          [
+            [
+              "workmail",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutMailboxPermissions",
+          [
+            [
+              "workmail",
+              "PutMailboxPermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "RegisterToWorkMail",
+          [
+            [
+              "workmail",
+              "RegisterToWorkMail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ResetPassword",
+          [
+            [
+              "workmail",
+              "ResetPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateMailboxQuota",
+          [
+            [
+              "workmail",
+              "UpdateMailboxQuota"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdatePrimaryEmailAddress",
+          [
+            [
+              "workmail",
+              "UpdatePrimaryEmailAddress"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateResource",
+          [
+            [
+              "workmail",
+              "UpdateResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CancelMailboxExportJob",
+          [
+            [
+              "workmail",
+              "CancelMailboxExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateOrganization",
+          [
+            [
+              "workmail",
+              "CreateOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteAccessControlRule",
+          [
+            [
+              "workmail",
+              "DeleteAccessControlRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteOrganization",
+          [
+            [
+              "workmail",
+              "DeleteOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteRetentionPolicy",
+          [
+            [
+              "workmail",
+              "DeleteRetentionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeMailboxExportJob",
+          [
+            [
+              "workmail",
+              "DescribeMailboxExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetAccessControlEffect",
+          [
+            [
+              "workmail",
+              "GetAccessControlEffect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetDefaultRetentionPolicy",
+          [
+            [
+              "workmail",
+              "GetDefaultRetentionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListAccessControlRules",
+          [
+            [
+              "workmail",
+              "ListAccessControlRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListMailboxExportJobs",
+          [
+            [
+              "workmail",
+              "ListMailboxExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "workmail",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutAccessControlRule",
+          [
+            [
+              "workmail",
+              "PutAccessControlRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutRetentionPolicy",
+          [
+            [
+              "workmail",
+              "PutRetentionPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "StartMailboxExportJob",
+          [
+            [
+              "workmail",
+              "StartMailboxExportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "TagResource",
+          [
+            [
+              "workmail",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "workmail",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListGroupMembersPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListGroupMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListMailboxExportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListMailboxExportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListMailboxPermissionsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListMailboxPermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListOrganizationsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListOrganizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListResourceDelegatesPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListResourceDelegates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListUsersPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateMobileDeviceAccessRule",
+          [
+            [
+              "workmail",
+              "CreateMobileDeviceAccessRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteMobileDeviceAccessRule",
+          [
+            [
+              "workmail",
+              "DeleteMobileDeviceAccessRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetMobileDeviceAccessEffect",
+          [
+            [
+              "workmail",
+              "GetMobileDeviceAccessEffect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListMobileDeviceAccessRules",
+          [
+            [
+              "workmail",
+              "ListMobileDeviceAccessRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateMobileDeviceAccessRule",
+          [
+            [
+              "workmail",
+              "UpdateMobileDeviceAccessRule"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteMobileDeviceAccessOverride",
+          [
+            [
+              "workmail",
+              "DeleteMobileDeviceAccessOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetMobileDeviceAccessOverride",
+          [
+            [
+              "workmail",
+              "GetMobileDeviceAccessOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListMobileDeviceAccessOverrides",
+          [
+            [
+              "workmail",
+              "ListMobileDeviceAccessOverrides"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutMobileDeviceAccessOverride",
+          [
+            [
+              "workmail",
+              "PutMobileDeviceAccessOverride"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListMobileDeviceAccessOverridesPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListMobileDeviceAccessOverrides"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeInboundDmarcSettings",
+          [
+            [
+              "workmail",
+              "DescribeInboundDmarcSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutInboundDmarcSettings",
+          [
+            [
+              "workmail",
+              "PutInboundDmarcSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeregisterMailDomain",
+          [
+            [
+              "workmail",
+              "DeregisterMailDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetMailDomain",
+          [
+            [
+              "workmail",
+              "GetMailDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListMailDomains",
+          [
+            [
+              "workmail",
+              "ListMailDomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "RegisterMailDomain",
+          [
+            [
+              "workmail",
+              "RegisterMailDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateDefaultMailDomain",
+          [
+            [
+              "workmail",
+              "UpdateDefaultMailDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListMailDomainsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListMailDomains"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteEmailMonitoringConfiguration",
+          [
+            [
+              "workmail",
+              "DeleteEmailMonitoringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeEmailMonitoringConfiguration",
+          [
+            [
+              "workmail",
+              "DescribeEmailMonitoringConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutEmailMonitoringConfiguration",
+          [
+            [
+              "workmail",
+              "PutEmailMonitoringConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateAvailabilityConfiguration",
+          [
+            [
+              "workmail",
+              "CreateAvailabilityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteAvailabilityConfiguration",
+          [
+            [
+              "workmail",
+              "DeleteAvailabilityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListAvailabilityConfigurations",
+          [
+            [
+              "workmail",
+              "ListAvailabilityConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "TestAvailabilityConfiguration",
+          [
+            [
+              "workmail",
+              "TestAvailabilityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateAvailabilityConfiguration",
+          [
+            [
+              "workmail",
+              "UpdateAvailabilityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListAvailabilityConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListAvailabilityConfigurations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "AssumeImpersonationRole",
+          [
+            [
+              "workmail",
+              "AssumeImpersonationRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateImpersonationRole",
+          [
+            [
+              "workmail",
+              "CreateImpersonationRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteImpersonationRole",
+          [
+            [
+              "workmail",
+              "DeleteImpersonationRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetImpersonationRole",
+          [
+            [
+              "workmail",
+              "GetImpersonationRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetImpersonationRoleEffect",
+          [
+            [
+              "workmail",
+              "GetImpersonationRoleEffect"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListImpersonationRoles",
+          [
+            [
+              "workmail",
+              "ListImpersonationRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateImpersonationRole",
+          [
+            [
+              "workmail",
+              "UpdateImpersonationRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListImpersonationRolesPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListImpersonationRoles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeEntity",
+          [
+            [
+              "workmail",
+              "DescribeEntity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListGroupsForEntity",
+          [
+            [
+              "workmail",
+              "ListGroupsForEntity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateGroup",
+          [
+            [
+              "workmail",
+              "UpdateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "UpdateUser",
+          [
+            [
+              "workmail",
+              "UpdateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListGroupsForEntityPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListGroupsForEntity"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "CreateIdentityCenterApplication",
+          [
+            [
+              "workmail",
+              "CreateIdentityCenterApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteIdentityCenterApplication",
+          [
+            [
+              "workmail",
+              "DeleteIdentityCenterApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeleteIdentityProviderConfiguration",
+          [
+            [
+              "workmail",
+              "DeleteIdentityProviderConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DeletePersonalAccessToken",
+          [
+            [
+              "workmail",
+              "DeletePersonalAccessToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "DescribeIdentityProviderConfiguration",
+          [
+            [
+              "workmail",
+              "DescribeIdentityProviderConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "GetPersonalAccessTokenMetadata",
+          [
+            [
+              "workmail",
+              "GetPersonalAccessTokenMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "ListPersonalAccessTokens",
+          [
+            [
+              "workmail",
+              "ListPersonalAccessTokens"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "Client",
+          "PutIdentityProviderConfiguration",
+          [
+            [
+              "workmail",
+              "PutIdentityProviderConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workmail",
+          "ListPersonalAccessTokensPaginator",
+          "NextPage",
+          [
+            [
+              "workmail",
+              "ListPersonalAccessTokens"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

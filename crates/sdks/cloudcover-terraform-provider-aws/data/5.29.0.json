@@ -4,16 +4,18 @@
   "upsert": [
     [
       "data_source",
+      "aws_ssoadmin_instances",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_ssoadmin_permission_set",
       "read",
       [
         [
           "ssoadmin",
           "DescribePermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "ListPermissionSets"
         ],
         [
           "ssoadmin",
@@ -100,6 +102,77 @@
           "RejectAttachment"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_account_assignment",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "CreateAccountAssignment"
+        ],
+        [
+          "ssoadmin",
+          "DescribeAccountAssignmentCreationStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_account_assignment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_customer_managed_policy_attachment",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "AttachCustomerManagedPolicyReferenceToPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
+        ],
+        [
+          "ssoadmin",
+          "ProvisionPermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_customer_managed_policy_attachment",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachment",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "AttachManagedPolicyToPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
+        ],
+        [
+          "ssoadmin",
+          "ProvisionPermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_managed_policy_attachment",
+      "read",
+      []
     ],
     [
       "resource",

@@ -1,0 +1,2154 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "AcceptSharedDirectory",
+          [
+            [
+              "directoryservice",
+              "AcceptSharedDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "AddIpRoutes",
+          [
+            [
+              "directoryservice",
+              "AddIpRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "AddTagsToResource",
+          [
+            [
+              "directoryservice",
+              "AddTagsToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CancelSchemaExtension",
+          [
+            [
+              "directoryservice",
+              "CancelSchemaExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ConnectDirectory",
+          [
+            [
+              "directoryservice",
+              "ConnectDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateAlias",
+          [
+            [
+              "directoryservice",
+              "CreateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateComputer",
+          [
+            [
+              "directoryservice",
+              "CreateComputer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateConditionalForwarder",
+          [
+            [
+              "directoryservice",
+              "CreateConditionalForwarder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateDirectory",
+          [
+            [
+              "directoryservice",
+              "CreateDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateLogSubscription",
+          [
+            [
+              "directoryservice",
+              "CreateLogSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateMicrosoftAD",
+          [
+            [
+              "directoryservice",
+              "CreateMicrosoftAD"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateSnapshot",
+          [
+            [
+              "directoryservice",
+              "CreateSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateTrust",
+          [
+            [
+              "directoryservice",
+              "CreateTrust"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteConditionalForwarder",
+          [
+            [
+              "directoryservice",
+              "DeleteConditionalForwarder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteDirectory",
+          [
+            [
+              "directoryservice",
+              "DeleteDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteLogSubscription",
+          [
+            [
+              "directoryservice",
+              "DeleteLogSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteSnapshot",
+          [
+            [
+              "directoryservice",
+              "DeleteSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteTrust",
+          [
+            [
+              "directoryservice",
+              "DeleteTrust"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeregisterCertificate",
+          [
+            [
+              "directoryservice",
+              "DeregisterCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeregisterEventTopic",
+          [
+            [
+              "directoryservice",
+              "DeregisterEventTopic"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeCertificate",
+          [
+            [
+              "directoryservice",
+              "DescribeCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeConditionalForwarders",
+          [
+            [
+              "directoryservice",
+              "DescribeConditionalForwarders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeDirectories",
+          [
+            [
+              "directoryservice",
+              "DescribeDirectories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeDomainControllers",
+          [
+            [
+              "directoryservice",
+              "DescribeDomainControllers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeEventTopics",
+          [
+            [
+              "directoryservice",
+              "DescribeEventTopics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeLDAPSSettings",
+          [
+            [
+              "directoryservice",
+              "DescribeLDAPSSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeSharedDirectories",
+          [
+            [
+              "directoryservice",
+              "DescribeSharedDirectories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeSnapshots",
+          [
+            [
+              "directoryservice",
+              "DescribeSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeTrusts",
+          [
+            [
+              "directoryservice",
+              "DescribeTrusts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableLDAPS",
+          [
+            [
+              "directoryservice",
+              "DisableLDAPS"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableRadius",
+          [
+            [
+              "directoryservice",
+              "DisableRadius"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableSso",
+          [
+            [
+              "directoryservice",
+              "DisableSso"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableLDAPS",
+          [
+            [
+              "directoryservice",
+              "EnableLDAPS"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableRadius",
+          [
+            [
+              "directoryservice",
+              "EnableRadius"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableSso",
+          [
+            [
+              "directoryservice",
+              "EnableSso"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "GetDirectoryLimits",
+          [
+            [
+              "directoryservice",
+              "GetDirectoryLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "GetSnapshotLimits",
+          [
+            [
+              "directoryservice",
+              "GetSnapshotLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListCertificates",
+          [
+            [
+              "directoryservice",
+              "ListCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListIpRoutes",
+          [
+            [
+              "directoryservice",
+              "ListIpRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListLogSubscriptions",
+          [
+            [
+              "directoryservice",
+              "ListLogSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListSchemaExtensions",
+          [
+            [
+              "directoryservice",
+              "ListSchemaExtensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "directoryservice",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RegisterCertificate",
+          [
+            [
+              "directoryservice",
+              "RegisterCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RegisterEventTopic",
+          [
+            [
+              "directoryservice",
+              "RegisterEventTopic"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RejectSharedDirectory",
+          [
+            [
+              "directoryservice",
+              "RejectSharedDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RemoveIpRoutes",
+          [
+            [
+              "directoryservice",
+              "RemoveIpRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RemoveTagsFromResource",
+          [
+            [
+              "directoryservice",
+              "RemoveTagsFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ResetUserPassword",
+          [
+            [
+              "directoryservice",
+              "ResetUserPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RestoreFromSnapshot",
+          [
+            [
+              "directoryservice",
+              "RestoreFromSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ShareDirectory",
+          [
+            [
+              "directoryservice",
+              "ShareDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "StartSchemaExtension",
+          [
+            [
+              "directoryservice",
+              "StartSchemaExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UnshareDirectory",
+          [
+            [
+              "directoryservice",
+              "UnshareDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateConditionalForwarder",
+          [
+            [
+              "directoryservice",
+              "UpdateConditionalForwarder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateNumberOfDomainControllers",
+          [
+            [
+              "directoryservice",
+              "UpdateNumberOfDomainControllers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateRadius",
+          [
+            [
+              "directoryservice",
+              "UpdateRadius"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateTrust",
+          [
+            [
+              "directoryservice",
+              "UpdateTrust"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "VerifyTrust",
+          [
+            [
+              "directoryservice",
+              "VerifyTrust"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "AddRegion",
+          [
+            [
+              "directoryservice",
+              "AddRegion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeRegions",
+          [
+            [
+              "directoryservice",
+              "DescribeRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "RemoveRegion",
+          [
+            [
+              "directoryservice",
+              "RemoveRegion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeDomainControllersPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeDomainControllers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableClientAuthentication",
+          [
+            [
+              "directoryservice",
+              "DisableClientAuthentication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableClientAuthentication",
+          [
+            [
+              "directoryservice",
+              "EnableClientAuthentication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeClientAuthenticationSettings",
+          [
+            [
+              "directoryservice",
+              "DescribeClientAuthenticationSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeSettings",
+          [
+            [
+              "directoryservice",
+              "DescribeSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateSettings",
+          [
+            [
+              "directoryservice",
+              "UpdateSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeUpdateDirectory",
+          [
+            [
+              "directoryservice",
+              "DescribeUpdateDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateDirectorySetup",
+          [
+            [
+              "directoryservice",
+              "UpdateDirectorySetup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeClientAuthenticationSettingsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeClientAuthenticationSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeDirectoriesPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeDirectories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeLDAPSSettingsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeLDAPSSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeRegionsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeSharedDirectoriesPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeSharedDirectories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeTrustsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeTrusts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "DescribeUpdateDirectoryPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "DescribeUpdateDirectory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListIpRoutesPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListIpRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListLogSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListLogSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListSchemaExtensionsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListSchemaExtensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListTagsForResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeDirectoryDataAccess",
+          [
+            [
+              "directoryservice",
+              "DescribeDirectoryDataAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableDirectoryDataAccess",
+          [
+            [
+              "directoryservice",
+              "DisableDirectoryDataAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableDirectoryDataAccess",
+          [
+            [
+              "directoryservice",
+              "EnableDirectoryDataAccess"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "CreateHybridAD",
+          [
+            [
+              "directoryservice",
+              "CreateHybridAD"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DeleteADAssessment",
+          [
+            [
+              "directoryservice",
+              "DeleteADAssessment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeADAssessment",
+          [
+            [
+              "directoryservice",
+              "DescribeADAssessment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeHybridADUpdate",
+          [
+            [
+              "directoryservice",
+              "DescribeHybridADUpdate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "ListADAssessments",
+          [
+            [
+              "directoryservice",
+              "ListADAssessments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "StartADAssessment",
+          [
+            [
+              "directoryservice",
+              "StartADAssessment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "UpdateHybridAD",
+          [
+            [
+              "directoryservice",
+              "UpdateHybridAD"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "ListADAssessmentsPaginator",
+          "NextPage",
+          [
+            [
+              "directoryservice",
+              "ListADAssessments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DescribeCAEnrollmentPolicy",
+          [
+            [
+              "directoryservice",
+              "DescribeCAEnrollmentPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "DisableCAEnrollmentPolicy",
+          [
+            [
+              "directoryservice",
+              "DisableCAEnrollmentPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/directoryservice",
+          "Client",
+          "EnableCAEnrollmentPolicy",
+          [
+            [
+              "directoryservice",
+              "EnableCAEnrollmentPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

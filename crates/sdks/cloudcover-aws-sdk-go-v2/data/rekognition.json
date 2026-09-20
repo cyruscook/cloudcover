@@ -1,0 +1,2163 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/rekognition",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CompareFaces",
+          [
+            [
+              "rekognition",
+              "CompareFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateCollection",
+          [
+            [
+              "rekognition",
+              "CreateCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateProject",
+          [
+            [
+              "rekognition",
+              "CreateProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateProjectVersion",
+          [
+            [
+              "rekognition",
+              "CreateProjectVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateStreamProcessor",
+          [
+            [
+              "rekognition",
+              "CreateStreamProcessor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteCollection",
+          [
+            [
+              "rekognition",
+              "DeleteCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteFaces",
+          [
+            [
+              "rekognition",
+              "DeleteFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteProject",
+          [
+            [
+              "rekognition",
+              "DeleteProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteProjectVersion",
+          [
+            [
+              "rekognition",
+              "DeleteProjectVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteStreamProcessor",
+          [
+            [
+              "rekognition",
+              "DeleteStreamProcessor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DescribeCollection",
+          [
+            [
+              "rekognition",
+              "DescribeCollection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DescribeProjectVersions",
+          [
+            [
+              "rekognition",
+              "DescribeProjectVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DescribeProjects",
+          [
+            [
+              "rekognition",
+              "DescribeProjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DescribeStreamProcessor",
+          [
+            [
+              "rekognition",
+              "DescribeStreamProcessor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectCustomLabels",
+          [
+            [
+              "rekognition",
+              "DetectCustomLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectFaces",
+          [
+            [
+              "rekognition",
+              "DetectFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectLabels",
+          [
+            [
+              "rekognition",
+              "DetectLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectModerationLabels",
+          [
+            [
+              "rekognition",
+              "DetectModerationLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectText",
+          [
+            [
+              "rekognition",
+              "DetectText"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetCelebrityInfo",
+          [
+            [
+              "rekognition",
+              "GetCelebrityInfo"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetCelebrityRecognition",
+          [
+            [
+              "rekognition",
+              "GetCelebrityRecognition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetContentModeration",
+          [
+            [
+              "rekognition",
+              "GetContentModeration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetFaceDetection",
+          [
+            [
+              "rekognition",
+              "GetFaceDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetFaceSearch",
+          [
+            [
+              "rekognition",
+              "GetFaceSearch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetLabelDetection",
+          [
+            [
+              "rekognition",
+              "GetLabelDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetPersonTracking",
+          [
+            [
+              "rekognition",
+              "GetPersonTracking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetSegmentDetection",
+          [
+            [
+              "rekognition",
+              "GetSegmentDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetTextDetection",
+          [
+            [
+              "rekognition",
+              "GetTextDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "IndexFaces",
+          [
+            [
+              "rekognition",
+              "IndexFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListCollections",
+          [
+            [
+              "rekognition",
+              "ListCollections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListFaces",
+          [
+            [
+              "rekognition",
+              "ListFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListStreamProcessors",
+          [
+            [
+              "rekognition",
+              "ListStreamProcessors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "RecognizeCelebrities",
+          [
+            [
+              "rekognition",
+              "RecognizeCelebrities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "SearchFaces",
+          [
+            [
+              "rekognition",
+              "SearchFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "SearchFacesByImage",
+          [
+            [
+              "rekognition",
+              "SearchFacesByImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartCelebrityRecognition",
+          [
+            [
+              "rekognition",
+              "StartCelebrityRecognition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartContentModeration",
+          [
+            [
+              "rekognition",
+              "StartContentModeration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartFaceDetection",
+          [
+            [
+              "rekognition",
+              "StartFaceDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartFaceSearch",
+          [
+            [
+              "rekognition",
+              "StartFaceSearch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartLabelDetection",
+          [
+            [
+              "rekognition",
+              "StartLabelDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartPersonTracking",
+          [
+            [
+              "rekognition",
+              "StartPersonTracking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartProjectVersion",
+          [
+            [
+              "rekognition",
+              "StartProjectVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartSegmentDetection",
+          [
+            [
+              "rekognition",
+              "StartSegmentDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartStreamProcessor",
+          [
+            [
+              "rekognition",
+              "StartStreamProcessor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartTextDetection",
+          [
+            [
+              "rekognition",
+              "StartTextDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StopProjectVersion",
+          [
+            [
+              "rekognition",
+              "StopProjectVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StopStreamProcessor",
+          [
+            [
+              "rekognition",
+              "StopStreamProcessor"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DetectProtectiveEquipment",
+          [
+            [
+              "rekognition",
+              "DetectProtectiveEquipment"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "DescribeProjectVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "DescribeProjectVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "DescribeProjectsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "DescribeProjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetCelebrityRecognitionPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetCelebrityRecognition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetContentModerationPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetContentModeration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetFaceDetectionPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetFaceDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetFaceSearchPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetFaceSearch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetLabelDetectionPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetLabelDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetPersonTrackingPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetPersonTracking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetSegmentDetectionPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetSegmentDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "GetTextDetectionPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "GetTextDetection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListCollectionsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListCollections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListFacesPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListStreamProcessorsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListStreamProcessors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "rekognition",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "TagResource",
+          [
+            [
+              "rekognition",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "rekognition",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateDataset",
+          [
+            [
+              "rekognition",
+              "CreateDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteDataset",
+          [
+            [
+              "rekognition",
+              "DeleteDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DescribeDataset",
+          [
+            [
+              "rekognition",
+              "DescribeDataset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DistributeDatasetEntries",
+          [
+            [
+              "rekognition",
+              "DistributeDatasetEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListDatasetEntries",
+          [
+            [
+              "rekognition",
+              "ListDatasetEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListDatasetLabels",
+          [
+            [
+              "rekognition",
+              "ListDatasetLabels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "UpdateDatasetEntries",
+          [
+            [
+              "rekognition",
+              "UpdateDatasetEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListDatasetEntriesPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListDatasetEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListDatasetLabelsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListDatasetLabels"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "UpdateStreamProcessor",
+          [
+            [
+              "rekognition",
+              "UpdateStreamProcessor"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CopyProjectVersion",
+          [
+            [
+              "rekognition",
+              "CopyProjectVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteProjectPolicy",
+          [
+            [
+              "rekognition",
+              "DeleteProjectPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListProjectPolicies",
+          [
+            [
+              "rekognition",
+              "ListProjectPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "PutProjectPolicy",
+          [
+            [
+              "rekognition",
+              "PutProjectPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListProjectPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListProjectPolicies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateFaceLivenessSession",
+          [
+            [
+              "rekognition",
+              "CreateFaceLivenessSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetFaceLivenessSessionResults",
+          [
+            [
+              "rekognition",
+              "GetFaceLivenessSessionResults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "AssociateFaces",
+          [
+            [
+              "rekognition",
+              "AssociateFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "CreateUser",
+          [
+            [
+              "rekognition",
+              "CreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "rekognition",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "DisassociateFaces",
+          [
+            [
+              "rekognition",
+              "DisassociateFaces"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListUsers",
+          [
+            [
+              "rekognition",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "SearchUsers",
+          [
+            [
+              "rekognition",
+              "SearchUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "SearchUsersByImage",
+          [
+            [
+              "rekognition",
+              "SearchUsersByImage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListUsersPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "GetMediaAnalysisJob",
+          [
+            [
+              "rekognition",
+              "GetMediaAnalysisJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "ListMediaAnalysisJobs",
+          [
+            [
+              "rekognition",
+              "ListMediaAnalysisJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "Client",
+          "StartMediaAnalysisJob",
+          [
+            [
+              "rekognition",
+              "StartMediaAnalysisJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rekognition",
+          "ListMediaAnalysisJobsPaginator",
+          "NextPage",
+          [
+            [
+              "rekognition",
+              "ListMediaAnalysisJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.26",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

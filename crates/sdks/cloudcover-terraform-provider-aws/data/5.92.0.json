@@ -17,34 +17,19 @@
       "data_source",
       "aws_eks_cluster_versions",
       "read",
-      [
-        [
-          "eks",
-          "DescribeClusterVersions"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_identitystore_group_memberships",
       "read",
-      [
-        [
-          "identitystore",
-          "ListGroupMemberships"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
       "aws_identitystore_users",
       "read",
-      [
-        [
-          "identitystore",
-          "ListUsers"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -62,10 +47,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -101,10 +82,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -207,10 +184,6 @@
         ],
         [
           "elasticloadbalancingv2",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "elasticloadbalancingv2",
           "ModifyIpPools"
         ],
         [
@@ -243,10 +216,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",

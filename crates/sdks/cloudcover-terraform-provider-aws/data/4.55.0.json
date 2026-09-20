@@ -84,6 +84,21 @@
     ],
     [
       "resource",
+      "aws_route53_record",
+      "read",
+      [
+        [
+          "route53",
+          "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_vpc_ipam_resource_discovery",
       "create",
       [

@@ -1,0 +1,970 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/notifications",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "AssociateChannel",
+          [
+            [
+              "notifications",
+              "AssociateChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "CreateEventRule",
+          [
+            [
+              "notifications",
+              "CreateEventRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "CreateNotificationConfiguration",
+          [
+            [
+              "notifications",
+              "CreateNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DeleteEventRule",
+          [
+            [
+              "notifications",
+              "DeleteEventRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DeleteNotificationConfiguration",
+          [
+            [
+              "notifications",
+              "DeleteNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DeregisterNotificationHub",
+          [
+            [
+              "notifications",
+              "DeregisterNotificationHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DisassociateChannel",
+          [
+            [
+              "notifications",
+              "DisassociateChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetEventRule",
+          [
+            [
+              "notifications",
+              "GetEventRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetNotificationConfiguration",
+          [
+            [
+              "notifications",
+              "GetNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetNotificationEvent",
+          [
+            [
+              "notifications",
+              "GetNotificationEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListChannels",
+          [
+            [
+              "notifications",
+              "ListChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListEventRules",
+          [
+            [
+              "notifications",
+              "ListEventRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListNotificationConfigurations",
+          [
+            [
+              "notifications",
+              "ListNotificationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListNotificationEvents",
+          [
+            [
+              "notifications",
+              "ListNotificationEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListNotificationHubs",
+          [
+            [
+              "notifications",
+              "ListNotificationHubs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "notifications",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "RegisterNotificationHub",
+          [
+            [
+              "notifications",
+              "RegisterNotificationHub"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "TagResource",
+          [
+            [
+              "notifications",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "notifications",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "UpdateEventRule",
+          [
+            [
+              "notifications",
+              "UpdateEventRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "UpdateNotificationConfiguration",
+          [
+            [
+              "notifications",
+              "UpdateNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListChannelsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListEventRulesPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListEventRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListNotificationConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListNotificationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListNotificationEventsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListNotificationEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListNotificationHubsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListNotificationHubs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "AssociateManagedNotificationAccountContact",
+          [
+            [
+              "notifications",
+              "AssociateManagedNotificationAccountContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "AssociateManagedNotificationAdditionalChannel",
+          [
+            [
+              "notifications",
+              "AssociateManagedNotificationAdditionalChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DisableNotificationsAccessForOrganization",
+          [
+            [
+              "notifications",
+              "DisableNotificationsAccessForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DisassociateManagedNotificationAccountContact",
+          [
+            [
+              "notifications",
+              "DisassociateManagedNotificationAccountContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DisassociateManagedNotificationAdditionalChannel",
+          [
+            [
+              "notifications",
+              "DisassociateManagedNotificationAdditionalChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "EnableNotificationsAccessForOrganization",
+          [
+            [
+              "notifications",
+              "EnableNotificationsAccessForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetManagedNotificationChildEvent",
+          [
+            [
+              "notifications",
+              "GetManagedNotificationChildEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetManagedNotificationConfiguration",
+          [
+            [
+              "notifications",
+              "GetManagedNotificationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetManagedNotificationEvent",
+          [
+            [
+              "notifications",
+              "GetManagedNotificationEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "GetNotificationsAccessForOrganization",
+          [
+            [
+              "notifications",
+              "GetNotificationsAccessForOrganization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListManagedNotificationChannelAssociations",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationChannelAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListManagedNotificationChildEvents",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationChildEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListManagedNotificationConfigurations",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListManagedNotificationEvents",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListManagedNotificationChannelAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationChannelAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListManagedNotificationChildEventsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationChildEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListManagedNotificationConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListManagedNotificationEventsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListManagedNotificationEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "AssociateOrganizationalUnit",
+          [
+            [
+              "notifications",
+              "AssociateOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "DisassociateOrganizationalUnit",
+          [
+            [
+              "notifications",
+              "DisassociateOrganizationalUnit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListMemberAccounts",
+          [
+            [
+              "notifications",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "ListOrganizationalUnits",
+          [
+            [
+              "notifications",
+              "ListOrganizationalUnits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListMemberAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListMemberAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "ListOrganizationalUnitsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications",
+              "ListOrganizationalUnits"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notifications",
+          "Client",
+          "UpdateManagedNotificationChannelAssociation",
+          [
+            [
+              "notifications",
+              "UpdateManagedNotificationChannelAssociation"
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

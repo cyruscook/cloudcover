@@ -1,0 +1,5534 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/glue",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchCreatePartition",
+          [
+            [
+              "glue",
+              "BatchCreatePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchDeleteConnection",
+          [
+            [
+              "glue",
+              "BatchDeleteConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchDeletePartition",
+          [
+            [
+              "glue",
+              "BatchDeletePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchDeleteTable",
+          [
+            [
+              "glue",
+              "BatchDeleteTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchDeleteTableVersion",
+          [
+            [
+              "glue",
+              "BatchDeleteTableVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetCrawlers",
+          [
+            [
+              "glue",
+              "BatchGetCrawlers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetDevEndpoints",
+          [
+            [
+              "glue",
+              "BatchGetDevEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetJobs",
+          [
+            [
+              "glue",
+              "BatchGetJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetPartition",
+          [
+            [
+              "glue",
+              "BatchGetPartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetTriggers",
+          [
+            [
+              "glue",
+              "BatchGetTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetWorkflows",
+          [
+            [
+              "glue",
+              "BatchGetWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchStopJobRun",
+          [
+            [
+              "glue",
+              "BatchStopJobRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CancelMLTaskRun",
+          [
+            [
+              "glue",
+              "CancelMLTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateClassifier",
+          [
+            [
+              "glue",
+              "CreateClassifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateConnection",
+          [
+            [
+              "glue",
+              "CreateConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateCrawler",
+          [
+            [
+              "glue",
+              "CreateCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateDatabase",
+          [
+            [
+              "glue",
+              "CreateDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateDevEndpoint",
+          [
+            [
+              "glue",
+              "CreateDevEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateJob",
+          [
+            [
+              "glue",
+              "CreateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateMLTransform",
+          [
+            [
+              "glue",
+              "CreateMLTransform"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreatePartition",
+          [
+            [
+              "glue",
+              "CreatePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateScript",
+          [
+            [
+              "glue",
+              "CreateScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateSecurityConfiguration",
+          [
+            [
+              "glue",
+              "CreateSecurityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateTable",
+          [
+            [
+              "glue",
+              "CreateTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateTrigger",
+          [
+            [
+              "glue",
+              "CreateTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateUserDefinedFunction",
+          [
+            [
+              "glue",
+              "CreateUserDefinedFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateWorkflow",
+          [
+            [
+              "glue",
+              "CreateWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteClassifier",
+          [
+            [
+              "glue",
+              "DeleteClassifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteColumnStatisticsForPartition",
+          [
+            [
+              "glue",
+              "DeleteColumnStatisticsForPartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteColumnStatisticsForTable",
+          [
+            [
+              "glue",
+              "DeleteColumnStatisticsForTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteConnection",
+          [
+            [
+              "glue",
+              "DeleteConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteCrawler",
+          [
+            [
+              "glue",
+              "DeleteCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteDatabase",
+          [
+            [
+              "glue",
+              "DeleteDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteDevEndpoint",
+          [
+            [
+              "glue",
+              "DeleteDevEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteJob",
+          [
+            [
+              "glue",
+              "DeleteJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteMLTransform",
+          [
+            [
+              "glue",
+              "DeleteMLTransform"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeletePartition",
+          [
+            [
+              "glue",
+              "DeletePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "glue",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteSecurityConfiguration",
+          [
+            [
+              "glue",
+              "DeleteSecurityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteTable",
+          [
+            [
+              "glue",
+              "DeleteTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteTableVersion",
+          [
+            [
+              "glue",
+              "DeleteTableVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteTrigger",
+          [
+            [
+              "glue",
+              "DeleteTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteUserDefinedFunction",
+          [
+            [
+              "glue",
+              "DeleteUserDefinedFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteWorkflow",
+          [
+            [
+              "glue",
+              "DeleteWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCatalogImportStatus",
+          [
+            [
+              "glue",
+              "GetCatalogImportStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetClassifier",
+          [
+            [
+              "glue",
+              "GetClassifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetClassifiers",
+          [
+            [
+              "glue",
+              "GetClassifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetColumnStatisticsForPartition",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsForPartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetColumnStatisticsForTable",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsForTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetConnection",
+          [
+            [
+              "glue",
+              "GetConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetConnections",
+          [
+            [
+              "glue",
+              "GetConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCrawler",
+          [
+            [
+              "glue",
+              "GetCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCrawlerMetrics",
+          [
+            [
+              "glue",
+              "GetCrawlerMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCrawlers",
+          [
+            [
+              "glue",
+              "GetCrawlers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataCatalogEncryptionSettings",
+          [
+            [
+              "glue",
+              "GetDataCatalogEncryptionSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDatabase",
+          [
+            [
+              "glue",
+              "GetDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDatabases",
+          [
+            [
+              "glue",
+              "GetDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataflowGraph",
+          [
+            [
+              "glue",
+              "GetDataflowGraph"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDevEndpoint",
+          [
+            [
+              "glue",
+              "GetDevEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDevEndpoints",
+          [
+            [
+              "glue",
+              "GetDevEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJob",
+          [
+            [
+              "glue",
+              "GetJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobBookmark",
+          [
+            [
+              "glue",
+              "GetJobBookmark"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobRun",
+          [
+            [
+              "glue",
+              "GetJobRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobRuns",
+          [
+            [
+              "glue",
+              "GetJobRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobs",
+          [
+            [
+              "glue",
+              "GetJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMLTaskRun",
+          [
+            [
+              "glue",
+              "GetMLTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMLTaskRuns",
+          [
+            [
+              "glue",
+              "GetMLTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMLTransform",
+          [
+            [
+              "glue",
+              "GetMLTransform"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMLTransforms",
+          [
+            [
+              "glue",
+              "GetMLTransforms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMapping",
+          [
+            [
+              "glue",
+              "GetMapping"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetPartition",
+          [
+            [
+              "glue",
+              "GetPartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetPartitions",
+          [
+            [
+              "glue",
+              "GetPartitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetPlan",
+          [
+            [
+              "glue",
+              "GetPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetResourcePolicies",
+          [
+            [
+              "glue",
+              "GetResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "glue",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSecurityConfiguration",
+          [
+            [
+              "glue",
+              "GetSecurityConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSecurityConfigurations",
+          [
+            [
+              "glue",
+              "GetSecurityConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTable",
+          [
+            [
+              "glue",
+              "GetTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTableVersion",
+          [
+            [
+              "glue",
+              "GetTableVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTableVersions",
+          [
+            [
+              "glue",
+              "GetTableVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTables",
+          [
+            [
+              "glue",
+              "GetTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTags",
+          [
+            [
+              "glue",
+              "GetTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTrigger",
+          [
+            [
+              "glue",
+              "GetTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTriggers",
+          [
+            [
+              "glue",
+              "GetTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUserDefinedFunction",
+          [
+            [
+              "glue",
+              "GetUserDefinedFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUserDefinedFunctions",
+          [
+            [
+              "glue",
+              "GetUserDefinedFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetWorkflow",
+          [
+            [
+              "glue",
+              "GetWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetWorkflowRun",
+          [
+            [
+              "glue",
+              "GetWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetWorkflowRunProperties",
+          [
+            [
+              "glue",
+              "GetWorkflowRunProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetWorkflowRuns",
+          [
+            [
+              "glue",
+              "GetWorkflowRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ImportCatalogToGlue",
+          [
+            [
+              "glue",
+              "ImportCatalogToGlue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListCrawlers",
+          [
+            [
+              "glue",
+              "ListCrawlers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDevEndpoints",
+          [
+            [
+              "glue",
+              "ListDevEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListJobs",
+          [
+            [
+              "glue",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListMLTransforms",
+          [
+            [
+              "glue",
+              "ListMLTransforms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListTriggers",
+          [
+            [
+              "glue",
+              "ListTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListWorkflows",
+          [
+            [
+              "glue",
+              "ListWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutDataCatalogEncryptionSettings",
+          [
+            [
+              "glue",
+              "PutDataCatalogEncryptionSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "glue",
+              "PutResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutWorkflowRunProperties",
+          [
+            [
+              "glue",
+              "PutWorkflowRunProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ResetJobBookmark",
+          [
+            [
+              "glue",
+              "ResetJobBookmark"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ResumeWorkflowRun",
+          [
+            [
+              "glue",
+              "ResumeWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "SearchTables",
+          [
+            [
+              "glue",
+              "SearchTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartCrawler",
+          [
+            [
+              "glue",
+              "StartCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartCrawlerSchedule",
+          [
+            [
+              "glue",
+              "StartCrawlerSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartExportLabelsTaskRun",
+          [
+            [
+              "glue",
+              "StartExportLabelsTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartImportLabelsTaskRun",
+          [
+            [
+              "glue",
+              "StartImportLabelsTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartJobRun",
+          [
+            [
+              "glue",
+              "StartJobRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartMLEvaluationTaskRun",
+          [
+            [
+              "glue",
+              "StartMLEvaluationTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartMLLabelingSetGenerationTaskRun",
+          [
+            [
+              "glue",
+              "StartMLLabelingSetGenerationTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartTrigger",
+          [
+            [
+              "glue",
+              "StartTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartWorkflowRun",
+          [
+            [
+              "glue",
+              "StartWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopCrawler",
+          [
+            [
+              "glue",
+              "StopCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopCrawlerSchedule",
+          [
+            [
+              "glue",
+              "StopCrawlerSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopTrigger",
+          [
+            [
+              "glue",
+              "StopTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopWorkflowRun",
+          [
+            [
+              "glue",
+              "StopWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "TagResource",
+          [
+            [
+              "glue",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "glue",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateClassifier",
+          [
+            [
+              "glue",
+              "UpdateClassifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateColumnStatisticsForPartition",
+          [
+            [
+              "glue",
+              "UpdateColumnStatisticsForPartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateColumnStatisticsForTable",
+          [
+            [
+              "glue",
+              "UpdateColumnStatisticsForTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateConnection",
+          [
+            [
+              "glue",
+              "UpdateConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateCrawler",
+          [
+            [
+              "glue",
+              "UpdateCrawler"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateCrawlerSchedule",
+          [
+            [
+              "glue",
+              "UpdateCrawlerSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateDatabase",
+          [
+            [
+              "glue",
+              "UpdateDatabase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateDevEndpoint",
+          [
+            [
+              "glue",
+              "UpdateDevEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateJob",
+          [
+            [
+              "glue",
+              "UpdateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateMLTransform",
+          [
+            [
+              "glue",
+              "UpdateMLTransform"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdatePartition",
+          [
+            [
+              "glue",
+              "UpdatePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateTable",
+          [
+            [
+              "glue",
+              "UpdateTable"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateTrigger",
+          [
+            [
+              "glue",
+              "UpdateTrigger"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateUserDefinedFunction",
+          [
+            [
+              "glue",
+              "UpdateUserDefinedFunction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateWorkflow",
+          [
+            [
+              "glue",
+              "UpdateWorkflow"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchUpdatePartition",
+          [
+            [
+              "glue",
+              "BatchUpdatePartition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetPartitionIndexes",
+          [
+            [
+              "glue",
+              "GetPartitionIndexes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CheckSchemaVersionValidity",
+          [
+            [
+              "glue",
+              "CheckSchemaVersionValidity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateRegistry",
+          [
+            [
+              "glue",
+              "CreateRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateSchema",
+          [
+            [
+              "glue",
+              "CreateSchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteRegistry",
+          [
+            [
+              "glue",
+              "DeleteRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteSchema",
+          [
+            [
+              "glue",
+              "DeleteSchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteSchemaVersions",
+          [
+            [
+              "glue",
+              "DeleteSchemaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetRegistry",
+          [
+            [
+              "glue",
+              "GetRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSchema",
+          [
+            [
+              "glue",
+              "GetSchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSchemaByDefinition",
+          [
+            [
+              "glue",
+              "GetSchemaByDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSchemaVersion",
+          [
+            [
+              "glue",
+              "GetSchemaVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSchemaVersionsDiff",
+          [
+            [
+              "glue",
+              "GetSchemaVersionsDiff"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListRegistries",
+          [
+            [
+              "glue",
+              "ListRegistries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListSchemaVersions",
+          [
+            [
+              "glue",
+              "ListSchemaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListSchemas",
+          [
+            [
+              "glue",
+              "ListSchemas"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutSchemaVersionMetadata",
+          [
+            [
+              "glue",
+              "PutSchemaVersionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "QuerySchemaVersionMetadata",
+          [
+            [
+              "glue",
+              "QuerySchemaVersionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "RegisterSchemaVersion",
+          [
+            [
+              "glue",
+              "RegisterSchemaVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "RemoveSchemaVersionMetadata",
+          [
+            [
+              "glue",
+              "RemoveSchemaVersionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateRegistry",
+          [
+            [
+              "glue",
+              "UpdateRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateSchema",
+          [
+            [
+              "glue",
+              "UpdateSchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetClassifiersPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetClassifiers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetConnectionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetCrawlerMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetCrawlerMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetCrawlersPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetCrawlers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetDatabasesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetDatabases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetDevEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetDevEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetJobRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetJobRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetJobsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetMLTaskRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetMLTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetMLTransformsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetMLTransforms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetPartitionIndexesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetPartitionIndexes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetPartitionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetPartitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetResourcePoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetSecurityConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetSecurityConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetTableVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetTableVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetTablesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetTables"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetTriggersPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetUserDefinedFunctionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetUserDefinedFunctions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetWorkflowRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetWorkflowRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListCrawlersPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListCrawlers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDevEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDevEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListJobsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListMLTransformsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListMLTransforms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListRegistriesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListRegistries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListSchemaVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListSchemaVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListSchemasPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListSchemas"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListTriggersPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListWorkflowsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "SearchTablesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "SearchTables"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreatePartitionIndex",
+          [
+            [
+              "glue",
+              "CreatePartitionIndex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeletePartitionIndex",
+          [
+            [
+              "glue",
+              "DeletePartitionIndex"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetBlueprints",
+          [
+            [
+              "glue",
+              "BatchGetBlueprints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateBlueprint",
+          [
+            [
+              "glue",
+              "CreateBlueprint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteBlueprint",
+          [
+            [
+              "glue",
+              "DeleteBlueprint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetBlueprint",
+          [
+            [
+              "glue",
+              "GetBlueprint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetBlueprintRun",
+          [
+            [
+              "glue",
+              "GetBlueprintRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetBlueprintRuns",
+          [
+            [
+              "glue",
+              "GetBlueprintRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListBlueprints",
+          [
+            [
+              "glue",
+              "ListBlueprints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartBlueprintRun",
+          [
+            [
+              "glue",
+              "StartBlueprintRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateBlueprint",
+          [
+            [
+              "glue",
+              "UpdateBlueprint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetBlueprintRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetBlueprintRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListBlueprintsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListBlueprints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUnfilteredPartitionMetadata",
+          [
+            [
+              "glue",
+              "GetUnfilteredPartitionMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUnfilteredPartitionsMetadata",
+          [
+            [
+              "glue",
+              "GetUnfilteredPartitionsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUnfilteredTableMetadata",
+          [
+            [
+              "glue",
+              "GetUnfilteredTableMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetUnfilteredPartitionsMetadataPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetUnfilteredPartitionsMetadata"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CancelStatement",
+          [
+            [
+              "glue",
+              "CancelStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateSession",
+          [
+            [
+              "glue",
+              "CreateSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteSession",
+          [
+            [
+              "glue",
+              "DeleteSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSession",
+          [
+            [
+              "glue",
+              "GetSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetStatement",
+          [
+            [
+              "glue",
+              "GetStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListSessions",
+          [
+            [
+              "glue",
+              "ListSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListStatements",
+          [
+            [
+              "glue",
+              "ListStatements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "RunStatement",
+          [
+            [
+              "glue",
+              "RunStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopSession",
+          [
+            [
+              "glue",
+              "StopSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListSessions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetCustomEntityTypes",
+          [
+            [
+              "glue",
+              "BatchGetCustomEntityTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateCustomEntityType",
+          [
+            [
+              "glue",
+              "CreateCustomEntityType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteCustomEntityType",
+          [
+            [
+              "glue",
+              "DeleteCustomEntityType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCustomEntityType",
+          [
+            [
+              "glue",
+              "GetCustomEntityType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListCustomEntityTypes",
+          [
+            [
+              "glue",
+              "ListCustomEntityTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListCustomEntityTypesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListCustomEntityTypes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListCrawls",
+          [
+            [
+              "glue",
+              "ListCrawls"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateJobFromSourceControl",
+          [
+            [
+              "glue",
+              "UpdateJobFromSourceControl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateSourceControlFromJob",
+          [
+            [
+              "glue",
+              "UpdateSourceControlFromJob"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetDataQualityResult",
+          [
+            [
+              "glue",
+              "BatchGetDataQualityResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CancelDataQualityRuleRecommendationRun",
+          [
+            [
+              "glue",
+              "CancelDataQualityRuleRecommendationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CancelDataQualityRulesetEvaluationRun",
+          [
+            [
+              "glue",
+              "CancelDataQualityRulesetEvaluationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateDataQualityRuleset",
+          [
+            [
+              "glue",
+              "CreateDataQualityRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteDataQualityRuleset",
+          [
+            [
+              "glue",
+              "DeleteDataQualityRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityResult",
+          [
+            [
+              "glue",
+              "GetDataQualityResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityRuleRecommendationRun",
+          [
+            [
+              "glue",
+              "GetDataQualityRuleRecommendationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityRuleset",
+          [
+            [
+              "glue",
+              "GetDataQualityRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityRulesetEvaluationRun",
+          [
+            [
+              "glue",
+              "GetDataQualityRulesetEvaluationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityResults",
+          [
+            [
+              "glue",
+              "ListDataQualityResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityRuleRecommendationRuns",
+          [
+            [
+              "glue",
+              "ListDataQualityRuleRecommendationRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityRulesetEvaluationRuns",
+          [
+            [
+              "glue",
+              "ListDataQualityRulesetEvaluationRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityRulesets",
+          [
+            [
+              "glue",
+              "ListDataQualityRulesets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartDataQualityRuleRecommendationRun",
+          [
+            [
+              "glue",
+              "StartDataQualityRuleRecommendationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartDataQualityRulesetEvaluationRun",
+          [
+            [
+              "glue",
+              "StartDataQualityRulesetEvaluationRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateDataQualityRuleset",
+          [
+            [
+              "glue",
+              "UpdateDataQualityRuleset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDataQualityResultsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDataQualityResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDataQualityRuleRecommendationRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDataQualityRuleRecommendationRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDataQualityRulesetEvaluationRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDataQualityRulesetEvaluationRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDataQualityRulesetsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDataQualityRulesets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetTableOptimizer",
+          [
+            [
+              "glue",
+              "BatchGetTableOptimizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateTableOptimizer",
+          [
+            [
+              "glue",
+              "CreateTableOptimizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteTableOptimizer",
+          [
+            [
+              "glue",
+              "DeleteTableOptimizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetTableOptimizer",
+          [
+            [
+              "glue",
+              "GetTableOptimizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListTableOptimizerRuns",
+          [
+            [
+              "glue",
+              "ListTableOptimizerRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateTableOptimizer",
+          [
+            [
+              "glue",
+              "UpdateTableOptimizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListTableOptimizerRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListTableOptimizerRuns"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetColumnStatisticsTaskRun",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetColumnStatisticsTaskRuns",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListColumnStatisticsTaskRuns",
+          [
+            [
+              "glue",
+              "ListColumnStatisticsTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartColumnStatisticsTaskRun",
+          [
+            [
+              "glue",
+              "StartColumnStatisticsTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopColumnStatisticsTaskRun",
+          [
+            [
+              "glue",
+              "StopColumnStatisticsTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "GetColumnStatisticsTaskRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListColumnStatisticsTaskRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListColumnStatisticsTaskRuns"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateUsageProfile",
+          [
+            [
+              "glue",
+              "CreateUsageProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteUsageProfile",
+          [
+            [
+              "glue",
+              "DeleteUsageProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetUsageProfile",
+          [
+            [
+              "glue",
+              "GetUsageProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListUsageProfiles",
+          [
+            [
+              "glue",
+              "ListUsageProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateUsageProfile",
+          [
+            [
+              "glue",
+              "UpdateUsageProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListUsageProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListUsageProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchPutDataQualityStatisticAnnotation",
+          [
+            [
+              "glue",
+              "BatchPutDataQualityStatisticAnnotation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityModel",
+          [
+            [
+              "glue",
+              "GetDataQualityModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityModelResult",
+          [
+            [
+              "glue",
+              "GetDataQualityModelResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityStatisticAnnotations",
+          [
+            [
+              "glue",
+              "ListDataQualityStatisticAnnotations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityStatistics",
+          [
+            [
+              "glue",
+              "ListDataQualityStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutDataQualityProfileAnnotation",
+          [
+            [
+              "glue",
+              "PutDataQualityProfileAnnotation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.94.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.95.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.96.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.97.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "TestConnection",
+          [
+            [
+              "glue",
+              "TestConnection"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.98.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.99.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateColumnStatisticsTaskSettings",
+          [
+            [
+              "glue",
+              "CreateColumnStatisticsTaskSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteColumnStatisticsTaskSettings",
+          [
+            [
+              "glue",
+              "DeleteColumnStatisticsTaskSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetColumnStatisticsTaskSettings",
+          [
+            [
+              "glue",
+              "GetColumnStatisticsTaskSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartColumnStatisticsTaskRunSchedule",
+          [
+            [
+              "glue",
+              "StartColumnStatisticsTaskRunSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopColumnStatisticsTaskRunSchedule",
+          [
+            [
+              "glue",
+              "StopColumnStatisticsTaskRunSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateColumnStatisticsTaskSettings",
+          [
+            [
+              "glue",
+              "UpdateColumnStatisticsTaskSettings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.101.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.103.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateCatalog",
+          [
+            [
+              "glue",
+              "CreateCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateIntegration",
+          [
+            [
+              "glue",
+              "CreateIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateIntegrationResourceProperty",
+          [
+            [
+              "glue",
+              "CreateIntegrationResourceProperty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateIntegrationTableProperties",
+          [
+            [
+              "glue",
+              "CreateIntegrationTableProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteCatalog",
+          [
+            [
+              "glue",
+              "DeleteCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteIntegration",
+          [
+            [
+              "glue",
+              "DeleteIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteIntegrationTableProperties",
+          [
+            [
+              "glue",
+              "DeleteIntegrationTableProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DescribeConnectionType",
+          [
+            [
+              "glue",
+              "DescribeConnectionType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DescribeEntity",
+          [
+            [
+              "glue",
+              "DescribeEntity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DescribeInboundIntegrations",
+          [
+            [
+              "glue",
+              "DescribeInboundIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DescribeIntegrations",
+          [
+            [
+              "glue",
+              "DescribeIntegrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCatalog",
+          [
+            [
+              "glue",
+              "GetCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetCatalogs",
+          [
+            [
+              "glue",
+              "GetCatalogs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetEntityRecords",
+          [
+            [
+              "glue",
+              "GetEntityRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetIntegrationResourceProperty",
+          [
+            [
+              "glue",
+              "GetIntegrationResourceProperty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetIntegrationTableProperties",
+          [
+            [
+              "glue",
+              "GetIntegrationTableProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListConnectionTypes",
+          [
+            [
+              "glue",
+              "ListConnectionTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListEntities",
+          [
+            [
+              "glue",
+              "ListEntities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ModifyIntegration",
+          [
+            [
+              "glue",
+              "ModifyIntegration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateCatalog",
+          [
+            [
+              "glue",
+              "UpdateCatalog"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateIntegrationResourceProperty",
+          [
+            [
+              "glue",
+              "UpdateIntegrationResourceProperty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateIntegrationTableProperties",
+          [
+            [
+              "glue",
+              "UpdateIntegrationTableProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "DescribeEntityPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "DescribeEntity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListConnectionTypesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListConnectionTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListEntitiesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListEntities"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.104.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.104.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.105.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.106.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.107.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.108.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.109.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.110.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.111.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.112.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.113.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.114.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.115.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.116.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.117.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.118.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.119.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.120.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.121.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.122.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.123.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.124.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.125.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateGlueIdentityCenterConfiguration",
+          [
+            [
+              "glue",
+              "CreateGlueIdentityCenterConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteGlueIdentityCenterConfiguration",
+          [
+            [
+              "glue",
+              "DeleteGlueIdentityCenterConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetGlueIdentityCenterConfiguration",
+          [
+            [
+              "glue",
+              "GetGlueIdentityCenterConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateGlueIdentityCenterConfiguration",
+          [
+            [
+              "glue",
+              "UpdateGlueIdentityCenterConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.126.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.126.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.127.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.127.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.128.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.129.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.132.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.133.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteIntegrationResourceProperty",
+          [
+            [
+              "glue",
+              "DeleteIntegrationResourceProperty"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListIntegrationResourceProperties",
+          [
+            [
+              "glue",
+              "ListIntegrationResourceProperties"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.133.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.134.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.134.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.135.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.135.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.135.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.135.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.136.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetMaterializedViewRefreshTaskRun",
+          [
+            [
+              "glue",
+              "GetMaterializedViewRefreshTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListMaterializedViewRefreshTaskRuns",
+          [
+            [
+              "glue",
+              "ListMaterializedViewRefreshTaskRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartMaterializedViewRefreshTaskRun",
+          [
+            [
+              "glue",
+              "StartMaterializedViewRefreshTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopMaterializedViewRefreshTaskRun",
+          [
+            [
+              "glue",
+              "StopMaterializedViewRefreshTaskRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListMaterializedViewRefreshTaskRunsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListMaterializedViewRefreshTaskRuns"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.136.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.137.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteConnectionType",
+          [
+            [
+              "glue",
+              "DeleteConnectionType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "RegisterConnectionType",
+          [
+            [
+              "glue",
+              "RegisterConnectionType"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.137.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.137.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.138.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.140.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.141.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.141.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.142.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.143.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDashboardUrl",
+          [
+            [
+              "glue",
+              "GetDashboardUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetSessionEndpoint",
+          [
+            [
+              "glue",
+              "GetSessionEndpoint"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.143.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.144.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.145.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "AssociateGlossaryTerms",
+          [
+            [
+              "glue",
+              "AssociateGlossaryTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetIterableForms",
+          [
+            [
+              "glue",
+              "BatchGetIterableForms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateGlossary",
+          [
+            [
+              "glue",
+              "CreateGlossary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateGlossaryTerm",
+          [
+            [
+              "glue",
+              "CreateGlossaryTerm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteAsset",
+          [
+            [
+              "glue",
+              "DeleteAsset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteAssetType",
+          [
+            [
+              "glue",
+              "DeleteAssetType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteAttachment",
+          [
+            [
+              "glue",
+              "DeleteAttachment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteFormType",
+          [
+            [
+              "glue",
+              "DeleteFormType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteGlossary",
+          [
+            [
+              "glue",
+              "DeleteGlossary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteGlossaryTerm",
+          [
+            [
+              "glue",
+              "DeleteGlossaryTerm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DisassociateGlossaryTerms",
+          [
+            [
+              "glue",
+              "DisassociateGlossaryTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetAsset",
+          [
+            [
+              "glue",
+              "GetAsset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetAssetType",
+          [
+            [
+              "glue",
+              "GetAssetType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetFormType",
+          [
+            [
+              "glue",
+              "GetFormType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetGlossary",
+          [
+            [
+              "glue",
+              "GetGlossary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetGlossaryTerm",
+          [
+            [
+              "glue",
+              "GetGlossaryTerm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListAssetTypes",
+          [
+            [
+              "glue",
+              "ListAssetTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListFormTypes",
+          [
+            [
+              "glue",
+              "ListFormTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListGlossaries",
+          [
+            [
+              "glue",
+              "ListGlossaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListGlossaryTerms",
+          [
+            [
+              "glue",
+              "ListGlossaryTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListIterableForms",
+          [
+            [
+              "glue",
+              "ListIterableForms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutAsset",
+          [
+            [
+              "glue",
+              "PutAsset"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutAssetType",
+          [
+            [
+              "glue",
+              "PutAssetType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutAttachment",
+          [
+            [
+              "glue",
+              "PutAttachment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutFormType",
+          [
+            [
+              "glue",
+              "PutFormType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "Search",
+          [
+            [
+              "glue",
+              "Search"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateGlossary",
+          [
+            [
+              "glue",
+              "UpdateGlossary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateGlossaryTerm",
+          [
+            [
+              "glue",
+              "UpdateGlossaryTerm"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListAssetTypesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListAssetTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListFormTypesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListFormTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListGlossariesPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListGlossaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListGlossaryTermsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListGlossaryTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListIterableFormsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListIterableForms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "SearchPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "Search"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.146.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "Search"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "SearchPaginator",
+          "NextPage"
+        ]
+      ],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "SearchAssets",
+          [
+            [
+              "glue",
+              "SearchAssets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "SearchAssetsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "SearchAssets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.147.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateAsset",
+          [
+            [
+              "glue",
+              "UpdateAsset"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.147.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.148.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.148.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.149.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.150.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "BatchGetDataQualityRulesetEvaluationRun",
+          [
+            [
+              "glue",
+              "BatchGetDataQualityRulesetEvaluationRun"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.150.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.151.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.151.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.152.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataCatalogExportConfiguration",
+          [
+            [
+              "glue",
+              "GetDataCatalogExportConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutDataCatalogExportConfiguration",
+          [
+            [
+              "glue",
+              "PutDataCatalogExportConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.152.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.152.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.153.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.154.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.155.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.155.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.156.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.157.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.158.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.159.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListIntegrationTableProperties",
+          [
+            [
+              "glue",
+              "ListIntegrationTableProperties"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.160.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

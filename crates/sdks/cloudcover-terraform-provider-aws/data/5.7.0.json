@@ -28,7 +28,16 @@
       "data_source",
       "aws_qldb_ledger",
       "read",
-      []
+      [
+        [
+          "qldb",
+          "DescribeLedger"
+        ],
+        [
+          "qldb",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -126,54 +135,6 @@
     ],
     [
       "resource",
-      "aws_qldb_ledger",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_ledger",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_ledger",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_ledger",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_stream",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_stream",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_stream",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_qldb_stream",
-      "update",
-      []
-    ],
-    [
-      "resource",
       "aws_service_discovery_private_dns_namespace",
       "update",
       [
@@ -207,6 +168,21 @@
         [
           "servicediscovery",
           "UpdatePublicDnsNamespace"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_ip_group",
+      "delete",
+      [
+        [
+          "workspaces",
+          "DeleteIpGroup"
+        ],
+        [
+          "workspaces",
+          "DisassociateIpGroups"
         ]
       ]
     ]

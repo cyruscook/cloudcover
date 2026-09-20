@@ -1,0 +1,1674 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ActivateEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "ActivateEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CreateEventBus",
+          [
+            [
+              "cloudwatchevents",
+              "CreateEventBus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CreatePartnerEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "CreatePartnerEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeactivateEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "DeactivateEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeleteEventBus",
+          [
+            [
+              "cloudwatchevents",
+              "DeleteEventBus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeletePartnerEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "DeletePartnerEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeleteRule",
+          [
+            [
+              "cloudwatchevents",
+              "DeleteRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeEventBus",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeEventBus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribePartnerEventSource",
+          [
+            [
+              "cloudwatchevents",
+              "DescribePartnerEventSource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeRule",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DisableRule",
+          [
+            [
+              "cloudwatchevents",
+              "DisableRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "EnableRule",
+          [
+            [
+              "cloudwatchevents",
+              "EnableRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListEventBuses",
+          [
+            [
+              "cloudwatchevents",
+              "ListEventBuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListEventSources",
+          [
+            [
+              "cloudwatchevents",
+              "ListEventSources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListPartnerEventSourceAccounts",
+          [
+            [
+              "cloudwatchevents",
+              "ListPartnerEventSourceAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListPartnerEventSources",
+          [
+            [
+              "cloudwatchevents",
+              "ListPartnerEventSources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListRuleNamesByTarget",
+          [
+            [
+              "cloudwatchevents",
+              "ListRuleNamesByTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListRules",
+          [
+            [
+              "cloudwatchevents",
+              "ListRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "cloudwatchevents",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListTargetsByRule",
+          [
+            [
+              "cloudwatchevents",
+              "ListTargetsByRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "PutEvents",
+          [
+            [
+              "cloudwatchevents",
+              "PutEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "PutPartnerEvents",
+          [
+            [
+              "cloudwatchevents",
+              "PutPartnerEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "PutPermission",
+          [
+            [
+              "cloudwatchevents",
+              "PutPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "PutRule",
+          [
+            [
+              "cloudwatchevents",
+              "PutRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "PutTargets",
+          [
+            [
+              "cloudwatchevents",
+              "PutTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "RemovePermission",
+          [
+            [
+              "cloudwatchevents",
+              "RemovePermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "RemoveTargets",
+          [
+            [
+              "cloudwatchevents",
+              "RemoveTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "TagResource",
+          [
+            [
+              "cloudwatchevents",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "TestEventPattern",
+          [
+            [
+              "cloudwatchevents",
+              "TestEventPattern"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "cloudwatchevents",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CancelReplay",
+          [
+            [
+              "cloudwatchevents",
+              "CancelReplay"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CreateArchive",
+          [
+            [
+              "cloudwatchevents",
+              "CreateArchive"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeleteArchive",
+          [
+            [
+              "cloudwatchevents",
+              "DeleteArchive"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeArchive",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeArchive"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeReplay",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeReplay"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListArchives",
+          [
+            [
+              "cloudwatchevents",
+              "ListArchives"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListReplays",
+          [
+            [
+              "cloudwatchevents",
+              "ListReplays"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "StartReplay",
+          [
+            [
+              "cloudwatchevents",
+              "StartReplay"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "UpdateArchive",
+          [
+            [
+              "cloudwatchevents",
+              "UpdateArchive"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CreateApiDestination",
+          [
+            [
+              "cloudwatchevents",
+              "CreateApiDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "CreateConnection",
+          [
+            [
+              "cloudwatchevents",
+              "CreateConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeauthorizeConnection",
+          [
+            [
+              "cloudwatchevents",
+              "DeauthorizeConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeleteApiDestination",
+          [
+            [
+              "cloudwatchevents",
+              "DeleteApiDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DeleteConnection",
+          [
+            [
+              "cloudwatchevents",
+              "DeleteConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeApiDestination",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeApiDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "DescribeConnection",
+          [
+            [
+              "cloudwatchevents",
+              "DescribeConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListApiDestinations",
+          [
+            [
+              "cloudwatchevents",
+              "ListApiDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "ListConnections",
+          [
+            [
+              "cloudwatchevents",
+              "ListConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "UpdateApiDestination",
+          [
+            [
+              "cloudwatchevents",
+              "UpdateApiDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudwatchevents",
+          "Client",
+          "UpdateConnection",
+          [
+            [
+              "cloudwatchevents",
+              "UpdateConnection"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.26",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.26",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.27",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

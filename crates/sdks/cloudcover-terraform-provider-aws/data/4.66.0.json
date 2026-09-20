@@ -493,10 +493,6 @@
       [
         [
           "vpclattice",
-          "ListTargets"
-        ],
-        [
-          "vpclattice",
           "RegisterTargets"
         ]
       ]
@@ -509,10 +505,6 @@
         [
           "vpclattice",
           "DeregisterTargets"
-        ],
-        [
-          "vpclattice",
-          "ListTargets"
         ]
       ]
     ],
@@ -520,12 +512,7 @@
       "resource",
       "aws_vpclattice_target_group_attachment",
       "read",
-      [
-        [
-          "vpclattice",
-          "ListTargets"
-        ]
-      ]
+      []
     ]
   ]
 }

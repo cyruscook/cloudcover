@@ -1,4 +1,4 @@
-use crate::{ApiMethod, Sdk, SdkMethodMapping};
+use crate::{ApiMethod, ResolvedSdk, Sdk, SdkMethodMapping};
 
 pub trait CloudProvider {
     type Error: std::error::Error + Send + Sync + 'static;
@@ -11,9 +11,12 @@ pub trait CloudProvider {
 
     /// # Errors
     ///
-    /// Returns an error when the SDK is unsupported or when its required
-    /// version is missing or unsupported.
-    fn sdk_method_mappings(&self, sdk: &Sdk) -> Result<Vec<SdkMethodMapping>, Self::Error>;
+    /// Returns an error when the SDK is unsupported or when its resolved
+    /// modules contain missing, replaced, or unsupported versions.
+    fn sdk_method_mappings(
+        &self,
+        resolved_sdk: &ResolvedSdk,
+    ) -> Result<Vec<SdkMethodMapping>, Self::Error>;
 
     /// # Errors
     ///

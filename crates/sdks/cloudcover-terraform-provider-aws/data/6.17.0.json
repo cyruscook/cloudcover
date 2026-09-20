@@ -6,12 +6,7 @@
       "data_source",
       "aws_rds_global_cluster",
       "read",
-      [
-        [
-          "rds",
-          "DescribeGlobalClusters"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -28,12 +23,7 @@
       "list_resource",
       "aws_subnet",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeSubnets"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -42,23 +32,7 @@
       [
         [
           "ec2",
-          "DescribeNetworkAcls"
-        ],
-        [
-          "ec2",
-          "DescribeRouteTables"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
           "DescribeVpcAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
         ]
       ]
     ],

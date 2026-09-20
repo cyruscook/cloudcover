@@ -1,0 +1,4929 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/iot",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AcceptCertificateTransfer",
+          [
+            [
+              "iot",
+              "AcceptCertificateTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AddThingToBillingGroup",
+          [
+            [
+              "iot",
+              "AddThingToBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AddThingToThingGroup",
+          [
+            [
+              "iot",
+              "AddThingToThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AssociateTargetsWithJob",
+          [
+            [
+              "iot",
+              "AssociateTargetsWithJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AttachPolicy",
+          [
+            [
+              "iot",
+              "AttachPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AttachPrincipalPolicy",
+          [
+            [
+              "iot",
+              "AttachPrincipalPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AttachSecurityProfile",
+          [
+            [
+              "iot",
+              "AttachSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AttachThingPrincipal",
+          [
+            [
+              "iot",
+              "AttachThingPrincipal"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelAuditMitigationActionsTask",
+          [
+            [
+              "iot",
+              "CancelAuditMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelAuditTask",
+          [
+            [
+              "iot",
+              "CancelAuditTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelCertificateTransfer",
+          [
+            [
+              "iot",
+              "CancelCertificateTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelJob",
+          [
+            [
+              "iot",
+              "CancelJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelJobExecution",
+          [
+            [
+              "iot",
+              "CancelJobExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ClearDefaultAuthorizer",
+          [
+            [
+              "iot",
+              "ClearDefaultAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ConfirmTopicRuleDestination",
+          [
+            [
+              "iot",
+              "ConfirmTopicRuleDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateAuthorizer",
+          [
+            [
+              "iot",
+              "CreateAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateBillingGroup",
+          [
+            [
+              "iot",
+              "CreateBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateCertificateFromCsr",
+          [
+            [
+              "iot",
+              "CreateCertificateFromCsr"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateDimension",
+          [
+            [
+              "iot",
+              "CreateDimension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateDomainConfiguration",
+          [
+            [
+              "iot",
+              "CreateDomainConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateDynamicThingGroup",
+          [
+            [
+              "iot",
+              "CreateDynamicThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateJob",
+          [
+            [
+              "iot",
+              "CreateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateKeysAndCertificate",
+          [
+            [
+              "iot",
+              "CreateKeysAndCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateMitigationAction",
+          [
+            [
+              "iot",
+              "CreateMitigationAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateOTAUpdate",
+          [
+            [
+              "iot",
+              "CreateOTAUpdate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreatePolicy",
+          [
+            [
+              "iot",
+              "CreatePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreatePolicyVersion",
+          [
+            [
+              "iot",
+              "CreatePolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateProvisioningClaim",
+          [
+            [
+              "iot",
+              "CreateProvisioningClaim"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateProvisioningTemplate",
+          [
+            [
+              "iot",
+              "CreateProvisioningTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateProvisioningTemplateVersion",
+          [
+            [
+              "iot",
+              "CreateProvisioningTemplateVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateRoleAlias",
+          [
+            [
+              "iot",
+              "CreateRoleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateScheduledAudit",
+          [
+            [
+              "iot",
+              "CreateScheduledAudit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateSecurityProfile",
+          [
+            [
+              "iot",
+              "CreateSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateStream",
+          [
+            [
+              "iot",
+              "CreateStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateThing",
+          [
+            [
+              "iot",
+              "CreateThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateThingGroup",
+          [
+            [
+              "iot",
+              "CreateThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateThingType",
+          [
+            [
+              "iot",
+              "CreateThingType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateTopicRule",
+          [
+            [
+              "iot",
+              "CreateTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateTopicRuleDestination",
+          [
+            [
+              "iot",
+              "CreateTopicRuleDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteAccountAuditConfiguration",
+          [
+            [
+              "iot",
+              "DeleteAccountAuditConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteAuthorizer",
+          [
+            [
+              "iot",
+              "DeleteAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteBillingGroup",
+          [
+            [
+              "iot",
+              "DeleteBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCACertificate",
+          [
+            [
+              "iot",
+              "DeleteCACertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCertificate",
+          [
+            [
+              "iot",
+              "DeleteCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteDimension",
+          [
+            [
+              "iot",
+              "DeleteDimension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteDomainConfiguration",
+          [
+            [
+              "iot",
+              "DeleteDomainConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteDynamicThingGroup",
+          [
+            [
+              "iot",
+              "DeleteDynamicThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteJob",
+          [
+            [
+              "iot",
+              "DeleteJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteJobExecution",
+          [
+            [
+              "iot",
+              "DeleteJobExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteMitigationAction",
+          [
+            [
+              "iot",
+              "DeleteMitigationAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteOTAUpdate",
+          [
+            [
+              "iot",
+              "DeleteOTAUpdate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeletePolicy",
+          [
+            [
+              "iot",
+              "DeletePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeletePolicyVersion",
+          [
+            [
+              "iot",
+              "DeletePolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteProvisioningTemplate",
+          [
+            [
+              "iot",
+              "DeleteProvisioningTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteProvisioningTemplateVersion",
+          [
+            [
+              "iot",
+              "DeleteProvisioningTemplateVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteRegistrationCode",
+          [
+            [
+              "iot",
+              "DeleteRegistrationCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteRoleAlias",
+          [
+            [
+              "iot",
+              "DeleteRoleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteScheduledAudit",
+          [
+            [
+              "iot",
+              "DeleteScheduledAudit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteSecurityProfile",
+          [
+            [
+              "iot",
+              "DeleteSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteStream",
+          [
+            [
+              "iot",
+              "DeleteStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteThing",
+          [
+            [
+              "iot",
+              "DeleteThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteThingGroup",
+          [
+            [
+              "iot",
+              "DeleteThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteThingType",
+          [
+            [
+              "iot",
+              "DeleteThingType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteTopicRule",
+          [
+            [
+              "iot",
+              "DeleteTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteTopicRuleDestination",
+          [
+            [
+              "iot",
+              "DeleteTopicRuleDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteV2LoggingLevel",
+          [
+            [
+              "iot",
+              "DeleteV2LoggingLevel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeprecateThingType",
+          [
+            [
+              "iot",
+              "DeprecateThingType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAccountAuditConfiguration",
+          [
+            [
+              "iot",
+              "DescribeAccountAuditConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAuditFinding",
+          [
+            [
+              "iot",
+              "DescribeAuditFinding"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAuditMitigationActionsTask",
+          [
+            [
+              "iot",
+              "DescribeAuditMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAuditTask",
+          [
+            [
+              "iot",
+              "DescribeAuditTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAuthorizer",
+          [
+            [
+              "iot",
+              "DescribeAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeBillingGroup",
+          [
+            [
+              "iot",
+              "DescribeBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeCACertificate",
+          [
+            [
+              "iot",
+              "DescribeCACertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeCertificate",
+          [
+            [
+              "iot",
+              "DescribeCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeDefaultAuthorizer",
+          [
+            [
+              "iot",
+              "DescribeDefaultAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeDimension",
+          [
+            [
+              "iot",
+              "DescribeDimension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeDomainConfiguration",
+          [
+            [
+              "iot",
+              "DescribeDomainConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeEndpoint",
+          [
+            [
+              "iot",
+              "DescribeEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeEventConfigurations",
+          [
+            [
+              "iot",
+              "DescribeEventConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeIndex",
+          [
+            [
+              "iot",
+              "DescribeIndex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeJob",
+          [
+            [
+              "iot",
+              "DescribeJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeJobExecution",
+          [
+            [
+              "iot",
+              "DescribeJobExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeMitigationAction",
+          [
+            [
+              "iot",
+              "DescribeMitigationAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeProvisioningTemplate",
+          [
+            [
+              "iot",
+              "DescribeProvisioningTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeProvisioningTemplateVersion",
+          [
+            [
+              "iot",
+              "DescribeProvisioningTemplateVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeRoleAlias",
+          [
+            [
+              "iot",
+              "DescribeRoleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeScheduledAudit",
+          [
+            [
+              "iot",
+              "DescribeScheduledAudit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeSecurityProfile",
+          [
+            [
+              "iot",
+              "DescribeSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeStream",
+          [
+            [
+              "iot",
+              "DescribeStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeThing",
+          [
+            [
+              "iot",
+              "DescribeThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeThingGroup",
+          [
+            [
+              "iot",
+              "DescribeThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeThingRegistrationTask",
+          [
+            [
+              "iot",
+              "DescribeThingRegistrationTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeThingType",
+          [
+            [
+              "iot",
+              "DescribeThingType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DetachPolicy",
+          [
+            [
+              "iot",
+              "DetachPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DetachPrincipalPolicy",
+          [
+            [
+              "iot",
+              "DetachPrincipalPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DetachSecurityProfile",
+          [
+            [
+              "iot",
+              "DetachSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DetachThingPrincipal",
+          [
+            [
+              "iot",
+              "DetachThingPrincipal"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DisableTopicRule",
+          [
+            [
+              "iot",
+              "DisableTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "EnableTopicRule",
+          [
+            [
+              "iot",
+              "EnableTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetCardinality",
+          [
+            [
+              "iot",
+              "GetCardinality"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetEffectivePolicies",
+          [
+            [
+              "iot",
+              "GetEffectivePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetIndexingConfiguration",
+          [
+            [
+              "iot",
+              "GetIndexingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetJobDocument",
+          [
+            [
+              "iot",
+              "GetJobDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetLoggingOptions",
+          [
+            [
+              "iot",
+              "GetLoggingOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetOTAUpdate",
+          [
+            [
+              "iot",
+              "GetOTAUpdate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPercentiles",
+          [
+            [
+              "iot",
+              "GetPercentiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPolicy",
+          [
+            [
+              "iot",
+              "GetPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPolicyVersion",
+          [
+            [
+              "iot",
+              "GetPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetRegistrationCode",
+          [
+            [
+              "iot",
+              "GetRegistrationCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetStatistics",
+          [
+            [
+              "iot",
+              "GetStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetTopicRule",
+          [
+            [
+              "iot",
+              "GetTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetTopicRuleDestination",
+          [
+            [
+              "iot",
+              "GetTopicRuleDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetV2LoggingOptions",
+          [
+            [
+              "iot",
+              "GetV2LoggingOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListActiveViolations",
+          [
+            [
+              "iot",
+              "ListActiveViolations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAttachedPolicies",
+          [
+            [
+              "iot",
+              "ListAttachedPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuditFindings",
+          [
+            [
+              "iot",
+              "ListAuditFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuditMitigationActionsExecutions",
+          [
+            [
+              "iot",
+              "ListAuditMitigationActionsExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuditMitigationActionsTasks",
+          [
+            [
+              "iot",
+              "ListAuditMitigationActionsTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuditTasks",
+          [
+            [
+              "iot",
+              "ListAuditTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuthorizers",
+          [
+            [
+              "iot",
+              "ListAuthorizers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListBillingGroups",
+          [
+            [
+              "iot",
+              "ListBillingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCACertificates",
+          [
+            [
+              "iot",
+              "ListCACertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCertificates",
+          [
+            [
+              "iot",
+              "ListCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCertificatesByCA",
+          [
+            [
+              "iot",
+              "ListCertificatesByCA"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListDimensions",
+          [
+            [
+              "iot",
+              "ListDimensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListDomainConfigurations",
+          [
+            [
+              "iot",
+              "ListDomainConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListIndices",
+          [
+            [
+              "iot",
+              "ListIndices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListJobExecutionsForJob",
+          [
+            [
+              "iot",
+              "ListJobExecutionsForJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListJobExecutionsForThing",
+          [
+            [
+              "iot",
+              "ListJobExecutionsForThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListJobs",
+          [
+            [
+              "iot",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListMitigationActions",
+          [
+            [
+              "iot",
+              "ListMitigationActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListOTAUpdates",
+          [
+            [
+              "iot",
+              "ListOTAUpdates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListOutgoingCertificates",
+          [
+            [
+              "iot",
+              "ListOutgoingCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPolicies",
+          [
+            [
+              "iot",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPolicyPrincipals",
+          [
+            [
+              "iot",
+              "ListPolicyPrincipals"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPolicyVersions",
+          [
+            [
+              "iot",
+              "ListPolicyVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPrincipalPolicies",
+          [
+            [
+              "iot",
+              "ListPrincipalPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPrincipalThings",
+          [
+            [
+              "iot",
+              "ListPrincipalThings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListProvisioningTemplateVersions",
+          [
+            [
+              "iot",
+              "ListProvisioningTemplateVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListProvisioningTemplates",
+          [
+            [
+              "iot",
+              "ListProvisioningTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListRoleAliases",
+          [
+            [
+              "iot",
+              "ListRoleAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListScheduledAudits",
+          [
+            [
+              "iot",
+              "ListScheduledAudits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListSecurityProfiles",
+          [
+            [
+              "iot",
+              "ListSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListSecurityProfilesForTarget",
+          [
+            [
+              "iot",
+              "ListSecurityProfilesForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListStreams",
+          [
+            [
+              "iot",
+              "ListStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "iot",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListTargetsForPolicy",
+          [
+            [
+              "iot",
+              "ListTargetsForPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListTargetsForSecurityProfile",
+          [
+            [
+              "iot",
+              "ListTargetsForSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingGroups",
+          [
+            [
+              "iot",
+              "ListThingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingGroupsForThing",
+          [
+            [
+              "iot",
+              "ListThingGroupsForThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingPrincipals",
+          [
+            [
+              "iot",
+              "ListThingPrincipals"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingRegistrationTaskReports",
+          [
+            [
+              "iot",
+              "ListThingRegistrationTaskReports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingRegistrationTasks",
+          [
+            [
+              "iot",
+              "ListThingRegistrationTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingTypes",
+          [
+            [
+              "iot",
+              "ListThingTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThings",
+          [
+            [
+              "iot",
+              "ListThings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingsInBillingGroup",
+          [
+            [
+              "iot",
+              "ListThingsInBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingsInThingGroup",
+          [
+            [
+              "iot",
+              "ListThingsInThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListTopicRuleDestinations",
+          [
+            [
+              "iot",
+              "ListTopicRuleDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListTopicRules",
+          [
+            [
+              "iot",
+              "ListTopicRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListV2LoggingLevels",
+          [
+            [
+              "iot",
+              "ListV2LoggingLevels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListViolationEvents",
+          [
+            [
+              "iot",
+              "ListViolationEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RegisterCACertificate",
+          [
+            [
+              "iot",
+              "RegisterCACertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RegisterCertificate",
+          [
+            [
+              "iot",
+              "RegisterCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RegisterCertificateWithoutCA",
+          [
+            [
+              "iot",
+              "RegisterCertificateWithoutCA"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RegisterThing",
+          [
+            [
+              "iot",
+              "RegisterThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RejectCertificateTransfer",
+          [
+            [
+              "iot",
+              "RejectCertificateTransfer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RemoveThingFromBillingGroup",
+          [
+            [
+              "iot",
+              "RemoveThingFromBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "RemoveThingFromThingGroup",
+          [
+            [
+              "iot",
+              "RemoveThingFromThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ReplaceTopicRule",
+          [
+            [
+              "iot",
+              "ReplaceTopicRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SearchIndex",
+          [
+            [
+              "iot",
+              "SearchIndex"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SetDefaultAuthorizer",
+          [
+            [
+              "iot",
+              "SetDefaultAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SetDefaultPolicyVersion",
+          [
+            [
+              "iot",
+              "SetDefaultPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SetLoggingOptions",
+          [
+            [
+              "iot",
+              "SetLoggingOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SetV2LoggingLevel",
+          [
+            [
+              "iot",
+              "SetV2LoggingLevel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "SetV2LoggingOptions",
+          [
+            [
+              "iot",
+              "SetV2LoggingOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "StartAuditMitigationActionsTask",
+          [
+            [
+              "iot",
+              "StartAuditMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "StartOnDemandAuditTask",
+          [
+            [
+              "iot",
+              "StartOnDemandAuditTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "StartThingRegistrationTask",
+          [
+            [
+              "iot",
+              "StartThingRegistrationTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "StopThingRegistrationTask",
+          [
+            [
+              "iot",
+              "StopThingRegistrationTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "TagResource",
+          [
+            [
+              "iot",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "TestAuthorization",
+          [
+            [
+              "iot",
+              "TestAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "TestInvokeAuthorizer",
+          [
+            [
+              "iot",
+              "TestInvokeAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "TransferCertificate",
+          [
+            [
+              "iot",
+              "TransferCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "iot",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateAccountAuditConfiguration",
+          [
+            [
+              "iot",
+              "UpdateAccountAuditConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateAuthorizer",
+          [
+            [
+              "iot",
+              "UpdateAuthorizer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateBillingGroup",
+          [
+            [
+              "iot",
+              "UpdateBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateCACertificate",
+          [
+            [
+              "iot",
+              "UpdateCACertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateCertificate",
+          [
+            [
+              "iot",
+              "UpdateCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateDimension",
+          [
+            [
+              "iot",
+              "UpdateDimension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateDomainConfiguration",
+          [
+            [
+              "iot",
+              "UpdateDomainConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateDynamicThingGroup",
+          [
+            [
+              "iot",
+              "UpdateDynamicThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateEventConfigurations",
+          [
+            [
+              "iot",
+              "UpdateEventConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateIndexingConfiguration",
+          [
+            [
+              "iot",
+              "UpdateIndexingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateJob",
+          [
+            [
+              "iot",
+              "UpdateJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateMitigationAction",
+          [
+            [
+              "iot",
+              "UpdateMitigationAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateProvisioningTemplate",
+          [
+            [
+              "iot",
+              "UpdateProvisioningTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateRoleAlias",
+          [
+            [
+              "iot",
+              "UpdateRoleAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateScheduledAudit",
+          [
+            [
+              "iot",
+              "UpdateScheduledAudit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateSecurityProfile",
+          [
+            [
+              "iot",
+              "UpdateSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateStream",
+          [
+            [
+              "iot",
+              "UpdateStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateThing",
+          [
+            [
+              "iot",
+              "UpdateThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateThingGroup",
+          [
+            [
+              "iot",
+              "UpdateThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateThingGroupsForThing",
+          [
+            [
+              "iot",
+              "UpdateThingGroupsForThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateTopicRuleDestination",
+          [
+            [
+              "iot",
+              "UpdateTopicRuleDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ValidateSecurityProfileBehaviors",
+          [
+            [
+              "iot",
+              "ValidateSecurityProfileBehaviors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateAuditSuppression",
+          [
+            [
+              "iot",
+              "CreateAuditSuppression"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteAuditSuppression",
+          [
+            [
+              "iot",
+              "DeleteAuditSuppression"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeAuditSuppression",
+          [
+            [
+              "iot",
+              "DescribeAuditSuppression"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListAuditSuppressions",
+          [
+            [
+              "iot",
+              "ListAuditSuppressions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateAuditSuppression",
+          [
+            [
+              "iot",
+              "UpdateAuditSuppression"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListActiveViolationsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListActiveViolations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAttachedPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAttachedPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuditFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuditFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuditMitigationActionsExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuditMitigationActionsExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuditMitigationActionsTasksPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuditMitigationActionsTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuditSuppressionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuditSuppressions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuditTasksPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuditTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListAuthorizersPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListAuthorizers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListBillingGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListBillingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCACertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCACertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCertificatesByCAPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCertificatesByCA"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListDimensionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListDimensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListDomainConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListDomainConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListIndicesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListIndices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListJobExecutionsForJobPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListJobExecutionsForJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListJobExecutionsForThingPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListJobExecutionsForThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListJobsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListMitigationActionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListMitigationActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListOTAUpdatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListOTAUpdates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListOutgoingCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListOutgoingCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPolicyPrincipalsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPolicyPrincipals"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPrincipalPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPrincipalPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPrincipalThingsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPrincipalThings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListProvisioningTemplateVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListProvisioningTemplateVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListProvisioningTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListProvisioningTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListRoleAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListRoleAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListScheduledAuditsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListScheduledAudits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListSecurityProfilesForTargetPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListSecurityProfilesForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListSecurityProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListSecurityProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListStreamsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListTargetsForPolicyPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListTargetsForPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListTargetsForSecurityProfilePaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListTargetsForSecurityProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingGroupsForThingPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingGroupsForThing"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingPrincipalsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingPrincipals"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingRegistrationTaskReportsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingRegistrationTaskReports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingRegistrationTasksPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingRegistrationTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingTypesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingsInBillingGroupPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingsInBillingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingsInThingGroupPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingsInThingGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListTopicRuleDestinationsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListTopicRuleDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListTopicRulesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListTopicRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListV2LoggingLevelsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListV2LoggingLevels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListViolationEventsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListViolationEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CancelDetectMitigationActionsTask",
+          [
+            [
+              "iot",
+              "CancelDetectMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateCustomMetric",
+          [
+            [
+              "iot",
+              "CreateCustomMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCustomMetric",
+          [
+            [
+              "iot",
+              "DeleteCustomMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeCustomMetric",
+          [
+            [
+              "iot",
+              "DescribeCustomMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeDetectMitigationActionsTask",
+          [
+            [
+              "iot",
+              "DescribeDetectMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetBehaviorModelTrainingSummaries",
+          [
+            [
+              "iot",
+              "GetBehaviorModelTrainingSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCustomMetrics",
+          [
+            [
+              "iot",
+              "ListCustomMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListDetectMitigationActionsExecutions",
+          [
+            [
+              "iot",
+              "ListDetectMitigationActionsExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListDetectMitigationActionsTasks",
+          [
+            [
+              "iot",
+              "ListDetectMitigationActionsTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "StartDetectMitigationActionsTask",
+          [
+            [
+              "iot",
+              "StartDetectMitigationActionsTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateCustomMetric",
+          [
+            [
+              "iot",
+              "UpdateCustomMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "GetBehaviorModelTrainingSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "GetBehaviorModelTrainingSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCustomMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCustomMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListDetectMitigationActionsExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListDetectMitigationActionsExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListDetectMitigationActionsTasksPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListDetectMitigationActionsTasks"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateJobTemplate",
+          [
+            [
+              "iot",
+              "CreateJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteJobTemplate",
+          [
+            [
+              "iot",
+              "DeleteJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeJobTemplate",
+          [
+            [
+              "iot",
+              "DescribeJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListJobTemplates",
+          [
+            [
+              "iot",
+              "ListJobTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateFleetMetric",
+          [
+            [
+              "iot",
+              "CreateFleetMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteFleetMetric",
+          [
+            [
+              "iot",
+              "DeleteFleetMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeFleetMetric",
+          [
+            [
+              "iot",
+              "DescribeFleetMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetBucketsAggregation",
+          [
+            [
+              "iot",
+              "GetBucketsAggregation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListFleetMetrics",
+          [
+            [
+              "iot",
+              "ListFleetMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateFleetMetric",
+          [
+            [
+              "iot",
+              "UpdateFleetMetric"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListFleetMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListFleetMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListJobTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListJobTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "PutVerificationStateOnViolation",
+          [
+            [
+              "iot",
+              "PutVerificationStateOnViolation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeManagedJobTemplate",
+          [
+            [
+              "iot",
+              "DescribeManagedJobTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListManagedJobTemplates",
+          [
+            [
+              "iot",
+              "ListManagedJobTemplates"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListMetricValues",
+          [
+            [
+              "iot",
+              "ListMetricValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListMetricValuesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListMetricValues"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListRelatedResourcesForAuditFinding",
+          [
+            [
+              "iot",
+              "ListRelatedResourcesForAuditFinding"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListManagedJobTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListManagedJobTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListRelatedResourcesForAuditFindingPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListRelatedResourcesForAuditFinding"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreatePackage",
+          [
+            [
+              "iot",
+              "CreatePackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreatePackageVersion",
+          [
+            [
+              "iot",
+              "CreatePackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeletePackage",
+          [
+            [
+              "iot",
+              "DeletePackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeletePackageVersion",
+          [
+            [
+              "iot",
+              "DeletePackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPackage",
+          [
+            [
+              "iot",
+              "GetPackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPackageConfiguration",
+          [
+            [
+              "iot",
+              "GetPackageConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetPackageVersion",
+          [
+            [
+              "iot",
+              "GetPackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPackageVersions",
+          [
+            [
+              "iot",
+              "ListPackageVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPackages",
+          [
+            [
+              "iot",
+              "ListPackages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdatePackage",
+          [
+            [
+              "iot",
+              "UpdatePackage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdatePackageConfiguration",
+          [
+            [
+              "iot",
+              "UpdatePackageConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdatePackageVersion",
+          [
+            [
+              "iot",
+              "UpdatePackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPackageVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPackageVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPackagesPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPackages"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateCertificateProvider",
+          [
+            [
+              "iot",
+              "CreateCertificateProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCertificateProvider",
+          [
+            [
+              "iot",
+              "DeleteCertificateProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeCertificateProvider",
+          [
+            [
+              "iot",
+              "DescribeCertificateProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCertificateProviders",
+          [
+            [
+              "iot",
+              "ListCertificateProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateCertificateProvider",
+          [
+            [
+              "iot",
+              "UpdateCertificateProvider"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "AssociateSbomWithPackageVersion",
+          [
+            [
+              "iot",
+              "AssociateSbomWithPackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DisassociateSbomFromPackageVersion",
+          [
+            [
+              "iot",
+              "DisassociateSbomFromPackageVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListSbomValidationResults",
+          [
+            [
+              "iot",
+              "ListSbomValidationResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListSbomValidationResultsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListSbomValidationResults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListPrincipalThingsV2",
+          [
+            [
+              "iot",
+              "ListPrincipalThingsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListThingPrincipalsV2",
+          [
+            [
+              "iot",
+              "ListThingPrincipalsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateThingType",
+          [
+            [
+              "iot",
+              "UpdateThingType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListPrincipalThingsV2Paginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListPrincipalThingsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListThingPrincipalsV2Paginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListThingPrincipalsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "CreateCommand",
+          [
+            [
+              "iot",
+              "CreateCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCommand",
+          [
+            [
+              "iot",
+              "DeleteCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DeleteCommandExecution",
+          [
+            [
+              "iot",
+              "DeleteCommandExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetCommand",
+          [
+            [
+              "iot",
+              "GetCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetCommandExecution",
+          [
+            [
+              "iot",
+              "GetCommandExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCommandExecutions",
+          [
+            [
+              "iot",
+              "ListCommandExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "ListCommands",
+          [
+            [
+              "iot",
+              "ListCommands"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateCommand",
+          [
+            [
+              "iot",
+              "UpdateCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCommandExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCommandExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "ListCommandsPaginator",
+          "NextPage",
+          [
+            [
+              "iot",
+              "ListCommands"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "GetThingConnectivityData",
+          [
+            [
+              "iot",
+              "GetThingConnectivityData"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "DescribeEncryptionConfiguration",
+          [
+            [
+              "iot",
+              "DescribeEncryptionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iot",
+          "Client",
+          "UpdateEncryptionConfiguration",
+          [
+            [
+              "iot",
+              "UpdateEncryptionConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -4,14 +4,15 @@
   "upsert": [
     [
       "data_source",
+      "aws_ami",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_ami_ids",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ]
-      ]
+      []
     ],
     [
       "data_source",
@@ -37,6 +38,91 @@
     ],
     [
       "data_source",
+      "aws_docdb_engine_version",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_docdb_orderable_db_instance",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_host",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_instance_type",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_instance_type_offering",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_instance_type_offerings",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_instance_types",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_public_ipv4_pool",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_public_ipv4_pools",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_ec2_spot_price",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_instance",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "GetPasswordData"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_instances",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_launch_configuration",
       "read",
       [
@@ -45,6 +131,12 @@
           "DescribeLaunchConfigurations"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_launch_template",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -83,10 +175,6 @@
         ],
         [
           "servicediscovery",
-          "ListNamespaces"
-        ],
-        [
-          "servicediscovery",
           "ListTagsForResource"
         ]
       ]
@@ -102,10 +190,6 @@
         ],
         [
           "servicediscovery",
-          "ListNamespaces"
-        ],
-        [
-          "servicediscovery",
           "ListTagsForResource"
         ]
       ]
@@ -118,10 +202,6 @@
         [
           "servicediscovery",
           "GetService"
-        ],
-        [
-          "servicediscovery",
-          "ListServices"
         ],
         [
           "servicediscovery",
@@ -159,7 +239,43 @@
         ],
         [
           "ec2",
-          "DescribeImages"
+          "EnableImageDeprecation"
+        ],
+        [
+          "ec2",
+          "RegisterImage"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteSnapshot"
+        ],
+        [
+          "ec2",
+          "DeregisterImage"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ami",
+      "update",
+      [
+        [
+          "ec2",
+          "DisableImageDeprecation"
         ],
         [
           "ec2",
@@ -167,7 +283,7 @@
         ],
         [
           "ec2",
-          "RegisterImage"
+          "ModifyImageAttribute"
         ]
       ]
     ],
@@ -190,11 +306,102 @@
         ],
         [
           "ec2",
-          "DescribeImages"
+          "EnableImageDeprecation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami_copy",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteSnapshot"
+        ],
+        [
+          "ec2",
+          "DeregisterImage"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami_copy",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ami_copy",
+      "update",
+      [
+        [
+          "ec2",
+          "DisableImageDeprecation"
         ],
         [
           "ec2",
           "EnableImageDeprecation"
+        ],
+        [
+          "ec2",
+          "ModifyImageAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami_from_instance",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateImage"
+        ],
+        [
+          "ec2",
+          "EnableImageDeprecation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami_from_instance",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteSnapshot"
+        ],
+        [
+          "ec2",
+          "DeregisterImage"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ami_from_instance",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ami_from_instance",
+      "update",
+      [
+        [
+          "ec2",
+          "DisableImageDeprecation"
+        ],
+        [
+          "ec2",
+          "EnableImageDeprecation"
+        ],
+        [
+          "ec2",
+          "ModifyImageAttribute"
         ]
       ]
     ],
@@ -256,6 +463,557 @@
     ],
     [
       "resource",
+      "aws_docdb_cluster",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateDBCluster"
+        ],
+        [
+          "docdb",
+          "ModifyDBCluster"
+        ],
+        [
+          "docdb",
+          "RestoreDBClusterFromSnapshot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteDBCluster"
+        ],
+        [
+          "docdb",
+          "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster",
+      "update",
+      [
+        [
+          "docdb",
+          "ModifyDBCluster"
+        ],
+        [
+          "docdb",
+          "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_instance",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateDBInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_instance",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteDBInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_instance",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_instance",
+      "update",
+      [
+        [
+          "docdb",
+          "ModifyDBInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_parameter_group",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateDBClusterParameterGroup"
+        ],
+        [
+          "docdb",
+          "ModifyDBClusterParameterGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_parameter_group",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteDBClusterParameterGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_parameter_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_parameter_group",
+      "update",
+      [
+        [
+          "docdb",
+          "ModifyDBClusterParameterGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_snapshot",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateDBClusterSnapshot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_cluster_snapshot",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_event_subscription",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateEventSubscription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_event_subscription",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteEventSubscription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_event_subscription",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_event_subscription",
+      "update",
+      [
+        [
+          "docdb",
+          "AddSourceIdentifierToSubscription"
+        ],
+        [
+          "docdb",
+          "ModifyEventSubscription"
+        ],
+        [
+          "docdb",
+          "RemoveSourceIdentifierFromSubscription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_global_cluster",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_global_cluster",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteGlobalCluster"
+        ],
+        [
+          "docdb",
+          "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_global_cluster",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_global_cluster",
+      "update",
+      [
+        [
+          "docdb",
+          "ModifyDBCluster"
+        ],
+        [
+          "docdb",
+          "ModifyGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_subnet_group",
+      "create",
+      [
+        [
+          "docdb",
+          "CreateDBSubnetGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_subnet_group",
+      "delete",
+      [
+        [
+          "docdb",
+          "DeleteDBSubnetGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdb_subnet_group",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_docdb_subnet_group",
+      "update",
+      [
+        [
+          "docdb",
+          "ModifyDBSubnetGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_capacity_reservation",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateCapacityReservation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_capacity_reservation",
+      "delete",
+      [
+        [
+          "ec2",
+          "CancelCapacityReservation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_capacity_reservation",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_capacity_reservation",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyCapacityReservation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_fleet",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateFleet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_fleet",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteFleets"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_fleet",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_fleet",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyFleet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_host",
+      "create",
+      [
+        [
+          "ec2",
+          "AllocateHosts"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_host",
+      "delete",
+      [
+        [
+          "ec2",
+          "ReleaseHosts"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_host",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_host",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyHosts"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_state",
+      "create",
+      [
+        [
+          "ec2",
+          "StartInstances"
+        ],
+        [
+          "ec2",
+          "StopInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_state",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_state",
+      "update",
+      [
+        [
+          "ec2",
+          "StartInstances"
+        ],
+        [
+          "ec2",
+          "StopInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateTrafficMirrorFilter"
+        ],
+        [
+          "ec2",
+          "ModifyTrafficMirrorFilterNetworkServices"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyTrafficMirrorFilterNetworkServices"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter_rule",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateTrafficMirrorFilterRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter_rule",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_filter_rule",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyTrafficMirrorFilterRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_session",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateTrafficMirrorSession"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_session",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_session",
+      "update",
+      [
+        [
+          "ec2",
+          "ModifyTrafficMirrorSession"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_target",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateTrafficMirrorTarget"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_target",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_ec2_traffic_mirror_target",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_instance",
       "create",
       [
@@ -285,35 +1043,7 @@
         ],
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "DescribeInstanceAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceCreditSpecifications"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceTypes"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
-        ],
-        [
-          "ec2",
-          "DescribeSpotInstanceRequests"
         ],
         [
           "ec2",
@@ -322,14 +1052,6 @@
         [
           "ec2",
           "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVolumesModifications"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
         ],
         [
           "ec2",
@@ -408,6 +1130,48 @@
     [
       "resource",
       "aws_instance",
+      "delete",
+      [
+        [
+          "ec2",
+          "CancelSpotInstanceRequests"
+        ],
+        [
+          "ec2",
+          "ModifyInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "TerminateInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_instance",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeTags"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "GetPasswordData"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_instance",
       "update",
       [
         [
@@ -440,43 +1204,11 @@
         ],
         [
           "ec2",
-          "DescribeInstanceCreditSpecifications"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceTypes"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
-        ],
-        [
-          "ec2",
-          "DescribeSpotInstanceRequests"
-        ],
-        [
-          "ec2",
           "DescribeTags"
         ],
         [
           "ec2",
           "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVolumesModifications"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
         ],
         [
           "ec2",
@@ -550,25 +1282,6 @@
     ],
     [
       "resource",
-      "aws_lambda_function",
-      "delete",
-      [
-        [
-          "lambda",
-          "DeleteFunction"
-        ],
-        [
-          "lambda",
-          "GetFunction"
-        ],
-        [
-          "lambda",
-          "UpdateFunctionConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_launch_configuration",
       "create",
       [
@@ -595,20 +1308,63 @@
     ],
     [
       "resource",
+      "aws_launch_template",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateLaunchTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_launch_template",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_launch_template",
+      "update",
+      [
+        [
+          "ec2",
+          "CreateLaunchTemplateVersion"
+        ],
+        [
+          "ec2",
+          "ModifyLaunchTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_service_discovery_service",
+      "delete",
+      [
+        [
+          "servicediscovery",
+          "DeleteService"
+        ],
+        [
+          "servicediscovery",
+          "DeregisterInstance"
+        ],
+        [
+          "servicediscovery",
+          "GetOperation"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_spot_fleet_request",
       "create",
       [
         [
           "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
           "DescribeSpotFleetRequestHistory"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequests"
         ],
         [
           "ec2",
@@ -633,90 +1389,82 @@
     ],
     [
       "resource",
-      "aws_vpc_endpoint",
-      "create",
-      [
-        [
-          "ec2",
-          "AcceptVpcEndpointConnections"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "CreateVpcEndpoint"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpointServiceConfigurations"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_endpoint",
+      "aws_spot_fleet_request",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeNetworkInterfaces"
-        ],
-        [
-          "ec2",
-          "DescribePrefixLists"
-        ],
-        [
-          "ec2",
-          "DescribeVpcEndpoints"
-        ]
-      ]
+      []
     ],
     [
       "resource",
-      "aws_vpc_endpoint",
+      "aws_spot_fleet_request",
       "update",
       [
         [
           "ec2",
-          "AcceptVpcEndpointConnections"
+          "ModifySpotFleetRequest"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_spot_instance_request",
+      "create",
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
         ],
         [
           "ec2",
-          "DescribeNetworkInterfaces"
+          "GetPasswordData"
         ],
         [
           "ec2",
-          "DescribePrefixLists"
+          "RequestSpotInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_spot_instance_request",
+      "delete",
+      [
+        [
+          "ec2",
+          "CancelSpotInstanceRequests"
         ],
         [
           "ec2",
-          "DescribeVpcEndpointServiceConfigurations"
+          "TerminateInstances"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_spot_instance_request",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
         ],
         [
           "ec2",
-          "DescribeVpcEndpoints"
+          "GetPasswordData"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_spot_instance_request",
+      "update",
+      [
+        [
+          "ec2",
+          "DescribeVolumes"
         ],
         [
           "ec2",
-          "ModifyVpcEndpoint"
+          "GetPasswordData"
         ]
       ]
     ]

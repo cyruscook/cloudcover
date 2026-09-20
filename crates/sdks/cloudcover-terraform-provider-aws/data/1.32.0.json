@@ -1,42 +1,4 @@
 {
   "provider_version": "1.32.0",
-  "remove": [],
-  "upsert": [
-    [
-      "resource",
-      "aws_neptune_cluster_snapshot",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_snapshot",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_storagegateway_cached_iscsi_volume",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_storagegateway_cached_iscsi_volume",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_storagegateway_cached_iscsi_volume",
-      "read",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

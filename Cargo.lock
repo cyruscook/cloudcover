@@ -149,8 +149,11 @@ dependencies = [
 name = "cloudcover-aws-sdk-go-v2"
 version = "0.1.0"
 dependencies = [
+ "clap",
+ "semver",
  "serde",
  "serde_json",
+ "tempfile",
 ]
 
 [[package]]

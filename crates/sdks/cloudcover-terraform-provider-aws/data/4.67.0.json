@@ -79,9 +79,70 @@
     ],
     [
       "resource",
+      "aws_acm_certificate",
+      "create",
+      [
+        [
+          "acm",
+          "DescribeCertificate"
+        ],
+        [
+          "acm",
+          "ImportCertificate"
+        ],
+        [
+          "acm",
+          "RequestCertificate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_acm_certificate",
+      "read",
+      [
+        [
+          "acm",
+          "DescribeCertificate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_acm_certificate",
+      "update",
+      [
+        [
+          "acm",
+          "DescribeCertificate"
+        ],
+        [
+          "acm",
+          "ImportCertificate"
+        ],
+        [
+          "acm",
+          "RenewCertificate"
+        ],
+        [
+          "acm",
+          "UpdateCertificateOptions"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_quicksight_data_set",
       "create",
       [
+        [
+          "quicksight",
+          "ColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "ColumnTagName_Values"
+        ],
         [
           "quicksight",
           "CreateDataSet"
@@ -100,7 +161,27 @@
         ],
         [
           "quicksight",
+          "FileFormat_Values"
+        ],
+        [
+          "quicksight",
+          "GeoSpatialDataRole_Values"
+        ],
+        [
+          "quicksight",
+          "InputColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "JoinType_Values"
+        ],
+        [
+          "quicksight",
           "PutDataSetRefreshProperties"
+        ],
+        [
+          "quicksight",
+          "TextQualifier_Values"
         ]
       ]
     ],
@@ -109,6 +190,14 @@
       "aws_quicksight_data_set",
       "read",
       [
+        [
+          "quicksight",
+          "ColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "ColumnTagName_Values"
+        ],
         [
           "quicksight",
           "DescribeDataSet"
@@ -120,6 +209,26 @@
         [
           "quicksight",
           "DescribeDataSetRefreshProperties"
+        ],
+        [
+          "quicksight",
+          "FileFormat_Values"
+        ],
+        [
+          "quicksight",
+          "GeoSpatialDataRole_Values"
+        ],
+        [
+          "quicksight",
+          "InputColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "JoinType_Values"
+        ],
+        [
+          "quicksight",
+          "TextQualifier_Values"
         ]
       ]
     ],
@@ -128,6 +237,14 @@
       "aws_quicksight_data_set",
       "update",
       [
+        [
+          "quicksight",
+          "ColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "ColumnTagName_Values"
+        ],
         [
           "quicksight",
           "DeleteDataSetRefreshProperties"
@@ -146,7 +263,27 @@
         ],
         [
           "quicksight",
+          "FileFormat_Values"
+        ],
+        [
+          "quicksight",
+          "GeoSpatialDataRole_Values"
+        ],
+        [
+          "quicksight",
+          "InputColumnDataType_Values"
+        ],
+        [
+          "quicksight",
+          "JoinType_Values"
+        ],
+        [
+          "quicksight",
           "PutDataSetRefreshProperties"
+        ],
+        [
+          "quicksight",
+          "TextQualifier_Values"
         ],
         [
           "quicksight",
@@ -235,6 +372,34 @@
         [
           "quicksight",
           "UpdateTemplatePermissions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_xray_sampling_rule",
+      "create",
+      [
+        [
+          "xray",
+          "CreateSamplingRule"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_xray_sampling_rule",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_xray_sampling_rule",
+      "update",
+      [
+        [
+          "xray",
+          "UpdateSamplingRule"
         ]
       ]
     ]

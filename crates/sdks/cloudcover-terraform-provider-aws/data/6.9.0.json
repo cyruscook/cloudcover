@@ -18,10 +18,6 @@
         [
           "lambda",
           "GetFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ]
       ]
     ],
@@ -136,10 +132,6 @@
         ],
         [
           "lambda",
-          "ListVersionsByFunction"
-        ],
-        [
-          "lambda",
           "PutFunctionConcurrency"
         ]
       ]
@@ -160,10 +152,6 @@
         [
           "lambda",
           "GetFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
         ]
       ]
     ],
@@ -198,10 +186,6 @@
         ],
         [
           "lambda",
-          "ListVersionsByFunction"
-        ],
-        [
-          "lambda",
           "PublishVersion"
         ],
         [
@@ -219,151 +203,6 @@
         [
           "lambda",
           "UpdateFunctionConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_storagegateway_gateway",
-      "create",
-      [
-        [
-          "storagegateway",
-          "ActivateGateway"
-        ],
-        [
-          "storagegateway",
-          "DescribeBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "DescribeGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "DescribeMaintenanceStartTime"
-        ],
-        [
-          "storagegateway",
-          "DescribeSMBSettings"
-        ],
-        [
-          "storagegateway",
-          "JoinDomain"
-        ],
-        [
-          "storagegateway",
-          "ListGateways"
-        ],
-        [
-          "storagegateway",
-          "SetSMBGuestPassword"
-        ],
-        [
-          "storagegateway",
-          "UpdateBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "UpdateGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "UpdateMaintenanceStartTime"
-        ],
-        [
-          "storagegateway",
-          "UpdateSMBFileShareVisibility"
-        ],
-        [
-          "storagegateway",
-          "UpdateSMBSecurityStrategy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_storagegateway_gateway",
-      "read",
-      [
-        [
-          "storagegateway",
-          "DescribeBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "DescribeGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "DescribeMaintenanceStartTime"
-        ],
-        [
-          "storagegateway",
-          "DescribeSMBSettings"
-        ],
-        [
-          "storagegateway",
-          "ListGateways"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_storagegateway_gateway",
-      "update",
-      [
-        [
-          "storagegateway",
-          "DeleteBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "DescribeBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "DescribeGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "DescribeMaintenanceStartTime"
-        ],
-        [
-          "storagegateway",
-          "DescribeSMBSettings"
-        ],
-        [
-          "storagegateway",
-          "JoinDomain"
-        ],
-        [
-          "storagegateway",
-          "ListGateways"
-        ],
-        [
-          "storagegateway",
-          "SetSMBGuestPassword"
-        ],
-        [
-          "storagegateway",
-          "UpdateBandwidthRateLimit"
-        ],
-        [
-          "storagegateway",
-          "UpdateGatewayInformation"
-        ],
-        [
-          "storagegateway",
-          "UpdateMaintenanceStartTime"
-        ],
-        [
-          "storagegateway",
-          "UpdateSMBFileShareVisibility"
-        ],
-        [
-          "storagegateway",
-          "UpdateSMBSecurityStrategy"
         ]
       ]
     ]

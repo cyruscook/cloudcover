@@ -4,6 +4,21 @@
   "upsert": [
     [
       "data_source",
+      "aws_s3_bucket",
+      "read",
+      [
+        [
+          "s3",
+          "GetBucketWebsite"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_s3_bucket_object",
       "read",
       [
@@ -20,6 +35,12 @@
           "HeadObject"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_s3_bucket_objects",
+      "read",
+      []
     ],
     [
       "resource",

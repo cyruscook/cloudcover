@@ -1,0 +1,693 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/mobile",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "CreateProject",
+          [
+            [
+              "mobile",
+              "CreateProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "DeleteProject",
+          [
+            [
+              "mobile",
+              "DeleteProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "DescribeBundle",
+          [
+            [
+              "mobile",
+              "DescribeBundle"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "DescribeProject",
+          [
+            [
+              "mobile",
+              "DescribeProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "ExportBundle",
+          [
+            [
+              "mobile",
+              "ExportBundle"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "ExportProject",
+          [
+            [
+              "mobile",
+              "ExportProject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "ListBundles",
+          [
+            [
+              "mobile",
+              "ListBundles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "ListProjects",
+          [
+            [
+              "mobile",
+              "ListProjects"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "Client",
+          "UpdateProject",
+          [
+            [
+              "mobile",
+              "UpdateProject"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "ListBundlesPaginator",
+          "NextPage",
+          [
+            [
+              "mobile",
+              "ListBundles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mobile",
+          "ListProjectsPaginator",
+          "NextPage",
+          [
+            [
+              "mobile",
+              "ListProjects"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

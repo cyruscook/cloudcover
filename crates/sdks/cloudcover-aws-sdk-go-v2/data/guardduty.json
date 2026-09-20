@@ -1,0 +1,2716 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/guardduty",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "AcceptInvitation",
+          [
+            [
+              "guardduty",
+              "AcceptInvitation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ArchiveFindings",
+          [
+            [
+              "guardduty",
+              "ArchiveFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateDetector",
+          [
+            [
+              "guardduty",
+              "CreateDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateFilter",
+          [
+            [
+              "guardduty",
+              "CreateFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateIPSet",
+          [
+            [
+              "guardduty",
+              "CreateIPSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateMembers",
+          [
+            [
+              "guardduty",
+              "CreateMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreatePublishingDestination",
+          [
+            [
+              "guardduty",
+              "CreatePublishingDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateSampleFindings",
+          [
+            [
+              "guardduty",
+              "CreateSampleFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateThreatIntelSet",
+          [
+            [
+              "guardduty",
+              "CreateThreatIntelSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeclineInvitations",
+          [
+            [
+              "guardduty",
+              "DeclineInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteDetector",
+          [
+            [
+              "guardduty",
+              "DeleteDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteFilter",
+          [
+            [
+              "guardduty",
+              "DeleteFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteIPSet",
+          [
+            [
+              "guardduty",
+              "DeleteIPSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteInvitations",
+          [
+            [
+              "guardduty",
+              "DeleteInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteMembers",
+          [
+            [
+              "guardduty",
+              "DeleteMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeletePublishingDestination",
+          [
+            [
+              "guardduty",
+              "DeletePublishingDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteThreatIntelSet",
+          [
+            [
+              "guardduty",
+              "DeleteThreatIntelSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DescribeOrganizationConfiguration",
+          [
+            [
+              "guardduty",
+              "DescribeOrganizationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DescribePublishingDestination",
+          [
+            [
+              "guardduty",
+              "DescribePublishingDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DisableOrganizationAdminAccount",
+          [
+            [
+              "guardduty",
+              "DisableOrganizationAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DisassociateFromMasterAccount",
+          [
+            [
+              "guardduty",
+              "DisassociateFromMasterAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DisassociateMembers",
+          [
+            [
+              "guardduty",
+              "DisassociateMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "EnableOrganizationAdminAccount",
+          [
+            [
+              "guardduty",
+              "EnableOrganizationAdminAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetDetector",
+          [
+            [
+              "guardduty",
+              "GetDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetFilter",
+          [
+            [
+              "guardduty",
+              "GetFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetFindings",
+          [
+            [
+              "guardduty",
+              "GetFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetFindingsStatistics",
+          [
+            [
+              "guardduty",
+              "GetFindingsStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetIPSet",
+          [
+            [
+              "guardduty",
+              "GetIPSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetInvitationsCount",
+          [
+            [
+              "guardduty",
+              "GetInvitationsCount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMasterAccount",
+          [
+            [
+              "guardduty",
+              "GetMasterAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMemberDetectors",
+          [
+            [
+              "guardduty",
+              "GetMemberDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMembers",
+          [
+            [
+              "guardduty",
+              "GetMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetThreatIntelSet",
+          [
+            [
+              "guardduty",
+              "GetThreatIntelSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetUsageStatistics",
+          [
+            [
+              "guardduty",
+              "GetUsageStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "InviteMembers",
+          [
+            [
+              "guardduty",
+              "InviteMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListDetectors",
+          [
+            [
+              "guardduty",
+              "ListDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListFilters",
+          [
+            [
+              "guardduty",
+              "ListFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListFindings",
+          [
+            [
+              "guardduty",
+              "ListFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListIPSets",
+          [
+            [
+              "guardduty",
+              "ListIPSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListInvitations",
+          [
+            [
+              "guardduty",
+              "ListInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListMembers",
+          [
+            [
+              "guardduty",
+              "ListMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListOrganizationAdminAccounts",
+          [
+            [
+              "guardduty",
+              "ListOrganizationAdminAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListPublishingDestinations",
+          [
+            [
+              "guardduty",
+              "ListPublishingDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "guardduty",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListThreatIntelSets",
+          [
+            [
+              "guardduty",
+              "ListThreatIntelSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "StartMonitoringMembers",
+          [
+            [
+              "guardduty",
+              "StartMonitoringMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "StopMonitoringMembers",
+          [
+            [
+              "guardduty",
+              "StopMonitoringMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "TagResource",
+          [
+            [
+              "guardduty",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UnarchiveFindings",
+          [
+            [
+              "guardduty",
+              "UnarchiveFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "guardduty",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateDetector",
+          [
+            [
+              "guardduty",
+              "UpdateDetector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateFilter",
+          [
+            [
+              "guardduty",
+              "UpdateFilter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateFindingsFeedback",
+          [
+            [
+              "guardduty",
+              "UpdateFindingsFeedback"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateIPSet",
+          [
+            [
+              "guardduty",
+              "UpdateIPSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateMemberDetectors",
+          [
+            [
+              "guardduty",
+              "UpdateMemberDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateOrganizationConfiguration",
+          [
+            [
+              "guardduty",
+              "UpdateOrganizationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdatePublishingDestination",
+          [
+            [
+              "guardduty",
+              "UpdatePublishingDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateThreatIntelSet",
+          [
+            [
+              "guardduty",
+              "UpdateThreatIntelSet"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "GetUsageStatisticsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "GetUsageStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListDetectorsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListDetectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListFiltersPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListFilters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListIPSetsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListIPSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListInvitationsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListInvitations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListMembersPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListMembers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListOrganizationAdminAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListOrganizationAdminAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListPublishingDestinationsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListPublishingDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListThreatIntelSetsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListThreatIntelSets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "AcceptAdministratorInvitation",
+          [
+            [
+              "guardduty",
+              "AcceptAdministratorInvitation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DisassociateFromAdministratorAccount",
+          [
+            [
+              "guardduty",
+              "DisassociateFromAdministratorAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetAdministratorAccount",
+          [
+            [
+              "guardduty",
+              "GetAdministratorAccount"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetRemainingFreeTrialDays",
+          [
+            [
+              "guardduty",
+              "GetRemainingFreeTrialDays"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DescribeMalwareScans",
+          [
+            [
+              "guardduty",
+              "DescribeMalwareScans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMalwareScanSettings",
+          [
+            [
+              "guardduty",
+              "GetMalwareScanSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateMalwareScanSettings",
+          [
+            [
+              "guardduty",
+              "UpdateMalwareScanSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "DescribeMalwareScansPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "DescribeMalwareScans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "DescribeOrganizationConfigurationPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "DescribeOrganizationConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetCoverageStatistics",
+          [
+            [
+              "guardduty",
+              "GetCoverageStatistics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListCoverage",
+          [
+            [
+              "guardduty",
+              "ListCoverage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListCoveragePaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListCoverage"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "StartMalwareScan",
+          [
+            [
+              "guardduty",
+              "StartMalwareScan"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetOrganizationStatistics",
+          [
+            [
+              "guardduty",
+              "GetOrganizationStatistics"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateMalwareProtectionPlan",
+          [
+            [
+              "guardduty",
+              "CreateMalwareProtectionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteMalwareProtectionPlan",
+          [
+            [
+              "guardduty",
+              "DeleteMalwareProtectionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMalwareProtectionPlan",
+          [
+            [
+              "guardduty",
+              "GetMalwareProtectionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListMalwareProtectionPlans",
+          [
+            [
+              "guardduty",
+              "ListMalwareProtectionPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateMalwareProtectionPlan",
+          [
+            [
+              "guardduty",
+              "UpdateMalwareProtectionPlan"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateThreatEntitySet",
+          [
+            [
+              "guardduty",
+              "CreateThreatEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateTrustedEntitySet",
+          [
+            [
+              "guardduty",
+              "CreateTrustedEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteThreatEntitySet",
+          [
+            [
+              "guardduty",
+              "DeleteThreatEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteTrustedEntitySet",
+          [
+            [
+              "guardduty",
+              "DeleteTrustedEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetThreatEntitySet",
+          [
+            [
+              "guardduty",
+              "GetThreatEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetTrustedEntitySet",
+          [
+            [
+              "guardduty",
+              "GetTrustedEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListThreatEntitySets",
+          [
+            [
+              "guardduty",
+              "ListThreatEntitySets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListTrustedEntitySets",
+          [
+            [
+              "guardduty",
+              "ListTrustedEntitySets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateThreatEntitySet",
+          [
+            [
+              "guardduty",
+              "UpdateThreatEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateTrustedEntitySet",
+          [
+            [
+              "guardduty",
+              "UpdateTrustedEntitySet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListThreatEntitySetsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListThreatEntitySets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListTrustedEntitySetsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListTrustedEntitySets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "SendObjectMalwareScan",
+          [
+            [
+              "guardduty",
+              "SendObjectMalwareScan"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetMalwareScan",
+          [
+            [
+              "guardduty",
+              "GetMalwareScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListMalwareScans",
+          [
+            [
+              "guardduty",
+              "ListMalwareScans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListMalwareScansPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListMalwareScans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateInvestigation",
+          [
+            [
+              "guardduty",
+              "CreateInvestigation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetInvestigation",
+          [
+            [
+              "guardduty",
+              "GetInvestigation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListInvestigations",
+          [
+            [
+              "guardduty",
+              "ListInvestigations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListInvestigationsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListInvestigations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.80.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.80.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.88.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.89.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateCustomDetectionRuleAssociation",
+          [
+            [
+              "guardduty",
+              "CreateCustomDetectionRuleAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "CreateCustomDetectionRuleOrgConfiguration",
+          [
+            [
+              "guardduty",
+              "CreateCustomDetectionRuleOrgConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteCustomDetectionRuleAssociation",
+          [
+            [
+              "guardduty",
+              "DeleteCustomDetectionRuleAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "DeleteCustomDetectionRuleOrgConfiguration",
+          [
+            [
+              "guardduty",
+              "DeleteCustomDetectionRuleOrgConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetCustomDetectionRule",
+          [
+            [
+              "guardduty",
+              "GetCustomDetectionRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetCustomDetectionRuleAssociation",
+          [
+            [
+              "guardduty",
+              "GetCustomDetectionRuleAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "GetCustomDetectionRuleOrgConfiguration",
+          [
+            [
+              "guardduty",
+              "GetCustomDetectionRuleOrgConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListCustomDetectionRuleAssociations",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRuleAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListCustomDetectionRuleOrgConfigurations",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRuleOrgConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "ListCustomDetectionRules",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateCustomDetectionRuleAssociation",
+          [
+            [
+              "guardduty",
+              "UpdateCustomDetectionRuleAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "Client",
+          "UpdateCustomDetectionRuleOrgConfiguration",
+          [
+            [
+              "guardduty",
+              "UpdateCustomDetectionRuleOrgConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListCustomDetectionRuleAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRuleAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListCustomDetectionRuleOrgConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRuleOrgConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/guardduty",
+          "ListCustomDetectionRulesPaginator",
+          "NextPage",
+          [
+            [
+              "guardduty",
+              "ListCustomDetectionRules"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.90.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.91.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.92.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.93.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

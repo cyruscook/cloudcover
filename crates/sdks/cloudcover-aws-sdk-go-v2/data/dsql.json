@@ -1,0 +1,650 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/dsql",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "CreateCluster",
+          [
+            [
+              "dsql",
+              "CreateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "CreateMultiRegionClusters",
+          [
+            [
+              "dsql",
+              "CreateMultiRegionClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "DeleteCluster",
+          [
+            [
+              "dsql",
+              "DeleteCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "DeleteMultiRegionClusters",
+          [
+            [
+              "dsql",
+              "DeleteMultiRegionClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "GetCluster",
+          [
+            [
+              "dsql",
+              "GetCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "ListClusters",
+          [
+            [
+              "dsql",
+              "ListClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "dsql",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "TagResource",
+          [
+            [
+              "dsql",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "dsql",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "UpdateCluster",
+          [
+            [
+              "dsql",
+              "UpdateCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "ListClustersPaginator",
+          "NextPage",
+          [
+            [
+              "dsql",
+              "ListClusters"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "GetVpcEndpointServiceName",
+          [
+            [
+              "dsql",
+              "GetVpcEndpointServiceName"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "CreateMultiRegionClusters"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "DeleteMultiRegionClusters"
+        ]
+      ],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "DeleteClusterPolicy",
+          [
+            [
+              "dsql",
+              "DeleteClusterPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "GetClusterPolicy",
+          [
+            [
+              "dsql",
+              "GetClusterPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "PutClusterPolicy",
+          [
+            [
+              "dsql",
+              "PutClusterPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "CreateStream",
+          [
+            [
+              "dsql",
+              "CreateStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "DeleteStream",
+          [
+            [
+              "dsql",
+              "DeleteStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "GetStream",
+          [
+            [
+              "dsql",
+              "GetStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "Client",
+          "ListStreams",
+          [
+            [
+              "dsql",
+              "ListStreams"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dsql",
+          "ListStreamsPaginator",
+          "NextPage",
+          [
+            [
+              "dsql",
+              "ListStreams"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

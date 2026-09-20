@@ -1,0 +1,2103 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/neptune",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "AddRoleToDBCluster",
+          [
+            [
+              "neptune",
+              "AddRoleToDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "AddSourceIdentifierToSubscription",
+          [
+            [
+              "neptune",
+              "AddSourceIdentifierToSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "AddTagsToResource",
+          [
+            [
+              "neptune",
+              "AddTagsToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ApplyPendingMaintenanceAction",
+          [
+            [
+              "neptune",
+              "ApplyPendingMaintenanceAction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CopyDBClusterParameterGroup",
+          [
+            [
+              "neptune",
+              "CopyDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CopyDBClusterSnapshot",
+          [
+            [
+              "neptune",
+              "CopyDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CopyDBParameterGroup",
+          [
+            [
+              "neptune",
+              "CopyDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBCluster",
+          [
+            [
+              "neptune",
+              "CreateDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBClusterParameterGroup",
+          [
+            [
+              "neptune",
+              "CreateDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBClusterSnapshot",
+          [
+            [
+              "neptune",
+              "CreateDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBInstance",
+          [
+            [
+              "neptune",
+              "CreateDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBParameterGroup",
+          [
+            [
+              "neptune",
+              "CreateDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBSubnetGroup",
+          [
+            [
+              "neptune",
+              "CreateDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateEventSubscription",
+          [
+            [
+              "neptune",
+              "CreateEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBCluster",
+          [
+            [
+              "neptune",
+              "DeleteDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBClusterParameterGroup",
+          [
+            [
+              "neptune",
+              "DeleteDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBClusterSnapshot",
+          [
+            [
+              "neptune",
+              "DeleteDBClusterSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBInstance",
+          [
+            [
+              "neptune",
+              "DeleteDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBParameterGroup",
+          [
+            [
+              "neptune",
+              "DeleteDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBSubnetGroup",
+          [
+            [
+              "neptune",
+              "DeleteDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteEventSubscription",
+          [
+            [
+              "neptune",
+              "DeleteEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusterParameterGroups",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusterParameters",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusterSnapshotAttributes",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterSnapshotAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusterSnapshots",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusters",
+          [
+            [
+              "neptune",
+              "DescribeDBClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBEngineVersions",
+          [
+            [
+              "neptune",
+              "DescribeDBEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBInstances",
+          [
+            [
+              "neptune",
+              "DescribeDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBParameterGroups",
+          [
+            [
+              "neptune",
+              "DescribeDBParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBParameters",
+          [
+            [
+              "neptune",
+              "DescribeDBParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBSubnetGroups",
+          [
+            [
+              "neptune",
+              "DescribeDBSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeEngineDefaultClusterParameters",
+          [
+            [
+              "neptune",
+              "DescribeEngineDefaultClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeEngineDefaultParameters",
+          [
+            [
+              "neptune",
+              "DescribeEngineDefaultParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeEventCategories",
+          [
+            [
+              "neptune",
+              "DescribeEventCategories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeEventSubscriptions",
+          [
+            [
+              "neptune",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeEvents",
+          [
+            [
+              "neptune",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeOrderableDBInstanceOptions",
+          [
+            [
+              "neptune",
+              "DescribeOrderableDBInstanceOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribePendingMaintenanceActions",
+          [
+            [
+              "neptune",
+              "DescribePendingMaintenanceActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeValidDBInstanceModifications",
+          [
+            [
+              "neptune",
+              "DescribeValidDBInstanceModifications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "FailoverDBCluster",
+          [
+            [
+              "neptune",
+              "FailoverDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "neptune",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBCluster",
+          [
+            [
+              "neptune",
+              "ModifyDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBClusterParameterGroup",
+          [
+            [
+              "neptune",
+              "ModifyDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBClusterSnapshotAttribute",
+          [
+            [
+              "neptune",
+              "ModifyDBClusterSnapshotAttribute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBInstance",
+          [
+            [
+              "neptune",
+              "ModifyDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBParameterGroup",
+          [
+            [
+              "neptune",
+              "ModifyDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBSubnetGroup",
+          [
+            [
+              "neptune",
+              "ModifyDBSubnetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyEventSubscription",
+          [
+            [
+              "neptune",
+              "ModifyEventSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "PromoteReadReplicaDBCluster",
+          [
+            [
+              "neptune",
+              "PromoteReadReplicaDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RebootDBInstance",
+          [
+            [
+              "neptune",
+              "RebootDBInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RemoveRoleFromDBCluster",
+          [
+            [
+              "neptune",
+              "RemoveRoleFromDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RemoveSourceIdentifierFromSubscription",
+          [
+            [
+              "neptune",
+              "RemoveSourceIdentifierFromSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RemoveTagsFromResource",
+          [
+            [
+              "neptune",
+              "RemoveTagsFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ResetDBClusterParameterGroup",
+          [
+            [
+              "neptune",
+              "ResetDBClusterParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ResetDBParameterGroup",
+          [
+            [
+              "neptune",
+              "ResetDBParameterGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RestoreDBClusterFromSnapshot",
+          [
+            [
+              "neptune",
+              "RestoreDBClusterFromSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RestoreDBClusterToPointInTime",
+          [
+            [
+              "neptune",
+              "RestoreDBClusterToPointInTime"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "StartDBCluster",
+          [
+            [
+              "neptune",
+              "StartDBCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "StopDBCluster",
+          [
+            [
+              "neptune",
+              "StopDBCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateDBClusterEndpoint",
+          [
+            [
+              "neptune",
+              "CreateDBClusterEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteDBClusterEndpoint",
+          [
+            [
+              "neptune",
+              "DeleteDBClusterEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeDBClusterEndpoints",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyDBClusterEndpoint",
+          [
+            [
+              "neptune",
+              "ModifyDBClusterEndpoint"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBClusterEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBEngineVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBEngineVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBParameterGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBParametersPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBSubnetGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBSubnetGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeEngineDefaultParametersPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeEngineDefaultParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeEventSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeEventSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeEventsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeOrderableDBInstanceOptionsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeOrderableDBInstanceOptions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBClusterParameterGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterParameterGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBClusterParametersPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBClusterSnapshotsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBClusterSnapshots"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeDBClustersPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeDBClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribePendingMaintenanceActionsPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribePendingMaintenanceActions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "CreateGlobalCluster",
+          [
+            [
+              "neptune",
+              "CreateGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DeleteGlobalCluster",
+          [
+            [
+              "neptune",
+              "DeleteGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeGlobalClusters",
+          [
+            [
+              "neptune",
+              "DescribeGlobalClusters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "FailoverGlobalCluster",
+          [
+            [
+              "neptune",
+              "FailoverGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "ModifyGlobalCluster",
+          [
+            [
+              "neptune",
+              "ModifyGlobalCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "RemoveFromGlobalCluster",
+          [
+            [
+              "neptune",
+              "RemoveFromGlobalCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeGlobalClustersPaginator",
+          "NextPage",
+          [
+            [
+              "neptune",
+              "DescribeGlobalClusters"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "SwitchoverGlobalCluster",
+          [
+            [
+              "neptune",
+              "SwitchoverGlobalCluster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

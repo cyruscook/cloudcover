@@ -1,0 +1,2361 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/bedrock",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateModelCustomizationJob",
+          [
+            [
+              "bedrock",
+              "CreateModelCustomizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteCustomModel",
+          [
+            [
+              "bedrock",
+              "DeleteCustomModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteModelInvocationLoggingConfiguration",
+          [
+            [
+              "bedrock",
+              "DeleteModelInvocationLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetCustomModel",
+          [
+            [
+              "bedrock",
+              "GetCustomModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetFoundationModel",
+          [
+            [
+              "bedrock",
+              "GetFoundationModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetModelCustomizationJob",
+          [
+            [
+              "bedrock",
+              "GetModelCustomizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetModelInvocationLoggingConfiguration",
+          [
+            [
+              "bedrock",
+              "GetModelInvocationLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListCustomModels",
+          [
+            [
+              "bedrock",
+              "ListCustomModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListFoundationModels",
+          [
+            [
+              "bedrock",
+              "ListFoundationModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListModelCustomizationJobs",
+          [
+            [
+              "bedrock",
+              "ListModelCustomizationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "bedrock",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "PutModelInvocationLoggingConfiguration",
+          [
+            [
+              "bedrock",
+              "PutModelInvocationLoggingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StopModelCustomizationJob",
+          [
+            [
+              "bedrock",
+              "StopModelCustomizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "TagResource",
+          [
+            [
+              "bedrock",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "bedrock",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListCustomModelsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListCustomModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListModelCustomizationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListModelCustomizationJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateProvisionedModelThroughput",
+          [
+            [
+              "bedrock",
+              "CreateProvisionedModelThroughput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteProvisionedModelThroughput",
+          [
+            [
+              "bedrock",
+              "DeleteProvisionedModelThroughput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetProvisionedModelThroughput",
+          [
+            [
+              "bedrock",
+              "GetProvisionedModelThroughput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListProvisionedModelThroughputs",
+          [
+            [
+              "bedrock",
+              "ListProvisionedModelThroughputs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateProvisionedModelThroughput",
+          [
+            [
+              "bedrock",
+              "UpdateProvisionedModelThroughput"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListProvisionedModelThroughputsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListProvisionedModelThroughputs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateEvaluationJob",
+          [
+            [
+              "bedrock",
+              "CreateEvaluationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateGuardrail",
+          [
+            [
+              "bedrock",
+              "CreateGuardrail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateGuardrailVersion",
+          [
+            [
+              "bedrock",
+              "CreateGuardrailVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteGuardrail",
+          [
+            [
+              "bedrock",
+              "DeleteGuardrail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetEvaluationJob",
+          [
+            [
+              "bedrock",
+              "GetEvaluationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetGuardrail",
+          [
+            [
+              "bedrock",
+              "GetGuardrail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListEvaluationJobs",
+          [
+            [
+              "bedrock",
+              "ListEvaluationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListGuardrails",
+          [
+            [
+              "bedrock",
+              "ListGuardrails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StopEvaluationJob",
+          [
+            [
+              "bedrock",
+              "StopEvaluationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateGuardrail",
+          [
+            [
+              "bedrock",
+              "UpdateGuardrail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListEvaluationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListEvaluationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListGuardrailsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListGuardrails"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateModelCopyJob",
+          [
+            [
+              "bedrock",
+              "CreateModelCopyJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetModelCopyJob",
+          [
+            [
+              "bedrock",
+              "GetModelCopyJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListModelCopyJobs",
+          [
+            [
+              "bedrock",
+              "ListModelCopyJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListModelCopyJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListModelCopyJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateModelInvocationJob",
+          [
+            [
+              "bedrock",
+              "CreateModelInvocationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetModelInvocationJob",
+          [
+            [
+              "bedrock",
+              "GetModelInvocationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListModelInvocationJobs",
+          [
+            [
+              "bedrock",
+              "ListModelInvocationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StopModelInvocationJob",
+          [
+            [
+              "bedrock",
+              "StopModelInvocationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListModelInvocationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListModelInvocationJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "BatchDeleteEvaluationJob",
+          [
+            [
+              "bedrock",
+              "BatchDeleteEvaluationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateModelImportJob",
+          [
+            [
+              "bedrock",
+              "CreateModelImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteImportedModel",
+          [
+            [
+              "bedrock",
+              "DeleteImportedModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetImportedModel",
+          [
+            [
+              "bedrock",
+              "GetImportedModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetModelImportJob",
+          [
+            [
+              "bedrock",
+              "GetModelImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListImportedModels",
+          [
+            [
+              "bedrock",
+              "ListImportedModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListModelImportJobs",
+          [
+            [
+              "bedrock",
+              "ListModelImportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListImportedModelsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListImportedModels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListModelImportJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListModelImportJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetInferenceProfile",
+          [
+            [
+              "bedrock",
+              "GetInferenceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListInferenceProfiles",
+          [
+            [
+              "bedrock",
+              "ListInferenceProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListInferenceProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListInferenceProfiles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateInferenceProfile",
+          [
+            [
+              "bedrock",
+              "CreateInferenceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteInferenceProfile",
+          [
+            [
+              "bedrock",
+              "DeleteInferenceProfile"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "CreateMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "DeleteMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeregisterMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "DeregisterMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "GetMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetPromptRouter",
+          [
+            [
+              "bedrock",
+              "GetPromptRouter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListMarketplaceModelEndpoints",
+          [
+            [
+              "bedrock",
+              "ListMarketplaceModelEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListPromptRouters",
+          [
+            [
+              "bedrock",
+              "ListPromptRouters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "RegisterMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "RegisterMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateMarketplaceModelEndpoint",
+          [
+            [
+              "bedrock",
+              "UpdateMarketplaceModelEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListMarketplaceModelEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListMarketplaceModelEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListPromptRoutersPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListPromptRouters"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreatePromptRouter",
+          [
+            [
+              "bedrock",
+              "CreatePromptRouter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeletePromptRouter",
+          [
+            [
+              "bedrock",
+              "DeletePromptRouter"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateCustomModel",
+          [
+            [
+              "bedrock",
+              "CreateCustomModel"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateFoundationModelAgreement",
+          [
+            [
+              "bedrock",
+              "CreateFoundationModelAgreement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteFoundationModelAgreement",
+          [
+            [
+              "bedrock",
+              "DeleteFoundationModelAgreement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetFoundationModelAvailability",
+          [
+            [
+              "bedrock",
+              "GetFoundationModelAvailability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetUseCaseForModelAccess",
+          [
+            [
+              "bedrock",
+              "GetUseCaseForModelAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListFoundationModelAgreementOffers",
+          [
+            [
+              "bedrock",
+              "ListFoundationModelAgreementOffers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "PutUseCaseForModelAccess",
+          [
+            [
+              "bedrock",
+              "PutUseCaseForModelAccess"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateCustomModelDeployment",
+          [
+            [
+              "bedrock",
+              "CreateCustomModelDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteCustomModelDeployment",
+          [
+            [
+              "bedrock",
+              "DeleteCustomModelDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetCustomModelDeployment",
+          [
+            [
+              "bedrock",
+              "GetCustomModelDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListCustomModelDeployments",
+          [
+            [
+              "bedrock",
+              "ListCustomModelDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListCustomModelDeploymentsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListCustomModelDeployments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CancelAutomatedReasoningPolicyBuildWorkflow",
+          [
+            [
+              "bedrock",
+              "CancelAutomatedReasoningPolicyBuildWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateAutomatedReasoningPolicy",
+          [
+            [
+              "bedrock",
+              "CreateAutomatedReasoningPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateAutomatedReasoningPolicyTestCase",
+          [
+            [
+              "bedrock",
+              "CreateAutomatedReasoningPolicyTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateAutomatedReasoningPolicyVersion",
+          [
+            [
+              "bedrock",
+              "CreateAutomatedReasoningPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteAutomatedReasoningPolicy",
+          [
+            [
+              "bedrock",
+              "DeleteAutomatedReasoningPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteAutomatedReasoningPolicyBuildWorkflow",
+          [
+            [
+              "bedrock",
+              "DeleteAutomatedReasoningPolicyBuildWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteAutomatedReasoningPolicyTestCase",
+          [
+            [
+              "bedrock",
+              "DeleteAutomatedReasoningPolicyTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ExportAutomatedReasoningPolicyVersion",
+          [
+            [
+              "bedrock",
+              "ExportAutomatedReasoningPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicy",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyAnnotations",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyAnnotations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyBuildWorkflow",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyBuildWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyBuildWorkflowResultAssets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyNextScenario",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyNextScenario"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyTestCase",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAutomatedReasoningPolicyTestResult",
+          [
+            [
+              "bedrock",
+              "GetAutomatedReasoningPolicyTestResult"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListAutomatedReasoningPolicies",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListAutomatedReasoningPolicyBuildWorkflows",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyBuildWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListAutomatedReasoningPolicyTestCases",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyTestCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListAutomatedReasoningPolicyTestResults",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyTestResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StartAutomatedReasoningPolicyBuildWorkflow",
+          [
+            [
+              "bedrock",
+              "StartAutomatedReasoningPolicyBuildWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StartAutomatedReasoningPolicyTestWorkflow",
+          [
+            [
+              "bedrock",
+              "StartAutomatedReasoningPolicyTestWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateAutomatedReasoningPolicy",
+          [
+            [
+              "bedrock",
+              "UpdateAutomatedReasoningPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateAutomatedReasoningPolicyAnnotations",
+          [
+            [
+              "bedrock",
+              "UpdateAutomatedReasoningPolicyAnnotations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateAutomatedReasoningPolicyTestCase",
+          [
+            [
+              "bedrock",
+              "UpdateAutomatedReasoningPolicyTestCase"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListAutomatedReasoningPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListAutomatedReasoningPolicyBuildWorkflowsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyBuildWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListAutomatedReasoningPolicyTestCasesPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyTestCases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListAutomatedReasoningPolicyTestResultsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAutomatedReasoningPolicyTestResults"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteEnforcedGuardrailConfiguration",
+          [
+            [
+              "bedrock",
+              "DeleteEnforcedGuardrailConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListEnforcedGuardrailsConfiguration",
+          [
+            [
+              "bedrock",
+              "ListEnforcedGuardrailsConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "PutEnforcedGuardrailConfiguration",
+          [
+            [
+              "bedrock",
+              "PutEnforcedGuardrailConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListEnforcedGuardrailsConfigurationPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListEnforcedGuardrailsConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "UpdateCustomModelDeployment",
+          [
+            [
+              "bedrock",
+              "UpdateCustomModelDeployment"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "bedrock",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetResourcePolicy",
+          [
+            [
+              "bedrock",
+              "GetResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "bedrock",
+              "PutResourcePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "BatchDeleteAdvancedPromptOptimizationJob",
+          [
+            [
+              "bedrock",
+              "BatchDeleteAdvancedPromptOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "CreateAdvancedPromptOptimizationJob",
+          [
+            [
+              "bedrock",
+              "CreateAdvancedPromptOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAdvancedPromptOptimizationJob",
+          [
+            [
+              "bedrock",
+              "GetAdvancedPromptOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "ListAdvancedPromptOptimizationJobs",
+          [
+            [
+              "bedrock",
+              "ListAdvancedPromptOptimizationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "StopAdvancedPromptOptimizationJob",
+          [
+            [
+              "bedrock",
+              "StopAdvancedPromptOptimizationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "ListAdvancedPromptOptimizationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAdvancedPromptOptimizationJobs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "GetAccountDataRetention",
+          [
+            [
+              "bedrock",
+              "GetAccountDataRetention"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrock",
+          "Client",
+          "PutAccountDataRetention",
+          [
+            [
+              "bedrock",
+              "PutAccountDataRetention"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -14,6 +14,21 @@
       ]
     ],
     [
+      "data_source",
+      "aws_sesv2_dedicated_ip_pool",
+      "read",
+      [
+        [
+          "sesv2",
+          "GetDedicatedIpPool"
+        ],
+        [
+          "sesv2",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_cloudformation_stack_instances",
       "create",

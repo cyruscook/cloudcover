@@ -165,6 +165,12 @@
     ],
     [
       "data_source",
+      "aws_arn",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_autoscaling_group",
       "read",
       [
@@ -235,6 +241,12 @@
     ],
     [
       "data_source",
+      "aws_billing_service_account",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_caller_identity",
       "read",
       [
@@ -291,6 +303,12 @@
           "DescribeClusters"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_cloudtrail_service_account",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -593,6 +611,12 @@
     ],
     [
       "data_source",
+      "aws_elastic_beanstalk_hosted_zone",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_elastic_beanstalk_solution_stack",
       "read",
       [
@@ -653,6 +677,18 @@
     ],
     [
       "data_source",
+      "aws_elb_hosted_zone_id",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_elb_service_account",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_glue_script",
       "read",
       [
@@ -709,6 +745,12 @@
           "GetPolicyVersion"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_iam_policy_document",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -821,6 +863,12 @@
           "DescribeEndpoint"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_ip_ranges",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -1070,6 +1118,12 @@
     ],
     [
       "data_source",
+      "aws_partition",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_prefix_list",
       "read",
       [
@@ -1123,6 +1177,18 @@
           "DescribeLoggingStatus"
         ]
       ]
+    ],
+    [
+      "data_source",
+      "aws_redshift_service_account",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_region",
+      "read",
+      []
     ],
     [
       "data_source",
@@ -1548,6 +1614,12 @@
     [
       "resource",
       "aws_acm_certificate_validation",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_acm_certificate_validation",
       "read",
       [
         [
@@ -1861,6 +1933,12 @@
           "RemoveListenerCertificates"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_alb_listener_certificate",
+      "read",
+      []
     ],
     [
       "resource",
@@ -2319,6 +2397,12 @@
     ],
     [
       "resource",
+      "aws_ami_launch_permission",
+      "read",
+      []
+    ],
+    [
+      "resource",
       "aws_api_gateway_account",
       "create",
       [
@@ -2331,6 +2415,12 @@
           "UpdateAccount"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_api_gateway_account",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -3582,6 +3672,12 @@
           "DescribeScalingPolicies"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_appautoscaling_policy",
+      "read",
+      []
     ],
     [
       "resource",
@@ -5610,6 +5706,12 @@
           "PutDestinationPolicy"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_cloudwatch_log_destination_policy",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -8402,6 +8504,12 @@
     [
       "resource",
       "aws_default_network_acl",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_default_network_acl",
       "read",
       [
         [
@@ -8475,6 +8583,12 @@
           "EnableVgwRoutePropagation"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_default_route_table",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -9803,6 +9917,12 @@
     ],
     [
       "resource",
+      "aws_dx_bgp_peer",
+      "read",
+      []
+    ],
+    [
+      "resource",
       "aws_dx_connection",
       "create",
       [
@@ -10071,6 +10191,12 @@
     [
       "resource",
       "aws_dx_hosted_private_virtual_interface_accepter",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_dx_hosted_private_virtual_interface_accepter",
       "read",
       [
         [
@@ -10181,6 +10307,12 @@
           "UpdateVirtualInterfaceAttributes"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_dx_hosted_public_virtual_interface_accepter",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -11063,6 +11195,12 @@
           "DeleteTransitGatewayRoute"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ec2_transit_gateway_route",
+      "read",
+      []
     ],
     [
       "resource",
@@ -12066,6 +12204,12 @@
           "DeleteApplication"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_elastic_beanstalk_application",
+      "read",
+      []
     ],
     [
       "resource",
@@ -13743,6 +13887,12 @@
           "GetVaultLock"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_glacier_vault_lock",
+      "update",
+      []
     ],
     [
       "resource",
@@ -15575,6 +15725,24 @@
     ],
     [
       "resource",
+      "aws_iam_user_login_profile",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_user_login_profile",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_user_login_profile",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_iam_user_policy",
       "create",
       [
@@ -15821,6 +15989,12 @@
           "DescribeResourceGroups"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_inspector_resource_group",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -16940,6 +17114,12 @@
     ],
     [
       "resource",
+      "aws_kms_grant",
+      "read",
+      []
+    ],
+    [
+      "resource",
       "aws_kms_key",
       "create",
       [
@@ -17727,6 +17907,12 @@
           "RemoveListenerCertificates"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_lb_listener_certificate",
+      "read",
+      []
     ],
     [
       "resource",
@@ -18868,6 +19054,12 @@
     [
       "resource",
       "aws_mq_configuration",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_mq_configuration",
       "read",
       [
         [
@@ -19941,6 +20133,78 @@
     ],
     [
       "resource",
+      "aws_opsworks_custom_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_custom_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_ganglia_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_haproxy_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_opsworks_instance",
       "create",
       [
@@ -20013,6 +20277,102 @@
     ],
     [
       "resource",
+      "aws_opsworks_java_app_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_java_app_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_memcached_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_mysql_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_nodejs_app_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_opsworks_permission",
       "create",
       [
@@ -20025,6 +20385,12 @@
           "SetPermission"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_permission",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -20051,6 +20417,54 @@
           "SetPermission"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_php_app_layer",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_rails_app_layer",
+      "update",
+      []
     ],
     [
       "resource",
@@ -20119,6 +20533,10 @@
         ],
         [
           "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
           "TagResource"
         ],
         [
@@ -20128,6 +20546,10 @@
         [
           "opsworks",
           "UpdateStack"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -20139,6 +20561,14 @@
         [
           "opsworks",
           "DeleteStack"
+        ],
+        [
+          "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -20150,6 +20580,14 @@
         [
           "opsworks",
           "DescribeStacks"
+        ],
+        [
+          "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
     ],
@@ -20164,6 +20602,10 @@
         ],
         [
           "opsworks",
+          "New"
+        ],
+        [
+          "opsworks",
           "TagResource"
         ],
         [
@@ -20173,8 +20615,36 @@
         [
           "opsworks",
           "UpdateStack"
+        ],
+        [
+          "opsworks",
+          "newClient"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_opsworks_static_web_layer",
+      "update",
+      []
     ],
     [
       "resource",
@@ -21900,6 +22370,12 @@
           "DeleteSnapshotCopyGrant"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_redshift_snapshot_copy_grant",
+      "read",
+      []
     ],
     [
       "resource",
@@ -24280,6 +24756,12 @@
     [
       "resource",
       "aws_ses_domain_dkim",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_ses_domain_dkim",
       "read",
       [
         [
@@ -24335,6 +24817,12 @@
           "GetIdentityVerificationAttributes"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ses_domain_identity_verification",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -24420,6 +24908,12 @@
           "DeleteConfigurationSetEventDestination"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ses_event_destination",
+      "read",
+      []
     ],
     [
       "resource",
@@ -24877,6 +25371,12 @@
           "ModifySnapshotAttribute"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_snapshot_create_volume_permission",
+      "read",
+      []
     ],
     [
       "resource",
@@ -26085,6 +26585,12 @@
     [
       "resource",
       "aws_storagegateway_cache",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_storagegateway_cache",
       "read",
       [
         [
@@ -26340,6 +26846,12 @@
     [
       "resource",
       "aws_storagegateway_upload_buffer",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_storagegateway_upload_buffer",
       "read",
       [
         [
@@ -26362,6 +26874,12 @@
           "DescribeWorkingStorage"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_storagegateway_working_storage",
+      "delete",
+      []
     ],
     [
       "resource",
@@ -26724,6 +27242,12 @@
           "DescribeVolumes"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_volume_attachment",
+      "update",
+      []
     ],
     [
       "resource",
@@ -27519,6 +28043,12 @@
     [
       "resource",
       "aws_vpc_peering_connection_accepter",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_peering_connection_accepter",
       "read",
       [
         [
@@ -27568,6 +28098,12 @@
           "ModifyVpcPeeringConnectionOptions"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_vpc_peering_connection_options",
+      "delete",
+      []
     ],
     [
       "resource",

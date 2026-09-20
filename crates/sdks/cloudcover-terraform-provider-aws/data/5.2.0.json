@@ -730,6 +730,41 @@
           "UnmonitorInstances"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_s3_bucket",
+      "delete",
+      [
+        [
+          "s3",
+          "DeleteBucket"
+        ],
+        [
+          "s3",
+          "DeleteObject"
+        ],
+        [
+          "s3",
+          "DeleteObjects"
+        ],
+        [
+          "s3",
+          "HeadBucket"
+        ],
+        [
+          "s3",
+          "ListObjectVersions"
+        ],
+        [
+          "s3",
+          "New"
+        ],
+        [
+          "s3",
+          "PutObjectLegalHold"
+        ]
+      ]
     ]
   ]
 }

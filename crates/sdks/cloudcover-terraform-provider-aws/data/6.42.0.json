@@ -61,12 +61,7 @@
       "list_resource",
       "aws_ebs_volume",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -83,27 +78,13 @@
       "list_resource",
       "aws_iam_user_policy_attachment",
       "list",
-      [
-        [
-          "iam",
-          "ListAttachedUserPolicies"
-        ],
-        [
-          "iam",
-          "ListUsers"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
       "aws_internet_gateway",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeInternetGateways"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -113,14 +94,6 @@
         [
           "lambda",
           "GetLayerVersion"
-        ],
-        [
-          "lambda",
-          "ListLayerVersions"
-        ],
-        [
-          "lambda",
-          "ListLayers"
         ]
       ]
     ],
@@ -128,20 +101,7 @@
       "list_resource",
       "aws_launch_template",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeInstanceTypes"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -151,14 +111,6 @@
         [
           "route53",
           "GetHostedZone"
-        ],
-        [
-          "route53",
-          "ListHostedZones"
-        ],
-        [
-          "route53",
-          "ListResourceRecordSets"
         ],
         [
           "route53",
@@ -174,10 +126,6 @@
         [
           "sagemaker",
           "DescribeHyperParameterTuningJob"
-        ],
-        [
-          "sagemaker",
-          "ListHyperParameterTuningJobs"
         ]
       ]
     ],
@@ -189,10 +137,6 @@
         [
           "sqs",
           "GetQueueAttributes"
-        ],
-        [
-          "sqs",
-          "ListQueues"
         ]
       ]
     ],
@@ -200,12 +144,7 @@
       "list_resource",
       "aws_volume_attachment",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
-        ]
-      ]
+      []
     ],
     [
       "resource",
@@ -262,10 +201,6 @@
         [
           "ec2",
           "CopyVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ],
@@ -277,10 +212,6 @@
         [
           "ec2",
           "DeleteVolume"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
         ]
       ]
     ],
@@ -288,22 +219,13 @@
       "resource",
       "aws_ebs_volume_copy",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeVolumes"
-        ]
-      ]
+      []
     ],
     [
       "resource",
       "aws_ebs_volume_copy",
       "update",
       [
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
         [
           "ec2",
           "ModifyVolume"
@@ -329,10 +251,6 @@
         [
           "networkmanager",
           "GetSiteToSiteVpnAttachment"
-        ],
-        [
-          "networkmanager",
-          "ListAttachmentRoutingPolicyAssociations"
         ],
         [
           "networkmanager",
@@ -364,10 +282,6 @@
       "aws_rds_integration",
       "update",
       [
-        [
-          "rds",
-          "DescribeIntegrations"
-        ],
         [
           "rds",
           "ModifyIntegration"

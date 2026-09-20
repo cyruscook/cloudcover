@@ -57,10 +57,6 @@
         [
           "ec2",
           "AssociateNatGatewayAddress"
-        ],
-        [
-          "ec2",
-          "DescribeNatGateways"
         ]
       ]
     ],
@@ -71,10 +67,6 @@
       [
         [
           "ec2",
-          "DescribeNatGateways"
-        ],
-        [
-          "ec2",
           "DisassociateNatGatewayAddress"
         ]
       ]
@@ -83,12 +75,7 @@
       "resource",
       "aws_nat_gateway_eip_association",
       "read",
-      [
-        [
-          "ec2",
-          "DescribeNatGateways"
-        ]
-      ]
+      []
     ],
     [
       "resource",

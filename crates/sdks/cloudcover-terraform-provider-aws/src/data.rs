@@ -24,11 +24,21 @@ pub type ApiMethodTuple = (String, String);
 pub type CompactMappingRow = (String, String, String, Vec<ApiMethodTuple>);
 pub type MappingState = BTreeMap<MappingKey, Vec<ApiMethodRefRow>>;
 
+#[derive(Clone, Copy, Debug, Deserialize, Eq, Ord, PartialEq, PartialOrd, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum TerraformProviderAwsUnsupportedReason {
+    AwsSdkGoV1,
+}
+
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct PermissionDataFile {
     pub provider_version: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub unsupported_reason: Option<TerraformProviderAwsUnsupportedReason>,
+    #[serde(default)]
     pub remove: Vec<MappingKey>,
+    #[serde(default)]
     pub upsert: Vec<CompactMappingRow>,
 }
 
@@ -60,6 +70,26 @@ pub fn validate_and_apply_file(
                 file.provider_version, expected_version
             ));
         }
+    }
+
+    let first_supported_version = Version::new(1, 57, 0);
+    if file.unsupported_reason.is_some() {
+        if version >= first_supported_version {
+            return Err(format!(
+                "unsupported permission data is only valid before {first_supported_version}"
+            ));
+        }
+        if !file.remove.is_empty() || !file.upsert.is_empty() {
+            return Err(
+                "unsupported permission data must not contain remove or upsert mappings".to_owned(),
+            );
+        }
+        return Ok(version);
+    }
+    if version < first_supported_version {
+        return Err(format!(
+            "permission mappings are only valid from {first_supported_version}"
+        ));
     }
 
     for (kind, type_name, action) in &file.remove {
@@ -201,4 +231,110 @@ fn row_to_compact(row: TerraformProviderAwsMethodMappingRow) -> CompactMappingRo
             .map(|api_method| (api_method.service, api_method.name))
             .collect(),
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{
+        ApiMethodRefRow, MappingState, PermissionDataFile, TerraformProviderAwsUnsupportedReason,
+        validate_and_apply_file,
+    };
+
+    #[test]
+    fn rejects_mappings_before_the_first_supported_version() {
+        let mut file = PermissionDataFile {
+            provider_version: "1.56.0".to_owned(),
+            unsupported_reason: None,
+            remove: Vec::new(),
+            upsert: Vec::new(),
+        };
+
+        let error = validate_and_apply_file(&mut file, None, &mut MappingState::new())
+            .expect_err("1.56.0 mappings must be rejected");
+
+        assert_eq!(error, "permission mappings are only valid from 1.57.0");
+    }
+
+    #[test]
+    fn unsupported_markers_are_limited_to_legacy_versions_and_do_not_mutate_state() {
+        let mut state = MappingState::from([(
+            (
+                "resource".to_owned(),
+                "aws_s3_bucket".to_owned(),
+                "create".to_owned(),
+            ),
+            vec![ApiMethodRefRow {
+                service: "s3".to_owned(),
+                name: "CreateBucket".to_owned(),
+            }],
+        )]);
+        let original_state = state.clone();
+        let mut marker = PermissionDataFile {
+            provider_version: "1.56.0".to_owned(),
+            unsupported_reason: Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1),
+            remove: Vec::new(),
+            upsert: Vec::new(),
+        };
+
+        assert_eq!(
+            validate_and_apply_file(&mut marker, None, &mut state),
+            Ok(semver::Version::new(1, 56, 0))
+        );
+        assert_eq!(state, original_state);
+
+        let mut marker_at_first_supported_version = PermissionDataFile {
+            provider_version: "1.57.0".to_owned(),
+            unsupported_reason: Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1),
+            remove: Vec::new(),
+            upsert: Vec::new(),
+        };
+        let error =
+            validate_and_apply_file(&mut marker_at_first_supported_version, None, &mut state)
+                .expect_err("1.57.0 unsupported marker must be rejected");
+        assert_eq!(
+            error,
+            "unsupported permission data is only valid before 1.57.0"
+        );
+        assert_eq!(state, original_state);
+    }
+
+    #[test]
+    fn rejects_unsupported_markers_with_mapping_rows_without_mutating_state() {
+        let mut state = MappingState::from([(
+            (
+                "resource".to_owned(),
+                "aws_s3_bucket".to_owned(),
+                "create".to_owned(),
+            ),
+            vec![ApiMethodRefRow {
+                service: "s3".to_owned(),
+                name: "CreateBucket".to_owned(),
+            }],
+        )]);
+        let original_state = state.clone();
+        let mut marker = PermissionDataFile {
+            provider_version: "1.56.0".to_owned(),
+            unsupported_reason: Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1),
+            remove: vec![(
+                "resource".to_owned(),
+                "aws_s3_bucket".to_owned(),
+                "create".to_owned(),
+            )],
+            upsert: vec![(
+                "resource".to_owned(),
+                "aws_s3_bucket".to_owned(),
+                "read".to_owned(),
+                vec![("s3".to_owned(), "GetBucketAcl".to_owned())],
+            )],
+        };
+
+        let error = validate_and_apply_file(&mut marker, None, &mut state)
+            .expect_err("unsupported marker must not contain mapping rows");
+
+        assert_eq!(
+            error,
+            "unsupported permission data must not contain remove or upsert mappings"
+        );
+        assert_eq!(state, original_state);
+    }
 }

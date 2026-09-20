@@ -152,10 +152,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -167,10 +163,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeListenerAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeListeners"
         ]
       ]
     ],
@@ -178,12 +170,7 @@
       "list_resource",
       "aws_lb_listener_rule",
       "list",
-      [
-        [
-          "elasticloadbalancingv2",
-          "DescribeRules"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -193,10 +180,6 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -204,12 +187,7 @@
       "list_resource",
       "aws_nat_gateway",
       "list",
-      [
-        [
-          "ec2",
-          "DescribeNatGateways"
-        ]
-      ]
+      []
     ],
     [
       "list_resource",
@@ -219,10 +197,6 @@
         [
           "sns",
           "GetTopicAttributes"
-        ],
-        [
-          "sns",
-          "ListTopics"
         ]
       ]
     ],

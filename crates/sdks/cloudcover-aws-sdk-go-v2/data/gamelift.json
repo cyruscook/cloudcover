@@ -1,0 +1,2772 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/gamelift",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "AcceptMatch",
+          [
+            [
+              "gamelift",
+              "AcceptMatch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ClaimGameServer",
+          [
+            [
+              "gamelift",
+              "ClaimGameServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateAlias",
+          [
+            [
+              "gamelift",
+              "CreateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateBuild",
+          [
+            [
+              "gamelift",
+              "CreateBuild"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateFleet",
+          [
+            [
+              "gamelift",
+              "CreateFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateGameServerGroup",
+          [
+            [
+              "gamelift",
+              "CreateGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateGameSession",
+          [
+            [
+              "gamelift",
+              "CreateGameSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateGameSessionQueue",
+          [
+            [
+              "gamelift",
+              "CreateGameSessionQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateMatchmakingConfiguration",
+          [
+            [
+              "gamelift",
+              "CreateMatchmakingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateMatchmakingRuleSet",
+          [
+            [
+              "gamelift",
+              "CreateMatchmakingRuleSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreatePlayerSession",
+          [
+            [
+              "gamelift",
+              "CreatePlayerSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreatePlayerSessions",
+          [
+            [
+              "gamelift",
+              "CreatePlayerSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateScript",
+          [
+            [
+              "gamelift",
+              "CreateScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateVpcPeeringAuthorization",
+          [
+            [
+              "gamelift",
+              "CreateVpcPeeringAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateVpcPeeringConnection",
+          [
+            [
+              "gamelift",
+              "CreateVpcPeeringConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteAlias",
+          [
+            [
+              "gamelift",
+              "DeleteAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteBuild",
+          [
+            [
+              "gamelift",
+              "DeleteBuild"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteFleet",
+          [
+            [
+              "gamelift",
+              "DeleteFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteGameServerGroup",
+          [
+            [
+              "gamelift",
+              "DeleteGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteGameSessionQueue",
+          [
+            [
+              "gamelift",
+              "DeleteGameSessionQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteMatchmakingConfiguration",
+          [
+            [
+              "gamelift",
+              "DeleteMatchmakingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteMatchmakingRuleSet",
+          [
+            [
+              "gamelift",
+              "DeleteMatchmakingRuleSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteScalingPolicy",
+          [
+            [
+              "gamelift",
+              "DeleteScalingPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteScript",
+          [
+            [
+              "gamelift",
+              "DeleteScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteVpcPeeringAuthorization",
+          [
+            [
+              "gamelift",
+              "DeleteVpcPeeringAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteVpcPeeringConnection",
+          [
+            [
+              "gamelift",
+              "DeleteVpcPeeringConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeregisterGameServer",
+          [
+            [
+              "gamelift",
+              "DeregisterGameServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeAlias",
+          [
+            [
+              "gamelift",
+              "DescribeAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeBuild",
+          [
+            [
+              "gamelift",
+              "DescribeBuild"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeEC2InstanceLimits",
+          [
+            [
+              "gamelift",
+              "DescribeEC2InstanceLimits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetAttributes",
+          [
+            [
+              "gamelift",
+              "DescribeFleetAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetCapacity",
+          [
+            [
+              "gamelift",
+              "DescribeFleetCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetEvents",
+          [
+            [
+              "gamelift",
+              "DescribeFleetEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetPortSettings",
+          [
+            [
+              "gamelift",
+              "DescribeFleetPortSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetUtilization",
+          [
+            [
+              "gamelift",
+              "DescribeFleetUtilization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameServer",
+          [
+            [
+              "gamelift",
+              "DescribeGameServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameServerGroup",
+          [
+            [
+              "gamelift",
+              "DescribeGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameSessionDetails",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessionDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameSessionPlacement",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessionPlacement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameSessionQueues",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessionQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameSessions",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeInstances",
+          [
+            [
+              "gamelift",
+              "DescribeInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeMatchmaking",
+          [
+            [
+              "gamelift",
+              "DescribeMatchmaking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeMatchmakingConfigurations",
+          [
+            [
+              "gamelift",
+              "DescribeMatchmakingConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeMatchmakingRuleSets",
+          [
+            [
+              "gamelift",
+              "DescribeMatchmakingRuleSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribePlayerSessions",
+          [
+            [
+              "gamelift",
+              "DescribePlayerSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeRuntimeConfiguration",
+          [
+            [
+              "gamelift",
+              "DescribeRuntimeConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeScalingPolicies",
+          [
+            [
+              "gamelift",
+              "DescribeScalingPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeScript",
+          [
+            [
+              "gamelift",
+              "DescribeScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeVpcPeeringAuthorizations",
+          [
+            [
+              "gamelift",
+              "DescribeVpcPeeringAuthorizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeVpcPeeringConnections",
+          [
+            [
+              "gamelift",
+              "DescribeVpcPeeringConnections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "GetGameSessionLogUrl",
+          [
+            [
+              "gamelift",
+              "GetGameSessionLogUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "GetInstanceAccess",
+          [
+            [
+              "gamelift",
+              "GetInstanceAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListAliases",
+          [
+            [
+              "gamelift",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListBuilds",
+          [
+            [
+              "gamelift",
+              "ListBuilds"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListFleets",
+          [
+            [
+              "gamelift",
+              "ListFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListGameServerGroups",
+          [
+            [
+              "gamelift",
+              "ListGameServerGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListGameServers",
+          [
+            [
+              "gamelift",
+              "ListGameServers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListScripts",
+          [
+            [
+              "gamelift",
+              "ListScripts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "gamelift",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "PutScalingPolicy",
+          [
+            [
+              "gamelift",
+              "PutScalingPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "RegisterGameServer",
+          [
+            [
+              "gamelift",
+              "RegisterGameServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "RequestUploadCredentials",
+          [
+            [
+              "gamelift",
+              "RequestUploadCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ResolveAlias",
+          [
+            [
+              "gamelift",
+              "ResolveAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ResumeGameServerGroup",
+          [
+            [
+              "gamelift",
+              "ResumeGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "SearchGameSessions",
+          [
+            [
+              "gamelift",
+              "SearchGameSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StartFleetActions",
+          [
+            [
+              "gamelift",
+              "StartFleetActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StartGameSessionPlacement",
+          [
+            [
+              "gamelift",
+              "StartGameSessionPlacement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StartMatchBackfill",
+          [
+            [
+              "gamelift",
+              "StartMatchBackfill"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StartMatchmaking",
+          [
+            [
+              "gamelift",
+              "StartMatchmaking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StopFleetActions",
+          [
+            [
+              "gamelift",
+              "StopFleetActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StopGameSessionPlacement",
+          [
+            [
+              "gamelift",
+              "StopGameSessionPlacement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "StopMatchmaking",
+          [
+            [
+              "gamelift",
+              "StopMatchmaking"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "SuspendGameServerGroup",
+          [
+            [
+              "gamelift",
+              "SuspendGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "TagResource",
+          [
+            [
+              "gamelift",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "gamelift",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateAlias",
+          [
+            [
+              "gamelift",
+              "UpdateAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateBuild",
+          [
+            [
+              "gamelift",
+              "UpdateBuild"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateFleetAttributes",
+          [
+            [
+              "gamelift",
+              "UpdateFleetAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateFleetCapacity",
+          [
+            [
+              "gamelift",
+              "UpdateFleetCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateFleetPortSettings",
+          [
+            [
+              "gamelift",
+              "UpdateFleetPortSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateGameServer",
+          [
+            [
+              "gamelift",
+              "UpdateGameServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateGameServerGroup",
+          [
+            [
+              "gamelift",
+              "UpdateGameServerGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateGameSession",
+          [
+            [
+              "gamelift",
+              "UpdateGameSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateGameSessionQueue",
+          [
+            [
+              "gamelift",
+              "UpdateGameSessionQueue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateMatchmakingConfiguration",
+          [
+            [
+              "gamelift",
+              "UpdateMatchmakingConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateRuntimeConfiguration",
+          [
+            [
+              "gamelift",
+              "UpdateRuntimeConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateScript",
+          [
+            [
+              "gamelift",
+              "UpdateScript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ValidateMatchmakingRuleSet",
+          [
+            [
+              "gamelift",
+              "ValidateMatchmakingRuleSet"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeGameServerInstances",
+          [
+            [
+              "gamelift",
+              "DescribeGameServerInstances"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeFleetAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeFleetAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeFleetCapacityPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeFleetCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeFleetEventsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeFleetEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeFleetUtilizationPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeFleetUtilization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeGameServerInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeGameServerInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeGameSessionDetailsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessionDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeGameSessionQueuesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessionQueues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeGameSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeGameSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeMatchmakingConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeMatchmakingConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeMatchmakingRuleSetsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeMatchmakingRuleSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribePlayerSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribePlayerSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeScalingPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeScalingPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListBuildsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListBuilds"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListFleetsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListGameServerGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListGameServerGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListGameServersPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListGameServers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListScriptsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListScripts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "SearchGameSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "SearchGameSessions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateFleetLocations",
+          [
+            [
+              "gamelift",
+              "CreateFleetLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteFleetLocations",
+          [
+            [
+              "gamelift",
+              "DeleteFleetLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetLocationAttributes",
+          [
+            [
+              "gamelift",
+              "DescribeFleetLocationAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetLocationCapacity",
+          [
+            [
+              "gamelift",
+              "DescribeFleetLocationCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetLocationUtilization",
+          [
+            [
+              "gamelift",
+              "DescribeFleetLocationUtilization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "DescribeFleetLocationAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "DescribeFleetLocationAttributes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateLocation",
+          [
+            [
+              "gamelift",
+              "CreateLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteLocation",
+          [
+            [
+              "gamelift",
+              "DeleteLocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeregisterCompute",
+          [
+            [
+              "gamelift",
+              "DeregisterCompute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeCompute",
+          [
+            [
+              "gamelift",
+              "DescribeCompute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "GetComputeAccess",
+          [
+            [
+              "gamelift",
+              "GetComputeAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "GetComputeAuthToken",
+          [
+            [
+              "gamelift",
+              "GetComputeAuthToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListCompute",
+          [
+            [
+              "gamelift",
+              "ListCompute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListLocations",
+          [
+            [
+              "gamelift",
+              "ListLocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "RegisterCompute",
+          [
+            [
+              "gamelift",
+              "RegisterCompute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListComputePaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListCompute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListLocationsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListLocations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateContainerGroupDefinition",
+          [
+            [
+              "gamelift",
+              "CreateContainerGroupDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteContainerGroupDefinition",
+          [
+            [
+              "gamelift",
+              "DeleteContainerGroupDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeContainerGroupDefinition",
+          [
+            [
+              "gamelift",
+              "DescribeContainerGroupDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListContainerGroupDefinitions",
+          [
+            [
+              "gamelift",
+              "ListContainerGroupDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListContainerGroupDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListContainerGroupDefinitions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "CreateContainerFleet",
+          [
+            [
+              "gamelift",
+              "CreateContainerFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DeleteContainerFleet",
+          [
+            [
+              "gamelift",
+              "DeleteContainerFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeContainerFleet",
+          [
+            [
+              "gamelift",
+              "DescribeContainerFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeFleetDeployment",
+          [
+            [
+              "gamelift",
+              "DescribeFleetDeployment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListContainerFleets",
+          [
+            [
+              "gamelift",
+              "ListContainerFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListContainerGroupDefinitionVersions",
+          [
+            [
+              "gamelift",
+              "ListContainerGroupDefinitionVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "ListFleetDeployments",
+          [
+            [
+              "gamelift",
+              "ListFleetDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateContainerFleet",
+          [
+            [
+              "gamelift",
+              "UpdateContainerFleet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "UpdateContainerGroupDefinition",
+          [
+            [
+              "gamelift",
+              "UpdateContainerGroupDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListContainerFleetsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListContainerFleets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListContainerGroupDefinitionVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListContainerGroupDefinitionVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "ListFleetDeploymentsPaginator",
+          "NextPage",
+          [
+            [
+              "gamelift",
+              "ListFleetDeployments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "TerminateGameSession",
+          [
+            [
+              "gamelift",
+              "TerminateGameSession"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "GetPlayerConnectionDetails",
+          [
+            [
+              "gamelift",
+              "GetPlayerConnectionDetails"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/gamelift",
+          "Client",
+          "DescribeContainerGroupPortMappings",
+          [
+            [
+              "gamelift",
+              "DescribeContainerGroupPortMappings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

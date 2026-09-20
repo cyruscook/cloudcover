@@ -1,0 +1,2100 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/codecommit",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "AssociateApprovalRuleTemplateWithRepository",
+          [
+            [
+              "codecommit",
+              "AssociateApprovalRuleTemplateWithRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "BatchAssociateApprovalRuleTemplateWithRepositories",
+          [
+            [
+              "codecommit",
+              "BatchAssociateApprovalRuleTemplateWithRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "BatchDescribeMergeConflicts",
+          [
+            [
+              "codecommit",
+              "BatchDescribeMergeConflicts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "BatchDisassociateApprovalRuleTemplateFromRepositories",
+          [
+            [
+              "codecommit",
+              "BatchDisassociateApprovalRuleTemplateFromRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "BatchGetCommits",
+          [
+            [
+              "codecommit",
+              "BatchGetCommits"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "BatchGetRepositories",
+          [
+            [
+              "codecommit",
+              "BatchGetRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreateApprovalRuleTemplate",
+          [
+            [
+              "codecommit",
+              "CreateApprovalRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreateBranch",
+          [
+            [
+              "codecommit",
+              "CreateBranch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreateCommit",
+          [
+            [
+              "codecommit",
+              "CreateCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreatePullRequest",
+          [
+            [
+              "codecommit",
+              "CreatePullRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreatePullRequestApprovalRule",
+          [
+            [
+              "codecommit",
+              "CreatePullRequestApprovalRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreateRepository",
+          [
+            [
+              "codecommit",
+              "CreateRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "CreateUnreferencedMergeCommit",
+          [
+            [
+              "codecommit",
+              "CreateUnreferencedMergeCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeleteApprovalRuleTemplate",
+          [
+            [
+              "codecommit",
+              "DeleteApprovalRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeleteBranch",
+          [
+            [
+              "codecommit",
+              "DeleteBranch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeleteCommentContent",
+          [
+            [
+              "codecommit",
+              "DeleteCommentContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeleteFile",
+          [
+            [
+              "codecommit",
+              "DeleteFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeletePullRequestApprovalRule",
+          [
+            [
+              "codecommit",
+              "DeletePullRequestApprovalRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DeleteRepository",
+          [
+            [
+              "codecommit",
+              "DeleteRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DescribeMergeConflicts",
+          [
+            [
+              "codecommit",
+              "DescribeMergeConflicts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DescribePullRequestEvents",
+          [
+            [
+              "codecommit",
+              "DescribePullRequestEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "DisassociateApprovalRuleTemplateFromRepository",
+          [
+            [
+              "codecommit",
+              "DisassociateApprovalRuleTemplateFromRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "EvaluatePullRequestApprovalRules",
+          [
+            [
+              "codecommit",
+              "EvaluatePullRequestApprovalRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetApprovalRuleTemplate",
+          [
+            [
+              "codecommit",
+              "GetApprovalRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetBlob",
+          [
+            [
+              "codecommit",
+              "GetBlob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetBranch",
+          [
+            [
+              "codecommit",
+              "GetBranch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetComment",
+          [
+            [
+              "codecommit",
+              "GetComment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetCommentReactions",
+          [
+            [
+              "codecommit",
+              "GetCommentReactions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetCommentsForComparedCommit",
+          [
+            [
+              "codecommit",
+              "GetCommentsForComparedCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetCommentsForPullRequest",
+          [
+            [
+              "codecommit",
+              "GetCommentsForPullRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetCommit",
+          [
+            [
+              "codecommit",
+              "GetCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetDifferences",
+          [
+            [
+              "codecommit",
+              "GetDifferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetFile",
+          [
+            [
+              "codecommit",
+              "GetFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetFolder",
+          [
+            [
+              "codecommit",
+              "GetFolder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetMergeCommit",
+          [
+            [
+              "codecommit",
+              "GetMergeCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetMergeConflicts",
+          [
+            [
+              "codecommit",
+              "GetMergeConflicts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetMergeOptions",
+          [
+            [
+              "codecommit",
+              "GetMergeOptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetPullRequest",
+          [
+            [
+              "codecommit",
+              "GetPullRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetPullRequestApprovalStates",
+          [
+            [
+              "codecommit",
+              "GetPullRequestApprovalStates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetPullRequestOverrideState",
+          [
+            [
+              "codecommit",
+              "GetPullRequestOverrideState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetRepository",
+          [
+            [
+              "codecommit",
+              "GetRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetRepositoryTriggers",
+          [
+            [
+              "codecommit",
+              "GetRepositoryTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListApprovalRuleTemplates",
+          [
+            [
+              "codecommit",
+              "ListApprovalRuleTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListAssociatedApprovalRuleTemplatesForRepository",
+          [
+            [
+              "codecommit",
+              "ListAssociatedApprovalRuleTemplatesForRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListBranches",
+          [
+            [
+              "codecommit",
+              "ListBranches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListPullRequests",
+          [
+            [
+              "codecommit",
+              "ListPullRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListRepositories",
+          [
+            [
+              "codecommit",
+              "ListRepositories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListRepositoriesForApprovalRuleTemplate",
+          [
+            [
+              "codecommit",
+              "ListRepositoriesForApprovalRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "codecommit",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergeBranchesByFastForward",
+          [
+            [
+              "codecommit",
+              "MergeBranchesByFastForward"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergeBranchesBySquash",
+          [
+            [
+              "codecommit",
+              "MergeBranchesBySquash"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergeBranchesByThreeWay",
+          [
+            [
+              "codecommit",
+              "MergeBranchesByThreeWay"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergePullRequestByFastForward",
+          [
+            [
+              "codecommit",
+              "MergePullRequestByFastForward"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergePullRequestBySquash",
+          [
+            [
+              "codecommit",
+              "MergePullRequestBySquash"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "MergePullRequestByThreeWay",
+          [
+            [
+              "codecommit",
+              "MergePullRequestByThreeWay"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "OverridePullRequestApprovalRules",
+          [
+            [
+              "codecommit",
+              "OverridePullRequestApprovalRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PostCommentForComparedCommit",
+          [
+            [
+              "codecommit",
+              "PostCommentForComparedCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PostCommentForPullRequest",
+          [
+            [
+              "codecommit",
+              "PostCommentForPullRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PostCommentReply",
+          [
+            [
+              "codecommit",
+              "PostCommentReply"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PutCommentReaction",
+          [
+            [
+              "codecommit",
+              "PutCommentReaction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PutFile",
+          [
+            [
+              "codecommit",
+              "PutFile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "PutRepositoryTriggers",
+          [
+            [
+              "codecommit",
+              "PutRepositoryTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "TagResource",
+          [
+            [
+              "codecommit",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "TestRepositoryTriggers",
+          [
+            [
+              "codecommit",
+              "TestRepositoryTriggers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "codecommit",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateApprovalRuleTemplateContent",
+          [
+            [
+              "codecommit",
+              "UpdateApprovalRuleTemplateContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateApprovalRuleTemplateDescription",
+          [
+            [
+              "codecommit",
+              "UpdateApprovalRuleTemplateDescription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateApprovalRuleTemplateName",
+          [
+            [
+              "codecommit",
+              "UpdateApprovalRuleTemplateName"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateComment",
+          [
+            [
+              "codecommit",
+              "UpdateComment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateDefaultBranch",
+          [
+            [
+              "codecommit",
+              "UpdateDefaultBranch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdatePullRequestApprovalRuleContent",
+          [
+            [
+              "codecommit",
+              "UpdatePullRequestApprovalRuleContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdatePullRequestApprovalState",
+          [
+            [
+              "codecommit",
+              "UpdatePullRequestApprovalState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdatePullRequestDescription",
+          [
+            [
+              "codecommit",
+              "UpdatePullRequestDescription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdatePullRequestStatus",
+          [
+            [
+              "codecommit",
+              "UpdatePullRequestStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdatePullRequestTitle",
+          [
+            [
+              "codecommit",
+              "UpdatePullRequestTitle"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateRepositoryDescription",
+          [
+            [
+              "codecommit",
+              "UpdateRepositoryDescription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateRepositoryName",
+          [
+            [
+              "codecommit",
+              "UpdateRepositoryName"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "DescribeMergeConflictsPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "DescribeMergeConflicts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "DescribePullRequestEventsPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "DescribePullRequestEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetCommentReactionsPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetCommentReactions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetCommentsForComparedCommitPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetCommentsForComparedCommit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetCommentsForPullRequestPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetCommentsForPullRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetDifferencesPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetDifferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetMergeConflictsPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetMergeConflicts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListApprovalRuleTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListApprovalRuleTemplates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListAssociatedApprovalRuleTemplatesForRepositoryPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListAssociatedApprovalRuleTemplatesForRepository"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListBranchesPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListBranches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListPullRequestsPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListPullRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListRepositoriesForApprovalRuleTemplatePaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListRepositoriesForApprovalRuleTemplate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListRepositoriesPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListRepositories"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "ListFileCommitHistory",
+          [
+            [
+              "codecommit",
+              "ListFileCommitHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "ListFileCommitHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "ListFileCommitHistory"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "UpdateRepositoryEncryptionKey",
+          [
+            [
+              "codecommit",
+              "UpdateRepositoryEncryptionKey"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "Client",
+          "GetBlobDifferences",
+          [
+            [
+              "codecommit",
+              "GetBlobDifferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/codecommit",
+          "GetBlobDifferencesPaginator",
+          "NextPage",
+          [
+            [
+              "codecommit",
+              "GetBlobDifferences"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

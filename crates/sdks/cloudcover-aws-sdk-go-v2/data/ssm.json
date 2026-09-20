@@ -1,0 +1,3520 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/ssm",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "AddTagsToResource",
+          [
+            [
+              "ssm",
+              "AddTagsToResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CancelCommand",
+          [
+            [
+              "ssm",
+              "CancelCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CancelMaintenanceWindowExecution",
+          [
+            [
+              "ssm",
+              "CancelMaintenanceWindowExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateActivation",
+          [
+            [
+              "ssm",
+              "CreateActivation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateAssociation",
+          [
+            [
+              "ssm",
+              "CreateAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateAssociationBatch",
+          [
+            [
+              "ssm",
+              "CreateAssociationBatch"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateDocument",
+          [
+            [
+              "ssm",
+              "CreateDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "CreateMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateOpsItem",
+          [
+            [
+              "ssm",
+              "CreateOpsItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreatePatchBaseline",
+          [
+            [
+              "ssm",
+              "CreatePatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateResourceDataSync",
+          [
+            [
+              "ssm",
+              "CreateResourceDataSync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteActivation",
+          [
+            [
+              "ssm",
+              "DeleteActivation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteAssociation",
+          [
+            [
+              "ssm",
+              "DeleteAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteDocument",
+          [
+            [
+              "ssm",
+              "DeleteDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteInventory",
+          [
+            [
+              "ssm",
+              "DeleteInventory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "DeleteMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteParameter",
+          [
+            [
+              "ssm",
+              "DeleteParameter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteParameters",
+          [
+            [
+              "ssm",
+              "DeleteParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeletePatchBaseline",
+          [
+            [
+              "ssm",
+              "DeletePatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteResourceDataSync",
+          [
+            [
+              "ssm",
+              "DeleteResourceDataSync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeregisterManagedInstance",
+          [
+            [
+              "ssm",
+              "DeregisterManagedInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeregisterPatchBaselineForPatchGroup",
+          [
+            [
+              "ssm",
+              "DeregisterPatchBaselineForPatchGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeregisterTargetFromMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "DeregisterTargetFromMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeregisterTaskFromMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "DeregisterTaskFromMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeActivations",
+          [
+            [
+              "ssm",
+              "DescribeActivations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAssociation",
+          [
+            [
+              "ssm",
+              "DescribeAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAssociationExecutionTargets",
+          [
+            [
+              "ssm",
+              "DescribeAssociationExecutionTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAssociationExecutions",
+          [
+            [
+              "ssm",
+              "DescribeAssociationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAutomationExecutions",
+          [
+            [
+              "ssm",
+              "DescribeAutomationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAutomationStepExecutions",
+          [
+            [
+              "ssm",
+              "DescribeAutomationStepExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeAvailablePatches",
+          [
+            [
+              "ssm",
+              "DescribeAvailablePatches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeDocument",
+          [
+            [
+              "ssm",
+              "DescribeDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeDocumentPermission",
+          [
+            [
+              "ssm",
+              "DescribeDocumentPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeEffectiveInstanceAssociations",
+          [
+            [
+              "ssm",
+              "DescribeEffectiveInstanceAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeEffectivePatchesForPatchBaseline",
+          [
+            [
+              "ssm",
+              "DescribeEffectivePatchesForPatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstanceAssociationsStatus",
+          [
+            [
+              "ssm",
+              "DescribeInstanceAssociationsStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstanceInformation",
+          [
+            [
+              "ssm",
+              "DescribeInstanceInformation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstancePatchStates",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatchStates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstancePatchStatesForPatchGroup",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatchStatesForPatchGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstancePatches",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInventoryDeletions",
+          [
+            [
+              "ssm",
+              "DescribeInventoryDeletions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowExecutionTaskInvocations",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutionTaskInvocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowExecutionTasks",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutionTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowExecutions",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowSchedule",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowTargets",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowTasks",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindows",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeMaintenanceWindowsForTarget",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowsForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeOpsItems",
+          [
+            [
+              "ssm",
+              "DescribeOpsItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeParameters",
+          [
+            [
+              "ssm",
+              "DescribeParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribePatchBaselines",
+          [
+            [
+              "ssm",
+              "DescribePatchBaselines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribePatchGroupState",
+          [
+            [
+              "ssm",
+              "DescribePatchGroupState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribePatchGroups",
+          [
+            [
+              "ssm",
+              "DescribePatchGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribePatchProperties",
+          [
+            [
+              "ssm",
+              "DescribePatchProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeSessions",
+          [
+            [
+              "ssm",
+              "DescribeSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetAutomationExecution",
+          [
+            [
+              "ssm",
+              "GetAutomationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetCalendarState",
+          [
+            [
+              "ssm",
+              "GetCalendarState"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetCommandInvocation",
+          [
+            [
+              "ssm",
+              "GetCommandInvocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetConnectionStatus",
+          [
+            [
+              "ssm",
+              "GetConnectionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetDefaultPatchBaseline",
+          [
+            [
+              "ssm",
+              "GetDefaultPatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetDeployablePatchSnapshotForInstance",
+          [
+            [
+              "ssm",
+              "GetDeployablePatchSnapshotForInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetDocument",
+          [
+            [
+              "ssm",
+              "GetDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetInventory",
+          [
+            [
+              "ssm",
+              "GetInventory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetInventorySchema",
+          [
+            [
+              "ssm",
+              "GetInventorySchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "GetMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetMaintenanceWindowExecution",
+          [
+            [
+              "ssm",
+              "GetMaintenanceWindowExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetMaintenanceWindowExecutionTask",
+          [
+            [
+              "ssm",
+              "GetMaintenanceWindowExecutionTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetMaintenanceWindowExecutionTaskInvocation",
+          [
+            [
+              "ssm",
+              "GetMaintenanceWindowExecutionTaskInvocation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetMaintenanceWindowTask",
+          [
+            [
+              "ssm",
+              "GetMaintenanceWindowTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetOpsItem",
+          [
+            [
+              "ssm",
+              "GetOpsItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetOpsSummary",
+          [
+            [
+              "ssm",
+              "GetOpsSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetParameter",
+          [
+            [
+              "ssm",
+              "GetParameter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetParameterHistory",
+          [
+            [
+              "ssm",
+              "GetParameterHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetParameters",
+          [
+            [
+              "ssm",
+              "GetParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetParametersByPath",
+          [
+            [
+              "ssm",
+              "GetParametersByPath"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetPatchBaseline",
+          [
+            [
+              "ssm",
+              "GetPatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetPatchBaselineForPatchGroup",
+          [
+            [
+              "ssm",
+              "GetPatchBaselineForPatchGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetServiceSetting",
+          [
+            [
+              "ssm",
+              "GetServiceSetting"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "LabelParameterVersion",
+          [
+            [
+              "ssm",
+              "LabelParameterVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListAssociationVersions",
+          [
+            [
+              "ssm",
+              "ListAssociationVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListAssociations",
+          [
+            [
+              "ssm",
+              "ListAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListCommandInvocations",
+          [
+            [
+              "ssm",
+              "ListCommandInvocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListCommands",
+          [
+            [
+              "ssm",
+              "ListCommands"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListComplianceItems",
+          [
+            [
+              "ssm",
+              "ListComplianceItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListComplianceSummaries",
+          [
+            [
+              "ssm",
+              "ListComplianceSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListDocumentVersions",
+          [
+            [
+              "ssm",
+              "ListDocumentVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListDocuments",
+          [
+            [
+              "ssm",
+              "ListDocuments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListInventoryEntries",
+          [
+            [
+              "ssm",
+              "ListInventoryEntries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListResourceComplianceSummaries",
+          [
+            [
+              "ssm",
+              "ListResourceComplianceSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListResourceDataSync",
+          [
+            [
+              "ssm",
+              "ListResourceDataSync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "ssm",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ModifyDocumentPermission",
+          [
+            [
+              "ssm",
+              "ModifyDocumentPermission"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "PutComplianceItems",
+          [
+            [
+              "ssm",
+              "PutComplianceItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "PutInventory",
+          [
+            [
+              "ssm",
+              "PutInventory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "PutParameter",
+          [
+            [
+              "ssm",
+              "PutParameter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RegisterDefaultPatchBaseline",
+          [
+            [
+              "ssm",
+              "RegisterDefaultPatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RegisterPatchBaselineForPatchGroup",
+          [
+            [
+              "ssm",
+              "RegisterPatchBaselineForPatchGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RegisterTargetWithMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "RegisterTargetWithMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RegisterTaskWithMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "RegisterTaskWithMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RemoveTagsFromResource",
+          [
+            [
+              "ssm",
+              "RemoveTagsFromResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ResetServiceSetting",
+          [
+            [
+              "ssm",
+              "ResetServiceSetting"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ResumeSession",
+          [
+            [
+              "ssm",
+              "ResumeSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "SendAutomationSignal",
+          [
+            [
+              "ssm",
+              "SendAutomationSignal"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "SendCommand",
+          [
+            [
+              "ssm",
+              "SendCommand"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartAssociationsOnce",
+          [
+            [
+              "ssm",
+              "StartAssociationsOnce"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartAutomationExecution",
+          [
+            [
+              "ssm",
+              "StartAutomationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartSession",
+          [
+            [
+              "ssm",
+              "StartSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StopAutomationExecution",
+          [
+            [
+              "ssm",
+              "StopAutomationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "TerminateSession",
+          [
+            [
+              "ssm",
+              "TerminateSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateAssociation",
+          [
+            [
+              "ssm",
+              "UpdateAssociation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateAssociationStatus",
+          [
+            [
+              "ssm",
+              "UpdateAssociationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateDocument",
+          [
+            [
+              "ssm",
+              "UpdateDocument"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateDocumentDefaultVersion",
+          [
+            [
+              "ssm",
+              "UpdateDocumentDefaultVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateMaintenanceWindow",
+          [
+            [
+              "ssm",
+              "UpdateMaintenanceWindow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateMaintenanceWindowTarget",
+          [
+            [
+              "ssm",
+              "UpdateMaintenanceWindowTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateMaintenanceWindowTask",
+          [
+            [
+              "ssm",
+              "UpdateMaintenanceWindowTask"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateManagedInstanceRole",
+          [
+            [
+              "ssm",
+              "UpdateManagedInstanceRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateOpsItem",
+          [
+            [
+              "ssm",
+              "UpdateOpsItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdatePatchBaseline",
+          [
+            [
+              "ssm",
+              "UpdatePatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateResourceDataSync",
+          [
+            [
+              "ssm",
+              "UpdateResourceDataSync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateServiceSetting",
+          [
+            [
+              "ssm",
+              "UpdateServiceSetting"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeActivationsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeActivations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeAssociationExecutionTargetsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeAssociationExecutionTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeAssociationExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeAssociationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeAutomationExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeAutomationExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeAutomationStepExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeAutomationStepExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeAvailablePatchesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeAvailablePatches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeEffectiveInstanceAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeEffectiveInstanceAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeEffectivePatchesForPatchBaselinePaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeEffectivePatchesForPatchBaseline"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstanceAssociationsStatusPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstanceAssociationsStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstanceInformationPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstanceInformation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstancePatchStatesForPatchGroupPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatchStatesForPatchGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstancePatchStatesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatchStates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstancePatchesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstancePatches"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInventoryDeletionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInventoryDeletions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowExecutionTaskInvocationsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutionTaskInvocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowExecutionTasksPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutionTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowExecutionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowSchedulePaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowSchedule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowTargetsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowTargets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowTasksPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowTasks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowsForTargetPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindowsForTarget"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeMaintenanceWindowsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeMaintenanceWindows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeOpsItemsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeOpsItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeParametersPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeParameters"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribePatchBaselinesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribePatchBaselines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribePatchGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribePatchGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribePatchPropertiesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribePatchProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetInventoryPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetInventory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetInventorySchemaPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetInventorySchema"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetOpsSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetOpsSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetParameterHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetParameterHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetParametersByPathPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetParametersByPath"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListAssociationVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListAssociationVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListCommandInvocationsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListCommandInvocations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListCommandsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListCommands"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListComplianceItemsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListComplianceItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListComplianceSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListComplianceSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListDocumentVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListDocumentVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListDocumentsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListDocuments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListResourceComplianceSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListResourceComplianceSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListResourceDataSyncPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListResourceDataSync"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateOpsMetadata",
+          [
+            [
+              "ssm",
+              "CreateOpsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteOpsMetadata",
+          [
+            [
+              "ssm",
+              "DeleteOpsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetOpsMetadata",
+          [
+            [
+              "ssm",
+              "GetOpsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListDocumentMetadataHistory",
+          [
+            [
+              "ssm",
+              "ListDocumentMetadataHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListOpsItemEvents",
+          [
+            [
+              "ssm",
+              "ListOpsItemEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListOpsMetadata",
+          [
+            [
+              "ssm",
+              "ListOpsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartChangeRequestExecution",
+          [
+            [
+              "ssm",
+              "StartChangeRequestExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateDocumentMetadata",
+          [
+            [
+              "ssm",
+              "UpdateDocumentMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateOpsMetadata",
+          [
+            [
+              "ssm",
+              "UpdateOpsMetadata"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListOpsItemEventsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListOpsItemEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListOpsMetadataPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListOpsMetadata"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UnlabelParameterVersion",
+          [
+            [
+              "ssm",
+              "UnlabelParameterVersion"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "AssociateOpsItemRelatedItem",
+          [
+            [
+              "ssm",
+              "AssociateOpsItemRelatedItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DisassociateOpsItemRelatedItem",
+          [
+            [
+              "ssm",
+              "DisassociateOpsItemRelatedItem"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListOpsItemRelatedItems",
+          [
+            [
+              "ssm",
+              "ListOpsItemRelatedItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListOpsItemRelatedItemsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListOpsItemRelatedItems"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteResourcePolicy",
+          [
+            [
+              "ssm",
+              "DeleteResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetResourcePolicies",
+          [
+            [
+              "ssm",
+              "GetResourcePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "PutResourcePolicy",
+          [
+            [
+              "ssm",
+              "PutResourcePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "GetResourcePoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "GetResourcePolicies"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteOpsItem",
+          [
+            [
+              "ssm",
+              "DeleteOpsItem"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DescribeInstanceProperties",
+          [
+            [
+              "ssm",
+              "DescribeInstanceProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "DescribeInstancePropertiesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "DescribeInstanceProperties"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetExecutionPreview",
+          [
+            [
+              "ssm",
+              "GetExecutionPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListNodes",
+          [
+            [
+              "ssm",
+              "ListNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListNodesSummary",
+          [
+            [
+              "ssm",
+              "ListNodesSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartExecutionPreview",
+          [
+            [
+              "ssm",
+              "StartExecutionPreview"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListNodesPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListNodes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListNodesSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListNodesSummary"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetAccessToken",
+          [
+            [
+              "ssm",
+              "GetAccessToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "StartAccessRequest",
+          [
+            [
+              "ssm",
+              "StartAccessRequest"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "CreateCloudConnector",
+          [
+            [
+              "ssm",
+              "CreateCloudConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeleteCloudConnector",
+          [
+            [
+              "ssm",
+              "DeleteCloudConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "GetCloudConnector",
+          [
+            [
+              "ssm",
+              "GetCloudConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ListCloudConnectors",
+          [
+            [
+              "ssm",
+              "ListCloudConnectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "UpdateCloudConnector",
+          [
+            [
+              "ssm",
+              "UpdateCloudConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "ValidateCloudConnector",
+          [
+            [
+              "ssm",
+              "ValidateCloudConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ListCloudConnectorsPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ListCloudConnectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "ValidateCloudConnectorPaginator",
+          "NextPage",
+          [
+            [
+              "ssm",
+              "ValidateCloudConnector"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

@@ -1,30 +1,4 @@
 {
   "provider_version": "0.1.2",
-  "remove": [],
-  "upsert": [
-    [
-      "data_source",
-      "aws_ecr_repository",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "delete",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "read",
-      []
-    ]
-  ]
+  "unsupported_reason": "aws_sdk_go_v1"
 }

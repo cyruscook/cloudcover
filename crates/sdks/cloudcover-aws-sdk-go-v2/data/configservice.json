@@ -1,0 +1,2834 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/configservice",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "BatchGetAggregateResourceConfig",
+          [
+            [
+              "configservice",
+              "BatchGetAggregateResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "BatchGetResourceConfig",
+          [
+            [
+              "configservice",
+              "BatchGetResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteAggregationAuthorization",
+          [
+            [
+              "configservice",
+              "DeleteAggregationAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteConfigRule",
+          [
+            [
+              "configservice",
+              "DeleteConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteConfigurationAggregator",
+          [
+            [
+              "configservice",
+              "DeleteConfigurationAggregator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "DeleteConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteConformancePack",
+          [
+            [
+              "configservice",
+              "DeleteConformancePack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteDeliveryChannel",
+          [
+            [
+              "configservice",
+              "DeleteDeliveryChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteEvaluationResults",
+          [
+            [
+              "configservice",
+              "DeleteEvaluationResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteOrganizationConfigRule",
+          [
+            [
+              "configservice",
+              "DeleteOrganizationConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteOrganizationConformancePack",
+          [
+            [
+              "configservice",
+              "DeleteOrganizationConformancePack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeletePendingAggregationRequest",
+          [
+            [
+              "configservice",
+              "DeletePendingAggregationRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteRemediationConfiguration",
+          [
+            [
+              "configservice",
+              "DeleteRemediationConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteRemediationExceptions",
+          [
+            [
+              "configservice",
+              "DeleteRemediationExceptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteResourceConfig",
+          [
+            [
+              "configservice",
+              "DeleteResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteRetentionConfiguration",
+          [
+            [
+              "configservice",
+              "DeleteRetentionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeliverConfigSnapshot",
+          [
+            [
+              "configservice",
+              "DeliverConfigSnapshot"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeAggregateComplianceByConfigRules",
+          [
+            [
+              "configservice",
+              "DescribeAggregateComplianceByConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeAggregationAuthorizations",
+          [
+            [
+              "configservice",
+              "DescribeAggregationAuthorizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeComplianceByConfigRule",
+          [
+            [
+              "configservice",
+              "DescribeComplianceByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeComplianceByResource",
+          [
+            [
+              "configservice",
+              "DescribeComplianceByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigRuleEvaluationStatus",
+          [
+            [
+              "configservice",
+              "DescribeConfigRuleEvaluationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigRules",
+          [
+            [
+              "configservice",
+              "DescribeConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigurationAggregatorSourcesStatus",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationAggregatorSourcesStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigurationAggregators",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationAggregators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigurationRecorderStatus",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationRecorderStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConfigurationRecorders",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationRecorders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConformancePackCompliance",
+          [
+            [
+              "configservice",
+              "DescribeConformancePackCompliance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConformancePackStatus",
+          [
+            [
+              "configservice",
+              "DescribeConformancePackStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeConformancePacks",
+          [
+            [
+              "configservice",
+              "DescribeConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeDeliveryChannelStatus",
+          [
+            [
+              "configservice",
+              "DescribeDeliveryChannelStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeDeliveryChannels",
+          [
+            [
+              "configservice",
+              "DescribeDeliveryChannels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeOrganizationConfigRuleStatuses",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConfigRuleStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeOrganizationConfigRules",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeOrganizationConformancePackStatuses",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConformancePackStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeOrganizationConformancePacks",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribePendingAggregationRequests",
+          [
+            [
+              "configservice",
+              "DescribePendingAggregationRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeRemediationConfigurations",
+          [
+            [
+              "configservice",
+              "DescribeRemediationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeRemediationExceptions",
+          [
+            [
+              "configservice",
+              "DescribeRemediationExceptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeRemediationExecutionStatus",
+          [
+            [
+              "configservice",
+              "DescribeRemediationExecutionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeRetentionConfigurations",
+          [
+            [
+              "configservice",
+              "DescribeRetentionConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetAggregateComplianceDetailsByConfigRule",
+          [
+            [
+              "configservice",
+              "GetAggregateComplianceDetailsByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetAggregateConfigRuleComplianceSummary",
+          [
+            [
+              "configservice",
+              "GetAggregateConfigRuleComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetAggregateDiscoveredResourceCounts",
+          [
+            [
+              "configservice",
+              "GetAggregateDiscoveredResourceCounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetAggregateResourceConfig",
+          [
+            [
+              "configservice",
+              "GetAggregateResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetComplianceDetailsByConfigRule",
+          [
+            [
+              "configservice",
+              "GetComplianceDetailsByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetComplianceDetailsByResource",
+          [
+            [
+              "configservice",
+              "GetComplianceDetailsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetComplianceSummaryByConfigRule",
+          [
+            [
+              "configservice",
+              "GetComplianceSummaryByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetComplianceSummaryByResourceType",
+          [
+            [
+              "configservice",
+              "GetComplianceSummaryByResourceType"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetConformancePackComplianceDetails",
+          [
+            [
+              "configservice",
+              "GetConformancePackComplianceDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetConformancePackComplianceSummary",
+          [
+            [
+              "configservice",
+              "GetConformancePackComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetDiscoveredResourceCounts",
+          [
+            [
+              "configservice",
+              "GetDiscoveredResourceCounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetOrganizationConfigRuleDetailedStatus",
+          [
+            [
+              "configservice",
+              "GetOrganizationConfigRuleDetailedStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetOrganizationConformancePackDetailedStatus",
+          [
+            [
+              "configservice",
+              "GetOrganizationConformancePackDetailedStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetResourceConfigHistory",
+          [
+            [
+              "configservice",
+              "GetResourceConfigHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListAggregateDiscoveredResources",
+          [
+            [
+              "configservice",
+              "ListAggregateDiscoveredResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListDiscoveredResources",
+          [
+            [
+              "configservice",
+              "ListDiscoveredResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "configservice",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutAggregationAuthorization",
+          [
+            [
+              "configservice",
+              "PutAggregationAuthorization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutConfigRule",
+          [
+            [
+              "configservice",
+              "PutConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutConfigurationAggregator",
+          [
+            [
+              "configservice",
+              "PutConfigurationAggregator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "PutConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutConformancePack",
+          [
+            [
+              "configservice",
+              "PutConformancePack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutDeliveryChannel",
+          [
+            [
+              "configservice",
+              "PutDeliveryChannel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutEvaluations",
+          [
+            [
+              "configservice",
+              "PutEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutOrganizationConfigRule",
+          [
+            [
+              "configservice",
+              "PutOrganizationConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutOrganizationConformancePack",
+          [
+            [
+              "configservice",
+              "PutOrganizationConformancePack"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutRemediationConfigurations",
+          [
+            [
+              "configservice",
+              "PutRemediationConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutRemediationExceptions",
+          [
+            [
+              "configservice",
+              "PutRemediationExceptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutResourceConfig",
+          [
+            [
+              "configservice",
+              "PutResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutRetentionConfiguration",
+          [
+            [
+              "configservice",
+              "PutRetentionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "SelectAggregateResourceConfig",
+          [
+            [
+              "configservice",
+              "SelectAggregateResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "SelectResourceConfig",
+          [
+            [
+              "configservice",
+              "SelectResourceConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "StartConfigRulesEvaluation",
+          [
+            [
+              "configservice",
+              "StartConfigRulesEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "StartConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "StartConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "StartRemediationExecution",
+          [
+            [
+              "configservice",
+              "StartRemediationExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "StopConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "StopConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "TagResource",
+          [
+            [
+              "configservice",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "configservice",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeRemediationExceptionsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeRemediationExceptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeRemediationExecutionStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeRemediationExecutionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetResourceConfigHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetResourceConfigHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "SelectAggregateResourceConfigPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "SelectAggregateResourceConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteStoredQuery",
+          [
+            [
+              "configservice",
+              "DeleteStoredQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetStoredQuery",
+          [
+            [
+              "configservice",
+              "GetStoredQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListStoredQueries",
+          [
+            [
+              "configservice",
+              "ListStoredQueries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutExternalEvaluation",
+          [
+            [
+              "configservice",
+              "PutExternalEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutStoredQuery",
+          [
+            [
+              "configservice",
+              "PutStoredQuery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListStoredQueriesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListStoredQueries"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DescribeAggregateComplianceByConformancePacks",
+          [
+            [
+              "configservice",
+              "DescribeAggregateComplianceByConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetAggregateConformancePackComplianceSummary",
+          [
+            [
+              "configservice",
+              "GetAggregateConformancePackComplianceSummary"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeAggregateComplianceByConfigRulesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeAggregateComplianceByConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeAggregateComplianceByConformancePacksPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeAggregateComplianceByConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeAggregationAuthorizationsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeAggregationAuthorizations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeComplianceByConfigRulePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeComplianceByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeComplianceByResourcePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeComplianceByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConfigRuleEvaluationStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConfigRuleEvaluationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConfigRulesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConfigurationAggregatorSourcesStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationAggregatorSourcesStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConfigurationAggregatorsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConfigurationAggregators"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConformancePackCompliancePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConformancePackCompliance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConformancePackStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConformancePackStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeConformancePacksPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeOrganizationConfigRuleStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConfigRuleStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeOrganizationConfigRulesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConfigRules"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeOrganizationConformancePackStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConformancePackStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeOrganizationConformancePacksPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeOrganizationConformancePacks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribePendingAggregationRequestsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribePendingAggregationRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "DescribeRetentionConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "DescribeRetentionConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetAggregateComplianceDetailsByConfigRulePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetAggregateComplianceDetailsByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetAggregateConfigRuleComplianceSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetAggregateConfigRuleComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetAggregateConformancePackComplianceSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetAggregateConformancePackComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetAggregateDiscoveredResourceCountsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetAggregateDiscoveredResourceCounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetComplianceDetailsByConfigRulePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetComplianceDetailsByConfigRule"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetComplianceDetailsByResourcePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetComplianceDetailsByResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetConformancePackComplianceDetailsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetConformancePackComplianceDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetConformancePackComplianceSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetConformancePackComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetDiscoveredResourceCountsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetDiscoveredResourceCounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetOrganizationConfigRuleDetailedStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetOrganizationConfigRuleDetailedStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "GetOrganizationConformancePackDetailedStatusPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "GetOrganizationConformancePackDetailedStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListAggregateDiscoveredResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListAggregateDiscoveredResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListDiscoveredResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListDiscoveredResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListTagsForResourcePaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "SelectResourceConfigPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "SelectResourceConfig"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetCustomRulePolicy",
+          [
+            [
+              "configservice",
+              "GetCustomRulePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetOrganizationCustomRulePolicy",
+          [
+            [
+              "configservice",
+              "GetOrganizationCustomRulePolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListConformancePackComplianceScores",
+          [
+            [
+              "configservice",
+              "ListConformancePackComplianceScores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListConformancePackComplianceScoresPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListConformancePackComplianceScores"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetResourceEvaluationSummary",
+          [
+            [
+              "configservice",
+              "GetResourceEvaluationSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListResourceEvaluations",
+          [
+            [
+              "configservice",
+              "ListResourceEvaluations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "StartResourceEvaluation",
+          [
+            [
+              "configservice",
+              "StartResourceEvaluation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListResourceEvaluationsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListResourceEvaluations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "AssociateResourceTypes",
+          [
+            [
+              "configservice",
+              "AssociateResourceTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteServiceLinkedConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "DeleteServiceLinkedConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DisassociateResourceTypes",
+          [
+            [
+              "configservice",
+              "DisassociateResourceTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListConfigurationRecorders",
+          [
+            [
+              "configservice",
+              "ListConfigurationRecorders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutServiceLinkedConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "PutServiceLinkedConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListConfigurationRecordersPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListConfigurationRecorders"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "DeleteConnector",
+          [
+            [
+              "configservice",
+              "DeleteConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "GetConnector",
+          [
+            [
+              "configservice",
+              "GetConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "ListConnectors",
+          [
+            [
+              "configservice",
+              "ListConnectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutConnector",
+          [
+            [
+              "configservice",
+              "PutConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "Client",
+          "PutThirdPartyServiceLinkedConfigurationRecorder",
+          [
+            [
+              "configservice",
+              "PutThirdPartyServiceLinkedConfigurationRecorder"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/configservice",
+          "ListConnectorsPaginator",
+          "NextPage",
+          [
+            [
+              "configservice",
+              "ListConnectors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

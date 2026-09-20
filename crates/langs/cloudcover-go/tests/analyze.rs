@@ -9,7 +9,8 @@ fn basic_fixture_dir() -> PathBuf {
 
 #[test]
 fn analyzes_direct_calls_in_fixture() -> Result<(), Box<dyn Error>> {
-    let methods = analyze_dir(basic_fixture_dir())?;
+    let analysis = analyze_dir(basic_fixture_dir())?;
+    let methods = analysis.methods();
 
     assert!(methods.contains(&GoMethodReference::new(
         "example.com/cloudcover/basic",

@@ -1,0 +1,2820 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AddCustomAttributes",
+          [
+            [
+              "cognitoidentityprovider",
+              "AddCustomAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminAddUserToGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminAddUserToGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminConfirmSignUp",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminConfirmSignUp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminCreateUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminCreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminDeleteUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminDeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminDeleteUserAttributes",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminDeleteUserAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminDisableProviderForUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminDisableProviderForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminDisableUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminDisableUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminEnableUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminEnableUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminForgetDevice",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminForgetDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminGetDevice",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminGetDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminGetUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminGetUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminInitiateAuth",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminInitiateAuth"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminLinkProviderForUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminLinkProviderForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminListDevices",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminListDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminListGroupsForUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminListGroupsForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminListUserAuthEvents",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminListUserAuthEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminRemoveUserFromGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminRemoveUserFromGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminResetUserPassword",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminResetUserPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminRespondToAuthChallenge",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminRespondToAuthChallenge"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminSetUserMFAPreference",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminSetUserMFAPreference"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminSetUserPassword",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminSetUserPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminSetUserSettings",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminSetUserSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminUpdateAuthEventFeedback",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminUpdateAuthEventFeedback"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminUpdateDeviceStatus",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminUpdateDeviceStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminUpdateUserAttributes",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminUpdateUserAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminUserGlobalSignOut",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminUserGlobalSignOut"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AssociateSoftwareToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "AssociateSoftwareToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ChangePassword",
+          [
+            [
+              "cognitoidentityprovider",
+              "ChangePassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ConfirmDevice",
+          [
+            [
+              "cognitoidentityprovider",
+              "ConfirmDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ConfirmForgotPassword",
+          [
+            [
+              "cognitoidentityprovider",
+              "ConfirmForgotPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ConfirmSignUp",
+          [
+            [
+              "cognitoidentityprovider",
+              "ConfirmSignUp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateIdentityProvider",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateIdentityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateResourceServer",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateResourceServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateUserImportJob",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateUserImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateUserPool",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateUserPool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateUserPoolClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateUserPoolClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateUserPoolDomain",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateUserPoolDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteIdentityProvider",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteIdentityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteResourceServer",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteResourceServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserAttributes",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserPool",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserPool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserPoolClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserPoolClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserPoolDomain",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserPoolDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeIdentityProvider",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeIdentityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeResourceServer",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeResourceServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeRiskConfiguration",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeRiskConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeUserImportJob",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeUserImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeUserPool",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeUserPool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeUserPoolClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeUserPoolClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeUserPoolDomain",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeUserPoolDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ForgetDevice",
+          [
+            [
+              "cognitoidentityprovider",
+              "ForgetDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ForgotPassword",
+          [
+            [
+              "cognitoidentityprovider",
+              "ForgotPassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetCSVHeader",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetCSVHeader"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetDevice",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetDevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetIdentityProviderByIdentifier",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetIdentityProviderByIdentifier"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetSigningCertificate",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetSigningCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUICustomization",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetUICustomization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUser",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUserAttributeVerificationCode",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetUserAttributeVerificationCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUserPoolMfaConfig",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetUserPoolMfaConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GlobalSignOut",
+          [
+            [
+              "cognitoidentityprovider",
+              "GlobalSignOut"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "InitiateAuth",
+          [
+            [
+              "cognitoidentityprovider",
+              "InitiateAuth"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListDevices",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListDevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListGroups",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListIdentityProviders",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListIdentityProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListResourceServers",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListResourceServers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserImportJobs",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserImportJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserPoolClients",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPoolClients"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserPools",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPools"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUsers",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUsersInGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUsersInGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ResendConfirmationCode",
+          [
+            [
+              "cognitoidentityprovider",
+              "ResendConfirmationCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "RespondToAuthChallenge",
+          [
+            [
+              "cognitoidentityprovider",
+              "RespondToAuthChallenge"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetRiskConfiguration",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetRiskConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUICustomization",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetUICustomization"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUserMFAPreference",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetUserMFAPreference"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUserPoolMfaConfig",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetUserPoolMfaConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUserSettings",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetUserSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SignUp",
+          [
+            [
+              "cognitoidentityprovider",
+              "SignUp"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "StartUserImportJob",
+          [
+            [
+              "cognitoidentityprovider",
+              "StartUserImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "StopUserImportJob",
+          [
+            [
+              "cognitoidentityprovider",
+              "StopUserImportJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "TagResource",
+          [
+            [
+              "cognitoidentityprovider",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "cognitoidentityprovider",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateAuthEventFeedback",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateAuthEventFeedback"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateDeviceStatus",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateDeviceStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateGroup",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateIdentityProvider",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateIdentityProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateResourceServer",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateResourceServer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateUserAttributes",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateUserAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateUserPool",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateUserPool"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateUserPoolClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateUserPoolClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateUserPoolDomain",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateUserPoolDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "VerifySoftwareToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "VerifySoftwareToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "VerifyUserAttribute",
+          [
+            [
+              "cognitoidentityprovider",
+              "VerifyUserAttribute"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "AdminListGroupsForUserPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminListGroupsForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "AdminListUserAuthEventsPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminListUserAuthEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListIdentityProvidersPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListIdentityProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListResourceServersPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListResourceServers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListUserPoolClientsPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPoolClients"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListUsersInGroupPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUsersInGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListUsersPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "ListUserPoolsPaginator",
+          "NextPage",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPools"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "RevokeToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "RevokeToken"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetLogDeliveryConfiguration",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetLogDeliveryConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetLogDeliveryConfiguration",
+          [
+            [
+              "cognitoidentityprovider",
+              "SetLogDeliveryConfiguration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CompleteWebAuthnRegistration",
+          [
+            [
+              "cognitoidentityprovider",
+              "CompleteWebAuthnRegistration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateManagedLoginBranding",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateManagedLoginBranding"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteManagedLoginBranding",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteManagedLoginBranding"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteWebAuthnCredential",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteWebAuthnCredential"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeManagedLoginBranding",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeManagedLoginBranding"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeManagedLoginBrandingByClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeManagedLoginBrandingByClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUserAuthFactors",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetUserAuthFactors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListWebAuthnCredentials",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListWebAuthnCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "StartWebAuthnRegistration",
+          [
+            [
+              "cognitoidentityprovider",
+              "StartWebAuthnRegistration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateManagedLoginBranding",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateManagedLoginBranding"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetTokensFromRefreshToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetTokensFromRefreshToken"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateTerms",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteTerms",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeTerms",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListTerms",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListTerms"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateTerms",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateTerms"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AddUserPoolClientSecret",
+          [
+            [
+              "cognitoidentityprovider",
+              "AddUserPoolClientSecret"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserPoolClientSecret",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserPoolClientSecret"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserPoolClientSecrets",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPoolClientSecrets"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CreateUserPoolReplica",
+          [
+            [
+              "cognitoidentityprovider",
+              "CreateUserPoolReplica"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DeleteUserPoolReplica",
+          [
+            [
+              "cognitoidentityprovider",
+              "DeleteUserPoolReplica"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserPoolReplicas",
+          [
+            [
+              "cognitoidentityprovider",
+              "ListUserPoolReplicas"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateUserPoolReplica",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateUserPoolReplica"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetProvisionedLimit",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetProvisionedLimit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "UpdateProvisionedLimit",
+          [
+            [
+              "cognitoidentityprovider",
+              "UpdateProvisionedLimit"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.65.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.66.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminGetUserAuthFactors",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminGetUserAuthFactors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.67.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.68.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminDeleteSoftwareToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "AdminDeleteSoftwareToken"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.69.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribeTermsByClient",
+          [
+            [
+              "cognitoidentityprovider",
+              "DescribeTermsByClient"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetClientToken",
+          [
+            [
+              "cognitoidentityprovider",
+              "GetClientToken"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.73.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.74.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}

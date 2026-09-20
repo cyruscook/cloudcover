@@ -4,6 +4,18 @@
   "upsert": [
     [
       "data_source",
+      "aws_fsx_ontap_storage_virtual_machine",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_fsx_openzfs_snapshot",
+      "read",
+      []
+    ],
+    [
+      "data_source",
       "aws_kinesis_stream",
       "read",
       [
@@ -18,6 +30,65 @@
       ]
     ],
     [
+      "data_source",
+      "aws_route53_resolver_query_log_config",
+      "read",
+      []
+    ],
+    [
+      "data_source",
+      "aws_route53_resolver_rule",
+      "read",
+      [
+        [
+          "route53resolver",
+          "GetResolverRule"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ssoadmin_permission_set",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribePermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_virtual_mfa_device",
+      "create",
+      [
+        [
+          "iam",
+          "CreateVirtualMFADevice"
+        ],
+        [
+          "iam",
+          "TagMFADevice"
+        ],
+        [
+          "iam",
+          "UntagMFADevice"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_virtual_mfa_device",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_virtual_mfa_device",
+      "update",
+      []
+    ],
+    [
       "resource",
       "aws_kinesis_stream_consumer",
       "update",
@@ -25,6 +96,121 @@
         [
           "kinesis",
           "DescribeStreamConsumer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeApplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_permission_set",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "CreatePermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DescribePermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_permission_set",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribePermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_permission_set",
+      "update",
+      [
+        [
+          "ssoadmin",
+          "DescribePermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "DescribePermissionSetProvisioningStatus"
+        ],
+        [
+          "ssoadmin",
+          "ProvisionPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "TagResource"
+        ],
+        [
+          "ssoadmin",
+          "UntagResource"
+        ],
+        [
+          "ssoadmin",
+          "UpdatePermissionSet"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_trusted_token_issuer",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeTrustedTokenIssuer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_transfer_tag",
+      "create",
+      [
+        [
+          "transfer",
+          "TagResource"
+        ],
+        [
+          "transfer",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_transfer_tag",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_transfer_tag",
+      "update",
+      [
+        [
+          "transfer",
+          "TagResource"
+        ],
+        [
+          "transfer",
+          "UntagResource"
         ]
       ]
     ]

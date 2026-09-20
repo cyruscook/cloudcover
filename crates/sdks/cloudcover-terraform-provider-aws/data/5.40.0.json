@@ -59,6 +59,60 @@
     ],
     [
       "resource",
+      "aws_elastic_beanstalk_environment",
+      "create",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "elasticbeanstalk",
+          "CreateEnvironment"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeConfigurationSettings"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEnvironmentResources"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEnvironments"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elastic_beanstalk_environment",
+      "update",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeConfigurationSettings"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEnvironmentResources"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEnvironments"
+        ],
+        [
+          "elasticbeanstalk",
+          "UpdateEnvironment"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_s3_bucket",
       "read",
       [

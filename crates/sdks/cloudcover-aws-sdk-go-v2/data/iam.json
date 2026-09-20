@@ -1,0 +1,3544 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/iam",
+  "releases": [
+    {
+      "module_version": "0.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AddClientIDToOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "AddClientIDToOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AddRoleToInstanceProfile",
+          [
+            [
+              "iam",
+              "AddRoleToInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AddUserToGroup",
+          [
+            [
+              "iam",
+              "AddUserToGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AttachGroupPolicy",
+          [
+            [
+              "iam",
+              "AttachGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AttachRolePolicy",
+          [
+            [
+              "iam",
+              "AttachRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AttachUserPolicy",
+          [
+            [
+              "iam",
+              "AttachUserPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ChangePassword",
+          [
+            [
+              "iam",
+              "ChangePassword"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateAccessKey",
+          [
+            [
+              "iam",
+              "CreateAccessKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateAccountAlias",
+          [
+            [
+              "iam",
+              "CreateAccountAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateGroup",
+          [
+            [
+              "iam",
+              "CreateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateInstanceProfile",
+          [
+            [
+              "iam",
+              "CreateInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateLoginProfile",
+          [
+            [
+              "iam",
+              "CreateLoginProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "CreateOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreatePolicy",
+          [
+            [
+              "iam",
+              "CreatePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreatePolicyVersion",
+          [
+            [
+              "iam",
+              "CreatePolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateRole",
+          [
+            [
+              "iam",
+              "CreateRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateSAMLProvider",
+          [
+            [
+              "iam",
+              "CreateSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateServiceLinkedRole",
+          [
+            [
+              "iam",
+              "CreateServiceLinkedRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateServiceSpecificCredential",
+          [
+            [
+              "iam",
+              "CreateServiceSpecificCredential"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateUser",
+          [
+            [
+              "iam",
+              "CreateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateVirtualMFADevice",
+          [
+            [
+              "iam",
+              "CreateVirtualMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeactivateMFADevice",
+          [
+            [
+              "iam",
+              "DeactivateMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteAccessKey",
+          [
+            [
+              "iam",
+              "DeleteAccessKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteAccountAlias",
+          [
+            [
+              "iam",
+              "DeleteAccountAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteAccountPasswordPolicy",
+          [
+            [
+              "iam",
+              "DeleteAccountPasswordPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteGroup",
+          [
+            [
+              "iam",
+              "DeleteGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteGroupPolicy",
+          [
+            [
+              "iam",
+              "DeleteGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteInstanceProfile",
+          [
+            [
+              "iam",
+              "DeleteInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteLoginProfile",
+          [
+            [
+              "iam",
+              "DeleteLoginProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "DeleteOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeletePolicy",
+          [
+            [
+              "iam",
+              "DeletePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeletePolicyVersion",
+          [
+            [
+              "iam",
+              "DeletePolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteRole",
+          [
+            [
+              "iam",
+              "DeleteRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteRolePermissionsBoundary",
+          [
+            [
+              "iam",
+              "DeleteRolePermissionsBoundary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteRolePolicy",
+          [
+            [
+              "iam",
+              "DeleteRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteSAMLProvider",
+          [
+            [
+              "iam",
+              "DeleteSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteSSHPublicKey",
+          [
+            [
+              "iam",
+              "DeleteSSHPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteServerCertificate",
+          [
+            [
+              "iam",
+              "DeleteServerCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteServiceLinkedRole",
+          [
+            [
+              "iam",
+              "DeleteServiceLinkedRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteServiceSpecificCredential",
+          [
+            [
+              "iam",
+              "DeleteServiceSpecificCredential"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteSigningCertificate",
+          [
+            [
+              "iam",
+              "DeleteSigningCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteUser",
+          [
+            [
+              "iam",
+              "DeleteUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteUserPermissionsBoundary",
+          [
+            [
+              "iam",
+              "DeleteUserPermissionsBoundary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteUserPolicy",
+          [
+            [
+              "iam",
+              "DeleteUserPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DeleteVirtualMFADevice",
+          [
+            [
+              "iam",
+              "DeleteVirtualMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DetachGroupPolicy",
+          [
+            [
+              "iam",
+              "DetachGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DetachRolePolicy",
+          [
+            [
+              "iam",
+              "DetachRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DetachUserPolicy",
+          [
+            [
+              "iam",
+              "DetachUserPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "EnableMFADevice",
+          [
+            [
+              "iam",
+              "EnableMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GenerateCredentialReport",
+          [
+            [
+              "iam",
+              "GenerateCredentialReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GenerateOrganizationsAccessReport",
+          [
+            [
+              "iam",
+              "GenerateOrganizationsAccessReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GenerateServiceLastAccessedDetails",
+          [
+            [
+              "iam",
+              "GenerateServiceLastAccessedDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetAccessKeyLastUsed",
+          [
+            [
+              "iam",
+              "GetAccessKeyLastUsed"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetAccountAuthorizationDetails",
+          [
+            [
+              "iam",
+              "GetAccountAuthorizationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetAccountPasswordPolicy",
+          [
+            [
+              "iam",
+              "GetAccountPasswordPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetAccountSummary",
+          [
+            [
+              "iam",
+              "GetAccountSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetContextKeysForCustomPolicy",
+          [
+            [
+              "iam",
+              "GetContextKeysForCustomPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetContextKeysForPrincipalPolicy",
+          [
+            [
+              "iam",
+              "GetContextKeysForPrincipalPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetCredentialReport",
+          [
+            [
+              "iam",
+              "GetCredentialReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetGroup",
+          [
+            [
+              "iam",
+              "GetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetGroupPolicy",
+          [
+            [
+              "iam",
+              "GetGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetInstanceProfile",
+          [
+            [
+              "iam",
+              "GetInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetLoginProfile",
+          [
+            [
+              "iam",
+              "GetLoginProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "GetOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetOrganizationsAccessReport",
+          [
+            [
+              "iam",
+              "GetOrganizationsAccessReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetPolicy",
+          [
+            [
+              "iam",
+              "GetPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetPolicyVersion",
+          [
+            [
+              "iam",
+              "GetPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetRole",
+          [
+            [
+              "iam",
+              "GetRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetRolePolicy",
+          [
+            [
+              "iam",
+              "GetRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetSAMLProvider",
+          [
+            [
+              "iam",
+              "GetSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetSSHPublicKey",
+          [
+            [
+              "iam",
+              "GetSSHPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetServerCertificate",
+          [
+            [
+              "iam",
+              "GetServerCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetServiceLastAccessedDetails",
+          [
+            [
+              "iam",
+              "GetServiceLastAccessedDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetServiceLastAccessedDetailsWithEntities",
+          [
+            [
+              "iam",
+              "GetServiceLastAccessedDetailsWithEntities"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetServiceLinkedRoleDeletionStatus",
+          [
+            [
+              "iam",
+              "GetServiceLinkedRoleDeletionStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetUser",
+          [
+            [
+              "iam",
+              "GetUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetUserPolicy",
+          [
+            [
+              "iam",
+              "GetUserPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListAccessKeys",
+          [
+            [
+              "iam",
+              "ListAccessKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListAccountAliases",
+          [
+            [
+              "iam",
+              "ListAccountAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListAttachedGroupPolicies",
+          [
+            [
+              "iam",
+              "ListAttachedGroupPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListAttachedRolePolicies",
+          [
+            [
+              "iam",
+              "ListAttachedRolePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListAttachedUserPolicies",
+          [
+            [
+              "iam",
+              "ListAttachedUserPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListEntitiesForPolicy",
+          [
+            [
+              "iam",
+              "ListEntitiesForPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListGroupPolicies",
+          [
+            [
+              "iam",
+              "ListGroupPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListGroups",
+          [
+            [
+              "iam",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListGroupsForUser",
+          [
+            [
+              "iam",
+              "ListGroupsForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListInstanceProfiles",
+          [
+            [
+              "iam",
+              "ListInstanceProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListInstanceProfilesForRole",
+          [
+            [
+              "iam",
+              "ListInstanceProfilesForRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListMFADevices",
+          [
+            [
+              "iam",
+              "ListMFADevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListOpenIDConnectProviders",
+          [
+            [
+              "iam",
+              "ListOpenIDConnectProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListPolicies",
+          [
+            [
+              "iam",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListPoliciesGrantingServiceAccess",
+          [
+            [
+              "iam",
+              "ListPoliciesGrantingServiceAccess"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListPolicyVersions",
+          [
+            [
+              "iam",
+              "ListPolicyVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListRolePolicies",
+          [
+            [
+              "iam",
+              "ListRolePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListRoleTags",
+          [
+            [
+              "iam",
+              "ListRoleTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListRoles",
+          [
+            [
+              "iam",
+              "ListRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListSAMLProviders",
+          [
+            [
+              "iam",
+              "ListSAMLProviders"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListSSHPublicKeys",
+          [
+            [
+              "iam",
+              "ListSSHPublicKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListServerCertificates",
+          [
+            [
+              "iam",
+              "ListServerCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListServiceSpecificCredentials",
+          [
+            [
+              "iam",
+              "ListServiceSpecificCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListSigningCertificates",
+          [
+            [
+              "iam",
+              "ListSigningCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListUserPolicies",
+          [
+            [
+              "iam",
+              "ListUserPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListUserTags",
+          [
+            [
+              "iam",
+              "ListUserTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListUsers",
+          [
+            [
+              "iam",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListVirtualMFADevices",
+          [
+            [
+              "iam",
+              "ListVirtualMFADevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutGroupPolicy",
+          [
+            [
+              "iam",
+              "PutGroupPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutRolePermissionsBoundary",
+          [
+            [
+              "iam",
+              "PutRolePermissionsBoundary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutRolePolicy",
+          [
+            [
+              "iam",
+              "PutRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutUserPermissionsBoundary",
+          [
+            [
+              "iam",
+              "PutUserPermissionsBoundary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutUserPolicy",
+          [
+            [
+              "iam",
+              "PutUserPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "RemoveClientIDFromOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "RemoveClientIDFromOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "RemoveRoleFromInstanceProfile",
+          [
+            [
+              "iam",
+              "RemoveRoleFromInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "RemoveUserFromGroup",
+          [
+            [
+              "iam",
+              "RemoveUserFromGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ResetServiceSpecificCredential",
+          [
+            [
+              "iam",
+              "ResetServiceSpecificCredential"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ResyncMFADevice",
+          [
+            [
+              "iam",
+              "ResyncMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "SetDefaultPolicyVersion",
+          [
+            [
+              "iam",
+              "SetDefaultPolicyVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "SetSecurityTokenServicePreferences",
+          [
+            [
+              "iam",
+              "SetSecurityTokenServicePreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "SimulateCustomPolicy",
+          [
+            [
+              "iam",
+              "SimulateCustomPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "SimulatePrincipalPolicy",
+          [
+            [
+              "iam",
+              "SimulatePrincipalPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagRole",
+          [
+            [
+              "iam",
+              "TagRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagUser",
+          [
+            [
+              "iam",
+              "TagUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagRole",
+          [
+            [
+              "iam",
+              "UntagRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagUser",
+          [
+            [
+              "iam",
+              "UntagUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateAccessKey",
+          [
+            [
+              "iam",
+              "UpdateAccessKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateAccountPasswordPolicy",
+          [
+            [
+              "iam",
+              "UpdateAccountPasswordPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateAssumeRolePolicy",
+          [
+            [
+              "iam",
+              "UpdateAssumeRolePolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateGroup",
+          [
+            [
+              "iam",
+              "UpdateGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateLoginProfile",
+          [
+            [
+              "iam",
+              "UpdateLoginProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateOpenIDConnectProviderThumbprint",
+          [
+            [
+              "iam",
+              "UpdateOpenIDConnectProviderThumbprint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateRole",
+          [
+            [
+              "iam",
+              "UpdateRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateRoleDescription",
+          [
+            [
+              "iam",
+              "UpdateRoleDescription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateSAMLProvider",
+          [
+            [
+              "iam",
+              "UpdateSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateSSHPublicKey",
+          [
+            [
+              "iam",
+              "UpdateSSHPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateServerCertificate",
+          [
+            [
+              "iam",
+              "UpdateServerCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateServiceSpecificCredential",
+          [
+            [
+              "iam",
+              "UpdateServiceSpecificCredential"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateSigningCertificate",
+          [
+            [
+              "iam",
+              "UpdateSigningCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateUser",
+          [
+            [
+              "iam",
+              "UpdateUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UploadSSHPublicKey",
+          [
+            [
+              "iam",
+              "UploadSSHPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UploadServerCertificate",
+          [
+            [
+              "iam",
+              "UploadServerCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UploadSigningCertificate",
+          [
+            [
+              "iam",
+              "UploadSigningCertificate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "0.30.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "GetAccountAuthorizationDetailsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "GetAccountAuthorizationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "GetGroupPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "GetGroup"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListAccessKeysPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListAccessKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListAccountAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListAccountAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListAttachedGroupPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListAttachedGroupPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListAttachedRolePoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListAttachedRolePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListAttachedUserPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListAttachedUserPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListEntitiesForPolicyPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListEntitiesForPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListGroupPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListGroupPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListGroupsForUserPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListGroupsForUser"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListGroupsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListGroups"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListInstanceProfilesForRolePaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListInstanceProfilesForRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListInstanceProfilesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListInstanceProfiles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListMFADevicesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListMFADevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListPolicyVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListPolicyVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListRolePoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListRolePolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListRolesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListSSHPublicKeysPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListSSHPublicKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListServerCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListServerCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListSigningCertificatesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListSigningCertificates"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListUserPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListUserPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListUsersPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListUsers"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListVirtualMFADevicesPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListVirtualMFADevices"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "SimulateCustomPolicyPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "SimulateCustomPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "SimulatePrincipalPolicyPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "SimulatePrincipalPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "0.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.1.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.2.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListInstanceProfileTags",
+          [
+            [
+              "iam",
+              "ListInstanceProfileTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListMFADeviceTags",
+          [
+            [
+              "iam",
+              "ListMFADeviceTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListOpenIDConnectProviderTags",
+          [
+            [
+              "iam",
+              "ListOpenIDConnectProviderTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListPolicyTags",
+          [
+            [
+              "iam",
+              "ListPolicyTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListSAMLProviderTags",
+          [
+            [
+              "iam",
+              "ListSAMLProviderTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListServerCertificateTags",
+          [
+            [
+              "iam",
+              "ListServerCertificateTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagInstanceProfile",
+          [
+            [
+              "iam",
+              "TagInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagMFADevice",
+          [
+            [
+              "iam",
+              "TagMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "TagOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagPolicy",
+          [
+            [
+              "iam",
+              "TagPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagSAMLProvider",
+          [
+            [
+              "iam",
+              "TagSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "TagServerCertificate",
+          [
+            [
+              "iam",
+              "TagServerCertificate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagInstanceProfile",
+          [
+            [
+              "iam",
+              "UntagInstanceProfile"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagMFADevice",
+          [
+            [
+              "iam",
+              "UntagMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagOpenIDConnectProvider",
+          [
+            [
+              "iam",
+              "UntagOpenIDConnectProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagPolicy",
+          [
+            [
+              "iam",
+              "UntagPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagSAMLProvider",
+          [
+            [
+              "iam",
+              "UntagSAMLProvider"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UntagServerCertificate",
+          [
+            [
+              "iam",
+              "UntagServerCertificate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.3.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.3.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.5.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListUserTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListUserTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.5.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.9.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.13",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.14",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.15",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.16",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.17",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.18",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.19",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.20",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.21",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.22",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.23",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.24",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.25",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetMFADevice",
+          [
+            [
+              "iam",
+              "GetMFADevice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListInstanceProfileTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListInstanceProfileTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListMFADeviceTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListMFADeviceTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListOpenIDConnectProviderTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListOpenIDConnectProviderTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListPolicyTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListPolicyTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListRoleTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListRoleTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListSAMLProviderTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListSAMLProviderTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "ListServerCertificateTagsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "ListServerCertificateTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.31.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.32.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.33.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DisableOrganizationsRootCredentialsManagement",
+          [
+            [
+              "iam",
+              "DisableOrganizationsRootCredentialsManagement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DisableOrganizationsRootSessions",
+          [
+            [
+              "iam",
+              "DisableOrganizationsRootSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "EnableOrganizationsRootCredentialsManagement",
+          [
+            [
+              "iam",
+              "EnableOrganizationsRootCredentialsManagement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "EnableOrganizationsRootSessions",
+          [
+            [
+              "iam",
+              "EnableOrganizationsRootSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListOrganizationsFeatures",
+          [
+            [
+              "iam",
+              "ListOrganizationsFeatures"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "CreateDelegationRequest",
+          [
+            [
+              "iam",
+              "CreateDelegationRequest"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AcceptDelegationRequest",
+          [
+            [
+              "iam",
+              "AcceptDelegationRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AssociateDelegationRequest",
+          [
+            [
+              "iam",
+              "AssociateDelegationRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetDelegationRequest",
+          [
+            [
+              "iam",
+              "GetDelegationRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetHumanReadableSummary",
+          [
+            [
+              "iam",
+              "GetHumanReadableSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "ListDelegationRequests",
+          [
+            [
+              "iam",
+              "ListDelegationRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "RejectDelegationRequest",
+          [
+            [
+              "iam",
+              "RejectDelegationRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "SendDelegationToken",
+          [
+            [
+              "iam",
+              "SendDelegationToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "UpdateDelegationRequest",
+          [
+            [
+              "iam",
+              "UpdateDelegationRequest"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "DisableOutboundWebIdentityFederation",
+          [
+            [
+              "iam",
+              "DisableOutboundWebIdentityFederation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "EnableOutboundWebIdentityFederation",
+          [
+            [
+              "iam",
+              "EnableOutboundWebIdentityFederation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetOutboundWebIdentityFederationInfo",
+          [
+            [
+              "iam",
+              "GetOutboundWebIdentityFederationInfo"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.53.12",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.54.7",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.55.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.56.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "AcquireRole",
+          [
+            [
+              "iam",
+              "AcquireRole"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetAccountProperties",
+          [
+            [
+              "iam",
+              "GetAccountProperties"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "GetRoleTemplateVersion",
+          [
+            [
+              "iam",
+              "GetRoleTemplateVersion"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iam",
+          "Client",
+          "PutAccountProperties",
+          [
+            [
+              "iam",
+              "PutAccountProperties"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.59.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.59.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.60.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.61.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}
