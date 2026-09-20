@@ -251,17 +251,13 @@ impl IndexBuilder {
                     removals.push(*previous_row);
                     previous_index += 1;
                 }
-                (Some(_), Some(current_row)) => {
+                (Some(_) | None, Some(current_row)) => {
                     additions.push(*current_row);
                     current_index += 1;
                 }
                 (Some(previous_row), None) => {
                     removals.push(*previous_row);
                     previous_index += 1;
-                }
-                (None, Some(current_row)) => {
-                    additions.push(*current_row);
-                    current_index += 1;
                 }
                 (None, None) => break,
             }
@@ -617,6 +613,11 @@ fn write_string_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
 }
 
 #[cfg(test)]
+#[allow(
+    clippy::cast_possible_truncation,
+    clippy::uninlined_format_args,
+    clippy::unwrap_used
+)]
 mod tests {
     use super::*;
 
