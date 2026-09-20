@@ -1809,7 +1809,7 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 				if !ok || concrete.Pkg() == nil || !isProviderPackage(concrete.Pkg().Path()) {
 					continue
 				}
-				if isBodylessLinknameFunction(index, concrete) {
+				if isBodylessInterfaceMethod(concrete) || isBodylessLinknameFunction(index, concrete) {
 					continue
 				}
 				resolved, found, err := directSSAFunctionsForSelection(index, implementation, concrete.FullName())
