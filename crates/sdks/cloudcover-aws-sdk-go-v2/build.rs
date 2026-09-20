@@ -17,13 +17,29 @@ type BuildResult<T> = Result<T, Box<dyn Error>>;
 type EncodedApiMethod = (u16, u16);
 type EncodedRow = (u16, u16, u16, u16);
 
-const MAGIC: &[u8; 8] = b"CCGO001\0";
-const HEADER_LEN: usize = 32;
+const MAGIC: &[u8; 8] = b"CCGO002\0";
+const HEADER_LEN: usize = 36;
+/// Releases between full mapping checkpoints. Intermediate releases store row deltas only.
+const CHECKPOINT_INTERVAL: usize = 64;
 
 #[derive(Clone, Copy)]
 struct VersionIndex {
+    checkpoint_start: u32,
+    checkpoint_len: u32,
+    delta_start: u32,
+    delta_len: u32,
+}
+
+#[derive(Clone, Copy)]
+struct CheckpointIndex {
     start: u32,
     len: u32,
+}
+
+#[derive(Clone, Copy, Eq, PartialEq)]
+struct DeltaOperation {
+    row: u16,
+    add: bool,
 }
 
 #[derive(Default)]
@@ -34,8 +50,9 @@ struct IndexBuilder {
     api_lists: Vec<Vec<EncodedApiMethod>>,
     row_ids: BTreeMap<EncodedRow, u16>,
     rows: Vec<EncodedRow>,
-    snapshot_rows: Vec<u16>,
-    snapshot_ids: BTreeMap<Vec<u16>, VersionIndex>,
+    checkpoint_rows: Vec<u16>,
+    checkpoint_ids: BTreeMap<Vec<u16>, CheckpointIndex>,
+    delta_operations: Vec<DeltaOperation>,
 }
 
 fn main() -> BuildResult<()> {
@@ -127,8 +144,11 @@ fn process_file(
     }
 
     let mut state = MappingState::new();
+    let mut previous_rows = Vec::new();
+    let mut checkpoint = None;
+    let mut checkpoint_delta_start = 0;
     let mut previous_version = None;
-    for release in &mut file.releases {
+    for (release_index, release) in file.releases.iter_mut().enumerate() {
         let version = data::validate_and_apply_release(release, &mut state)
             .map_err(|error| -> Box<dyn Error> { error.into() })?;
         if previous_version
@@ -141,16 +161,45 @@ fn process_file(
             )
             .into());
         }
-        let index = builder.add_snapshot(&state)?;
+
+        let rows = builder.rows_for_state(&state)?;
+        let index = if release_index.is_multiple_of(CHECKPOINT_INTERVAL) {
+            let checkpoint_index = builder.intern_checkpoint(&rows)?;
+            checkpoint = Some(checkpoint_index);
+            checkpoint_delta_start = to_u32(builder.delta_operations.len(), "delta offset")?;
+            VersionIndex {
+                checkpoint_start: checkpoint_index.start,
+                checkpoint_len: checkpoint_index.len,
+                delta_start: checkpoint_delta_start,
+                delta_len: 0,
+            }
+        } else {
+            builder.add_delta(&previous_rows, &rows)?;
+            let checkpoint_index = checkpoint.ok_or("missing initial mapping checkpoint")?;
+            VersionIndex {
+                checkpoint_start: checkpoint_index.start,
+                checkpoint_len: checkpoint_index.len,
+                delta_start: checkpoint_delta_start,
+                delta_len: to_u32(
+                    builder
+                        .delta_operations
+                        .len()
+                        .checked_sub(checkpoint_delta_start as usize)
+                        .ok_or("delta offset exceeds operation count")?,
+                    "delta count",
+                )?,
+            }
+        };
         versions.push((expected_module_path.to_owned(), version.to_string(), index));
+        previous_rows = rows;
         previous_version = Some(version);
     }
     Ok(())
 }
 
 impl IndexBuilder {
-    fn add_snapshot(&mut self, state: &MappingState) -> BuildResult<VersionIndex> {
-        let mut snapshot = Vec::with_capacity(state.len());
+    fn rows_for_state(&mut self, state: &MappingState) -> BuildResult<Vec<u16>> {
+        let mut rows = Vec::with_capacity(state.len());
         for ((package, receiver, method), api_methods) in state {
             let package = self.intern_string(package)?;
             let receiver = self.intern_string(receiver)?;
@@ -165,19 +214,126 @@ impl IndexBuilder {
                 })
                 .collect::<BuildResult<Vec<_>>>()?;
             let api_list = self.intern_api_list(encoded_api_methods)?;
-            let row = self.intern_row((package, receiver, method, api_list))?;
-            snapshot.push(row);
+            rows.push(self.intern_row((package, receiver, method, api_list))?);
         }
-        if let Some(index) = self.snapshot_ids.get(&snapshot) {
+        Ok(rows)
+    }
+
+    fn intern_checkpoint(&mut self, rows: &[u16]) -> BuildResult<CheckpointIndex> {
+        if let Some(index) = self.checkpoint_ids.get(rows) {
             return Ok(*index);
         }
-        let index = VersionIndex {
-            start: to_u32(self.snapshot_rows.len(), "snapshot row offset")?,
-            len: to_u32(snapshot.len(), "snapshot row count")?,
+        let index = CheckpointIndex {
+            start: to_u32(self.checkpoint_rows.len(), "checkpoint row offset")?,
+            len: to_u32(rows.len(), "checkpoint row count")?,
         };
-        self.snapshot_rows.extend_from_slice(&snapshot);
-        self.snapshot_ids.insert(snapshot, index);
+        self.checkpoint_rows.extend_from_slice(rows);
+        self.checkpoint_ids.insert(rows.to_vec(), index);
         Ok(index)
+    }
+
+    fn add_delta(&mut self, previous: &[u16], current: &[u16]) -> BuildResult<()> {
+        let mut previous = previous.to_vec();
+        let mut current = current.to_vec();
+        previous.sort_unstable();
+        current.sort_unstable();
+
+        let mut removals = Vec::new();
+        let mut additions = Vec::new();
+        let (mut previous_index, mut current_index) = (0, 0);
+        while previous_index < previous.len() || current_index < current.len() {
+            match (previous.get(previous_index), current.get(current_index)) {
+                (Some(previous_row), Some(current_row)) if previous_row == current_row => {
+                    previous_index += 1;
+                    current_index += 1;
+                }
+                (Some(previous_row), Some(current_row)) if previous_row < current_row => {
+                    removals.push(*previous_row);
+                    previous_index += 1;
+                }
+                (Some(_), Some(current_row)) => {
+                    additions.push(*current_row);
+                    current_index += 1;
+                }
+                (Some(previous_row), None) => {
+                    removals.push(*previous_row);
+                    previous_index += 1;
+                }
+                (None, Some(current_row)) => {
+                    additions.push(*current_row);
+                    current_index += 1;
+                }
+                (None, None) => break,
+            }
+        }
+
+        let mut operations = Vec::with_capacity(removals.len() + additions.len());
+        operations.extend(
+            removals
+                .into_iter()
+                .map(|row| DeltaOperation { row, add: false }),
+        );
+        operations.extend(
+            additions
+                .into_iter()
+                .map(|row| DeltaOperation { row, add: true }),
+        );
+        validate_delta_operations(&operations)?;
+        self.delta_operations.extend(operations);
+        Ok(())
+    }
+
+    #[cfg(test)]
+    fn materialize_rows(&self, version: VersionIndex) -> BuildResult<Vec<u16>> {
+        let checkpoint_start = version.checkpoint_start as usize;
+        let checkpoint_end = checkpoint_start
+            .checked_add(version.checkpoint_len as usize)
+            .ok_or("checkpoint range exceeds usize")?;
+        let delta_start = version.delta_start as usize;
+        let delta_end = delta_start
+            .checked_add(version.delta_len as usize)
+            .ok_or("delta range exceeds usize")?;
+        let mut rows = self
+            .checkpoint_rows
+            .get(checkpoint_start..checkpoint_end)
+            .ok_or("checkpoint range exceeds encoded rows")?
+            .to_vec();
+        for operation in self
+            .delta_operations
+            .get(delta_start..delta_end)
+            .ok_or("delta range exceeds encoded operations")?
+        {
+            match (
+                operation.add,
+                rows.binary_search_by(|row| self.compare_rows(*row, operation.row)),
+            ) {
+                (false, Ok(index)) => {
+                    rows.remove(index);
+                }
+                (true, Err(index)) => {
+                    rows.insert(index, operation.row);
+                }
+                (false, Err(_)) => return Err("mapping delta removes a missing row".into()),
+                (true, Ok(_)) => return Err("mapping delta adds a duplicate row".into()),
+            }
+        }
+        Ok(rows)
+    }
+
+    #[cfg(test)]
+    fn compare_rows(&self, left: u16, right: u16) -> std::cmp::Ordering {
+        let left = self.rows[left as usize];
+        let right = self.rows[right as usize];
+        (
+            &self.strings[left.0 as usize],
+            &self.strings[left.1 as usize],
+            &self.strings[left.2 as usize],
+        )
+            .cmp(&(
+                &self.strings[right.0 as usize],
+                &self.strings[right.1 as usize],
+                &self.strings[right.2 as usize],
+            ))
     }
 
     fn intern_string(&mut self, value: &str) -> BuildResult<u16> {
@@ -216,8 +372,11 @@ impl IndexBuilder {
         let api_methods_offset = HEADER_LEN;
         let api_lists_offset = checked_section_end(api_methods_offset, api_method_count, 4)?;
         let rows_offset = checked_section_end(api_lists_offset, self.api_lists.len(), 8)?;
-        let row_ids_offset = checked_section_end(rows_offset, self.rows.len(), 8)?;
-        let binary_len = checked_section_end(row_ids_offset, self.snapshot_rows.len(), 2)?;
+        let checkpoint_rows_offset = checked_section_end(rows_offset, self.rows.len(), 8)?;
+        let delta_operations_offset =
+            checked_section_end(checkpoint_rows_offset, self.checkpoint_rows.len(), 2)?;
+        let binary_len =
+            checked_section_end(delta_operations_offset, self.delta_operations.len(), 3)?;
         let mut binary = Vec::with_capacity(binary_len);
 
         binary.extend_from_slice(MAGIC);
@@ -230,7 +389,11 @@ impl IndexBuilder {
         push_u32(&mut binary, to_u32(self.rows.len(), "mapping row count")?);
         push_u32(
             &mut binary,
-            to_u32(self.snapshot_rows.len(), "snapshot row count")?,
+            to_u32(self.checkpoint_rows.len(), "checkpoint row count")?,
+        );
+        push_u32(
+            &mut binary,
+            to_u32(self.delta_operations.len(), "delta operation count")?,
         );
         push_u32(&mut binary, to_u32(version_count, "version count")?);
 
@@ -255,8 +418,12 @@ impl IndexBuilder {
             push_u16(&mut binary, method);
             push_u16(&mut binary, api_list);
         }
-        for &row in &self.snapshot_rows {
+        for &row in &self.checkpoint_rows {
             push_u16(&mut binary, row);
+        }
+        for DeltaOperation { row, add } in &self.delta_operations {
+            push_u16(&mut binary, *row);
+            binary.push(u8::from(*add));
         }
         if binary.len() != binary_len {
             return Err(format!(
@@ -272,7 +439,8 @@ impl IndexBuilder {
                 api_methods: api_methods_offset,
                 api_lists: api_lists_offset,
                 rows: rows_offset,
-                row_ids: row_ids_offset,
+                checkpoint_rows: checkpoint_rows_offset,
+                delta_operations: delta_operations_offset,
             },
         ))
     }
@@ -283,7 +451,37 @@ struct BinaryOffsets {
     api_methods: usize,
     api_lists: usize,
     rows: usize,
-    row_ids: usize,
+    checkpoint_rows: usize,
+    delta_operations: usize,
+}
+
+fn validate_delta_operations(operations: &[DeltaOperation]) -> BuildResult<()> {
+    let split = operations.partition_point(|operation| !operation.add);
+    let removals = &operations[..split];
+    let additions = &operations[split..];
+    if additions.iter().any(|operation| !operation.add) {
+        return Err("mapping delta removals must precede additions".into());
+    }
+    if removals
+        .windows(2)
+        .any(|window| window[0].row >= window[1].row)
+    {
+        return Err("mapping delta removals must be sorted and unique".into());
+    }
+    if additions
+        .windows(2)
+        .any(|window| window[0].row >= window[1].row)
+    {
+        return Err("mapping delta additions must be sorted and unique".into());
+    }
+    if removals.iter().any(|removal| {
+        additions
+            .binary_search_by_key(&removal.row, |addition| addition.row)
+            .is_ok()
+    }) {
+        return Err("mapping delta both removes and adds one row".into());
+    }
+    Ok(())
 }
 
 fn generate_code(
@@ -323,9 +521,11 @@ fn generate_code(
     for (_, _, index) in versions {
         writeln!(
             generated,
-            "    VersionIndex {{ start: {}, len: {} }},",
-            format_number(&index.start),
-            format_number(&index.len)
+            "    VersionIndex {{ checkpoint_start: {}, checkpoint_len: {}, delta_start: {}, delta_len: {} }},",
+            format_number(&index.checkpoint_start),
+            format_number(&index.checkpoint_len),
+            format_number(&index.delta_start),
+            format_number(&index.delta_len),
         )?;
     }
     generated.push_str("];\n\nconst VERSION_LOOKUP: &[(&str, &str, usize)] = &[\n");
@@ -356,8 +556,13 @@ fn generate_code(
     )?;
     writeln!(
         generated,
-        "const ROW_IDS_OFFSET: usize = {};",
-        format_number(&offsets.row_ids)
+        "const CHECKPOINT_ROWS_OFFSET: usize = {};",
+        format_number(&offsets.checkpoint_rows)
+    )?;
+    writeln!(
+        generated,
+        "const DELTA_OPERATIONS_OFFSET: usize = {};",
+        format_number(&offsets.delta_operations)
     )?;
     Ok(generated)
 }
@@ -487,7 +692,8 @@ mod tests {
                 ],
             )]
         );
-        assert_eq!(builder.snapshot_ids.len(), 2);
+        assert_eq!(builder.checkpoint_ids.len(), 1);
+        assert_eq!(builder.delta_operations.len(), 2);
 
         let mut invalid_module = synthetic_file();
         invalid_module.module_path = "github.com/aws/aws-sdk-go-v2/service/other".into();
@@ -535,6 +741,106 @@ mod tests {
                 "SDK module {:?} releases are not strictly increasing at 1.0.0",
                 MODULE_PATH
             )
+        );
+    }
+
+    #[test]
+    fn periodic_checkpoints_preserve_exact_rows_across_deltas() {
+        let mut releases = vec![
+            release(
+                "1.0.0",
+                vec![],
+                vec![(
+                    "example".into(),
+                    "Client".into(),
+                    "First".into(),
+                    vec![("Example".into(), "First".into())],
+                )],
+            ),
+            release(
+                "1.1.0",
+                vec![("example".into(), "Client".into(), "First".into())],
+                vec![(
+                    "example".into(),
+                    "Client".into(),
+                    "Second".into(),
+                    vec![("Example".into(), "Second".into())],
+                )],
+            ),
+        ];
+        for patch in 2..=64 {
+            releases.push(release(
+                &format!("1.{patch}.0"),
+                vec![],
+                vec![(
+                    "example".into(),
+                    "Client".into(),
+                    format!("Added{patch}"),
+                    vec![("Example".into(), format!("Added{patch}"))],
+                )],
+            ));
+        }
+        let mut file = data::SdkDataFile {
+            module_path: MODULE_PATH.into(),
+            releases,
+        };
+        let mut builder = IndexBuilder::default();
+        let mut versions = Vec::new();
+
+        process_file(&mut file, MODULE_PATH, &mut builder, &mut versions).unwrap();
+
+        let methods = |index: VersionIndex| {
+            builder
+                .materialize_rows(index)
+                .unwrap()
+                .into_iter()
+                .map(|row_id| builder.strings[builder.rows[row_id as usize].2 as usize].as_str())
+                .collect::<Vec<_>>()
+        };
+        assert_eq!(methods(versions[0].2), ["First"]);
+        assert_eq!(methods(versions[1].2), ["Second"]);
+        assert_eq!(methods(versions[2].2), ["Added2", "Second"]);
+        assert_eq!(methods(versions[64].2).len(), 64);
+        assert_eq!(methods(versions[64].2).last(), Some(&"Second"));
+        assert_eq!(versions[0].2.delta_len, 0);
+        assert_eq!(versions[1].2.delta_len, 2);
+        assert_eq!(versions[64].2.delta_len, 0);
+        assert_ne!(
+            versions[0].2.checkpoint_start,
+            versions[64].2.checkpoint_start
+        );
+
+        let (first_encoding, _) = builder.encode(versions.len()).unwrap();
+        let (second_encoding, _) = builder.encode(versions.len()).unwrap();
+        assert_eq!(first_encoding, second_encoding);
+        assert_eq!(&first_encoding[..MAGIC.len()], MAGIC);
+        assert_eq!(
+            u32::from_le_bytes(first_encoding[28..32].try_into().unwrap()),
+            builder.delta_operations.len() as u32
+        );
+        assert_eq!(builder.checkpoint_rows.len(), 65);
+        assert_eq!(builder.delta_operations.len(), 64);
+    }
+
+    #[test]
+    fn rejects_duplicate_and_conflicting_delta_operations() {
+        assert_eq!(
+            validate_delta_operations(&[
+                DeltaOperation { row: 4, add: false },
+                DeltaOperation { row: 4, add: false },
+            ])
+            .unwrap_err()
+            .to_string(),
+            "mapping delta removals must be sorted and unique"
+        );
+        assert_eq!(
+            validate_delta_operations(&[
+                DeltaOperation { row: 4, add: false },
+                DeltaOperation { row: 4, add: true },
+            ])
+            .unwrap_err()
+            .to_string(),
+            "mapping delta both removes and adds one row"
         );
     }
 }
