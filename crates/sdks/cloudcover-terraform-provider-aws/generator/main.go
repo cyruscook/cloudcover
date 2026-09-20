@@ -1850,11 +1850,10 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 		return nil, false, nil
 	}
 	if len(callees) != 1 {
-		return nil, true, fmt.Errorf(
-			"ambiguous provider interface dispatch for %s: %d concrete implementations",
-			name,
-			len(callees),
-		)
+		// Dynamic provider interfaces can intentionally select among several
+		// concrete implementations. Analyze every implementation so the result
+		// includes the permissions required by every runtime branch.
+		return callees, true, nil
 	}
 	return callees, true, nil
 }

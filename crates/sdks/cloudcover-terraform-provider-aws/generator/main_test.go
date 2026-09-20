@@ -277,7 +277,7 @@ func (implementation) Call(client *example.Client) {
 	}
 }
 
-func TestCollectAPIMethodsRejectsAmbiguousProviderInterfaceDispatch(t *testing.T) {
+func TestCollectAPIMethodsUnionsAmbiguousProviderInterfaceDispatch(t *testing.T) {
 	t.Parallel()
 
 	index, handler, mappings := interfaceAPIMethodFixture(t, `
@@ -290,11 +290,18 @@ func (firstImplementation) Call(client *example.Client) {
 type secondImplementation struct{}
 
 func (secondImplementation) Call(client *example.Client) {
-	client.ListThings()
+	client.GetThings()
 }`)
-	_, err := collectAPIMethods(index, []*ssa.Function{handler}, mappings)
-	if err == nil || !strings.Contains(err.Error(), "ambiguous provider interface dispatch") {
-		t.Fatalf("collectAPIMethods() error = %v, want ambiguous provider interface dispatch", err)
+	analysis, err := collectAPIMethods(index, []*ssa.Function{handler}, mappings)
+	if err != nil {
+		t.Fatalf("collectAPIMethods() error = %v", err)
+	}
+	want := []apiMethod{
+		{Service: "example", Name: "GetThings"},
+		{Service: "example", Name: "ListThings"},
+	}
+	if !slices.Equal(analysis.methods, want) {
+		t.Fatalf("collectAPIMethods() methods = %#v, want %#v", analysis.methods, want)
 	}
 }
 
@@ -2437,6 +2444,8 @@ func handler(value caller, client *example.Client) {
 	sdkPkg.Scope().Insert(client.Obj())
 	listThings := newMethod(sdkPkg, client, "ListThings")
 	client.AddMethod(listThings)
+	getThings := newMethod(sdkPkg, client, "GetThings")
+	client.AddMethod(getThings)
 	sdkPkg.MarkComplete()
 
 	info := &types.Info{
@@ -2484,6 +2493,7 @@ func handler(value caller, client *example.Client) {
 		t.Fatal("fixture has no handler SSA function")
 	}
 	return index, handler, map[sdkMethodKey][]apiMethod{
+		mustSDKKey(t, getThings):  {{Service: "example", Name: "GetThings"}},
 		mustSDKKey(t, listThings): {{Service: "example", Name: "ListThings"}},
 	}
 }
