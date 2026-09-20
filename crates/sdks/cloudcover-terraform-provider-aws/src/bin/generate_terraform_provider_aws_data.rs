@@ -163,7 +163,8 @@ fn run() -> GeneratorResult<()> {
             .join("provider/gopath/src/github.com/hashicorp/terraform-provider-aws");
         let module_cache = args.work_dir.join("go-mod-cache");
         fs::create_dir_all(&module_cache)?;
-        let mut analyzed_count = 0;
+        fs::create_dir_all(provider_dir.parent().ok_or("provider path has no parent")?)?;
+        initialize_provider_checkout(&provider_dir)?;
         for version in supported_versions {
             let snapshot_path = snapshot_dir.join(format!("{version}.json"));
             if !args.refresh_cache && load_snapshot(&snapshot_path, &version).is_ok() {
@@ -171,26 +172,20 @@ fn run() -> GeneratorResult<()> {
                 replacements.insert(version, snapshot_path);
                 continue;
             }
-            fs::create_dir_all(provider_dir.parent().ok_or("provider path has no parent")?)?;
-            drop_provider_checkout(&provider_dir)?;
-            initialize_provider_checkout(&provider_dir)?;
             eprintln!("Analyzing Terraform AWS provider v{version}");
-            checkout_provider_version(&provider_dir, &version)?;
-            let sdk_map_path = args.work_dir.join("cloudcover-aws-sdk-go-v2-mappings.json");
-            write_sdk_map(&sdk_map_path, &provider_dir, &module_cache)?;
-            let mut mappings =
-                analyze_provider(&provider_dir, &sdk_map_path, &analyzer_path, &module_cache)?;
-            let state =
-                state_from_rows(&mut mappings).map_err(|error| format!("v{version}: {error}"))?;
-            persist_snapshot(&snapshot_dir, &version, &state)?;
+            with_clean_provider_checkout(&provider_dir, || {
+                checkout_provider_version(&provider_dir, &version)?;
+                let sdk_map_path = args.work_dir.join("cloudcover-aws-sdk-go-v2-mappings.json");
+                write_sdk_map(&sdk_map_path, &provider_dir, &module_cache)?;
+                let mut mappings =
+                    analyze_provider(&provider_dir, &sdk_map_path, &analyzer_path, &module_cache)?;
+                let state = state_from_rows(&mut mappings)
+                    .map_err(|error| format!("v{version}: {error}"))?;
+                persist_snapshot(&snapshot_dir, &version, &state)?;
+                Ok(())
+            })?;
             replacements.insert(version, snapshot_path);
-            drop_provider_checkout(&provider_dir)?;
-            analyzed_count += 1;
-            if analyzed_count % 16 == 0 {
-                reset_module_cache(&module_cache)?;
-            }
         }
-        reset_module_cache(&module_cache)?;
     }
 
     let publish_dir = prepare_publish(&args.work_dir, existing_files, &replacements)?;
@@ -1066,22 +1061,42 @@ fn path_arg(path: &Path) -> GeneratorResult<&str> {
 
 fn initialize_provider_checkout(provider_dir: &Path) -> GeneratorResult<()> {
     command_output("git", &["init", "--quiet", path_arg(provider_dir)?], None)?;
-    command_output(
+    match command_output(
         "git",
-        &[
-            "-C",
-            path_arg(provider_dir)?,
-            "remote",
-            "add",
-            "origin",
-            PROVIDER_REPOSITORY,
-        ],
+        &["-C", path_arg(provider_dir)?, "remote", "get-url", "origin"],
         None,
-    )?;
+    ) {
+        Ok(output) => {
+            let remote = String::from_utf8(output.stdout)?;
+            if remote.trim() != PROVIDER_REPOSITORY {
+                return Err(format!(
+                    "{} has unexpected origin remote {}",
+                    provider_dir.display(),
+                    remote.trim()
+                )
+                .into());
+            }
+        }
+        Err(_) => {
+            command_output(
+                "git",
+                &[
+                    "-C",
+                    path_arg(provider_dir)?,
+                    "remote",
+                    "add",
+                    "origin",
+                    PROVIDER_REPOSITORY,
+                ],
+                None,
+            )?;
+        }
+    }
     Ok(())
 }
 
 fn checkout_provider_version(provider_dir: &Path, version: &Version) -> GeneratorResult<()> {
+    clean_provider_checkout(provider_dir)?;
     let tag = format!("v{version}");
     command_output(
         "git",
@@ -1107,11 +1122,6 @@ fn checkout_provider_version(provider_dir: &Path, version: &Version) -> Generato
         ],
         None,
     )?;
-    command_output(
-        "git",
-        &["-C", path_arg(provider_dir)?, "clean", "-fdx"],
-        None,
-    )?;
     Ok(())
 }
 
@@ -1125,21 +1135,49 @@ fn build_analyzer(analyzer_path: &Path) -> GeneratorResult<()> {
     Ok(())
 }
 
-fn drop_provider_checkout(provider_dir: &Path) -> GeneratorResult<()> {
-    if provider_dir.exists() {
-        fs::remove_dir_all(provider_dir)?;
+fn with_clean_provider_checkout<T>(
+    provider_dir: &Path,
+    operation: impl FnOnce() -> GeneratorResult<T>,
+) -> GeneratorResult<T> {
+    let result = operation();
+    let cleanup = clean_provider_checkout(provider_dir);
+    match (result, cleanup) {
+        (Ok(value), Ok(())) => Ok(value),
+        (Ok(_), Err(cleanup)) => Err(cleanup),
+        (Err(operation), Ok(())) => Err(operation),
+        (Err(operation), Err(cleanup)) => Err(format!(
+            "{operation}; additionally failed to clean provider checkout: {cleanup}"
+        )
+        .into()),
     }
-    Ok(())
 }
 
-fn reset_module_cache(module_cache: &Path) -> GeneratorResult<()> {
-    command_output_with_env(
-        "go",
-        &["clean", "-modcache"],
+fn clean_provider_checkout(provider_dir: &Path) -> GeneratorResult<()> {
+    if command_output(
+        "git",
+        &[
+            "-C",
+            path_arg(provider_dir)?,
+            "rev-parse",
+            "--verify",
+            "--quiet",
+            "HEAD",
+        ],
         None,
-        Some(("GOMODCACHE", path_arg(module_cache)?)),
+    )
+    .is_ok()
+    {
+        command_output(
+            "git",
+            &["-C", path_arg(provider_dir)?, "reset", "--hard", "--quiet"],
+            None,
+        )?;
+    }
+    command_output(
+        "git",
+        &["-C", path_arg(provider_dir)?, "clean", "-fdx"],
+        None,
     )?;
-    fs::create_dir_all(module_cache)?;
     Ok(())
 }
 
@@ -1670,6 +1708,78 @@ mod tests {
             ])
             .is_ok()
         );
+    }
+
+    #[test]
+    fn provider_checkout_is_reused_and_source_cleanup_preserves_module_cache(
+    ) -> Result<(), Box<dyn Error>> {
+        let root = TempDir::new()?;
+        let provider_dir = root.path().join("provider");
+        let module_cache = root.path().join("go-mod-cache");
+        initialize_provider_checkout(&provider_dir)?;
+        fs::write(provider_dir.join(".git/persistent"), "keep")?;
+        initialize_provider_checkout(&provider_dir)?;
+        assert_eq!(
+            fs::read_to_string(provider_dir.join(".git/persistent"))?,
+            "keep"
+        );
+        fs::write(provider_dir.join("tracked"), "clean")?;
+        command_output(
+            "git",
+            &["-C", path_arg(&provider_dir)?, "add", "tracked"],
+            None,
+        )?;
+        command_output(
+            "git",
+            &[
+                "-C",
+                path_arg(&provider_dir)?,
+                "-c",
+                "user.name=CloudCover Test",
+                "-c",
+                "user.email=test@example.com",
+                "-c",
+                "commit.gpgsign=false",
+                "commit",
+                "--quiet",
+                "-m",
+                "initial",
+            ],
+            None,
+        )?;
+        fs::write(provider_dir.join("tracked"), "dirty")?;
+        fs::write(provider_dir.join("generated"), "dirty")?;
+        fs::create_dir_all(&module_cache)?;
+        fs::write(module_cache.join("cached-module"), "cached")?;
+
+        with_clean_provider_checkout(&provider_dir, || Ok(()))?;
+
+        assert!(provider_dir.join(".git").is_dir());
+        assert!(!provider_dir.join("generated").exists());
+        assert_eq!(fs::read_to_string(provider_dir.join("tracked"))?, "clean");
+        assert_eq!(
+            fs::read_to_string(module_cache.join("cached-module"))?,
+            "cached"
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn provider_checkout_cleanup_runs_after_analysis_failure() -> Result<(), Box<dyn Error>> {
+        let root = TempDir::new()?;
+        let provider_dir = root.path().join("provider");
+        initialize_provider_checkout(&provider_dir)?;
+        fs::write(provider_dir.join("generated"), "dirty")?;
+
+        let error = with_clean_provider_checkout(&provider_dir, || {
+            Err::<(), _>("analysis failed".into())
+        })
+        .unwrap_err();
+
+        assert!(error.to_string().contains("analysis failed"));
+        assert!(provider_dir.join(".git").is_dir());
+        assert!(!provider_dir.join("generated").exists());
+        Ok(())
     }
 
     fn mapping_row(
