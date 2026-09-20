@@ -194,6 +194,68 @@ func TestAPIMethodAnalyzerMemoizesSharedFunctionSummaries(t *testing.T) {
 	}
 }
 
+func TestCollectAPIMethodsTraversesUniqueProviderInterfaceImplementation(t *testing.T) {
+	t.Parallel()
+
+	index, handler, mappings := interfaceAPIMethodFixture(t, `
+type implementation struct{}
+
+func (implementation) Call(client *example.Client) {
+	client.ListThings()
+}`)
+	analysis, err := collectAPIMethods(index, []*ssa.Function{handler}, mappings)
+	if err != nil {
+		t.Fatalf("collectAPIMethods() error = %v", err)
+	}
+	want := []apiMethod{{Service: "example", Name: "ListThings"}}
+	if !slices.Equal(analysis.methods, want) {
+		t.Fatalf("collectAPIMethods() methods = %#v, want %#v", analysis.methods, want)
+	}
+}
+
+func TestProviderLocalInterfaceCalleesMemoizesResolution(t *testing.T) {
+	t.Parallel()
+
+	index, handler, _ := interfaceAPIMethodFixture(t, `
+type implementation struct{}
+
+func (implementation) Call(client *example.Client) {
+	client.ListThings()
+}`)
+	selection := methodSelectionForCall(t, index, handler, "Call")
+	first, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call")
+	if err != nil || !relevant || len(first) != 1 {
+		t.Fatalf("providerLocalInterfaceCallees() = (%#v, %t, %v), want one relevant callee", first, relevant, err)
+	}
+
+	index.byTypes = nil
+	second, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call")
+	if err != nil || !relevant || !slices.Equal(second, first) {
+		t.Fatalf("cached providerLocalInterfaceCallees() = (%#v, %t, %v), want (%#v, true, nil)", second, relevant, err, first)
+	}
+}
+
+func TestCollectAPIMethodsRejectsAmbiguousProviderInterfaceDispatch(t *testing.T) {
+	t.Parallel()
+
+	index, handler, mappings := interfaceAPIMethodFixture(t, `
+type firstImplementation struct{}
+
+func (firstImplementation) Call(client *example.Client) {
+	client.ListThings()
+}
+
+type secondImplementation struct{}
+
+func (secondImplementation) Call(client *example.Client) {
+	client.ListThings()
+}`)
+	_, err := collectAPIMethods(index, []*ssa.Function{handler}, mappings)
+	if err == nil || !strings.Contains(err.Error(), "ambiguous provider interface dispatch") {
+		t.Fatalf("collectAPIMethods() error = %v, want ambiguous provider interface dispatch", err)
+	}
+}
+
 func TestCollectDirectLocalCalleesSkipsBodylessInterfaceMethod(t *testing.T) {
 	t.Parallel()
 
@@ -2254,6 +2316,84 @@ func cycle(client *example.Client) {
 	return index, handlers, map[sdkMethodKey][]apiMethod{
 		key: {{Service: "example", Name: "ListThings"}},
 	}, key
+}
+
+func interfaceAPIMethodFixture(t *testing.T, implementations string) (*packageIndex, *ssa.Function, map[sdkMethodKey][]apiMethod) {
+	t.Helper()
+
+	const sdkPath = "github.com/aws/aws-sdk-go/service/example"
+	fileSet := token.NewFileSet()
+	file, err := parser.ParseFile(fileSet, "interface.go", fmt.Sprintf(`package flex
+
+import example "github.com/aws/aws-sdk-go/service/example"
+
+type caller interface {
+	Call(*example.Client)
+}
+
+%s
+
+func handler(value caller, client *example.Client) {
+	value.Call(client)
+}`, implementations), parser.SkipObjectResolution)
+	if err != nil {
+		t.Fatalf("parse fixture: %v", err)
+	}
+
+	sdkPkg := types.NewPackage(sdkPath, "example")
+	client := types.NewNamed(types.NewTypeName(token.NoPos, sdkPkg, "Client", nil), types.NewStruct(nil, nil), nil)
+	sdkPkg.Scope().Insert(client.Obj())
+	listThings := newMethod(sdkPkg, client, "ListThings")
+	client.AddMethod(listThings)
+	sdkPkg.MarkComplete()
+
+	info := &types.Info{
+		Defs:       make(map[*ast.Ident]types.Object),
+		Types:      make(map[ast.Expr]types.TypeAndValue),
+		Uses:       make(map[*ast.Ident]types.Object),
+		Selections: make(map[*ast.SelectorExpr]*types.Selection),
+	}
+	packagePath := providerModulePath + "/internal/framework/flex"
+	checked, err := (&types.Config{Importer: packageMapImporter{sdkPath: sdkPkg}}).Check(packagePath, fileSet, []*ast.File{file}, info)
+	if err != nil {
+		t.Fatalf("type-check fixture: %v", err)
+	}
+	program := ssa.NewProgram(fileSet, 0)
+	program.CreatePackage(sdkPkg, nil, nil, true)
+	ssaPackage := program.CreatePackage(checked, []*ast.File{file}, info, true)
+	ssaPackage.Build()
+
+	sourcePkg := &packages.Package{Types: checked, TypesInfo: info}
+	index := &packageIndex{
+		prog:        program,
+		byTypes:     map[*types.Package]*packages.Package{checked: sourcePkg},
+		byPath:      map[string][]*packages.Package{packagePath: {sourcePkg}},
+		funcDecls:   map[*types.Func]*ast.FuncDecl{},
+		ssaFuncs:    map[*types.Func][]*ssa.Function{},
+		ssaBySyntax: map[ast.Node][]*ssa.Function{},
+	}
+	for _, declaration := range file.Decls {
+		funcDecl, ok := declaration.(*ast.FuncDecl)
+		if !ok {
+			continue
+		}
+		obj, ok := info.Defs[funcDecl.Name].(*types.Func)
+		if !ok {
+			continue
+		}
+		index.funcDecls[obj] = funcDecl
+		if fn := program.FuncValue(obj); fn != nil {
+			index.ssaFuncs[obj] = append(index.ssaFuncs[obj], fn)
+			index.ssaBySyntax[funcDecl] = append(index.ssaBySyntax[funcDecl], fn)
+		}
+	}
+	handler := ssaPackage.Func("handler")
+	if handler == nil {
+		t.Fatal("fixture has no handler SSA function")
+	}
+	return index, handler, map[sdkMethodKey][]apiMethod{
+		mustSDKKey(t, listThings): {{Service: "example", Name: "ListThings"}},
+	}
 }
 
 type packageMapImporter map[string]*types.Package

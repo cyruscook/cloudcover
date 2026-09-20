@@ -64,17 +64,18 @@ type entrypointSpec struct {
 }
 
 type packageIndex struct {
-	prog                *ssa.Program
-	byTypes             map[*types.Package]*packages.Package
-	byPath              map[string][]*packages.Package
-	byFile              map[string]*packages.Package
-	funcDecls           map[*types.Func]*ast.FuncDecl
-	funcDeclsByIdentity map[functionIdentity][]*ast.FuncDecl
-	ssaFuncs            map[*types.Func][]*ssa.Function
-	ssaFuncsByIdentity  map[functionIdentity][]*ssa.Function
-	ssaBySyntax         map[ast.Node][]*ssa.Function
-	nestedFuncs         map[*ssa.Function][]*ssa.Function
-	callers             map[*ssa.Function][]*ssa.Function
+	prog                     *ssa.Program
+	byTypes                  map[*types.Package]*packages.Package
+	byPath                   map[string][]*packages.Package
+	byFile                   map[string]*packages.Package
+	funcDecls                map[*types.Func]*ast.FuncDecl
+	funcDeclsByIdentity      map[functionIdentity][]*ast.FuncDecl
+	ssaFuncs                 map[*types.Func][]*ssa.Function
+	ssaFuncsByIdentity       map[functionIdentity][]*ssa.Function
+	ssaBySyntax              map[ast.Node][]*ssa.Function
+	nestedFuncs              map[*ssa.Function][]*ssa.Function
+	callers                  map[*ssa.Function][]*ssa.Function
+	interfaceCalleeCache     map[functionIdentity]providerInterfaceCalleeResolution
 }
 
 type functionIdentity struct {
@@ -121,6 +122,12 @@ type apiMethodFunctionSummary struct {
 	direct  []apiMethod
 	callees []*ssa.Function
 	methods []apiMethod
+}
+
+type providerInterfaceCalleeResolution struct {
+	callees  []*ssa.Function
+	relevant bool
+	err      error
 }
 
 type apiMethodAnalyzer struct {
@@ -317,6 +324,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		ssaBySyntax:         map[ast.Node][]*ssa.Function{},
 		nestedFuncs:         map[*ssa.Function][]*ssa.Function{},
 		callers:             map[*ssa.Function][]*ssa.Function{},
+		interfaceCalleeCache: map[functionIdentity]providerInterfaceCalleeResolution{},
 	}
 
 	missingTypes := make([]string, 0)
@@ -1685,8 +1693,14 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) ([]*ssa.Fu
 		if selection, ok := callExpr.Fun.(*ast.SelectorExpr); ok {
 			if methodSelection := sourcePkg.TypesInfo.Selections[selection]; methodSelection != nil {
 				if isBodylessInterfaceMethod(obj) {
-					// An interface method has no implementation to inspect. Its dynamic
-					// dispatch cannot itself be a direct SDK call.
+					resolved, relevant, err := providerLocalInterfaceCallees(index, methodSelection, obj.FullName())
+					if err != nil {
+						visitErr = err
+						return false
+					}
+					if relevant {
+						callees = append(callees, resolved...)
+					}
 					return true
 				}
 				resolved, found, err := directSSAFunctionsForSelection(index, methodSelection, obj.FullName())
@@ -1722,6 +1736,125 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) ([]*ssa.Fu
 		return nil, visitErr
 	}
 	return callees, nil
+}
+
+func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name string) ([]*ssa.Function, bool, error) {
+	if index == nil || interfaceSelection == nil || interfaceSelection.Kind() != types.MethodVal {
+		return nil, false, nil
+	}
+	method, ok := interfaceSelection.Obj().(*types.Func)
+	if !ok {
+		return nil, false, fmt.Errorf("unresolved provider interface dispatch for %s: selected object is not a function", name)
+	}
+	identity, ok := canonicalFunctionIdentity(method)
+	if !ok {
+		return collectProviderLocalInterfaceCallees(index, interfaceSelection, name)
+	}
+	if index.interfaceCalleeCache == nil {
+		index.interfaceCalleeCache = make(map[functionIdentity]providerInterfaceCalleeResolution)
+	}
+	if cached, ok := index.interfaceCalleeCache[identity]; ok {
+		return cached.callees, cached.relevant, cached.err
+	}
+	callees, relevant, err := collectProviderLocalInterfaceCallees(index, interfaceSelection, name)
+	index.interfaceCalleeCache[identity] = providerInterfaceCalleeResolution{
+		callees:  callees,
+		relevant: relevant,
+		err:      err,
+	}
+	return callees, relevant, err
+}
+
+func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name string) ([]*ssa.Function, bool, error) {
+	if index == nil || interfaceSelection == nil || interfaceSelection.Kind() != types.MethodVal {
+		return nil, false, nil
+	}
+	interfaceType, ok := interfaceSelection.Recv().Underlying().(*types.Interface)
+	if !ok {
+		return nil, false, nil
+	}
+	interfaceType.Complete()
+	method, ok := interfaceSelection.Obj().(*types.Func)
+	if !ok {
+		return nil, false, fmt.Errorf("unresolved provider interface dispatch for %s: selected object is not a function", name)
+	}
+
+	callees := make([]*ssa.Function, 0, 1)
+	seen := make(map[ssaFunctionSourceIdentity]struct{})
+	for typePkg := range index.byTypes {
+		if typePkg == nil || !isProviderPackage(typePkg.Path()) {
+			continue
+		}
+		scope := typePkg.Scope()
+		for _, typeName := range scope.Names() {
+			typeObject, ok := scope.Lookup(typeName).(*types.TypeName)
+			if !ok {
+				continue
+			}
+			named, ok := types.Unalias(typeObject.Type()).(*types.Named)
+			if !ok || isInterfaceType(named) {
+				continue
+			}
+			for _, receiver := range []types.Type{named, types.NewPointer(named)} {
+				if !types.Implements(receiver, interfaceType) {
+					continue
+				}
+				implementation := types.NewMethodSet(receiver).Lookup(method.Pkg(), method.Name())
+				if implementation == nil {
+					continue
+				}
+				concrete, ok := implementation.Obj().(*types.Func)
+				if !ok || concrete.Pkg() == nil || !isProviderPackage(concrete.Pkg().Path()) {
+					continue
+				}
+				if isBodylessLinknameFunction(index, concrete) {
+					continue
+				}
+				resolved, found, err := directSSAFunctionsForSelection(index, implementation, concrete.FullName())
+				if err != nil {
+					return nil, true, fmt.Errorf("unresolved provider interface dispatch for %s: %w", name, err)
+				}
+				if !found || len(resolved) == 0 {
+					return nil, true, fmt.Errorf("unresolved provider interface dispatch for %s: SSA function missing for %s", name, concrete.FullName())
+				}
+				for _, fn := range resolved {
+					declaration, ok := fn.Syntax().(*ast.FuncDecl)
+					if !ok || declaration.Body == nil {
+						return nil, true, fmt.Errorf("unresolved provider interface dispatch for %s: SSA function missing for %s", name, concrete.FullName())
+					}
+					origin := fn.Origin()
+					if origin == nil {
+						origin = fn
+					}
+					obj, ok := origin.Object().(*types.Func)
+					if !ok {
+						return nil, true, fmt.Errorf("unresolved provider interface dispatch for %s: SSA function missing for %s", name, concrete.FullName())
+					}
+					identity, ok := canonicalFunctionIdentity(obj)
+					if !ok {
+						return nil, true, fmt.Errorf("unresolved provider interface dispatch for %s: SSA function missing for %s", name, concrete.FullName())
+					}
+					source := ssaFunctionSourceIdentityFor(fn, declaration, identity)
+					if _, ok := seen[source]; ok {
+						continue
+					}
+					seen[source] = struct{}{}
+					callees = append(callees, fn)
+				}
+			}
+		}
+	}
+	if len(callees) == 0 {
+		return nil, false, nil
+	}
+	if len(callees) != 1 {
+		return nil, true, fmt.Errorf(
+			"ambiguous provider interface dispatch for %s: %d concrete implementations",
+			name,
+			len(callees),
+		)
+	}
+	return callees, true, nil
 }
 
 func isProviderPackage(path string) bool {
