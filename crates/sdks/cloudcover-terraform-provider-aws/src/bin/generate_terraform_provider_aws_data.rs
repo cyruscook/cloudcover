@@ -1725,8 +1725,8 @@ mod tests {
     }
 
     #[test]
-    fn provider_checkout_is_reused_and_source_cleanup_preserves_module_cache(
-    ) -> Result<(), Box<dyn Error>> {
+    fn provider_checkout_is_reused_and_source_cleanup_preserves_module_cache()
+    -> Result<(), Box<dyn Error>> {
         let root = TempDir::new()?;
         let provider_dir = root.path().join("provider");
         let module_cache = root.path().join("go-mod-cache");
@@ -1785,10 +1785,9 @@ mod tests {
         initialize_provider_checkout(&provider_dir)?;
         fs::write(provider_dir.join("generated"), "dirty")?;
 
-        let error = with_clean_provider_checkout(&provider_dir, || {
-            Err::<(), _>("analysis failed".into())
-        })
-        .unwrap_err();
+        let error =
+            with_clean_provider_checkout(&provider_dir, || Err::<(), _>("analysis failed".into()))
+                .unwrap_err();
 
         assert!(error.to_string().contains("analysis failed"));
         assert!(provider_dir.join(".git").is_dir());
