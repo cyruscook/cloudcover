@@ -1745,7 +1745,7 @@ func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *type
 	if !ok {
 		return nil, false, fmt.Errorf("unresolved provider interface dispatch for %s: selected object is not a function", name)
 	}
-	if isFrameworkConversionMethod(method) {
+	if isFrameworkConversionMethod(method) || isKnownPureProviderInterfaceMethod(interfaceSelection) {
 		return nil, false, nil
 	}
 	identity, ok := canonicalFunctionIdentity(method)
@@ -1872,6 +1872,21 @@ func isFrameworkConversionMethod(method *types.Func) bool {
 	default:
 		return false
 	}
+}
+
+func isKnownPureProviderInterfaceMethod(selection *types.Selection) bool {
+	if selection == nil || selection.Kind() != types.MethodVal {
+		return false
+	}
+	method, ok := selection.Obj().(*types.Func)
+	if !ok || method == nil || method.Pkg() == nil || method.Name() != "SubFrom" {
+		return false
+	}
+	if method.Pkg().Path() != providerModulePath+"/internal/service/acm" {
+		return false
+	}
+	receiver, ok := types.Unalias(selection.Recv()).(*types.Named)
+	return ok && receiver.Obj() != nil && receiver.Obj().Name() == "hybridDurationValue"
 }
 
 func isProviderPackage(path string) bool {
