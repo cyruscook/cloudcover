@@ -1,5 +1,10 @@
 use std::iter::FusedIterator;
 
+#[allow(dead_code)]
+#[cfg(test)]
+#[path = "../build.rs"]
+mod build;
+
 pub const SDK_NAME: &str = "aws-sdk-go-v2";
 
 static MAPPING_INDEX: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/sdk_mappings.bin"));

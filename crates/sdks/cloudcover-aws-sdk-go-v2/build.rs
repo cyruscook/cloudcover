@@ -7,6 +7,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
+#[allow(dead_code)]
 #[path = "src/data.rs"]
 mod data;
 
@@ -54,16 +55,8 @@ fn main() -> BuildResult<()> {
         let contents = fs::read_to_string(&path)?;
         let mut file: data::SdkDataFile = serde_json::from_str(&contents)
             .map_err(|error| format!("{}: invalid JSON: {error}", path.display()))?;
-        let mut validation_state = MappingState::new();
-        data::validate_and_apply_file(&mut file.clone(), Some(&module_path), &mut validation_state)
+        process_file(&mut file, &module_path, &mut builder, &mut versions)
             .map_err(|error| format!("{}: {error}", path.display()))?;
-        let mut state = MappingState::new();
-        for release in &mut file.releases {
-            let version = data::validate_and_apply_release(release, &mut state)
-                .map_err(|error| format!("{}: {error}", path.display()))?;
-            let index = builder.add_snapshot(&state)?;
-            versions.push((module_path.clone(), version.to_string(), index));
-        }
     }
 
     let (binary, offsets) = builder.encode(versions.len())?;
@@ -107,6 +100,52 @@ fn data_paths(data_dir: &Path) -> BuildResult<Vec<(String, PathBuf)>> {
     }
     paths.sort();
     Ok(paths)
+}
+
+fn process_file(
+    file: &mut data::SdkDataFile,
+    expected_module_path: &str,
+    builder: &mut IndexBuilder,
+    versions: &mut Vec<(String, String, VersionIndex)>,
+) -> BuildResult<()> {
+    if file.module_path.is_empty() {
+        return Err("SDK module path must not be empty".into());
+    }
+    if file.module_path != expected_module_path {
+        return Err(format!(
+            "SDK module path {:?} does not match expected {:?}",
+            file.module_path, expected_module_path
+        )
+        .into());
+    }
+    if file.releases.is_empty() {
+        return Err(format!(
+            "SDK module {:?} contains no stable releases",
+            file.module_path
+        )
+        .into());
+    }
+
+    let mut state = MappingState::new();
+    let mut previous_version = None;
+    for release in &mut file.releases {
+        let version = data::validate_and_apply_release(release, &mut state)
+            .map_err(|error| -> Box<dyn Error> { error.into() })?;
+        if previous_version
+            .as_ref()
+            .is_some_and(|previous| previous >= &version)
+        {
+            return Err(format!(
+                "SDK module {:?} releases are not strictly increasing at {}",
+                file.module_path, release.module_version
+            )
+            .into());
+        }
+        let index = builder.add_snapshot(&state)?;
+        versions.push((expected_module_path.to_owned(), version.to_string(), index));
+        previous_version = Some(version);
+    }
+    Ok(())
 }
 
 impl IndexBuilder {
@@ -370,4 +409,132 @@ fn write_bytes_if_changed(path: &Path, contents: &[u8]) -> BuildResult<()> {
 
 fn write_string_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
     write_bytes_if_changed(path, contents.as_bytes())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const MODULE_PATH: &str = "github.com/aws/aws-sdk-go-v2/service/example";
+
+    fn release(
+        version: &str,
+        remove: Vec<data::MappingKey>,
+        upsert: Vec<data::CompactMappingRow>,
+    ) -> data::SdkDataRelease {
+        data::SdkDataRelease {
+            module_version: version.into(),
+            remove,
+            upsert,
+        }
+    }
+
+    fn synthetic_file() -> data::SdkDataFile {
+        data::SdkDataFile {
+            module_path: MODULE_PATH.into(),
+            releases: vec![
+                release(
+                    "1.0.0",
+                    vec![],
+                    vec![(
+                        "example".into(),
+                        "Client".into(),
+                        "First".into(),
+                        vec![
+                            ("Example".into(), "Zebra".into()),
+                            ("Example".into(), "First".into()),
+                        ],
+                    )],
+                ),
+                release(
+                    "1.1.0",
+                    vec![("example".into(), "Client".into(), "First".into())],
+                    vec![(
+                        "example".into(),
+                        "Client".into(),
+                        "Second".into(),
+                        vec![("Example".into(), "Second".into())],
+                    )],
+                ),
+            ],
+        }
+    }
+
+    #[test]
+    fn processes_service_releases_once_while_validating_module_and_versions() {
+        let mut builder = IndexBuilder::default();
+        let mut versions = Vec::new();
+        let mut file = synthetic_file();
+
+        process_file(&mut file, MODULE_PATH, &mut builder, &mut versions).unwrap();
+
+        assert_eq!(
+            versions
+                .iter()
+                .map(|(_, version, _)| version.as_str())
+                .collect::<Vec<_>>(),
+            ["1.0.0", "1.1.0"]
+        );
+        assert_eq!(
+            file.releases[0].upsert,
+            vec![(
+                "example".into(),
+                "Client".into(),
+                "First".into(),
+                vec![
+                    ("Example".into(), "First".into()),
+                    ("Example".into(), "Zebra".into()),
+                ],
+            )]
+        );
+        assert_eq!(builder.snapshot_ids.len(), 2);
+
+        let mut invalid_module = synthetic_file();
+        invalid_module.module_path = "github.com/aws/aws-sdk-go-v2/service/other".into();
+        assert_eq!(
+            process_file(
+                &mut invalid_module,
+                MODULE_PATH,
+                &mut IndexBuilder::default(),
+                &mut Vec::new(),
+            )
+            .unwrap_err()
+            .to_string(),
+            format!(
+                "SDK module path {:?} does not match expected {:?}",
+                invalid_module.module_path, MODULE_PATH
+            )
+        );
+
+        let mut invalid_version = synthetic_file();
+        invalid_version.releases[0].module_version = "1.0".into();
+        assert_eq!(
+            process_file(
+                &mut invalid_version,
+                MODULE_PATH,
+                &mut IndexBuilder::default(),
+                &mut Vec::new(),
+            )
+            .unwrap_err()
+            .to_string(),
+            "invalid semantic version \"1.0\": unexpected end of input while parsing minor version number"
+        );
+
+        let mut invalid_versions = synthetic_file();
+        invalid_versions.releases[1].module_version = "1.0.0".into();
+        assert_eq!(
+            process_file(
+                &mut invalid_versions,
+                MODULE_PATH,
+                &mut IndexBuilder::default(),
+                &mut Vec::new(),
+            )
+            .unwrap_err()
+            .to_string(),
+            format!(
+                "SDK module {:?} releases are not strictly increasing at 1.0.0",
+                MODULE_PATH
+            )
+        );
+    }
 }
