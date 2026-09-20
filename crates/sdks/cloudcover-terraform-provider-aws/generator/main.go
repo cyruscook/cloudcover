@@ -1858,7 +1858,11 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 }
 
 func isProviderPackage(path string) bool {
-	return path == providerModulePath || strings.HasPrefix(path, providerModulePath+"/")
+	if path == providerModulePath {
+		return true
+	}
+	relative, ok := strings.CutPrefix(path, providerModulePath+"/")
+	return ok && relative != "vendor" && !strings.HasPrefix(relative, "vendor/")
 }
 
 func isBodylessLinknameFunction(index *packageIndex, obj *types.Func) bool {

@@ -256,6 +256,28 @@ func (secondImplementation) Call(client *example.Client) {
 	}
 }
 
+func TestIsProviderPackageExcludesVendoredDependencies(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		path string
+		want bool
+	}{
+		{path: providerModulePath, want: true},
+		{path: providerModulePath + "/internal/service/acm", want: true},
+		{path: providerModulePath + "/vendor/github.com/hashicorp/terraform/helper/schema", want: false},
+		{path: providerModulePath + "/vendorish/example", want: true},
+	}
+	for _, test := range tests {
+		t.Run(test.path, func(t *testing.T) {
+			t.Parallel()
+			if got := isProviderPackage(test.path); got != test.want {
+				t.Fatalf("isProviderPackage(%q) = %v, want %v", test.path, got, test.want)
+			}
+		})
+	}
+}
+
 func TestCollectDirectLocalCalleesSkipsBodylessInterfaceMethod(t *testing.T) {
 	t.Parallel()
 
