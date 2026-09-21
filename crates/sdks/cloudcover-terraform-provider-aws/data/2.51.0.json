@@ -137,10 +137,6 @@
         [
           "ec2",
           "ModifyTrafficMirrorFilterRule"
-        ],
-        [
-          "ec2",
-          "SetRemoveFields"
         ]
       ]
     ],
@@ -193,10 +189,6 @@
         [
           "ec2",
           "ModifyTrafficMirrorSession"
-        ],
-        [
-          "ec2",
-          "SetRemoveFields"
         ]
       ]
     ],
@@ -234,72 +226,6 @@
         [
           "ec2",
           "DescribeTrafficMirrorTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_event_source_mapping",
-      "create",
-      [
-        [
-          "lambda",
-          "CreateEventSourceMapping"
-        ],
-        [
-          "lambda",
-          "GetEventSourceMapping"
-        ],
-        [
-          "lambda",
-          "SetDestination"
-        ],
-        [
-          "lambda",
-          "SetDestinationConfig"
-        ],
-        [
-          "lambda",
-          "SetOnFailure"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_event_source_mapping",
-      "update",
-      [
-        [
-          "lambda",
-          "GetEventSourceMapping"
-        ],
-        [
-          "lambda",
-          "SetBisectBatchOnFunctionError"
-        ],
-        [
-          "lambda",
-          "SetDestination"
-        ],
-        [
-          "lambda",
-          "SetDestinationConfig"
-        ],
-        [
-          "lambda",
-          "SetMaximumRetryAttempts"
-        ],
-        [
-          "lambda",
-          "SetOnFailure"
-        ],
-        [
-          "lambda",
-          "SetParallelizationFactor"
-        ],
-        [
-          "lambda",
-          "UpdateEventSourceMapping"
         ]
       ]
     ],

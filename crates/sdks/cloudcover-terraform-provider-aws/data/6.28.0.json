@@ -33,16 +33,178 @@
       ]
     ],
     [
-      "data_source",
-      "aws_redshift_subnet_group",
-      "read",
-      []
+      "list_resource",
+      "aws_batch_job_definition",
+      "list",
+      [
+        [
+          "batch",
+          "DescribeJobDefinitions"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_batch_job_queue",
+      "list",
+      [
+        [
+          "batch",
+          "DescribeJobQueues"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_cloudwatch_log_group",
+      "list",
+      [
+        [
+          "cloudwatchlogs",
+          "DescribeLogGroups"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_codebuild_project",
+      "list",
+      [
+        [
+          "codebuild",
+          "BatchGetProjects"
+        ],
+        [
+          "codebuild",
+          "ListProjects"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_iam_policy",
+      "list",
+      [
+        [
+          "iam",
+          "GetPolicyVersion"
+        ],
+        [
+          "iam",
+          "ListPolicies"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_iam_role",
+      "list",
+      [
+        [
+          "iam",
+          "ListRoles"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_instance",
+      "list",
+      [
+        [
+          "ec2",
+          "DescribeInstanceAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceCreditSpecifications"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceTypes"
+        ],
+        [
+          "ec2",
+          "DescribeInstances"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplateVersions"
+        ],
+        [
+          "ec2",
+          "DescribeLaunchTemplates"
+        ],
+        [
+          "ec2",
+          "DescribeSpotInstanceRequests"
+        ],
+        [
+          "ec2",
+          "DescribeTags"
+        ],
+        [
+          "ec2",
+          "DescribeVolumes"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetPasswordData"
+        ]
+      ]
     ],
     [
       "list_resource",
       "aws_kms_alias",
       "list",
-      []
+      [
+        [
+          "kms",
+          "ListAliases"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_kms_key",
+      "list",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListKeys"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_lambda_capacity_provider",
+      "list",
+      [
+        [
+          "lambda",
+          "ListCapacityProviders"
+        ]
+      ]
     ],
     [
       "list_resource",
@@ -52,6 +214,63 @@
         [
           "sqs",
           "GetQueueAttributes"
+        ],
+        [
+          "sqs",
+          "ListQueues"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_ssm_parameter",
+      "list",
+      [
+        [
+          "ssm",
+          "DescribeParameters"
+        ],
+        [
+          "ssm",
+          "GetParameter"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_subnet",
+      "list",
+      [
+        [
+          "ec2",
+          "DescribeSubnets"
+        ]
+      ]
+    ],
+    [
+      "list_resource",
+      "aws_vpc",
+      "list",
+      [
+        [
+          "ec2",
+          "DescribeNetworkAcls"
+        ],
+        [
+          "ec2",
+          "DescribeRouteTables"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
+          "DescribeVpcAttribute"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
         ]
       ]
     ],
@@ -416,23 +635,6 @@
     ],
     [
       "resource",
-      "aws_elasticache_reserved_cache_node",
-      "create",
-      [
-        [
-          "elasticache",
-          "PurchaseReservedCacheNodesOffering"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_reserved_cache_node",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_iam_policy",
       "update",
       [
@@ -454,6 +656,10 @@
         ],
         [
           "iam",
+          "ListPolicyVersions"
+        ],
+        [
+          "iam",
           "SetDefaultPolicyVersion"
         ]
       ]
@@ -466,6 +672,10 @@
         [
           "networkmanager",
           "GetVpcAttachment"
+        ],
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
         ],
         [
           "networkmanager",
@@ -488,6 +698,10 @@
       [
         [
           "organizations",
+          "ListTagsForResource"
+        ],
+        [
+          "organizations",
           "TagResource"
         ],
         [
@@ -515,13 +729,22 @@
       "resource",
       "aws_organizations_tag",
       "read",
-      []
+      [
+        [
+          "organizations",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_organizations_tag",
       "update",
       [
+        [
+          "organizations",
+          "ListTagsForResource"
+        ],
         [
           "organizations",
           "TagResource"
@@ -531,202 +754,6 @@
           "UntagResource"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_snapshot",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateClusterSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_snapshot",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteClusterSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_snapshot",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyClusterSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_data_share_authorization",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_data_share_consumer_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_access",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateEndpointAccess"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_access",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteEndpointAccess"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_access",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_access",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyEndpointAccess"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_authorization",
-      "create",
-      [
-        [
-          "redshift",
-          "AuthorizeEndpointAccess"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_authorization",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_endpoint_authorization",
-      "update",
-      [
-        [
-          "redshift",
-          "AuthorizeEndpointAccess"
-        ],
-        [
-          "redshift",
-          "RevokeEndpointAccess"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_event_subscription",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_event_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_event_subscription",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_client_certificate",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateHsmClientCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_client_certificate",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_client_certificate",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_configuration",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateHsmConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_configuration",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_hsm_configuration",
-      "update",
-      []
     ],
     [
       "resource",
@@ -754,7 +781,12 @@
       "resource",
       "aws_redshift_idc_application",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeRedshiftIdcApplications"
+        ]
+      ]
     ],
     [
       "resource",
@@ -764,222 +796,6 @@
         [
           "redshift",
           "ModifyRedshiftIdcApplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_parameter_group",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateClusterParameterGroup"
-        ],
-        [
-          "redshift",
-          "ModifyClusterParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_parameter_group",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyClusterParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_scheduled_action",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateScheduledAction"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_scheduled_action",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateSnapshotCopyGrant"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteSnapshotCopyGrant"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_copy_grant",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateSnapshotSchedule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteSnapshotSchedule"
-        ],
-        [
-          "redshift",
-          "ModifyClusterSnapshotSchedule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifySnapshotSchedule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule_association",
-      "create",
-      [
-        [
-          "redshift",
-          "ModifyClusterSnapshotSchedule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule_association",
-      "delete",
-      [
-        [
-          "redshift",
-          "ModifyClusterSnapshotSchedule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_snapshot_schedule_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_subnet_group",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateClusterSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_subnet_group",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyClusterSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_usage_limit",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateUsageLimit"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_usage_limit",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_usage_limit",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyUsageLimit"
         ]
       ]
     ],

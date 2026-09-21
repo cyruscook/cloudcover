@@ -3,6 +3,142 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_auditmanager_framework",
+      "read",
+      [
+        [
+          "auditmanager",
+          "GetAssessmentFramework"
+        ],
+        [
+          "auditmanager",
+          "ListAssessmentFrameworks"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_assessment_delegation",
+      "create",
+      [
+        [
+          "auditmanager",
+          "BatchCreateDelegationByAssessment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_assessment_delegation",
+      "delete",
+      [
+        [
+          "auditmanager",
+          "BatchDeleteDelegationByAssessment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_assessment_delegation",
+      "read",
+      [
+        [
+          "auditmanager",
+          "GetDelegations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_assessment_delegation",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_auditmanager_framework_share",
+      "create",
+      [
+        [
+          "auditmanager",
+          "StartAssessmentFrameworkShare"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_framework_share",
+      "delete",
+      [
+        [
+          "auditmanager",
+          "DeleteAssessmentFrameworkShare"
+        ],
+        [
+          "auditmanager",
+          "UpdateAssessmentFrameworkShare"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_framework_share",
+      "read",
+      [
+        [
+          "auditmanager",
+          "ListAssessmentFrameworkShareRequests"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_framework_share",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_auditmanager_organization_admin_account_registration",
+      "create",
+      [
+        [
+          "auditmanager",
+          "RegisterOrganizationAdminAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_organization_admin_account_registration",
+      "delete",
+      [
+        [
+          "auditmanager",
+          "DeregisterOrganizationAdminAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_organization_admin_account_registration",
+      "read",
+      [
+        [
+          "auditmanager",
+          "GetOrganizationAdminAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_organization_admin_account_registration",
+      "update",
+      []
+    ],
+    [
       "resource",
       "aws_dynamodb_table",
       "create",
@@ -25,10 +161,6 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -44,20 +176,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -79,24 +199,8 @@
           "DescribeTimeToLive"
         ],
         [
-          "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -116,10 +220,6 @@
         [
           "dynamodb",
           "DescribeTimeToLive"
-        ],
-        [
-          "dynamodb",
-          "New"
         ],
         [
           "dynamodb",
@@ -134,20 +234,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -166,10 +254,6 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
@@ -177,20 +261,8 @@
           "UpdateTable"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -208,24 +280,8 @@
           "DescribeTable"
         ],
         [
-          "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -244,10 +300,6 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
@@ -255,136 +307,8 @@
           "UpdateTable"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iam_instance_profile",
-      "create",
-      [
-        [
-          "iam",
-          "AddRoleToInstanceProfile"
-        ],
-        [
-          "iam",
-          "CreateInstanceProfile"
-        ],
-        [
-          "iam",
-          "GetInstanceProfile"
-        ],
-        [
-          "iam",
-          "RemoveRoleFromInstanceProfile"
-        ],
-        [
-          "iam",
-          "TagInstanceProfile"
-        ],
-        [
-          "iam",
-          "UntagInstanceProfile"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lambda_function",
-      "update",
-      [
-        [
-          "lambda",
-          "DeleteFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "DeleteFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "GetFunction"
-        ],
-        [
-          "lambda",
-          "GetFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "GetFunctionConfiguration"
-        ],
-        [
-          "lambda",
-          "ListVersionsByFunction"
-        ],
-        [
-          "lambda",
-          "PublishVersion"
-        ],
-        [
-          "lambda",
-          "PutFunctionCodeSigningConfig"
-        ],
-        [
-          "lambda",
-          "PutFunctionConcurrency"
-        ],
-        [
-          "lambda",
-          "UpdateFunctionCode"
-        ],
-        [
-          "lambda",
-          "UpdateFunctionConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_endpoint",
-      "delete",
-      [
-        [
-          "sagemaker",
-          "DeleteEndpoint"
-        ],
-        [
-          "sagemaker",
-          "DescribeEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequests"
-        ],
-        [
-          "ec2",
-          "ModifySpotFleetRequest"
         ]
       ]
     ]

@@ -539,36 +539,6 @@
     ],
     [
       "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "create",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_s3_object",
       "create",
       [

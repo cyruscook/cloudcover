@@ -1,5 +1,39 @@
 {
   "provider_version": "5.38.0",
   "remove": [],
-  "upsert": []
+  "upsert": [
+    [
+      "data_source",
+      "aws_batch_job_definition",
+      "read",
+      [
+        [
+          "batch",
+          "DescribeJobDefinitions"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_cognito_user_group",
+      "read",
+      [
+        [
+          "cognitoidentityprovider",
+          "GetGroup"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_cognito_user_groups",
+      "read",
+      [
+        [
+          "cognitoidentityprovider",
+          "ListGroups"
+        ]
+      ]
+    ]
+  ]
 }

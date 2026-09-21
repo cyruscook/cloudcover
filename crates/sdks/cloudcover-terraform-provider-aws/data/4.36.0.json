@@ -1,68 +1,13 @@
 {
   "provider_version": "4.36.0",
-  "remove": [
-    [
-      "data_source",
-      "aws_billing_service_account",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_caller_identity",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_default_tags",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_globalaccelerator_accelerator",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_ip_ranges",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_partition",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_region",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_regions",
-      "read"
-    ],
-    [
-      "data_source",
-      "aws_service",
-      "read"
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "create"
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "delete"
-    ],
-    [
-      "resource",
-      "aws_simpledb_domain",
-      "read"
-    ]
-  ],
+  "remove": [],
   "upsert": [
+    [
+      "data_source",
+      "aws_arn",
+      "read",
+      []
+    ],
     [
       "data_source",
       "aws_elasticache_subnet_group",
@@ -439,6 +384,12 @@
           "UntagResource"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_simpledb_domain",
+      "update",
+      []
     ],
     [
       "resource",

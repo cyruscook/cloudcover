@@ -4,29 +4,18 @@
   "upsert": [
     [
       "data_source",
-      "aws_lakeformation_data_lake_settings",
-      "read",
-      [
-        [
-          "lakeformation",
-          "GetDataLakeSettings"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_lakeformation_permissions",
+      "aws_apprunner_hosted_zone_id",
       "read",
       []
     ],
     [
       "data_source",
-      "aws_vpc",
+      "aws_medialive_input",
       "read",
       [
         [
-          "ec2",
-          "DescribeVpcAttribute"
+          "medialive",
+          "DescribeInput"
         ]
       ]
     ],
@@ -310,82 +299,51 @@
     ],
     [
       "resource",
-      "aws_lakeformation_data_lake_settings",
+      "aws_lakeformation_data_cells_filter",
       "create",
       [
         [
           "lakeformation",
-          "GetDataLakeSettings"
+          "CreateDataCellsFilter"
         ],
         [
           "lakeformation",
-          "PutDataLakeSettings"
+          "GetDataCellsFilter"
         ]
       ]
     ],
     [
       "resource",
-      "aws_lakeformation_data_lake_settings",
+      "aws_lakeformation_data_cells_filter",
+      "delete",
+      [
+        [
+          "lakeformation",
+          "DeleteDataCellsFilter"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_data_cells_filter",
+      "read",
+      [
+        [
+          "lakeformation",
+          "GetDataCellsFilter"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lakeformation_data_cells_filter",
       "update",
       [
         [
           "lakeformation",
-          "GetDataLakeSettings"
-        ],
-        [
-          "lakeformation",
-          "PutDataLakeSettings"
+          "UpdateDataCellsFilter"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_permissions",
-      "create",
-      [
-        [
-          "lakeformation",
-          "GrantPermissions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lakeformation_permissions",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_lakeformation_resource_lf_tags",
-      "create",
-      [
-        [
-          "lakeformation",
-          "AddLFTagsToResource"
-        ],
-        [
-          "lakeformation",
-          "GetResourceLFTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateActionTarget"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_action_target",
-      "read",
-      []
     ],
     [
       "resource",
@@ -493,34 +451,6 @@
     ],
     [
       "resource",
-      "aws_securityhub_insight",
-      "create",
-      [
-        [
-          "securityhub",
-          "CreateInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_insight",
-      "update",
-      [
-        [
-          "securityhub",
-          "UpdateInsight"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_securityhub_organization_configuration",
       "delete",
       [
@@ -531,6 +461,54 @@
         [
           "securityhub",
           "UpdateOrganizationConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber_notification",
+      "create",
+      [
+        [
+          "securitylake",
+          "CreateSubscriberNotification"
+        ],
+        [
+          "securitylake",
+          "GetSubscriber"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber_notification",
+      "delete",
+      [
+        [
+          "securitylake",
+          "DeleteSubscriberNotification"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber_notification",
+      "read",
+      [
+        [
+          "securitylake",
+          "GetSubscriber"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber_notification",
+      "update",
+      [
+        [
+          "securitylake",
+          "UpdateSubscriberNotification"
         ]
       ]
     ]

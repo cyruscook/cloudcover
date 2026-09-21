@@ -14,325 +14,93 @@
       ]
     ],
     [
-      "data_source",
-      "aws_db_proxy",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_subnet_group",
-      "read",
-      []
-    ],
-    [
       "resource",
-      "aws_datasync_task",
+      "aws_bedrock_provisioned_model_throughput",
       "create",
       [
         [
-          "datasync",
-          "CreateTask"
+          "bedrock",
+          "CreateProvisionedModelThroughput"
         ],
         [
-          "datasync",
-          "DescribeTask"
-        ],
-        [
-          "datasync",
-          "SetDeleted"
-        ],
-        [
-          "datasync",
-          "SetDestination"
-        ],
-        [
-          "datasync",
-          "SetObjectVersionIds"
-        ],
-        [
-          "datasync",
-          "SetOutputType"
-        ],
-        [
-          "datasync",
-          "SetOverrides"
-        ],
-        [
-          "datasync",
-          "SetReportLevel"
-        ],
-        [
-          "datasync",
-          "SetSkipped"
-        ],
-        [
-          "datasync",
-          "SetTransferred"
-        ],
-        [
-          "datasync",
-          "SetVerified"
+          "bedrock",
+          "GetProvisionedModelThroughput"
         ]
       ]
     ],
     [
       "resource",
-      "aws_datasync_task",
-      "update",
-      [
-        [
-          "datasync",
-          "DescribeTask"
-        ],
-        [
-          "datasync",
-          "SetDeleted"
-        ],
-        [
-          "datasync",
-          "SetDestination"
-        ],
-        [
-          "datasync",
-          "SetObjectVersionIds"
-        ],
-        [
-          "datasync",
-          "SetOutputType"
-        ],
-        [
-          "datasync",
-          "SetOverrides"
-        ],
-        [
-          "datasync",
-          "SetReportLevel"
-        ],
-        [
-          "datasync",
-          "SetSkipped"
-        ],
-        [
-          "datasync",
-          "SetTransferred"
-        ],
-        [
-          "datasync",
-          "SetVerified"
-        ],
-        [
-          "datasync",
-          "UpdateTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
-      "create",
-      [
-        [
-          "rds",
-          "CreateEventSubscription"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_event_subscription",
+      "aws_bedrock_provisioned_model_throughput",
       "delete",
       [
         [
-          "rds",
-          "DeleteEventSubscription"
+          "bedrock",
+          "DeleteProvisionedModelThroughput"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_event_subscription",
+      "aws_bedrock_provisioned_model_throughput",
       "read",
+      [
+        [
+          "bedrock",
+          "GetProvisionedModelThroughput"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrock_provisioned_model_throughput",
+      "update",
       []
     ],
     [
       "resource",
-      "aws_db_event_subscription",
-      "update",
+      "aws_cloudfront_key_value_store",
+      "create",
       [
         [
-          "rds",
-          "AddSourceIdentifierToSubscription"
+          "cloudfront",
+          "CreateKeyValueStore"
         ],
         [
-          "rds",
-          "ModifyEventSubscription"
-        ],
-        [
-          "rds",
-          "RemoveSourceIdentifierFromSubscription"
+          "cloudfront",
+          "DescribeKeyValueStore"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_proxy",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBProxy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy",
+      "aws_cloudfront_key_value_store",
       "delete",
       [
         [
-          "rds",
-          "DeleteDBProxy"
+          "cloudfront",
+          "DeleteKeyValueStore"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_proxy",
+      "aws_cloudfront_key_value_store",
       "read",
-      []
+      [
+        [
+          "cloudfront",
+          "DescribeKeyValueStore"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_db_proxy",
+      "aws_cloudfront_key_value_store",
       "update",
       [
         [
-          "rds",
-          "ModifyDBProxy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "create",
-      [
-        [
-          "rds",
-          "ModifyDBProxyTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_default_target_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBProxyTargetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_proxy_endpoint",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBProxyEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "create",
-      [
-        [
-          "rds",
-          "RegisterDBProxyTargets"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_proxy_target",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_subnet_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBSubnetGroup"
+          "cloudfront",
+          "UpdateKeyValueStore"
         ]
       ]
     ],
@@ -406,6 +174,45 @@
           "ListAWSServiceAccessForOrganization"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_redshift_data_share_consumer_association",
+      "create",
+      [
+        [
+          "redshift",
+          "AssociateDataShareConsumer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_data_share_consumer_association",
+      "delete",
+      [
+        [
+          "redshift",
+          "DisassociateDataShareConsumer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_data_share_consumer_association",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeDataShares"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_data_share_consumer_association",
+      "update",
+      []
     ]
   ]
 }

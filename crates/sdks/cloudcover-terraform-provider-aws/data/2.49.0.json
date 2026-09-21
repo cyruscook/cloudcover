@@ -145,100 +145,6 @@
     ],
     [
       "resource",
-      "aws_neptune_cluster",
-      "create",
-      [
-        [
-          "neptune",
-          "AddRoleToDBCluster"
-        ],
-        [
-          "neptune",
-          "AddTagsToResource"
-        ],
-        [
-          "neptune",
-          "CreateDBCluster"
-        ],
-        [
-          "neptune",
-          "DescribeDBClusters"
-        ],
-        [
-          "neptune",
-          "ListTagsForResource"
-        ],
-        [
-          "neptune",
-          "ModifyDBCluster"
-        ],
-        [
-          "neptune",
-          "RemoveRoleFromDBCluster"
-        ],
-        [
-          "neptune",
-          "RemoveTagsFromResource"
-        ],
-        [
-          "neptune",
-          "RestoreDBClusterFromSnapshot"
-        ],
-        [
-          "neptune",
-          "SetDisableLogTypes"
-        ],
-        [
-          "neptune",
-          "SetEnableLogTypes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_neptune_cluster",
-      "update",
-      [
-        [
-          "neptune",
-          "AddRoleToDBCluster"
-        ],
-        [
-          "neptune",
-          "AddTagsToResource"
-        ],
-        [
-          "neptune",
-          "DescribeDBClusters"
-        ],
-        [
-          "neptune",
-          "ListTagsForResource"
-        ],
-        [
-          "neptune",
-          "ModifyDBCluster"
-        ],
-        [
-          "neptune",
-          "RemoveRoleFromDBCluster"
-        ],
-        [
-          "neptune",
-          "RemoveTagsFromResource"
-        ],
-        [
-          "neptune",
-          "SetDisableLogTypes"
-        ],
-        [
-          "neptune",
-          "SetEnableLogTypes"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_s3_bucket",
       "create",
       [
@@ -377,22 +283,6 @@
         [
           "s3",
           "PutObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "SetAnd"
-        ],
-        [
-          "s3",
-          "SetFilter"
-        ],
-        [
-          "s3",
-          "SetPrefix"
-        ],
-        [
-          "s3",
-          "SetTags"
         ]
       ]
     ],
@@ -591,22 +481,6 @@
         [
           "s3",
           "PutObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "SetAnd"
-        ],
-        [
-          "s3",
-          "SetFilter"
-        ],
-        [
-          "s3",
-          "SetPrefix"
-        ],
-        [
-          "s3",
-          "SetTags"
         ]
       ]
     ],

@@ -203,6 +203,10 @@
         [
           "ec2",
           "CreateRouteServer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServers"
         ]
       ]
     ],
@@ -214,6 +218,10 @@
         [
           "ec2",
           "DeleteRouteServer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServers"
         ]
       ]
     ],
@@ -221,13 +229,22 @@
       "resource",
       "aws_vpc_route_server",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServers"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_vpc_route_server",
       "update",
       [
+        [
+          "ec2",
+          "DescribeRouteServers"
+        ],
         [
           "ec2",
           "ModifyRouteServer"
@@ -242,6 +259,10 @@
         [
           "ec2",
           "CreateRouteServerEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
         ]
       ]
     ],
@@ -253,6 +274,10 @@
         [
           "ec2",
           "DeleteRouteServerEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
         ]
       ]
     ],
@@ -260,7 +285,12 @@
       "resource",
       "aws_vpc_route_server_endpoint",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServerEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
@@ -276,6 +306,10 @@
         [
           "ec2",
           "CreateRouteServerPeer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
         ]
       ]
     ],
@@ -287,6 +321,10 @@
         [
           "ec2",
           "DeleteRouteServerPeer"
+        ],
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
         ]
       ]
     ],
@@ -294,7 +332,12 @@
       "resource",
       "aws_vpc_route_server_peer",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeRouteServerPeers"
+        ]
+      ]
     ],
     [
       "resource",

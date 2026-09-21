@@ -4,6 +4,17 @@
   "upsert": [
     [
       "data_source",
+      "aws_opensearchserverless_lifecycle_policy",
+      "read",
+      [
+        [
+          "opensearchserverless",
+          "BatchGetLifecyclePolicy"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_sqs_queue",
       "read",
       [
@@ -20,12 +31,6 @@
           "ListQueueTags"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_sqs_queues",
-      "read",
-      []
     ],
     [
       "resource",
@@ -140,6 +145,50 @@
     ],
     [
       "resource",
+      "aws_opensearchserverless_lifecycle_policy",
+      "create",
+      [
+        [
+          "opensearchserverless",
+          "CreateLifecyclePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearchserverless_lifecycle_policy",
+      "delete",
+      [
+        [
+          "opensearchserverless",
+          "DeleteLifecyclePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearchserverless_lifecycle_policy",
+      "read",
+      [
+        [
+          "opensearchserverless",
+          "BatchGetLifecyclePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearchserverless_lifecycle_policy",
+      "update",
+      [
+        [
+          "opensearchserverless",
+          "UpdateLifecyclePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_redshift_resource_policy",
       "create",
       [
@@ -236,6 +285,10 @@
         [
           "ec2",
           "CreateVerifiedAccessEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
         ]
       ]
     ],
@@ -247,6 +300,10 @@
         [
           "ec2",
           "DeleteVerifiedAccessEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
         ]
       ]
     ],
@@ -254,13 +311,22 @@
       "resource",
       "aws_verifiedaccess_endpoint",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_endpoint",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessEndpoint"

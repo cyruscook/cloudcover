@@ -17,7 +17,12 @@
       "data_source",
       "aws_dynamodb_tables",
       "read",
-      []
+      [
+        [
+          "dynamodb",
+          "ListTables"
+        ]
+      ]
     ],
     [
       "resource",
@@ -216,7 +221,12 @@
       "resource",
       "aws_inspector2_filter",
       "read",
-      []
+      [
+        [
+          "inspector2",
+          "ListFilters"
+        ]
+      ]
     ],
     [
       "resource",
@@ -388,6 +398,42 @@
           "PutTableBucketMaintenanceConfiguration"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_egress_rule",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_egress_rule",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_egress_rule",
+      "read",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
+      "create",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
+      "read",
+      []
     ],
     [
       "resource",

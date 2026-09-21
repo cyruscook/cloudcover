@@ -381,31 +381,89 @@
     ],
     [
       "resource",
-      "aws_datasync_task",
+      "aws_redshift_logging",
       "create",
       [
         [
-          "datasync",
-          "CreateTask"
-        ],
-        [
-          "datasync",
-          "DescribeTask"
+          "redshift",
+          "EnableLogging"
         ]
       ]
     ],
     [
       "resource",
-      "aws_datasync_task",
+      "aws_redshift_logging",
+      "delete",
+      [
+        [
+          "redshift",
+          "DisableLogging"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_logging",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeLoggingStatus"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_logging",
       "update",
       [
         [
-          "datasync",
-          "DescribeTask"
-        ],
+          "redshift",
+          "EnableLogging"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_snapshot_copy",
+      "create",
+      [
         [
-          "datasync",
-          "UpdateTask"
+          "redshift",
+          "EnableSnapshotCopy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_snapshot_copy",
+      "delete",
+      [
+        [
+          "redshift",
+          "DisableSnapshotCopy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_snapshot_copy",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeClusters"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_redshift_snapshot_copy",
+      "update",
+      [
+        [
+          "redshift",
+          "ModifySnapshotCopyRetentionPeriod"
         ]
       ]
     ]

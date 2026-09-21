@@ -1,27 +1,6 @@
 {
   "provider_version": "5.75.0",
-  "remove": [
-    [
-      "resource",
-      "aws_iot_billing_group",
-      "create"
-    ],
-    [
-      "resource",
-      "aws_iot_billing_group",
-      "delete"
-    ],
-    [
-      "resource",
-      "aws_iot_billing_group",
-      "read"
-    ],
-    [
-      "resource",
-      "aws_iot_billing_group",
-      "update"
-    ]
-  ],
+  "remove": [],
   "upsert": [
     [
       "data_source",
@@ -35,6 +14,17 @@
         [
           "eks",
           "DescribePodIdentityAssociation"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_spot_datafeed_subscription",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeSpotDatafeedSubscription"
         ]
       ]
     ],
@@ -92,6 +82,17 @@
         [
           "eks",
           "UpdateAddon"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iot_billing_group",
+      "update",
+      [
+        [
+          "iot",
+          "UpdateBillingGroup"
         ]
       ]
     ]

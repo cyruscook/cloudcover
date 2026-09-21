@@ -127,44 +127,6 @@
           "UpdateProjectDataDelivery"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_firewall_policy",
-      "create",
-      [
-        [
-          "networkfirewall",
-          "CreateFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "DescribeFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "SetAction"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkfirewall_firewall_policy",
-      "update",
-      [
-        [
-          "networkfirewall",
-          "DescribeFirewallPolicy"
-        ],
-        [
-          "networkfirewall",
-          "SetAction"
-        ],
-        [
-          "networkfirewall",
-          "UpdateFirewallPolicy"
-        ]
-      ]
     ]
   ]
 }

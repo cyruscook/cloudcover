@@ -23,30 +23,12 @@
     ],
     [
       "data_source",
-      "aws_emr_release_labels",
+      "aws_shield_protection",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticsearch_domain",
-      "create",
       [
         [
-          "elasticsearchservice",
-          "CreateElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "UpdateElasticsearchDomainConfig"
+          "shield",
+          "DescribeProtection"
         ]
       ]
     ],
@@ -67,222 +49,45 @@
     ],
     [
       "resource",
-      "aws_elasticsearch_domain",
-      "update",
-      [
-        [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "GetUpgradeStatus"
-        ],
-        [
-          "elasticsearchservice",
-          "UpdateElasticsearchDomainConfig"
-        ],
-        [
-          "elasticsearchservice",
-          "UpgradeElasticsearchDomain"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticsearch_domain_saml_options",
+      "aws_glue_catalog_table_optimizer",
       "create",
       [
         [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "UpdateElasticsearchDomainConfig"
+          "glue",
+          "CreateTableOptimizer"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticsearch_domain_saml_options",
+      "aws_glue_catalog_table_optimizer",
       "delete",
       [
         [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "UpdateElasticsearchDomainConfig"
+          "glue",
+          "DeleteTableOptimizer"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticsearch_domain_saml_options",
-      "update",
-      [
-        [
-          "elasticsearchservice",
-          "DescribeElasticsearchDomain"
-        ],
-        [
-          "elasticsearchservice",
-          "UpdateElasticsearchDomainConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_cluster",
-      "create",
-      [
-        [
-          "emr",
-          "DescribeCluster"
-        ],
-        [
-          "emr",
-          "GetAutoTerminationPolicy"
-        ],
-        [
-          "emr",
-          "RunJobFlow"
-        ],
-        [
-          "emr",
-          "SetTerminationProtection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_cluster",
+      "aws_glue_catalog_table_optimizer",
       "read",
       [
         [
-          "emr",
-          "DescribeCluster"
-        ],
-        [
-          "emr",
-          "GetAutoTerminationPolicy"
+          "glue",
+          "GetTableOptimizer"
         ]
       ]
     ],
     [
       "resource",
-      "aws_emr_cluster",
+      "aws_glue_catalog_table_optimizer",
       "update",
       [
         [
-          "emr",
-          "DescribeCluster"
-        ],
-        [
-          "emr",
-          "GetAutoTerminationPolicy"
-        ],
-        [
-          "emr",
-          "ModifyCluster"
-        ],
-        [
-          "emr",
-          "ModifyInstanceGroups"
-        ],
-        [
-          "emr",
-          "PutAutoScalingPolicy"
-        ],
-        [
-          "emr",
-          "PutAutoTerminationPolicy"
-        ],
-        [
-          "emr",
-          "RemoveAutoScalingPolicy"
-        ],
-        [
-          "emr",
-          "RemoveAutoTerminationPolicy"
-        ],
-        [
-          "emr",
-          "SetTerminationProtection"
-        ],
-        [
-          "emr",
-          "SetUnhealthyNodeReplacement"
-        ],
-        [
-          "emr",
-          "SetVisibleToAllUsers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_instance_fleet",
-      "create",
-      [
-        [
-          "emr",
-          "AddInstanceFleet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_instance_fleet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_emr_instance_fleet",
-      "update",
-      [
-        [
-          "emr",
-          "ModifyInstanceFleet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_instance_group",
-      "create",
-      [
-        [
-          "emr",
-          "AddInstanceGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_emr_instance_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_emr_instance_group",
-      "update",
-      [
-        [
-          "emr",
-          "ModifyInstanceGroups"
-        ],
-        [
-          "emr",
-          "PutAutoScalingPolicy"
+          "glue",
+          "UpdateTableOptimizer"
         ]
       ]
     ]

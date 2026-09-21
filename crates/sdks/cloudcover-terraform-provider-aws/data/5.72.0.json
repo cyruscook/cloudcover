@@ -95,26 +95,89 @@
         [
           "sesv2",
           "GetDedicatedIpPool"
+        ],
+        [
+          "sesv2",
+          "GetDedicatedIps"
         ]
       ]
     ],
     [
       "data_source",
-      "aws_workspaces_bundle",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_workspaces_directory",
       "read",
-      []
+      [
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_workspaces_workspace",
       "read",
+      [
+        [
+          "workspaces",
+          "DescribeWorkspaces"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachments_exclusive",
+      "create",
+      [
+        [
+          "iam",
+          "AttachRolePolicy"
+        ],
+        [
+          "iam",
+          "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachments_exclusive",
+      "delete",
       []
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachments_exclusive",
+      "read",
+      [
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_role_policy_attachments_exclusive",
+      "update",
+      [
+        [
+          "iam",
+          "AttachRolePolicy"
+        ],
+        [
+          "iam",
+          "DetachRolePolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedRolePolicies"
+        ]
+      ]
     ],
     [
       "resource",
@@ -124,6 +187,10 @@
         [
           "workspaces",
           "AssociateIpGroups"
+        ],
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
         ],
         [
           "workspaces",
@@ -150,28 +217,15 @@
     [
       "resource",
       "aws_workspaces_directory",
-      "delete",
-      [
-        [
-          "workspaces",
-          "DeregisterWorkspaceDirectory"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_directory",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_directory",
       "update",
       [
         [
           "workspaces",
           "AssociateIpGroups"
+        ],
+        [
+          "workspaces",
+          "DescribeWorkspaceDirectories"
         ],
         [
           "workspaces",
@@ -192,45 +246,6 @@
         [
           "workspaces",
           "ModifyWorkspaceCreationProperties"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "create",
-      [
-        [
-          "workspaces",
-          "CreateWorkspaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "delete",
-      [
-        [
-          "workspaces",
-          "TerminateWorkspaces"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_workspaces_workspace",
-      "update",
-      [
-        [
-          "workspaces",
-          "ModifyWorkspaceProperties"
         ]
       ]
     ]

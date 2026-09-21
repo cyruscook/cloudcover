@@ -19,9 +19,18 @@
     ],
     [
       "data_source",
-      "aws_network_interface",
+      "aws_eip",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeAddresses"
+        ],
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ]
+      ]
     ],
     [
       "resource",
@@ -169,20 +178,118 @@
     ],
     [
       "resource",
-      "aws_default_subnet",
+      "aws_eip",
+      "create",
+      [
+        [
+          "ec2",
+          "AllocateAddress"
+        ],
+        [
+          "ec2",
+          "AssociateAddress"
+        ],
+        [
+          "ec2",
+          "DescribeAddresses"
+        ],
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeAddresses"
+        ],
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip",
+      "update",
+      [
+        [
+          "ec2",
+          "AssociateAddress"
+        ],
+        [
+          "ec2",
+          "DescribeAddresses"
+        ],
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ],
+        [
+          "ec2",
+          "DisassociateAddress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip_domain_name",
+      "create",
+      [
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ],
+        [
+          "ec2",
+          "ModifyAddressAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip_domain_name",
       "delete",
       [
         [
           "ec2",
-          "DeleteNetworkInterface"
+          "DescribeAddressesAttribute"
         ],
         [
           "ec2",
-          "DeleteSubnet"
+          "ResetAddressAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip_domain_name",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eip_domain_name",
+      "update",
+      [
+        [
+          "ec2",
+          "DescribeAddressesAttribute"
         ],
         [
           "ec2",
-          "DetachNetworkInterface"
+          "ModifyAddressAttribute"
         ]
       ]
     ],
@@ -250,102 +357,34 @@
         ],
         [
           "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface",
-      "update",
-      [
-        [
-          "ec2",
-          "AssignIpv6Addresses"
-        ],
-        [
-          "ec2",
-          "AssignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "AttachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
+          "DescribeNetworkInterfaces"
         ],
         [
           "ec2",
           "ModifyNetworkInterfaceAttribute"
-        ],
-        [
-          "ec2",
-          "UnassignIpv6Addresses"
-        ],
-        [
-          "ec2",
-          "UnassignPrivateIpAddresses"
         ]
       ]
     ],
     [
       "resource",
-      "aws_network_interface_attachment",
-      "delete",
+      "aws_vpc_security_group_egress_rule",
+      "create",
       [
         [
           "ec2",
-          "DetachNetworkInterface"
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
         ]
       ]
     ],
     [
       "resource",
-      "aws_security_group",
+      "aws_vpc_security_group_egress_rule",
       "delete",
       [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DeleteSecurityGroup"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroupRules"
-        ],
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ],
         [
           "ec2",
           "RevokeSecurityGroupEgress"
@@ -358,20 +397,53 @@
     ],
     [
       "resource",
-      "aws_subnet",
+      "aws_vpc_security_group_egress_rule",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
+      "create",
+      [
+        [
+          "ec2",
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
       "delete",
       [
         [
           "ec2",
-          "DeleteNetworkInterface"
+          "RevokeSecurityGroupEgress"
         ],
         [
           "ec2",
-          "DeleteSubnet"
-        ],
+          "RevokeSecurityGroupIngress"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_ingress_rule",
+      "read",
+      [
         [
           "ec2",
-          "DetachNetworkInterface"
+          "DescribeSecurityGroupRules"
         ]
       ]
     ]

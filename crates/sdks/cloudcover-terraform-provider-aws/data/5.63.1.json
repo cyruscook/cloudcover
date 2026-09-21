@@ -4,66 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_networkmanager_connection",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_connections",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_device",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_devices",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_global_network",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_global_networks",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_link",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_links",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_site",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_networkmanager_sites",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_opensearch_domain",
       "read",
       [
@@ -83,387 +23,25 @@
     ],
     [
       "data_source",
-      "aws_outposts_asset",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_assets",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_outpost",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_outpost_instance_type",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_outpost_instance_types",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_outposts",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_site",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_outposts_sites",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_redshift_cluster",
+      "aws_route53_zones",
       "read",
       [
         [
-          "redshift",
-          "DescribeLoggingStatus"
+          "route53",
+          "ListHostedZones"
         ]
       ]
     ],
     [
       "data_source",
-      "aws_redshift_orderable_cluster",
+      "aws_ssoadmin_permission_sets",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_connection",
-      "create",
       [
         [
-          "networkmanager",
-          "CreateConnection"
+          "ssoadmin",
+          "ListPermissionSets"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_connection",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_connection",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_connection",
-      "update",
-      [
-        [
-          "networkmanager",
-          "UpdateConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_customer_gateway_association",
-      "create",
-      [
-        [
-          "networkmanager",
-          "AssociateCustomerGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_customer_gateway_association",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DisassociateCustomerGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_customer_gateway_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_device",
-      "create",
-      [
-        [
-          "networkmanager",
-          "CreateDevice"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_device",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteDevice"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_device",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_device",
-      "update",
-      [
-        [
-          "networkmanager",
-          "UpdateDevice"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_global_network",
-      "create",
-      [
-        [
-          "networkmanager",
-          "CreateGlobalNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_global_network",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteGlobalNetwork"
-        ],
-        [
-          "networkmanager",
-          "DeregisterTransitGateway"
-        ],
-        [
-          "networkmanager",
-          "DisassociateCustomerGateway"
-        ],
-        [
-          "networkmanager",
-          "DisassociateTransitGatewayConnectPeer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_global_network",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_global_network",
-      "update",
-      [
-        [
-          "networkmanager",
-          "UpdateGlobalNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link",
-      "create",
-      [
-        [
-          "networkmanager",
-          "CreateLink"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteLink"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link",
-      "update",
-      [
-        [
-          "networkmanager",
-          "UpdateLink"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link_association",
-      "create",
-      [
-        [
-          "networkmanager",
-          "AssociateLink"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link_association",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DisassociateLink"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_link_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_site",
-      "create",
-      [
-        [
-          "networkmanager",
-          "CreateSite"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_site",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeleteSite"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_site",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_site",
-      "update",
-      [
-        [
-          "networkmanager",
-          "UpdateSite"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_connect_peer_association",
-      "create",
-      [
-        [
-          "networkmanager",
-          "AssociateTransitGatewayConnectPeer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_connect_peer_association",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DisassociateTransitGatewayConnectPeer"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_connect_peer_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_registration",
-      "create",
-      [
-        [
-          "networkmanager",
-          "RegisterTransitGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_registration",
-      "delete",
-      [
-        [
-          "networkmanager",
-          "DeregisterTransitGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_networkmanager_transit_gateway_registration",
-      "read",
-      []
     ],
     [
       "resource",
@@ -669,6 +247,10 @@
         [
           "opensearch",
           "AcceptInboundConnection"
+        ],
+        [
+          "opensearch",
+          "DescribeInboundConnections"
         ]
       ]
     ],
@@ -683,6 +265,10 @@
         ],
         [
           "opensearch",
+          "DescribeInboundConnections"
+        ],
+        [
+          "opensearch",
           "RejectInboundConnection"
         ]
       ]
@@ -691,7 +277,12 @@
       "resource",
       "aws_opensearch_inbound_connection_accepter",
       "read",
-      []
+      [
+        [
+          "opensearch",
+          "DescribeInboundConnections"
+        ]
+      ]
     ],
     [
       "resource",
@@ -705,6 +296,14 @@
         [
           "opensearch",
           "CreateOutboundConnection"
+        ],
+        [
+          "opensearch",
+          "DescribeInboundConnections"
+        ],
+        [
+          "opensearch",
+          "DescribeOutboundConnections"
         ]
       ]
     ],
@@ -716,6 +315,10 @@
         [
           "opensearch",
           "DeleteOutboundConnection"
+        ],
+        [
+          "opensearch",
+          "DescribeOutboundConnections"
         ]
       ]
     ],
@@ -723,7 +326,12 @@
       "resource",
       "aws_opensearch_outbound_connection",
       "read",
-      []
+      [
+        [
+          "opensearch",
+          "DescribeOutboundConnections"
+        ]
+      ]
     ],
     [
       "resource",
@@ -733,6 +341,10 @@
         [
           "opensearch",
           "CreatePackage"
+        ],
+        [
+          "opensearch",
+          "DescribePackages"
         ]
       ]
     ],
@@ -751,13 +363,22 @@
       "resource",
       "aws_opensearch_package",
       "read",
-      []
+      [
+        [
+          "opensearch",
+          "DescribePackages"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_opensearch_package",
       "update",
       [
+        [
+          "opensearch",
+          "DescribePackages"
+        ],
         [
           "opensearch",
           "UpdatePackage"
@@ -772,6 +393,10 @@
         [
           "opensearch",
           "AssociatePackage"
+        ],
+        [
+          "opensearch",
+          "ListPackagesForDomain"
         ]
       ]
     ],
@@ -783,6 +408,10 @@
         [
           "opensearch",
           "DissociatePackage"
+        ],
+        [
+          "opensearch",
+          "ListPackagesForDomain"
         ]
       ]
     ],
@@ -790,7 +419,12 @@
       "resource",
       "aws_opensearch_package_association",
       "read",
-      []
+      [
+        [
+          "opensearch",
+          "ListPackagesForDomain"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1308,17 +942,6 @@
     [
       "resource",
       "aws_opsworks_stack",
-      "delete",
-      [
-        [
-          "opsworks",
-          "DeleteStack"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opsworks_stack",
       "read",
       [
         [
@@ -1398,178 +1021,6 @@
         [
           "opsworks",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster",
-      "create",
-      [
-        [
-          "redshift",
-          "CreateCluster"
-        ],
-        [
-          "redshift",
-          "DescribeLoggingStatus"
-        ],
-        [
-          "redshift",
-          "EnableLogging"
-        ],
-        [
-          "redshift",
-          "EnableSnapshotCopy"
-        ],
-        [
-          "redshift",
-          "RestoreFromClusterSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster",
-      "delete",
-      [
-        [
-          "redshift",
-          "DeleteCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster",
-      "read",
-      [
-        [
-          "redshift",
-          "DescribeLoggingStatus"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster",
-      "update",
-      [
-        [
-          "redshift",
-          "DescribeLoggingStatus"
-        ],
-        [
-          "redshift",
-          "DisableLogging"
-        ],
-        [
-          "redshift",
-          "DisableSnapshotCopy"
-        ],
-        [
-          "redshift",
-          "EnableLogging"
-        ],
-        [
-          "redshift",
-          "EnableSnapshotCopy"
-        ],
-        [
-          "redshift",
-          "ModifyAquaConfiguration"
-        ],
-        [
-          "redshift",
-          "ModifyCluster"
-        ],
-        [
-          "redshift",
-          "ModifyClusterIamRoles"
-        ],
-        [
-          "redshift",
-          "RebootCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_iam_roles",
-      "create",
-      [
-        [
-          "redshift",
-          "ModifyClusterIamRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_iam_roles",
-      "delete",
-      [
-        [
-          "redshift",
-          "ModifyClusterIamRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_iam_roles",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_redshift_cluster_iam_roles",
-      "update",
-      [
-        [
-          "redshift",
-          "ModifyClusterIamRoles"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "create",
-      [
-        [
-          "wafv2",
-          "CreateWebACL"
-        ],
-        [
-          "wafv2",
-          "GetWebACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "read",
-      [
-        [
-          "wafv2",
-          "GetWebACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "update",
-      [
-        [
-          "wafv2",
-          "GetWebACL"
-        ],
-        [
-          "wafv2",
-          "UpdateWebACL"
         ]
       ]
     ]

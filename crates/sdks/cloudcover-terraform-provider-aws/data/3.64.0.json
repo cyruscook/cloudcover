@@ -137,10 +137,6 @@
         [
           "lakeformation",
           "ListPermissions"
-        ],
-        [
-          "lakeformation",
-          "String"
         ]
       ]
     ],
@@ -664,10 +660,6 @@
         [
           "autoscaling",
           "StartInstanceRefresh"
-        ],
-        [
-          "autoscaling",
-          "String"
         ],
         [
           "autoscaling",
@@ -2895,10 +2887,6 @@
         ],
         [
           "eks",
-          "LogType_Values"
-        ],
-        [
-          "eks",
           "TagResource"
         ],
         [
@@ -3947,137 +3935,6 @@
     [
       "resource",
       "aws_instance",
-      "create",
-      [
-        [
-          "ec2",
-          "AssignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "AssociateIamInstanceProfile"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeIamInstanceProfileAssociations"
-        ],
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceCreditSpecifications"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
-        ],
-        [
-          "ec2",
-          "DescribeTags"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVolumesModifications"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "DisassociateIamInstanceProfile"
-        ],
-        [
-          "ec2",
-          "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceCapacityReservationAttributes"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceCreditSpecification"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceMetadataOptions"
-        ],
-        [
-          "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyVolume"
-        ],
-        [
-          "ec2",
-          "MonitorInstances"
-        ],
-        [
-          "ec2",
-          "ReplaceIamInstanceProfileAssociation"
-        ],
-        [
-          "ec2",
-          "RunInstances"
-        ],
-        [
-          "ec2",
-          "StartInstances"
-        ],
-        [
-          "ec2",
-          "StopInstances"
-        ],
-        [
-          "ec2",
-          "String"
-        ],
-        [
-          "ec2",
-          "UnassignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "UnmonitorInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_instance",
       "delete",
       [
         [
@@ -4090,134 +3947,7 @@
         ],
         [
           "ec2",
-          "String"
-        ],
-        [
-          "ec2",
           "TerminateInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_instance",
-      "update",
-      [
-        [
-          "ec2",
-          "AssignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "AssociateIamInstanceProfile"
-        ],
-        [
-          "ec2",
-          "CreateTags"
-        ],
-        [
-          "ec2",
-          "DeleteTags"
-        ],
-        [
-          "ec2",
-          "DescribeIamInstanceProfileAssociations"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceAttribute"
-        ],
-        [
-          "ec2",
-          "DescribeInstanceCreditSpecifications"
-        ],
-        [
-          "ec2",
-          "DescribeInstances"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplateVersions"
-        ],
-        [
-          "ec2",
-          "DescribeLaunchTemplates"
-        ],
-        [
-          "ec2",
-          "DescribeTags"
-        ],
-        [
-          "ec2",
-          "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "DescribeVolumesModifications"
-        ],
-        [
-          "ec2",
-          "DescribeVpcs"
-        ],
-        [
-          "ec2",
-          "DisassociateIamInstanceProfile"
-        ],
-        [
-          "ec2",
-          "GetPasswordData"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceCapacityReservationAttributes"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceCreditSpecification"
-        ],
-        [
-          "ec2",
-          "ModifyInstanceMetadataOptions"
-        ],
-        [
-          "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ],
-        [
-          "ec2",
-          "ModifyVolume"
-        ],
-        [
-          "ec2",
-          "MonitorInstances"
-        ],
-        [
-          "ec2",
-          "ReplaceIamInstanceProfileAssociation"
-        ],
-        [
-          "ec2",
-          "StartInstances"
-        ],
-        [
-          "ec2",
-          "StopInstances"
-        ],
-        [
-          "ec2",
-          "String"
-        ],
-        [
-          "ec2",
-          "UnassignPrivateIpAddresses"
-        ],
-        [
-          "ec2",
-          "UnmonitorInstances"
         ]
       ]
     ],
@@ -4969,15 +4699,7 @@
         ],
         [
           "kms",
-          "New"
-        ],
-        [
-          "kms",
           "ReplicateKey"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -5105,15 +4827,7 @@
         ],
         [
           "kms",
-          "New"
-        ],
-        [
-          "kms",
           "ReplicateKey"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -5214,10 +4928,6 @@
         [
           "lakeformation",
           "ListPermissions"
-        ],
-        [
-          "lakeformation",
-          "String"
         ]
       ]
     ],
@@ -7779,34 +7489,6 @@
         [
           "s3",
           "PutObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "SetAnd"
-        ],
-        [
-          "s3",
-          "SetFilter"
-        ],
-        [
-          "s3",
-          "SetID"
-        ],
-        [
-          "s3",
-          "SetPrefix"
-        ],
-        [
-          "s3",
-          "SetTags"
-        ],
-        [
-          "s3",
-          "SetType"
-        ],
-        [
-          "s3",
-          "SetURI"
         ]
       ]
     ],
@@ -8048,34 +7730,6 @@
         [
           "s3",
           "PutObjectLockConfiguration"
-        ],
-        [
-          "s3",
-          "SetAnd"
-        ],
-        [
-          "s3",
-          "SetFilter"
-        ],
-        [
-          "s3",
-          "SetID"
-        ],
-        [
-          "s3",
-          "SetPrefix"
-        ],
-        [
-          "s3",
-          "SetTags"
-        ],
-        [
-          "s3",
-          "SetType"
-        ],
-        [
-          "s3",
-          "SetURI"
         ]
       ]
     ],
@@ -8184,22 +7838,6 @@
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "SetEmailAddress"
-        ],
-        [
-          "s3",
-          "SetID"
-        ],
-        [
-          "s3",
-          "SetType"
-        ],
-        [
-          "s3",
-          "SetURI"
         ]
       ]
     ],
@@ -8242,22 +7880,6 @@
         [
           "s3",
           "HeadObject"
-        ],
-        [
-          "s3",
-          "SetEmailAddress"
-        ],
-        [
-          "s3",
-          "SetID"
-        ],
-        [
-          "s3",
-          "SetType"
-        ],
-        [
-          "s3",
-          "SetURI"
         ]
       ]
     ],
@@ -9636,10 +9258,6 @@
         ],
         [
           "ec2",
-          "String"
-        ],
-        [
-          "ec2",
           "TerminateInstances"
         ]
       ]
@@ -9950,10 +9568,6 @@
         [
           "transfer",
           "ListUsers"
-        ],
-        [
-          "transfer",
-          "State_Values"
         ]
       ]
     ],
@@ -10042,10 +9656,6 @@
         [
           "ec2",
           "DescribeVolumes"
-        ],
-        [
-          "ec2",
-          "String"
         ]
       ]
     ],
@@ -10069,10 +9679,6 @@
         [
           "ec2",
           "StopInstances"
-        ],
-        [
-          "ec2",
-          "String"
         ]
       ]
     ],

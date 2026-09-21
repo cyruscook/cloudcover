@@ -4,6 +4,32 @@
   "upsert": [
     [
       "data_source",
+      "aws_opensearchserverless_access_policy",
+      "read",
+      [
+        [
+          "opensearchserverless",
+          "GetAccessPolicy"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_opensearchserverless_collection",
+      "read",
+      [
+        [
+          "opensearchserverless",
+          "BatchGetCollection"
+        ],
+        [
+          "opensearchserverless",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_sfn_alias",
       "read",
       [
@@ -27,6 +53,53 @@
           "ListStateMachineVersions"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_connect_endpoint",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateInstanceConnectEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_connect_endpoint",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteInstanceConnectEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_connect_endpoint",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeInstanceConnectEndpoints"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ec2_instance_connect_endpoint",
+      "update",
+      []
     ],
     [
       "resource",

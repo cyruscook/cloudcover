@@ -104,6 +104,36 @@
   ],
   "upsert": [
     [
+      "data_source",
+      "aws_identitystore_group",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_default_vpc",
       "create",

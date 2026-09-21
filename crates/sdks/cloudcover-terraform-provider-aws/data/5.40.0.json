@@ -59,60 +59,6 @@
     ],
     [
       "resource",
-      "aws_elastic_beanstalk_environment",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "CreateEnvironment"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elastic_beanstalk_environment",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeSecurityGroups"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeConfigurationSettings"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironmentResources"
-        ],
-        [
-          "elasticbeanstalk",
-          "DescribeEnvironments"
-        ],
-        [
-          "elasticbeanstalk",
-          "UpdateEnvironment"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_s3_bucket",
       "read",
       [
@@ -465,6 +411,66 @@
         [
           "s3",
           "HeadObject"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber",
+      "create",
+      [
+        [
+          "securitylake",
+          "CreateSubscriber"
+        ],
+        [
+          "securitylake",
+          "GetSubscriber"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber",
+      "delete",
+      [
+        [
+          "securitylake",
+          "DeleteSubscriber"
+        ],
+        [
+          "securitylake",
+          "GetSubscriber"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber",
+      "read",
+      [
+        [
+          "securitylake",
+          "GetSubscriber"
+        ],
+        [
+          "securitylake",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber",
+      "update",
+      [
+        [
+          "securitylake",
+          "GetSubscriber"
+        ],
+        [
+          "securitylake",
+          "UpdateSubscriber"
         ]
       ]
     ]

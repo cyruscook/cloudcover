@@ -3,17 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_ebs_snapshot_ids",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeSnapshots"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_cloudwatch_event_rule",
       "create",

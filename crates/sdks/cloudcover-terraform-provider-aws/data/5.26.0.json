@@ -30,6 +30,50 @@
     ],
     [
       "resource",
+      "aws_bedrock_model_invocation_logging_configuration",
+      "create",
+      [
+        [
+          "bedrock",
+          "PutModelInvocationLoggingConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrock_model_invocation_logging_configuration",
+      "delete",
+      [
+        [
+          "bedrock",
+          "DeleteModelInvocationLoggingConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrock_model_invocation_logging_configuration",
+      "read",
+      [
+        [
+          "bedrock",
+          "GetModelInvocationLoggingConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrock_model_invocation_logging_configuration",
+      "update",
+      [
+        [
+          "bedrock",
+          "PutModelInvocationLoggingConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_cloudwatch_log_destination",
       "create",
       [

@@ -4,65 +4,13 @@
   "upsert": [
     [
       "resource",
-      "aws_ec2_secondary_network",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateSecondaryNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_secondary_network",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSecondaryNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_secondary_network",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_secondary_subnet",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateSecondarySubnet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_secondary_subnet",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteSecondarySubnet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_secondary_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_networkmanager_attachment_routing_policy_label",
       "create",
       [
+        [
+          "networkmanager",
+          "ListAttachments"
+        ],
         [
           "networkmanager",
           "PutAttachmentRoutingPolicyLabel"
@@ -76,6 +24,10 @@
       [
         [
           "networkmanager",
+          "ListAttachments"
+        ],
+        [
+          "networkmanager",
           "RemoveAttachmentRoutingPolicyLabel"
         ]
       ]
@@ -84,7 +36,12 @@
       "resource",
       "aws_networkmanager_attachment_routing_policy_label",
       "read",
-      []
+      [
+        [
+          "networkmanager",
+          "ListAttachmentRoutingPolicyAssociations"
+        ]
+      ]
     ],
     [
       "resource",

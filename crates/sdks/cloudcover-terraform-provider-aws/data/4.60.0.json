@@ -1,27 +1,6 @@
 {
   "provider_version": "4.60.0",
-  "remove": [
-    [
-      "resource",
-      "aws_cognito_user_pool_client",
-      "create"
-    ],
-    [
-      "resource",
-      "aws_cognito_user_pool_client",
-      "delete"
-    ],
-    [
-      "resource",
-      "aws_cognito_user_pool_client",
-      "read"
-    ],
-    [
-      "resource",
-      "aws_cognito_user_pool_client",
-      "update"
-    ]
-  ],
+  "remove": [],
   "upsert": [
     [
       "data_source",
@@ -42,6 +21,75 @@
         [
           "appmesh",
           "DescribeVirtualGateway"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_managed_user_pool_client",
+      "create",
+      [
+        [
+          "cognitoidentityprovider",
+          "DescribeUserPoolClient"
+        ],
+        [
+          "cognitoidentityprovider",
+          "ListUserPoolClients"
+        ],
+        [
+          "cognitoidentityprovider",
+          "UpdateUserPoolClient"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_managed_user_pool_client",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_cognito_managed_user_pool_client",
+      "read",
+      [
+        [
+          "cognitoidentityprovider",
+          "DescribeUserPoolClient"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_managed_user_pool_client",
+      "update",
+      [
+        [
+          "cognitoidentityprovider",
+          "UpdateUserPoolClient"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_user_pool_client",
+      "create",
+      [
+        [
+          "cognitoidentityprovider",
+          "CreateUserPoolClient"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cognito_user_pool_client",
+      "update",
+      [
+        [
+          "cognitoidentityprovider",
+          "UpdateUserPoolClient"
         ]
       ]
     ],
@@ -114,6 +162,21 @@
         [
           "oam",
           "UpdateLink"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourceexplorer2_index",
+      "update",
+      [
+        [
+          "resourceexplorer2",
+          "GetIndex"
+        ],
+        [
+          "resourceexplorer2",
+          "UpdateIndexType"
         ]
       ]
     ],

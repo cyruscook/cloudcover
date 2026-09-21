@@ -413,37 +413,6 @@
           "RevokeSecurityGroupIngress"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_spot_fleet_request",
-      "create",
-      [
-        [
-          "ec2",
-          "DescribeImages"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequestHistory"
-        ],
-        [
-          "ec2",
-          "DescribeSpotFleetRequests"
-        ],
-        [
-          "ec2",
-          "RequestSpotFleet"
-        ],
-        [
-          "ec2",
-          "SetTargetCapacityUnitType"
-        ],
-        [
-          "ec2",
-          "String"
-        ]
-      ]
     ]
   ]
 }

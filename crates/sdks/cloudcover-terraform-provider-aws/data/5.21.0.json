@@ -4,9 +4,14 @@
   "upsert": [
     [
       "data_source",
-      "aws_resourcegroupstaggingapi_resources",
+      "aws_servicequotas_templates",
       "read",
-      []
+      [
+        [
+          "servicequotas",
+          "ListServiceQuotaIncreaseRequestsInTemplate"
+        ]
+      ]
     ],
     [
       "resource",
@@ -35,10 +40,6 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -54,20 +55,8 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
     ],
@@ -175,30 +164,45 @@
     ],
     [
       "resource",
-      "aws_resourcegroups_resource",
+      "aws_servicequotas_template_association",
       "create",
       [
         [
-          "resourcegroups",
-          "GroupResources"
+          "servicequotas",
+          "AssociateServiceQuotaTemplate"
+        ],
+        [
+          "servicequotas",
+          "GetAssociationForServiceQuotaTemplate"
         ]
       ]
     ],
     [
       "resource",
-      "aws_resourcegroups_resource",
+      "aws_servicequotas_template_association",
       "delete",
       [
         [
-          "resourcegroups",
-          "UngroupResources"
+          "servicequotas",
+          "DisassociateServiceQuotaTemplate"
         ]
       ]
     ],
     [
       "resource",
-      "aws_resourcegroups_resource",
+      "aws_servicequotas_template_association",
       "read",
+      [
+        [
+          "servicequotas",
+          "GetAssociationForServiceQuotaTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicequotas_template_association",
+      "update",
       []
     ],
     [
@@ -209,6 +213,10 @@
         [
           "ec2",
           "CreateVerifiedAccessGroup"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessGroups"
         ],
         [
           "ec2",
@@ -234,6 +242,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessGroups"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessGroupPolicy"
         ]
       ]
@@ -243,6 +255,10 @@
       "aws_verifiedaccess_group",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessGroups"
+        ],
         [
           "ec2",
           "GetVerifiedAccessGroupPolicy"
@@ -264,6 +280,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ],
+        [
+          "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"
         ]
       ]
@@ -283,13 +303,22 @@
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_instance_logging_configuration",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstanceLoggingConfigurations"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessInstanceLoggingConfiguration"

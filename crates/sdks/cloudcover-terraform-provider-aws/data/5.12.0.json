@@ -46,7 +46,55 @@
         ],
         [
           "vpclattice",
+          "ListServices"
+        ],
+        [
+          "vpclattice",
           "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudfront_continuous_deployment_policy",
+      "create",
+      [
+        [
+          "cloudfront",
+          "CreateContinuousDeploymentPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudfront_continuous_deployment_policy",
+      "delete",
+      [
+        [
+          "cloudfront",
+          "DeleteContinuousDeploymentPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudfront_continuous_deployment_policy",
+      "read",
+      [
+        [
+          "cloudfront",
+          "GetContinuousDeploymentPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudfront_continuous_deployment_policy",
+      "update",
+      [
+        [
+          "cloudfront",
+          "UpdateContinuousDeploymentPolicy"
         ]
       ]
     ],

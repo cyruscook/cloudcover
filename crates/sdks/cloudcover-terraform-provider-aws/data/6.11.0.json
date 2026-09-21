@@ -81,6 +81,32 @@
     ],
     [
       "resource",
+      "aws_iot_thing_principal_attachment",
+      "create",
+      [
+        [
+          "iot",
+          "AttachThingPrincipal"
+        ],
+        [
+          "iot",
+          "ListThingPrincipalsV2"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iot_thing_principal_attachment",
+      "read",
+      [
+        [
+          "iot",
+          "ListThingPrincipalsV2"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_s3tables_table_bucket",
       "delete",
       [
@@ -95,6 +121,14 @@
         [
           "s3tables",
           "DeleteTableBucket"
+        ],
+        [
+          "s3tables",
+          "ListNamespaces"
+        ],
+        [
+          "s3tables",
+          "ListTables"
         ]
       ]
     ],
@@ -517,6 +551,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ]
       ]
     ],
@@ -543,6 +581,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ]
       ]
     ],
@@ -558,6 +600,10 @@
         [
           "workspacesweb",
           "GetTrustStoreCertificate"
+        ],
+        [
+          "workspacesweb",
+          "ListTrustStoreCertificates"
         ],
         [
           "workspacesweb",

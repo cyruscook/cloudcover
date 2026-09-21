@@ -54,7 +54,12 @@
       "data_source",
       "aws_oam_links",
       "read",
-      []
+      [
+        [
+          "oam",
+          "ListLinks"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -173,6 +178,39 @@
         [
           "appstream",
           "UpdateStack"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_assessment",
+      "update",
+      [
+        [
+          "auditmanager",
+          "UpdateAssessment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_control",
+      "update",
+      [
+        [
+          "auditmanager",
+          "UpdateControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_framework",
+      "update",
+      [
+        [
+          "auditmanager",
+          "UpdateAssessmentFramework"
         ]
       ]
     ],
@@ -469,6 +507,10 @@
         [
           "lambda",
           "GetFunctionCodeSigningConfig"
+        ],
+        [
+          "lambda",
+          "ListVersionsByFunction"
         ],
         [
           "lambda",
@@ -882,14 +924,6 @@
       [
         [
           "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
-        [
-          "quicksight",
           "CreateDataSet"
         ],
         [
@@ -899,26 +933,6 @@
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ]
       ]
     ],
@@ -940,39 +954,11 @@
       [
         [
           "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
-        [
-          "quicksight",
           "DescribeDataSet"
         ],
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ]
       ]
     ],
@@ -983,39 +969,11 @@
       [
         [
           "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
-        [
-          "quicksight",
           "DescribeDataSet"
         ],
         [
           "quicksight",
           "DescribeDataSetPermissions"
-        ],
-        [
-          "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ],
         [
           "quicksight",
@@ -1107,6 +1065,25 @@
         [
           "redshift",
           "ModifyEventSubscription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourceexplorer2_view",
+      "update",
+      [
+        [
+          "resourceexplorer2",
+          "AssociateDefaultView"
+        ],
+        [
+          "resourceexplorer2",
+          "DisassociateDefaultView"
+        ],
+        [
+          "resourceexplorer2",
+          "UpdateView"
         ]
       ]
     ],

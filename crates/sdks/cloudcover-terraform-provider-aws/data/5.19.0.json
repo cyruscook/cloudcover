@@ -4,21 +4,6 @@
   "upsert": [
     [
       "data_source",
-      "aws_s3_bucket",
-      "read",
-      [
-        [
-          "s3",
-          "GetBucketWebsite"
-        ],
-        [
-          "s3",
-          "HeadBucket"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_s3_bucket_object",
       "read",
       [
@@ -35,12 +20,6 @@
           "HeadObject"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_s3_bucket_objects",
-      "read",
-      []
     ],
     [
       "resource",
@@ -96,6 +75,21 @@
     ],
     [
       "resource",
+      "aws_cloudfront_continuous_deployment_policy",
+      "delete",
+      [
+        [
+          "cloudfront",
+          "DeleteContinuousDeploymentPolicy"
+        ],
+        [
+          "cloudfront",
+          "GetContinuousDeploymentPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_cloudfront_distribution",
       "delete",
       [
@@ -110,10 +104,6 @@
         [
           "cloudfront",
           "GetDistribution"
-        ],
-        [
-          "cloudfront",
-          "SetEnabled"
         ],
         [
           "cloudfront",
@@ -202,6 +192,62 @@
         [
           "databasemigrationservice",
           "StopReplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot",
+      "create",
+      [
+        [
+          "lexmodelsv2",
+          "CreateBot"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot",
+      "delete",
+      [
+        [
+          "lexmodelsv2",
+          "DeleteBot"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot",
+      "read",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeBot"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot",
+      "update",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeBot"
+        ],
+        [
+          "lexmodelsv2",
+          "UpdateBot"
         ]
       ]
     ],

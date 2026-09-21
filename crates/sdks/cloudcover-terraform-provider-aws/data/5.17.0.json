@@ -18,63 +18,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_s3control_multi_region_access_point",
-      "read",
-      [
-        [
-          "s3control",
-          "GetMultiRegionAccessPoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteBucket"
-        ],
-        [
-          "s3",
-          "DeleteObject"
-        ],
-        [
-          "s3",
-          "DeleteObjects"
-        ],
-        [
-          "s3",
-          "HeadBucket"
-        ],
-        [
-          "s3",
-          "PutObjectLegalHold"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_object",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteObject"
-        ],
-        [
-          "s3",
-          "HeadObject"
-        ],
-        [
-          "s3",
-          "PutObjectLegalHold"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_s3_bucket_policy",
       "create",
@@ -120,25 +63,6 @@
         [
           "s3",
           "HeadObject"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_object",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteObject"
-        ],
-        [
-          "s3",
-          "HeadObject"
-        ],
-        [
-          "s3",
-          "PutObjectLegalHold"
         ]
       ]
     ],
@@ -202,114 +126,57 @@
     ],
     [
       "resource",
-      "aws_s3_object_copy",
-      "delete",
-      [
-        [
-          "s3",
-          "DeleteObject"
-        ],
-        [
-          "s3",
-          "HeadObject"
-        ],
-        [
-          "s3",
-          "PutObjectLegalHold"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3control_multi_region_access_point",
+      "aws_shield_application_layer_automatic_response",
       "create",
       [
         [
-          "s3control",
-          "CreateMultiRegionAccessPoint"
+          "shield",
+          "DescribeProtection"
         ],
         [
-          "s3control",
-          "DescribeMultiRegionAccessPointOperation"
-        ],
-        [
-          "s3control",
-          "GetMultiRegionAccessPoint"
+          "shield",
+          "EnableApplicationLayerAutomaticResponse"
         ]
       ]
     ],
     [
       "resource",
-      "aws_s3control_multi_region_access_point",
+      "aws_shield_application_layer_automatic_response",
       "delete",
       [
         [
-          "s3control",
-          "DeleteMultiRegionAccessPoint"
+          "shield",
+          "DescribeProtection"
         ],
         [
-          "s3control",
-          "DescribeMultiRegionAccessPointOperation"
+          "shield",
+          "DisableApplicationLayerAutomaticResponse"
         ]
       ]
     ],
     [
       "resource",
-      "aws_s3control_multi_region_access_point",
+      "aws_shield_application_layer_automatic_response",
       "read",
       [
         [
-          "s3control",
-          "GetMultiRegionAccessPoint"
+          "shield",
+          "DescribeProtection"
         ]
       ]
     ],
     [
       "resource",
-      "aws_s3control_multi_region_access_point_policy",
-      "create",
-      [
-        [
-          "s3control",
-          "DescribeMultiRegionAccessPointOperation"
-        ],
-        [
-          "s3control",
-          "GetMultiRegionAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "PutMultiRegionAccessPointPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3control_multi_region_access_point_policy",
-      "read",
-      [
-        [
-          "s3control",
-          "GetMultiRegionAccessPointPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3control_multi_region_access_point_policy",
+      "aws_shield_application_layer_automatic_response",
       "update",
       [
         [
-          "s3control",
-          "DescribeMultiRegionAccessPointOperation"
+          "shield",
+          "DescribeProtection"
         ],
         [
-          "s3control",
-          "GetMultiRegionAccessPointPolicy"
-        ],
-        [
-          "s3control",
-          "PutMultiRegionAccessPointPolicy"
+          "shield",
+          "UpdateApplicationLayerAutomaticResponse"
         ]
       ]
     ],
@@ -321,6 +188,10 @@
         [
           "ec2",
           "CreateVerifiedAccessInstance"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstances"
         ]
       ]
     ],
@@ -339,13 +210,22 @@
       "resource",
       "aws_verifiedaccess_instance",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstances"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_instance",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstances"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessInstance"

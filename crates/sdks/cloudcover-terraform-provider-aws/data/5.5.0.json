@@ -1,39 +1,7 @@
 {
   "provider_version": "5.5.0",
-  "remove": [
-    [
-      "resource",
-      "aws_appconfig_environment",
-      "create"
-    ],
-    [
-      "resource",
-      "aws_appconfig_environment",
-      "delete"
-    ],
-    [
-      "resource",
-      "aws_appconfig_environment",
-      "read"
-    ],
-    [
-      "resource",
-      "aws_appconfig_environment",
-      "update"
-    ]
-  ],
+  "remove": [],
   "upsert": [
-    [
-      "data_source",
-      "aws_pricing_product",
-      "read",
-      [
-        [
-          "pricing",
-          "GetProducts"
-        ]
-      ]
-    ],
     [
       "data_source",
       "aws_sesv2_email_identity",
@@ -53,6 +21,28 @@
         [
           "sesv2",
           "GetEmailIdentity"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appconfig_environment",
+      "create",
+      [
+        [
+          "appconfig",
+          "CreateEnvironment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appconfig_environment",
+      "update",
+      [
+        [
+          "appconfig",
+          "UpdateEnvironment"
         ]
       ]
     ],

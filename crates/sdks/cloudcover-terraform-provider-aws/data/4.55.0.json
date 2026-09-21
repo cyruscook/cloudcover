@@ -84,16 +84,96 @@
     ],
     [
       "resource",
-      "aws_route53_record",
+      "aws_route53_cidr_collection",
+      "create",
+      [
+        [
+          "route53",
+          "CreateCidrCollection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_collection",
+      "delete",
+      [
+        [
+          "route53",
+          "DeleteCidrCollection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_collection",
       "read",
       [
         [
           "route53",
-          "GetHostedZone"
+          "ListCidrCollections"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_collection",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_location",
+      "create",
+      [
+        [
+          "route53",
+          "ChangeCidrCollection"
         ],
         [
           "route53",
-          "ListResourceRecordSets"
+          "ListCidrCollections"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_location",
+      "delete",
+      [
+        [
+          "route53",
+          "ChangeCidrCollection"
+        ],
+        [
+          "route53",
+          "ListCidrCollections"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_location",
+      "read",
+      [
+        [
+          "route53",
+          "ListCidrBlocks"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_route53_cidr_location",
+      "update",
+      [
+        [
+          "route53",
+          "ChangeCidrCollection"
+        ],
+        [
+          "route53",
+          "ListCidrCollections"
         ]
       ]
     ],

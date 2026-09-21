@@ -405,9 +405,33 @@
   "upsert": [
     [
       "data_source",
-      "aws_servicequotas_templates",
+      "aws_identitystore_group",
       "read",
-      []
+      [
+        [
+          "identitystore",
+          "DescribeGroup"
+        ],
+        [
+          "identitystore",
+          "GetGroupId"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_identitystore_user",
+      "read",
+      [
+        [
+          "identitystore",
+          "DescribeUser"
+        ],
+        [
+          "identitystore",
+          "GetUserId"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -417,6 +441,10 @@
         [
           "ssmincidents",
           "GetReplicationSet"
+        ],
+        [
+          "ssmincidents",
+          "ListReplicationSets"
         ]
       ]
     ],
@@ -482,40 +510,16 @@
     ],
     [
       "resource",
-      "aws_rds_export_task",
-      "create",
-      [
-        [
-          "rds",
-          "StartExportTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_export_task",
-      "delete",
-      [
-        [
-          "rds",
-          "CancelExportTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_export_task",
-      "read",
-      []
-    ],
-    [
-      "resource",
       "aws_redshift_cluster",
       "create",
       [
         [
           "redshift",
           "CreateCluster"
+        ],
+        [
+          "redshift",
+          "DescribeClusters"
         ],
         [
           "redshift",
@@ -531,13 +535,22 @@
       "resource",
       "aws_redshift_cluster",
       "read",
-      []
+      [
+        [
+          "redshift",
+          "DescribeClusters"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_redshift_cluster",
       "update",
       [
+        [
+          "redshift",
+          "DescribeClusters"
+        ],
         [
           "redshift",
           "ModifyAquaConfiguration"

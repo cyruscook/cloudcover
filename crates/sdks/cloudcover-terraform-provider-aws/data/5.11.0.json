@@ -9,6 +9,21 @@
       []
     ],
     [
+      "data_source",
+      "aws_vpclattice_service",
+      "read",
+      [
+        [
+          "vpclattice",
+          "GetService"
+        ],
+        [
+          "vpclattice",
+          "ListServices"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_sagemaker_pipeline",
       "create",

@@ -4,9 +4,36 @@
   "upsert": [
     [
       "data_source",
+      "aws_appstream_image",
+      "read",
+      [
+        [
+          "appstream",
+          "DescribeImages"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_cognito_user_pool",
+      "read",
+      [
+        [
+          "cognitoidentityprovider",
+          "DescribeUserPool"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_ec2_transit_gateway_peering_attachments",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeTransitGatewayPeeringAttachments"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -16,6 +43,17 @@
         [
           "grafana",
           "DescribeWorkspace"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_transfer_connector",
+      "read",
+      [
+        [
+          "transfer",
+          "DescribeConnector"
         ]
       ]
     ],
@@ -67,6 +105,10 @@
       [
         [
           "grafana",
+          "ListPermissions"
+        ],
+        [
+          "grafana",
           "UpdatePermissions"
         ]
       ]
@@ -86,13 +128,22 @@
       "resource",
       "aws_grafana_role_association",
       "read",
-      []
+      [
+        [
+          "grafana",
+          "ListPermissions"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_grafana_role_association",
       "update",
       [
+        [
+          "grafana",
+          "ListPermissions"
+        ],
         [
           "grafana",
           "UpdatePermissions"
@@ -239,158 +290,6 @@
         [
           "grafana",
           "UpdateWorkspaceAuthentication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_policy_attachment",
-      "create",
-      [
-        [
-          "iot",
-          "AttachPolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iot_thing_group_membership",
-      "create",
-      [
-        [
-          "iot",
-          "AddThingToThingGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_thing_group_membership",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iot_thing_principal_attachment",
-      "create",
-      [
-        [
-          "iot",
-          "AttachThingPrincipal"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_thing_principal_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule",
-      "create",
-      [
-        [
-          "iot",
-          "CreateTopicRule"
-        ],
-        [
-          "iot",
-          "GetTopicRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule",
-      "read",
-      [
-        [
-          "iot",
-          "GetTopicRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule",
-      "update",
-      [
-        [
-          "iot",
-          "GetTopicRule"
-        ],
-        [
-          "iot",
-          "ReplaceTopicRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule_destination",
-      "create",
-      [
-        [
-          "iot",
-          "CreateTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "GetTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "UpdateTopicRuleDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule_destination",
-      "delete",
-      [
-        [
-          "iot",
-          "DeleteTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "GetTopicRuleDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule_destination",
-      "read",
-      [
-        [
-          "iot",
-          "GetTopicRuleDestination"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_iot_topic_rule_destination",
-      "update",
-      [
-        [
-          "iot",
-          "GetTopicRuleDestination"
-        ],
-        [
-          "iot",
-          "UpdateTopicRuleDestination"
         ]
       ]
     ]

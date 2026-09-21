@@ -243,6 +243,54 @@
     ],
     [
       "resource",
+      "aws_medialive_multiplex_program",
+      "create",
+      [
+        [
+          "medialive",
+          "CreateMultiplexProgram"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_medialive_multiplex_program",
+      "delete",
+      [
+        [
+          "medialive",
+          "DeleteMultiplexProgram"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_medialive_multiplex_program",
+      "read",
+      [
+        [
+          "medialive",
+          "DescribeMultiplexProgram"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_medialive_multiplex_program",
+      "update",
+      [
+        [
+          "medialive",
+          "DescribeMultiplexProgram"
+        ],
+        [
+          "medialive",
+          "UpdateMultiplexProgram"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_route53_resolver_config",
       "create",
       [

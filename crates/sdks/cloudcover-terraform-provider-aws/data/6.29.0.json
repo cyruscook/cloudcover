@@ -58,6 +58,10 @@
         [
           "organizations",
           "DescribeOrganization"
+        ],
+        [
+          "organizations",
+          "ListParents"
         ]
       ]
     ],
@@ -65,7 +69,12 @@
       "data_source",
       "aws_resourcegroupstaggingapi_required_tags",
       "read",
-      []
+      [
+        [
+          "resourcegroupstaggingapi",
+          "ListRequiredTags"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -93,13 +102,23 @@
       "data_source",
       "aws_s3control_access_points",
       "read",
-      []
+      [
+        [
+          "s3control",
+          "ListAccessPoints"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_s3control_multi_region_access_points",
       "read",
-      []
+      [
+        [
+          "s3control",
+          "ListMultiRegionAccessPoints"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -206,6 +225,10 @@
         [
           "opensearchserverless",
           "BatchGetCollection"
+        ],
+        [
+          "opensearchserverless",
+          "ListCollections"
         ]
       ]
     ],
@@ -217,6 +240,10 @@
         [
           "route53",
           "GetHostedZone"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
         ]
       ]
     ],
@@ -291,6 +318,10 @@
         [
           "s3",
           "HeadObject"
+        ],
+        [
+          "s3",
+          "ListObjectsV2"
         ]
       ]
     ],
@@ -298,7 +329,12 @@
       "list_resource",
       "aws_security_group",
       "list",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ]
+      ]
     ],
     [
       "resource",
@@ -489,7 +525,12 @@
       "resource",
       "aws_notifications_managed_notification_account_contact_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListManagedNotificationChannelAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -523,7 +564,12 @@
       "resource",
       "aws_notifications_managed_notification_additional_channel_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListManagedNotificationChannelAssociations"
+        ]
+      ]
     ],
     [
       "resource",
@@ -557,7 +603,12 @@
       "resource",
       "aws_notifications_organizational_unit_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListOrganizationalUnits"
+        ]
+      ]
     ],
     [
       "resource",
@@ -734,6 +785,10 @@
         [
           "ram",
           "DeletePermissionVersion"
+        ],
+        [
+          "ram",
+          "ListPermissionVersions"
         ]
       ]
     ],
@@ -749,6 +804,14 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
+        ],
+        [
+          "ram",
+          "GetResourceShares"
         ]
       ]
     ],
@@ -760,6 +823,10 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
         ]
       ]
     ],
@@ -767,7 +834,16 @@
       "resource",
       "aws_ram_resource_share_associations_exclusive",
       "read",
-      []
+      [
+        [
+          "ram",
+          "GetResourceShareAssociations"
+        ],
+        [
+          "ram",
+          "GetResourceShares"
+        ]
+      ]
     ],
     [
       "resource",
@@ -781,6 +857,10 @@
         [
           "ram",
           "DisassociateResourceShare"
+        ],
+        [
+          "ram",
+          "GetResourceShareAssociations"
         ]
       ]
     ],
@@ -1005,13 +1085,68 @@
       "resource",
       "aws_sesv2_tenant_resource_association",
       "read",
-      []
+      [
+        [
+          "sesv2",
+          "ListTenantResources"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_sesv2_tenant_resource_association",
       "update",
       []
+    ],
+    [
+      "resource",
+      "aws_vpc_ipam_pool",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateIpamPool"
+        ],
+        [
+          "ec2",
+          "DescribeIpamPools"
+        ],
+        [
+          "ec2",
+          "DescribeIpamScopes"
+        ],
+        [
+          "ec2",
+          "DescribeVpcs"
+        ],
+        [
+          "ec2",
+          "GetIpamResourceCidrs"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_ipam_pool_cidr",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeprovisionIpamPoolCidr"
+        ],
+        [
+          "ec2",
+          "DescribeIpamPools"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolAllocations"
+        ],
+        [
+          "ec2",
+          "GetIpamPoolCidrs"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1024,6 +1159,10 @@
         ],
         [
           "ec2",
+          "DescribeIpamResourceDiscoveries"
+        ],
+        [
+          "ec2",
           "ModifyIpamResourceDiscovery"
         ]
       ]
@@ -1033,6 +1172,10 @@
       "aws_vpc_security_group_rules_exclusive",
       "create",
       [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
         [
           "ec2",
           "RevokeSecurityGroupEgress"
@@ -1053,13 +1196,26 @@
       "resource",
       "aws_vpc_security_group_rules_exclusive",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroups"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_vpc_security_group_rules_exclusive",
       "update",
       [
+        [
+          "ec2",
+          "DescribeSecurityGroupRules"
+        ],
         [
           "ec2",
           "RevokeSecurityGroupEgress"

@@ -6,254 +6,153 @@
       "data_source",
       "aws_memorydb_acl",
       "read",
-      []
+      [
+        [
+          "memorydb",
+          "DescribeACLs"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_memorydb_cluster",
       "read",
-      []
+      [
+        [
+          "memorydb",
+          "DescribeClusters"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_memorydb_parameter_group",
       "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_memorydb_user",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_acl",
-      "create",
       [
         [
           "memorydb",
-          "CreateACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_acl",
-      "delete",
-      [
-        [
-          "memorydb",
-          "DeleteACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_acl",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_acl",
-      "update",
-      [
-        [
-          "memorydb",
-          "UpdateACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_cluster",
-      "create",
-      [
-        [
-          "memorydb",
-          "CreateCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_cluster",
-      "delete",
-      [
-        [
-          "memorydb",
-          "DeleteCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_cluster",
-      "update",
-      [
-        [
-          "memorydb",
-          "UpdateCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_parameter_group",
-      "create",
-      [
-        [
-          "memorydb",
-          "CreateParameterGroup"
+          "DescribeParameterGroups"
         ],
         [
           "memorydb",
-          "ResetParameterGroup"
-        ],
-        [
-          "memorydb",
-          "UpdateParameterGroup"
+          "DescribeParameters"
         ]
       ]
     ],
     [
-      "resource",
-      "aws_memorydb_parameter_group",
+      "data_source",
+      "aws_memorydb_snapshot",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_parameter_group",
-      "update",
       [
         [
           "memorydb",
-          "ResetParameterGroup"
-        ],
+          "DescribeSnapshots"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_memorydb_subnet_group",
+      "read",
+      [
         [
           "memorydb",
-          "UpdateParameterGroup"
+          "DescribeSubnetGroups"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_memorydb_user",
+      "read",
+      [
+        [
+          "memorydb",
+          "DescribeUsers"
         ]
       ]
     ],
     [
       "resource",
-      "aws_memorydb_snapshot",
+      "aws_iam_organizations_features",
       "create",
       [
         [
-          "memorydb",
-          "CreateSnapshot"
+          "iam",
+          "DisableOrganizationsRootCredentialsManagement"
+        ],
+        [
+          "iam",
+          "DisableOrganizationsRootSessions"
+        ],
+        [
+          "iam",
+          "EnableOrganizationsRootCredentialsManagement"
+        ],
+        [
+          "iam",
+          "EnableOrganizationsRootSessions"
+        ],
+        [
+          "iam",
+          "ListOrganizationsFeatures"
         ]
       ]
     ],
     [
       "resource",
-      "aws_memorydb_snapshot",
+      "aws_iam_organizations_features",
       "delete",
       [
         [
-          "memorydb",
-          "DeleteSnapshot"
+          "iam",
+          "DisableOrganizationsRootCredentialsManagement"
+        ],
+        [
+          "iam",
+          "DisableOrganizationsRootSessions"
+        ],
+        [
+          "iam",
+          "EnableOrganizationsRootCredentialsManagement"
+        ],
+        [
+          "iam",
+          "EnableOrganizationsRootSessions"
         ]
       ]
     ],
     [
       "resource",
-      "aws_memorydb_snapshot",
+      "aws_iam_organizations_features",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_snapshot",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_subnet_group",
-      "create",
       [
         [
-          "memorydb",
-          "CreateSubnetGroup"
+          "iam",
+          "ListOrganizationsFeatures"
         ]
       ]
     ],
     [
       "resource",
-      "aws_memorydb_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_subnet_group",
+      "aws_iam_organizations_features",
       "update",
       [
         [
-          "memorydb",
-          "UpdateSubnetGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_user",
-      "create",
-      [
+          "iam",
+          "DisableOrganizationsRootCredentialsManagement"
+        ],
         [
-          "memorydb",
-          "CreateUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_user",
-      "delete",
-      [
+          "iam",
+          "DisableOrganizationsRootSessions"
+        ],
         [
-          "memorydb",
-          "DeleteUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_memorydb_user",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_memorydb_user",
-      "update",
-      [
+          "iam",
+          "EnableOrganizationsRootCredentialsManagement"
+        ],
         [
-          "memorydb",
-          "UpdateUser"
+          "iam",
+          "EnableOrganizationsRootSessions"
         ]
       ]
     ]

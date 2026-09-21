@@ -156,60 +156,6 @@
     ],
     [
       "resource",
-      "aws_eks_cluster",
-      "create",
-      [
-        [
-          "eks",
-          "CreateCluster"
-        ],
-        [
-          "eks",
-          "DescribeCluster"
-        ],
-        [
-          "eks",
-          "LogType_Values"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_eks_cluster",
-      "update",
-      [
-        [
-          "eks",
-          "DescribeCluster"
-        ],
-        [
-          "eks",
-          "DescribeUpdate"
-        ],
-        [
-          "eks",
-          "LogType_Values"
-        ],
-        [
-          "eks",
-          "TagResource"
-        ],
-        [
-          "eks",
-          "UntagResource"
-        ],
-        [
-          "eks",
-          "UpdateClusterConfig"
-        ],
-        [
-          "eks",
-          "UpdateClusterVersion"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_internet_gateway",
       "create",
       [

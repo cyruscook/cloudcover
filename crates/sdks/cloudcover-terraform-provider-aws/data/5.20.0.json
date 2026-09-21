@@ -3,27 +3,6 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_servicequotas_service",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_servicequotas_service_quota",
-      "read",
-      [
-        [
-          "servicequotas",
-          "GetAWSDefaultServiceQuota"
-        ],
-        [
-          "servicequotas",
-          "GetServiceQuota"
-        ]
-      ]
-    ],
-    [
       "resource",
       "aws_guardduty_detector_feature",
       "create",
@@ -67,6 +46,50 @@
         [
           "guardduty",
           "UpdateDetector"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicequotas_template",
+      "create",
+      [
+        [
+          "servicequotas",
+          "PutServiceQuotaIncreaseRequestIntoTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicequotas_template",
+      "delete",
+      [
+        [
+          "servicequotas",
+          "DeleteServiceQuotaIncreaseRequestFromTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicequotas_template",
+      "read",
+      [
+        [
+          "servicequotas",
+          "GetServiceQuotaIncreaseRequestFromTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_servicequotas_template",
+      "update",
+      [
+        [
+          "servicequotas",
+          "PutServiceQuotaIncreaseRequestIntoTemplate"
         ]
       ]
     ],
@@ -130,6 +153,10 @@
         [
           "ec2",
           "AttachVerifiedAccessTrustProvider"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstances"
         ]
       ]
     ],
@@ -148,7 +175,12 @@
       "resource",
       "aws_verifiedaccess_instance_trust_provider_attachment",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessInstances"
+        ]
+      ]
     ]
   ]
 }

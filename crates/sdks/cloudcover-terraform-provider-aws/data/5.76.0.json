@@ -1,5 +1,53 @@
 {
   "provider_version": "5.76.0",
   "remove": [],
-  "upsert": []
+  "upsert": [
+    [
+      "resource",
+      "aws_vpc_security_group_vpc_association",
+      "create",
+      [
+        [
+          "ec2",
+          "AssociateSecurityGroupVpc"
+        ],
+        [
+          "ec2",
+          "DescribeSecurityGroupVpcAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_vpc_association",
+      "delete",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupVpcAssociations"
+        ],
+        [
+          "ec2",
+          "DisassociateSecurityGroupVpc"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_vpc_association",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeSecurityGroupVpcAssociations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_security_group_vpc_association",
+      "update",
+      []
+    ]
+  ]
 }

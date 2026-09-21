@@ -4,15 +4,14 @@
   "upsert": [
     [
       "data_source",
-      "aws_db_instance",
+      "aws_bedrockagent_agent_versions",
       "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_instances",
-      "read",
-      []
+      [
+        [
+          "bedrockagent",
+          "ListAgentVersions"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -38,21 +37,13 @@
     ],
     [
       "data_source",
-      "aws_route53_resolver_endpoint",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_route53_resolver_firewall_rules",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_route53_resolver_query_log_config",
       "read",
       [
+        [
+          "route53resolver",
+          "ListResolverQueryLogConfigs"
+        ],
         [
           "route53resolver",
           "ListTagsForResource"
@@ -70,141 +61,280 @@
         ],
         [
           "route53resolver",
+          "ListResolverRules"
+        ],
+        [
+          "route53resolver",
           "ListTagsForResource"
         ]
       ]
     ],
     [
-      "data_source",
-      "aws_route53_resolver_rules",
-      "read",
-      []
-    ],
-    [
       "resource",
-      "aws_db_instance",
+      "aws_bedrock_guardrail",
       "create",
       [
         [
-          "rds",
-          "CreateDBInstance"
+          "bedrock",
+          "CreateGuardrail"
         ],
         [
-          "rds",
-          "CreateDBInstanceReadReplica"
-        ],
-        [
-          "rds",
-          "ModifyDBInstance"
-        ],
-        [
-          "rds",
-          "RebootDBInstance"
-        ],
-        [
-          "rds",
-          "RestoreDBInstanceFromDBSnapshot"
-        ],
-        [
-          "rds",
-          "RestoreDBInstanceFromS3"
-        ],
-        [
-          "rds",
-          "RestoreDBInstanceToPointInTime"
+          "bedrock",
+          "GetGuardrail"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_instance",
+      "aws_bedrock_guardrail",
       "delete",
       [
         [
-          "rds",
-          "DeleteDBInstance"
+          "bedrock",
+          "DeleteGuardrail"
         ],
         [
-          "rds",
-          "ModifyDBInstance"
+          "bedrock",
+          "GetGuardrail"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_instance",
+      "aws_bedrock_guardrail",
       "read",
-      []
+      [
+        [
+          "bedrock",
+          "GetGuardrail"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_db_instance",
+      "aws_bedrock_guardrail",
       "update",
       [
         [
-          "rds",
-          "CreateBlueGreenDeployment"
+          "bedrock",
+          "GetGuardrail"
         ],
         [
-          "rds",
-          "DeleteBlueGreenDeployment"
-        ],
-        [
-          "rds",
-          "DeleteDBInstance"
-        ],
-        [
-          "rds",
-          "ModifyDBInstance"
-        ],
-        [
-          "rds",
-          "PromoteReadReplica"
-        ],
-        [
-          "rds",
-          "SwitchoverBlueGreenDeployment"
+          "bedrock",
+          "UpdateGuardrail"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_instance_automated_backups_replication",
-      "delete",
-      [
-        [
-          "rds",
-          "StopDBInstanceAutomatedBackupsReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_instance_role_association",
+      "aws_bedrockagent_agent_knowledge_base_association",
       "create",
       [
         [
-          "rds",
-          "AddRoleToDBInstance"
+          "bedrockagent",
+          "AssociateAgentKnowledgeBase"
+        ],
+        [
+          "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
+          "PrepareAgent"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_instance_role_association",
+      "aws_bedrockagent_agent_knowledge_base_association",
+      "update",
+      [
+        [
+          "bedrockagent",
+          "GetAgent"
+        ],
+        [
+          "bedrockagent",
+          "PrepareAgent"
+        ],
+        [
+          "bedrockagent",
+          "UpdateAgentKnowledgeBase"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudtrail_organization_delegated_admin_account",
+      "create",
+      [
+        [
+          "cloudtrail",
+          "RegisterOrganizationDelegatedAdmin"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_cloudtrail_organization_delegated_admin_account",
       "delete",
       [
         [
-          "rds",
-          "RemoveRoleFromDBInstance"
+          "cloudtrail",
+          "DeregisterOrganizationDelegatedAdmin"
         ]
       ]
     ],
     [
       "resource",
-      "aws_db_instance_role_association",
+      "aws_cloudtrail_organization_delegated_admin_account",
       "read",
       []
+    ],
+    [
+      "resource",
+      "aws_cloudtrail_organization_delegated_admin_account",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_profile",
+      "create",
+      [
+        [
+          "datazone",
+          "CreateEnvironmentProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_profile",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteEnvironmentProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_profile",
+      "read",
+      [
+        [
+          "datazone",
+          "GetEnvironmentProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_profile",
+      "update",
+      [
+        [
+          "datazone",
+          "UpdateEnvironmentProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_form_type",
+      "create",
+      [
+        [
+          "datazone",
+          "CreateFormType"
+        ],
+        [
+          "datazone",
+          "GetFormType"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_form_type",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteFormType"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_form_type",
+      "read",
+      [
+        [
+          "datazone",
+          "GetFormType"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_form_type",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_datazone_glossary_term",
+      "create",
+      [
+        [
+          "datazone",
+          "CreateGlossaryTerm"
+        ],
+        [
+          "datazone",
+          "GetGlossaryTerm"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_glossary_term",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteGlossaryTerm"
+        ],
+        [
+          "datazone",
+          "UpdateGlossaryTerm"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_glossary_term",
+      "read",
+      [
+        [
+          "datazone",
+          "GetGlossaryTerm"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_glossary_term",
+      "update",
+      [
+        [
+          "datazone",
+          "UpdateGlossaryTerm"
+        ]
+      ]
     ],
     [
       "resource",
@@ -217,52 +347,15 @@
         ],
         [
           "gamelift",
-          "DescribeFleetPortSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_fleet",
-      "delete",
-      [
-        [
-          "gamelift",
-          "DeleteFleet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_fleet",
-      "read",
-      [
-        [
-          "gamelift",
-          "DescribeFleetPortSettings"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_fleet",
-      "update",
-      [
-        [
-          "gamelift",
-          "DescribeFleetPortSettings"
+          "DescribeFleetAttributes"
         ],
         [
           "gamelift",
-          "UpdateFleetAttributes"
+          "DescribeFleetEvents"
         ],
         [
           "gamelift",
-          "UpdateFleetPortSettings"
-        ],
-        [
-          "gamelift",
-          "UpdateRuntimeConfiguration"
+          "DescribeFleetPortSettings"
         ]
       ]
     ],
@@ -309,45 +402,6 @@
     ],
     [
       "resource",
-      "aws_gamelift_game_session_queue",
-      "create",
-      [
-        [
-          "gamelift",
-          "CreateGameSessionQueue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_game_session_queue",
-      "delete",
-      [
-        [
-          "gamelift",
-          "DeleteGameSessionQueue"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_gamelift_game_session_queue",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_gamelift_game_session_queue",
-      "update",
-      [
-        [
-          "gamelift",
-          "UpdateGameSessionQueue"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_licensemanager_association",
       "create",
       [
@@ -385,254 +439,49 @@
     ],
     [
       "resource",
-      "aws_rds_cluster_instance",
+      "aws_pinpoint_email_template",
       "create",
       [
         [
-          "rds",
-          "CreateDBInstance"
-        ],
-        [
-          "rds",
-          "ModifyDBInstance"
-        ],
-        [
-          "rds",
-          "RebootDBInstance"
+          "pinpoint",
+          "CreateEmailTemplate"
         ]
       ]
     ],
     [
       "resource",
-      "aws_rds_cluster_instance",
+      "aws_pinpoint_email_template",
       "delete",
       [
         [
-          "rds",
-          "DeleteDBInstance"
+          "pinpoint",
+          "DeleteEmailTemplate"
         ]
       ]
     ],
     [
       "resource",
-      "aws_rds_cluster_instance",
+      "aws_pinpoint_email_template",
       "read",
-      []
+      [
+        [
+          "pinpoint",
+          "GetEmailTemplate"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_rds_cluster_instance",
+      "aws_pinpoint_email_template",
       "update",
       [
         [
-          "rds",
-          "ModifyDBInstance"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_config",
-      "create",
-      [
-        [
-          "route53resolver",
-          "UpdateResolverConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_config",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_config",
-      "update",
-      [
-        [
-          "route53resolver",
-          "UpdateResolverConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_dnssec_config",
-      "create",
-      [
-        [
-          "route53resolver",
-          "UpdateResolverDnssecConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_dnssec_config",
-      "delete",
-      [
-        [
-          "route53resolver",
-          "UpdateResolverDnssecConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_dnssec_config",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_endpoint",
-      "create",
-      [
-        [
-          "route53resolver",
-          "CreateResolverEndpoint"
+          "pinpoint",
+          "GetEmailTemplate"
         ],
         [
-          "route53resolver",
-          "GetResolverEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_endpoint",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetResolverEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_endpoint",
-      "update",
-      [
-        [
-          "route53resolver",
-          "AssociateResolverEndpointIpAddress"
-        ],
-        [
-          "route53resolver",
-          "DisassociateResolverEndpointIpAddress"
-        ],
-        [
-          "route53resolver",
-          "GetResolverEndpoint"
-        ],
-        [
-          "route53resolver",
-          "UpdateResolverEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_config",
-      "create",
-      [
-        [
-          "route53resolver",
-          "UpdateFirewallConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_config",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_config",
-      "update",
-      [
-        [
-          "route53resolver",
-          "UpdateFirewallConfig"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_domain_list",
-      "create",
-      [
-        [
-          "route53resolver",
-          "CreateFirewallDomainList"
-        ],
-        [
-          "route53resolver",
-          "GetFirewallDomainList"
-        ],
-        [
-          "route53resolver",
-          "UpdateFirewallDomains"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_domain_list",
-      "read",
-      [
-        [
-          "route53resolver",
-          "GetFirewallDomainList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_domain_list",
-      "update",
-      [
-        [
-          "route53resolver",
-          "GetFirewallDomainList"
-        ],
-        [
-          "route53resolver",
-          "UpdateFirewallDomains"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_rule",
-      "create",
-      [
-        [
-          "route53resolver",
-          "CreateFirewallRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_route53_resolver_firewall_rule",
-      "update",
-      [
-        [
-          "route53resolver",
-          "UpdateFirewallRule"
+          "pinpoint",
+          "UpdateEmailTemplate"
         ]
       ]
     ],
@@ -730,100 +579,16 @@
     ],
     [
       "resource",
-      "aws_s3outposts_endpoint",
-      "create",
-      [
-        [
-          "s3outposts",
-          "CreateEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3outposts_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_sagemaker_app",
-      "create",
-      [
-        [
-          "sagemaker",
-          "CreateApp"
-        ],
-        [
-          "sagemaker",
-          "DescribeApp"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_app",
+      "aws_sagemaker_endpoint",
       "delete",
       [
         [
           "sagemaker",
-          "DeleteApp"
+          "DeleteEndpoint"
         ],
         [
           "sagemaker",
-          "DescribeApp"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_app",
-      "read",
-      [
-        [
-          "sagemaker",
-          "DescribeApp"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_app",
-      "update",
-      [
-        [
-          "sagemaker",
-          "DescribeApp"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_device",
-      "update",
-      [
-        [
-          "sagemaker",
-          "DescribeDevice"
-        ],
-        [
-          "sagemaker",
-          "UpdateDevices"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_sagemaker_device_fleet",
-      "update",
-      [
-        [
-          "sagemaker",
-          "DescribeDeviceFleet"
-        ],
-        [
-          "sagemaker",
-          "UpdateDeviceFleet"
+          "DescribeEndpoint"
         ]
       ]
     ]

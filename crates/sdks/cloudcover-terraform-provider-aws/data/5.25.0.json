@@ -30,27 +30,25 @@
     ],
     [
       "data_source",
-      "aws_eks_addon_version",
+      "aws_bedrock_foundation_model",
       "read",
-      []
+      [
+        [
+          "bedrock",
+          "GetFoundationModel"
+        ]
+      ]
     ],
     [
       "data_source",
-      "aws_eks_clusters",
+      "aws_bedrock_foundation_models",
       "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_eks_node_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_sns_topic",
-      "read",
-      []
+      [
+        [
+          "bedrock",
+          "ListFoundationModels"
+        ]
+      ]
     ],
     [
       "resource",
@@ -106,169 +104,9 @@
     ],
     [
       "resource",
-      "aws_cloudtrail",
-      "create",
-      [
-        [
-          "cloudtrail",
-          "CreateTrail"
-        ],
-        [
-          "cloudtrail",
-          "DescribeTrails"
-        ],
-        [
-          "cloudtrail",
-          "GetEventSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetInsightSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetTrailStatus"
-        ],
-        [
-          "cloudtrail",
-          "PutEventSelectors"
-        ],
-        [
-          "cloudtrail",
-          "PutInsightSelectors"
-        ],
-        [
-          "cloudtrail",
-          "StartLogging"
-        ],
-        [
-          "cloudtrail",
-          "StopLogging"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_cloudtrail",
-      "update",
-      [
-        [
-          "cloudtrail",
-          "DescribeTrails"
-        ],
-        [
-          "cloudtrail",
-          "GetEventSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetInsightSelectors"
-        ],
-        [
-          "cloudtrail",
-          "GetTrailStatus"
-        ],
-        [
-          "cloudtrail",
-          "PutEventSelectors"
-        ],
-        [
-          "cloudtrail",
-          "PutInsightSelectors"
-        ],
-        [
-          "cloudtrail",
-          "StartLogging"
-        ],
-        [
-          "cloudtrail",
-          "StopLogging"
-        ],
-        [
-          "cloudtrail",
-          "UpdateTrail"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datasync_task",
-      "create",
-      [
-        [
-          "datasync",
-          "CreateTask"
-        ],
-        [
-          "datasync",
-          "DescribeTask"
-        ],
-        [
-          "datasync",
-          "SetDestination"
-        ],
-        [
-          "datasync",
-          "SetObjectVersionIds"
-        ],
-        [
-          "datasync",
-          "SetOutputType"
-        ],
-        [
-          "datasync",
-          "SetOverrides"
-        ],
-        [
-          "datasync",
-          "SetReportLevel"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_datasync_task",
-      "update",
-      [
-        [
-          "datasync",
-          "DescribeTask"
-        ],
-        [
-          "datasync",
-          "SetDestination"
-        ],
-        [
-          "datasync",
-          "SetObjectVersionIds"
-        ],
-        [
-          "datasync",
-          "SetOutputType"
-        ],
-        [
-          "datasync",
-          "SetOverrides"
-        ],
-        [
-          "datasync",
-          "SetReportLevel"
-        ],
-        [
-          "datasync",
-          "UpdateTask"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_dms_endpoint",
       "update",
       [
-        [
-          "databasemigrationservice",
-          "DescribeConnections"
-        ],
         [
           "databasemigrationservice",
           "DescribeEndpoints"
@@ -297,43 +135,57 @@
     ],
     [
       "resource",
-      "aws_eks_cluster",
+      "aws_lexv2models_bot_locale",
       "create",
       [
         [
-          "eks",
-          "CreateCluster"
+          "lexmodelsv2",
+          "CreateBotLocale"
         ],
         [
-          "eks",
-          "DescribeCluster"
+          "lexmodelsv2",
+          "DescribeBotLocale"
         ]
       ]
     ],
     [
       "resource",
-      "aws_eks_cluster",
+      "aws_lexv2models_bot_locale",
+      "delete",
+      [
+        [
+          "lexmodelsv2",
+          "DeleteBotLocale"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotLocale"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot_locale",
+      "read",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeBotLocale"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot_locale",
       "update",
       [
         [
-          "eks",
-          "AssociateEncryptionConfig"
+          "lexmodelsv2",
+          "DescribeBotLocale"
         ],
         [
-          "eks",
-          "DescribeCluster"
-        ],
-        [
-          "eks",
-          "DescribeUpdate"
-        ],
-        [
-          "eks",
-          "UpdateClusterConfig"
-        ],
-        [
-          "eks",
-          "UpdateClusterVersion"
+          "lexmodelsv2",
+          "UpdateBotLocale"
         ]
       ]
     ],

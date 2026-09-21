@@ -13,6 +13,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "DescribeTags"
         ]
       ]
@@ -29,6 +33,21 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_cloudfront_origin_access_control",
+      "read",
+      [
+        [
+          "cloudfront",
+          "GetOriginAccessControl"
         ]
       ]
     ],
@@ -114,21 +133,8 @@
       [
         [
           "elasticache",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_elasticache_replication_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_elasticache_subnet_group",
-      "read",
-      [
+          "DescribeCacheClusters"
+        ],
         [
           "elasticache",
           "ListTagsForResource"
@@ -137,9 +143,18 @@
     ],
     [
       "data_source",
-      "aws_elasticache_user",
+      "aws_elasticache_subnet_group",
       "read",
-      []
+      [
+        [
+          "elasticache",
+          "DescribeCacheSubnetGroups"
+        ],
+        [
+          "elasticache",
+          "ListTagsForResource"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -149,6 +164,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -168,6 +187,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -175,7 +198,12 @@
       "data_source",
       "aws_lb_trust_store",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -184,7 +212,33 @@
       [
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "DescribeTags"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_timestreamwrite_database",
+      "read",
+      [
+        [
+          "timestreamwrite",
+          "DescribeDatabase"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_timestreamwrite_table",
+      "read",
+      [
+        [
+          "timestreamwrite",
+          "DescribeTable"
         ]
       ]
     ],
@@ -204,6 +258,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -246,6 +304,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -257,6 +319,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -295,6 +361,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeTargetGroups"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyTargetGroupAttributes"
         ],
         [
@@ -322,6 +392,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -333,6 +407,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -537,51 +615,70 @@
     ],
     [
       "resource",
-      "aws_dms_endpoint",
+      "aws_datazone_project",
+      "create",
+      [
+        [
+          "datazone",
+          "CreateProject"
+        ],
+        [
+          "datazone",
+          "GetProject"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_project",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteProject"
+        ],
+        [
+          "datazone",
+          "GetProject"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_project",
+      "read",
+      [
+        [
+          "datazone",
+          "GetProject"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_project",
       "update",
       [
         [
-          "databasemigrationservice",
-          "DescribeEndpoints"
-        ],
-        [
-          "databasemigrationservice",
-          "DescribeReplicationTasks"
-        ],
-        [
-          "databasemigrationservice",
-          "ModifyEndpoint"
-        ],
-        [
-          "databasemigrationservice",
-          "StartReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "StopReplicationTask"
-        ],
-        [
-          "databasemigrationservice",
-          "TestConnection"
+          "datazone",
+          "UpdateProject"
         ]
       ]
     ],
     [
       "resource",
       "aws_ecs_account_setting_default",
-      "create",
+      "update",
       [
+        [
+          "ecs",
+          "ListAccountSettings"
+        ],
         [
           "ecs",
           "PutAccountSettingDefault"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ecs_account_setting_default",
-      "read",
-      []
     ],
     [
       "resource",
@@ -713,147 +810,11 @@
         ],
         [
           "elasticache",
+          "DescribeCacheClusters"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteCacheCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_cluster",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyCacheCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "create",
-      [
-        [
-          "elasticache",
-          "CreateGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "DecreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "IncreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "ModifyGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_global_replication_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DecreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "IncreaseNodeGroupsInGlobalReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "ModifyGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "create",
-      [
-        [
-          "elasticache",
-          "CreateCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ],
-        [
-          "elasticache",
-          "ModifyCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "ResetCacheParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "read",
-      [
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_parameter_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DescribeCacheParameters"
-        ],
-        [
-          "elasticache",
-          "ModifyCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "ResetCacheParameterGroup"
         ]
       ]
     ],
@@ -876,64 +837,15 @@
         ],
         [
           "elasticache",
+          "DescribeGlobalReplicationGroups"
+        ],
+        [
+          "elasticache",
+          "DescribeReplicationGroups"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_replication_group",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteCacheParameterGroup"
-        ],
-        [
-          "elasticache",
-          "DeleteReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "DisassociateGlobalReplicationGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_replication_group",
-      "read",
-      [
-        [
-          "elasticache",
-          "DescribeCacheClusters"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_replication_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "DecreaseReplicaCount"
-        ],
-        [
-          "elasticache",
-          "DescribeCacheClusters"
-        ],
-        [
-          "elasticache",
-          "IncreaseReplicaCount"
-        ],
-        [
-          "elasticache",
-          "ModifyReplicationGroup"
-        ],
-        [
-          "elasticache",
-          "ModifyReplicationGroupShardConfiguration"
         ]
       ]
     ],
@@ -952,24 +864,11 @@
         ],
         [
           "elasticache",
-          "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_subnet_group",
-      "update",
-      [
+          "DescribeCacheSubnetGroups"
+        ],
         [
           "elasticache",
-          "ModifyCacheSubnetGroup"
+          "RemoveTagsFromResource"
         ]
       ]
     ],
@@ -988,35 +887,11 @@
         ],
         [
           "elasticache",
+          "DescribeUsers"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "delete",
-      [
-        [
-          "elasticache",
-          "DeleteUser"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_elasticache_user",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyUser"
         ]
       ]
     ],
@@ -1035,64 +910,94 @@
         ],
         [
           "elasticache",
+          "DescribeUserGroups"
+        ],
+        [
+          "elasticache",
           "RemoveTagsFromResource"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticache_user_group",
-      "delete",
+      "aws_grafana_workspace_service_account",
+      "create",
       [
         [
-          "elasticache",
-          "DeleteUserGroup"
+          "grafana",
+          "CreateWorkspaceServiceAccount"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticache_user_group",
+      "aws_grafana_workspace_service_account",
+      "delete",
+      [
+        [
+          "grafana",
+          "DeleteWorkspaceServiceAccount"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_grafana_workspace_service_account",
       "read",
+      [
+        [
+          "grafana",
+          "ListWorkspaceServiceAccounts"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_grafana_workspace_service_account",
+      "update",
       []
     ],
     [
       "resource",
-      "aws_elasticache_user_group",
-      "update",
-      [
-        [
-          "elasticache",
-          "ModifyUserGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_elasticache_user_group_association",
+      "aws_grafana_workspace_service_account_token",
       "create",
       [
         [
-          "elasticache",
-          "ModifyUserGroup"
+          "grafana",
+          "CreateWorkspaceServiceAccountToken"
+        ],
+        [
+          "grafana",
+          "ListWorkspaceServiceAccountTokens"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticache_user_group_association",
+      "aws_grafana_workspace_service_account_token",
       "delete",
       [
         [
-          "elasticache",
-          "ModifyUserGroup"
+          "grafana",
+          "DeleteWorkspaceServiceAccountToken"
         ]
       ]
     ],
     [
       "resource",
-      "aws_elasticache_user_group_association",
+      "aws_grafana_workspace_service_account_token",
       "read",
+      [
+        [
+          "grafana",
+          "ListWorkspaceServiceAccountTokens"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_grafana_workspace_service_account_token",
+      "update",
       []
     ],
     [
@@ -1111,6 +1016,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -1153,6 +1062,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -1164,6 +1077,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -1202,6 +1119,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeTargetGroups"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyTargetGroupAttributes"
         ],
         [
@@ -1229,6 +1150,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ]
       ]
     ],
@@ -1240,6 +1165,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeTargetGroupAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTargetGroups"
         ],
         [
           "elasticloadbalancingv2",
@@ -1299,6 +1228,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ],
+        [
+          "elasticloadbalancingv2",
           "RemoveTags"
         ]
       ]
@@ -1311,6 +1244,10 @@
         [
           "elasticloadbalancingv2",
           "DeleteTrustStore"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreAssociations"
         ]
       ]
     ],
@@ -1318,13 +1255,22 @@
       "resource",
       "aws_lb_trust_store",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_lb_trust_store",
       "update",
       [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStores"
+        ],
         [
           "elasticloadbalancingv2",
           "ModifyTrustStore"
@@ -1339,6 +1285,10 @@
         [
           "elasticloadbalancingv2",
           "AddTrustStoreRevocations"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreRevocations"
         ]
       ]
     ],
@@ -1357,13 +1307,22 @@
       "resource",
       "aws_lb_trust_store_revocation",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeTrustStoreRevocations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_rds_certificate",
       "create",
       [
+        [
+          "rds",
+          "DescribeCertificates"
+        ],
         [
           "rds",
           "ModifyCertificates"
@@ -1385,7 +1344,12 @@
       "resource",
       "aws_rds_certificate",
       "read",
-      []
+      [
+        [
+          "rds",
+          "DescribeCertificates"
+        ]
+      ]
     ],
     [
       "resource",
@@ -1394,7 +1358,67 @@
       [
         [
           "rds",
+          "DescribeCertificates"
+        ],
+        [
+          "rds",
           "ModifyCertificates"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rekognition_stream_processor",
+      "create",
+      [
+        [
+          "rekognition",
+          "CreateStreamProcessor"
+        ],
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rekognition_stream_processor",
+      "delete",
+      [
+        [
+          "rekognition",
+          "DeleteStreamProcessor"
+        ],
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rekognition_stream_processor",
+      "read",
+      [
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_rekognition_stream_processor",
+      "update",
+      [
+        [
+          "rekognition",
+          "DescribeStreamProcessor"
+        ],
+        [
+          "rekognition",
+          "UpdateStreamProcessor"
         ]
       ]
     ]

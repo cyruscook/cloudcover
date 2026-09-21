@@ -14,12 +14,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_secretsmanager_secrets",
-      "read",
-      []
-    ],
-    [
       "resource",
       "aws_eks_access_entry",
       "create",
@@ -79,6 +73,10 @@
         [
           "eks",
           "AssociateAccessPolicy"
+        ],
+        [
+          "eks",
+          "ListAssociatedAccessPolicies"
         ]
       ]
     ],
@@ -97,7 +95,68 @@
       "resource",
       "aws_eks_access_policy_association",
       "read",
-      []
+      [
+        [
+          "eks",
+          "ListAssociatedAccessPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_intent",
+      "create",
+      [
+        [
+          "lexmodelsv2",
+          "CreateIntent"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_intent",
+      "delete",
+      [
+        [
+          "lexmodelsv2",
+          "DeleteIntent"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_intent",
+      "read",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_intent",
+      "update",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeIntent"
+        ],
+        [
+          "lexmodelsv2",
+          "UpdateIntent"
+        ]
+      ]
     ],
     [
       "resource",
@@ -122,6 +181,25 @@
         [
           "secretsmanager",
           "GetSecretValue"
+        ],
+        [
+          "secretsmanager",
+          "UpdateSecretVersionStage"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_secretsmanager_secret_version",
+      "update",
+      [
+        [
+          "secretsmanager",
+          "GetSecretValue"
+        ],
+        [
+          "secretsmanager",
+          "ListSecretVersionIds"
         ],
         [
           "secretsmanager",

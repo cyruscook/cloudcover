@@ -4,9 +4,14 @@
   "upsert": [
     [
       "data_source",
-      "aws_ec2_client_vpn_endpoint",
+      "aws_chatbot_slack_workspace",
       "read",
-      []
+      [
+        [
+          "chatbot",
+          "DescribeSlackWorkspaces"
+        ]
+      ]
     ],
     [
       "data_source",
@@ -19,184 +24,17 @@
         ],
         [
           "route53",
+          "ListHostedZones"
+        ],
+        [
+          "route53",
+          "ListResourceRecordSets"
+        ],
+        [
+          "route53",
           "ListTagsForResource"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pool",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pool_cidrs",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_ipam_pools",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateCarrierGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteCarrierGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_carrier_gateway",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_authorization_rule",
-      "create",
-      [
-        [
-          "ec2",
-          "AuthorizeClientVpnIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_authorization_rule",
-      "delete",
-      [
-        [
-          "ec2",
-          "RevokeClientVpnIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_authorization_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateClientVpnEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteClientVpnEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_endpoint",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyClientVpnEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_network_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateClientVpnTargetNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_network_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateClientVpnTargetNetwork"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_network_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_route",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateClientVpnRoute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_route",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteClientVpnRoute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_client_vpn_route",
-      "read",
-      []
     ],
     [
       "resource",
@@ -227,6 +65,10 @@
       "delete",
       [
         [
+          "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
           "lambda",
           "DeleteFunction"
         ],
@@ -242,40 +84,45 @@
     ],
     [
       "resource",
-      "aws_main_route_table_association",
+      "aws_lambda_runtime_management_config",
       "create",
       [
         [
-          "ec2",
-          "ReplaceRouteTableAssociation"
+          "lambda",
+          "PutRuntimeManagementConfig"
         ]
       ]
     ],
     [
       "resource",
-      "aws_main_route_table_association",
+      "aws_lambda_runtime_management_config",
       "delete",
       [
         [
-          "ec2",
-          "ReplaceRouteTableAssociation"
+          "lambda",
+          "PutRuntimeManagementConfig"
         ]
       ]
     ],
     [
       "resource",
-      "aws_main_route_table_association",
+      "aws_lambda_runtime_management_config",
       "read",
-      []
+      [
+        [
+          "lambda",
+          "GetRuntimeManagementConfig"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_main_route_table_association",
+      "aws_lambda_runtime_management_config",
       "update",
       [
         [
-          "ec2",
-          "ReplaceRouteTableAssociation"
+          "lambda",
+          "PutRuntimeManagementConfig"
         ]
       ]
     ],
@@ -295,74 +142,6 @@
         [
           "route53",
           "GetHealthCheck"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_record",
-      "create",
-      [
-        [
-          "route53",
-          "ChangeResourceRecordSets"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "GetHostedZone"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_record",
-      "delete",
-      [
-        [
-          "route53",
-          "ChangeResourceRecordSets"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "GetHostedZone"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_record",
-      "read",
-      [
-        [
-          "route53",
-          "GetHostedZone"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_record",
-      "update",
-      [
-        [
-          "route53",
-          "ChangeResourceRecordSets"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "GetHostedZone"
         ]
       ]
     ],
@@ -458,71 +237,10 @@
         [
           "route53",
           "GetHostedZone"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_zone",
-      "delete",
-      [
-        [
-          "route53",
-          "ChangeResourceRecordSets"
         ],
         [
           "route53",
-          "DeleteHostedZone"
-        ],
-        [
-          "route53",
-          "DisableHostedZoneDNSSEC"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "GetDNSSEC"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_zone",
-      "read",
-      [
-        [
-          "route53",
-          "GetHostedZone"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_route53_zone",
-      "update",
-      [
-        [
-          "route53",
-          "AssociateVPCWithHostedZone"
-        ],
-        [
-          "route53",
-          "DisassociateVPCFromHostedZone"
-        ],
-        [
-          "route53",
-          "GetChange"
-        ],
-        [
-          "route53",
-          "GetHostedZone"
-        ],
-        [
-          "route53",
-          "UpdateHostedZoneComment"
+          "ListResourceRecordSets"
         ]
       ]
     ],
@@ -543,340 +261,75 @@
     ],
     [
       "resource",
-      "aws_vpc_ipam",
+      "aws_vpc_endpoint_private_dns",
       "create",
       [
         [
           "ec2",
-          "CreateIpam"
+          "ModifyVpcEndpoint"
         ]
       ]
     ],
     [
       "resource",
-      "aws_vpc_ipam",
+      "aws_vpc_endpoint_private_dns",
       "delete",
-      [
-        [
-          "ec2",
-          "DeleteIpam"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam",
-      "read",
       []
     ],
     [
       "resource",
-      "aws_vpc_ipam",
+      "aws_vpc_endpoint_private_dns",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcEndpoints"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_endpoint_private_dns",
       "update",
       [
         [
           "ec2",
-          "ModifyIpam"
+          "ModifyVpcEndpoint"
         ]
       ]
     ],
     [
       "resource",
-      "aws_vpc_ipam_pool",
+      "aws_vpc_endpoint_service_private_dns_verification",
       "create",
       [
         [
           "ec2",
-          "CreateIpamPool"
+          "DescribeVpcEndpointServiceConfigurations"
+        ],
+        [
+          "ec2",
+          "StartVpcEndpointServicePrivateDnsVerification"
         ]
       ]
     ],
     [
       "resource",
-      "aws_vpc_ipam_pool",
+      "aws_vpc_endpoint_service_private_dns_verification",
       "delete",
-      [
-        [
-          "ec2",
-          "DeleteIpamPool"
-        ]
-      ]
+      []
     ],
     [
       "resource",
-      "aws_vpc_ipam_pool",
+      "aws_vpc_endpoint_service_private_dns_verification",
       "read",
       []
     ],
     [
       "resource",
-      "aws_vpc_ipam_pool",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyIpamPool"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "create",
-      [
-        [
-          "ec2",
-          "ProvisionIpamPoolCidr"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeprovisionIpamPoolCidr"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr_allocation",
-      "create",
-      [
-        [
-          "ec2",
-          "AllocateIpamPoolCidr"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_pool_cidr_allocation",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateIpamResourceDiscovery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteIpamResourceDiscovery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyIpamResourceDiscovery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateIpamResourceDiscovery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateIpamResourceDiscovery"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_resource_discovery_association",
+      "aws_vpc_endpoint_service_private_dns_verification",
       "update",
       []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateIpamScope"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteIpamScope"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipam_scope",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyIpamScope"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_connection",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateVpnConnection"
-        ],
-        [
-          "ec2",
-          "DescribeVpnConnections"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_connection",
-      "read",
-      [
-        [
-          "ec2",
-          "DescribeVpnConnections"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpn_connection",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeVpnConnections"
-        ],
-        [
-          "ec2",
-          "ModifyVpnConnection"
-        ],
-        [
-          "ec2",
-          "ModifyVpnConnectionOptions"
-        ],
-        [
-          "ec2",
-          "ModifyVpnTunnelOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "create",
-      [
-        [
-          "wafv2",
-          "AssociatedResourceType_Values"
-        ],
-        [
-          "wafv2",
-          "CreateWebACL"
-        ],
-        [
-          "wafv2",
-          "GetWebACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "read",
-      [
-        [
-          "wafv2",
-          "AssociatedResourceType_Values"
-        ],
-        [
-          "wafv2",
-          "GetWebACL"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_wafv2_web_acl",
-      "update",
-      [
-        [
-          "wafv2",
-          "AssociatedResourceType_Values"
-        ],
-        [
-          "wafv2",
-          "GetWebACL"
-        ],
-        [
-          "wafv2",
-          "UpdateWebACL"
-        ]
-      ]
     ]
   ]
 }

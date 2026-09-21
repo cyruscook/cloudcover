@@ -4,25 +4,6 @@
   "upsert": [
     [
       "resource",
-      "aws_sagemaker_model",
-      "create",
-      [
-        [
-          "sagemaker",
-          "CreateModel"
-        ],
-        [
-          "sagemaker",
-          "DescribeModel"
-        ],
-        [
-          "sagemaker",
-          "ListTags"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_waf_rule",
       "create",
       [

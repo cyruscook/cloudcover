@@ -3,6 +3,17 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_emr_supported_instance_types",
+      "read",
+      [
+        [
+          "emr",
+          "ListSupportedInstanceTypes"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_appflow_connector_profile",
       "delete",
@@ -10,6 +21,45 @@
         [
           "appflow",
           "DeleteConnectorProfile"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_apprunner_default_auto_scaling_configuration_version",
+      "create",
+      [
+        [
+          "apprunner",
+          "UpdateDefaultAutoScalingConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_apprunner_default_auto_scaling_configuration_version",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_apprunner_default_auto_scaling_configuration_version",
+      "read",
+      [
+        [
+          "apprunner",
+          "ListAutoScalingConfigurations"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_apprunner_default_auto_scaling_configuration_version",
+      "update",
+      [
+        [
+          "apprunner",
+          "UpdateDefaultAutoScalingConfiguration"
         ]
       ]
     ],
@@ -288,18 +338,50 @@
     ],
     [
       "resource",
-      "aws_s3_bucket_lifecycle_configuration",
+      "aws_lexv2models_bot_version",
       "create",
       [
         [
-          "s3",
-          "GetBucketLifecycleConfiguration"
+          "lexmodelsv2",
+          "CreateBotVersion"
         ],
         [
-          "s3",
-          "PutBucketLifecycleConfiguration"
+          "lexmodelsv2",
+          "DescribeBotVersion"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot_version",
+      "delete",
+      [
+        [
+          "lexmodelsv2",
+          "DeleteBotVersion"
+        ],
+        [
+          "lexmodelsv2",
+          "DescribeBotVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot_version",
+      "read",
+      [
+        [
+          "lexmodelsv2",
+          "DescribeBotVersion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_lexv2models_bot_version",
+      "update",
+      []
     ],
     [
       "resource",
@@ -313,21 +395,6 @@
         [
           "s3",
           "GetBucketLifecycleConfiguration"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3_bucket_lifecycle_configuration",
-      "update",
-      [
-        [
-          "s3",
-          "GetBucketLifecycleConfiguration"
-        ],
-        [
-          "s3",
-          "PutBucketLifecycleConfiguration"
         ]
       ]
     ],
@@ -358,6 +425,210 @@
         [
           "s3",
           "GetBucketReplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grant",
+      "create",
+      [
+        [
+          "s3control",
+          "CreateAccessGrant"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grant",
+      "delete",
+      [
+        [
+          "s3control",
+          "DeleteAccessGrant"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grant",
+      "read",
+      [
+        [
+          "s3control",
+          "GetAccessGrant"
+        ],
+        [
+          "s3control",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grant",
+      "update",
+      [
+        [
+          "s3control",
+          "TagResource"
+        ],
+        [
+          "s3control",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance",
+      "create",
+      [
+        [
+          "s3control",
+          "CreateAccessGrantsInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance",
+      "delete",
+      [
+        [
+          "s3control",
+          "DeleteAccessGrantsInstance"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance",
+      "read",
+      [
+        [
+          "s3control",
+          "GetAccessGrantsInstance"
+        ],
+        [
+          "s3control",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance",
+      "update",
+      [
+        [
+          "s3control",
+          "TagResource"
+        ],
+        [
+          "s3control",
+          "UntagResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance_resource_policy",
+      "create",
+      [
+        [
+          "s3control",
+          "PutAccessGrantsInstanceResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance_resource_policy",
+      "delete",
+      [
+        [
+          "s3control",
+          "DeleteAccessGrantsInstanceResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance_resource_policy",
+      "read",
+      [
+        [
+          "s3control",
+          "GetAccessGrantsInstanceResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_instance_resource_policy",
+      "update",
+      [
+        [
+          "s3control",
+          "PutAccessGrantsInstanceResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_location",
+      "create",
+      [
+        [
+          "s3control",
+          "CreateAccessGrantsLocation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_location",
+      "delete",
+      [
+        [
+          "s3control",
+          "DeleteAccessGrantsLocation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_location",
+      "read",
+      [
+        [
+          "s3control",
+          "GetAccessGrantsLocation"
+        ],
+        [
+          "s3control",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_s3control_access_grants_location",
+      "update",
+      [
+        [
+          "s3control",
+          "TagResource"
+        ],
+        [
+          "s3control",
+          "UntagResource"
+        ],
+        [
+          "s3control",
+          "UpdateAccessGrantsLocation"
         ]
       ]
     ]

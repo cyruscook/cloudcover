@@ -4,18 +4,16 @@
   "upsert": [
     [
       "data_source",
-      "aws_ssoadmin_instances",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_ssoadmin_permission_set",
       "read",
       [
         [
           "ssoadmin",
           "DescribePermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ListPermissionSets"
         ],
         [
           "ssoadmin",
@@ -43,6 +41,106 @@
         [
           "docdb",
           "RemoveFromGlobalCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdbelastic_cluster",
+      "create",
+      [
+        [
+          "docdbelastic",
+          "CreateCluster"
+        ],
+        [
+          "docdbelastic",
+          "GetCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdbelastic_cluster",
+      "delete",
+      [
+        [
+          "docdbelastic",
+          "DeleteCluster"
+        ],
+        [
+          "docdbelastic",
+          "GetCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdbelastic_cluster",
+      "read",
+      [
+        [
+          "docdbelastic",
+          "GetCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_docdbelastic_cluster",
+      "update",
+      [
+        [
+          "docdbelastic",
+          "GetCluster"
+        ],
+        [
+          "docdbelastic",
+          "UpdateCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_pod_identity_association",
+      "create",
+      [
+        [
+          "eks",
+          "CreatePodIdentityAssociation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_pod_identity_association",
+      "delete",
+      [
+        [
+          "eks",
+          "DeletePodIdentityAssociation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_pod_identity_association",
+      "read",
+      [
+        [
+          "eks",
+          "DescribePodIdentityAssociation"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_eks_pod_identity_association",
+      "update",
+      [
+        [
+          "eks",
+          "UpdatePodIdentityAssociation"
         ]
       ]
     ],
@@ -105,74 +203,18 @@
     ],
     [
       "resource",
-      "aws_ssoadmin_account_assignment",
-      "create",
+      "aws_s3_directory_bucket",
+      "delete",
       [
         [
-          "ssoadmin",
-          "CreateAccountAssignment"
+          "s3",
+          "DeleteBucket"
         ],
         [
-          "ssoadmin",
-          "DescribeAccountAssignmentCreationStatus"
+          "s3",
+          "ListObjectsV2"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_account_assignment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachCustomerManagedPolicyReferenceToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "DescribePermissionSetProvisioningStatus"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_customer_managed_policy_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "create",
-      [
-        [
-          "ssoadmin",
-          "AttachManagedPolicyToPermissionSet"
-        ],
-        [
-          "ssoadmin",
-          "DescribePermissionSetProvisioningStatus"
-        ],
-        [
-          "ssoadmin",
-          "ProvisionPermissionSet"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ssoadmin_managed_policy_attachment",
-      "read",
-      []
     ],
     [
       "resource",

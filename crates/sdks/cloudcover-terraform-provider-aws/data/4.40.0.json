@@ -45,67 +45,6 @@
     ],
     [
       "resource",
-      "aws_acm_certificate",
-      "create",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "KeyAlgorithm_Values"
-        ],
-        [
-          "acm",
-          "RequestCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "read",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "KeyAlgorithm_Values"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "update",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "KeyAlgorithm_Values"
-        ],
-        [
-          "acm",
-          "RenewCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_appconfig_extension",
       "create",
       [

@@ -25,6 +25,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyCapacityReservation"
         ],
         [
@@ -65,6 +69,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -80,6 +88,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -130,6 +142,10 @@
         ],
         [
           "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
+        ],
+        [
+          "elasticloadbalancingv2",
           "ModifyCapacityReservation"
         ],
         [
@@ -170,6 +186,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ]
       ]
     ],
@@ -185,6 +205,10 @@
         [
           "elasticloadbalancingv2",
           "DescribeLoadBalancerAttributes"
+        ],
+        [
+          "elasticloadbalancingv2",
+          "DescribeLoadBalancers"
         ],
         [
           "elasticloadbalancingv2",
@@ -238,7 +262,12 @@
       "resource",
       "aws_notifications_channel_association",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListChannels"
+        ]
+      ]
     ],
     [
       "resource",
@@ -361,6 +390,10 @@
       [
         [
           "notifications",
+          "ListNotificationHubs"
+        ],
+        [
+          "notifications",
           "RegisterNotificationHub"
         ]
       ]
@@ -373,6 +406,10 @@
         [
           "notifications",
           "DeregisterNotificationHub"
+        ],
+        [
+          "notifications",
+          "ListNotificationHubs"
         ]
       ]
     ],
@@ -380,7 +417,12 @@
       "resource",
       "aws_notifications_notification_hub",
       "read",
-      []
+      [
+        [
+          "notifications",
+          "ListNotificationHubs"
+        ]
+      ]
     ],
     [
       "resource",
@@ -443,6 +485,10 @@
         [
           "organizations",
           "DescribeAccount"
+        ],
+        [
+          "organizations",
+          "ListParents"
         ],
         [
           "organizations",

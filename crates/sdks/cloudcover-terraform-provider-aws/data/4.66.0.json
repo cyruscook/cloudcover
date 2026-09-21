@@ -235,7 +235,19 @@
       [
         [
           "directoryservice",
+          "ConnectDirectory"
+        ],
+        [
+          "directoryservice",
           "CreateAlias"
+        ],
+        [
+          "directoryservice",
+          "CreateDirectory"
+        ],
+        [
+          "directoryservice",
+          "CreateMicrosoftAD"
         ],
         [
           "directoryservice",
@@ -252,6 +264,58 @@
         [
           "directoryservice",
           "UpdateNumberOfDomainControllers"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_trust",
+      "create",
+      [
+        [
+          "directoryservice",
+          "CreateTrust"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_trust",
+      "delete",
+      [
+        [
+          "directoryservice",
+          "DeleteTrust"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_trust",
+      "read",
+      [
+        [
+          "directoryservice",
+          "DescribeConditionalForwarders"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directory_service_trust",
+      "update",
+      [
+        [
+          "directoryservice",
+          "DescribeConditionalForwarders"
+        ],
+        [
+          "directoryservice",
+          "UpdateConditionalForwarder"
+        ],
+        [
+          "directoryservice",
+          "UpdateTrust"
         ]
       ]
     ],
@@ -493,6 +557,10 @@
       [
         [
           "vpclattice",
+          "ListTargets"
+        ],
+        [
+          "vpclattice",
           "RegisterTargets"
         ]
       ]
@@ -505,6 +573,10 @@
         [
           "vpclattice",
           "DeregisterTargets"
+        ],
+        [
+          "vpclattice",
+          "ListTargets"
         ]
       ]
     ],
@@ -512,7 +584,12 @@
       "resource",
       "aws_vpclattice_target_group_attachment",
       "read",
-      []
+      [
+        [
+          "vpclattice",
+          "ListTargets"
+        ]
+      ]
     ]
   ]
 }

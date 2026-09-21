@@ -21,6 +21,10 @@
         ],
         [
           "ssoadmin",
+          "ListManagedPoliciesInPermissionSet"
+        ],
+        [
+          "ssoadmin",
           "ProvisionPermissionSet"
         ]
       ]
@@ -35,7 +39,12 @@
       "resource",
       "aws_ssoadmin_managed_policy_attachments_exclusive",
       "read",
-      []
+      [
+        [
+          "ssoadmin",
+          "ListManagedPoliciesInPermissionSet"
+        ]
+      ]
     ],
     [
       "resource",
@@ -53,6 +62,10 @@
         [
           "ssoadmin",
           "DetachManagedPolicyFromPermissionSet"
+        ],
+        [
+          "ssoadmin",
+          "ListManagedPoliciesInPermissionSet"
         ],
         [
           "ssoadmin",

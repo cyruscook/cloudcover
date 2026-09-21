@@ -13,6 +13,14 @@
         ],
         [
           "rds",
+          "DescribeDBClusters"
+        ],
+        [
+          "rds",
+          "DescribeGlobalClusters"
+        ],
+        [
+          "rds",
           "DisableHttpEndpoint"
         ],
         [
@@ -34,6 +42,118 @@
         [
           "rds",
           "RemoveRoleFromDBCluster"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_exclusion",
+      "create",
+      [
+        [
+          "ec2",
+          "CreateVpcBlockPublicAccessExclusion"
+        ],
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_exclusion",
+      "delete",
+      [
+        [
+          "ec2",
+          "DeleteVpcBlockPublicAccessExclusion"
+        ],
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_exclusion",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_exclusion",
+      "update",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessExclusions"
+        ],
+        [
+          "ec2",
+          "ModifyVpcBlockPublicAccessExclusion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_options",
+      "create",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
+        [
+          "ec2",
+          "ModifyVpcBlockPublicAccessOptions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_options",
+      "delete",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
+        [
+          "ec2",
+          "ModifyVpcBlockPublicAccessOptions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_options",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_vpc_block_public_access_options",
+      "update",
+      [
+        [
+          "ec2",
+          "DescribeVpcBlockPublicAccessOptions"
+        ],
+        [
+          "ec2",
+          "ModifyVpcBlockPublicAccessOptions"
         ]
       ]
     ]

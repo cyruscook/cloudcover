@@ -78,6 +78,10 @@
         [
           "ec2",
           "CreateVerifiedAccessTrustProvider"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessTrustProviders"
         ]
       ]
     ],
@@ -96,13 +100,22 @@
       "resource",
       "aws_verifiedaccess_trust_provider",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeVerifiedAccessTrustProviders"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_verifiedaccess_trust_provider",
       "update",
       [
+        [
+          "ec2",
+          "DescribeVerifiedAccessTrustProviders"
+        ],
         [
           "ec2",
           "ModifyVerifiedAccessTrustProvider"

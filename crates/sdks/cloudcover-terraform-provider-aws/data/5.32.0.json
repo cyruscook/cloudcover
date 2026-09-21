@@ -38,27 +38,6 @@
     ],
     [
       "data_source",
-      "aws_kinesis_stream_consumer",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_mq_broker",
-      "read",
-      [
-        [
-          "mq",
-          "DescribeBroker"
-        ],
-        [
-          "mq",
-          "DescribeUser"
-        ]
-      ]
-    ],
-    [
-      "data_source",
       "aws_mq_broker_engine_types",
       "read",
       [
@@ -92,40 +71,6 @@
     ],
     [
       "data_source",
-      "aws_msk_broker_nodes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_msk_cluster",
-      "read",
-      [
-        [
-          "kafka",
-          "GetBootstrapBrokers"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_msk_configuration",
-      "read",
-      [
-        [
-          "kafka",
-          "DescribeConfigurationRevision"
-        ]
-      ]
-    ],
-    [
-      "data_source",
-      "aws_msk_kafka_version",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_prometheus_workspace",
       "read",
       [
@@ -143,6 +88,17 @@
         [
           "amp",
           "ListWorkspaces"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_verifiedpermissions_policy_store",
+      "read",
+      [
+        [
+          "verifiedpermissions",
+          "GetPolicyStore"
         ]
       ]
     ],
@@ -223,10 +179,6 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "RestoreTableToPointInTime"
         ],
         [
@@ -242,22 +194,57 @@
           "UpdateTimeToLive"
         ],
         [
-          "dynamodb",
-          "newClient"
-        ],
-        [
           "kms",
           "DescribeKey"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "newClient"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_ebs_fast_snapshot_restore",
+      "create",
+      [
+        [
+          "ec2",
+          "DescribeFastSnapshotRestores"
+        ],
+        [
+          "ec2",
+          "EnableFastSnapshotRestores"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ebs_fast_snapshot_restore",
+      "delete",
+      [
+        [
+          "ec2",
+          "DescribeFastSnapshotRestores"
+        ],
+        [
+          "ec2",
+          "DisableFastSnapshotRestores"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ebs_fast_snapshot_restore",
+      "read",
+      [
+        [
+          "ec2",
+          "DescribeFastSnapshotRestores"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ebs_fast_snapshot_restore",
+      "update",
+      []
     ],
     [
       "resource",
@@ -315,6 +302,62 @@
     ],
     [
       "resource",
+      "aws_elasticache_serverless_cache",
+      "create",
+      [
+        [
+          "elasticache",
+          "CreateServerlessCache"
+        ],
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_serverless_cache",
+      "delete",
+      [
+        [
+          "elasticache",
+          "DeleteServerlessCache"
+        ],
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_serverless_cache",
+      "read",
+      [
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_elasticache_serverless_cache",
+      "update",
+      [
+        [
+          "elasticache",
+          "DescribeServerlessCaches"
+        ],
+        [
+          "elasticache",
+          "ModifyServerlessCache"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_imagebuilder_workflow",
       "create",
       [
@@ -363,6 +406,50 @@
     ],
     [
       "resource",
+      "aws_kinesis_resource_policy",
+      "create",
+      [
+        [
+          "kinesis",
+          "PutResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesis_resource_policy",
+      "delete",
+      [
+        [
+          "kinesis",
+          "DeleteResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesis_resource_policy",
+      "read",
+      [
+        [
+          "kinesis",
+          "GetResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kinesis_resource_policy",
+      "update",
+      [
+        [
+          "kinesis",
+          "PutResourcePolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_kinesis_stream",
       "create",
       [
@@ -399,40 +486,8 @@
     [
       "resource",
       "aws_msk_scram_secret_association",
-      "create",
-      [
-        [
-          "kafka",
-          "BatchAssociateScramSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
       "delete",
       [
-        [
-          "kafka",
-          "BatchDisassociateScramSecret"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_msk_scram_secret_association",
-      "update",
-      [
-        [
-          "kafka",
-          "BatchAssociateScramSecret"
-        ],
         [
           "kafka",
           "BatchDisassociateScramSecret"
@@ -550,6 +605,53 @@
           "PutRuleGroupsNamespace"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_prometheus_scraper",
+      "create",
+      [
+        [
+          "amp",
+          "CreateScraper"
+        ],
+        [
+          "amp",
+          "DescribeScraper"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_prometheus_scraper",
+      "delete",
+      [
+        [
+          "amp",
+          "DeleteScraper"
+        ],
+        [
+          "amp",
+          "DescribeScraper"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_prometheus_scraper",
+      "read",
+      [
+        [
+          "amp",
+          "DescribeScraper"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_prometheus_scraper",
+      "update",
+      []
     ],
     [
       "resource",
@@ -990,12 +1092,102 @@
     ],
     [
       "resource",
+      "aws_securitylake_aws_log_source",
+      "create",
+      [
+        [
+          "securitylake",
+          "CreateAwsLogSource"
+        ],
+        [
+          "securitylake",
+          "ListLogSources"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_aws_log_source",
+      "delete",
+      [
+        [
+          "securitylake",
+          "DeleteAwsLogSource"
+        ],
+        [
+          "securitylake",
+          "ListLogSources"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_aws_log_source",
+      "read",
+      [
+        [
+          "securitylake",
+          "ListLogSources"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_aws_log_source",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_access_scope",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "PutApplicationAccessScope"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_access_scope",
+      "delete",
+      [
+        [
+          "ssoadmin",
+          "DeleteApplicationAccessScope"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_access_scope",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "GetApplicationAccessScope"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_access_scope",
+      "update",
+      []
+    ],
+    [
+      "resource",
       "aws_verifiedaccess_endpoint",
       "create",
       [
         [
           "ec2",
           "CreateVerifiedAccessEndpoint"
+        ],
+        [
+          "ec2",
+          "DescribeVerifiedAccessEndpoints"
         ],
         [
           "ec2",
@@ -1010,6 +1202,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ]
       ]
@@ -1021,6 +1217,10 @@
       [
         [
           "ec2",
+          "DescribeVerifiedAccessEndpoints"
+        ],
+        [
+          "ec2",
           "GetVerifiedAccessEndpointPolicy"
         ],
         [
@@ -1030,6 +1230,142 @@
         [
           "ec2",
           "ModifyVerifiedAccessEndpointPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_store",
+      "create",
+      [
+        [
+          "verifiedpermissions",
+          "CreatePolicyStore"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_store",
+      "delete",
+      [
+        [
+          "verifiedpermissions",
+          "DeletePolicyStore"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_store",
+      "read",
+      [
+        [
+          "verifiedpermissions",
+          "GetPolicyStore"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_store",
+      "update",
+      [
+        [
+          "verifiedpermissions",
+          "UpdatePolicyStore"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_template",
+      "create",
+      [
+        [
+          "verifiedpermissions",
+          "CreatePolicyTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_template",
+      "delete",
+      [
+        [
+          "verifiedpermissions",
+          "DeletePolicyTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_template",
+      "read",
+      [
+        [
+          "verifiedpermissions",
+          "GetPolicyTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_policy_template",
+      "update",
+      [
+        [
+          "verifiedpermissions",
+          "UpdatePolicyTemplate"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_schema",
+      "create",
+      [
+        [
+          "verifiedpermissions",
+          "PutSchema"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_schema",
+      "delete",
+      [
+        [
+          "verifiedpermissions",
+          "PutSchema"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_schema",
+      "read",
+      [
+        [
+          "verifiedpermissions",
+          "GetSchema"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_verifiedpermissions_schema",
+      "update",
+      [
+        [
+          "verifiedpermissions",
+          "GetSchema"
+        ],
+        [
+          "verifiedpermissions",
+          "PutSchema"
         ]
       ]
     ]

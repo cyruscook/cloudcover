@@ -63,18 +63,6 @@
       ]
     ],
     [
-      "data_source",
-      "aws_ec2_network_insights_analysis",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_network_insights_path",
-      "read",
-      []
-    ],
-    [
       "resource",
       "aws_docdb_cluster",
       "create",
@@ -82,6 +70,14 @@
         [
           "docdb",
           "CreateDBCluster"
+        ],
+        [
+          "docdb",
+          "DescribeDBClusters"
+        ],
+        [
+          "docdb",
+          "DescribeGlobalClusters"
         ],
         [
           "docdb",
@@ -99,49 +95,59 @@
     ],
     [
       "resource",
-      "aws_ec2_network_insights_analysis",
+      "aws_drs_replication_configuration_template",
       "create",
       [
         [
-          "ec2",
-          "StartNetworkInsightsAnalysis"
+          "drs",
+          "CreateReplicationConfigurationTemplate"
+        ],
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_network_insights_analysis",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_analysis",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_network_insights_path",
-      "create",
+      "aws_drs_replication_configuration_template",
+      "delete",
       [
         [
-          "ec2",
-          "CreateNetworkInsightsPath"
+          "drs",
+          "DeleteReplicationConfigurationTemplate"
+        ],
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
         ]
       ]
     ],
     [
       "resource",
-      "aws_ec2_network_insights_path",
+      "aws_drs_replication_configuration_template",
       "read",
-      []
+      [
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_ec2_network_insights_path",
+      "aws_drs_replication_configuration_template",
       "update",
-      []
+      [
+        [
+          "drs",
+          "DescribeReplicationConfigurationTemplates"
+        ],
+        [
+          "drs",
+          "UpdateReplicationConfigurationTemplate"
+        ]
+      ]
     ],
     [
       "resource",
@@ -202,6 +208,10 @@
       [
         [
           "rum",
+          "ListRumMetricsDestinations"
+        ],
+        [
+          "rum",
           "PutRumMetricsDestination"
         ]
       ]
@@ -221,13 +231,22 @@
       "resource",
       "aws_rum_metrics_destination",
       "read",
-      []
+      [
+        [
+          "rum",
+          "ListRumMetricsDestinations"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_rum_metrics_destination",
       "update",
       [
+        [
+          "rum",
+          "ListRumMetricsDestinations"
+        ],
         [
           "rum",
           "PutRumMetricsDestination"

@@ -4,50 +4,18 @@
   "upsert": [
     [
       "data_source",
-      "aws_db_cluster_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_db_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_managed_prefix_list",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ec2_managed_prefix_lists",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_fsx_ontap_file_system",
-      "read",
-      []
-    ],
-    [
-      "data_source",
       "aws_fsx_ontap_storage_virtual_machine",
       "read",
       [
         [
           "fsx",
+          "DescribeStorageVirtualMachines"
+        ],
+        [
+          "fsx",
           "ListTagsForResource"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_fsx_ontap_storage_virtual_machines",
-      "read",
-      []
     ],
     [
       "data_source",
@@ -56,15 +24,13 @@
       [
         [
           "fsx",
+          "DescribeSnapshots"
+        ],
+        [
+          "fsx",
           "ListTagsForResource"
         ]
       ]
-    ],
-    [
-      "data_source",
-      "aws_fsx_windows_file_system",
-      "read",
-      []
     ],
     [
       "data_source",
@@ -83,91 +49,7 @@
     ],
     [
       "data_source",
-      "aws_inspector_rules_packages",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_nat_gateway",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_nat_gateways",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_network_acls",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_network_interfaces",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_rds_reserved_instance_offering",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_security_group",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_security_groups",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_subnet",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_subnets",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_peering_connection",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpc_peering_connections",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_vpcs",
+      "aws_service_principal",
       "read",
       []
     ],
@@ -277,6 +159,10 @@
         ],
         [
           "rds",
+          "DescribeDBClusterSnapshots"
+        ],
+        [
+          "rds",
           "ModifyDBClusterSnapshotAttribute"
         ]
       ]
@@ -289,6 +175,10 @@
         [
           "rds",
           "DescribeDBClusterSnapshotAttributes"
+        ],
+        [
+          "rds",
+          "DescribeDBClusterSnapshots"
         ]
       ]
     ],
@@ -303,77 +193,11 @@
         ],
         [
           "rds",
+          "DescribeDBClusterSnapshots"
+        ],
+        [
+          "rds",
           "ModifyDBClusterSnapshotAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_parameter_group",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBParameterGroup"
-        ],
-        [
-          "rds",
-          "ModifyDBParameterGroup"
-        ],
-        [
-          "rds",
-          "ResetDBParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_db_parameter_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBParameterGroup"
-        ],
-        [
-          "rds",
-          "ResetDBParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_snapshot",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBSnapshot"
-        ],
-        [
-          "rds",
-          "DescribeDBSnapshotAttributes"
-        ],
-        [
-          "rds",
-          "ModifyDBSnapshotAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_db_snapshot",
-      "read",
-      [
-        [
-          "rds",
-          "DescribeDBSnapshotAttributes"
         ]
       ]
     ],
@@ -392,6 +216,10 @@
         ],
         [
           "rds",
+          "DescribeDBSnapshots"
+        ],
+        [
+          "rds",
           "ModifyDBSnapshotAttribute"
         ]
       ]
@@ -404,6 +232,10 @@
         [
           "rds",
           "DescribeDBSnapshotAttributes"
+        ],
+        [
+          "rds",
+          "DescribeDBSnapshots"
         ]
       ]
     ],
@@ -415,6 +247,10 @@
         [
           "rds",
           "DescribeDBSnapshotAttributes"
+        ],
+        [
+          "rds",
+          "DescribeDBSnapshots"
         ],
         [
           "rds",
@@ -445,28 +281,7 @@
         ],
         [
           "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_network_acl",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_network_acl",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "DeleteNetworkAclEntry"
+          "DescribeNetworkAcls"
         ],
         [
           "ec2",
@@ -497,32 +312,11 @@
         ],
         [
           "ec2",
-          "RevokeSecurityGroupEgress"
+          "DescribeSecurityGroupRules"
         ],
         [
           "ec2",
-          "RevokeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_security_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_security_group",
-      "update",
-      [
-        [
-          "ec2",
-          "AuthorizeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "AuthorizeSecurityGroupIngress"
+          "DescribeSecurityGroups"
         ],
         [
           "ec2",
@@ -557,28 +351,7 @@
         ],
         [
           "ec2",
-          "DisassociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_subnet",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateSubnetCidrBlock"
+          "DescribeSubnets"
         ],
         [
           "ec2",
@@ -589,91 +362,6 @@
           "ModifySubnetAttribute"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "create",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_default_vpc_dhcp_options",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "create",
-      [
-        [
-          "ec2",
-          "ModifyManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "delete",
-      [
-        [
-          "ec2",
-          "ModifyManagedPrefixList"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_managed_prefix_list_entry",
-      "read",
-      []
     ],
     [
       "resource",
@@ -687,31 +375,12 @@
         [
           "efs",
           "DescribeMountTargetSecurityGroups"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "create",
-      [
+        ],
         [
-          "ec2",
-          "CreateEgressOnlyInternetGateway"
+          "efs",
+          "DescribeMountTargets"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_egress_only_internet_gateway",
-      "update",
-      []
     ],
     [
       "resource",
@@ -733,6 +402,10 @@
         [
           "elasticbeanstalk",
           "DescribeEnvironments"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEvents"
         ]
       ]
     ],
@@ -771,481 +444,14 @@
         [
           "elasticbeanstalk",
           "DescribeEnvironments"
+        ],
+        [
+          "elasticbeanstalk",
+          "DescribeEvents"
         ],
         [
           "elasticbeanstalk",
           "UpdateEnvironment"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_flow_log",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateFlowLogs"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_flow_log",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_flow_log",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_backup",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateBackup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_backup",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteBackup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_backup",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_backup",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_data_repository_association",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateDataRepositoryAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_data_repository_association",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteDataRepositoryAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_data_repository_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_data_repository_association",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateDataRepositoryAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_file_cache",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateFileCache"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_file_cache",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteFileCache"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_file_cache",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_file_cache",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateFileCache"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_lustre_file_system",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateFileSystem"
-        ],
-        [
-          "fsx",
-          "CreateFileSystemFromBackup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_lustre_file_system",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_lustre_file_system",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_lustre_file_system",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_file_system",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_file_system",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_file_system",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_file_system",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateStorageVirtualMachine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteStorageVirtualMachine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_storage_virtual_machine",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateStorageVirtualMachine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_volume",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_volume",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_volume",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_ontap_volume",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_file_system",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateFileSystem"
-        ],
-        [
-          "fsx",
-          "CreateFileSystemFromBackup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_file_system",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_file_system",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_file_system",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateFileSystem"
-        ],
-        [
-          "fsx",
-          "UpdateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_snapshot",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_snapshot",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_snapshot",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateSnapshot"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_volume",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_volume",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_volume",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_openzfs_volume",
-      "update",
-      [
-        [
-          "fsx",
-          "UpdateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_windows_file_system",
-      "create",
-      [
-        [
-          "fsx",
-          "CreateFileSystem"
-        ],
-        [
-          "fsx",
-          "CreateFileSystemFromBackup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_windows_file_system",
-      "delete",
-      [
-        [
-          "fsx",
-          "DeleteFileSystem"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_fsx_windows_file_system",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_fsx_windows_file_system",
-      "update",
-      [
-        [
-          "fsx",
-          "AssociateFileSystemAliases"
-        ],
-        [
-          "fsx",
-          "DisassociateFileSystemAliases"
-        ],
-        [
-          "fsx",
-          "UpdateFileSystem"
         ]
       ]
     ],
@@ -1284,6 +490,18 @@
         ],
         [
           "iam",
+          "ListAttachedRolePolicies"
+        ],
+        [
+          "iam",
+          "ListInstanceProfilesForRole"
+        ],
+        [
+          "iam",
+          "ListRolePolicies"
+        ],
+        [
+          "iam",
           "PutRolePolicy"
         ],
         [
@@ -1315,6 +533,10 @@
         ],
         [
           "inspector",
+          "ListEventSubscriptions"
+        ],
+        [
+          "inspector",
           "SetTagsForResource"
         ],
         [
@@ -1322,115 +544,6 @@
           "SubscribeToEvent"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_inspector_assessment_template",
-      "read",
-      [
-        [
-          "inspector",
-          "DescribeAssessmentTemplates"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_inspector_assessment_template",
-      "update",
-      [
-        [
-          "inspector",
-          "DescribeAssessmentTemplates"
-        ],
-        [
-          "inspector",
-          "SubscribeToEvent"
-        ],
-        [
-          "inspector",
-          "UnsubscribeFromEvent"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachInternetGateway"
-        ],
-        [
-          "ec2",
-          "CreateInternetGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteInternetGateway"
-        ],
-        [
-          "ec2",
-          "DetachInternetGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_internet_gateway",
-      "update",
-      [
-        [
-          "ec2",
-          "AttachInternetGateway"
-        ],
-        [
-          "ec2",
-          "DetachInternetGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway_attachment",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachInternetGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway_attachment",
-      "delete",
-      [
-        [
-          "ec2",
-          "DetachInternetGateway"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_internet_gateway_attachment",
-      "read",
-      []
     ],
     [
       "resource",
@@ -1528,663 +641,45 @@
     ],
     [
       "resource",
-      "aws_nat_gateway",
+      "aws_shield_subscription",
       "create",
       [
         [
-          "ec2",
-          "CreateNatGateway"
+          "shield",
+          "CreateSubscription"
         ]
       ]
     ],
     [
       "resource",
-      "aws_nat_gateway",
+      "aws_shield_subscription",
       "delete",
       [
         [
-          "ec2",
-          "DeleteNatGateway"
+          "shield",
+          "UpdateSubscription"
         ]
       ]
     ],
     [
       "resource",
-      "aws_nat_gateway",
+      "aws_shield_subscription",
       "read",
-      []
+      [
+        [
+          "shield",
+          "DescribeSubscription"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_nat_gateway",
+      "aws_shield_subscription",
       "update",
       [
         [
-          "ec2",
-          "AssignPrivateNatGatewayAddress"
-        ],
-        [
-          "ec2",
-          "AssociateNatGatewayAddress"
-        ],
-        [
-          "ec2",
-          "DisassociateNatGatewayAddress"
-        ],
-        [
-          "ec2",
-          "UnassignPrivateNatGatewayAddress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateNetworkAcl"
-        ],
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkAcl"
-        ],
-        [
-          "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_acl",
-      "update",
-      [
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "DeleteNetworkAclEntry"
-        ],
-        [
-          "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_association",
-      "create",
-      [
-        [
-          "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "ReplaceNetworkAclAssociation"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_acl_rule",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateNetworkAclEntry"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_acl_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_attachment",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachNetworkInterface"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "create",
-      [
-        [
-          "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "delete",
-      [
-        [
-          "ec2",
-          "ModifyNetworkInterfaceAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_network_interface_sg_attachment",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBClusterEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "delete",
-      [
-        [
-          "rds",
-          "DeleteDBClusterEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_endpoint",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBClusterEndpoint"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_parameter_group",
-      "create",
-      [
-        [
-          "rds",
-          "CreateDBClusterParameterGroup"
-        ],
-        [
-          "rds",
-          "ModifyDBClusterParameterGroup"
-        ],
-        [
-          "rds",
-          "ResetDBClusterParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_parameter_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_parameter_group",
-      "update",
-      [
-        [
-          "rds",
-          "ModifyDBClusterParameterGroup"
-        ],
-        [
-          "rds",
-          "ResetDBClusterParameterGroup"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_role_association",
-      "create",
-      [
-        [
-          "rds",
-          "AddRoleToDBCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_role_association",
-      "delete",
-      [
-        [
-          "rds",
-          "RemoveRoleFromDBCluster"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_cluster_role_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "create",
-      [
-        [
-          "ec2",
-          "AuthorizeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "AuthorizeSecurityGroupIngress"
-        ],
-        [
-          "ec2",
-          "CreateSecurityGroup"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteNetworkInterface"
-        ],
-        [
-          "ec2",
-          "DeleteSecurityGroup"
-        ],
-        [
-          "ec2",
-          "DetachNetworkInterface"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_security_group",
-      "update",
-      [
-        [
-          "ec2",
-          "AuthorizeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "AuthorizeSecurityGroupIngress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "create",
-      [
-        [
-          "ec2",
-          "AuthorizeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "AuthorizeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "delete",
-      [
-        [
-          "ec2",
-          "RevokeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "RevokeSecurityGroupIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_security_group_rule",
-      "update",
-      [
-        [
-          "ec2",
-          "UpdateSecurityGroupRuleDescriptionsEgress"
-        ],
-        [
-          "ec2",
-          "UpdateSecurityGroupRuleDescriptionsIngress"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "CreateSubnet"
-        ],
-        [
-          "ec2",
-          "DisassociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_subnet",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "DisassociateSubnetCidrBlock"
-        ],
-        [
-          "ec2",
-          "ModifySubnetAttribute"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateDhcpOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "delete",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ],
-        [
-          "ec2",
-          "DeleteDhcpOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options",
-      "update",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_dhcp_options_association",
-      "update",
-      [
-        [
-          "ec2",
-          "AssociateDhcpOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv4_cidr_block_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateVpcCidrBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv4_cidr_block_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateVpcCidrBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv4_cidr_block_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv6_cidr_block_association",
-      "create",
-      [
-        [
-          "ec2",
-          "AssociateVpcCidrBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv6_cidr_block_association",
-      "delete",
-      [
-        [
-          "ec2",
-          "DisassociateVpcCidrBlock"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_ipv6_cidr_block_association",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "create",
-      [
-        [
-          "ec2",
-          "AcceptVpcPeeringConnection"
-        ],
-        [
-          "ec2",
-          "CreateVpcPeeringConnection"
-        ],
-        [
-          "ec2",
-          "ModifyVpcPeeringConnectionOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "delete",
-      [
-        [
-          "ec2",
-          "DeleteVpcPeeringConnection"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection",
-      "update",
-      [
-        [
-          "ec2",
-          "AcceptVpcPeeringConnection"
-        ],
-        [
-          "ec2",
-          "ModifyVpcPeeringConnectionOptions"
+          "shield",
+          "UpdateSubscription"
         ]
       ]
     ],
@@ -2207,24 +702,7 @@
         ],
         [
           "ec2",
-          "ModifyVpcPeeringConnectionOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_accepter",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_accepter",
-      "update",
-      [
-        [
-          "ec2",
-          "AcceptVpcPeeringConnection"
+          "DescribeVpcPeeringConnections"
         ],
         [
           "ec2",
@@ -2234,29 +712,47 @@
     ],
     [
       "resource",
-      "aws_vpc_peering_connection_options",
+      "aws_vpc_security_group_egress_rule",
       "create",
       [
         [
           "ec2",
-          "ModifyVpcPeeringConnectionOptions"
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
         ]
       ]
     ],
     [
       "resource",
-      "aws_vpc_peering_connection_options",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_vpc_peering_connection_options",
-      "update",
+      "aws_vpc_security_group_ingress_rule",
+      "create",
       [
         [
           "ec2",
-          "ModifyVpcPeeringConnectionOptions"
+          "AuthorizeSecurityGroupEgress"
+        ],
+        [
+          "ec2",
+          "AuthorizeSecurityGroupIngress"
+        ],
+        [
+          "ec2",
+          "CreateTags"
+        ],
+        [
+          "ec2",
+          "DeleteTags"
         ]
       ]
     ]

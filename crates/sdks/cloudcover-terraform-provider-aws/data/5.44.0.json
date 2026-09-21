@@ -34,19 +34,29 @@
     ],
     [
       "data_source",
-      "aws_ecr_image",
+      "aws_devopsguru_notification_channel",
       "read",
-      []
+      [
+        [
+          "devopsguru",
+          "ListNotificationChannels"
+        ]
+      ]
     ],
     [
       "data_source",
-      "aws_ecr_pull_through_cache_rule",
+      "aws_devopsguru_resource_collection",
       "read",
-      []
+      [
+        [
+          "devopsguru",
+          "GetResourceCollection"
+        ]
+      ]
     ],
     [
       "data_source",
-      "aws_ecr_repository",
+      "aws_ecr_lifecycle_policy_document",
       "read",
       []
     ],
@@ -86,92 +96,48 @@
     ],
     [
       "resource",
-      "aws_db_instance_automated_backups_replication",
-      "delete",
-      [
-        [
-          "rds",
-          "DescribeDBInstanceAutomatedBackups"
-        ],
-        [
-          "rds",
-          "DescribeDBInstances"
-        ],
-        [
-          "rds",
-          "New"
-        ],
-        [
-          "rds",
-          "StopDBInstanceAutomatedBackupsReplication"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_directory_service_region",
+      "aws_devopsguru_service_integration",
       "create",
       [
         [
-          "directoryservice",
-          "AddRegion"
+          "devopsguru",
+          "DescribeServiceIntegration"
         ],
         [
-          "directoryservice",
-          "DescribeDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
-          "UpdateNumberOfDomainControllers"
+          "devopsguru",
+          "UpdateServiceIntegration"
         ]
       ]
     ],
     [
       "resource",
-      "aws_directory_service_region",
+      "aws_devopsguru_service_integration",
       "delete",
-      [
-        [
-          "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
-          "RemoveRegion"
-        ]
-      ]
+      []
     ],
     [
       "resource",
-      "aws_directory_service_region",
+      "aws_devopsguru_service_integration",
       "read",
       [
         [
-          "directoryservice",
-          "New"
+          "devopsguru",
+          "DescribeServiceIntegration"
         ]
       ]
     ],
     [
       "resource",
-      "aws_directory_service_region",
+      "aws_devopsguru_service_integration",
       "update",
       [
         [
-          "directoryservice",
-          "DescribeDomainControllers"
+          "devopsguru",
+          "DescribeServiceIntegration"
         ],
         [
-          "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
-          "UpdateNumberOfDomainControllers"
+          "devopsguru",
+          "UpdateServiceIntegration"
         ]
       ]
     ],
@@ -203,10 +169,6 @@
         [
           "dynamodb",
           "ImportTable"
-        ],
-        [
-          "dynamodb",
-          "New"
         ],
         [
           "dynamodb",
@@ -242,10 +204,6 @@
         [
           "dynamodb",
           "DescribeTimeToLive"
-        ],
-        [
-          "dynamodb",
-          "New"
         ]
       ]
     ],
@@ -265,10 +223,6 @@
         [
           "dynamodb",
           "DescribeTimeToLive"
-        ],
-        [
-          "dynamodb",
-          "New"
         ],
         [
           "dynamodb",
@@ -299,30 +253,7 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
-        ],
-        [
-          "dynamodb",
-          "UpdateTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dynamodb_table_replica",
-      "delete",
-      [
-        [
-          "dynamodb",
-          "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "New"
         ],
         [
           "dynamodb",
@@ -342,10 +273,6 @@
         [
           "dynamodb",
           "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "New"
         ]
       ]
     ],
@@ -364,43 +291,11 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
           "dynamodb",
           "UpdateTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecr_pull_through_cache_rule",
-      "create",
-      [
-        [
-          "ecr",
-          "CreatePullThroughCacheRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecr_pull_through_cache_rule",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecr_pull_through_cache_rule",
-      "update",
-      [
-        [
-          "ecr",
-          "UpdatePullThroughCacheRule"
         ]
       ]
     ],
@@ -415,62 +310,15 @@
         ],
         [
           "ecr",
+          "DescribeRepositories"
+        ],
+        [
+          "ecr",
           "TagResource"
         ],
         [
           "ecr",
           "UntagResource"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecr_repository",
-      "delete",
-      [
-        [
-          "ecr",
-          "DeleteRepository"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ecr_repository",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ecr_repository",
-      "update",
-      [
-        [
-          "ecr",
-          "PutImageScanningConfiguration"
-        ],
-        [
-          "ecr",
-          "PutImageTagMutability"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_efs_replication_configuration",
-      "delete",
-      [
-        [
-          "efs",
-          "DeleteReplicationConfiguration"
-        ],
-        [
-          "efs",
-          "DescribeReplicationConfigurations"
-        ],
-        [
-          "efs",
-          "New"
         ]
       ]
     ],
@@ -538,179 +386,6 @@
         [
           "emr",
           "SetVisibleToAllUsers"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_replica_external_key",
-      "create",
-      [
-        [
-          "kms",
-          "DescribeKey"
-        ],
-        [
-          "kms",
-          "DisableKey"
-        ],
-        [
-          "kms",
-          "EnableKey"
-        ],
-        [
-          "kms",
-          "GetKeyPolicy"
-        ],
-        [
-          "kms",
-          "GetKeyRotationStatus"
-        ],
-        [
-          "kms",
-          "GetParametersForImport"
-        ],
-        [
-          "kms",
-          "ImportKeyMaterial"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "ReplicateKey"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_replica_key",
-      "create",
-      [
-        [
-          "kms",
-          "DescribeKey"
-        ],
-        [
-          "kms",
-          "DisableKey"
-        ],
-        [
-          "kms",
-          "EnableKey"
-        ],
-        [
-          "kms",
-          "GetKeyPolicy"
-        ],
-        [
-          "kms",
-          "GetKeyRotationStatus"
-        ],
-        [
-          "kms",
-          "New"
-        ],
-        [
-          "kms",
-          "ReplicateKey"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opsworks_stack",
-      "create",
-      [
-        [
-          "opsworks",
-          "CreateStack"
-        ],
-        [
-          "opsworks",
-          "DescribeStacks"
-        ],
-        [
-          "opsworks",
-          "New"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opsworks_stack",
-      "delete",
-      [
-        [
-          "opsworks",
-          "DeleteStack"
-        ],
-        [
-          "opsworks",
-          "New"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opsworks_stack",
-      "read",
-      [
-        [
-          "opsworks",
-          "DescribeStacks"
-        ],
-        [
-          "opsworks",
-          "New"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_opsworks_stack",
-      "update",
-      [
-        [
-          "opsworks",
-          "DescribeStacks"
-        ],
-        [
-          "opsworks",
-          "New"
-        ],
-        [
-          "opsworks",
-          "UpdateStack"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_rds_global_cluster",
-      "update",
-      [
-        [
-          "rds",
-          "DescribeDBClusters"
-        ],
-        [
-          "rds",
-          "DescribeGlobalClusters"
-        ],
-        [
-          "rds",
-          "ModifyDBCluster"
-        ],
-        [
-          "rds",
-          "ModifyGlobalCluster"
-        ],
-        [
-          "rds",
-          "New"
         ]
       ]
     ]

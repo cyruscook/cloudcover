@@ -19,6 +19,139 @@
     ],
     [
       "resource",
+      "aws_appfabric_app_authorization_connection",
+      "create",
+      [
+        [
+          "appfabric",
+          "ConnectAppAuthorization"
+        ],
+        [
+          "appfabric",
+          "GetAppAuthorization"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_app_authorization_connection",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_appfabric_app_authorization_connection",
+      "read",
+      [
+        [
+          "appfabric",
+          "GetAppAuthorization"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_app_authorization_connection",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion",
+      "create",
+      [
+        [
+          "appfabric",
+          "CreateIngestion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion",
+      "delete",
+      [
+        [
+          "appfabric",
+          "DeleteIngestion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion",
+      "read",
+      [
+        [
+          "appfabric",
+          "GetIngestion"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion_destination",
+      "create",
+      [
+        [
+          "appfabric",
+          "CreateIngestionDestination"
+        ],
+        [
+          "appfabric",
+          "GetIngestionDestination"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion_destination",
+      "delete",
+      [
+        [
+          "appfabric",
+          "DeleteIngestionDestination"
+        ],
+        [
+          "appfabric",
+          "GetIngestionDestination"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion_destination",
+      "read",
+      [
+        [
+          "appfabric",
+          "GetIngestionDestination"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_appfabric_ingestion_destination",
+      "update",
+      [
+        [
+          "appfabric",
+          "GetIngestionDestination"
+        ],
+        [
+          "appfabric",
+          "UpdateIngestionDestination"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_controltower_control",
       "create",
       [
@@ -217,31 +350,169 @@
     ],
     [
       "resource",
-      "aws_networkfirewall_firewall_policy",
+      "aws_networkfirewall_tls_inspection_configuration",
       "create",
       [
         [
           "networkfirewall",
-          "CreateFirewallPolicy"
+          "CreateTLSInspectionConfiguration"
         ],
         [
           "networkfirewall",
-          "DescribeFirewallPolicy"
+          "DescribeTLSInspectionConfiguration"
         ]
       ]
     ],
     [
       "resource",
-      "aws_networkfirewall_firewall_policy",
+      "aws_networkfirewall_tls_inspection_configuration",
+      "delete",
+      [
+        [
+          "networkfirewall",
+          "DeleteTLSInspectionConfiguration"
+        ],
+        [
+          "networkfirewall",
+          "DescribeTLSInspectionConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkfirewall_tls_inspection_configuration",
+      "read",
+      [
+        [
+          "networkfirewall",
+          "DescribeTLSInspectionConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkfirewall_tls_inspection_configuration",
       "update",
       [
         [
           "networkfirewall",
-          "DescribeFirewallPolicy"
+          "DescribeTLSInspectionConfiguration"
         ],
         [
           "networkfirewall",
-          "UpdateFirewallPolicy"
+          "UpdateTLSInspectionConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_monitor",
+      "create",
+      [
+        [
+          "networkmonitor",
+          "CreateMonitor"
+        ],
+        [
+          "networkmonitor",
+          "GetMonitor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_monitor",
+      "delete",
+      [
+        [
+          "networkmonitor",
+          "DeleteMonitor"
+        ],
+        [
+          "networkmonitor",
+          "GetMonitor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_monitor",
+      "read",
+      [
+        [
+          "networkmonitor",
+          "GetMonitor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_monitor",
+      "update",
+      [
+        [
+          "networkmonitor",
+          "GetMonitor"
+        ],
+        [
+          "networkmonitor",
+          "UpdateMonitor"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_probe",
+      "create",
+      [
+        [
+          "networkmonitor",
+          "CreateProbe"
+        ],
+        [
+          "networkmonitor",
+          "GetProbe"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_probe",
+      "delete",
+      [
+        [
+          "networkmonitor",
+          "DeleteProbe"
+        ],
+        [
+          "networkmonitor",
+          "GetProbe"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_probe",
+      "read",
+      [
+        [
+          "networkmonitor",
+          "GetProbe"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_networkmonitor_probe",
+      "update",
+      [
+        [
+          "networkmonitor",
+          "GetProbe"
+        ],
+        [
+          "networkmonitor",
+          "UpdateProbe"
         ]
       ]
     ]

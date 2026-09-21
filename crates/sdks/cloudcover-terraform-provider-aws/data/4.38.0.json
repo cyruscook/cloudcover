@@ -127,36 +127,6 @@
     ],
     [
       "resource",
-      "aws_ec2_traffic_mirror_filter_rule",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeTrafficMirrorFilters"
-        ],
-        [
-          "ec2",
-          "ModifyTrafficMirrorFilterRule"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ec2_traffic_mirror_session",
-      "update",
-      [
-        [
-          "ec2",
-          "DescribeTrafficMirrorSessions"
-        ],
-        [
-          "ec2",
-          "ModifyTrafficMirrorSession"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_evidently_segment",
       "create",
       [
@@ -596,6 +566,10 @@
       [
         [
           "ssm",
+          "DescribePatchBaselines"
+        ],
+        [
+          "ssm",
           "RegisterDefaultPatchBaseline"
         ]
       ]
@@ -619,6 +593,10 @@
         [
           "ssm",
           "DeletePatchBaseline"
+        ],
+        [
+          "ssm",
+          "DescribePatchBaselines"
         ],
         [
           "ssm",

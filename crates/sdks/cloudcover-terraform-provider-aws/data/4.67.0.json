@@ -79,70 +79,9 @@
     ],
     [
       "resource",
-      "aws_acm_certificate",
-      "create",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "RequestCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "read",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_acm_certificate",
-      "update",
-      [
-        [
-          "acm",
-          "DescribeCertificate"
-        ],
-        [
-          "acm",
-          "ImportCertificate"
-        ],
-        [
-          "acm",
-          "RenewCertificate"
-        ],
-        [
-          "acm",
-          "UpdateCertificateOptions"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_quicksight_data_set",
       "create",
       [
-        [
-          "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
         [
           "quicksight",
           "CreateDataSet"
@@ -161,27 +100,7 @@
         ],
         [
           "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
           "PutDataSetRefreshProperties"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ]
       ]
     ],
@@ -190,14 +109,6 @@
       "aws_quicksight_data_set",
       "read",
       [
-        [
-          "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
         [
           "quicksight",
           "DescribeDataSet"
@@ -209,26 +120,6 @@
         [
           "quicksight",
           "DescribeDataSetRefreshProperties"
-        ],
-        [
-          "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ]
       ]
     ],
@@ -237,14 +128,6 @@
       "aws_quicksight_data_set",
       "update",
       [
-        [
-          "quicksight",
-          "ColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "ColumnTagName_Values"
-        ],
         [
           "quicksight",
           "DeleteDataSetRefreshProperties"
@@ -263,27 +146,7 @@
         ],
         [
           "quicksight",
-          "FileFormat_Values"
-        ],
-        [
-          "quicksight",
-          "GeoSpatialDataRole_Values"
-        ],
-        [
-          "quicksight",
-          "InputColumnDataType_Values"
-        ],
-        [
-          "quicksight",
-          "JoinType_Values"
-        ],
-        [
-          "quicksight",
           "PutDataSetRefreshProperties"
-        ],
-        [
-          "quicksight",
-          "TextQualifier_Values"
         ],
         [
           "quicksight",
@@ -377,29 +240,101 @@
     ],
     [
       "resource",
-      "aws_xray_sampling_rule",
+      "aws_quicksight_template_alias",
       "create",
       [
         [
-          "xray",
-          "CreateSamplingRule"
+          "quicksight",
+          "CreateTemplateAlias"
         ]
       ]
     ],
     [
       "resource",
-      "aws_xray_sampling_rule",
-      "read",
-      []
+      "aws_quicksight_template_alias",
+      "delete",
+      [
+        [
+          "quicksight",
+          "DeleteTemplateAlias"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_xray_sampling_rule",
+      "aws_quicksight_template_alias",
+      "read",
+      [
+        [
+          "quicksight",
+          "DescribeTemplateAlias"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_quicksight_template_alias",
       "update",
       [
         [
-          "xray",
-          "UpdateSamplingRule"
+          "quicksight",
+          "UpdateTemplateAlias"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_quicksight_vpc_connection",
+      "create",
+      [
+        [
+          "quicksight",
+          "CreateVPCConnection"
+        ],
+        [
+          "quicksight",
+          "DescribeVPCConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_quicksight_vpc_connection",
+      "delete",
+      [
+        [
+          "quicksight",
+          "DeleteVPCConnection"
+        ],
+        [
+          "quicksight",
+          "DescribeVPCConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_quicksight_vpc_connection",
+      "read",
+      [
+        [
+          "quicksight",
+          "DescribeVPCConnection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_quicksight_vpc_connection",
+      "update",
+      [
+        [
+          "quicksight",
+          "DescribeVPCConnection"
+        ],
+        [
+          "quicksight",
+          "UpdateVPCConnection"
         ]
       ]
     ]

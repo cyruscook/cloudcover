@@ -4,6 +4,17 @@
   "upsert": [
     [
       "data_source",
+      "aws_lb_listener_rule",
+      "read",
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeRules"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_ssmcontacts_contact",
       "read",
       [
@@ -14,82 +25,112 @@
       ]
     ],
     [
-      "resource",
-      "aws_alb_listener_rule",
-      "create",
+      "data_source",
+      "aws_ssmcontacts_rotation",
+      "read",
       [
         [
-          "elasticloadbalancingv2",
-          "AddTags"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "CreateRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "RemoveTags"
+          "ssmcontacts",
+          "GetRotation"
         ]
       ]
     ],
     [
       "resource",
-      "aws_alb_listener_rule",
+      "aws_opensearch_authorize_vpc_endpoint_access",
+      "create",
+      [
+        [
+          "opensearch",
+          "AuthorizeVpcEndpointAccess"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearch_authorize_vpc_endpoint_access",
+      "delete",
+      [
+        [
+          "opensearch",
+          "RevokeVpcEndpointAccess"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearch_authorize_vpc_endpoint_access",
       "read",
+      [
+        [
+          "opensearch",
+          "ListVpcEndpointAccess"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_opensearch_authorize_vpc_endpoint_access",
+      "update",
       []
     ],
     [
       "resource",
-      "aws_alb_listener_rule",
-      "update",
-      [
-        [
-          "elasticloadbalancingv2",
-          "ModifyRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "SetRulePriorities"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_lb_listener_rule",
+      "aws_ssmquicksetup_configuration_manager",
       "create",
       [
         [
-          "elasticloadbalancingv2",
-          "AddTags"
+          "ssmquicksetup",
+          "CreateConfigurationManager"
         ],
         [
-          "elasticloadbalancingv2",
-          "CreateRule"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "RemoveTags"
+          "ssmquicksetup",
+          "GetConfigurationManager"
         ]
       ]
     ],
     [
       "resource",
-      "aws_lb_listener_rule",
-      "read",
-      []
+      "aws_ssmquicksetup_configuration_manager",
+      "delete",
+      [
+        [
+          "ssmquicksetup",
+          "DeleteConfigurationManager"
+        ],
+        [
+          "ssmquicksetup",
+          "GetConfigurationManager"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_lb_listener_rule",
+      "aws_ssmquicksetup_configuration_manager",
+      "read",
+      [
+        [
+          "ssmquicksetup",
+          "GetConfigurationManager"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssmquicksetup_configuration_manager",
       "update",
       [
         [
-          "elasticloadbalancingv2",
-          "ModifyRule"
+          "ssmquicksetup",
+          "GetConfigurationManager"
         ],
         [
-          "elasticloadbalancingv2",
-          "SetRulePriorities"
+          "ssmquicksetup",
+          "UpdateConfigurationDefinition"
+        ],
+        [
+          "ssmquicksetup",
+          "UpdateConfigurationManager"
         ]
       ]
     ]

@@ -3,35 +3,46 @@
   "remove": [],
   "upsert": [
     [
-      "data_source",
-      "aws_lambda_functions",
-      "read",
-      []
+      "resource",
+      "aws_bedrockagent_agent_knowledge_base_association",
+      "create",
+      [
+        [
+          "bedrockagent",
+          "AssociateAgentKnowledgeBase"
+        ]
+      ]
     ],
     [
       "resource",
-      "aws_cloudfront_distribution",
+      "aws_bedrockagent_agent_knowledge_base_association",
       "delete",
       [
         [
-          "cloudfront",
-          "DeleteDistribution"
-        ],
+          "bedrockagent",
+          "DisassociateAgentKnowledgeBase"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagent_agent_knowledge_base_association",
+      "read",
+      [
         [
-          "cloudfront",
-          "GetContinuousDeploymentPolicy"
-        ],
+          "bedrockagent",
+          "GetAgentKnowledgeBase"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagent_agent_knowledge_base_association",
+      "update",
+      [
         [
-          "cloudfront",
-          "GetDistribution"
-        ],
-        [
-          "cloudfront",
-          "UpdateContinuousDeploymentPolicy"
-        ],
-        [
-          "cloudfront",
-          "UpdateDistribution"
+          "bedrockagent",
+          "UpdateAgentKnowledgeBase"
         ]
       ]
     ],

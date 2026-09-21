@@ -37,144 +37,6 @@
     ],
     [
       "resource",
-      "aws_autoscaling_group",
-      "create",
-      [
-        [
-          "autoscaling",
-          "CreateAutoScalingGroup"
-        ],
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ],
-        [
-          "autoscaling",
-          "DescribeScalingActivities"
-        ],
-        [
-          "autoscaling",
-          "EnableMetricsCollection"
-        ],
-        [
-          "autoscaling",
-          "PutLifecycleHook"
-        ],
-        [
-          "autoscaling",
-          "PutWarmPool"
-        ],
-        [
-          "autoscaling",
-          "SuspendProcesses"
-        ],
-        [
-          "autoscaling",
-          "UpdateAutoScalingGroup"
-        ],
-        [
-          "elb",
-          "DescribeInstanceHealth"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetHealth"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_autoscaling_group",
-      "update",
-      [
-        [
-          "autoscaling",
-          "AttachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "AttachLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "CancelInstanceRefresh"
-        ],
-        [
-          "autoscaling",
-          "DeleteWarmPool"
-        ],
-        [
-          "autoscaling",
-          "DescribeAutoScalingGroups"
-        ],
-        [
-          "autoscaling",
-          "DescribeInstanceRefreshes"
-        ],
-        [
-          "autoscaling",
-          "DescribeLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "DescribeLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "DescribeScalingActivities"
-        ],
-        [
-          "autoscaling",
-          "DescribeWarmPool"
-        ],
-        [
-          "autoscaling",
-          "DetachLoadBalancerTargetGroups"
-        ],
-        [
-          "autoscaling",
-          "DetachLoadBalancers"
-        ],
-        [
-          "autoscaling",
-          "DisableMetricsCollection"
-        ],
-        [
-          "autoscaling",
-          "EnableMetricsCollection"
-        ],
-        [
-          "autoscaling",
-          "PutWarmPool"
-        ],
-        [
-          "autoscaling",
-          "ResumeProcesses"
-        ],
-        [
-          "autoscaling",
-          "StartInstanceRefresh"
-        ],
-        [
-          "autoscaling",
-          "SuspendProcesses"
-        ],
-        [
-          "autoscaling",
-          "UpdateAutoScalingGroup"
-        ],
-        [
-          "elb",
-          "DescribeInstanceHealth"
-        ],
-        [
-          "elbv2",
-          "DescribeTargetHealth"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_backup_vault",
       "delete",
       [
@@ -497,15 +359,7 @@
         ],
         [
           "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "newClient"
         ]
       ]
     ],
@@ -520,15 +374,7 @@
         ],
         [
           "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
           "RemoveRegion"
-        ],
-        [
-          "directoryservice",
-          "newClient"
         ]
       ]
     ],
@@ -540,14 +386,6 @@
         [
           "directoryservice",
           "DescribeRegions"
-        ],
-        [
-          "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
-          "newClient"
         ]
       ]
     ],
@@ -566,15 +404,7 @@
         ],
         [
           "directoryservice",
-          "New"
-        ],
-        [
-          "directoryservice",
           "UpdateNumberOfDomainControllers"
-        ],
-        [
-          "directoryservice",
-          "newClient"
         ]
       ]
     ],
@@ -593,19 +423,11 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "newClient"
         ]
       ]
     ],
@@ -620,15 +442,7 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "newClient"
         ]
       ]
     ],
@@ -644,14 +458,6 @@
         [
           "dynamodb",
           "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
-          "newClient"
         ]
       ]
     ],
@@ -670,19 +476,11 @@
         ],
         [
           "dynamodb",
-          "New"
-        ],
-        [
-          "dynamodb",
           "UpdateContinuousBackups"
         ],
         [
           "dynamodb",
           "UpdateTable"
-        ],
-        [
-          "dynamodb",
-          "newClient"
         ]
       ]
     ],

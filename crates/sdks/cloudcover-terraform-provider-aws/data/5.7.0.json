@@ -4,6 +4,17 @@
   "upsert": [
     [
       "data_source",
+      "aws_opensearchserverless_security_config",
+      "read",
+      [
+        [
+          "opensearchserverless",
+          "GetSecurityConfig"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_opensearchserverless_security_policy",
       "read",
       [
@@ -168,21 +179,6 @@
         [
           "servicediscovery",
           "UpdatePublicDnsNamespace"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_workspaces_ip_group",
-      "delete",
-      [
-        [
-          "workspaces",
-          "DeleteIpGroup"
-        ],
-        [
-          "workspaces",
-          "DisassociateIpGroups"
         ]
       ]
     ]

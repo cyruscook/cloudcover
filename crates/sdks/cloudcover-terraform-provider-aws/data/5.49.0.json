@@ -4,6 +4,17 @@
   "upsert": [
     [
       "data_source",
+      "aws_datazone_environment_blueprint",
+      "read",
+      [
+        [
+          "datazone",
+          "ListEnvironmentBlueprints"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_dynamodb_table",
       "read",
       [
@@ -26,45 +37,152 @@
       ]
     ],
     [
-      "data_source",
-      "aws_ebs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_snapshot_ids",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_volume",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_ebs_volumes",
-      "read",
-      []
-    ],
-    [
-      "data_source",
-      "aws_kms_alias",
-      "read",
+      "resource",
+      "aws_bedrockagent_data_source",
+      "create",
       [
         [
-          "kms",
-          "DescribeKey"
+          "bedrockagent",
+          "CreateDataSource"
+        ],
+        [
+          "bedrockagent",
+          "GetDataSource"
         ]
       ]
     ],
     [
-      "data_source",
-      "aws_kms_custom_key_store",
+      "resource",
+      "aws_bedrockagent_data_source",
+      "delete",
+      [
+        [
+          "bedrockagent",
+          "DeleteDataSource"
+        ],
+        [
+          "bedrockagent",
+          "GetDataSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagent_data_source",
       "read",
-      []
+      [
+        [
+          "bedrockagent",
+          "GetDataSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_bedrockagent_data_source",
+      "update",
+      [
+        [
+          "bedrockagent",
+          "UpdateDataSource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_domain",
+      "create",
+      [
+        [
+          "datazone",
+          "CreateDomain"
+        ],
+        [
+          "datazone",
+          "GetDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_domain",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteDomain"
+        ],
+        [
+          "datazone",
+          "GetDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_domain",
+      "read",
+      [
+        [
+          "datazone",
+          "GetDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_domain",
+      "update",
+      [
+        [
+          "datazone",
+          "UpdateDomain"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_blueprint_configuration",
+      "create",
+      [
+        [
+          "datazone",
+          "PutEnvironmentBlueprintConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_blueprint_configuration",
+      "delete",
+      [
+        [
+          "datazone",
+          "DeleteEnvironmentBlueprintConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_blueprint_configuration",
+      "read",
+      [
+        [
+          "datazone",
+          "GetEnvironmentBlueprintConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_datazone_environment_blueprint_configuration",
+      "update",
+      [
+        [
+          "datazone",
+          "PutEnvironmentBlueprintConfiguration"
+        ]
+      ]
     ],
     [
       "resource",
@@ -128,25 +246,6 @@
     [
       "resource",
       "aws_dynamodb_table",
-      "read",
-      [
-        [
-          "dynamodb",
-          "DescribeContinuousBackups"
-        ],
-        [
-          "dynamodb",
-          "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "DescribeTimeToLive"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dynamodb_table",
       "update",
       [
         [
@@ -225,21 +324,6 @@
     [
       "resource",
       "aws_dynamodb_table_replica",
-      "delete",
-      [
-        [
-          "dynamodb",
-          "DescribeTable"
-        ],
-        [
-          "dynamodb",
-          "UpdateTable"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_dynamodb_table_replica",
       "read",
       [
         [
@@ -293,78 +377,6 @@
     ],
     [
       "resource",
-      "aws_ebs_snapshot",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateSnapshot"
-        ],
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "RestoreSnapshotTier"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
-      "create",
-      [
-        [
-          "ec2",
-          "CopySnapshot"
-        ],
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_copy",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "RestoreSnapshotTier"
-        ]
-      ]
-    ],
-    [
-      "resource",
       "aws_ebs_snapshot_import",
       "create",
       [
@@ -378,6 +390,18 @@
         ],
         [
           "ec2",
+          "DescribeImportSnapshotTasks"
+        ],
+        [
+          "ec2",
+          "DescribeSnapshotTierStatus"
+        ],
+        [
+          "ec2",
+          "DescribeSnapshots"
+        ],
+        [
+          "ec2",
           "ImportSnapshot"
         ],
         [
@@ -388,155 +412,306 @@
     ],
     [
       "resource",
-      "aws_ebs_snapshot_import",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_snapshot_import",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifySnapshotTier"
-        ],
-        [
-          "ec2",
-          "RestoreSnapshotTier"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "create",
-      [
-        [
-          "ec2",
-          "CreateVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "delete",
-      [
-        [
-          "ec2",
-          "CreateSnapshot"
-        ],
-        [
-          "ec2",
-          "DeleteVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_ebs_volume",
-      "update",
-      [
-        [
-          "ec2",
-          "ModifyVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_alias",
+      "aws_kms_external_key",
       "create",
       [
         [
           "kms",
-          "CreateAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_alias",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_alias",
-      "update",
-      [
-        [
-          "kms",
-          "UpdateAlias"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_custom_key_store",
-      "create",
-      [
-        [
-          "kms",
-          "CreateCustomKeyStore"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_custom_key_store",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_kms_custom_key_store",
-      "update",
-      [
-        [
-          "kms",
-          "UpdateCustomKeyStore"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "create",
-      [
-        [
-          "kms",
-          "CreateGrant"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_kms_grant",
-      "delete",
-      [
-        [
-          "kms",
-          "RetireGrant"
+          "CreateKey"
         ],
         [
           "kms",
-          "RevokeGrant"
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "GetParametersForImport"
+        ],
+        [
+          "kms",
+          "ImportKeyMaterial"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
         ]
       ]
     ],
     [
       "resource",
-      "aws_kms_grant",
+      "aws_kms_external_key",
       "read",
-      []
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_external_key",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "GetParametersForImport"
+        ],
+        [
+          "kms",
+          "ImportKeyMaterial"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ],
+        [
+          "kms",
+          "UpdateKeyDescription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key",
+      "create",
+      [
+        [
+          "kms",
+          "CreateKey"
+        ],
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "DisableKeyRotation"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "EnableKeyRotation"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key",
+      "read",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "DisableKeyRotation"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "EnableKeyRotation"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ],
+        [
+          "kms",
+          "UpdateKeyDescription"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key_policy",
+      "create",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key_policy",
+      "read",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_key_policy",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ]
+      ]
     ],
     [
       "resource",
@@ -573,7 +748,81 @@
         ],
         [
           "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
           "ReplicateKey"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_replica_external_key",
+      "read",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_replica_external_key",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "GetParametersForImport"
+        ],
+        [
+          "kms",
+          "ImportKeyMaterial"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ],
+        [
+          "kms",
+          "UpdateKeyDescription"
         ]
       ]
     ],
@@ -604,12 +853,78 @@
         ],
         [
           "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
           "ReplicateKey"
         ]
       ]
     ],
     [
       "resource",
+      "aws_kms_replica_key",
+      "read",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_kms_replica_key",
+      "update",
+      [
+        [
+          "kms",
+          "DescribeKey"
+        ],
+        [
+          "kms",
+          "DisableKey"
+        ],
+        [
+          "kms",
+          "EnableKey"
+        ],
+        [
+          "kms",
+          "GetKeyPolicy"
+        ],
+        [
+          "kms",
+          "GetKeyRotationStatus"
+        ],
+        [
+          "kms",
+          "ListResourceTags"
+        ],
+        [
+          "kms",
+          "PutKeyPolicy"
+        ],
+        [
+          "kms",
+          "UpdateKeyDescription"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_s3_bucket_object",
       "create",
       [
@@ -736,6 +1051,17 @@
         [
           "s3",
           "HeadObject"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_securitylake_subscriber_notification",
+      "create",
+      [
+        [
+          "securitylake",
+          "CreateSubscriberNotification"
         ]
       ]
     ],
@@ -798,38 +1124,6 @@
           "GetApplication"
         ]
       ]
-    ],
-    [
-      "resource",
-      "aws_volume_attachment",
-      "create",
-      [
-        [
-          "ec2",
-          "AttachVolume"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_volume_attachment",
-      "delete",
-      [
-        [
-          "ec2",
-          "DetachVolume"
-        ],
-        [
-          "ec2",
-          "StopInstances"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_volume_attachment",
-      "read",
-      []
     ]
   ]
 }

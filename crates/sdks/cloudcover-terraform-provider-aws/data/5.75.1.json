@@ -1,26 +1,39 @@
 {
   "provider_version": "5.75.1",
-  "remove": [
+  "remove": [],
+  "upsert": [
     [
       "resource",
       "aws_api_gateway_account",
-      "create"
+      "create",
+      [
+        [
+          "apigateway",
+          "UpdateAccount"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_api_gateway_account",
-      "delete"
+      "delete",
+      [
+        [
+          "apigateway",
+          "UpdateAccount"
+        ]
+      ]
     ],
     [
       "resource",
       "aws_api_gateway_account",
-      "read"
-    ],
-    [
-      "resource",
-      "aws_api_gateway_account",
-      "update"
+      "update",
+      [
+        [
+          "apigateway",
+          "UpdateAccount"
+        ]
+      ]
     ]
-  ],
-  "upsert": []
+  ]
 }

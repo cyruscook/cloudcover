@@ -6,13 +6,23 @@
       "data_source",
       "aws_alb_listener",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_lb_listener",
       "read",
-      []
+      [
+        [
+          "elasticloadbalancingv2",
+          "DescribeListeners"
+        ]
+      ]
     ],
     [
       "resource",
@@ -49,6 +59,116 @@
         [
           "dynamodb",
           "UpdateTable"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachments_exclusive",
+      "create",
+      [
+        [
+          "iam",
+          "AttachGroupPolicy"
+        ],
+        [
+          "iam",
+          "DetachGroupPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachments_exclusive",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachments_exclusive",
+      "read",
+      [
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_group_policy_attachments_exclusive",
+      "update",
+      [
+        [
+          "iam",
+          "AttachGroupPolicy"
+        ],
+        [
+          "iam",
+          "DetachGroupPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedGroupPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachments_exclusive",
+      "create",
+      [
+        [
+          "iam",
+          "AttachUserPolicy"
+        ],
+        [
+          "iam",
+          "DetachUserPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedUserPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachments_exclusive",
+      "delete",
+      []
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachments_exclusive",
+      "read",
+      [
+        [
+          "iam",
+          "ListAttachedUserPolicies"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_iam_user_policy_attachments_exclusive",
+      "update",
+      [
+        [
+          "iam",
+          "AttachUserPolicy"
+        ],
+        [
+          "iam",
+          "DetachUserPolicy"
+        ],
+        [
+          "iam",
+          "ListAttachedUserPolicies"
         ]
       ]
     ]

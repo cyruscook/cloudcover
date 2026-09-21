@@ -3,6 +3,39 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_polly_voices",
+      "read",
+      [
+        [
+          "polly",
+          "DescribeVoices"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ssoadmin_application_assignments",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "ListApplicationAssignments"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ssoadmin_principal_application_assignments",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "ListApplicationAssignmentsForPrincipal"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_finspace_kx_dataview",
       "create",
@@ -171,6 +204,62 @@
         [
           "finspace",
           "UpdateKxVolume"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_trusted_token_issuer",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "CreateTrustedTokenIssuer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_trusted_token_issuer",
+      "delete",
+      [
+        [
+          "ssoadmin",
+          "DeleteTrustedTokenIssuer"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_trusted_token_issuer",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeTrustedTokenIssuer"
+        ],
+        [
+          "ssoadmin",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_trusted_token_issuer",
+      "update",
+      [
+        [
+          "ssoadmin",
+          "TagResource"
+        ],
+        [
+          "ssoadmin",
+          "UntagResource"
+        ],
+        [
+          "ssoadmin",
+          "UpdateTrustedTokenIssuer"
         ]
       ]
     ]

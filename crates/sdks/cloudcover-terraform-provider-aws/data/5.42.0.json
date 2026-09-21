@@ -3,6 +3,17 @@
   "remove": [],
   "upsert": [
     [
+      "data_source",
+      "aws_redshift_producer_data_shares",
+      "read",
+      [
+        [
+          "redshift",
+          "DescribeDataSharesForProducer"
+        ]
+      ]
+    ],
+    [
       "resource",
       "aws_appautoscaling_policy",
       "delete",
@@ -12,6 +23,84 @@
           "DeleteScalingPolicy"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_event_sources_config",
+      "create",
+      [
+        [
+          "devopsguru",
+          "UpdateEventSourcesConfig"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_event_sources_config",
+      "delete",
+      [
+        [
+          "devopsguru",
+          "UpdateEventSourcesConfig"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_event_sources_config",
+      "read",
+      [
+        [
+          "devopsguru",
+          "DescribeEventSourcesConfig"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_event_sources_config",
+      "update",
+      []
+    ],
+    [
+      "resource",
+      "aws_devopsguru_resource_collection",
+      "create",
+      [
+        [
+          "devopsguru",
+          "UpdateResourceCollection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_resource_collection",
+      "delete",
+      [
+        [
+          "devopsguru",
+          "UpdateResourceCollection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_resource_collection",
+      "read",
+      [
+        [
+          "devopsguru",
+          "GetResourceCollection"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_devopsguru_resource_collection",
+      "update",
+      []
     ],
     [
       "resource",

@@ -17,13 +17,23 @@
       "data_source",
       "aws_vpc_ipam",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeIpams"
+        ]
+      ]
     ],
     [
       "data_source",
       "aws_vpc_ipams",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeIpams"
+        ]
+      ]
     ],
     [
       "ephemeral_resource",

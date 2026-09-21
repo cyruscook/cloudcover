@@ -65,6 +65,53 @@
           "GetKeyPair"
         ]
       ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_connection_alias",
+      "create",
+      [
+        [
+          "workspaces",
+          "CreateConnectionAlias"
+        ],
+        [
+          "workspaces",
+          "DescribeConnectionAliases"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_connection_alias",
+      "delete",
+      [
+        [
+          "workspaces",
+          "DeleteConnectionAlias"
+        ],
+        [
+          "workspaces",
+          "DescribeConnectionAliases"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_connection_alias",
+      "read",
+      [
+        [
+          "workspaces",
+          "DescribeConnectionAliases"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_workspaces_connection_alias",
+      "update",
+      []
     ]
   ]
 }

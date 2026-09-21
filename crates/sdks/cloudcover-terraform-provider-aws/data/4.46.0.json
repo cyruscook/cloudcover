@@ -19,6 +19,58 @@
     ],
     [
       "resource",
+      "aws_auditmanager_control",
+      "create",
+      [
+        [
+          "auditmanager",
+          "CreateControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_control",
+      "delete",
+      [
+        [
+          "auditmanager",
+          "DeleteControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_control",
+      "read",
+      [
+        [
+          "auditmanager",
+          "GetControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_auditmanager_control",
+      "update",
+      [
+        [
+          "auditmanager",
+          "TagResource"
+        ],
+        [
+          "auditmanager",
+          "UntagResource"
+        ],
+        [
+          "auditmanager",
+          "UpdateControl"
+        ]
+      ]
+    ],
+    [
+      "resource",
       "aws_networkfirewall_firewall",
       "update",
       [
@@ -138,16 +190,69 @@
     ],
     [
       "resource",
-      "aws_rum_app_monitor",
+      "aws_resourceexplorer2_index",
+      "create",
+      [
+        [
+          "resourceexplorer2",
+          "CreateIndex"
+        ],
+        [
+          "resourceexplorer2",
+          "GetIndex"
+        ],
+        [
+          "resourceexplorer2",
+          "UpdateIndexType"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourceexplorer2_index",
+      "delete",
+      [
+        [
+          "resourceexplorer2",
+          "DeleteIndex"
+        ],
+        [
+          "resourceexplorer2",
+          "GetIndex"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourceexplorer2_index",
+      "read",
+      [
+        [
+          "resourceexplorer2",
+          "GetIndex"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_resourceexplorer2_index",
       "update",
       [
         [
-          "cloudwatchrum",
-          "GetAppMonitor"
+          "resourceexplorer2",
+          "GetIndex"
         ],
         [
-          "cloudwatchrum",
-          "UpdateAppMonitor"
+          "resourceexplorer2",
+          "TagResource"
+        ],
+        [
+          "resourceexplorer2",
+          "UntagResource"
+        ],
+        [
+          "resourceexplorer2",
+          "UpdateIndexType"
         ]
       ]
     ],
@@ -210,6 +315,10 @@
       [
         [
           "ec2",
+          "DescribeAwsNetworkPerformanceMetricSubscriptions"
+        ],
+        [
+          "ec2",
           "EnableAwsNetworkPerformanceMetricSubscription"
         ]
       ]
@@ -229,7 +338,12 @@
       "resource",
       "aws_vpc_network_performance_metric_subscription",
       "read",
-      []
+      [
+        [
+          "ec2",
+          "DescribeAwsNetworkPerformanceMetricSubscriptions"
+        ]
+      ]
     ]
   ]
 }

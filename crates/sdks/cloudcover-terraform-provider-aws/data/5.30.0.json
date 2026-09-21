@@ -4,12 +4,56 @@
   "upsert": [
     [
       "data_source",
+      "aws_codeguruprofiler_profiling_group",
+      "read",
+      [
+        [
+          "codeguruprofiler",
+          "DescribeProfilingGroup"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ecr_repositories",
+      "read",
+      [
+        [
+          "ecr",
+          "DescribeRepositories"
+        ]
+      ]
+    ],
+    [
+      "data_source",
       "aws_lb_trust_store",
       "read",
       [
         [
           "elbv2",
           "DescribeTrustStores"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ssoadmin_application",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeApplication"
+        ]
+      ]
+    ],
+    [
+      "data_source",
+      "aws_ssoadmin_application_providers",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "ListApplicationProviders"
         ]
       ]
     ],
@@ -79,6 +123,50 @@
         [
           "ec2",
           "ModifyImageAttribute"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_codeguruprofiler_profiling_group",
+      "create",
+      [
+        [
+          "codeguruprofiler",
+          "CreateProfilingGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_codeguruprofiler_profiling_group",
+      "delete",
+      [
+        [
+          "codeguruprofiler",
+          "DeleteProfilingGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_codeguruprofiler_profiling_group",
+      "read",
+      [
+        [
+          "codeguruprofiler",
+          "DescribeProfilingGroup"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_codeguruprofiler_profiling_group",
+      "update",
+      [
+        [
+          "codeguruprofiler",
+          "UpdateProfilingGroup"
         ]
       ]
     ],
@@ -367,119 +455,206 @@
     ],
     [
       "resource",
-      "aws_securityhub_invite_accepter",
+      "aws_securitylake_data_lake",
       "create",
       [
         [
-          "securityhub",
-          "AcceptInvitation"
+          "securitylake",
+          "CreateDataLake"
         ],
         [
-          "securityhub",
-          "GetMasterAccount"
+          "securitylake",
+          "ListDataLakes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_organization_admin_account",
-      "create",
-      [
-        [
-          "securityhub",
-          "EnableOrganizationAdminAccount"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_organization_admin_account",
+      "aws_securitylake_data_lake",
       "delete",
       [
         [
-          "securityhub",
-          "DisableOrganizationAdminAccount"
+          "securitylake",
+          "DeleteDataLake"
+        ],
+        [
+          "securitylake",
+          "ListDataLakes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_organization_admin_account",
+      "aws_securitylake_data_lake",
       "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_product_subscription",
-      "create",
       [
         [
-          "securityhub",
-          "EnableImportFindingsForProduct"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_securityhub_product_subscription",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_control",
-      "create",
-      [
+          "securitylake",
+          "ListDataLakes"
+        ],
         [
-          "securityhub",
-          "UpdateStandardsControl"
+          "securitylake",
+          "ListTagsForResource"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_standards_control",
-      "read",
-      []
-    ],
-    [
-      "resource",
-      "aws_securityhub_standards_control",
+      "aws_securitylake_data_lake",
       "update",
       [
         [
-          "securityhub",
-          "UpdateStandardsControl"
+          "securitylake",
+          "ListDataLakes"
+        ],
+        [
+          "securitylake",
+          "UpdateDataLake"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_standards_subscription",
+      "aws_ssoadmin_application",
       "create",
       [
         [
-          "securityhub",
-          "BatchEnableStandards"
+          "ssoadmin",
+          "CreateApplication"
+        ],
+        [
+          "ssoadmin",
+          "DescribeApplication"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_standards_subscription",
+      "aws_ssoadmin_application",
       "delete",
       [
         [
-          "securityhub",
-          "BatchDisableStandards"
+          "ssoadmin",
+          "DeleteApplication"
         ]
       ]
     ],
     [
       "resource",
-      "aws_securityhub_standards_subscription",
+      "aws_ssoadmin_application",
       "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeApplication"
+        ],
+        [
+          "ssoadmin",
+          "ListTagsForResource"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application",
+      "update",
+      [
+        [
+          "ssoadmin",
+          "TagResource"
+        ],
+        [
+          "ssoadmin",
+          "UntagResource"
+        ],
+        [
+          "ssoadmin",
+          "UpdateApplication"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "CreateApplicationAssignment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment",
+      "delete",
+      [
+        [
+          "ssoadmin",
+          "DeleteApplicationAssignment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "DescribeApplicationAssignment"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment",
+      "update",
       []
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment_configuration",
+      "create",
+      [
+        [
+          "ssoadmin",
+          "PutApplicationAssignmentConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment_configuration",
+      "delete",
+      [
+        [
+          "ssoadmin",
+          "PutApplicationAssignmentConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment_configuration",
+      "read",
+      [
+        [
+          "ssoadmin",
+          "GetApplicationAssignmentConfiguration"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_ssoadmin_application_assignment_configuration",
+      "update",
+      [
+        [
+          "ssoadmin",
+          "PutApplicationAssignmentConfiguration"
+        ]
+      ]
     ]
   ]
 }
