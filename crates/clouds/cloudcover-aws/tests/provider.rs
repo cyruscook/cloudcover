@@ -306,6 +306,40 @@ fn builds_deterministic_iam_allow_policy() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
+fn excludes_get_caller_identity_from_mixed_policy() -> Result<(), Box<dyn Error>> {
+    let policy = AwsProvider::new().permissions_policy(&[
+        ApiMethod::new("sts", "GetCallerIdentity"),
+        ApiMethod::new("ec2", "DescribeInstances"),
+    ])?;
+
+    assert_eq!(
+        policy,
+        json!({
+            "Version":"2012-10-17",
+            "Statement":[
+                {
+                    "Effect":"Allow",
+                    "Action":["ec2:DescribeInstances"],
+                    "Resource":"*"
+                }
+            ]
+        })
+    );
+
+    Ok(())
+}
+
+#[test]
+fn excludes_get_caller_identity_from_sole_permission_policy() -> Result<(), Box<dyn Error>> {
+    let policy =
+        AwsProvider::new().permissions_policy(&[ApiMethod::new("sts", "GetCallerIdentity")])?;
+
+    assert_eq!(policy, json!({"Version":"2012-10-17","Statement":[]}));
+
+    Ok(())
+}
+
+#[test]
 fn splits_actions_by_service_and_resource_scope() -> Result<(), Box<dyn Error>> {
     let policy = AwsProvider::new().permissions_policy(&[
         ApiMethod::new("iam", "AttachUserPolicy"),

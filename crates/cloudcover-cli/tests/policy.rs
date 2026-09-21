@@ -110,10 +110,10 @@ fn emits_full_lifecycle_policy_for_initialized_terraform_modules() -> Result<(),
         "s3:CreateBucket",
         "s3:DeleteBucket",
         "s3:PutBucketPolicy",
-        "sts:GetCallerIdentity",
     ] {
         assert!(actions.contains(&action.to_owned()), "missing {action}");
     }
+    assert!(!actions.contains(&"sts:GetCallerIdentity".to_owned()));
     assert!(
         !actions
             .iter()

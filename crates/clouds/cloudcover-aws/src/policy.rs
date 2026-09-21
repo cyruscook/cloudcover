@@ -20,6 +20,9 @@ pub(crate) fn build_permissions_policy(
 
     for method in methods {
         for action in resolve_actions(method)? {
+            if action.permission == "sts:GetCallerIdentity" {
+                continue;
+            }
             statements
                 .entry((
                     action.service,
