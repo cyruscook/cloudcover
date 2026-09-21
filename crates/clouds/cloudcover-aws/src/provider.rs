@@ -13,6 +13,21 @@ impl AwsProvider {
     pub const fn new() -> Self {
         Self
     }
+    /// Returns the IAM permissions authorized by an AWS API operation.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`AwsError::UnknownApiMethod`] when the operation or one of its
+    /// generated authorized-action references is unknown.
+    pub fn iam_permissions(&self, method: &ApiMethod) -> Result<Vec<&'static str>, AwsError> {
+        let mut permissions = policy::resolve_actions(method)?
+            .into_iter()
+            .map(|action| action.permission)
+            .collect::<Vec<_>>();
+        permissions.sort_unstable();
+        permissions.dedup();
+        Ok(permissions)
+    }
 }
 
 #[derive(Debug, thiserror::Error)]

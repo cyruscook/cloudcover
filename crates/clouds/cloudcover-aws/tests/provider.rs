@@ -376,6 +376,46 @@ fn operation_permissions_use_authorized_actions() -> Result<(), Box<dyn Error>> 
 }
 
 #[test]
+fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
+    let permissions = AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "CopyObject"))?;
+
+    assert_eq!(
+        permissions,
+        vec![
+            "s3-object-lambda:PutObject",
+            "s3:GetObject",
+            "s3:GetObjectVersion",
+            "s3:PutObject",
+            "s3:PutObjectAcl",
+            "s3:PutObjectLegalHold",
+            "s3:PutObjectRetention",
+            "s3:PutObjectTagging",
+        ]
+    );
+
+    Ok(())
+}
+
+#[test]
+fn reports_empty_iam_permissions_for_authorized_actionless_operation() -> Result<(), Box<dyn Error>>
+{
+    assert_eq!(
+        AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "CreateSession"))?,
+        Vec::<&'static str>::new()
+    );
+    Ok(())
+}
+
+#[test]
+fn rejects_unknown_api_method_for_iam_permissions() {
+    assert!(matches!(
+        AwsProvider::new().iam_permissions(&ApiMethod::new("not-a-service", "Nope")),
+        Err(AwsError::UnknownApiMethod { service, name })
+            if service == "not-a-service" && name == "Nope"
+    ));
+}
+
+#[test]
 fn operation_with_no_authorized_actions_builds_no_policy_statement() -> Result<(), Box<dyn Error>> {
     let policy = AwsProvider::new().permissions_policy(&[ApiMethod::new("s3", "CreateSession")])?;
 

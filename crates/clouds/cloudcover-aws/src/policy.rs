@@ -19,10 +19,7 @@ pub(crate) fn build_permissions_policy(
     >::new();
 
     for method in methods {
-        let operation = find_operation(method)?;
-
-        for authorized_action in operation.authorized_actions {
-            let action = find_action(authorized_action, method)?;
+        for action in resolve_actions(method)? {
             statements
                 .entry((
                     action.service,
@@ -68,6 +65,18 @@ pub(crate) fn build_permissions_policy(
         "Version": "2012-10-17",
         "Statement": statements,
     }))
+}
+
+pub(crate) fn resolve_actions(
+    method: &ApiMethod,
+) -> Result<Vec<&'static crate::model::AwsAction>, AwsError> {
+    let operation = find_operation(method)?;
+
+    operation
+        .authorized_actions
+        .iter()
+        .map(|authorized_action| find_action(authorized_action, method))
+        .collect()
 }
 
 fn find_operation(method: &ApiMethod) -> Result<&'static crate::model::AwsOperation, AwsError> {

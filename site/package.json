@@ -1,0 +1,24 @@
+{
+  "name": "cloudcover-site",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "generate:data": "cargo run --manifest-path ../Cargo.toml -p cloudcover-site-data -- public/data",
+    "predev": "npm run generate:data",
+    "prebuild": "npm run generate:data",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
+  }
+}
