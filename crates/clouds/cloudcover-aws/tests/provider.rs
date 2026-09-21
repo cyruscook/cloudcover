@@ -306,6 +306,25 @@ fn builds_deterministic_iam_allow_policy() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
+fn builds_terraform_iam_policy_document() -> Result<(), Box<dyn Error>> {
+    let hcl = AwsProvider::new().permissions_policy_hcl(&[
+        ApiMethod::new("s3", "GetObject"),
+        ApiMethod::new("ec2", "DescribeInstances"),
+    ])?;
+
+    let _: hcl::Body = hcl::from_str(&hcl)?;
+    assert!(hcl.contains(r#"data "aws_iam_policy_document" "cloudcover""#));
+    assert!(hcl.contains(r#"effect = "Allow""#));
+    assert!(hcl.contains(r#""ec2:DescribeInstances""#));
+    assert!(hcl.contains(r#""s3:GetObject""#));
+    assert!(hcl.contains("resources = ["));
+    assert!(hcl.contains(r#""*""#));
+    assert!(hcl.contains(r#""arn:$${Partition}:s3:::$${BucketName}/$${ObjectName}""#));
+
+    Ok(())
+}
+
+#[test]
 fn excludes_get_caller_identity_from_mixed_policy() -> Result<(), Box<dyn Error>> {
     let policy = AwsProvider::new().permissions_policy(&[
         ApiMethod::new("sts", "GetCallerIdentity"),

@@ -28,12 +28,24 @@ impl AwsProvider {
         permissions.dedup();
         Ok(permissions)
     }
+
+    /// Returns the IAM permissions policy as a Terraform HCL data source.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the provider cannot map every requested API method
+    /// to a permissions policy entry or when the HCL cannot be formatted.
+    pub fn permissions_policy_hcl(&self, methods: &[ApiMethod]) -> Result<String, AwsError> {
+        policy::build_permissions_policy_hcl(methods)
+    }
 }
 
 #[derive(Debug, thiserror::Error)]
 pub enum AwsError {
     #[error("unknown AWS API method {service}:{name}")]
     UnknownApiMethod { service: String, name: String },
+    #[error("failed to encode IAM policy as Terraform HCL: {source}")]
+    HclSerialization { source: hcl::Error },
     #[error("unsupported SDK {name:?} for language {language:?}")]
     UnsupportedSdk { name: String, language: Language },
     #[error("SDK {name:?} requires a version")]

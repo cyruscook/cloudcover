@@ -2,9 +2,19 @@ use std::{env, ffi::OsString, process::ExitCode};
 
 use cloudcover_core::Language;
 
-use crate::{error::CliError, policy::build_policy};
+use crate::{
+    error::CliError,
+    policy::{build_policy, build_terraform_policy},
+};
 
-pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go|terraform] <PATH>";
+#[derive(Clone, Copy)]
+enum OutputFormat {
+    Json,
+    Terraform,
+}
+
+pub(crate) const USAGE: &str =
+    "Usage: cloudcover policy [--language go|terraform] [--format json|terraform] <PATH>";
 
 pub(crate) fn run_main() -> ExitCode {
     match run() {
@@ -44,8 +54,8 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
     if args.len() == 1 && is_help_flag(&args[0]) {
         return Err(CliError::Help);
     }
-
     let mut language = Language::Go;
+    let mut format = OutputFormat::Json;
     let mut path = None;
     let mut index = 0;
     while index < args.len() {
@@ -70,6 +80,23 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
             index += 2;
             continue;
         }
+        if argument == "--format" {
+            let value = args
+                .get(index + 1)
+                .ok_or_else(|| CliError::Usage("missing value for --format".to_owned()))?;
+            format = match value.to_string_lossy().as_ref() {
+                "json" => OutputFormat::Json,
+                "terraform" => OutputFormat::Terraform,
+                _ => {
+                    return Err(CliError::Usage(format!(
+                        "unsupported format: {}",
+                        value.to_string_lossy()
+                    )));
+                }
+            };
+            index += 2;
+            continue;
+        }
         if argument.to_string_lossy().starts_with('-') {
             return Err(CliError::Usage(format!(
                 "unsupported option: {}",
@@ -83,10 +110,18 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
     }
 
     let path = path.ok_or_else(|| CliError::Usage("missing path".to_owned()))?;
-    let policy = build_policy(path, language)?;
-    let stdout = serde_json::to_string_pretty(&policy)
-        .map_err(|error| CliError::Runtime(format!("failed to encode policy JSON: {error}")))?;
-    println!("{stdout}");
+    match format {
+        OutputFormat::Json => {
+            let policy = build_policy(path, language)?;
+            let stdout = serde_json::to_string_pretty(&policy).map_err(|error| {
+                CliError::Runtime(format!("failed to encode policy JSON: {error}"))
+            })?;
+            println!("{stdout}");
+        }
+        OutputFormat::Terraform => {
+            println!("{}", build_terraform_policy(path, language)?);
+        }
+    }
     Ok(())
 }
 

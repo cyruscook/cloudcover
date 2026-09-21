@@ -124,13 +124,44 @@ fn emits_full_lifecycle_policy_for_initialized_terraform_modules() -> Result<(),
 }
 
 #[test]
+fn emits_terraform_hcl_policy_document() -> Result<(), Box<dyn Error>> {
+    let fixture = fixture_dir().to_string_lossy().into_owned();
+    let output = run_policy(&[
+        "policy",
+        "--format",
+        "terraform",
+        "--language",
+        "go",
+        &fixture,
+    ])?;
+
+    assert!(
+        output.status.success(),
+        "stdout: {}\nstderr: {}",
+        String::from_utf8_lossy(&output.stdout),
+        String::from_utf8_lossy(&output.stderr)
+    );
+    assert!(output.stderr.is_empty(), "stderr should be empty");
+    let stdout = String::from_utf8(output.stdout)?;
+    assert!(stdout.contains(r#"data "aws_iam_policy_document" "cloudcover""#));
+    assert!(stdout.contains("statement {"));
+    assert!(stdout.contains(r#""s3:GetObject""#));
+    assert!(stdout.contains(r#""s3-object-lambda:GetObject""#));
+    assert!(stdout.contains(r#""arn:$${Partition}:s3:::$${BucketName}/$${ObjectName}""#));
+
+    Ok(())
+}
+
+#[test]
 fn unsupported_language_is_usage_error() -> Result<(), Box<dyn Error>> {
     let fixture = fixture_dir().to_string_lossy().into_owned();
     let output = run_policy(&["policy", "--language", "python", &fixture])?;
 
     assert_eq!(output.status.code(), Some(2));
     let stderr = String::from_utf8(output.stderr)?;
-    assert!(stderr.contains("Usage: cloudcover policy [--language go|terraform] <PATH>"));
 
+    assert!(stderr.contains(
+        "Usage: cloudcover policy [--language go|terraform] [--format json|terraform] <PATH>"
+    ));
     Ok(())
 }

@@ -8,6 +8,50 @@ use crate::{AwsError, generated};
 pub(crate) fn build_permissions_policy(
     methods: &[ApiMethod],
 ) -> Result<serde_json::Value, AwsError> {
+    let statements = build_policy_statements(methods)?;
+
+    Ok(json!({
+        "Version": "2012-10-17",
+        "Statement": statements
+            .into_iter()
+            .map(|statement| {
+                let resource = match statement.resources.as_slice() {
+                    [resource] => json!(resource),
+                    _ => json!(statement.resources),
+                };
+                json!({
+                    "Effect": "Allow",
+                    "Action": statement.actions,
+                    "Resource": resource,
+                })
+            })
+            .collect::<Vec<_>>(),
+    }))
+}
+
+pub(crate) fn build_permissions_policy_hcl(methods: &[ApiMethod]) -> Result<String, AwsError> {
+    let statements = build_policy_statements(methods)?;
+    let statement_blocks = statements.into_iter().map(|statement| {
+        hcl::Block::builder("statement")
+            .add_attribute(("effect", "Allow"))
+            .add_attribute(("actions", statement.actions))
+            .add_attribute(("resources", statement.resources))
+            .build()
+    });
+    let body = hcl::Body::builder()
+        .add_block(
+            hcl::Block::builder("data")
+                .add_label("aws_iam_policy_document")
+                .add_label("cloudcover")
+                .add_blocks(statement_blocks)
+                .build(),
+        )
+        .build();
+
+    hcl::format::to_string(&body).map_err(|source| AwsError::HclSerialization { source })
+}
+
+fn build_policy_statements(methods: &[ApiMethod]) -> Result<Vec<PolicyStatement>, AwsError> {
     let mut statements = BTreeMap::<
         (
             &'static str,
@@ -35,39 +79,31 @@ pub(crate) fn build_permissions_policy(
         }
     }
 
-    if statements.is_empty() {
-        return Ok(json!({"Version":"2012-10-17","Statement":[]}));
-    }
-
-    let statements = statements
+    Ok(statements
         .into_iter()
         .map(
             |(
                 (_service, resource_types, resource_templates, has_complete_resource_templates),
                 actions,
             )| {
-                let resource = if resource_types.is_empty() || !has_complete_resource_templates {
-                    json!("*")
+                let resources = if resource_types.is_empty() || !has_complete_resource_templates {
+                    vec!["*"]
                 } else {
-                    match resource_templates {
-                        [template] => json!(template),
-                        _ => json!(resource_templates),
-                    }
+                    resource_templates.to_vec()
                 };
 
-                json!({
-                    "Effect": "Allow",
-                    "Action": actions.into_iter().collect::<Vec<_>>(),
-                    "Resource": resource,
-                })
+                PolicyStatement {
+                    actions: actions.into_iter().collect(),
+                    resources,
+                }
             },
         )
-        .collect::<Vec<_>>();
+        .collect())
+}
 
-    Ok(json!({
-        "Version": "2012-10-17",
-        "Statement": statements,
-    }))
+struct PolicyStatement {
+    actions: Vec<&'static str>,
+    resources: Vec<&'static str>,
 }
 
 pub(crate) fn resolve_actions(

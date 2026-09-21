@@ -15,16 +15,33 @@ pub(crate) fn build_policy(
     path: OsString,
     language: Language,
 ) -> Result<serde_json::Value, CliError> {
+    let api_methods = build_api_methods(path, language)?;
+    AwsProvider::new()
+        .permissions_policy(&api_methods)
+        .map_err(|error| CliError::Runtime(error.to_string()))
+}
+
+pub(crate) fn build_terraform_policy(
+    path: OsString,
+    language: Language,
+) -> Result<String, CliError> {
+    let api_methods = build_api_methods(path, language)?;
+    AwsProvider::new()
+        .permissions_policy_hcl(&api_methods)
+        .map_err(|error| CliError::Runtime(error.to_string()))
+}
+
+fn build_api_methods(path: OsString, language: Language) -> Result<Vec<ApiMethod>, CliError> {
     match language {
-        Language::Go => build_go_policy(path),
-        Language::Terraform => build_terraform_policy(&path),
+        Language::Go => build_go_api_methods(path),
+        Language::Terraform => build_terraform_api_methods(&path),
         Language::Python => Err(CliError::Usage(format!(
             "unsupported language: {language:?}"
         ))),
     }
 }
 
-fn build_go_policy(path: OsString) -> Result<serde_json::Value, CliError> {
+fn build_go_api_methods(path: OsString) -> Result<Vec<ApiMethod>, CliError> {
     let provider = AwsProvider::new();
     let analysis = cloudcover_go::analyze_dir(path)
         .map_err(|error| CliError::Runtime(format!("failed to analyze Go code: {error}")))?;
@@ -52,12 +69,10 @@ fn build_go_policy(path: OsString) -> Result<serde_json::Value, CliError> {
             api_methods.extend(mapped_methods.iter().cloned());
         }
     }
-    provider
-        .permissions_policy(&api_methods.into_iter().collect::<Vec<_>>())
-        .map_err(|error| CliError::Runtime(error.to_string()))
+    Ok(api_methods.into_iter().collect())
 }
 
-fn build_terraform_policy(path: &OsString) -> Result<serde_json::Value, CliError> {
+fn build_terraform_api_methods(path: &OsString) -> Result<Vec<ApiMethod>, CliError> {
     let provider = AwsProvider::new();
     let analysis = cloudcover_terraform::analyze_dir(path)
         .map_err(|error| CliError::Runtime(format!("failed to analyze Terraform code: {error}")))?;
@@ -99,9 +114,7 @@ fn build_terraform_policy(path: &OsString) -> Result<serde_json::Value, CliError
         }
         api_methods.extend(mapped_methods.iter().cloned());
     }
-    provider
-        .permissions_policy(&api_methods.into_iter().collect::<Vec<_>>())
-        .map_err(|error| CliError::Runtime(error.to_string()))
+    Ok(api_methods.into_iter().collect())
 }
 
 fn go_method_key(method: &GoMethodReference) -> (String, Option<String>, String) {
