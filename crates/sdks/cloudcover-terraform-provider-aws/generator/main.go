@@ -278,11 +278,14 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		hasModule = true
 	}
 	if hasModule {
+		// Go 1.27 excludes the legacy HTTP/2 server implementation by default,
+		// but grpc still references its TrailerPrefix symbol.
+		packageEnv = append(packageEnv, "GOFLAGS=-tags=http2legacy")
 		cmdArgs := []string{"mod", "edit", "-droprequire=github.com/golangci/golangci-lint", "-dropgodebug=tlskyber"}
 		if module, err := os.ReadFile(filepath.Join(providerDir, "go.mod")); err == nil &&
 			!strings.Contains(string(module), providerModulePath) {
 			_ = os.Remove(filepath.Join(providerDir, "go.sum"))
-			packageEnv = append(packageEnv, "GOSUMDB=off", "GOFLAGS=-mod=mod")
+			packageEnv = append(packageEnv, "GOSUMDB=off", "GOFLAGS=-mod=mod -tags=http2legacy")
 		}
 		cmd := exec.Command("go", cmdArgs...)
 		cmd.Dir = providerDir
