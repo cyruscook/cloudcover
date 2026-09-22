@@ -6,6 +6,7 @@ import {
 
 type Kind = "api" | "iam" | "terraform";
 type Entry = { kind: Kind; label: string; normalized: string; id: number | string };
+type ViewRoute = { kind: Kind; id: string; version?: string };
 const labels: Record<Kind, string> = { api: "API action", iam: "IAM permission", terraform: "Terraform" };
 function element<T extends HTMLElement>(id: string): T {
   const node = document.getElementById(id);
@@ -31,6 +32,7 @@ let selected: Entry | undefined;
 let active = -1;
 let versionToken = 0;
 const snapshots = new Map<string, TerraformSnapshot>();
+let routeToken = 0;
 const methodsByPermission = new Map<number, number[]>();
 const rowsByResource = new Map<string, TerraformRow[]>();
 
@@ -58,6 +60,34 @@ function retry(message: string, action: () => void): void {
 }
 function entry(kind: Kind, label: string, id: number | string): Entry {
   return { kind, label, id, normalized: label.toLowerCase() };
+}
+function readRoute(): ViewRoute | undefined {
+  const parameters = new URLSearchParams(window.location.search);
+  const kind = parameters.get("view");
+  const id = parameters.get("id");
+  if ((kind !== "api" && kind !== "iam" && kind !== "terraform") || !id) return undefined;
+  const version = parameters.get("version") || undefined;
+  return { kind, id, version };
+}
+function routeUrl(item: Entry): URL {
+  const url = new URL(window.location.href);
+  url.searchParams.set("view", item.kind);
+  url.searchParams.set("id", item.label);
+  if (item.kind === "terraform") url.searchParams.set("version", versionSelect.value);
+  else url.searchParams.delete("version");
+  return url;
+}
+function writeRoute(item: Entry): void {
+  const url = routeUrl(item);
+  if (url.href !== window.location.href) window.history.pushState(null, "", url);
+}
+function goHome(): void {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("view");
+  url.searchParams.delete("id");
+  url.searchParams.delete("version");
+  if (url.href !== window.location.href) window.history.pushState(null, "", url);
+  showWelcome();
 }
 function dismiss(): void {
   matches = [];
@@ -182,13 +212,51 @@ function renderDetail(item: Entry, focus: boolean): void {
   detail.append(grid, node("p", "Mappings reflect CloudCover’s indexed data, not a complete permissions policy. Required permissions can depend on request parameters and resource configuration.", "detail-description"));
   if (focus) { detail.focus({ preventScroll: true }); detail.scrollIntoView({ block: "start" }); }
 }
-function select(item: Entry): void {
+function showWelcome(): void {
+  selected = undefined;
+  input.value = "";
+  clear.hidden = true;
+  dismiss();
+  detail.hidden = true;
+  detail.replaceChildren();
+  welcome.hidden = false;
+}
+function showMissing(route: ViewRoute): void {
+  selected = undefined;
+  welcome.hidden = true;
+  detail.hidden = false;
+  input.value = route.id;
+  clear.hidden = false;
+  detail.replaceChildren(
+    node("p", labels[route.kind], "eyebrow"),
+    node("h1", route.id),
+    node("p", `This ${labels[route.kind].toLowerCase()} is not available in the current catalog.`, "empty-mapping"),
+  );
+}
+function select(item: Entry, focus = true, updateHistory = true): void {
   selected = item;
   input.value = item.label;
   clear.hidden = false;
   dismiss();
-  renderDetail(item, true);
+  if (updateHistory) writeRoute(item);
+  renderDetail(item, focus);
   feedback.textContent = `${labels[item.kind]} ${item.label} selected.`;
+}
+async function restoreRoute(focus: boolean): Promise<void> {
+  const token = ++routeToken;
+  const route = readRoute();
+  if (!route) { showWelcome(); return; }
+  if (route.kind === "terraform" && route.version) {
+    if (!index.versions.includes(route.version)) { showMissing(route); return; }
+    if (versionSelect.value !== route.version) {
+      versionSelect.value = route.version;
+      await loadVersion(route.version);
+      if (token !== routeToken) return;
+    }
+  }
+  const item = entries.find(candidate => candidate.kind === route.kind && candidate.label === route.id);
+  if (item) select(item, focus, false);
+  else showMissing(route);
 }
 async function loadVersion(version: string): Promise<void> {
   const token = ++versionToken;
@@ -243,9 +311,13 @@ async function load(): Promise<void> {
       option.value = version;
       return option;
     }));
-    versionSelect.value = index.latest;
+    const route = readRoute();
+    const initialVersion = route?.kind === "terraform" && route.version && index.versions.includes(route.version)
+      ? route.version : index.latest;
+    versionSelect.value = initialVersion;
     input.disabled = false;
-    await loadVersion(index.latest);
+    await loadVersion(initialVersion);
+    await restoreRoute(false);
   } catch (error) {
     retry(`Could not load catalogs. ${error instanceof Error ? error.message : ""}`, () => void load());
   }
@@ -267,9 +339,14 @@ input.addEventListener("keydown", event => {
     select(matches[active < 0 ? 0 : active]);
   }
 });
-clear.addEventListener("click", () => { input.value = ""; dismiss(); clear.hidden = true; input.focus(); });
-versionSelect.addEventListener("change", () => void loadVersion(versionSelect.value));
+clear.addEventListener("click", () => { goHome(); input.focus(); });
+versionSelect.addEventListener("change", () => {
+  void loadVersion(versionSelect.value).then(() => {
+    if (selected?.kind === "terraform") writeRoute(selected);
+  });
+});
 for (const button of document.querySelectorAll<HTMLButtonElement>("[data-query]")) {
   button.addEventListener("click", () => { input.value = button.dataset.query ?? ""; input.focus(); search(); });
 }
+window.addEventListener("popstate", () => void restoreRoute(true));
 void load();
