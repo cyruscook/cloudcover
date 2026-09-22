@@ -1,553 +1,275 @@
 import {
-  type ApiCatalog,
-  type ApiMethod,
-  type TerraformIndex,
-  type TerraformRow,
-  type TerraformSnapshot,
-  CatalogError,
-  dataUrl,
-  parseApiCatalog,
-  parseTerraformIndex,
-  parseTerraformRows,
-  parseTerraformSnapshot,
+  type ApiCatalog, type TerraformIndex, type TerraformRow, type TerraformSnapshot,
+  CatalogError, dataUrl, parseApiCatalog, parseTerraformIndex,
+  parseTerraformRows, parseTerraformSnapshot,
 } from "../lib/catalog";
 
-type Mode = "api" | "iam" | "terraform";
-
-type SearchOption<T> = {
-  display: string;
-  value: T;
-};
-
-type ComboboxSetup<T> = {
-  input: HTMLInputElement;
-  listbox: HTMLElement;
-  options: (query: string) => SearchOption<T>[];
-  onSelect: (option: SearchOption<T>) => void;
-};
-
-class Combobox<T> {
-  private readonly input: HTMLInputElement;
-  private readonly listbox: HTMLElement;
-  private readonly getOptions: (query: string) => SearchOption<T>[];
-  private readonly onSelect: (option: SearchOption<T>) => void;
-  private matches: SearchOption<T>[] = [];
-  private activeIndex = -1;
-
-  constructor(setup: ComboboxSetup<T>) {
-    this.input = setup.input;
-    this.listbox = setup.listbox;
-    this.getOptions = setup.options;
-    this.onSelect = setup.onSelect;
-    this.input.addEventListener("input", () => {
-      this.activeIndex = -1;
-      this.render();
-    });
-    this.input.addEventListener("keydown", (event) => this.handleKeydown(event));
-    this.input.addEventListener("blur", () => {
-      window.setTimeout(() => this.dismiss(), 120);
-    });
-  }
-
-  clear(): void {
-    this.input.value = "";
-    this.activeIndex = -1;
-    this.dismiss();
-  }
-
-  setDisabled(disabled: boolean): void {
-    this.input.disabled = disabled;
-    if (disabled) {
-      this.dismiss();
-    }
-  }
-
-  private handleKeydown(event: KeyboardEvent): void {
-    if (this.input.disabled) {
-      return;
-    }
-    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-      event.preventDefault();
-      if (this.matches.length === 0) {
-        return;
-      }
-      const direction = event.key === "ArrowDown" ? 1 : -1;
-      this.activeIndex =
-        (this.activeIndex + direction + this.matches.length) % this.matches.length;
-      this.renderMatches();
-      return;
-    }
-    if (event.key === "Enter") {
-      if (this.activeIndex >= 0 && this.matches[this.activeIndex]) {
-        event.preventDefault();
-        this.select(this.matches[this.activeIndex]);
-      }
-      return;
-    }
-    if (event.key === "Escape") {
-      event.preventDefault();
-      this.dismiss();
-    }
-  }
-
-  private render(): void {
-    const query = this.input.value.trim();
-    if (query.length === 0) {
-      this.dismiss();
-      return;
-    }
-    this.matches = this.getOptions(query).slice(0, 50);
-    this.renderMatches();
-  }
-
-  private renderMatches(): void {
-    this.listbox.replaceChildren();
-    this.listbox.hidden = false;
-    this.input.setAttribute("aria-expanded", "true");
-    if (this.matches.length === 0) {
-      const empty = document.createElement("li");
-      empty.className = "suggestion-empty";
-      empty.setAttribute("role", "option");
-      empty.setAttribute("aria-disabled", "true");
-      empty.textContent = "No matches.";
-      this.listbox.append(empty);
-      this.input.setAttribute("aria-activedescendant", "");
-      return;
-    }
-
-    this.matches.forEach((match, index) => {
-      const option = document.createElement("li");
-      option.id = `${this.listbox.id}-option-${index}`;
-      option.className = "suggestion";
-      option.setAttribute("role", "option");
-      option.setAttribute("aria-selected", String(index === this.activeIndex));
-      option.textContent = match.display;
-      option.addEventListener("mouseenter", () => {
-        this.activeIndex = index;
-        this.updateActiveOption();
-      });
-      option.addEventListener("mousedown", (event) => event.preventDefault());
-      option.addEventListener("click", () => this.select(match));
-      this.listbox.append(option);
-    });
-    this.input.setAttribute(
-      "aria-activedescendant",
-      this.activeIndex >= 0
-        ? `${this.listbox.id}-option-${this.activeIndex}`
-        : "",
-    );
-  }
-
-  private updateActiveOption(): void {
-    const options = this.listbox.querySelectorAll<HTMLElement>(".suggestion");
-    options.forEach((option, index) => {
-      option.setAttribute("aria-selected", String(index === this.activeIndex));
-    });
-    this.input.setAttribute(
-      "aria-activedescendant",
-      this.activeIndex >= 0
-        ? `${this.listbox.id}-option-${this.activeIndex}`
-        : "",
-    );
-  }
-
-  private select(option: SearchOption<T>): void {
-    this.input.value = option.display;
-    this.dismiss();
-    this.onSelect(option);
-  }
-
-  private dismiss(): void {
-    this.matches = [];
-    this.activeIndex = -1;
-    this.listbox.replaceChildren();
-    this.listbox.hidden = true;
-    this.input.setAttribute("aria-expanded", "false");
-    this.input.setAttribute("aria-activedescendant", "");
-  }
-}
-
-const root = document.getElementById("explorer");
-if (!root) {
-  throw new CatalogError("Explorer root is missing");
-}
-
-const baseUrl = root.dataset.baseUrl ?? "./";
-const apiInput = element<HTMLInputElement>("search-api");
-const iamInput = element<HTMLInputElement>("search-iam");
-const terraformInput = element<HTMLInputElement>("search-terraform");
-const versionSelect = element<HTMLSelectElement>("terraform-version");
-const loadStatus = element<HTMLElement>("load-status");
-const apiResult = element<HTMLElement>("result-api");
-const iamResult = element<HTMLElement>("result-iam");
-const terraformResult = element<HTMLElement>("result-terraform");
-const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
-const panels = Array.from(document.querySelectorAll<HTMLElement>('[role="tabpanel"]'));
-
-let apiCatalog: ApiCatalog | undefined;
-let terraformIndex: TerraformIndex | undefined;
-let terraformRows: TerraformRow[] | undefined;
-let activeVersion = "";
-let terraformLoadToken = 0;
-const terraformSnapshots = new Map<string, TerraformSnapshot>();
-let apiCombobox: Combobox<ApiMethod> | undefined;
-let iamCombobox: Combobox<string> | undefined;
-let terraformCombobox: Combobox<string> | undefined;
-
+type Kind = "api" | "iam" | "terraform";
+type Entry = { kind: Kind; label: string; normalized: string; id: number | string };
+const labels: Record<Kind, string> = { api: "API action", iam: "IAM permission", terraform: "Terraform" };
 function element<T extends HTMLElement>(id: string): T {
-  const value = document.getElementById(id);
-  if (!value) {
-    throw new CatalogError(`Missing explorer element ${id}`);
-  }
-  return value as T;
+  const node = document.getElementById(id);
+  if (!node) throw new CatalogError(`Missing explorer element ${id}`);
+  return node as T;
 }
-
-function setInteractive(interactive: boolean): void {
-  for (const tab of tabs) {
-    tab.disabled = !interactive;
-  }
-  apiCombobox?.setDisabled(!interactive);
-  iamCombobox?.setDisabled(!interactive);
-  versionSelect.disabled = !interactive;
-  terraformCombobox?.setDisabled(!interactive || terraformRows === undefined);
-}
-
-function setStatus(message: string, error = false): void {
-  loadStatus.classList.toggle("error", error);
-  loadStatus.replaceChildren(document.createTextNode(message));
-}
-
-function showRetry(target: HTMLElement, message: string, retry: () => void): void {
-  target.replaceChildren();
-  const text = document.createElement("p");
-  text.className = "error-message";
-  text.append(document.createTextNode(message));
-  const button = document.createElement("button");
-  button.className = "retry-button";
-  button.type = "button";
-  button.textContent = "Retry";
-  button.addEventListener("click", retry);
-  text.append(button);
-  target.append(text);
-}
+const root = element("explorer");
+const input = element<HTMLInputElement>("search");
+const suggestions = element("suggestions");
+const feedback = element("search-feedback");
+const status = element("load-status");
+const versionSelect = element<HTMLSelectElement>("terraform-version");
+const detail = element("detail");
+const welcome = element("welcome");
+const clear = element<HTMLButtonElement>("clear-search");
+let catalog: ApiCatalog;
+let index: TerraformIndex;
+let rows: TerraformRow[];
+let snapshot: TerraformSnapshot | undefined;
+let entries: Entry[] = [];
+let matches: Entry[] = [];
+let selected: Entry | undefined;
+let active = -1;
+let versionToken = 0;
+const snapshots = new Map<string, TerraformSnapshot>();
+const methodsByPermission = new Map<number, number[]>();
+const rowsByResource = new Map<string, TerraformRow[]>();
 
 async function fetchDocument(path: string): Promise<unknown> {
-  const response = await fetch(dataUrl(baseUrl, path));
-  if (!response.ok) {
-    throw new CatalogError(`Could not load ${path} (${response.status})`);
-  }
+  const response = await fetch(dataUrl(root.dataset.baseUrl ?? "./", path));
+  if (!response.ok) throw new CatalogError(`Could not load ${path} (${response.status})`);
   return response.json();
 }
-
-function filteredOptions<T>(items: SearchOption<T>[], query: string): SearchOption<T>[] {
-  const normalized = query.toLocaleLowerCase();
-  return items
-    .filter((item) => item.display.toLocaleLowerCase().includes(normalized))
-    .sort((left, right) => {
-      const leftValue = left.display.toLocaleLowerCase();
-      const rightValue = right.display.toLocaleLowerCase();
-      const leftPrefix = leftValue.startsWith(normalized);
-      const rightPrefix = rightValue.startsWith(normalized);
-      if (leftPrefix !== rightPrefix) {
-        return leftPrefix ? -1 : 1;
-      }
-      return left.display < right.display ? -1 : left.display > right.display ? 1 : 0;
-    });
+function node<K extends keyof HTMLElementTagNameMap>(tag: K, text: string, className = ""): HTMLElementTagNameMap[K] {
+  const result = document.createElement(tag);
+  result.textContent = text;
+  result.className = className;
+  return result;
 }
-
-function renderList(values: string[]): HTMLUListElement {
-  const list = document.createElement("ul");
-  list.className = "result-list";
-  for (const value of values) {
-    const item = document.createElement("li");
-    item.textContent = value;
-    list.append(item);
-  }
-  return list;
+function setStatus(message: string, error = false): void {
+  status.replaceChildren(document.createTextNode(message));
+  status.classList.toggle("error", error);
 }
-
-function renderHeading(target: HTMLElement, heading: string): void {
-  target.replaceChildren();
-  const title = document.createElement("h3");
-  title.textContent = heading;
-  target.append(title);
+function retry(message: string, action: () => void): void {
+  setStatus(message, true);
+  const button = node("button", "Retry", "retry-button");
+  button.type = "button";
+  button.addEventListener("click", action);
+  status.append(button);
 }
-
-function renderApiResult(method: ApiMethod): void {
-  if (!apiCatalog) {
-    return;
-  }
-  renderHeading(apiResult, method.canonical);
-  const permissions = method.permissionIds.map((id) => apiCatalog?.iamPermissions[id] ?? "");
-  if (permissions.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "empty-state";
-    empty.textContent = "No authorized IAM actions in CloudCover data.";
-    apiResult.append(empty);
-    setStatus(`${method.canonical} selected; no authorized IAM actions.`);
-    return;
-  }
-  apiResult.append(renderList(permissions));
-  setStatus(`${method.canonical} selected; ${permissions.length} IAM actions shown.`);
+function entry(kind: Kind, label: string, id: number | string): Entry {
+  return { kind, label, id, normalized: label.toLowerCase() };
 }
-
-function renderIamResult(permission: string): void {
-  if (!apiCatalog) {
-    return;
-  }
-  const permissionId = apiCatalog.iamPermissions.indexOf(permission);
-  const methods = apiCatalog.apiMethods.filter((method) =>
-    method.permissionIds.includes(permissionId),
-  );
-  renderHeading(iamResult, permission);
-  if (methods.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "empty-state";
-    empty.textContent = "No API operations use this IAM action in CloudCover data.";
-    iamResult.append(empty);
-    setStatus(`${permission} selected; no API operations found.`);
-    return;
-  }
-  iamResult.append(renderList(methods.map((method) => method.canonical)));
-  setStatus(`${permission} selected; ${methods.length} API operations shown.`);
+function dismiss(): void {
+  matches = [];
+  suggestions.hidden = true;
+  input.setAttribute("aria-expanded", "false");
+  input.removeAttribute("aria-activedescendant");
+  active = -1;
 }
-
-function resourcesForSnapshot(snapshot: TerraformSnapshot): SearchOption<string>[] {
-  if (!terraformRows) {
-    return [];
+function updateActive(): void {
+  suggestions.querySelectorAll(".suggestion").forEach((child, i) => child.setAttribute("aria-selected", String(i === active)));
+  if (active < 0) input.removeAttribute("aria-activedescendant");
+  else {
+    input.setAttribute("aria-activedescendant", `suggestion-${active}`);
+    document.getElementById(`suggestion-${active}`)?.scrollIntoView({ block: "nearest" });
   }
-  const resources = new Set<string>();
-  for (const rowId of snapshot.rowIds) {
-    resources.add(terraformRows[rowId].resource);
-  }
-  return [...resources].sort().map((resource) => ({ display: resource, value: resource }));
 }
-
-function renderTerraformResult(resource: string): void {
-  if (!apiCatalog || !terraformRows) {
-    return;
+function search(): void {
+  const query = input.value.trim().toLowerCase();
+  clear.hidden = input.value.length === 0;
+  if (!query || input.disabled) { dismiss(); return; }
+  const terms = query.split(/\s+/);
+  const groups = (["api", "iam", "terraform"] as const).map(kind => entries
+    .filter(item => item.kind === kind && terms.every(term => item.normalized.includes(term)))
+    .sort((a, b) => Number(b.normalized === query) - Number(a.normalized === query)
+      || Number(b.normalized.startsWith(query)) - Number(a.normalized.startsWith(query))
+      || a.label.localeCompare(b.label)));
+  const total = groups.reduce((sum, group) => sum + group.length, 0);
+  // Reserve space for every matching type so broad queries do not hide Terraform.
+  matches = [];
+  for (let rank = 0; rank < 8; rank++) {
+    for (const group of groups) if (group[rank]) matches.push(group[rank]);
   }
-  const snapshot = terraformSnapshots.get(activeVersion);
-  if (!snapshot) {
-    return;
+  active = -1;
+  suggestions.replaceChildren();
+  for (const [i, item] of matches.entries()) {
+    const option = node("li", "", "suggestion");
+    option.id = `suggestion-${i}`;
+    option.setAttribute("role", "option");
+    option.setAttribute("aria-selected", "false");
+    const text = node("span", "", "suggestion-label");
+    const start = item.normalized.indexOf(query);
+    if (start >= 0) text.append(item.label.slice(0, start), node("mark", item.label.slice(start, start + query.length)), item.label.slice(start + query.length));
+    else text.textContent = item.label;
+    const badge = node("span", labels[item.kind], "type-badge");
+    badge.dataset.kind = item.kind;
+    option.append(text, badge);
+    option.addEventListener("pointerdown", event => event.preventDefault());
+    option.addEventListener("click", () => select(item));
+    option.addEventListener("pointermove", () => { active = i; updateActive(); });
+    suggestions.append(option);
   }
-  const rows = snapshot.rowIds
-    .map((rowId) => terraformRows?.[rowId])
-    .filter((row): row is TerraformRow => row !== undefined && row.resource === resource);
-  renderHeading(terraformResult, `${resource} · ${activeVersion}`);
-  const reachedPermissions = new Set<number>();
-  for (const lifecycle of ["create", "read", "update", "delete"]) {
-    const lifecycleRows = rows.filter((row) => row.lifecycle === lifecycle);
-    const apiIds = new Set<number>();
-    for (const row of lifecycleRows) {
-      for (const apiId of row.apiMethodIds) {
-        apiIds.add(apiId);
-        for (const permissionId of apiCatalog.apiMethods[apiId].permissionIds) {
-          reachedPermissions.add(permissionId);
-        }
-      }
+  if (!matches.length) {
+    const empty = node("li", "No matches. Try a service name, action, or resource.", "suggestion-empty");
+    empty.setAttribute("role", "option");
+    empty.setAttribute("aria-disabled", "true");
+    suggestions.append(empty);
+  }
+  feedback.textContent = total > matches.length
+    ? `${total.toLocaleString()} matches. Showing up to 8 per type; refine your search for more.`
+    : `${total} matches. Use arrow keys to choose and Enter to open.`;
+  if (total > matches.length) {
+    const hint = node("li", "Showing up to 8 per type. Keep typing to narrow your search.", "suggestion-empty");
+    hint.setAttribute("role", "presentation");
+    suggestions.append(hint);
+  }
+  suggestions.hidden = false;
+  input.setAttribute("aria-expanded", "true");
+  input.removeAttribute("aria-activedescendant");
+}
+function mappingCard(title: string, items: Entry[], empty: string): HTMLElement {
+  const section = node("section", "", "mapping-card");
+  const heading = node("h2", title);
+  heading.append(node("span", String(items.length), "count"));
+  section.append(heading);
+  if (!items.length) section.append(node("p", empty, "empty-mapping"));
+  else {
+    const list = node("ul", "", "result-list");
+    for (const item of items) {
+      const li = node("li", "");
+      const button = node("button", item.label, "mapping-link");
+      button.type = "button";
+      button.addEventListener("click", () => select(item));
+      li.append(button);
+      list.append(li);
     }
-    const section = document.createElement("section");
-    const heading = document.createElement("h4");
-    heading.textContent = lifecycle;
-    section.append(heading);
-    const methods = [...apiIds]
-      .sort((left, right) => left - right)
-      .map((apiId) => apiCatalog?.apiMethods[apiId].canonical ?? "");
-    if (methods.length === 0) {
-      const empty = document.createElement("p");
-      empty.className = "empty-mapping";
-      empty.textContent = "No known API operation for this lifecycle action.";
-      section.append(empty);
-    } else {
-      section.append(renderList(methods));
-    }
-    terraformResult.append(section);
+    section.append(list);
   }
-  const permissionHeading = document.createElement("h4");
-  permissionHeading.textContent = "IAM action union";
-  terraformResult.append(permissionHeading);
-  const permissions = [...reachedPermissions]
-    .sort((left, right) => left - right)
-    .map((permissionId) => apiCatalog?.iamPermissions[permissionId] ?? "");
-  if (permissions.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "empty-mapping";
-    empty.textContent = "No IAM actions reached by the known API operations.";
-    terraformResult.append(empty);
+  return section;
+}
+function apiEntry(id: number): Entry { return entry("api", catalog.apiMethods[id].canonical, id); }
+function iamEntry(id: number): Entry { return entry("iam", catalog.iamPermissions[id], id); }
+function renderDetail(item: Entry, focus: boolean): void {
+  welcome.hidden = true;
+  detail.hidden = false;
+  detail.replaceChildren();
+  const header = node("div", "", "detail-header");
+  header.append(node("p", labels[item.kind], "eyebrow"), node("h1", item.label));
+  const description = item.kind === "api" ? "IAM permissions associated with this API action."
+    : item.kind === "iam" ? "API actions associated with this IAM permission."
+    : `Known API actions by resource lifecycle · AWS provider ${snapshot?.version ?? versionSelect.value}`;
+  header.append(node("p", description, "detail-description"));
+  detail.append(header);
+  const grid = node("div", "", "detail-grid");
+  if (item.kind === "api") {
+    grid.append(mappingCard("IAM permissions", catalog.apiMethods[Number(item.id)].permissionIds.map(iamEntry), "No IAM permissions mapped in the catalog."));
+  } else if (item.kind === "iam") {
+    grid.append(mappingCard("API actions", (methodsByPermission.get(Number(item.id)) ?? []).map(apiEntry), "No API actions mapped in the catalog."));
   } else {
-    terraformResult.append(renderList(permissions));
-  }
-  setStatus(`${resource} selected for Terraform ${activeVersion}.`);
-}
-
-function clearTerraformSelection(): void {
-  terraformCombobox?.clear();
-  terraformResult.replaceChildren();
-  const empty = document.createElement("p");
-  empty.className = "empty-state";
-  empty.textContent = "Select a Terraform resource to see lifecycle API operations.";
-  terraformResult.append(empty);
-}
-
-async function loadTerraformVersion(version: string): Promise<void> {
-  if (!terraformIndex || !apiCatalog) {
-    return;
-  }
-  const token = ++terraformLoadToken;
-  activeVersion = version;
-  clearTerraformSelection();
-  terraformCombobox?.setDisabled(true);
-  versionSelect.disabled = true;
-  setStatus(`Loading Terraform ${version} data…`);
-  try {
-    let snapshot: TerraformSnapshot;
-    if (terraformSnapshots.has(version) && terraformRows) {
-      snapshot = terraformSnapshots.get(version) as TerraformSnapshot;
+    const resourceRows = rowsByResource.get(item.label) ?? [];
+    if (!resourceRows.length) {
+      grid.append(node("p", "This resource has no known mappings in this provider version.", "empty-mapping"));
     } else {
-      const rowsPromise = terraformRows
-        ? Promise.resolve(terraformRows)
-        : fetchDocument("data/terraform/rows.json").then((value) =>
-            parseTerraformRows(value, apiCatalog?.apiMethods.length ?? 0),
-          );
-      const snapshotPromise = fetchDocument(
-        `data/terraform/versions/${version}.json`,
-      );
-      const [loadedRows, loadedSnapshotDocument] = await Promise.all([
-        rowsPromise,
-        snapshotPromise,
-      ]);
-      if (token !== terraformLoadToken) {
-        return;
+      const permissions = new Set<number>();
+      for (const lifecycle of ["create", "read", "update", "delete"]) {
+        const apiIds = new Set(resourceRows.filter(row => row.lifecycle === lifecycle).flatMap(row => row.apiMethodIds));
+        for (const id of apiIds) for (const permission of catalog.apiMethods[id].permissionIds) permissions.add(permission);
+        grid.append(mappingCard(`${lifecycle[0].toUpperCase()}${lifecycle.slice(1)} API actions`, [...apiIds].sort((a, b) => a - b).map(apiEntry), "No known API actions for this lifecycle step."));
       }
-      terraformRows = loadedRows;
-      snapshot = parseTerraformSnapshot(
-        loadedSnapshotDocument,
-        version,
-        terraformRows.length,
-      );
-      terraformSnapshots.set(version, snapshot);
+      grid.append(mappingCard("Combined IAM permissions", [...permissions].sort((a, b) => a - b).map(iamEntry), "No IAM permissions reached by the known API actions."));
     }
-    if (token !== terraformLoadToken) {
-      return;
-    }
-    terraformRows = terraformRows ?? [];
-    terraformSnapshots.set(version, snapshot);
-    terraformCombobox?.setDisabled(false);
-    versionSelect.disabled = false;
-    setStatus(`Terraform ${version} data loaded.`);
-  } catch (error) {
-    if (token !== terraformLoadToken) {
-      return;
-    }
-    terraformCombobox?.setDisabled(true);
-    versionSelect.disabled = false;
-    const message = error instanceof Error ? error.message : "Unknown data error";
-    showRetry(terraformResult, `Could not load Terraform ${version}: ${message}`, () => {
-      void loadTerraformVersion(version);
-    });
-    setStatus(`Terraform ${version} data failed to load.`, true);
   }
+  detail.append(grid, node("p", "Mappings reflect CloudCover’s indexed data, not a complete permissions policy. Required permissions can depend on request parameters and resource configuration.", "detail-description"));
+  if (focus) { detail.focus({ preventScroll: true }); detail.scrollIntoView({ block: "start" }); }
 }
-
-function activateMode(mode: Mode): void {
-  for (const tab of tabs) {
-    const selected = tab.id === `tab-${mode}`;
-    tab.setAttribute("aria-selected", String(selected));
-    tab.tabIndex = selected ? 0 : -1;
-  }
-  for (const panel of panels) {
-    panel.hidden = panel.id !== `panel-${mode}`;
-  }
-  if (mode === "terraform" && terraformIndex) {
-    void loadTerraformVersion(versionSelect.value || terraformIndex.latest);
-  }
+function select(item: Entry): void {
+  selected = item;
+  input.value = item.label;
+  clear.hidden = false;
+  dismiss();
+  renderDetail(item, true);
+  feedback.textContent = `${labels[item.kind]} ${item.label} selected.`;
 }
-
-function setupExplorer(): void {
-  if (!apiCatalog || !terraformIndex) {
-    return;
+async function loadVersion(version: string): Promise<void> {
+  const token = ++versionToken;
+  snapshot = undefined;
+  rowsByResource.clear();
+  entries = entries.filter(item => item.kind !== "terraform");
+  dismiss();
+  if (selected?.kind === "terraform") {
+    detail.replaceChildren(node("p", `Loading AWS provider ${version}…`, "empty-mapping"));
   }
-  const apiOptions = apiCatalog.apiMethods.map((method) => ({
-    display: method.canonical,
-    value: method,
-  }));
-  const iamOptions = apiCatalog.iamPermissions.map((permission) => ({
-    display: permission,
-    value: permission,
-  }));
-  apiCombobox = new Combobox({
-    input: apiInput,
-    listbox: element("suggestions-api"),
-    options: (query) => filteredOptions(apiOptions, query),
-    onSelect: (option) => renderApiResult(option.value),
-  });
-  iamCombobox = new Combobox({
-    input: iamInput,
-    listbox: element("suggestions-iam"),
-    options: (query) => filteredOptions(iamOptions, query),
-    onSelect: (option) => renderIamResult(option.value),
-  });
-  terraformCombobox = new Combobox({
-    input: terraformInput,
-    listbox: element("suggestions-terraform"),
-    options: (query) => {
-      const snapshot = terraformSnapshots.get(activeVersion);
-      return snapshot ? filteredOptions(resourcesForSnapshot(snapshot), query) : [];
-    },
-    onSelect: (option) => renderTerraformResult(option.value),
-  });
-  for (const version of terraformIndex.versions) {
-    const option = document.createElement("option");
-    option.value = version;
-    option.textContent = version;
-    versionSelect.append(option);
-  }
-  versionSelect.value = terraformIndex.latest;
-  versionSelect.addEventListener("change", () => {
-    if (versionSelect.value) {
-      void loadTerraformVersion(versionSelect.value);
-    }
-  });
-  for (const tab of tabs) {
-    tab.addEventListener("click", () => {
-      activateMode(tab.id.replace("tab-", "") as Mode);
-    });
-    tab.addEventListener("keydown", (event) => {
-      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
-        return;
-      }
-      event.preventDefault();
-      const direction = event.key === "ArrowRight" ? 1 : -1;
-      const currentIndex = tabs.indexOf(tab);
-      const nextTab = tabs[(currentIndex + direction + tabs.length) % tabs.length];
-      nextTab.focus();
-      activateMode(nextTab.id.replace("tab-", "") as Mode);
-    });
-  }
-}
-
-async function loadSharedCatalogs(): Promise<void> {
-  setInteractive(false);
-  setStatus("Loading catalog…");
+  setStatus(`Loading Terraform ${version}… API and IAM search is available.`);
+  versionSelect.disabled = true;
   try {
-    const [apiDocument, terraformDocument] = await Promise.all([
-      fetchDocument("data/api.json"),
-      fetchDocument("data/terraform/index.json"),
-    ]);
-    apiCatalog = parseApiCatalog(apiDocument);
-    terraformIndex = parseTerraformIndex(terraformDocument);
-    setupExplorer();
-    setInteractive(true);
-    setStatus("Catalog loaded. Choose a data path.");
+    const loadedRows = rows ?? parseTerraformRows(await fetchDocument("data/terraform/rows.json"), catalog.apiMethods.length);
+    const loadedSnapshot = snapshots.get(version) ?? parseTerraformSnapshot(await fetchDocument(`data/terraform/versions/${version}.json`), version, loadedRows.length);
+    if (token !== versionToken) return;
+    rows = loadedRows;
+    snapshot = loadedSnapshot;
+    snapshots.set(version, snapshot);
+    for (const id of snapshot.rowIds) {
+      const row = rows[id];
+      const group = rowsByResource.get(row.resource);
+      if (group) group.push(row); else rowsByResource.set(row.resource, [row]);
+    }
+    entries.push(...[...rowsByResource.keys()].sort().map(resource => entry("terraform", resource, resource)));
+    setStatus(`${catalog.apiMethods.length.toLocaleString()} API actions · ${catalog.iamPermissions.length.toLocaleString()} IAM permissions · ${rowsByResource.size.toLocaleString()} Terraform resources`);
+    if (selected?.kind === "terraform") renderDetail(selected, false);
+    if (document.activeElement === input) search();
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown data error";
-    setInteractive(false);
-    showRetry(loadStatus, `Could not load CloudCover data: ${message}`, () => {
-      void loadSharedCatalogs();
-    });
-    loadStatus.classList.add("error");
+    if (token !== versionToken) return;
+    retry(`Terraform data unavailable. API and IAM search is available. ${error instanceof Error ? error.message : ""}`, () => void loadVersion(version));
+    if (selected?.kind === "terraform") detail.replaceChildren(node("p", "Terraform mappings could not be loaded. Use Retry above.", "empty-mapping"));
+  } finally {
+    if (token === versionToken) versionSelect.disabled = false;
   }
 }
-
-void loadSharedCatalogs();
+async function load(): Promise<void> {
+  input.disabled = true;
+  setStatus("Loading catalogs…");
+  try {
+    const [apiDocument, indexDocument] = await Promise.all([fetchDocument("data/api.json"), fetchDocument("data/terraform/index.json")]);
+    catalog = parseApiCatalog(apiDocument);
+    index = parseTerraformIndex(indexDocument);
+    entries = [...catalog.apiMethods.map((_, id) => apiEntry(id)), ...catalog.iamPermissions.map((_, id) => iamEntry(id))];
+    methodsByPermission.clear();
+    catalog.apiMethods.forEach((method, id) => method.permissionIds.forEach(permission => {
+      const methods = methodsByPermission.get(permission);
+      if (methods) methods.push(id); else methodsByPermission.set(permission, [id]);
+    }));
+    versionSelect.replaceChildren(...index.versions.map(version => {
+      const option = node("option", version);
+      option.value = version;
+      return option;
+    }));
+    versionSelect.value = index.latest;
+    input.disabled = false;
+    await loadVersion(index.latest);
+  } catch (error) {
+    retry(`Could not load catalogs. ${error instanceof Error ? error.message : ""}`, () => void load());
+  }
+}
+input.addEventListener("input", search);
+input.addEventListener("focus", search);
+input.addEventListener("blur", dismiss);
+input.addEventListener("keydown", event => {
+  if (event.key === "Escape") { dismiss(); return; }
+  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    event.preventDefault();
+    if (suggestions.hidden) search();
+    if (!matches.length) return;
+    active = active < 0 ? (event.key === "ArrowDown" ? 0 : matches.length - 1)
+      : (active + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length;
+    updateActive();
+  } else if (event.key === "Enter" && !suggestions.hidden && matches.length) {
+    event.preventDefault();
+    select(matches[active < 0 ? 0 : active]);
+  }
+});
+clear.addEventListener("click", () => { input.value = ""; dismiss(); clear.hidden = true; input.focus(); });
+versionSelect.addEventListener("change", () => void loadVersion(versionSelect.value));
+for (const button of document.querySelectorAll<HTMLButtonElement>("[data-query]")) {
+  button.addEventListener("click", () => { input.value = button.dataset.query ?? ""; input.focus(); search(); });
+}
+void load();

@@ -14,153 +14,71 @@ import "../styles/global.css";
     <title>CloudCover Data Browser</title>
   </head>
   <body>
+    <a class="skip-link" href="#workspace">Skip to explorer</a>
+
     <header class="site-header">
-      <div class="page-shell">
-        <p class="eyebrow">CloudCover</p>
-        <h1>AWS permission explorer</h1>
-        <p class="lede">
-          Find the IAM actions behind an AWS API operation, work backwards from an IAM
-          action, or inspect the API operations CloudCover knows for a Terraform resource.
-        </p>
+      <div class="topbar">
+        <a class="brand" href={import.meta.env.BASE_URL} aria-label="CloudCover home">CloudCover</a>
+        <form class="search-form" role="search" onsubmit="return false">
+          <label class="sr-only" for="search">Search CloudCover data</label>
+          <div class="search-control">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="search"
+              type="search"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-controls="suggestions"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              autocomplete="off"
+              disabled
+              placeholder="Search APIs, IAM permissions, or Terraform resources"
+            />
+            <button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden>
+              Clear
+            </button>
+          </div>
+          <ul id="suggestions" class="suggestions" role="listbox" aria-label="Search suggestions" hidden></ul>
+          <p id="search-feedback" class="sr-only" aria-live="polite"></p>
+        </form>
       </div>
     </header>
 
-    <main class="page-shell" id="explorer" data-base-url={import.meta.env.BASE_URL}>
-      <section class="source-note" aria-labelledby="source-title">
-        <h2 id="source-title">Generated data</h2>
-        <p>
-          Rust generates the compact AWS catalogs during each build from the AWS service
-          reference and indexed Terraform AWS provider mappings. Search and joins run in
-          this browser; no server API is used.
-        </p>
-      </section>
-
-      <section class="explorer-card" aria-labelledby="explorer-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Browse</p>
-            <h2 id="explorer-title">Choose a data path</h2>
+    <main id="workspace">
+      <div id="explorer" class="workspace" data-base-url={import.meta.env.BASE_URL}>
+        <div class="workspace-toolbar" aria-label="Explorer controls">
+          <div class="version-control">
+            <label for="terraform-version">Terraform provider version</label>
+            <select id="terraform-version" disabled>
+              <option>Loading versions…</option>
+            </select>
           </div>
-          <div id="load-status" class="status" role="status" aria-live="polite">
-            Loading catalog…
-          </div>
+          <p id="load-status" class="status" aria-live="polite">Loading catalog data…</p>
         </div>
 
-        <div class="tabs" role="tablist" aria-label="CloudCover data paths">
-          <button
-            id="tab-api"
-            class="tab"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            aria-controls="panel-api"
-            tabindex="0"
-          >API operation</button>
-          <button
-            id="tab-iam"
-            class="tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-iam"
-            tabindex="-1"
-          >IAM action</button>
-          <button
-            id="tab-terraform"
-            class="tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-terraform"
-            tabindex="-1"
-          >Terraform resource</button>
-        </div>
-
-        <section id="panel-api" class="tab-panel" role="tabpanel" aria-labelledby="tab-api">
-          <div class="search-field">
-            <label for="search-api">Search an API operation</label>
-            <input
-              id="search-api"
-              type="text"
-              role="combobox"
-              aria-autocomplete="list"
-              aria-controls="suggestions-api"
-              aria-expanded="false"
-              aria-activedescendant=""
-              autocomplete="off"
-              placeholder="s3:CopyObject"
-              disabled
-            />
-            <ul id="suggestions-api" class="suggestions" role="listbox" hidden></ul>
-          </div>
-          <div id="result-api" class="result" aria-live="polite">
-            <p class="empty-state">Select an API operation to see its IAM actions.</p>
+        <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+          <p class="eyebrow">Cloud data explorer</p>
+          <h1 id="welcome-title">Find the connection between AWS APIs, IAM, and Terraform.</h1>
+          <p>
+            Search API actions and their IAM permissions, or explore the known API actions
+            and permissions for each Terraform resource lifecycle.
+          </p>
+          <div class="examples" aria-label="Try an example search">
+            <span>Try an example</span>
+            <button type="button" class="example-button" data-query="s3:CopyObject">s3:CopyObject</button>
+            <button type="button" class="example-button" data-query="s3:GetObject">s3:GetObject</button>
+            <button type="button" class="example-button" data-query="aws_s3_bucket">aws_s3_bucket</button>
           </div>
         </section>
 
-        <section id="panel-iam" class="tab-panel" role="tabpanel" aria-labelledby="tab-iam" hidden>
-          <div class="search-field">
-            <label for="search-iam">Search an IAM action</label>
-            <input
-              id="search-iam"
-              type="text"
-              role="combobox"
-              aria-autocomplete="list"
-              aria-controls="suggestions-iam"
-              aria-expanded="false"
-              aria-activedescendant=""
-              autocomplete="off"
-              placeholder="s3:GetObjectVersion"
-              disabled
-            />
-            <ul id="suggestions-iam" class="suggestions" role="listbox" hidden></ul>
-          </div>
-          <div id="result-iam" class="result" aria-live="polite">
-            <p class="empty-state">Select an IAM action to see its API operations.</p>
-          </div>
-        </section>
+        <section id="detail" class="detail" aria-live="polite" tabindex="-1" hidden></section>
 
-        <section
-          id="panel-terraform"
-          class="tab-panel"
-          role="tabpanel"
-          aria-labelledby="tab-terraform"
-          hidden
-        >
-          <div class="terraform-controls">
-            <div class="search-field">
-              <label for="terraform-version">Provider version</label>
-              <select id="terraform-version" disabled></select>
-            </div>
-            <div class="search-field resource-search">
-              <label for="search-terraform">Search a Terraform resource</label>
-              <input
-                id="search-terraform"
-                type="text"
-                role="combobox"
-                aria-autocomplete="list"
-                aria-controls="suggestions-terraform"
-                aria-expanded="false"
-                aria-activedescendant=""
-                autocomplete="off"
-                placeholder="aws_s3_bucket"
-                disabled
-              />
-              <ul id="suggestions-terraform" class="suggestions" role="listbox" hidden></ul>
-            </div>
-          </div>
-          <div id="result-terraform" class="result" aria-live="polite">
-            <p class="empty-state">Select a provider version and resource to begin.</p>
-          </div>
-        </section>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="page-shell">
-        <p>CloudCover is open source. The browser catalog is a generated build artifact.</p>
+        <aside class="source-note" aria-label="Data provenance">
+          Catalog mappings are generated from AWS service models and Terraform AWS provider snapshots.
+        </aside>
       </div>
-    </footer>
+    </main>
 
     <script src="../scripts/explorer.ts"></script>
   </body>
