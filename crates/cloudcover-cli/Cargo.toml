@@ -2,16 +2,19 @@
 name = "cloudcover-cli"
 version.workspace = true
 edition.workspace = true
+description = "Command-line interface for analyzing cloud SDK usage and generating permission policies"
+license.workspace = true
+repository.workspace = true
 
 [[bin]]
 name = "cloudcover"
 path = "src/main.rs"
 
 [dependencies]
-cloudcover-aws = { path = "../clouds/cloudcover-aws" }
-cloudcover-core = { path = "../cloudcover-core" }
-cloudcover-go = { path = "../langs/cloudcover-go" }
-cloudcover-terraform = { path = "../langs/cloudcover-terraform" }
+cloudcover-aws = { version = "0.1.0", path = "../clouds/cloudcover-aws" }
+cloudcover-core = { version = "0.1.0", path = "../cloudcover-core" }
+cloudcover-go = { version = "0.1.0", path = "../langs/cloudcover-go" }
+cloudcover-terraform = { version = "0.1.0", path = "../langs/cloudcover-terraform" }
 serde_json = "1.0"
 
 [lints]

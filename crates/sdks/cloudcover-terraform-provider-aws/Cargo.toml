@@ -3,6 +3,9 @@ name = "cloudcover-terraform-provider-aws"
 version.workspace = true
 edition.workspace = true
 build = "build.rs"
+description = "Terraform AWS provider method mappings for CloudCover"
+license.workspace = true
+repository.workspace = true
 
 [features]
 generator = [
@@ -21,8 +24,8 @@ path = "src/bin/generate_terraform_provider_aws_data.rs"
 required-features = ["generator"]
 [dependencies]
 clap = { version = "4.5", features = ["derive"], optional = true }
-cloudcover-aws-sdk-go-v1 = { path = "../cloudcover-aws-sdk-go-v1", optional = true }
-cloudcover-aws-sdk-go-v2 = { path = "../cloudcover-aws-sdk-go-v2", optional = true }
+cloudcover-aws-sdk-go-v1 = { version = "0.1.0", path = "../cloudcover-aws-sdk-go-v1", optional = true }
+cloudcover-aws-sdk-go-v2 = { version = "0.1.0", path = "../cloudcover-aws-sdk-go-v2", optional = true }
 semver = { version = "1.0", optional = true }
 serde = { version = "1.0", features = ["derive"], optional = true }
 serde_json = { version = "1.0", optional = true }

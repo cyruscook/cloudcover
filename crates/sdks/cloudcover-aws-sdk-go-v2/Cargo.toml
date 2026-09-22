@@ -3,6 +3,9 @@ name = "cloudcover-aws-sdk-go-v2"
 version.workspace = true
 edition.workspace = true
 build = "build.rs"
+description = "AWS SDK for Go v2 method mappings for CloudCover"
+license.workspace = true
+repository.workspace = true
 
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
