@@ -8,29 +8,37 @@ const FIXTURE: &str = r#"
   "packages": [
     {
       "package": "@aws-sdk/client-bedrock-runtime",
-      "version": "3.1137.0",
-      "mappings": [{
-        "receiver": "BedrockRuntimeClient",
-        "method": "sendConverse",
-        "api_methods": [{"service": "bedrock", "name": "Converse"}]
-      }]
+      "releases": [
+        {
+          "version": "3.1136.0",
+          "remove": [],
+          "upsert": [{
+            "receiver": "BedrockRuntimeClient",
+            "method": "sendInvokeModel",
+            "api_methods": [{"service": "bedrock", "name": "InvokeModel"}]
+          }]
+        },
+        {
+          "version": "3.1137.0",
+          "remove": [["BedrockRuntimeClient", "sendInvokeModel"]],
+          "upsert": [{
+            "receiver": "BedrockRuntimeClient",
+            "method": "sendConverse",
+            "api_methods": [{"service": "bedrock", "name": "Converse"}]
+          }]
+        }
+      ]
     },
     {
       "package": "@aws-sdk/client-s3",
-      "version": "3.1137.0",
-      "mappings": [{
-        "receiver": "S3Client",
-        "method": "sendPutObject",
-        "api_methods": [{"service": "s3", "name": "PutObject"}]
-      }]
-    },
-    {
-      "package": "@aws-sdk/client-bedrock-runtime",
-      "version": "3.1136.0",
-      "mappings": [{
-        "receiver": "BedrockRuntimeClient",
-        "method": "sendInvokeModel",
-        "api_methods": [{"service": "bedrock", "name": "InvokeModel"}]
+      "releases": [{
+        "version": "3.1137.0",
+        "remove": [],
+        "upsert": [{
+          "receiver": "S3Client",
+          "method": "sendPutObject",
+          "api_methods": [{"service": "s3", "name": "PutObject"}]
+        }]
       }]
     }
   ]
@@ -93,13 +101,35 @@ fn main() {{
 }
 
 #[test]
+fn generated_releases_are_indexed_at_oldest_middle_and_newest() {
+    for package in cloudcover_aws_sdk_js_v3::service_modules() {
+        let versions = cloudcover_aws_sdk_js_v3::service_versions(package)
+            .expect("every generated package must have versions");
+        assert!(!versions.is_empty(), "{package} has no generated versions");
+
+        for index in [0, versions.len() / 2, versions.len() - 1] {
+            let version = versions[index];
+            let mappings = cloudcover_aws_sdk_js_v3::service_method_mappings(package, version)
+                .expect("every generated release must be indexed");
+            assert!(
+                !mappings.is_empty(),
+                "{package}@{version} has no generated mappings"
+            );
+        }
+    }
+}
+
+#[test]
 fn duplicate_exact_package_release_is_rejected() {
     let duplicate = r#"
     {
-      "packages": [
-        {"package": "@aws-sdk/client-s3", "version": "3.1137.0", "mappings": []},
-        {"package": "@aws-sdk/client-s3", "version": "3.1137.0", "mappings": []}
-      ]
+      "packages": [{
+        "package": "@aws-sdk/client-s3",
+        "releases": [
+          {"version": "3.1137.0", "remove": [], "upsert": []},
+          {"version": "3.1137.0", "remove": [], "upsert": []}
+        ]
+      }]
     }
     "#;
     assert!(build_script::generate(duplicate).is_err());

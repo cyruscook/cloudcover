@@ -12,18 +12,22 @@ const CLIENT_PACKAGE = /^@aws-sdk\/client-[a-z0-9-]+$/;
 
 function usage() {
   return `Usage: node generate.mjs [--latest|--all] [--package NAME@VERSION ...] [--output FILE]\n\n` +
-    `--latest and --all generate the latest published version of every @aws-sdk/client-* package.\n` +
+    `--latest generates the latest published version of every current @aws-sdk/client-* package.\n` +
+    `--all generates every stable published version of every current @aws-sdk/client-* package.\n` +
     `--package accepts an exact package/version, for example @aws-sdk/client-s3@3.XXX.X.`;
 }
 
 function parseArguments(argv) {
   const packages = [];
   let latest = false;
+  let all = false;
   let output = resolve(import.meta.dirname, "../data/mappings.json");
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
-    if (argument === "--latest" || argument === "--all") {
+    if (argument === "--latest") {
       latest = true;
+    } else if (argument === "--all") {
+      all = true;
     } else if (argument === "--package") {
       const value = argv[++index];
       if (!value) throw new Error("--package requires NAME@VERSION");
@@ -42,8 +46,11 @@ function parseArguments(argv) {
       throw new Error(`unknown argument ${argument}`);
     }
   }
-  if (!latest && packages.length === 0) throw new Error("select --latest, --all, or at least one --package");
-  return { latest, output, packages };
+  if (latest && all) throw new Error("--latest and --all cannot be combined");
+  if (!latest && !all && packages.length === 0) {
+    throw new Error("select --latest, --all, or at least one --package");
+  }
+  return { latest, all, output, packages };
 }
 
 async function json(url) {
@@ -52,50 +59,74 @@ async function json(url) {
   return response.json();
 }
 
-async function latestClientPackages() {
-  const tree = await json("https://api.github.com/repos/aws/aws-sdk-js-v3/git/trees/main?recursive=1");
-  const names = [...new Set(
-    (tree.tree ?? [])
-      .filter((entry) => entry.type === "blob")
-      .map((entry) => entry.path.match(/^clients\/(client-[a-z0-9-]+)\/package\.json$/)?.[1])
+async function currentClientPackageNames() {
+  const response = await fetch("https://codeload.github.com/aws/aws-sdk-js-v3/tar.gz/refs/heads/main");
+  if (!response.ok) throw new Error(`AWS SDK repository archive: ${response.status} ${response.statusText}`);
+  const files = untar(Buffer.from(await response.arrayBuffer()), "");
+  return [...new Set(
+    [...files.keys()]
+      .map((name) => name.match(/^[^/]+\/clients\/(client-[a-z0-9-]+)\/package\.json$/)?.[1])
       .filter(Boolean)
-      .filter((name) => CLIENT_PACKAGE.test(`@aws-sdk/${name}`))
       .map((name) => `@aws-sdk/${name}`),
-  )];
+  )].sort();
+}
+
+async function selectedClientPackages(selection) {
+  const names = await currentClientPackageNames();
   const packages = [];
   for (let index = 0; index < names.length; index += 8) {
     const batch = names.slice(index, index + 8);
-    packages.push(...await Promise.all(batch.map(async (packageName) => {
+    packages.push(...(await Promise.all(batch.map(async (packageName) => {
       const metadata = await json(`${REGISTRY}/${encodeURIComponent(packageName)}`);
-      return { package: packageName, version: metadata["dist-tags"]?.latest };
-    })));
+      const versions = metadata.versions ?? {};
+      if (selection === "latest") {
+        const version = metadata["dist-tags"]?.latest;
+        const tarball = typeof version === "string" ? versions[version]?.dist?.tarball : undefined;
+        return typeof version === "string" ? [{ package: packageName, version, tarball }] : [];
+      }
+      return Object.keys(versions)
+        .filter(isStableVersion)
+        .sort(compareVersions)
+        .map((version) => ({ package: packageName, version, tarball: versions[version]?.dist?.tarball }));
+    }))).flat());
   }
-  return packages
-    .filter((item) => typeof item.version === "string")
-    .sort(comparePackageVersions);
+  return packages.sort(comparePackageVersions);
+}
+
+function isStableVersion(version) {
+  return /^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/.test(version);
+}
+
+function compareVersions(left, right) {
+  const leftParts = left.split(".").map(Number);
+  const rightParts = right.split(".").map(Number);
+  for (let index = 0; index < 3; index += 1) {
+    if (leftParts[index] !== rightParts[index]) return leftParts[index] - rightParts[index];
+  }
+  return 0;
 }
 
 function comparePackageVersions(left, right) {
-  return left.package.localeCompare(right.package) || left.version.localeCompare(right.version);
+  return left.package.localeCompare(right.package) || compareVersions(left.version, right.version);
 }
 
-function untar(gzip) {
+function untar(gzip, prefix = "package/") {
   const bytes = gunzipSync(gzip);
   const files = new Map();
   for (let offset = 0; offset + 512 <= bytes.length;) {
     const header = bytes.subarray(offset, offset + 512);
     if (header.every((byte) => byte === 0)) break;
     const name = readTarString(header, 0, 100);
-    const prefix = readTarString(header, 345, 155);
+    const headerPrefix = readTarString(header, 345, 155);
     const sizeText = readTarString(header, 124, 12).trim();
     const size = Number.parseInt(sizeText || "0", 8);
     if (!Number.isSafeInteger(size) || size < 0) throw new Error(`invalid tar entry size for ${name}`);
-    const fullName = prefix ? `${prefix}/${name}` : name;
+    const fullName = headerPrefix ? `${headerPrefix}/${name}` : name;
     const contentStart = offset + 512;
     const contentEnd = contentStart + size;
     if (contentEnd > bytes.length) throw new Error(`truncated tar entry ${fullName}`);
-    if (header[156] === 48 && fullName.startsWith("package/")) {
-      files.set(fullName.slice("package/".length), Buffer.from(bytes.subarray(contentStart, contentEnd)).toString("utf8"));
+    if (header[156] === 48 && fullName.startsWith(prefix)) {
+      files.set(fullName.slice(prefix.length), Buffer.from(bytes.subarray(contentStart, contentEnd)).toString("utf8"));
     }
     offset = contentStart + Math.ceil(size / 512) * 512;
   }
@@ -107,17 +138,26 @@ function readTarString(bytes, offset, length) {
   return Buffer.from(bytes.subarray(offset, end < 0 ? offset + length : offset + end)).toString("utf8");
 }
 
-async function packageFiles(packageName, version) {
-  const metadata = await json(`${REGISTRY}/${encodeURIComponent(packageName)}/${encodeURIComponent(version)}`);
-  if (metadata.version !== version) throw new Error(`${packageName}@${version}: registry returned ${metadata.version}`);
-  if (!metadata.dist?.tarball) throw new Error(`${packageName}@${version}: missing tarball`);
-  const response = await fetch(metadata.dist.tarball);
-  if (!response.ok) throw new Error(`${packageName}@${version}: tarball ${response.status} ${response.statusText}`);
+async function packageFiles(packageVersion) {
+  let tarball = packageVersion.tarball;
+  if (!tarball) {
+    const metadata = await json(`${REGISTRY}/${encodeURIComponent(packageVersion.package)}/${encodeURIComponent(packageVersion.version)}`);
+    if (metadata.version !== packageVersion.version) {
+      throw new Error(`${packageVersion.package}@${packageVersion.version}: registry returned ${metadata.version}`);
+    }
+    tarball = metadata.dist?.tarball;
+  }
+  if (!tarball) throw new Error(`${packageVersion.package}@${packageVersion.version}: missing tarball`);
+  const response = await fetch(tarball);
+  if (!response.ok) throw new Error(`${packageVersion.package}@${packageVersion.version}: tarball ${response.status} ${response.statusText}`);
   return untar(Buffer.from(await response.arrayBuffer()));
 }
 
 function sourceFiles(files, prefix) {
-  return [...files].filter(([name]) => name.startsWith(prefix) && name.endsWith(".js"));
+  const prefixes = prefix.startsWith("dist-es/")
+    ? [prefix, prefix.replace("dist-es/", "dist/es/")]
+    : [prefix];
+  return [...files].filter(([name]) => prefixes.some((candidate) => name.startsWith(candidate)) && name.endsWith(".js"));
 }
 
 function matchOne(text, pattern, description) {
@@ -130,6 +170,7 @@ function canonicalSigningService(packageName, files) {
   const candidates = sourceFiles(files, "dist-es/").filter(([name]) =>
     /runtimeConfig\.shared\.js$/.test(name) || /auth\/httpAuthSchemeProvider\.js$/.test(name));
   const services = new Set();
+  const serviceIds = new Set();
   for (const [name, text] of candidates) {
     const constants = new Map([...text.matchAll(/\bconst\s+([A-Za-z_$][A-Za-z0-9_$]*)\s*=\s*["']([^"']+)["']/g)].map((match) => [match[1], match[2]]));
     for (const match of text.matchAll(/\bsigningService\s*:\s*(?:config\.signingService\s*\?\?\s*)?([A-Za-z_$][A-Za-z0-9_$]*|["'][^"']+["'])/g)) {
@@ -139,6 +180,10 @@ function canonicalSigningService(packageName, files) {
       services.add(service);
     }
     for (const match of text.matchAll(/\bsigningProperties\s*:\s*\{\s*name\s*:\s*["']([^"']+)["']/g)) services.add(match[1]);
+    for (const match of text.matchAll(/\bserviceId\s*:[\s\S]{0,160}?["']([^"']+)["']/g)) serviceIds.add(match[1]);
+  }
+  if (services.size === 0) {
+    for (const service of serviceIds) services.add(service);
   }
   if (services.size !== 1) {
     throw new Error(`${packageName}: expected one signing service in SDK metadata, found ${[...services].join(", ") || "none"}`);
@@ -150,12 +195,10 @@ function commandMappings(packageName, files, service) {
   const mappings = [];
   const commands = new Map();
   for (const [file, text] of sourceFiles(files, "dist-es/commands/")) {
-    const classMatch = text.match(/export\s+class\s+([A-Za-z0-9_]+Command)\b/);
+    const classMatch = text.match(/(?:export\s+class|var)\s+([A-Za-z0-9_]+Command)\b/);
     if (!classMatch) continue;
-    const operationMatch = text.match(/(?:\.s\(\s*["'][^"']+["']\s*,\s*["']([^"']+)["']|extends\s+command\(\s*[^,]+,\s*[^,]+,\s*["']([^"']+)["'])/);
-    if (!operationMatch) throw new Error(`${packageName}:${file}: operation name not found`);
-    const operation = operationMatch[1] ?? operationMatch[2];
     const command = classMatch[1];
+    const operation = command.slice(0, -"Command".length);
     if (commands.has(command)) throw new Error(`${packageName}: duplicate command ${command}`);
     commands.set(command, operation);
     mappings.push({ package: packageName, receiver: null, method: command, api_methods: [{ service, name: operation }] });
@@ -163,10 +206,30 @@ function commandMappings(packageName, files, service) {
   if (commands.size === 0) throw new Error(`${packageName}: no exported commands found`);
   return { commands, mappings };
 }
-function clientMappings(packageName, files, service, commands) {
+function clientMappings(packageName, files, service, commands, version) {
   const filesWithAggregatedClient = sourceFiles(files, "dist-es/").filter(([, text]) => /createAggregatedClient\(/.test(text));
+  if (filesWithAggregatedClient.length === 0) {
+    const legacy = [];
+    for (const [file, text] of sourceFiles(files, "dist-es/")) {
+      const legacyClass = text.match(/\b([A-Za-z0-9_]+)\.prototype\./);
+      const receiver = legacyClass?.[1] ?? text.match(/export\s+class\s+([A-Za-z0-9_]+)\s+extends\s+[A-Za-z0-9_]+Client\b/)?.[1];
+      if (!receiver) continue;
+      const methodPattern = legacyClass
+        ? /\b[A-Za-z0-9_]+\.prototype\.([A-Za-z0-9_]+)\s*=\s*function[\s\S]*?new\s+([A-Za-z0-9_]+Command)\s*\(/g
+        : /^\s*([A-Za-z0-9_]+)\([^)]*\)\s*\{[\s\S]*?new\s+([A-Za-z0-9_]+Command)\s*\(/gm;
+      for (const match of text.matchAll(methodPattern)) {
+        const method = match[1];
+        const command = match[2];
+        const operation = commands.get(command);
+        if (!operation) throw new Error(`${packageName}:${file}: client references unknown ${command}`);
+        legacy.push({ package: packageName, receiver, method, api_methods: [{ service, name: operation }] });
+      }
+    }
+    if (legacy.length === 0) throw new Error(`${packageName}@${version}: no aggregated or legacy client methods found`);
+    return legacy;
+  }
   if (filesWithAggregatedClient.length !== 1) {
-    throw new Error(`${packageName}: expected one aggregated client module, found ${filesWithAggregatedClient.length}`);
+    throw new Error(`${packageName}@${version}: expected one aggregated client module, found ${filesWithAggregatedClient.length}`);
   }
   const [file, text] = filesWithAggregatedClient[0];
   const aggregatedMatch = matchOne(
@@ -218,61 +281,89 @@ function helperMappings(packageName, files, service, commands) {
 }
 
 function compareMappings(left, right) {
-  return left.package.localeCompare(right.package) ||
-    String(left.receiver).localeCompare(String(right.receiver)) ||
+  return String(left.receiver).localeCompare(String(right.receiver)) ||
     left.method.localeCompare(right.method);
 }
 
 async function inspectPackage(packageVersion) {
-  const files = await packageFiles(packageVersion.package, packageVersion.version);
-  const service = canonicalSigningService(packageVersion.package, files);
+  const files = await packageFiles(packageVersion);
+  const service = canonicalSigningService(`${packageVersion.package}@${packageVersion.version}`, files);
   const { commands, mappings } = commandMappings(packageVersion.package, files, service);
-  mappings.push(...clientMappings(packageVersion.package, files, service, commands));
+  mappings.push(...clientMappings(packageVersion.package, files, service, commands, packageVersion.version));
   mappings.push(...helperMappings(packageVersion.package, files, service, commands));
+  for (const mapping of mappings) delete mapping.package;
   mappings.sort(compareMappings);
   for (let index = 1; index < mappings.length; index += 1) {
     if (compareMappings(mappings[index - 1], mappings[index]) === 0) {
       throw new Error(`${packageVersion.package}: duplicate mapping ${mappings[index].receiver ?? ""}.${mappings[index].method}`);
     }
   }
-  return { ...packageVersion, service, mappings };
+  return { ...packageVersion, mappings };
+}
+
+function mappingKey(mapping) {
+  return JSON.stringify([mapping.receiver, mapping.method]);
+}
+
+function packageHistory(packageName, snapshots) {
+  const state = new Map();
+  const releases = [];
+  for (const snapshot of snapshots.sort(comparePackageVersions)) {
+    const next = new Map(snapshot.mappings.map((mapping) => [mappingKey(mapping), mapping]));
+    const remove = [...state]
+      .filter(([key]) => !next.has(key))
+      .map(([, mapping]) => [mapping.receiver, mapping.method]);
+    const upsert = [...next]
+      .filter(([key, mapping]) => JSON.stringify(state.get(key)) !== JSON.stringify(mapping))
+      .map(([, mapping]) => mapping);
+    remove.sort((left, right) => String(left[0]).localeCompare(String(right[0])) || left[1].localeCompare(right[1]));
+    upsert.sort(compareMappings);
+    releases.push({ version: snapshot.version, remove, upsert });
+    state.clear();
+    for (const [key, mapping] of next) state.set(key, mapping);
+  }
+  return { package: packageName, releases };
 }
 
 async function run() {
   const options = parseArguments(process.argv.slice(2));
   const requested = new Map(options.packages.map((item) => [`${item.package}@${item.version}`, item]));
-  if (options.latest) {
-    for (const item of await latestClientPackages()) requested.set(`${item.package}@${item.version}`, item);
+  if (options.latest || options.all) {
+    const selected = await selectedClientPackages(options.all ? "all" : "latest");
+    for (const item of selected) requested.set(`${item.package}@${item.version}`, item);
+    process.stderr.write(`selected ${requested.size} exact npm package releases\n`);
   }
   const packages = [...requested.values()].sort(comparePackageVersions);
-  const result = [];
-  const concurrency = 8;
+  const snapshots = [];
+  const concurrency = 64;
   for (let index = 0; index < packages.length; index += concurrency) {
     const batch = packages.slice(index, index + concurrency);
     const outcomes = await Promise.allSettled(batch.map(inspectPackage));
     for (const outcome of outcomes) {
       if (outcome.status === "fulfilled") {
-        result.push(outcome.value);
-      } else if (options.latest) {
-        process.stderr.write(`skipping unsupported package release: ${outcome.reason?.message ?? outcome.reason}\n`);
+        snapshots.push(outcome.value);
+      } else if (options.latest || (options.all && /tarball 404\b/.test(String(outcome.reason?.message ?? outcome.reason)))) {
+        process.stderr.write(`skipping unavailable package release: ${outcome.reason?.message ?? outcome.reason}\n`);
       } else {
         throw outcome.reason;
       }
     }
   }
+  const byPackage = Map.groupBy(snapshots, (snapshot) => snapshot.package);
   const data = {
-    schema_version: 1,
+    schema_version: 2,
     provenance: {
       registry: REGISTRY,
-      source: "published npm package tarballs; dist-es command builders, runtime config signingService, paginator, and waiter modules",
+      source: "stable published npm package tarballs; dist-es command builders, runtime config signingService, paginator, and waiter modules",
     },
-    packages: result,
+    packages: [...byPackage].sort(([left], [right]) => left.localeCompare(right))
+      .map(([packageName, releases]) => packageHistory(packageName, releases)),
   };
   await mkdir(dirname(options.output), { recursive: true });
   const temporary = `${options.output}.tmp`;
   await writeFile(temporary, `${JSON.stringify(data, null, 2)}\n`);
   await rename(temporary, options.output);
-  process.stderr.write(`wrote ${result.length} exact npm package releases to ${options.output}\n`);
+  process.stderr.write(`wrote ${snapshots.length} exact npm package releases across ${data.packages.length} packages to ${options.output}\n`);
 }
 
 run().catch((error) => {
