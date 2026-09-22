@@ -8,7 +8,7 @@ fn basic_fixture_dir() -> PathBuf {
 }
 
 #[test]
-fn analyzes_direct_calls_in_fixture() -> Result<(), Box<dyn Error>> {
+fn analyzes_interface_calls_in_fixture() -> Result<(), Box<dyn Error>> {
     let analysis = analyze_dir(basic_fixture_dir())?;
     let methods = analysis.methods();
 

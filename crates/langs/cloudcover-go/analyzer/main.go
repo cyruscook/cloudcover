@@ -13,7 +13,7 @@ import (
 
 	"github.com/hashicorp/terraform-config-inspect/tfconfig"
 	"golang.org/x/tools/go/callgraph"
-	"golang.org/x/tools/go/callgraph/static"
+	"golang.org/x/tools/go/callgraph/vta"
 	"golang.org/x/tools/go/packages"
 	"golang.org/x/tools/go/ssa"
 	"golang.org/x/tools/go/ssa/ssautil"
@@ -103,7 +103,7 @@ func analyzeDir(dir string) ([]method, []module, error) {
 		pkg.Build()
 	}
 	prog.Build()
-	cg := static.CallGraph(prog)
+	cg := vta.CallGraph(ssautil.AllFunctions(prog), nil)
 
 	methods := make([]method, 0)
 	visitErr := callgraph.GraphVisitEdges(cg, func(edge *callgraph.Edge) error {
