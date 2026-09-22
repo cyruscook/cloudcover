@@ -129,7 +129,8 @@ func changedServices(repository, previous, current string, first bool) ([]string
 	set := map[string]bool{}
 	for _, line := range lines {
 		parts := strings.Split(line, "/")
-		if len(parts) >= 3 && parts[0] == "service" && parts[2] == "api.go" {
+		if len(parts) >= 3 && parts[0] == "service" &&
+			(parts[2] == "api.go" || parts[2] == "service.go") {
 			set[parts[1]] = true
 		}
 	}
@@ -149,7 +150,11 @@ func updateService(batch *gitBatch, tag, service string, state sdkState) (servic
 		}
 		return serviceDelta{}, fmt.Errorf("read %s at %s: %w", service, tag, err)
 	}
-	rows, err := parseService(content, service)
+	metadata, err := batch.show(tag, "service/"+service+"/service.go")
+	if err != nil {
+		return serviceDelta{}, fmt.Errorf("read %s metadata at %s: %w", service, tag, err)
+	}
+	rows, err := parseService(content, metadata, service)
 	if err != nil {
 		return serviceDelta{}, fmt.Errorf("parse %s at %s: %w", service, tag, err)
 	}
@@ -188,8 +193,12 @@ func removeServiceMappings(service string, state sdkState) map[string]mappingRow
 	return previous
 }
 
-func parseService(content []byte, service string) ([]mappingRow, error) {
+func parseService(content, metadata []byte, service string) ([]mappingRow, error) {
 	file, err := parser.ParseFile(token.NewFileSet(), "api.go", content, 0)
+	if err != nil {
+		return nil, err
+	}
+	canonicalService, err := parseCanonicalServiceName(metadata)
 	if err != nil {
 		return nil, err
 	}
@@ -219,11 +228,49 @@ func parseService(content []byte, service string) ([]mappingRow, error) {
 			if !ok || !names[base+"Request"] {
 				continue
 			}
-			rows = append(rows, mappingRow{Package: "github.com/aws/aws-sdk-go/service/" + service, Receiver: receiver, Method: name, APIMethods: []apiMethod{{Service: service, Name: base}}})
+			rows = append(rows, mappingRow{Package: "github.com/aws/aws-sdk-go/service/" + service, Receiver: receiver, Method: name, APIMethods: []apiMethod{{Service: canonicalService, Name: base}}})
 		}
 	}
 	sort.Slice(rows, func(i, j int) bool { return rowKey(rows[i]) < rowKey(rows[j]) })
 	return rows, nil
+}
+
+func parseCanonicalServiceName(content []byte) (string, error) {
+	file, err := parser.ParseFile(token.NewFileSet(), "service.go", content, 0)
+	if err != nil {
+		return "", err
+	}
+	var names []string
+	for _, declaration := range file.Decls {
+		general, ok := declaration.(*ast.GenDecl)
+		if !ok || general.Tok != token.CONST {
+			continue
+		}
+		for _, specification := range general.Specs {
+			constant, ok := specification.(*ast.ValueSpec)
+			if !ok {
+				continue
+			}
+			for index, name := range constant.Names {
+				if name.Name != "ServiceName" || index >= len(constant.Values) {
+					continue
+				}
+				literal, ok := constant.Values[index].(*ast.BasicLit)
+				if !ok || literal.Kind != token.STRING {
+					return "", errors.New("ServiceName must be a string literal")
+				}
+				value, err := strconv.Unquote(literal.Value)
+				if err != nil || value == "" {
+					return "", errors.New("ServiceName must be a non-empty string literal")
+				}
+				names = append(names, value)
+			}
+		}
+	}
+	if len(names) != 1 {
+		return "", fmt.Errorf("expected one ServiceName constant, found %d", len(names))
+	}
+	return names[0], nil
 }
 func receiverName(expr ast.Expr) string {
 	switch expr := expr.(type) {

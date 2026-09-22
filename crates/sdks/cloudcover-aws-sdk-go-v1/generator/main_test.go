@@ -37,7 +37,28 @@ func testGitBatch(response string) *gitBatch {
 		output: bufio.NewReader(strings.NewReader(response)),
 	}
 }
+func serviceMetadata(name string) string {
+	return "package service\n\nconst ServiceName = " + strconv.Quote(name) + "\n"
+}
 
+func TestParseServiceUsesCanonicalServiceName(t *testing.T) {
+	t.Parallel()
+
+	const source = `package cloudwatchlogs
+
+type CloudWatchLogs struct{}
+
+func (c *CloudWatchLogs) CreateLogGroup() {}
+func (c *CloudWatchLogs) CreateLogGroupRequest() {}
+`
+	rows, err := parseService([]byte(source), []byte(serviceMetadata("logs")), "cloudwatchlogs")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(rows) != 1 || rows[0].APIMethods[0] != (apiMethod{Service: "logs", Name: "CreateLogGroup"}) {
+		t.Fatalf("parseService() = %#v, want canonical logs service", rows)
+	}
+}
 func serviceState(service, method string) sdkState {
 	row := mappingRow{
 		Package:    "github.com/aws/aws-sdk-go/service/" + service,
@@ -69,7 +90,10 @@ type Client struct{}
 func (c *Client) ListWidgets() {}
 func (c *Client) ListWidgetsRequest() {}
 `
-	batch := testGitBatch("object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n")
+	batch := testGitBatch(
+		"object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n" +
+			"object blob " + strconv.Itoa(len(serviceMetadata("widgets"))) + "\n" + serviceMetadata("widgets") + "\n",
+	)
 	state := serviceState(service, "OldMethod")
 
 	if _, err := updateService(batch, "v1.2.3", service, state); err != nil {
@@ -108,7 +132,10 @@ func TestUpdateServiceLeavesStateUntouchedOnParseError(t *testing.T) {
 	const source = "package widgets\nfunc (\n"
 	state := serviceState("widgets", "OldMethod")
 	want := serviceState("widgets", "OldMethod")
-	batch := testGitBatch("object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n")
+	batch := testGitBatch(
+		"object blob " + strconv.Itoa(len(source)) + "\n" + source + "\n" +
+			"object blob " + strconv.Itoa(len(serviceMetadata("widgets"))) + "\n" + serviceMetadata("widgets") + "\n",
+	)
 
 	if _, err := updateService(batch, "v1.2.3", "widgets", state); err == nil {
 		t.Fatal("updateService() error = nil, want parse failure")
@@ -206,8 +233,10 @@ func (c *Client) NewMethodRequest() {}
 `
 	batch := testGitBatch(
 		"object blob " + strconv.Itoa(len(addedSource)) + "\n" + addedSource + "\n" +
+			"object blob " + strconv.Itoa(len(serviceMetadata("added"))) + "\n" + serviceMetadata("added") + "\n" +
 			"v1.2.3:service/deleted/api.go missing\n" +
-			"object blob " + strconv.Itoa(len(updatedSource)) + "\n" + updatedSource + "\n",
+			"object blob " + strconv.Itoa(len(updatedSource)) + "\n" + updatedSource + "\n" +
+			"object blob " + strconv.Itoa(len(serviceMetadata("updated"))) + "\n" + serviceMetadata("updated") + "\n",
 	)
 	state := mergeStates(
 		serviceState("unchanged", "ListUnchanged"),

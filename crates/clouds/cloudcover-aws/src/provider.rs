@@ -216,7 +216,7 @@ fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMap
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| normalized_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
                 .collect::<Vec<_>>();
             if api_methods.is_empty() {
                 return None;
@@ -282,7 +282,7 @@ fn go_sdk_v1_method_mappings(
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| normalized_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
                 .collect::<Vec<_>>();
             if api_methods.is_empty() {
                 return None;
@@ -332,7 +332,7 @@ fn terraform_provider_aws_sdk_method_mappings(
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| normalized_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
                 .collect::<Vec<_>>();
 
             SdkMethodMapping::new(
@@ -352,12 +352,7 @@ fn terraform_provider_aws_sdk_method_mappings(
         .collect())
 }
 
-fn normalized_api_method(service: &str, name: &str) -> Option<ApiMethod> {
-    let service = match service {
-        "cloudwatchlogs" => "logs",
-        "sfn" => "states",
-        service => service,
-    };
+fn catalog_api_method(service: &str, name: &str) -> Option<ApiMethod> {
     generated::OPERATIONS
         .binary_search_by(|operation| (operation.service, operation.name).cmp(&(service, name)))
         .is_ok()

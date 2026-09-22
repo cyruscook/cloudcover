@@ -153,7 +153,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
-fn normalizes_sdk_service_names_to_authorization_catalog_names() -> Result<(), Box<dyn Error>> {
+fn uses_canonical_service_names_from_generated_mappings() -> Result<(), Box<dyn Error>> {
     let provider = AwsProvider::new();
     let go_v2_sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
     let go_v2_mappings =

@@ -164,7 +164,7 @@
       "read",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeLogGroups"
         ]
       ]
@@ -3130,15 +3130,15 @@
       "create",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "CreateLogGroup"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeLogGroups"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "PutRetentionPolicy"
         ]
       ]
@@ -3149,7 +3149,7 @@
       "read",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeLogGroups"
         ]
       ]
@@ -3160,23 +3160,23 @@
       "update",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "AssociateKmsKey"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "DeleteRetentionPolicy"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeLogGroups"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "DisassociateKmsKey"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "PutRetentionPolicy"
         ]
       ]
@@ -15822,11 +15822,11 @@
       "create",
       [
         [
-          "sfn",
+          "states",
           "CreateActivity"
         ],
         [
-          "sfn",
+          "states",
           "DescribeActivity"
         ]
       ]
@@ -15837,7 +15837,7 @@
       "read",
       [
         [
-          "sfn",
+          "states",
           "DescribeActivity"
         ]
       ]
@@ -15848,7 +15848,7 @@
       "update",
       [
         [
-          "sfn",
+          "states",
           "DescribeActivity"
         ]
       ]
@@ -15859,11 +15859,11 @@
       "create",
       [
         [
-          "sfn",
+          "states",
           "CreateStateMachine"
         ],
         [
-          "sfn",
+          "states",
           "DescribeStateMachine"
         ]
       ]
@@ -15874,7 +15874,7 @@
       "read",
       [
         [
-          "sfn",
+          "states",
           "DescribeStateMachine"
         ]
       ]
@@ -15885,11 +15885,11 @@
       "update",
       [
         [
-          "sfn",
+          "states",
           "DescribeStateMachine"
         ],
         [
-          "sfn",
+          "states",
           "UpdateStateMachine"
         ]
       ]

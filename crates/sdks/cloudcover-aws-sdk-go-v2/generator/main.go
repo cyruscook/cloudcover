@@ -94,10 +94,13 @@ func run() error {
 }
 
 func loadFastServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
-	service := filepath.Base(modulePath)
 	files, err := loadServiceFiles(serviceDir)
 	if err != nil {
 		return nil, err
+	}
+	service, err := canonicalServiceName(files)
+	if err != nil {
+		return nil, fmt.Errorf("resolve canonical service name for %s: %w", serviceDir, err)
 	}
 
 	rows := make([]mappingRow, 0)
@@ -319,6 +322,88 @@ func loadServiceFiles(serviceDir string) ([]*ast.File, error) {
 	return files, nil
 }
 
+func canonicalServiceName(files []*ast.File) (string, error) {
+	serviceAuthNames := make(map[string]struct{})
+	for _, file := range files {
+		for _, declaration := range file.Decls {
+			function, ok := declaration.(*ast.FuncDecl)
+			if !ok || function.Name.Name != "serviceAuthOptions" || function.Body == nil {
+				continue
+			}
+			collectSigV4SigningNames(function.Body, serviceAuthNames)
+		}
+	}
+	if len(serviceAuthNames) != 0 {
+		return singleSigningName(serviceAuthNames)
+	}
+
+	endpointNames := make(map[string]struct{})
+	for _, file := range files {
+		ast.Inspect(file, func(node ast.Node) bool {
+			assignment, ok := node.(*ast.AssignStmt)
+			if !ok {
+				return true
+			}
+			for index, left := range assignment.Lhs {
+				identifier, ok := left.(*ast.Ident)
+				if !ok || identifier.Name != "signingName" || index >= len(assignment.Rhs) {
+					continue
+				}
+				if name, ok := stringLiteral(assignment.Rhs[index]); ok && name != "" {
+					endpointNames[name] = struct{}{}
+				}
+			}
+			return true
+		})
+	}
+	if len(endpointNames) != 0 {
+		return singleSigningName(endpointNames)
+	}
+
+	return "", errors.New("generated SDK source has no static SigV4 signing name")
+}
+
+func collectSigV4SigningNames(body *ast.BlockStmt, names map[string]struct{}) {
+	ast.Inspect(body, func(node ast.Node) bool {
+		call, ok := node.(*ast.CallExpr)
+		if !ok || len(call.Args) < 2 {
+			return true
+		}
+		selector, ok := call.Fun.(*ast.SelectorExpr)
+		if !ok || selector.Sel.Name != "SetSigV4SigningName" {
+			return true
+		}
+		if name, ok := stringLiteral(call.Args[len(call.Args)-1]); ok && name != "" {
+			names[name] = struct{}{}
+		}
+		return true
+	})
+}
+
+func stringLiteral(expression ast.Expr) (string, bool) {
+	literal, ok := expression.(*ast.BasicLit)
+	if !ok || literal.Kind != token.STRING {
+		return "", false
+	}
+	value, err := strconv.Unquote(literal.Value)
+	return value, err == nil
+}
+
+func singleSigningName(names map[string]struct{}) (string, error) {
+	if len(names) != 1 {
+		values := make([]string, 0, len(names))
+		for name := range names {
+			values = append(values, name)
+		}
+		slices.Sort(values)
+		return "", fmt.Errorf("generated SDK source has ambiguous SigV4 signing names: %v", values)
+	}
+	for name := range names {
+		return name, nil
+	}
+	panic("signing name set unexpectedly empty")
+}
+
 func indexPaginatorTypes(files []*ast.File) (map[string]*ast.StructType, map[string]*ast.InterfaceType, error) {
 	paginatorStructs := make(map[string]*ast.StructType)
 	clientInterfaces := make(map[string]*ast.InterfaceType)
@@ -490,14 +575,19 @@ func discoverServiceDirs(sdkDir string) ([]string, error) {
 // the generated package, derive a static callgraph, then scan its edges for the
 // standard request path used by generated client methods.
 func loadServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
+	files, err := loadServiceFiles(serviceDir)
+	if err != nil {
+		return nil, err
+	}
+	service, err := canonicalServiceName(files)
+	if err != nil {
+		return nil, fmt.Errorf("resolve canonical service name for %s: %w", serviceDir, err)
+	}
 	initial, err := packages.Load(&packages.Config{
 		Mode:  packages.LoadAllSyntax,
 		Dir:   serviceDir,
 		Tests: false,
 	}, ".")
-	if err != nil {
-		return nil, fmt.Errorf("packages.Load failed for %s: %w", serviceDir, err)
-	}
 	if packages.PrintErrors(initial) > 0 {
 		return nil, fmt.Errorf("packages.PrintErrors reported errors for %s", serviceDir)
 	}
@@ -512,7 +602,7 @@ func loadServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
 	packagePath := modulePath
 	rows := make([]mappingRow, 0)
 	visitErr := callgraph.GraphVisitEdges(cg, func(edge *callgraph.Edge) error {
-		row, ok, err := edgeToMapping(edge, packagePath)
+		row, ok, err := edgeToMapping(edge, packagePath, service)
 		if err != nil {
 			return err
 		}
@@ -540,7 +630,7 @@ func loadServiceRows(serviceDir, modulePath string) ([]mappingRow, error) {
 // (`service.(*Client).GetObject`); the callee and constant argument identify the
 // API method it dispatches to. Static SSA edges are enough here because both
 // sides live in generated code within the same package.
-func edgeToMapping(edge *callgraph.Edge, packagePath string) (mappingRow, bool, error) {
+func edgeToMapping(edge *callgraph.Edge, packagePath, service string) (mappingRow, bool, error) {
 	if edge == nil || edge.Caller == nil || edge.Callee == nil || edge.Site == nil {
 		return mappingRow{}, false, nil
 	}
@@ -583,7 +673,7 @@ func edgeToMapping(edge *callgraph.Edge, packagePath string) (mappingRow, bool, 
 		Receiver: receiverName,
 		Method:   caller.Name(),
 		APIMethods: []apiMethod{{
-			Service: filepath.Base(packagePath),
+			Service: service,
 			Name:    constant.StringVal(operationConst.Value),
 		}},
 	}, true, nil

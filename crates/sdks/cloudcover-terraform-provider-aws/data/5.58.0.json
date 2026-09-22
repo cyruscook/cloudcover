@@ -42,7 +42,7 @@
       "read",
       [
         [
-          "sfn",
+          "states",
           "ListStateMachineVersions"
         ]
       ]
@@ -264,11 +264,11 @@
       "create",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeAccountPolicies"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "PutAccountPolicy"
         ]
       ]
@@ -279,7 +279,7 @@
       "delete",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DeleteAccountPolicy"
         ]
       ]
@@ -290,7 +290,7 @@
       "read",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeAccountPolicies"
         ]
       ]
@@ -301,11 +301,11 @@
       "update",
       [
         [
-          "cloudwatchlogs",
+          "logs",
           "DescribeAccountPolicies"
         ],
         [
-          "cloudwatchlogs",
+          "logs",
           "PutAccountPolicy"
         ]
       ]

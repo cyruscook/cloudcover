@@ -8,6 +8,46 @@ import (
 	"testing"
 )
 
+func writeSigningNameSource(t *testing.T, serviceDir, name string) {
+	t.Helper()
+	source := `package example
+
+func serviceAuthOptions() {
+	var props any
+	smithyhttp.SetSigV4SigningName(&props, "SERVICE")
+}
+`
+	source = strings.Replace(source, "SERVICE", name, 1)
+	if err := os.WriteFile(filepath.Join(serviceDir, "auth.go"), []byte(source), 0o600); err != nil {
+		t.Fatal(err)
+	}
+}
+func TestLoadFastServiceRowsUsesCanonicalSigningName(t *testing.T) {
+	t.Parallel()
+
+	serviceDir := t.TempDir()
+	const source = `package cloudwatchlogs
+
+type Client struct{}
+
+func (c *Client) CreateLogGroup() {
+	c.invokeOperation(nil, "CreateLogGroup", nil)
+}
+`
+	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	writeSigningNameSource(t, serviceDir, "logs")
+
+	rows, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(rows) != 1 || rows[0].APIMethods[0] != (apiMethod{Service: "logs", Name: "CreateLogGroup"}) {
+		t.Fatalf("loadFastServiceRows() = %#v, want canonical logs service", rows)
+	}
+}
+
 func TestLoadPaginatorRowsUsesReceiverClientField(t *testing.T) {
 	t.Parallel()
 
@@ -62,6 +102,7 @@ func (helperClient) GetThings(context.Context) {}
 	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
 		t.Fatal(err)
 	}
+	writeSigningNameSource(t, serviceDir, "example")
 
 	const modulePath = "github.com/aws/aws-sdk-go-v2/service/example"
 	clientRows, err := loadFastServiceRows(serviceDir, modulePath)
@@ -128,6 +169,7 @@ func (c Client) GetValueThing(ctx context.Context, params any) (any, error) {
 	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
 		t.Fatal(err)
 	}
+	writeSigningNameSource(t, serviceDir, "example")
 
 	rows, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/example")
 	if err != nil {
@@ -183,6 +225,7 @@ func (c Client) Helper(ctx context.Context, params any) {
 	if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(source), 0o600); err != nil {
 		t.Fatal(err)
 	}
+	writeSigningNameSource(t, serviceDir, "example")
 	nestedDir := filepath.Join(serviceDir, "internal")
 	if err := os.Mkdir(nestedDir, 0o700); err != nil {
 		t.Fatal(err)
@@ -248,6 +291,7 @@ func (c *Client) Broken(ctx context.Context, params any) (any, error) {
 			if err := os.WriteFile(filepath.Join(serviceDir, "api.go"), []byte(test.source), 0o600); err != nil {
 				t.Fatal(err)
 			}
+			writeSigningNameSource(t, serviceDir, "example")
 
 			_, err := loadFastServiceRows(serviceDir, "github.com/aws/aws-sdk-go-v2/service/example")
 			if err == nil {
