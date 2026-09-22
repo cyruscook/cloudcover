@@ -1,6 +1,7 @@
 use cloudcover_core::{
-    ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, PythonMethodReference,
-    ResolvedSdk, Sdk, SdkMethodMapping, TerraformMethodReference,
+    ApiMethod, CloudProvider, GoMethodReference, JavaScriptMethodReference, Language,
+    MethodReference, PythonMethodReference, ResolvedSdk, Sdk, SdkMethodMapping,
+    TerraformMethodReference,
 };
 
 use crate::{generated, policy};
@@ -71,6 +72,12 @@ pub enum AwsError {
         replacement_path: String,
         replacement_version: Option<String>,
     },
+    #[error("unsupported AWS SDK for JavaScript package {path:?}")]
+    UnsupportedJsSdkPackage { path: String },
+    #[error("AWS SDK for JavaScript package {path:?} requires a version")]
+    MissingJsSdkPackageVersion { path: String },
+    #[error("unsupported version {version:?} for AWS SDK for JavaScript package {path:?}")]
+    UnsupportedJsSdkPackageVersion { path: String, version: String },
 }
 
 impl CloudProvider for AwsProvider {
@@ -88,6 +95,8 @@ impl CloudProvider for AwsProvider {
             Sdk::new(cloudcover_aws_sdk_go_v2::SDK_NAME, Language::Go),
             Sdk::new(cloudcover_aws_sdk_go_v1::SDK_NAME, Language::Go),
             Sdk::new("boto3", Language::Python),
+            Sdk::new(cloudcover_aws_sdk_js_v3::SDK_NAME, Language::JavaScript),
+            Sdk::new(cloudcover_aws_sdk_js_v3::SDK_NAME, Language::TypeScript),
         ];
         sdks.extend(
             cloudcover_terraform_provider_aws::provider_versions()
@@ -114,6 +123,11 @@ impl CloudProvider for AwsProvider {
         }
         if sdk.name() == cloudcover_aws_sdk_go_v2::SDK_NAME && sdk.language() == Language::Go {
             return go_sdk_method_mappings(resolved_sdk);
+        }
+        if sdk.name() == cloudcover_aws_sdk_js_v3::SDK_NAME
+            && matches!(sdk.language(), Language::JavaScript | Language::TypeScript)
+        {
+            return javascript_sdk_method_mappings(resolved_sdk);
         }
         if sdk.name() == "boto3" && sdk.language() == Language::Python {
             return match sdk.version() {
@@ -292,6 +306,67 @@ fn go_sdk_v1_method_mappings(
                 MethodReference::Go(GoMethodReference::new(
                     row.package,
                     Some(row.receiver.to_owned()),
+                    row.method,
+                )),
+                api_methods,
+            ))
+        }));
+    }
+    mappings.sort();
+    mappings.dedup();
+    Ok(mappings)
+}
+
+fn javascript_sdk_method_mappings(
+    resolved_sdk: &ResolvedSdk,
+) -> Result<Vec<SdkMethodMapping>, AwsError> {
+    let sdk = resolved_sdk.sdk();
+    if let Some(version) = sdk.version() {
+        return Err(AwsError::UnsupportedSdkVersion {
+            name: sdk.name().to_owned(),
+            version: version.to_owned(),
+        });
+    }
+
+    let mut mappings = Vec::new();
+    for module in resolved_sdk.modules() {
+        if !cloudcover_aws_sdk_js_v3::service_modules().contains(&module.path()) {
+            return Err(AwsError::UnsupportedJsSdkPackage {
+                path: module.path().to_owned(),
+            });
+        }
+        if module.replacement().is_some() {
+            return Err(AwsError::UnsupportedJsSdkPackage {
+                path: module.path().to_owned(),
+            });
+        }
+        if module.version().is_empty() {
+            return Err(AwsError::MissingJsSdkPackageVersion {
+                path: module.path().to_owned(),
+            });
+        }
+        let Some(rows) =
+            cloudcover_aws_sdk_js_v3::service_method_mappings(module.path(), module.version())
+        else {
+            return Err(AwsError::UnsupportedJsSdkPackageVersion {
+                path: module.path().to_owned(),
+                version: module.version().to_owned(),
+            });
+        };
+        mappings.extend(rows.iter().filter_map(|row| {
+            let api_methods = row
+                .api_methods
+                .iter()
+                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
+                .collect::<Vec<_>>();
+            if api_methods.is_empty() {
+                return None;
+            }
+            Some(SdkMethodMapping::new(
+                sdk.clone(),
+                MethodReference::JavaScript(JavaScriptMethodReference::new(
+                    row.package,
+                    row.receiver.map(str::to_owned),
                     row.method,
                 )),
                 api_methods,

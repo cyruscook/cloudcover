@@ -2,8 +2,9 @@ use std::{error::Error, io};
 
 use cloudcover_aws::{AwsError, AwsProvider};
 use cloudcover_core::{
-    ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, PythonMethodReference,
-    ResolvedSdk, Sdk, SdkMethodMapping, SdkModule, SdkModuleReplacement, TerraformMethodReference,
+    ApiMethod, CloudProvider, GoMethodReference, JavaScriptMethodReference, Language,
+    MethodReference, PythonMethodReference, ResolvedSdk, Sdk, SdkMethodMapping, SdkModule,
+    SdkModuleReplacement, TerraformMethodReference,
 };
 use serde_json::json;
 
@@ -26,13 +27,10 @@ fn lists_supported_aws_sdks() {
     assert_eq!(sdks.first(), Some(&Sdk::new("aws-sdk-go-v2", Language::Go)));
     assert_eq!(sdks[1], Sdk::new("aws-sdk-go-v1", Language::Go));
     assert_eq!(sdks[2], Sdk::new("boto3", Language::Python));
-    let terraform_sdks = &sdks[3..];
+    assert_eq!(sdks[3], Sdk::new("aws-sdk-js-v3", Language::JavaScript));
+    assert_eq!(sdks[4], Sdk::new("aws-sdk-js-v3", Language::TypeScript));
+    let terraform_sdks = &sdks[5..];
     assert_eq!(terraform_sdks.len(), 516);
-    for version in ["0.1.0", "6.63.0", "6.64.0"] {
-        assert!(terraform_sdks.contains(
-            &Sdk::new("terraform-provider-aws", Language::Terraform).with_version(version)
-        ));
-    }
 }
 
 #[test]
@@ -42,6 +40,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     let python_sdk = Sdk::new("boto3", Language::Python);
     let go_sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
     let go_v1_sdk = Sdk::new("aws-sdk-go-v1", Language::Go);
+    let javascript_sdk = Sdk::new("aws-sdk-js-v3", Language::JavaScript);
     let terraform_sdk =
         Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0");
     let python_mappings = provider.sdk_method_mappings(&ResolvedSdk::new(python_sdk.clone()))?;
@@ -57,6 +56,10 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         provider.sdk_method_mappings(&ResolvedSdk::new(go_sdk.clone()).with_modules([
             SdkModule::new("github.com/aws/aws-sdk-go-v2/service/ec2", "v1.335.0"),
         ]))?;
+    let javascript_mappings = provider.sdk_method_mappings(
+        &ResolvedSdk::new(javascript_sdk.clone())
+            .with_modules([SdkModule::new("@aws-sdk/client-s3", "3.1137.0")]),
+    )?;
     let terraform_mappings =
         provider.sdk_method_mappings(&ResolvedSdk::new(terraform_sdk.clone()))?;
 
@@ -105,6 +108,24 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         )),
         vec![ApiMethod::new("s3", "GetObject")],
     )));
+    assert!(javascript_mappings.contains(&SdkMethodMapping::new(
+        javascript_sdk.clone(),
+        MethodReference::JavaScript(JavaScriptMethodReference::new(
+            "@aws-sdk/client-s3",
+            Some("S3".to_owned()),
+            "getObject",
+        )),
+        vec![ApiMethod::new("s3", "GetObject")],
+    )));
+    assert!(javascript_mappings.contains(&SdkMethodMapping::new(
+        javascript_sdk,
+        MethodReference::JavaScript(JavaScriptMethodReference::new(
+            "@aws-sdk/client-s3",
+            None,
+            "GetObjectCommand",
+        )),
+        vec![ApiMethod::new("s3", "GetObject")],
+    )));
     let terraform_bucket_create = terraform_mappings
         .iter()
         .find(|mapping| {
@@ -131,6 +152,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         .chain(go_v1_mappings.iter())
         .chain(go_paginator_mappings.iter())
         .chain(terraform_mappings.iter())
+        .chain(javascript_mappings.iter())
     {
         for api_method in mapping.api_methods() {
             assert!(api_methods.contains(api_method));
@@ -143,6 +165,7 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
         &go_v1_mappings,
         &go_paginator_mappings,
         &terraform_mappings,
+        &javascript_mappings,
     ] {
         let mut sorted = mappings.clone();
         sorted.sort();

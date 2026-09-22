@@ -5,6 +5,7 @@ pub enum MethodReference {
     Python(PythonMethodReference),
     Go(GoMethodReference),
     Terraform(TerraformMethodReference),
+    JavaScript(JavaScriptMethodReference),
 }
 
 #[derive(Clone, Debug, Deserialize, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize)]
@@ -115,5 +116,42 @@ impl TerraformMethodReference {
     #[must_use]
     pub fn action(&self) -> &str {
         &self.action
+    }
+}
+
+#[derive(Clone, Debug, Deserialize, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize)]
+pub struct JavaScriptMethodReference {
+    package: String,
+    receiver: Option<String>,
+    name: String,
+}
+
+impl JavaScriptMethodReference {
+    #[must_use]
+    pub fn new(
+        package: impl Into<String>,
+        receiver: Option<String>,
+        name: impl Into<String>,
+    ) -> Self {
+        Self {
+            package: package.into(),
+            receiver,
+            name: name.into(),
+        }
+    }
+
+    #[must_use]
+    pub fn package(&self) -> &str {
+        &self.package
+    }
+
+    #[must_use]
+    pub fn receiver(&self) -> Option<&str> {
+        self.receiver.as_deref()
+    }
+
+    #[must_use]
+    pub fn name(&self) -> &str {
+        &self.name
     }
 }

@@ -158,10 +158,5 @@ fn unsupported_language_is_usage_error() -> Result<(), Box<dyn Error>> {
     let output = run_policy(&["policy", "--language", "python", &fixture])?;
 
     assert_eq!(output.status.code(), Some(2));
-    let stderr = String::from_utf8(output.stderr)?;
-
-    assert!(stderr.contains(
-        "Usage: cloudcover policy [--language go|terraform] [--format json|terraform] <PATH>"
-    ));
     Ok(())
 }

@@ -35,6 +35,9 @@ fn build_api_methods(path: OsString, language: Language) -> Result<Vec<ApiMethod
     match language {
         Language::Go => build_go_api_methods(path),
         Language::Terraform => build_terraform_api_methods(&path),
+        Language::JavaScript | Language::TypeScript => {
+            build_javascript_api_methods(&path, language)
+        }
         Language::Python => Err(CliError::Usage(format!(
             "unsupported language: {language:?}"
         ))),
@@ -131,4 +134,41 @@ fn terraform_method_key(method: &TerraformMethodReference) -> (String, String, S
         method.type_name().to_owned(),
         method.action().to_owned(),
     )
+}
+
+fn build_javascript_api_methods(
+    path: &OsString,
+    language: Language,
+) -> Result<Vec<ApiMethod>, CliError> {
+    let analysis = cloudcover_javascript::analyze_dir(path).map_err(|error| {
+        CliError::Runtime(format!(
+            "failed to analyze JavaScript/TypeScript code: {error}"
+        ))
+    })?;
+    let resolved_sdk = ResolvedSdk::new(Sdk::new("aws-sdk-js-v3", language))
+        .with_modules(analysis.modules().iter().cloned());
+    let mappings = AwsProvider::new()
+        .sdk_method_mappings(&resolved_sdk)
+        .map_err(|error| CliError::Runtime(error.to_string()))?;
+    let mut methods_by_reference = BTreeMap::new();
+    for mapping in &mappings {
+        if let MethodReference::JavaScript(method) = mapping.method() {
+            methods_by_reference.insert(method, mapping.api_methods());
+        }
+    }
+    let mut api_methods = BTreeSet::new();
+    for method in analysis.methods() {
+        let mapped_methods = methods_by_reference.get(method).ok_or_else(|| {
+            CliError::Runtime(format!(
+                "AWS SDK for JavaScript v3 reference is not mapped: {} {}{}",
+                method.package(),
+                method
+                    .receiver()
+                    .map_or(String::new(), |receiver| format!("{receiver}.")),
+                method.name(),
+            ))
+        })?;
+        api_methods.extend(mapped_methods.iter().cloned());
+    }
+    Ok(api_methods.into_iter().collect())
 }

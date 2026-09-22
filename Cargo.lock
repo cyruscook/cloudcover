@@ -142,6 +142,7 @@ version = "0.1.1"
 dependencies = [
  "cloudcover-aws-sdk-go-v1",
  "cloudcover-aws-sdk-go-v2",
+ "cloudcover-aws-sdk-js-v3",
  "cloudcover-core",
  "cloudcover-terraform-provider-aws",
  "hcl-rs",
@@ -173,12 +174,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "cloudcover-aws-sdk-js-v3"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "cloudcover-cli"
 version = "0.1.1"
 dependencies = [
  "cloudcover-aws",
  "cloudcover-core",
  "cloudcover-go",
+ "cloudcover-javascript",
  "cloudcover-terraform",
  "serde_json",
 ]
@@ -198,6 +208,16 @@ dependencies = [
  "cloudcover-core",
  "serde",
  "serde_json",
+]
+
+[[package]]
+name = "cloudcover-javascript"
+version = "0.1.0"
+dependencies = [
+ "cloudcover-core",
+ "serde",
+ "serde_json",
+ "thiserror",
 ]
 
 [[package]]

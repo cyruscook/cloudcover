@@ -5,4 +5,6 @@ pub enum Language {
     Python,
     Go,
     Terraform,
+    JavaScript,
+    TypeScript,
 }
