@@ -153,6 +153,94 @@ fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
+fn normalizes_sdk_service_names_to_authorization_catalog_names() -> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
+    let go_v2_sdk = Sdk::new("aws-sdk-go-v2", Language::Go);
+    let go_v2_mappings =
+        provider.sdk_method_mappings(&ResolvedSdk::new(go_v2_sdk).with_modules([
+            SdkModule::new(
+                "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+                "v1.88.0",
+            ),
+            SdkModule::new("github.com/aws/aws-sdk-go-v2/service/sfn", "v1.51.0"),
+        ]))?;
+    let go_v1_mappings = provider.sdk_method_mappings(
+        &ResolvedSdk::new(Sdk::new("aws-sdk-go-v1", Language::Go))
+            .with_modules([SdkModule::new("github.com/aws/aws-sdk-go", "v1.55.8")]),
+    )?;
+    let terraform_mappings = provider.sdk_method_mappings(&ResolvedSdk::new(
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0"),
+    ))?;
+
+    assert!(mapping_contains(
+        &go_v2_mappings,
+        &MethodReference::Go(GoMethodReference::new(
+            "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+            Some("Client".to_owned()),
+            "CreateLogGroup",
+        )),
+        &ApiMethod::new("logs", "CreateLogGroup"),
+    ));
+    assert!(mapping_contains(
+        &go_v2_mappings,
+        &MethodReference::Go(GoMethodReference::new(
+            "github.com/aws/aws-sdk-go-v2/service/sfn",
+            Some("Client".to_owned()),
+            "CreateStateMachine",
+        )),
+        &ApiMethod::new("states", "CreateStateMachine"),
+    ));
+    assert!(mapping_contains(
+        &go_v1_mappings,
+        &MethodReference::Go(GoMethodReference::new(
+            "github.com/aws/aws-sdk-go/service/cloudwatchlogs",
+            Some("CloudWatchLogs".to_owned()),
+            "CreateLogGroup",
+        )),
+        &ApiMethod::new("logs", "CreateLogGroup"),
+    ));
+    assert!(mapping_contains(
+        &go_v1_mappings,
+        &MethodReference::Go(GoMethodReference::new(
+            "github.com/aws/aws-sdk-go/service/sfn",
+            Some("SFN".to_owned()),
+            "CreateStateMachine",
+        )),
+        &ApiMethod::new("states", "CreateStateMachine"),
+    ));
+    assert!(mapping_contains(
+        &terraform_mappings,
+        &MethodReference::Terraform(TerraformMethodReference::new(
+            "resource",
+            "aws_cloudwatch_log_group",
+            "create",
+        )),
+        &ApiMethod::new("logs", "CreateLogGroup"),
+    ));
+    assert!(mapping_contains(
+        &terraform_mappings,
+        &MethodReference::Terraform(TerraformMethodReference::new(
+            "resource",
+            "aws_sfn_state_machine",
+            "create",
+        )),
+        &ApiMethod::new("states", "CreateStateMachine"),
+    ));
+
+    Ok(())
+}
+
+fn mapping_contains(
+    mappings: &[SdkMethodMapping],
+    method: &MethodReference,
+    api_method: &ApiMethod,
+) -> bool {
+    mappings
+        .iter()
+        .any(|mapping| mapping.method() == method && mapping.api_methods().contains(api_method))
+}
+
+#[test]
 fn rejects_unsupported_sdk_mappings() {
     let provider = AwsProvider::new();
 
