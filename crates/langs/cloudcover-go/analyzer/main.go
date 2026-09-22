@@ -393,7 +393,7 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		}
 		seen[dir] = true
 		for _, resource := range module.ManagedResources {
-			if resource.Provider.Name != "aws" {
+			if !usesAWSProvider(module, resource.Provider) {
 				continue
 			}
 			for _, action := range []string{"create", "read", "update", "delete"} {
@@ -403,7 +403,7 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 			}
 		}
 		for _, resource := range module.DataResources {
-			if resource.Provider.Name != "aws" {
+			if !usesAWSProvider(module, resource.Provider) {
 				continue
 			}
 			references = append(references, terraformReference{
@@ -429,4 +429,13 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		}
 	}
 	return result, provider.Version, nil
+}
+
+func usesAWSProvider(module *tfconfig.Module, provider tfconfig.ProviderRef) bool {
+	requirement, ok := module.RequiredProviders[provider.Name]
+	if !ok || requirement.Source == "" {
+		return provider.Name == "aws"
+	}
+	return requirement.Source == "hashicorp/aws" ||
+		requirement.Source == "registry.terraform.io/hashicorp/aws"
 }

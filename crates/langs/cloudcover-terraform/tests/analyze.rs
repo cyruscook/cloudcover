@@ -21,6 +21,18 @@ fn analyzes_reachable_initialized_modules_and_ignores_stale_manifest_entries()
             action,
         )));
     }
+    for action in ["create", "read", "update", "delete"] {
+        assert!(analysis.methods().contains(&TerraformMethodReference::new(
+            "resource",
+            "aws_acm_certificate_validation",
+            action,
+        )));
+    }
+    assert!(analysis.methods().contains(&TerraformMethodReference::new(
+        "data_source",
+        "aws_ecr_image",
+        "read",
+    )));
     assert!(analysis.methods().contains(&TerraformMethodReference::new(
         "data_source",
         "aws_caller_identity",
