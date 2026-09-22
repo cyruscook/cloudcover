@@ -58,7 +58,7 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
     if (!strictlyIncreasing(permissionIds)) {
       throw new CatalogError(`API method ${index} has unsorted IAM permission IDs`);
     }
-    return { service, name, canonical: `${service}:${name}`, permissionIds };
+    return { service, name, canonical: `${service}.${name}`, permissionIds };
   });
 
   if (
