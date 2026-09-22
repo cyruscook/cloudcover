@@ -8,7 +8,7 @@ build:
 
 check:
 	cargo fmt --all -- --check
-	cargo check --workspace
+	cargo check --workspace --all-features
 	cargo clippy --workspace --all-targets -- -D warnings
 	npm --prefix site run check
 

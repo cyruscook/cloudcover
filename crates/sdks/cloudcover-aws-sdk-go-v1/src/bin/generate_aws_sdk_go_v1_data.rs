@@ -57,6 +57,7 @@ fn run() -> Result<(), Box<dyn Error>> {
         ],
         &generator_dir,
     )?;
+    Ok(())
 }
 
 fn command(program: &str, args: &[&str], cwd: &PathBuf) -> Result<Output, Box<dyn Error>> {
