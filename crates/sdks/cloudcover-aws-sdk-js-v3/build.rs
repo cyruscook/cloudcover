@@ -91,6 +91,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+#[allow(clippy::too_many_lines)]
 pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
     let mut data: Data = serde_json::from_str(contents)?;
     data.packages
