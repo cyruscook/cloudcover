@@ -15,8 +15,6 @@ jobs:
       contents: write
       id-token: write
       pull-requests: read
-    outputs:
-      cli-tag: ${{ steps.cli-release.outputs.tag }}
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -33,93 +31,13 @@ jobs:
         with:
           command: release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
 
-      - name: Read CLI release tag
-        id: cli-release
-        env:
-          RELEASES: ${{ steps.release-plz.outputs.releases }}
-        run: |
-          tag="$(jq -r '.[] | select(.package_name == "cloudcover-cli") | .tag' <<< "$RELEASES")"
-          echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
-  release-binaries:
-    name: Release ${{ matrix.target }} binary
-    needs: release
-    if: needs.release.outputs.cli-tag != ''
-    runs-on: ${{ matrix.os }}
-    permissions:
-      contents: write
-    defaults:
-      run:
-        shell: bash
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - target: x86_64-unknown-linux-gnu
-            os: ubuntu-24.04
-            archive: tgz
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-24.04-arm
-            archive: tgz
-          - target: x86_64-apple-darwin
-            os: macos-15-intel
-            archive: tgz
-          - target: aarch64-apple-darwin
-            os: macos-14
-            archive: tgz
-          - target: x86_64-pc-windows-msvc
-            os: windows-2025
-            archive: zip
-          - target: aarch64-pc-windows-msvc
-            os: windows-11-arm
-            archive: zip
-    steps:
-      - name: Check out release
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ needs.release.outputs.cli-tag }}
-          persist-credentials: false
-
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
-        with:
-          targets: ${{ matrix.target }}
-
-      - name: Install Go
-        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
-        with:
-          go-version: '1.26.x'
-
-      - name: Build binary
-        run: cargo build --locked --release --package cloudcover-cli --target "${{ matrix.target }}"
-
-      - name: Package binary
-        id: package
-        env:
-          ARCHIVE_FORMAT: ${{ matrix.archive }}
-          TARGET: ${{ matrix.target }}
-        run: |
-          archive="cloudcover-cli-$TARGET.$ARCHIVE_FORMAT"
-          binary="target/$TARGET/release/cloudcover"
-          if [[ "$TARGET" == *-windows-* ]]; then
-            binary="$binary.exe"
-            powershell -NoProfile -Command "Compress-Archive -Path '$binary' -DestinationPath '$archive'"
-          else
-            tar -czf "$archive" -C "$(dirname "$binary")" "$(basename "$binary")"
-          fi
-          echo "archive=$archive" >> "$GITHUB_OUTPUT"
-
-      - name: Upload binary
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ needs.release.outputs.cli-tag }}
-          ARCHIVE: ${{ steps.package.outputs.archive }}
-        run: gh release upload "$TAG" "$ARCHIVE" --clobber
 
   release-pr:
     name: Prepare release PR
+    needs: release
     if: github.repository_owner == 'cyruscook'
     runs-on: ubuntu-latest
     permissions:
@@ -143,4 +61,4 @@ jobs:
         with:
           command: release-pr
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
