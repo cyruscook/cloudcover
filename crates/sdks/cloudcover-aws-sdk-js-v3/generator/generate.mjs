@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 /**
- * Generate exact AWS SDK for JavaScript v3 operation mappings from published npm
- * tarballs. The generator reads source text only; it never imports SDK code.
+ * Generate exact AWS SDK for JavaScript v3 operation mappings from version-matched
+ * AWS SDK Git source, with npm tarballs as an explicit fallback for releases
+ * unavailable in the repository history.
  */
 import { gunzipSync } from "node:zlib";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, rename, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { inspectFiles, compareMappings } from "./mappings.mjs";
+import { openSourceRepository } from "./source-repository.mjs";
 
 const REGISTRY = "https://registry.npmjs.org";
-const CLIENT_PACKAGE = /^@aws-sdk\/client-[a-z0-9-]+$/;
 
 function usage() {
   return `Usage: node generate.mjs [--latest|--all] [--package NAME@VERSION ...] [--output FILE]\n\n` +
-    `--latest generates the latest published version of every current @aws-sdk/client-* package.\n` +
-    `--all generates every stable published version of every current @aws-sdk/client-* package.\n` +
+    `--latest generates the latest published version of every current @aws-sdk/client-* package using AWS SDK Git source.\n` +
+    `--all generates every stable published version of every current @aws-sdk/client-* package using AWS SDK Git source.\n` +
     `--package accepts an exact package/version, for example @aws-sdk/client-s3@3.XXX.X.`;
 }
 
@@ -59,20 +61,9 @@ async function json(url) {
   return response.json();
 }
 
-async function currentClientPackageNames() {
-  const response = await fetch("https://codeload.github.com/aws/aws-sdk-js-v3/tar.gz/refs/heads/main");
-  if (!response.ok) throw new Error(`AWS SDK repository archive: ${response.status} ${response.statusText}`);
-  const files = untar(Buffer.from(await response.arrayBuffer()), "");
-  return [...new Set(
-    [...files.keys()]
-      .map((name) => name.match(/^[^/]+\/clients\/(client-[a-z0-9-]+)\/package\.json$/)?.[1])
-      .filter(Boolean)
-      .map((name) => `@aws-sdk/${name}`),
-  )].sort();
-}
 
-async function selectedClientPackages(selection) {
-  const names = await currentClientPackageNames();
+async function selectedClientPackages(selection, sourceRepository) {
+  const names = await sourceRepository.packageNames();
   const packages = [];
   for (let index = 0; index < names.length; index += 8) {
     const batch = names.slice(index, index + 8);
@@ -153,154 +144,18 @@ async function packageFiles(packageVersion) {
   return untar(Buffer.from(await response.arrayBuffer()));
 }
 
-function sourceFiles(files, prefix) {
-  const prefixes = prefix.startsWith("dist-es/")
-    ? [prefix, prefix.replace("dist-es/", "dist/es/")]
-    : [prefix];
-  return [...files].filter(([name]) => prefixes.some((candidate) => name.startsWith(candidate)) && name.endsWith(".js"));
-}
 
-function matchOne(text, pattern, description) {
-  const matches = [...text.matchAll(pattern)];
-  if (matches.length !== 1) throw new Error(`${description}: expected one match, got ${matches.length}`);
-  return matches[0];
+async function inspectPackage(packageVersion, sourceRepository, mappingCache) {
+  const source = sourceRepository ? await sourceRepository.snapshot(packageVersion) : null;
+  if (source) {
+    const cached = mappingCache.get(source.key);
+    if (cached) return { ...packageVersion, mappings: cached };
+    const snapshot = inspectFiles(packageVersion, await source.files());
+    mappingCache.set(source.key, snapshot.mappings);
+    return snapshot;
+  }
+  return inspectFiles(packageVersion, await packageFiles(packageVersion));
 }
-
-function canonicalSigningService(packageName, files) {
-  const candidates = sourceFiles(files, "dist-es/").filter(([name]) =>
-    /runtimeConfig\.shared\.js$/.test(name) || /auth\/httpAuthSchemeProvider\.js$/.test(name));
-  const services = new Set();
-  const serviceIds = new Set();
-  for (const [name, text] of candidates) {
-    const constants = new Map([...text.matchAll(/\bconst\s+([A-Za-z_$][A-Za-z0-9_$]*)\s*=\s*["']([^"']+)["']/g)].map((match) => [match[1], match[2]]));
-    for (const match of text.matchAll(/\bsigningService\s*:\s*(?:config\.signingService\s*\?\?\s*)?([A-Za-z_$][A-Za-z0-9_$]*|["'][^"']+["'])/g)) {
-      const value = match[1];
-      const service = value.startsWith("\"") || value.startsWith("'") ? value.slice(1, -1) : constants.get(value);
-      if (!service) throw new Error(`${packageName}:${name}: cannot resolve signingService ${value}`);
-      services.add(service);
-    }
-    for (const match of text.matchAll(/\bsigningProperties\s*:\s*\{\s*name\s*:\s*["']([^"']+)["']/g)) services.add(match[1]);
-    for (const match of text.matchAll(/\bserviceId\s*:[\s\S]{0,160}?["']([^"']+)["']/g)) serviceIds.add(match[1]);
-  }
-  if (services.size === 0) {
-    for (const service of serviceIds) services.add(service);
-  }
-  if (services.size !== 1) {
-    throw new Error(`${packageName}: expected one signing service in SDK metadata, found ${[...services].join(", ") || "none"}`);
-  }
-  return [...services][0];
-}
-
-function commandMappings(packageName, files, service) {
-  const mappings = [];
-  const commands = new Map();
-  for (const [file, text] of sourceFiles(files, "dist-es/commands/")) {
-    const classMatch = text.match(/(?:export\s+class|var)\s+([A-Za-z0-9_]+Command)\b/);
-    if (!classMatch) continue;
-    const command = classMatch[1];
-    const operation = command.slice(0, -"Command".length);
-    if (commands.has(command)) throw new Error(`${packageName}: duplicate command ${command}`);
-    commands.set(command, operation);
-    mappings.push({ package: packageName, receiver: null, method: command, api_methods: [{ service, name: operation }] });
-  }
-  if (commands.size === 0) throw new Error(`${packageName}: no exported commands found`);
-  return { commands, mappings };
-}
-function clientMappings(packageName, files, service, commands, version) {
-  const filesWithAggregatedClient = sourceFiles(files, "dist-es/").filter(([, text]) => /createAggregatedClient\(/.test(text));
-  if (filesWithAggregatedClient.length === 0) {
-    const legacy = [];
-    for (const [file, text] of sourceFiles(files, "dist-es/")) {
-      const legacyClass = text.match(/\b([A-Za-z0-9_]+)\.prototype\./);
-      const receiver = legacyClass?.[1] ?? text.match(/export\s+class\s+([A-Za-z0-9_]+)\s+extends\s+[A-Za-z0-9_]+Client\b/)?.[1];
-      if (!receiver) continue;
-      const methodPattern = legacyClass
-        ? /\b[A-Za-z0-9_]+\.prototype\.([A-Za-z0-9_]+)\s*=\s*function[\s\S]*?new\s+([A-Za-z0-9_]+Command)\s*\(/g
-        : /^\s*([A-Za-z0-9_]+)\([^)]*\)\s*\{[\s\S]*?new\s+([A-Za-z0-9_]+Command)\s*\(/gm;
-      for (const match of text.matchAll(methodPattern)) {
-        const method = match[1];
-        const command = match[2];
-        const operation = commands.get(command);
-        if (!operation) throw new Error(`${packageName}:${file}: client references unknown ${command}`);
-        legacy.push({ package: packageName, receiver, method, api_methods: [{ service, name: operation }] });
-      }
-    }
-    if (legacy.length === 0) throw new Error(`${packageName}@${version}: no aggregated or legacy client methods found`);
-    return legacy;
-  }
-  if (filesWithAggregatedClient.length !== 1) {
-    throw new Error(`${packageName}@${version}: expected one aggregated client module, found ${filesWithAggregatedClient.length}`);
-  }
-  const [file, text] = filesWithAggregatedClient[0];
-  const aggregatedMatch = matchOne(
-    text,
-    /createAggregatedClient\(\s*commands\s*,\s*([A-Za-z0-9_]+)\s*(?:,|\))/g,
-    `${packageName}:${file}`,
-  );
-  const receiver = aggregatedMatch[1];
-  if (!new RegExp(`export\\s+class\\s+${receiver}\\b`, "g").test(text)) {
-    throw new Error(`${packageName}:${file}: aggregated client class not found`);
-  }
-  const commandBlock = matchOne(text, /const\s+commands\s*=\s*\{([\s\S]*?)\n\};/g, `${packageName}:${file}`)[1];
-  const aggregatedCommands = new Set([...commandBlock.matchAll(/\b([A-Za-z0-9_]+Command)\b/g)].map((match) => match[1]));
-  if (aggregatedCommands.size === 0) throw new Error(`${packageName}:${file}: no aggregated command symbols`);
-  return [...aggregatedCommands].sort().map((command) => {
-    const operation = commands.get(command);
-    if (!operation) throw new Error(`${packageName}:${file}: aggregated client references unknown ${command}`);
-    return {
-      package: packageName,
-      receiver,
-      method: command.slice(0, -"Command".length).replace(/^./, (letter) => letter.toLowerCase()),
-      api_methods: [{ service, name: operation }],
-    };
-  });
-}
-
-function helperMappings(packageName, files, service, commands) {
-  const mappings = [];
-  for (const [file, text] of sourceFiles(files, "dist-es/pagination/")) {
-    for (const match of text.matchAll(/export\s+(?:const|function)\s+(paginate[A-Za-z0-9_]+)/g)) {
-      const method = match[1];
-      const command = `${method.slice("paginate".length)}Command`;
-      const operation = commands.get(command);
-      if (operation) {
-        mappings.push({ package: packageName, receiver: null, method, api_methods: [{ service, name: operation }] });
-      }
-    }
-  }
-  for (const [file, text] of sourceFiles(files, "dist-es/waiters/")) {
-    const names = [...text.matchAll(/export\s+(?:const|function)\s+(wait(?:For|Until)[A-Za-z0-9_]+)/g)].map((match) => match[1]);
-    if (names.length === 0) continue;
-    const commandMatch = text.match(/new\s+([A-Za-z0-9_]+Command)\s*\(/);
-    if (!commandMatch) continue;
-    const operation = commands.get(commandMatch[1]);
-    if (!operation) continue;
-    for (const method of names) mappings.push({ package: packageName, receiver: null, method, api_methods: [{ service, name: operation }] });
-  }
-  return mappings;
-}
-
-function compareMappings(left, right) {
-  return String(left.receiver).localeCompare(String(right.receiver)) ||
-    left.method.localeCompare(right.method);
-}
-
-async function inspectPackage(packageVersion) {
-  const files = await packageFiles(packageVersion);
-  const service = canonicalSigningService(`${packageVersion.package}@${packageVersion.version}`, files);
-  const { commands, mappings } = commandMappings(packageVersion.package, files, service);
-  mappings.push(...clientMappings(packageVersion.package, files, service, commands, packageVersion.version));
-  mappings.push(...helperMappings(packageVersion.package, files, service, commands));
-  for (const mapping of mappings) delete mapping.package;
-  mappings.sort(compareMappings);
-  for (let index = 1; index < mappings.length; index += 1) {
-    if (compareMappings(mappings[index - 1], mappings[index]) === 0) {
-      throw new Error(`${packageVersion.package}: duplicate mapping ${mappings[index].receiver ?? ""}.${mappings[index].method}`);
-    }
-  }
-  return { ...packageVersion, mappings };
-}
-
 function mappingKey(mapping) {
   return JSON.stringify([mapping.receiver, mapping.method]);
 }
@@ -327,43 +182,55 @@ function packageHistory(packageName, snapshots) {
 
 async function run() {
   const options = parseArguments(process.argv.slice(2));
-  const requested = new Map(options.packages.map((item) => [`${item.package}@${item.version}`, item]));
-  if (options.latest || options.all) {
-    const selected = await selectedClientPackages(options.all ? "all" : "latest");
-    for (const item of selected) requested.set(`${item.package}@${item.version}`, item);
-    process.stderr.write(`selected ${requested.size} exact npm package releases\n`);
-  }
-  const packages = [...requested.values()].sort(comparePackageVersions);
-  const snapshots = [];
-  const concurrency = 64;
-  for (let index = 0; index < packages.length; index += concurrency) {
-    const batch = packages.slice(index, index + concurrency);
-    const outcomes = await Promise.allSettled(batch.map(inspectPackage));
-    for (const outcome of outcomes) {
-      if (outcome.status === "fulfilled") {
-        snapshots.push(outcome.value);
-      } else if (options.latest || (options.all && /tarball 404\b/.test(String(outcome.reason?.message ?? outcome.reason)))) {
-        process.stderr.write(`skipping unavailable package release: ${outcome.reason?.message ?? outcome.reason}\n`);
-      } else {
-        throw outcome.reason;
+  const sourceRepository = options.latest || options.all || process.env.CLOUDCOVER_AWS_SDK_REPOSITORY
+    ? await openSourceRepository({
+      repository: process.env.CLOUDCOVER_AWS_SDK_REPOSITORY,
+      cacheDir: process.env.CLOUDCOVER_AWS_SDK_CACHE ??
+        resolve(process.env.HOME ?? import.meta.dirname, ".cache", "cloudcover"),
+    })
+    : null;
+  try {
+    const requested = new Map(options.packages.map((item) => [`${item.package}@${item.version}`, item]));
+    if (options.latest || options.all) {
+      const selected = await selectedClientPackages(options.all ? "all" : "latest", sourceRepository);
+      for (const item of selected) requested.set(`${item.package}@${item.version}`, item);
+      process.stderr.write(`selected ${requested.size} exact npm package releases\n`);
+    }
+    const packages = [...requested.values()].sort(comparePackageVersions);
+    const snapshots = [];
+    const mappingCache = new Map();
+    const concurrency = 64;
+    for (let index = 0; index < packages.length; index += concurrency) {
+      const batch = packages.slice(index, index + concurrency);
+      const outcomes = await Promise.allSettled(batch.map((item) => inspectPackage(item, sourceRepository, mappingCache)));
+      for (const outcome of outcomes) {
+        if (outcome.status === "fulfilled") {
+          snapshots.push(outcome.value);
+        } else if (options.latest || (options.all && /tarball 404\b/.test(String(outcome.reason?.message ?? outcome.reason)))) {
+          process.stderr.write(`skipping unavailable package release: ${outcome.reason?.message ?? outcome.reason}\n`);
+        } else {
+          throw outcome.reason;
+        }
       }
     }
+    const byPackage = Map.groupBy(snapshots, (snapshot) => snapshot.package);
+    const data = {
+      schema_version: 2,
+      provenance: {
+        registry: REGISTRY,
+        source: "AWS SDK Git release tags with npm tarball fallback; dist-es command builders, runtime config signingService, paginator, and waiter modules",
+      },
+      packages: [...byPackage].sort(([left], [right]) => left.localeCompare(right))
+        .map(([packageName, releases]) => packageHistory(packageName, releases)),
+    };
+    await mkdir(dirname(options.output), { recursive: true });
+    const temporary = `${options.output}.tmp`;
+    await writeFile(temporary, `${JSON.stringify(data, null, 2)}\n`);
+    await rename(temporary, options.output);
+    process.stderr.write(`wrote ${snapshots.length} exact package releases across ${data.packages.length} packages\n`);
+  } finally {
+    await sourceRepository?.close();
   }
-  const byPackage = Map.groupBy(snapshots, (snapshot) => snapshot.package);
-  const data = {
-    schema_version: 2,
-    provenance: {
-      registry: REGISTRY,
-      source: "stable published npm package tarballs; dist-es command builders, runtime config signingService, paginator, and waiter modules",
-    },
-    packages: [...byPackage].sort(([left], [right]) => left.localeCompare(right))
-      .map(([packageName, releases]) => packageHistory(packageName, releases)),
-  };
-  await mkdir(dirname(options.output), { recursive: true });
-  const temporary = `${options.output}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(data, null, 2)}\n`);
-  await rename(temporary, options.output);
-  process.stderr.write(`wrote ${snapshots.length} exact npm package releases across ${data.packages.length} packages to ${options.output}\n`);
 }
 
 run().catch((error) => {
