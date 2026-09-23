@@ -19,7 +19,11 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=analyzer/go.mod");
     println!("cargo:rerun-if-changed=analyzer/go.sum");
     println!("cargo:rerun-if-changed=analyzer/main.go");
+    println!("cargo:rerun-if-env-changed=CC");
 
+    if env::var("CARGO_CFG_TARGET_ENV").as_deref() == Ok("msvc") {
+        println!("cargo:rustc-link-lib=legacy_stdio_definitions");
+    }
     if env::var("CARGO_CFG_TARGET_OS").as_deref() == Ok("macos") {
         println!("cargo:rustc-link-lib=resolv");
     }
@@ -75,6 +79,7 @@ fn build_go_analyzer(manifest_dir: &Path, output_path: &Path) -> BuildResult<()>
 fn analyzer_fingerprint(manifest_dir: &Path) -> BuildResult<String> {
     let mut hasher = DefaultHasher::new();
     env::var("TARGET")?.hash(&mut hasher);
+    env::var_os("CC").hash(&mut hasher);
     for relative_path in [
         "build.rs",
         "analyzer/go.mod",
