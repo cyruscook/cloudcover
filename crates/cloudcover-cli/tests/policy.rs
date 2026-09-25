@@ -110,6 +110,12 @@ fn emits_full_lifecycle_policy_for_initialized_terraform_modules() -> Result<(),
         "s3:CreateBucket",
         "s3:DeleteBucket",
         "s3:PutBucketPolicy",
+        "bedrock-agentcore:CreateGateway",
+        "cognito-idp:CreateUserPool",
+        "cognito-identity:CreateIdentityPool",
+        "apigateway:POST",
+        "events:PutRule",
+        "scheduler:CreateSchedule",
     ] {
         assert!(actions.contains(&action.to_owned()), "missing {action}");
     }

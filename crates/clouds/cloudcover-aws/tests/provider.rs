@@ -230,6 +230,59 @@ fn uses_canonical_service_names_from_generated_mappings() -> Result<(), Box<dyn 
     Ok(())
 }
 
+#[test]
+fn maps_terraform_service_names_to_catalog_services() -> Result<(), Box<dyn Error>> {
+    let mappings = AwsProvider::new().sdk_method_mappings(&ResolvedSdk::new(
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.64.0"),
+    ))?;
+    for (resource, operation, service) in [
+        (
+            "aws_bedrockagentcore_gateway",
+            "CreateGateway",
+            "bedrock-agentcore",
+        ),
+        ("aws_cognito_user_pool", "CreateUserPool", "cognito-idp"),
+        (
+            "aws_cognito_identity_pool",
+            "CreateIdentityPool",
+            "cognito-identity",
+        ),
+        ("aws_apigatewayv2_api", "CreateApi", "apigateway"),
+        ("aws_cloudwatch_event_rule", "PutRule", "events"),
+        ("aws_s3_bucket", "CreateBucket", "s3"),
+        ("aws_mwaa_environment", "CreateEnvironment", "airflow"),
+    ] {
+        assert!(
+            mapping_contains(
+                &mappings,
+                &MethodReference::Terraform(TerraformMethodReference::new(
+                    "resource", resource, "create",
+                )),
+                &ApiMethod::new(service, operation),
+            ),
+            "missing {service}:{operation} mapping for {resource}",
+        );
+    }
+    Ok(())
+}
+
+#[test]
+fn maps_legacy_terraform_service_names_to_catalog_services() -> Result<(), Box<dyn Error>> {
+    let mappings = AwsProvider::new().sdk_method_mappings(&ResolvedSdk::new(
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("5.63.1"),
+    ))?;
+    assert!(mapping_contains(
+        &mappings,
+        &MethodReference::Terraform(TerraformMethodReference::new(
+            "resource",
+            "aws_simpledb_domain",
+            "create",
+        )),
+        &ApiMethod::new("sdb", "CreateDomain"),
+    ));
+    Ok(())
+}
+
 fn mapping_contains(
     mappings: &[SdkMethodMapping],
     method: &MethodReference,
