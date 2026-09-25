@@ -4,7 +4,7 @@ A project to process data on API methods, associated permissions, and correspond
 
 ## CLI usage
 
-Install the command with cargo-binstall:
+Install the command with [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#installation):
 
 ```sh
 cargo binstall cloudcover-cli
