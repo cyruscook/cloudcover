@@ -353,8 +353,111 @@ fn terraform_provider_aws_sdk_method_mappings(
 }
 
 fn catalog_api_method(service: &str, name: &str) -> Option<ApiMethod> {
-    generated::OPERATIONS
-        .binary_search_by(|operation| (operation.service, operation.name).cmp(&(service, name)))
-        .is_ok()
-        .then(|| ApiMethod::new(service, name))
+    let exists = |service| {
+        generated::OPERATIONS
+            .binary_search_by(|operation| (operation.service, operation.name).cmp(&(service, name)))
+            .is_ok()
+    };
+    let service = if exists(service) {
+        service
+    } else {
+        let catalog_service = catalog_service_alias(service)?;
+        if !exists(catalog_service) {
+            return None;
+        }
+        catalog_service
+    };
+    Some(ApiMethod::new(service, name))
+}
+
+// SDK service identifiers and Service Authorization Reference identifiers differ.
+// Only translate known services; operation names alone do not identify a service.
+fn catalog_service_alias(service: &str) -> Option<&'static str> {
+    Some(match service {
+        "accessanalyzer" => "access-analyzer",
+        "accountaccess" => "account-access",
+        "acmpca" => "acm-pca",
+        "agentregistrycontrol" => "agent-registry",
+        "amp" | "prometheusservice" => "aps",
+        "apigatewayv2" => "apigateway",
+        "appintegrations" | "appintegrationsservice" => "app-integrations",
+        "applicationautoscaling" => "application-autoscaling",
+        "arcregionswitch" => "arc-region-switch",
+        "arczonalshift" => "arc-zonal-shift",
+        "autoscalingplans" => "autoscaling-plans",
+        "bcmdataexports" => "bcm-data-exports",
+        "bedrockagent" => "bedrock",
+        "bedrockagentcorecontrol" => "bedrock-agentcore",
+        "chimesdkmediapipelines" | "chimesdkvoice" => "chime",
+        "cloudcontrol" | "cloudcontrolapi" => "cloudformation",
+        "cloudfrontkeyvaluestore" => "cloudfront-keyvaluestore",
+        "cloudhsmv2" => "cloudhsm",
+        "cloudwatchevents" | "eventbridge" => "events",
+        "cloudwatchevidently" => "evidently",
+        "cloudwatchrum" => "rum",
+        "codeguruprofiler" => "codeguru-profiler",
+        "codegurureviewer" => "codeguru-reviewer",
+        "codestarconnections" => "codestar-connections",
+        "codestarnotifications" => "codestar-notifications",
+        "cognitoidentity" => "cognito-identity",
+        "cognitoidentityprovider" => "cognito-idp",
+        "computeoptimizer" => "compute-optimizer",
+        "configservice" => "config",
+        "costandusagereportservice" => "cur",
+        "costexplorer" => "ce",
+        "costoptimizationhub" => "cost-optimization-hub",
+        "customerprofiles" => "profile",
+        "databasemigrationservice" => "dms",
+        "devopsguru" => "devops-guru",
+        "directoryservice" => "ds",
+        "docdb" | "neptune" => "rds",
+        "docdbelastic" => "docdb-elastic",
+        "ecrpublic" => "ecr-public",
+        "efs" => "elasticfilesystem",
+        "elasticloadbalancingv2" | "elbv2" | "elb" => "elasticloadbalancing",
+        "elasticsearchservice" => "es",
+        "emr" => "elasticmapreduce",
+        "emrcontainers" => "emr-containers",
+        "emrserverless" => "emr-serverless",
+        "keyspaces" => "cassandra",
+        "kinesisanalyticsv2" => "kinesisanalytics",
+        "lambdacore" | "lambdamicrovms" => "lambda",
+        "lexmodelbuildingservice" | "lexmodelsv2" => "lex",
+        "licensemanager" => "license-manager",
+        "location" | "locationservice" => "geo",
+        "mailmanager" | "sesv2" => "ses",
+        "managedgrafana" => "grafana",
+        "mwaa" => "airflow",
+        "neptunegraph" => "neptune-graph",
+        "networkfirewall" => "network-firewall",
+        "notificationscontacts" => "notifications-contacts",
+        "opensearchserverless" => "aoss",
+        "opensearchservice" => "opensearch",
+        "paymentcryptography" => "payment-cryptography",
+        "pinpoint" => "mobiletargeting",
+        "pinpointsmsvoicev2" => "sms-voice",
+        "redshiftdata" | "redshiftdataapiservice" => "redshift-data",
+        "redshiftserverless" => "redshift-serverless",
+        "resiliencehubv2" => "resiliencehub",
+        "resourceexplorer2" => "resource-explorer-2",
+        "resourcegroups" => "resource-groups",
+        "resourcegroupstaggingapi" => "tag",
+        "route53recoverycontrolconfig" => "route53-recovery-control-config",
+        "route53recoveryreadiness" => "route53-recovery-readiness",
+        "s3control" => "s3",
+        "s3outposts" => "s3-outposts",
+        "serverlessapplicationrepository" => "serverlessrepo",
+        "servicecatalogappregistry" => "servicecatalog",
+        "simpledb" => "sdb",
+        "ssmcontacts" => "ssm-contacts",
+        "ssmincidents" => "ssm-incidents",
+        "ssmquicksetup" => "ssm-quicksetup",
+        "ssoadmin" => "sso",
+        "timestreaminfluxdb" => "timestream-influxdb",
+        "timestreamquery" | "timestreamwrite" => "timestream",
+        "vpclattice" => "vpc-lattice",
+        "wafregional" => "waf-regional",
+        "workspacesweb" => "workspaces-web",
+        _ => return None,
+    })
 }
