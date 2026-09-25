@@ -292,7 +292,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		_ = cmd.Run()
 	}
 	initial, err := packages.Load(&packages.Config{
-		Mode:       packages.LoadAllSyntax,
+		Mode:       packages.LoadSyntax,
 		Dir:        providerDir,
 		Env:        packageEnv,
 		Tests:      false,
@@ -305,7 +305,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 	if count := packages.PrintErrors(initial); count != 0 {
 		return nil, fmt.Errorf("package loading reported %d diagnostics for %s", count, providerDir)
 	}
-	prog, ssaPackages := ssautil.AllPackages(initial, ssa.InstantiateGenerics)
+	prog, ssaPackages := ssautil.Packages(initial, ssa.InstantiateGenerics)
 	for _, pkg := range ssaPackages {
 		if pkg == nil || pkg.Pkg == nil {
 			return nil, errors.New("SSA package missing after package load")
