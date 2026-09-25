@@ -49,7 +49,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
-          go-version: '1.26.x'
+          go-version: ${{ contains(matrix.target, 'windows') && '1.27.x' || '1.26.x' }}
           cache: false
 
       - name: Configure ARM64 C compiler
@@ -57,11 +57,13 @@ jobs:
         shell: pwsh
         run: |
           @'
-          $ccArgs = $args | Where-Object { $_ -ne '-mthreads' }
-          & clang --target=aarch64-pc-windows-msvc @ccArgs
-          exit $LASTEXITCODE
-          '@ | Set-Content "$env:RUNNER_TEMP\cloudcover-cc.ps1"
-          "CC=pwsh -NoProfile -File $env:RUNNER_TEMP\cloudcover-cc.ps1" | Add-Content $env:GITHUB_ENV
+          import subprocess
+          import sys
+
+          args = [arg for arg in sys.argv[1:] if arg != "-mthreads"]
+          sys.exit(subprocess.call(["clang", "--target=aarch64-pc-windows-msvc", *args]))
+          '@ | Set-Content "$env:RUNNER_TEMP\cloudcover-cc.py"
+          "CC=python $env:RUNNER_TEMP\cloudcover-cc.py" | Add-Content $env:GITHUB_ENV
 
       - name: Build and upload binary
         uses: taiki-e/upload-rust-binary-action@f0d45ae91ee7b8ee928de7a9d04d893a08bcbec6 # v1.30.2
