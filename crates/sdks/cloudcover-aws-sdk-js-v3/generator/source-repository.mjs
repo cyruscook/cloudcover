@@ -530,16 +530,24 @@ export async function openSourceRepository({ repository, cacheDir } = {}) {
       };
     },
 
-    async packageNames() {
+    async packageNames({ includeHistorical = false } = {}) {
       if (closed) throw new Error("source repository is closed");
-      const rootTreeOid = await commitTree(headOid);
-      const clientsTreeOid = await childTree(rootTreeOid, "clients");
-      if (clientsTreeOid === undefined) throw new Error("Git HEAD has no clients directory");
+      const refOids = includeHistorical ? [...new Set(tags.values())] : [headOid];
+      const clientTrees = new Map();
+      for (const refOid of refOids) {
+        const rootTreeOid = await commitTree(refOid);
+        const clientsTreeOid = await childTree(rootTreeOid, "clients");
+        if (clientsTreeOid === undefined) continue;
+        for (const entry of await treeEntries(clientsTreeOid)) {
+          if (entry.tree && /^client-[a-z0-9][a-z0-9-]*$/.test(entry.name)) {
+            clientTrees.set(entry.name, entry.oid);
+          }
+        }
+      }
+      if (!includeHistorical && clientTrees.size === 0) throw new Error("Git HEAD has no clients directory");
 
-      const clientEntries = (await treeEntries(clientsTreeOid)).filter(
-        (entry) => entry.tree && /^client-[a-z0-9][a-z0-9-]*$/.test(entry.name),
-      );
-      const names = [];
+      const clientEntries = [...clientTrees].map(([name, oid]) => ({ name, oid }));
+      const names = new Set();
       const chunkSize = 1024;
       for (let offset = 0; offset < clientEntries.length; offset += chunkSize) {
         const entryChunk = clientEntries.slice(offset, offset + chunkSize);
@@ -551,11 +559,10 @@ export async function openSourceRepository({ repository, cacheDir } = {}) {
           const hasManifest = parseTree(values[index].body, oidBytes).some(
             (entry) => entry.name === "package.json" && !entry.tree,
           );
-          if (hasManifest) names.push(`@aws-sdk/${entryChunk[index].name}`);
+          if (hasManifest) names.add(`@aws-sdk/${entryChunk[index].name}`);
         }
       }
-      names.sort();
-      return names;
+      return [...names].sort();
     },
 
     async close() {

@@ -63,7 +63,7 @@ async function json(url) {
 
 
 async function selectedClientPackages(selection, sourceRepository) {
-  const names = await sourceRepository.packageNames();
+  const names = await sourceRepository.packageNames({ includeHistorical: selection === "all" });
   const packages = [];
   for (let index = 0; index < names.length; index += 8) {
     const batch = names.slice(index, index + 8);
