@@ -226,7 +226,7 @@ mod tests {
 
     #[test]
     fn provider_versions_are_sorted_and_unique() {
-        assert!(!provider_versions().is_empty());
+        assert_ne!(provider_versions(), &[] as &[&str]);
         assert!(
             provider_versions()
                 .windows(2)

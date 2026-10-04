@@ -15,7 +15,7 @@ const REGISTRY = "https://registry.npmjs.org";
 function usage() {
   return `Usage: node generate.mjs [--latest|--all] [--package NAME@VERSION ...] [--output FILE]\n\n` +
     `--latest generates the latest published version of every current @aws-sdk/client-* package using AWS SDK Git source.\n` +
-    `--all generates every stable published version of every current @aws-sdk/client-* package using AWS SDK Git source.\n` +
+    `--all generates every stable published version of current and historical @aws-sdk/client-* packages using AWS SDK Git source.\n` +
     `--package accepts an exact package/version, for example @aws-sdk/client-s3@3.XXX.X.`;
 }
 
@@ -197,37 +197,44 @@ async function run() {
       process.stderr.write(`selected ${requested.size} exact npm package releases\n`);
     }
     const packages = [...requested.values()].sort(comparePackageVersions);
-    const snapshots = [];
-    const mappingCache = new Map();
-    const concurrency = 64;
-    for (let index = 0; index < packages.length; index += concurrency) {
-      const batch = packages.slice(index, index + concurrency);
-      const outcomes = await Promise.allSettled(batch.map((item) => inspectPackage(item, sourceRepository, mappingCache)));
-      for (const outcome of outcomes) {
-        if (outcome.status === "fulfilled") {
-          snapshots.push(outcome.value);
-        } else if (options.latest || (options.all && /tarball 404\b/.test(String(outcome.reason?.message ?? outcome.reason)))) {
-          process.stderr.write(`skipping unavailable package release: ${outcome.reason?.message ?? outcome.reason}\n`);
-        } else {
-          throw outcome.reason;
+    const histories = [];
+    let releaseCount = 0;
+    const byPackage = Map.groupBy(packages, (item) => item.package);
+    for (const [packageName, releases] of byPackage) {
+      const snapshots = [];
+      const mappingCache = new Map();
+      const concurrency = 8;
+      for (let index = 0; index < releases.length; index += concurrency) {
+        const batch = releases.slice(index, index + concurrency);
+        const outcomes = await Promise.allSettled(batch.map((item) => inspectPackage(item, sourceRepository, mappingCache)));
+        for (const outcome of outcomes) {
+          if (outcome.status === "fulfilled") {
+            snapshots.push(outcome.value);
+          } else if (options.latest || (options.all && /tarball 404\b/.test(String(outcome.reason?.message ?? outcome.reason)))) {
+            process.stderr.write(`skipping unavailable package release: ${outcome.reason?.message ?? outcome.reason}\n`);
+          } else {
+            throw outcome.reason;
+          }
         }
+        while (mappingCache.size > 16) mappingCache.delete(mappingCache.keys().next().value);
       }
+      if (snapshots.length > 0) histories.push(packageHistory(packageName, snapshots));
+      releaseCount += snapshots.length;
+      process.stderr.write(`${packageName}: ${snapshots.length} releases (${releaseCount}/${packages.length})\n`);
     }
-    const byPackage = Map.groupBy(snapshots, (snapshot) => snapshot.package);
     const data = {
       schema_version: 2,
       provenance: {
         registry: REGISTRY,
         source: "AWS SDK Git release tags with npm tarball fallback; dist-es command builders, runtime config signingService, paginator, and waiter modules",
       },
-      packages: [...byPackage].sort(([left], [right]) => left.localeCompare(right))
-        .map(([packageName, releases]) => packageHistory(packageName, releases)),
+      packages: histories,
     };
     await mkdir(dirname(options.output), { recursive: true });
     const temporary = `${options.output}.tmp`;
     await writeFile(temporary, `${JSON.stringify(data, null, 2)}\n`);
     await rename(temporary, options.output);
-    process.stderr.write(`wrote ${snapshots.length} exact package releases across ${data.packages.length} packages\n`);
+    process.stderr.write(`wrote ${releaseCount} exact package releases across ${data.packages.length} packages\n`);
   } finally {
     await sourceRepository?.close();
   }
