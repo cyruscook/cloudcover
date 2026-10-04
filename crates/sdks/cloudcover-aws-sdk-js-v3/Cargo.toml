@@ -1,0 +1,19 @@
+[package]
+name = "cloudcover-aws-sdk-js-v3"
+version.workspace = true
+edition.workspace = true
+build = "build.rs"
+description = "AWS SDK for JavaScript v3 method mappings for CloudCover"
+license.workspace = true
+repository.workspace = true
+
+[build-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[lints]
+workspace = true

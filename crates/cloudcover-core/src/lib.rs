@@ -10,7 +10,8 @@ mod tests;
 pub use api_method::ApiMethod;
 pub use language::Language;
 pub use method_reference::{
-    GoMethodReference, MethodReference, PythonMethodReference, TerraformMethodReference,
+    GoMethodReference, JavaScriptMethodReference, MethodReference, PythonMethodReference,
+    TerraformMethodReference,
 };
 pub use provider::CloudProvider;
 pub use sdk::{ResolvedSdk, Sdk, SdkModule, SdkModuleReplacement};

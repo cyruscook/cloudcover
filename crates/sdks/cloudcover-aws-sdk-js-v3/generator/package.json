@@ -1,0 +1,15 @@
+{
+  "name": "cloudcover-aws-sdk-js-v3-generator",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "generate": "node generate.mjs",
+    "test": "node --test mappings.test.mjs"
+  },
+  "dependencies": {
+    "typescript": "5.9.3"
+  }
+}

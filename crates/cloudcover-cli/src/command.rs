@@ -13,8 +13,7 @@ enum OutputFormat {
     Terraform,
 }
 
-pub(crate) const USAGE: &str =
-    "Usage: cloudcover policy [--language go|terraform] [--format json|terraform] <PATH>";
+pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go|terraform|javascript|typescript] [--format json|terraform] <PATH>";
 
 pub(crate) fn run_main() -> ExitCode {
     match run() {
@@ -70,6 +69,8 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
             language = match value.to_string_lossy().as_ref() {
                 "go" => Language::Go,
                 "terraform" => Language::Terraform,
+                "javascript" => Language::JavaScript,
+                "typescript" => Language::TypeScript,
                 _ => {
                     return Err(CliError::Usage(format!(
                         "unsupported language: {}",
