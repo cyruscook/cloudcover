@@ -1,10 +1,18 @@
 # CloudCover
 
-A project to process data on API methods, associated permissions, and corresponding SDK methods across cloud providers.
+CloudCover takes your source code (Lambdas, CDK, IaC...) and outputs the exact least-privilege AWS IAM policy required.
+
+In paticular, for Terraform IaC, because no plan, apply, or state file is required, you will know the exact IAM policy you need before you've even touched a live AWS account. No more asking your admin to add that one missing action to the permission set.
 
 ## Installation
 
-Install the command with cargo-binstall:
+Install the command with [Homebrew](https://brew.sh/) on macOS or Linux:
+
+```sh
+brew install cyruscook/tap/cloudcover
+```
+
+Alternatively, install with [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#installation):
 
 ```sh
 cargo binstall cloudcover-cli
