@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.7](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.1.6...cloudcover-cli-v0.1.7) - 2026-10-04
+
+### Other
+
+- Publish javascript and typescript crates ([#19](https://github.com/cyruscook/cloudcover/pull/19))
+
 ## [0.1.4](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.1.3...cloudcover-cli-v0.1.4) - 2026-09-25
 
 ### Other
