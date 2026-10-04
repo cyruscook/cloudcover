@@ -323,7 +323,7 @@ mod tests {
         );
         for module_path in service_modules() {
             let versions = service_versions(module_path).ok_or("missing indexed service module")?;
-            assert!(!versions.is_empty());
+            assert_ne!(versions, &[] as &[&str]);
             assert!(versions.windows(2).all(|window| window[0] != window[1]));
         }
         Ok(())

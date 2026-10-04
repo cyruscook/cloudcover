@@ -1,4 +1,45 @@
 import ts from "typescript";
+import { createHash } from "node:crypto";
+
+// Generated JSDoc changes far more often than the operation code. Share emitted
+// modules across releases while bounding the cache independently of SDK history.
+const transpilationCache = new Map();
+const MAX_TRANSPILE_CACHE_BYTES = 64 * 1024 * 1024;
+let transpilationCacheBytes = 0;
+
+function transpileSource(packageVersion, file, text) {
+  const source = text.replace(/^\s*\/\*\*[\s\S]*?\*\//gm, "");
+  const key = createHash("sha256").update(source).digest("hex");
+  const cached = transpilationCache.get(key);
+  if (cached !== undefined) {
+    transpilationCache.delete(key);
+    transpilationCache.set(key, cached);
+    return cached;
+  }
+  const result = ts.transpileModule(source, {
+    fileName: `${packageVersion.package}/${file}`,
+    reportDiagnostics: true,
+    compilerOptions: {
+      module: ts.ModuleKind.ESNext,
+      target: ts.ScriptTarget.ES2020,
+      newLine: ts.NewLineKind.LineFeed,
+      removeComments: true,
+    },
+  });
+  const errors = result.diagnostics?.filter((diagnostic) => diagnostic.category === ts.DiagnosticCategory.Error) ?? [];
+  if (errors.length > 0) {
+    const detail = errors.map((diagnostic) => ts.flattenDiagnosticMessageText(diagnostic.messageText, "\n")).join("; ");
+    throw new Error(`${packageVersion.package}@${packageVersion.version}:${file}: TypeScript transpilation failed: ${detail}`);
+  }
+  transpilationCache.set(key, result.outputText);
+  transpilationCacheBytes += Buffer.byteLength(result.outputText);
+  while (transpilationCacheBytes > MAX_TRANSPILE_CACHE_BYTES) {
+    const [oldest, value] = transpilationCache.entries().next().value;
+    transpilationCache.delete(oldest);
+    transpilationCacheBytes -= Buffer.byteLength(value);
+  }
+  return result.outputText;
+}
 
 function normalizeFiles(packageVersion, files) {
   const normalized = new Map();
@@ -11,21 +52,7 @@ function normalizeFiles(packageVersion, files) {
     if (file.endsWith(".ts")) {
       const relative = file.startsWith("src/") ? file.slice("src/".length) : file;
       outputFile = `dist-es/${relative.slice(0, -".ts".length)}.js`;
-      const result = ts.transpileModule(text, {
-        fileName: `${packageVersion.package}/${file}`,
-        reportDiagnostics: true,
-        compilerOptions: {
-          module: ts.ModuleKind.ESNext,
-          target: ts.ScriptTarget.ES2020,
-          newLine: ts.NewLineKind.LineFeed,
-        },
-      });
-      const errors = result.diagnostics?.filter((diagnostic) => diagnostic.category === ts.DiagnosticCategory.Error) ?? [];
-      if (errors.length > 0) {
-        const detail = errors.map((diagnostic) => ts.flattenDiagnosticMessageText(diagnostic.messageText, "\n")).join("; ");
-        throw new Error(`${packageVersion.package}@${packageVersion.version}:${file}: TypeScript transpilation failed: ${detail}`);
-      }
-      outputText = result.outputText;
+      outputText = transpileSource(packageVersion, file, text);
     }
 
     if (normalized.has(outputFile)) {

@@ -111,7 +111,7 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
         .enumerate()
         .map(|(index, value)| string_value(value, &format!("Terraform version {index}")))
         .collect::<Result<Vec<_>, _>>()?;
-    assert!(!versions.is_empty());
+    assert_ne!(versions, Vec::<String>::new());
     assert!(versions.windows(2).all(|window| window[0] != window[1]));
     let latest = string_value(field(&terraform_index, "latest")?, "Terraform latest")?;
     assert_eq!(versions.last(), Some(&latest));

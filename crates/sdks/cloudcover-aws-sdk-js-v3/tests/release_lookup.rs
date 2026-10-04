@@ -32,14 +32,17 @@ const FIXTURE: &str = r#"
     {
       "package": "@aws-sdk/client-s3",
       "releases": [{
-        "version": "3.1137.0",
+        "version": "3.2.0",
         "remove": [],
         "upsert": [{
           "receiver": "S3Client",
           "method": "sendPutObject",
           "api_methods": [{"service": "s3", "name": "PutObject"}]
         }]
-      }]
+      },
+      {"version": "3.10.0", "remove": [], "upsert": []},
+      {"version": "3.100.0", "remove": [], "upsert": []},
+      {"version": "3.1137.0", "remove": [], "upsert": []}]
     }
   ]
 }
@@ -48,6 +51,7 @@ const FIXTURE: &str = r#"
 #[test]
 fn generated_lookup_supports_arbitrary_packages_and_exact_releases() -> Result<(), Box<dyn Error>> {
     let generated = build_script::generate(FIXTURE)?;
+    assert_eq!(generated.matches("static RELEASE_").count(), 3);
     let temp_dir = env::temp_dir().join(format!(
         "cloudcover-js-v3-release-lookup-{}",
         std::process::id()
@@ -69,6 +73,9 @@ fn main() {{
     assert!(service_method_mappings(BEDROCK, "3.1135.0").is_none());
     assert!(service_method_mappings("@aws-sdk/client-not-present", "3.1137.0").is_none());
     assert!(service_versions("@aws-sdk/client-not-present").is_none());
+    for version in ["3.2.0", "3.10.0", "3.100.0", "3.1137.0"] {{
+        assert_eq!(service_method_mappings("@aws-sdk/client-s3", version).unwrap()[0].method, "sendPutObject");
+    }}
 }}
 "#,
         library = format!("{library}/src/lib.rs")
@@ -101,22 +108,56 @@ fn main() {{
 }
 
 #[test]
-fn generated_releases_are_indexed_at_oldest_middle_and_newest() {
+fn every_generated_release_is_indexed_at_its_exact_version() -> Result<(), Box<dyn Error>> {
     for package in cloudcover_aws_sdk_js_v3::service_modules() {
         let versions = cloudcover_aws_sdk_js_v3::service_versions(package)
-            .expect("every generated package must have versions");
-        assert!(!versions.is_empty(), "{package} has no generated versions");
+            .ok_or_else(|| format!("{package} has no indexed versions"))?;
+        assert_ne!(
+            versions,
+            &[] as &[&str],
+            "{package} has no generated versions"
+        );
 
-        for index in [0, versions.len() / 2, versions.len() - 1] {
-            let version = versions[index];
+        for version in versions {
             let mappings = cloudcover_aws_sdk_js_v3::service_method_mappings(package, version)
-                .expect("every generated release must be indexed");
+                .ok_or_else(|| format!("{package}@{version} has no indexed mappings"))?;
             assert!(
                 !mappings.is_empty(),
                 "{package}@{version} has no generated mappings"
             );
         }
     }
+    Ok(())
+}
+
+#[test]
+fn historical_releases_preserve_operation_availability_and_retired_packages()
+-> Result<(), Box<dyn Error>> {
+    const S3: &str = "@aws-sdk/client-s3";
+    let oldest = cloudcover_aws_sdk_js_v3::service_method_mappings(S3, "3.0.0")
+        .ok_or("missing first stable S3 release")?;
+    let latest_version = cloudcover_aws_sdk_js_v3::service_versions(S3)
+        .and_then(|versions| versions.last())
+        .ok_or("missing S3 versions")?;
+    let latest = cloudcover_aws_sdk_js_v3::service_method_mappings(S3, latest_version)
+        .ok_or("missing latest S3 release")?;
+    assert!(
+        oldest
+            .iter()
+            .any(|mapping| mapping.method == "GetObjectCommand")
+    );
+    assert!(
+        !oldest
+            .iter()
+            .any(|mapping| mapping.method == "GetObjectAttributesCommand")
+    );
+    assert!(
+        latest
+            .iter()
+            .any(|mapping| mapping.method == "GetObjectAttributesCommand")
+    );
+    assert!(cloudcover_aws_sdk_js_v3::service_versions("@aws-sdk/client-codestar").is_some());
+    Ok(())
 }
 
 #[test]

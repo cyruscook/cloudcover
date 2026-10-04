@@ -104,6 +104,7 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
     let mut lookup = Vec::new();
     let mut api_ids = BTreeMap::<Vec<ApiMethodValue>, usize>::new();
     let mut mapping_ids = BTreeMap::<(String, MappingValue), usize>::new();
+    let mut release_mapping_ids = BTreeMap::<Vec<usize>, usize>::new();
     let mut release_index = 0;
     for package in &mut data.packages {
         if package.package.is_empty() {
@@ -169,22 +170,29 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
                 };
                 mapping_indices.push(mapping_index);
             }
-            let mapping_constant = format!("RELEASE_{release_index}_MAPPINGS");
-            writeln!(
-                generated,
-                "static {mapping_constant}: &[AwsSdkJsV3MethodMapping] = &["
-            )?;
-            for mapping_index in mapping_indices {
-                writeln!(generated, "    MAPPING_{mapping_index},")?;
-            }
-            writeln!(generated, "];\n")?;
+            let mappings_index = if let Some(index) = release_mapping_ids.get(&mapping_indices) {
+                *index
+            } else {
+                let mappings_index = release_index;
+                let mapping_constant = format!("RELEASE_{mappings_index}_MAPPINGS");
+                writeln!(
+                    generated,
+                    "static {mapping_constant}: &[AwsSdkJsV3MethodMapping] = &["
+                )?;
+                for mapping_index in &mapping_indices {
+                    writeln!(generated, "    MAPPING_{mapping_index},")?;
+                }
+                writeln!(generated, "];\n")?;
+                release_mapping_ids.insert(mapping_indices, mappings_index);
+                release_index += 1;
+                mappings_index
+            };
             versions.push(release.version.as_str());
             lookup.push((
                 package.package.as_str(),
                 release.version.as_str(),
-                release_index,
+                mappings_index,
             ));
-            release_index += 1;
         }
         if package.releases.is_empty() {
             return Err(format!("package {} contains no stable releases", package.package).into());
@@ -208,13 +216,20 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
         "static MODULE_VERSION_RANGES: &[(&str, usize, usize)] = &["
     )?;
     for (package, start, len) in ranges {
-        writeln!(generated, "    ({}, {start}, {len}),", quoted(package))?;
+        writeln!(
+            generated,
+            "    ({}, {}, {}),",
+            quoted(package),
+            number(start),
+            number(len)
+        )?;
     }
     writeln!(generated, "];")?;
     writeln!(
         generated,
         "static VERSION_LOOKUP: &[(&str, &str, &[AwsSdkJsV3MethodMapping])] = &["
     )?;
+    lookup.sort_by(|left, right| (left.0, left.1).cmp(&(right.0, right.1)));
     for (package, version, index) in lookup {
         writeln!(
             generated,
@@ -295,6 +310,18 @@ fn apply_release(
 }
 fn quoted(value: &str) -> String {
     serde_json::to_string(value).unwrap_or_default()
+}
+
+fn number(value: usize) -> String {
+    let digits = value.to_string();
+    let mut formatted = String::new();
+    for (index, character) in digits.chars().enumerate() {
+        if index != 0 && (digits.len() - index).is_multiple_of(3) {
+            formatted.push('_');
+        }
+        formatted.push(character);
+    }
+    formatted
 }
 
 fn option_string(value: Option<&str>) -> String {
