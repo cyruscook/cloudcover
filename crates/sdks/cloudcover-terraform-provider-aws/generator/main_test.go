@@ -7,6 +7,8 @@ import (
 	"go/parser"
 	"go/token"
 	"go/types"
+	"os"
+	"path/filepath"
 	"slices"
 	"strings"
 	"testing"
@@ -15,6 +17,78 @@ import (
 	"golang.org/x/tools/go/ssa"
 	"golang.org/x/tools/go/ssa/ssautil"
 )
+
+func TestLoadProviderIndexIncludesLocalDependencyBodies(t *testing.T) {
+	for _, layout := range []string{"modern", "legacy"} {
+		t.Run(layout, func(t *testing.T) {
+			t.Parallel()
+			dir := t.TempDir()
+			handlerDir, helperDir := "internal/service/cloudfront", "internal/conns"
+			if layout == "legacy" {
+				handlerDir, helperDir = "aws", "helpers"
+			}
+			files := map[string]string{
+				"go.mod": "module " + providerModulePath + "\n\ngo 1.26.0\n",
+				helperDir + "/client.go": `package conns
+import "` + providerModulePath + `/shared"
+type AWSClient struct{}
+func (*AWSClient) CloudFrontClient() { shared.Invalidate() }
+`,
+				"shared/helper.go": `package shared
+func Invalidate() {}
+`,
+				handlerDir + "/action.go": `package cloudfront
+import "` + providerModulePath + `/` + helperDir + `"
+func handler() { new(conns.AWSClient).CloudFrontClient() }
+`,
+			}
+			if layout == "modern" {
+				files["internal/provider/provider.go"] = "package provider\n"
+			}
+			for path, source := range files {
+				path = filepath.Join(dir, path)
+				if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(path, []byte(source), 0o600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			index, err := loadProviderIndex(dir)
+			if err != nil {
+				t.Fatal(err)
+			}
+			pkg, err := packageForPath(index, providerModulePath+"/"+handlerDir)
+			if err != nil {
+				t.Fatal(err)
+			}
+			roots, err := ssaFunctionsForObject(index, pkg.Types.Scope().Lookup("handler").(*types.Func), "handler")
+			if err != nil {
+				t.Fatal(err)
+			}
+			analyzer := newAPIMethodAnalyzer(index, nil)
+			if _, err := analyzer.collect(roots); err != nil {
+				t.Fatal(err)
+			}
+			// Both the imported method and its transitive helper must have
+			// source bodies and be traversed, even without a static SDK call.
+			for _, helper := range []struct{ path, name string }{
+				{helperDir, "CloudFrontClient"},
+				{"shared", "Invalidate"},
+			} {
+				found := false
+				for fn, summary := range analyzer.summaries {
+					if fn.Name() == helper.name && fn.Package().Pkg.Path() == providerModulePath+"/"+helper.path {
+						found = fn.Syntax() != nil && len(fn.Blocks) != 0 && summary.state == apiMethodSummaryComplete
+					}
+				}
+				if !found {
+					t.Errorf("%s.%s body was not traversed", helper.path, helper.name)
+				}
+			}
+		})
+	}
+}
 
 func TestSDKKeyForCallable(t *testing.T) {
 	t.Parallel()

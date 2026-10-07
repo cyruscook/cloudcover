@@ -14,6 +14,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  terraform-provider-analyzer:
+    name: Terraform provider analyzer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.26.x'
+          cache-dependency-path: crates/sdks/cloudcover-terraform-provider-aws/generator/go.sum
+
+      - name: Test Terraform provider analyzer
+        working-directory: crates/sdks/cloudcover-terraform-provider-aws/generator
+        run: go test ./...
+
   formatting:
     name: Formatting
     runs-on: ubuntu-latest
