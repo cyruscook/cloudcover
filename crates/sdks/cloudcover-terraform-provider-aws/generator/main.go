@@ -291,14 +291,33 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		cmd.Dir = providerDir
 		_ = cmd.Run()
 	}
-	initial, err := packages.Load(&packages.Config{
-		Mode:       packages.LoadSyntax,
+	config := &packages.Config{
+		Mode:       packages.NeedName | packages.NeedImports | packages.NeedDeps,
 		Dir:        providerDir,
 		Env:        packageEnv,
 		Tests:      false,
 		BuildFlags: nil,
 		Overlay:    nil,
-	}, patterns...)
+	}
+	// LoadSyntax only retains bodies for initial packages. Promote every
+	// provider-local dependency (including conns and framework helpers) to an
+	// initial package, while keeping SDK and other external bodies unloaded.
+	dependencies, err := packages.Load(config, patterns...)
+	if err != nil {
+		return nil, fmt.Errorf("load provider dependencies for %s: %w", providerDir, err)
+	}
+	if count := packages.PrintErrors(dependencies); count != 0 {
+		return nil, fmt.Errorf("dependency loading reported %d diagnostics for %s", count, providerDir)
+	}
+	packages.Visit(dependencies, nil, func(pkg *packages.Package) {
+		if isProviderPackage(pkg.PkgPath) {
+			patterns = append(patterns, pkg.PkgPath)
+		}
+	})
+	slices.Sort(patterns)
+	patterns = slices.Compact(patterns)
+	config.Mode = packages.LoadSyntax
+	initial, err := packages.Load(config, patterns...)
 	if err != nil {
 		return nil, fmt.Errorf("packages.Load failed for %s: %w", providerDir, err)
 	}
