@@ -306,11 +306,14 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		_ = cmd.Run()
 	}
 	config := &packages.Config{
-		Mode:       packages.NeedName | packages.NeedImports | packages.NeedDeps,
-		Dir:        providerDir,
-		Env:        packageEnv,
-		Tests:      false,
-		BuildFlags: nil,
+		Mode:  packages.NeedName | packages.NeedImports | packages.NeedDeps,
+		Dir:   providerDir,
+		Env:   packageEnv,
+		Tests: false,
+		// packages.Load compiles dependencies to obtain their type information.
+		// SDK bodies are not executed or analyzed, so optimizing those binaries
+		// only adds substantial time and memory cost for large service packages.
+		BuildFlags: []string{"-gcflags=all=-N -l"},
 		Overlay:    nil,
 	}
 	// LoadSyntax only retains bodies for initial packages. Promote every
