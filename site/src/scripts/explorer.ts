@@ -3,9 +3,9 @@ import {
   CatalogError, dataUrl, parseApiCatalog, parseTerraformIndex,
   parseTerraformRows, parseTerraformSnapshot,
 } from "../lib/catalog";
+import { type Entry, type Kind, type Mapping, resourceMappings } from "../lib/mappings";
+import { mappingTable } from "./mapping-table";
 
-type Kind = "api" | "iam" | "terraform";
-type Entry = { kind: Kind; label: string; normalized: string; id: number | string };
 type ViewRoute = { kind: Kind; id: string; version?: string };
 const labels: Record<Kind, string> = { api: "API action", iam: "IAM permission", terraform: "Terraform" };
 function element<T extends HTMLElement>(id: string): T {
@@ -172,25 +172,32 @@ function search(): void {
   input.setAttribute("aria-expanded", "true");
   input.removeAttribute("aria-activedescendant");
 }
-function mappingCard(title: string, items: Entry[], empty: string): HTMLElement {
-  const section = node("section", "", "mapping-card");
-  const heading = node("h2", title);
-  heading.append(node("span", String(items.length), "count"));
-  section.append(heading);
-  if (!items.length) section.append(node("p", empty, "empty-mapping"));
-  else {
-    const list = node("ul", "", "result-list");
-    for (const item of items) {
-      const li = node("li", "");
-      const button = node("button", item.label, "mapping-link");
-      button.type = "button";
-      button.addEventListener("click", () => select(item));
-      li.append(button);
-      list.append(li);
-    }
-    section.append(list);
+function mappingLabel(label: string): DocumentFragment {
+  const content = document.createDocumentFragment();
+  // Prefer identifier boundaries when narrow cells wrap, preserving copyable text.
+  const parts = label.split(/(?<=[a-z0-9])(?=[A-Z])|(?<=[.:_-])/);
+  for (const [position, part] of parts.entries()) {
+    if (position > 0) content.append(document.createElement("wbr"));
+    content.append(part);
   }
-  return section;
+  return content;
+}
+function mappingLink(item: Entry): HTMLElement {
+  if (selected?.kind === item.kind && selected.id === item.id) {
+    const current = node("span", "", "mapping-current");
+    current.append(mappingLabel(item.label));
+    return current;
+  }
+  const link = node("a", "", "mapping-link");
+  link.append(mappingLabel(item.label));
+  link.href = routeUrl(item).href;
+  link.dataset.kind = item.kind;
+  link.addEventListener("click", event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    select(item);
+  });
+  return link;
 }
 function apiEntry(id: number): Entry { return entry("api", catalog.apiMethods[id].canonical, id); }
 function iamEntry(id: number): Entry { return entry("iam", catalog.iamPermissions[id], id); }
@@ -208,11 +215,13 @@ function renderDetail(item: Entry, focus: boolean): void {
   detailHeading.append(node("p", description, "detail-description"));
   detailContent.replaceChildren();
   detailContent.setAttribute("aria-busy", String(item.kind === "terraform" && versionState === "loading"));
-  const grid = node("div", "", item.kind === "terraform" ? "detail-grid terraform-mappings" : "detail-grid");
+  let mappings: Mapping[] | undefined;
   if (item.kind === "api") {
-    grid.append(mappingCard("IAM permissions", catalog.apiMethods[Number(item.id)].permissionIds.map(iamEntry), "No IAM permissions mapped in the catalog."));
+    mappings = [{ apiMethodId: Number(item.id), permissionIds: catalog.apiMethods[Number(item.id)].permissionIds, lifecycles: [] }];
   } else if (item.kind === "iam") {
-    grid.append(mappingCard("API actions", (methodsByPermission.get(Number(item.id)) ?? []).map(apiEntry), "No API actions mapped in the catalog."));
+    mappings = (methodsByPermission.get(Number(item.id)) ?? []).map(apiMethodId => ({
+      apiMethodId, permissionIds: [Number(item.id)], lifecycles: [],
+    }));
   } else {
     if (!index.versions.includes(versionSelect.value)) {
       detailContent.append(versionMessage("Provider version not indexed", `AWS provider v${versionSelect.value} is not in this catalog. Choose an indexed version above to explore this resource.`));
@@ -233,23 +242,16 @@ function renderDetail(item: Entry, focus: boolean): void {
       if (!resourceRows.length) {
         detailContent.append(versionMessage("Resource not indexed in this version", `${item.label} has no indexed mappings in AWS provider v${versionSelect.value}. Choose another provider version above to continue.`));
       } else {
-        const permissions = new Set<number>();
-        for (const lifecycle of ["create", "read", "update", "delete"]) {
-          const apiIds = new Set(resourceRows.filter(row => row.lifecycle === lifecycle).flatMap(row => row.apiMethodIds));
-          for (const id of apiIds) for (const permission of catalog.apiMethods[id].permissionIds) permissions.add(permission);
-          grid.append(mappingCard(`${lifecycle[0].toUpperCase()}${lifecycle.slice(1)} API actions`, [...apiIds].sort((a, b) => a - b).map(apiEntry), "No known API actions for this lifecycle step."));
-        }
-        const combined = mappingCard("Combined IAM permissions", [...permissions].sort((a, b) => a - b).map(iamEntry), "No IAM permissions reached by the known API actions.");
-        combined.classList.add("combined-permissions");
-        grid.append(combined);
+        mappings = resourceMappings(resourceRows, catalog);
       }
     }
   }
-  if (grid.childElementCount) detailContent.append(grid, node("p", "Mappings reflect CloudCover’s indexed data, not a complete permissions policy. Required permissions can depend on request parameters and resource configuration.", "mapping-note"));
+  if (mappings) detailContent.append(mappingTable(catalog, mappings, item.kind === "terraform", mappingLink));
   if (focus) { detail.focus({ preventScroll: true }); detail.scrollIntoView({ block: "start" }); }
 }
 function versionMessage(title: string, description: string, state = "empty"): HTMLElement {
   const message = node("div", "", "version-message");
+  message.setAttribute("role", "status");
   message.dataset.state = state;
   message.append(node("h2", title), node("p", description));
   return message;
