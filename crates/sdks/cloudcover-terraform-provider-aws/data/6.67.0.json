@@ -1,14 +1,29 @@
 {
-  "provider_version": "6.47.0",
+  "provider_version": "6.67.0",
   "remove": [],
   "upsert": [
     [
+      "ephemeral_resource",
+      "aws_bedrockruntime_apply_guardrail",
+      "open",
+      [
+        [
+          "bedrockruntime",
+          "ApplyGuardrail"
+        ]
+      ]
+    ],
+    [
       "list_resource",
-      "aws_bedrockagentcore_online_evaluation_config",
+      "aws_default_security_group",
       "list",
       [
         [
           "accessanalyzer",
+          "ListTagsForResource"
+        ],
+        [
+          "accountaccess",
           "ListTagsForResource"
         ],
         [
@@ -18,6 +33,10 @@
         [
           "acmpca",
           "ListTags"
+        ],
+        [
+          "agentregistrycontrol",
+          "ListTagsForResource"
         ],
         [
           "amp",
@@ -114,14 +133,6 @@
         [
           "bedrockagent",
           "ListTagsForResource"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "GetOnlineEvaluationConfig"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListOnlineEvaluationConfigs"
         ],
         [
           "bedrockagentcorecontrol",
@@ -309,6 +320,10 @@
         ],
         [
           "ec2",
+          "DescribeSecurityGroups"
+        ],
+        [
+          "ec2",
           "DescribeTags"
         ],
         [
@@ -484,6 +499,10 @@
           "ListTagsForResource"
         ],
         [
+          "kafka",
+          "ListTagsForResource"
+        ],
+        [
           "kafkaconnect",
           "ListTagsForResource"
         ],
@@ -521,6 +540,10 @@
         ],
         [
           "lambda",
+          "ListTags"
+        ],
+        [
+          "lambdamicrovms",
           "ListTags"
         ],
         [
@@ -577,6 +600,10 @@
         ],
         [
           "macie2",
+          "ListTagsForResource"
+        ],
+        [
+          "mailmanager",
           "ListTagsForResource"
         ],
         [
@@ -725,6 +752,10 @@
         ],
         [
           "resiliencehub",
+          "ListTagsForResource"
+        ],
+        [
+          "resiliencehubv2",
           "ListTagsForResource"
         ],
         [
@@ -959,11 +990,15 @@
     ],
     [
       "list_resource",
-      "aws_bedrockagentcore_policy_engine",
+      "aws_directory_service_ip_route",
       "list",
       [
         [
           "accessanalyzer",
+          "ListTagsForResource"
+        ],
+        [
+          "accountaccess",
           "ListTagsForResource"
         ],
         [
@@ -973,6 +1008,10 @@
         [
           "acmpca",
           "ListTags"
+        ],
+        [
+          "agentregistrycontrol",
+          "ListTagsForResource"
         ],
         [
           "amp",
@@ -1069,14 +1108,6 @@
         [
           "bedrockagent",
           "ListTagsForResource"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "GetPolicyEngine"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListPolicyEngines"
         ],
         [
           "bedrockagentcorecontrol",
@@ -1233,6 +1264,10 @@
         [
           "directconnect",
           "DescribeTags"
+        ],
+        [
+          "directoryservice",
+          "ListIpRoutes"
         ],
         [
           "directoryservice",
@@ -1439,6 +1474,10 @@
           "ListTagsForResource"
         ],
         [
+          "kafka",
+          "ListTagsForResource"
+        ],
+        [
           "kafkaconnect",
           "ListTagsForResource"
         ],
@@ -1476,6 +1515,10 @@
         ],
         [
           "lambda",
+          "ListTags"
+        ],
+        [
+          "lambdamicrovms",
           "ListTags"
         ],
         [
@@ -1532,6 +1575,10 @@
         ],
         [
           "macie2",
+          "ListTagsForResource"
+        ],
+        [
+          "mailmanager",
           "ListTagsForResource"
         ],
         [
@@ -1680,6 +1727,10 @@
         ],
         [
           "resiliencehub",
+          "ListTagsForResource"
+        ],
+        [
+          "resiliencehubv2",
           "ListTagsForResource"
         ],
         [
@@ -1914,11 +1965,15 @@
     ],
     [
       "list_resource",
-      "aws_bedrockagentcore_resource_policy",
+      "aws_directoryservicedata_user",
       "list",
       [
         [
           "accessanalyzer",
+          "ListTagsForResource"
+        ],
+        [
+          "accountaccess",
           "ListTagsForResource"
         ],
         [
@@ -1928,6 +1983,10 @@
         [
           "acmpca",
           "ListTags"
+        ],
+        [
+          "agentregistrycontrol",
+          "ListTagsForResource"
         ],
         [
           "amp",
@@ -2024,26 +2083,6 @@
         [
           "bedrockagent",
           "ListTagsForResource"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "GetGateway"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "GetResourcePolicy"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListAgentRuntimeEndpoints"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListAgentRuntimes"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListGateways"
         ],
         [
           "bedrockagentcorecontrol",
@@ -2204,6 +2243,14 @@
         [
           "directoryservice",
           "ListTagsForResource"
+        ],
+        [
+          "directoryservicedata",
+          "DescribeUser"
+        ],
+        [
+          "directoryservicedata",
+          "ListUsers"
         ],
         [
           "dlm",
@@ -2406,6 +2453,10 @@
           "ListTagsForResource"
         ],
         [
+          "kafka",
+          "ListTagsForResource"
+        ],
+        [
           "kafkaconnect",
           "ListTagsForResource"
         ],
@@ -2443,6 +2494,10 @@
         ],
         [
           "lambda",
+          "ListTags"
+        ],
+        [
+          "lambdamicrovms",
           "ListTags"
         ],
         [
@@ -2499,6 +2554,10 @@
         ],
         [
           "macie2",
+          "ListTagsForResource"
+        ],
+        [
+          "mailmanager",
           "ListTagsForResource"
         ],
         [
@@ -2647,6 +2706,10 @@
         ],
         [
           "resiliencehub",
+          "ListTagsForResource"
+        ],
+        [
+          "resiliencehubv2",
           "ListTagsForResource"
         ],
         [
@@ -2881,11 +2944,15 @@
     ],
     [
       "list_resource",
-      "aws_s3control_multi_region_access_point",
+      "aws_ec2_transit_gateway_route_table_propagation",
       "list",
       [
         [
           "accessanalyzer",
+          "ListTagsForResource"
+        ],
+        [
+          "accountaccess",
           "ListTagsForResource"
         ],
         [
@@ -2895,6 +2962,10 @@
         [
           "acmpca",
           "ListTags"
+        ],
+        [
+          "agentregistrycontrol",
+          "ListTagsForResource"
         ],
         [
           "amp",
@@ -3181,955 +3252,8 @@
           "DescribeTags"
         ],
         [
-          "ecr",
-          "ListTagsForResource"
-        ],
-        [
-          "ecrpublic",
-          "ListTagsForResource"
-        ],
-        [
-          "ecs",
-          "ListTagsForResource"
-        ],
-        [
-          "efs",
-          "DescribeTags"
-        ],
-        [
-          "eks",
-          "ListTagsForResource"
-        ],
-        [
-          "elasticache",
-          "ListTagsForResource"
-        ],
-        [
-          "elasticbeanstalk",
-          "ListTagsForResource"
-        ],
-        [
-          "elasticloadbalancing",
-          "DescribeTags"
-        ],
-        [
-          "elasticloadbalancingv2",
-          "DescribeTags"
-        ],
-        [
-          "elasticsearchservice",
-          "ListTags"
-        ],
-        [
-          "emrcontainers",
-          "ListTagsForResource"
-        ],
-        [
-          "emrserverless",
-          "ListTagsForResource"
-        ],
-        [
-          "eventbridge",
-          "ListTagsForResource"
-        ],
-        [
-          "evs",
-          "ListTagsForResource"
-        ],
-        [
-          "finspace",
-          "ListTagsForResource"
-        ],
-        [
-          "firehose",
-          "ListTagsForDeliveryStream"
-        ],
-        [
-          "fis",
-          "ListTagsForResource"
-        ],
-        [
-          "fms",
-          "ListTagsForResource"
-        ],
-        [
-          "fsx",
-          "ListTagsForResource"
-        ],
-        [
-          "gamelift",
-          "ListTagsForResource"
-        ],
-        [
-          "glacier",
-          "ListTagsForVault"
-        ],
-        [
-          "globalaccelerator",
-          "ListTagsForResource"
-        ],
-        [
-          "glue",
-          "GetTags"
-        ],
-        [
-          "grafana",
-          "ListTagsForResource"
-        ],
-        [
-          "greengrass",
-          "ListTagsForResource"
-        ],
-        [
-          "guardduty",
-          "ListTagsForResource"
-        ],
-        [
-          "healthlake",
-          "ListTagsForResource"
-        ],
-        [
-          "iam",
-          "ListInstanceProfileTags"
-        ],
-        [
-          "iam",
-          "ListMFADeviceTags"
-        ],
-        [
-          "iam",
-          "ListOpenIDConnectProviderTags"
-        ],
-        [
-          "iam",
-          "ListPolicyTags"
-        ],
-        [
-          "iam",
-          "ListRoleTags"
-        ],
-        [
-          "iam",
-          "ListSAMLProviderTags"
-        ],
-        [
-          "iam",
-          "ListServerCertificateTags"
-        ],
-        [
-          "iam",
-          "ListUserTags"
-        ],
-        [
-          "imagebuilder",
-          "ListTagsForResource"
-        ],
-        [
-          "inspector",
-          "ListTagsForResource"
-        ],
-        [
-          "inspector2",
-          "ListTagsForResource"
-        ],
-        [
-          "internetmonitor",
-          "ListTagsForResource"
-        ],
-        [
-          "invoicing",
-          "ListTagsForResource"
-        ],
-        [
-          "iot",
-          "ListTagsForResource"
-        ],
-        [
-          "ivs",
-          "ListTagsForResource"
-        ],
-        [
-          "ivschat",
-          "ListTagsForResource"
-        ],
-        [
-          "kafkaconnect",
-          "ListTagsForResource"
-        ],
-        [
-          "kendra",
-          "ListTagsForResource"
-        ],
-        [
-          "keyspaces",
-          "ListTagsForResource"
-        ],
-        [
-          "kinesis",
-          "ListTagsForResource"
-        ],
-        [
-          "kinesis",
-          "ListTagsForStream"
-        ],
-        [
-          "kinesisanalytics",
-          "ListTagsForResource"
-        ],
-        [
-          "kinesisanalyticsv2",
-          "ListTagsForResource"
-        ],
-        [
-          "kinesisvideo",
-          "ListTagsForStream"
-        ],
-        [
-          "kms",
-          "ListResourceTags"
-        ],
-        [
-          "lambda",
-          "ListTags"
-        ],
-        [
-          "lexmodelsv2",
-          "ListTagsForResource"
-        ],
-        [
-          "lightsail",
-          "GetBuckets"
-        ],
-        [
-          "lightsail",
-          "GetCertificates"
-        ],
-        [
-          "lightsail",
-          "GetContainerServices"
-        ],
-        [
-          "lightsail",
-          "GetDisk"
-        ],
-        [
-          "lightsail",
-          "GetDistributions"
-        ],
-        [
-          "lightsail",
-          "GetInstance"
-        ],
-        [
-          "lightsail",
-          "GetKeyPair"
-        ],
-        [
-          "lightsail",
-          "GetLoadBalancer"
-        ],
-        [
-          "lightsail",
-          "GetRelationalDatabase"
-        ],
-        [
-          "location",
-          "ListTagsForResource"
-        ],
-        [
-          "logs",
-          "ListTagsForResource"
-        ],
-        [
-          "m2",
-          "ListTagsForResource"
-        ],
-        [
-          "macie2",
-          "ListTagsForResource"
-        ],
-        [
-          "mediaconnect",
-          "ListTagsForResource"
-        ],
-        [
-          "mediaconvert",
-          "ListTagsForResource"
-        ],
-        [
-          "medialive",
-          "ListTagsForResource"
-        ],
-        [
-          "mediapackage",
-          "ListTagsForResource"
-        ],
-        [
-          "mediapackagev2",
-          "ListTagsForResource"
-        ],
-        [
-          "mediapackagevod",
-          "ListTagsForResource"
-        ],
-        [
-          "mediastore",
-          "ListTagsForResource"
-        ],
-        [
-          "memorydb",
-          "ListTags"
-        ],
-        [
-          "mq",
-          "ListTags"
-        ],
-        [
-          "neptune",
-          "ListTagsForResource"
-        ],
-        [
-          "neptunegraph",
-          "ListTagsForResource"
-        ],
-        [
-          "networkfirewall",
-          "ListTagsForResource"
-        ],
-        [
-          "networkflowmonitor",
-          "ListTagsForResource"
-        ],
-        [
-          "networkmanager",
-          "ListTagsForResource"
-        ],
-        [
-          "networkmonitor",
-          "ListTagsForResource"
-        ],
-        [
-          "notifications",
-          "ListTagsForResource"
-        ],
-        [
-          "notificationscontacts",
-          "ListTagsForResource"
-        ],
-        [
-          "oam",
-          "ListTagsForResource"
-        ],
-        [
-          "observabilityadmin",
-          "ListTagsForResource"
-        ],
-        [
-          "odb",
-          "ListTagsForResource"
-        ],
-        [
-          "opensearch",
-          "ListTags"
-        ],
-        [
-          "opensearchserverless",
-          "ListTagsForResource"
-        ],
-        [
-          "organizations",
-          "ListTagsForResource"
-        ],
-        [
-          "osis",
-          "ListTagsForResource"
-        ],
-        [
-          "paymentcryptography",
-          "ListTagsForResource"
-        ],
-        [
-          "pinpoint",
-          "ListTagsForResource"
-        ],
-        [
-          "pinpointsmsvoicev2",
-          "ListTagsForResource"
-        ],
-        [
-          "pipes",
-          "ListTagsForResource"
-        ],
-        [
-          "qbusiness",
-          "ListTagsForResource"
-        ],
-        [
-          "qldb",
-          "ListTagsForResource"
-        ],
-        [
-          "quicksight",
-          "ListTagsForResource"
-        ],
-        [
-          "rbin",
-          "ListTagsForResource"
-        ],
-        [
-          "rds",
-          "ListTagsForResource"
-        ],
-        [
-          "redshift",
-          "DescribeTags"
-        ],
-        [
-          "redshiftserverless",
-          "ListTagsForResource"
-        ],
-        [
-          "rekognition",
-          "ListTagsForResource"
-        ],
-        [
-          "resiliencehub",
-          "ListTagsForResource"
-        ],
-        [
-          "resourceexplorer2",
-          "ListTagsForResource"
-        ],
-        [
-          "resourcegroups",
-          "GetTags"
-        ],
-        [
-          "rolesanywhere",
-          "ListTagsForResource"
-        ],
-        [
-          "route53",
-          "ListTagsForResource"
-        ],
-        [
-          "route53domains",
-          "ListTagsForDomain"
-        ],
-        [
-          "route53profiles",
-          "ListTagsForResource"
-        ],
-        [
-          "route53recoverycontrolconfig",
-          "ListTagsForResource"
-        ],
-        [
-          "route53recoveryreadiness",
-          "ListTagsForResources"
-        ],
-        [
-          "route53resolver",
-          "ListTagsForResource"
-        ],
-        [
-          "s3",
-          "GetBucketTagging"
-        ],
-        [
-          "s3",
-          "GetObjectTagging"
-        ],
-        [
-          "s3control",
-          "ListMultiRegionAccessPoints"
-        ],
-        [
-          "s3control",
-          "ListTagsForResource"
-        ],
-        [
-          "s3files",
-          "ListTagsForResource"
-        ],
-        [
-          "s3tables",
-          "ListTagsForResource"
-        ],
-        [
-          "s3vectors",
-          "ListTagsForResource"
-        ],
-        [
-          "sagemaker",
-          "ListTags"
-        ],
-        [
-          "scheduler",
-          "ListTagsForResource"
-        ],
-        [
-          "schemas",
-          "ListTagsForResource"
-        ],
-        [
-          "secretsmanager",
-          "DescribeSecret"
-        ],
-        [
-          "securityhub",
-          "ListTagsForResource"
-        ],
-        [
-          "securitylake",
-          "ListTagsForResource"
-        ],
-        [
-          "servicecatalog",
-          "DescribePortfolio"
-        ],
-        [
-          "servicecatalog",
-          "DescribeProductAsAdmin"
-        ],
-        [
-          "servicecatalog",
-          "DescribeProvisionedProduct"
-        ],
-        [
-          "servicecatalog",
-          "DescribeRecord"
-        ],
-        [
-          "servicecatalogappregistry",
-          "ListTagsForResource"
-        ],
-        [
-          "servicediscovery",
-          "ListTagsForResource"
-        ],
-        [
-          "sesv2",
-          "ListTagsForResource"
-        ],
-        [
-          "shield",
-          "ListTagsForResource"
-        ],
-        [
-          "signer",
-          "ListTagsForResource"
-        ],
-        [
-          "sns",
-          "ListTagsForResource"
-        ],
-        [
-          "sqs",
-          "ListQueueTags"
-        ],
-        [
-          "ssm",
-          "DescribeActivations"
-        ],
-        [
-          "ssm",
-          "ListTagsForResource"
-        ],
-        [
-          "ssmcontacts",
-          "ListTagsForResource"
-        ],
-        [
-          "ssmincidents",
-          "ListTagsForResource"
-        ],
-        [
-          "ssmquicksetup",
-          "ListTagsForResource"
-        ],
-        [
-          "ssoadmin",
-          "ListTagsForResource"
-        ],
-        [
-          "states",
-          "ListTagsForResource"
-        ],
-        [
-          "storagegateway",
-          "ListTagsForResource"
-        ],
-        [
-          "swf",
-          "ListTagsForResource"
-        ],
-        [
-          "synthetics",
-          "ListTagsForResource"
-        ],
-        [
-          "timestreaminfluxdb",
-          "ListTagsForResource"
-        ],
-        [
-          "timestreamquery",
-          "ListTagsForResource"
-        ],
-        [
-          "timestreamwrite",
-          "ListTagsForResource"
-        ],
-        [
-          "transcribe",
-          "ListTagsForResource"
-        ],
-        [
-          "transfer",
-          "ListTagsForResource"
-        ],
-        [
-          "verifiedpermissions",
-          "ListTagsForResource"
-        ],
-        [
-          "vpclattice",
-          "ListTagsForResource"
-        ],
-        [
-          "waf",
-          "ListTagsForResource"
-        ],
-        [
-          "wafregional",
-          "ListTagsForResource"
-        ],
-        [
-          "wafv2",
-          "ListTagsForResource"
-        ],
-        [
-          "wellarchitected",
-          "ListTagsForResource"
-        ],
-        [
-          "workmail",
-          "ListTagsForResource"
-        ],
-        [
-          "workspaces",
-          "DescribeTags"
-        ],
-        [
-          "workspacesweb",
-          "ListTagsForResource"
-        ],
-        [
-          "xray",
-          "ListTagsForResource"
-        ]
-      ]
-    ],
-    [
-      "list_resource",
-      "aws_s3control_multi_region_access_point_routes",
-      "list",
-      [
-        [
-          "accessanalyzer",
-          "ListTagsForResource"
-        ],
-        [
-          "acm",
-          "ListTagsForCertificate"
-        ],
-        [
-          "acmpca",
-          "ListTags"
-        ],
-        [
-          "amp",
-          "ListTagsForResource"
-        ],
-        [
-          "amplify",
-          "ListTagsForResource"
-        ],
-        [
-          "apigateway",
-          "GetTags"
-        ],
-        [
-          "apigatewayv2",
-          "GetTags"
-        ],
-        [
-          "appconfig",
-          "ListTagsForResource"
-        ],
-        [
-          "appfabric",
-          "ListTagsForResource"
-        ],
-        [
-          "appflow",
-          "ListTagsForResource"
-        ],
-        [
-          "appintegrations",
-          "ListTagsForResource"
-        ],
-        [
-          "applicationautoscaling",
-          "ListTagsForResource"
-        ],
-        [
-          "applicationinsights",
-          "ListTagsForResource"
-        ],
-        [
-          "applicationsignals",
-          "ListTagsForResource"
-        ],
-        [
-          "appmesh",
-          "ListTagsForResource"
-        ],
-        [
-          "apprunner",
-          "ListTagsForResource"
-        ],
-        [
-          "appstream",
-          "ListTagsForResource"
-        ],
-        [
-          "appsync",
-          "ListTagsForResource"
-        ],
-        [
-          "arcregionswitch",
-          "ListTagsForResource"
-        ],
-        [
-          "athena",
-          "ListTagsForResource"
-        ],
-        [
-          "auditmanager",
-          "ListTagsForResource"
-        ],
-        [
-          "autoscaling",
-          "DescribeTags"
-        ],
-        [
-          "backup",
-          "ListTags"
-        ],
-        [
-          "batch",
-          "ListTagsForResource"
-        ],
-        [
-          "bcmdataexports",
-          "ListTagsForResource"
-        ],
-        [
-          "bedrock",
-          "ListTagsForResource"
-        ],
-        [
-          "bedrockagent",
-          "ListTagsForResource"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "ListTagsForResource"
-        ],
-        [
-          "billing",
-          "ListTagsForResource"
-        ],
-        [
-          "budgets",
-          "ListTagsForResource"
-        ],
-        [
-          "chatbot",
-          "ListTagsForResource"
-        ],
-        [
-          "chimesdkmediapipelines",
-          "ListTagsForResource"
-        ],
-        [
-          "chimesdkvoice",
-          "ListTagsForResource"
-        ],
-        [
-          "cleanrooms",
-          "ListTagsForResource"
-        ],
-        [
-          "cloud9",
-          "ListTagsForResource"
-        ],
-        [
-          "cloudfront",
-          "ListTagsForResource"
-        ],
-        [
-          "cloudhsmv2",
-          "ListTags"
-        ],
-        [
-          "cloudtrail",
-          "ListTags"
-        ],
-        [
-          "cloudwatch",
-          "ListTagsForResource"
-        ],
-        [
-          "codeartifact",
-          "ListTagsForResource"
-        ],
-        [
-          "codecommit",
-          "ListTagsForResource"
-        ],
-        [
-          "codeconnections",
-          "ListTagsForResource"
-        ],
-        [
-          "codedeploy",
-          "ListTagsForResource"
-        ],
-        [
-          "codeguruprofiler",
-          "ListTagsForResource"
-        ],
-        [
-          "codegurureviewer",
-          "ListTagsForResource"
-        ],
-        [
-          "codepipeline",
-          "ListTagsForResource"
-        ],
-        [
-          "codestarconnections",
-          "ListTagsForResource"
-        ],
-        [
-          "codestarnotifications",
-          "ListTagsForResource"
-        ],
-        [
-          "cognitoidentity",
-          "ListTagsForResource"
-        ],
-        [
-          "cognitoidentityprovider",
-          "ListTagsForResource"
-        ],
-        [
-          "comprehend",
-          "ListTagsForResource"
-        ],
-        [
-          "configservice",
-          "ListTagsForResource"
-        ],
-        [
-          "controltower",
-          "ListTagsForResource"
-        ],
-        [
-          "costandusagereportservice",
-          "ListTagsForResource"
-        ],
-        [
-          "costexplorer",
-          "ListTagsForResource"
-        ],
-        [
-          "customerprofiles",
-          "ListTagsForResource"
-        ],
-        [
-          "databasemigrationservice",
-          "ListTagsForResource"
-        ],
-        [
-          "databrew",
-          "ListTagsForResource"
-        ],
-        [
-          "dataexchange",
-          "ListTagsForResource"
-        ],
-        [
-          "datapipeline",
-          "DescribePipelines"
-        ],
-        [
-          "datasync",
-          "ListTagsForResource"
-        ],
-        [
-          "datazone",
-          "ListTagsForResource"
-        ],
-        [
-          "dax",
-          "ListTags"
-        ],
-        [
-          "detective",
-          "ListTagsForResource"
-        ],
-        [
-          "devicefarm",
-          "ListTagsForResource"
-        ],
-        [
-          "directconnect",
-          "DescribeTags"
-        ],
-        [
-          "directoryservice",
-          "ListTagsForResource"
-        ],
-        [
-          "dlm",
-          "ListTagsForResource"
-        ],
-        [
-          "docdb",
-          "ListTagsForResource"
-        ],
-        [
-          "docdbelastic",
-          "ListTagsForResource"
-        ],
-        [
-          "drs",
-          "ListTagsForResource"
-        ],
-        [
-          "dsql",
-          "ListTagsForResource"
-        ],
-        [
-          "dynamodb",
-          "ListTagsOfResource"
-        ],
-        [
           "ec2",
-          "DescribeTags"
+          "GetTransitGatewayRouteTablePropagations"
         ],
         [
           "ecr",
@@ -4304,6 +3428,10 @@
           "ListTagsForResource"
         ],
         [
+          "kafka",
+          "ListTagsForResource"
+        ],
+        [
           "kafkaconnect",
           "ListTagsForResource"
         ],
@@ -4341,6 +3469,10 @@
         ],
         [
           "lambda",
+          "ListTags"
+        ],
+        [
+          "lambdamicrovms",
           "ListTags"
         ],
         [
@@ -4397,6 +3529,10 @@
         ],
         [
           "macie2",
+          "ListTagsForResource"
+        ],
+        [
+          "mailmanager",
           "ListTagsForResource"
         ],
         [
@@ -4548,6 +3684,10 @@
           "ListTagsForResource"
         ],
         [
+          "resiliencehubv2",
+          "ListTagsForResource"
+        ],
+        [
           "resourceexplorer2",
           "ListTagsForResource"
         ],
@@ -4590,14 +3730,6 @@
         [
           "s3",
           "GetObjectTagging"
-        ],
-        [
-          "s3control",
-          "GetMultiRegionAccessPointRoutes"
-        ],
-        [
-          "s3control",
-          "ListMultiRegionAccessPoints"
         ],
         [
           "s3control",
@@ -4787,204 +3919,167 @@
     ],
     [
       "resource",
-      "aws_bedrockagentcore_online_evaluation_config",
+      "aws_directory_service_ip_route",
       "create",
       [
         [
-          "bedrockagentcorecontrol",
-          "CreateOnlineEvaluationConfig"
+          "directoryservice",
+          "AddIpRoutes"
         ],
         [
-          "bedrockagentcorecontrol",
-          "GetOnlineEvaluationConfig"
+          "directoryservice",
+          "ListIpRoutes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_bedrockagentcore_online_evaluation_config",
+      "aws_directory_service_ip_route",
       "delete",
       [
         [
-          "bedrockagentcorecontrol",
-          "DeleteOnlineEvaluationConfig"
+          "directoryservice",
+          "ListIpRoutes"
         ],
         [
-          "bedrockagentcorecontrol",
-          "GetOnlineEvaluationConfig"
+          "directoryservice",
+          "RemoveIpRoutes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_bedrockagentcore_online_evaluation_config",
+      "aws_directory_service_ip_route",
       "read",
       [
         [
-          "bedrockagentcorecontrol",
-          "GetOnlineEvaluationConfig"
+          "directoryservice",
+          "ListIpRoutes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_bedrockagentcore_online_evaluation_config",
+      "aws_directory_service_ip_route",
       "update",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "GetOnlineEvaluationConfig"
-        ],
-        [
-          "bedrockagentcorecontrol",
-          "UpdateOnlineEvaluationConfig"
-        ]
-      ]
+      []
     ],
     [
       "resource",
-      "aws_bedrockagentcore_policy_engine",
+      "aws_directory_service_ip_routes_exclusive",
       "create",
       [
         [
-          "bedrockagentcorecontrol",
-          "CreatePolicyEngine"
+          "directoryservice",
+          "AddIpRoutes"
         ],
         [
-          "bedrockagentcorecontrol",
-          "GetPolicyEngine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_policy_engine",
-      "delete",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "DeletePolicyEngine"
+          "directoryservice",
+          "DescribeDirectories"
         ],
         [
-          "bedrockagentcorecontrol",
-          "GetPolicyEngine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_policy_engine",
-      "read",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "GetPolicyEngine"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_policy_engine",
-      "update",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "GetPolicyEngine"
+          "directoryservice",
+          "ListIpRoutes"
         ],
         [
-          "bedrockagentcorecontrol",
-          "UpdatePolicyEngine"
+          "directoryservice",
+          "RemoveIpRoutes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_bedrockagentcore_resource_policy",
-      "create",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_resource_policy",
-      "delete",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "DeleteResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_resource_policy",
-      "read",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "GetResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_bedrockagentcore_resource_policy",
-      "update",
-      [
-        [
-          "bedrockagentcorecontrol",
-          "PutResourcePolicy"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3control_multi_region_access_point_routes",
-      "create",
-      [
-        [
-          "s3control",
-          "GetMultiRegionAccessPointRoutes"
-        ],
-        [
-          "s3control",
-          "SubmitMultiRegionAccessPointRoutes"
-        ]
-      ]
-    ],
-    [
-      "resource",
-      "aws_s3control_multi_region_access_point_routes",
+      "aws_directory_service_ip_routes_exclusive",
       "delete",
       []
     ],
     [
       "resource",
-      "aws_s3control_multi_region_access_point_routes",
+      "aws_directory_service_ip_routes_exclusive",
       "read",
       [
         [
-          "s3control",
-          "GetMultiRegionAccessPointRoutes"
+          "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
+          "ListIpRoutes"
         ]
       ]
     ],
     [
       "resource",
-      "aws_s3control_multi_region_access_point_routes",
+      "aws_directory_service_ip_routes_exclusive",
       "update",
       [
         [
-          "s3control",
-          "GetMultiRegionAccessPointRoutes"
+          "directoryservice",
+          "AddIpRoutes"
         ],
         [
-          "s3control",
-          "SubmitMultiRegionAccessPointRoutes"
+          "directoryservice",
+          "DescribeDirectories"
+        ],
+        [
+          "directoryservice",
+          "ListIpRoutes"
+        ],
+        [
+          "directoryservice",
+          "RemoveIpRoutes"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directoryservicedata_user",
+      "create",
+      [
+        [
+          "directoryservicedata",
+          "CreateUser"
+        ],
+        [
+          "directoryservicedata",
+          "DescribeUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directoryservicedata_user",
+      "delete",
+      [
+        [
+          "directoryservicedata",
+          "DeleteUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directoryservicedata_user",
+      "read",
+      [
+        [
+          "directoryservicedata",
+          "DescribeUser"
+        ]
+      ]
+    ],
+    [
+      "resource",
+      "aws_directoryservicedata_user",
+      "update",
+      [
+        [
+          "directoryservicedata",
+          "DescribeUser"
+        ],
+        [
+          "directoryservicedata",
+          "UpdateUser"
         ]
       ]
     ]
