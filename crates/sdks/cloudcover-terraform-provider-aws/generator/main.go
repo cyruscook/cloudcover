@@ -188,15 +188,18 @@ func run() error {
 		return errors.New("discovered no terraform-provider-aws entrypoints")
 	}
 	// Shared helpers have different reachable servicePackage methods for each
-	// entrypoint service. Keep their transitive summaries separate.
-	analyzers := make(map[string]*apiMethodAnalyzer)
+	// service. Process each service together so its summaries stay separate
+	// and the previous service's caches can be reclaimed.
+	slices.SortStableFunc(specs, func(left, right entrypointSpec) int {
+		return strings.Compare(left.packagePath, right.packagePath)
+	})
+	var analyzer *apiMethodAnalyzer
 
 	rows := make([]mappingRow, 0, len(specs))
 	for _, spec := range specs {
-		analyzer := analyzers[spec.packagePath]
-		if analyzer == nil {
+		if analyzer == nil || analyzer.servicePackagePath != spec.packagePath {
+			clear(index.interfaceCalleeCache)
 			analyzer = newAPIMethodAnalyzer(index, sdkMappings, spec.packagePath)
-			analyzers[spec.packagePath] = analyzer
 		}
 		handlers, err := resolveHandlers(index, spec)
 		if err != nil {
