@@ -75,7 +75,7 @@ type packageIndex struct {
 	ssaBySyntax          map[ast.Node][]*ssa.Function
 	nestedFuncs          map[*ssa.Function][]*ssa.Function
 	callers              map[*ssa.Function][]*ssa.Function
-	interfaceCalleeCache map[functionIdentity]providerInterfaceCalleeResolution
+	interfaceCalleeCache map[providerInterfaceCalleeKey]providerInterfaceCalleeResolution
 }
 
 type functionIdentity struct {
@@ -124,6 +124,11 @@ type apiMethodFunctionSummary struct {
 	methods []apiMethod
 }
 
+type providerInterfaceCalleeKey struct {
+	method             functionIdentity
+	servicePackagePath string
+}
+
 type providerInterfaceCalleeResolution struct {
 	callees  []*ssa.Function
 	relevant bool
@@ -131,16 +136,18 @@ type providerInterfaceCalleeResolution struct {
 }
 
 type apiMethodAnalyzer struct {
-	index       *packageIndex
-	sdkMappings map[sdkMethodKey][]apiMethod
-	summaries   map[*ssa.Function]*apiMethodFunctionSummary
+	servicePackagePath string
+	index              *packageIndex
+	sdkMappings        map[sdkMethodKey][]apiMethod
+	summaries          map[*ssa.Function]*apiMethodFunctionSummary
 }
 
-func newAPIMethodAnalyzer(index *packageIndex, sdkMappings map[sdkMethodKey][]apiMethod) *apiMethodAnalyzer {
+func newAPIMethodAnalyzer(index *packageIndex, sdkMappings map[sdkMethodKey][]apiMethod, servicePackagePath string) *apiMethodAnalyzer {
 	return &apiMethodAnalyzer{
-		index:       index,
-		sdkMappings: sdkMappings,
-		summaries:   make(map[*ssa.Function]*apiMethodFunctionSummary),
+		servicePackagePath: servicePackagePath,
+		index:              index,
+		sdkMappings:        sdkMappings,
+		summaries:          make(map[*ssa.Function]*apiMethodFunctionSummary),
 	}
 }
 
@@ -180,10 +187,17 @@ func run() error {
 	if len(specs) == 0 {
 		return errors.New("discovered no terraform-provider-aws entrypoints")
 	}
-	analyzer := newAPIMethodAnalyzer(index, sdkMappings)
+	// Shared helpers have different reachable servicePackage methods for each
+	// entrypoint service. Keep their transitive summaries separate.
+	analyzers := make(map[string]*apiMethodAnalyzer)
 
 	rows := make([]mappingRow, 0, len(specs))
 	for _, spec := range specs {
+		analyzer := analyzers[spec.packagePath]
+		if analyzer == nil {
+			analyzer = newAPIMethodAnalyzer(index, sdkMappings, spec.packagePath)
+			analyzers[spec.packagePath] = analyzer
+		}
 		handlers, err := resolveHandlers(index, spec)
 		if err != nil {
 			return fmt.Errorf(
@@ -346,7 +360,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		ssaBySyntax:          map[ast.Node][]*ssa.Function{},
 		nestedFuncs:          map[*ssa.Function][]*ssa.Function{},
 		callers:              map[*ssa.Function][]*ssa.Function{},
-		interfaceCalleeCache: map[functionIdentity]providerInterfaceCalleeResolution{},
+		interfaceCalleeCache: map[providerInterfaceCalleeKey]providerInterfaceCalleeResolution{},
 	}
 
 	missingTypes := make([]string, 0)
@@ -1568,7 +1582,7 @@ func concreteTypeFromExpr(
 }
 
 func collectAPIMethods(index *packageIndex, roots []*ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod) (handlerAPIMethods, error) {
-	return newAPIMethodAnalyzer(index, sdkMappings).collect(roots)
+	return newAPIMethodAnalyzer(index, sdkMappings, "").collect(roots)
 }
 
 func (analyzer *apiMethodAnalyzer) collect(roots []*ssa.Function) (handlerAPIMethods, error) {
@@ -1620,7 +1634,7 @@ func (analyzer *apiMethodAnalyzer) discover(fn *ssa.Function, pending map[*ssa.F
 
 	// The static call graph omits some calls inside range-over-function iterators.
 	// Preserve those provider-local edges from the type-checked AST.
-	localCallees, err := collectDirectLocalCallees(analyzer.index, fn)
+	localCallees, err := collectDirectLocalCallees(analyzer.index, fn, analyzer.servicePackagePath)
 	if err != nil {
 		return err
 	}
@@ -1685,7 +1699,7 @@ func expandRootFunctions(index *packageIndex, roots []*ssa.Function) []*ssa.Func
 	return expanded
 }
 
-func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) ([]*ssa.Function, error) {
+func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePackagePath string) ([]*ssa.Function, error) {
 	if fn == nil || fn.Syntax() == nil {
 		return nil, nil
 	}
@@ -1715,7 +1729,7 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) ([]*ssa.Fu
 		if selection, ok := callExpr.Fun.(*ast.SelectorExpr); ok {
 			if methodSelection := sourcePkg.TypesInfo.Selections[selection]; methodSelection != nil {
 				if isBodylessInterfaceMethod(obj) {
-					resolved, relevant, err := providerLocalInterfaceCallees(index, methodSelection, obj.FullName())
+					resolved, relevant, err := providerLocalInterfaceCallees(index, methodSelection, obj.FullName(), servicePackagePath)
 					if err != nil {
 						visitErr = err
 						return false
@@ -1760,7 +1774,7 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function) ([]*ssa.Fu
 	return callees, nil
 }
 
-func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name string) ([]*ssa.Function, bool, error) {
+func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name, servicePackagePath string) ([]*ssa.Function, bool, error) {
 	if index == nil || interfaceSelection == nil || interfaceSelection.Kind() != types.MethodVal {
 		return nil, false, nil
 	}
@@ -1773,16 +1787,17 @@ func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *type
 	}
 	identity, ok := canonicalFunctionIdentity(method)
 	if !ok {
-		return collectProviderLocalInterfaceCallees(index, interfaceSelection, name)
+		return collectProviderLocalInterfaceCallees(index, interfaceSelection, name, servicePackagePath)
 	}
 	if index.interfaceCalleeCache == nil {
-		index.interfaceCalleeCache = make(map[functionIdentity]providerInterfaceCalleeResolution)
+		index.interfaceCalleeCache = make(map[providerInterfaceCalleeKey]providerInterfaceCalleeResolution)
 	}
-	if cached, ok := index.interfaceCalleeCache[identity]; ok {
+	key := providerInterfaceCalleeKey{method: identity, servicePackagePath: servicePackagePath}
+	if cached, ok := index.interfaceCalleeCache[key]; ok {
 		return cached.callees, cached.relevant, cached.err
 	}
-	callees, relevant, err := collectProviderLocalInterfaceCallees(index, interfaceSelection, name)
-	index.interfaceCalleeCache[identity] = providerInterfaceCalleeResolution{
+	callees, relevant, err := collectProviderLocalInterfaceCallees(index, interfaceSelection, name, servicePackagePath)
+	index.interfaceCalleeCache[key] = providerInterfaceCalleeResolution{
 		callees:  callees,
 		relevant: relevant,
 		err:      err,
@@ -1790,7 +1805,7 @@ func providerLocalInterfaceCallees(index *packageIndex, interfaceSelection *type
 	return callees, relevant, err
 }
 
-func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name string) ([]*ssa.Function, bool, error) {
+func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelection *types.Selection, name, servicePackagePath string) ([]*ssa.Function, bool, error) {
 	if index == nil || interfaceSelection == nil || interfaceSelection.Kind() != types.MethodVal {
 		return nil, false, nil
 	}
@@ -1818,6 +1833,16 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 			}
 			named, ok := types.Unalias(typeObject.Type()).(*types.Named)
 			if !ok || isInterfaceType(named) {
+				continue
+			}
+			// Service registration selects one servicePackage. A shared tag
+			// interface does not make every other service reachable. Restrict
+			// only these receivers; other interfaces and direct SDK calls may
+			// legitimately reach multiple services.
+			if strings.HasPrefix(servicePackagePath, providerModulePath+"/internal/service/") &&
+				named.Obj().Name() == "servicePackage" &&
+				strings.HasPrefix(typePkg.Path(), providerModulePath+"/internal/service/") &&
+				typePkg.Path() != servicePackagePath {
 				continue
 			}
 			for _, receiver := range []types.Type{named, types.NewPointer(named)} {
