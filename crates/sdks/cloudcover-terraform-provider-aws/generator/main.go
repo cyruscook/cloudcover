@@ -300,8 +300,9 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		Overlay:    nil,
 	}
 	// LoadSyntax only retains bodies for initial packages. Promote every
-	// provider-local dependency (including conns and framework helpers) to an
-	// initial package, while keeping SDK and other external bodies unloaded.
+	// provider-local dependency (including conns and framework helpers) and
+	// the SDK schema lifecycle helpers to initial packages. Keep other external
+	// bodies unloaded to avoid building SSA for the entire dependency graph.
 	dependencies, err := packages.Load(config, patterns...)
 	if err != nil {
 		return nil, fmt.Errorf("load provider dependencies for %s: %w", providerDir, err)
@@ -310,7 +311,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		return nil, fmt.Errorf("dependency loading reported %d diagnostics for %s", count, providerDir)
 	}
 	packages.Visit(dependencies, nil, func(pkg *packages.Package) {
-		if isProviderPackage(pkg.PkgPath) {
+		if isProviderPackage(pkg.PkgPath) || isSchemaLifecycleHelperPackage(pkg.PkgPath) {
 			patterns = append(patterns, pkg.PkgPath)
 		}
 	})
@@ -1916,6 +1917,20 @@ func isProviderPackage(path string) bool {
 	}
 	relative, ok := strings.CutPrefix(path, providerModulePath+"/")
 	return ok && relative != "vendor" && !strings.HasPrefix(relative, "vendor/")
+}
+
+func isSchemaLifecycleHelperPackage(path string) bool {
+	// Provider releases used Terraform's original schema package, SDK v1,
+	// then SDK v2. Their Noop/NoopContext handlers need source-backed SSA just
+	// like provider-local handlers, even though they make no AWS API calls.
+	switch path {
+	case "github.com/hashicorp/terraform/helper/schema",
+		"github.com/hashicorp/terraform-plugin-sdk/helper/schema",
+		"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema":
+		return true
+	default:
+		return false
+	}
 }
 
 func isBodylessLinknameFunction(index *packageIndex, obj *types.Func) bool {

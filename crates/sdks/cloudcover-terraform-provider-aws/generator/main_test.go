@@ -90,6 +90,102 @@ func handler() { new(conns.AWSClient).CloudFrontClient() }
 	}
 }
 
+func TestLoadProviderIndexIncludesSchemaLifecycleHelperBodies(t *testing.T) {
+	for _, sdkModule := range []string{
+		"github.com/hashicorp/terraform",
+		"github.com/hashicorp/terraform-plugin-sdk",
+		"github.com/hashicorp/terraform-plugin-sdk/v2",
+	} {
+		for _, helper := range []string{"Noop", "NoopContext", "RemoveFromState"} {
+			t.Run(sdkModule+"/"+helper, func(t *testing.T) {
+				t.Parallel()
+				dir := t.TempDir()
+				handlerDir := "aws"
+				version := "v1.0.0"
+				if strings.HasSuffix(sdkModule, "/v2") {
+					handlerDir = "internal/service/account"
+					version = "v2.0.0"
+				}
+				files := map[string]string{
+					"go.mod":     "module " + providerModulePath + "\n\ngo 1.26.0\nrequire " + sdkModule + " " + version + "\nreplace " + sdkModule + " => ./sdk\n",
+					"sdk/go.mod": "module " + sdkModule + "\n\ngo 1.26.0\n",
+					"sdk/helper/schema/schema.go": `package schema
+import "` + sdkModule + `/helper/unrelated"
+type Resource struct {
+	ReadWithoutTimeout func()
+	DeleteWithoutTimeout func()
+}
+func Noop() {}
+func NoopContext() {}
+func RemoveFromState() {}
+func unrelatedHelper() { unrelated.Call() }
+`,
+					"sdk/helper/unrelated/helper.go": "package unrelated\nfunc Call() {}\n",
+					handlerDir + "/resource.go": `package account
+import sdkSchema "` + sdkModule + `/helper/schema"
+func resourcePrimaryContact() *sdkSchema.Resource {
+	return &sdkSchema.Resource{
+		ReadWithoutTimeout: read,
+		DeleteWithoutTimeout: sdkSchema.` + helper + `,
+	}
+}
+func read() {}
+`,
+				}
+				if handlerDir != "aws" {
+					files["internal/provider/provider.go"] = "package provider\n"
+				}
+				for path, source := range files {
+					path = filepath.Join(dir, path)
+					if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+						t.Fatal(err)
+					}
+					if err := os.WriteFile(path, []byte(source), 0o600); err != nil {
+						t.Fatal(err)
+					}
+				}
+				index, err := loadProviderIndex(dir)
+				if err != nil {
+					t.Fatal(err)
+				}
+				spec := entrypointSpec{
+					kind: "resource", typeName: "aws_account_primary_contact",
+					factory: "resourcePrimaryContact", packagePath: providerModulePath + "/" + handlerDir,
+				}
+				handlers, err := resolveHandlers(index, spec)
+				if err != nil {
+					t.Fatal(err)
+				}
+				if len(handlers) != 2 {
+					t.Fatalf("resolved %d handlers, want read and delete", len(handlers))
+				}
+				deleteHandler := handlers[0]
+				if deleteHandler.action != "delete" || len(deleteHandler.funcs) != 1 {
+					t.Fatalf("delete handler = %#v, want one concrete helper", deleteHandler)
+				}
+				fn := deleteHandler.funcs[0]
+				if fn.Name() != helper || fn.Syntax() == nil || len(fn.Blocks) == 0 {
+					t.Fatalf("%s lacks a source-backed SSA body", helper)
+				}
+				analysis, err := newAPIMethodAnalyzer(index, nil).collect(deleteHandler.funcs)
+				if err != nil {
+					t.Fatal(err)
+				}
+				if len(analysis.methods) != 0 {
+					t.Fatalf("%s mapped to AWS API methods: %#v", helper, analysis.methods)
+				}
+				unrelated, err := packageForPath(index, sdkModule+"/helper/unrelated")
+				if err != nil {
+					t.Fatal(err)
+				}
+				if len(unrelated.Syntax) != 0 {
+					t.Fatal("unrelated dependency source bodies were loaded")
+				}
+			})
+		}
+	}
+}
+
 func TestSDKKeyForCallable(t *testing.T) {
 	t.Parallel()
 
