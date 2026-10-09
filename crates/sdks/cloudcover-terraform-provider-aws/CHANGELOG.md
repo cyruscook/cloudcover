@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.8](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.1.7...cloudcover-terraform-provider-aws-v0.1.8) - 2026-10-09
+
+### Other
+
+- Fix Terraform provider analysis of external schema lifecycle handlers ([#23](https://github.com/cyruscook/cloudcover/pull/23))
+- Fix Terraform AWS provider analysis of helper packages ([#21](https://github.com/cyruscook/cloudcover/pull/21))
+
 ## [0.1.5](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.1.4...cloudcover-terraform-provider-aws-v0.1.5) - 2026-09-26
 
 ### Other
