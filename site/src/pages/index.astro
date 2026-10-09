@@ -14,9 +14,8 @@ import "../styles/global.css";
     <title>CloudCover Data Browser</title>
   </head>
   <body>
-    <a class="skip-link" href="#workspace">Skip to explorer</a>
-
     <header class="site-header">
+      <a class="skip-link" href="#workspace">Skip to explorer</a>
       <div class="topbar">
         <a class="brand" href={import.meta.env.BASE_URL} aria-label="CloudCover home">CloudCover</a>
         <form class="search-form" role="search" onsubmit="return false">
@@ -47,15 +46,7 @@ import "../styles/global.css";
 
     <main id="workspace">
       <div id="explorer" class="workspace" data-base-url={import.meta.env.BASE_URL}>
-        <div class="workspace-toolbar" aria-label="Explorer controls">
-          <div class="version-control">
-            <label for="terraform-version">Terraform provider version</label>
-            <select id="terraform-version" disabled>
-              <option>Loading versions…</option>
-            </select>
-          </div>
-          <p id="load-status" class="status" aria-live="polite">Loading catalog data…</p>
-        </div>
+        <p id="load-status" class="status" aria-live="polite">Loading catalog data…</p>
 
         <section id="welcome" class="welcome" aria-labelledby="welcome-title">
           <p class="eyebrow">Cloud data explorer</p>
@@ -72,7 +63,32 @@ import "../styles/global.css";
           </div>
         </section>
 
-        <section id="detail" class="detail" aria-live="polite" tabindex="-1" hidden></section>
+        <section id="detail" class="detail" tabindex="-1" hidden>
+          <div id="detail-heading" class="detail-header"></div>
+          <section id="terraform-context" class="provider-context" aria-labelledby="provider-title" hidden>
+            <div class="provider-summary">
+              <span class="provider-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2 1v6l6 3.5v-6L2 1Zm7 4v6l6 3.5v-6L9 5Zm7 3.5v6l6-3.5V5l-6 3.5ZM9 12.5v6l6 3.5v-6l-6-3.5Z" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="provider-title">Terraform AWS provider</h2>
+                <p id="provider-help">Match the provider version in your configuration to explore its mappings.</p>
+              </div>
+            </div>
+            <div class="version-control">
+              <div class="version-label">
+                <label for="terraform-version">Provider version</label>
+                <button id="latest-version" class="latest-version" type="button" hidden>Use latest</button>
+              </div>
+              <select id="terraform-version" aria-describedby="provider-help" disabled>
+                <option>Loading versions…</option>
+              </select>
+            </div>
+          </section>
+          <div id="detail-content" aria-live="polite" aria-atomic="false"></div>
+        </section>
 
         <aside class="source-note" aria-label="Data provenance">
           Catalog mappings are generated from AWS service models and Terraform AWS provider snapshots.
