@@ -83,6 +83,9 @@ jobs:
       - name: Check site
         run: npm --prefix site run check
 
+      - name: Test mapping relationships
+        run: npm --prefix site test
+
   tests:
     name: Tests
     runs-on: ubuntu-latest
