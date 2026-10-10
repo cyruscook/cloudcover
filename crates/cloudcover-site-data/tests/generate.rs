@@ -240,10 +240,6 @@ fn assert_resource_permissions(
             ("aws_s3_bucket_object", "create", "s3:PutObject"),
             ("aws_s3_bucket_object", "update", "s3:PutObject"),
             ("aws_s3_bucket_object", "create", "s3:AbortMultipartUpload"),
-            ("aws_s3_bucket_object", "create", "kms:GenerateDataKey"),
-            ("aws_secretsmanager_secret", "create", "kms:Decrypt"),
-            ("aws_secretsmanager_secret", "create", "kms:GenerateDataKey"),
-            ("aws_secretsmanager_secret", "update", "kms:Encrypt"),
         ] {
             let row = row_ids
                 .iter()

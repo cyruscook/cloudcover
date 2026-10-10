@@ -14,9 +14,7 @@ impl AwsProvider {
     pub const fn new() -> Self {
         Self
     }
-    /// Returns known IAM permissions for an AWS API operation, including
-    /// documented service-mediated KMS calls. Requirements can depend on
-    /// encryption settings and request options.
+    /// Returns the IAM permissions authorized by an AWS API operation.
     ///
     /// # Errors
     ///

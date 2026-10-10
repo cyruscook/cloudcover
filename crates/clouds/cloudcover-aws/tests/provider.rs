@@ -445,11 +445,6 @@ fn builds_deterministic_iam_allow_policy() -> Result<(), Box<dyn Error>> {
                 },
                 {
                     "Effect":"Allow",
-                    "Action":["kms:Decrypt", "kms:GenerateDataKey"],
-                    "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}"
-                },
-                {
-                    "Effect":"Allow",
                     "Action":[
                         "s3:GetObject",
                         "s3:GetObjectLegalHold",
@@ -491,8 +486,6 @@ fn builds_terraform_iam_policy_document() -> Result<(), Box<dyn Error>> {
     assert!(hcl.contains(r#"effect = "Allow""#));
     assert!(hcl.contains(r#""ec2:DescribeInstances""#));
     assert!(hcl.contains(r#""s3:GetObject""#));
-    assert!(hcl.contains(r#""kms:Decrypt""#));
-    assert!(hcl.contains(r#""arn:$${Partition}:kms:$${Region}:$${Account}:key/$${KeyId}""#));
     assert!(hcl.contains("resources = ["));
     assert!(hcl.contains(r#""*""#));
     assert!(hcl.contains(r#""arn:$${Partition}:s3:::$${BucketName}/$${ObjectName}""#));
@@ -590,8 +583,6 @@ fn operation_permissions_use_authorized_actions() -> Result<(), Box<dyn Error>> 
     assert_eq!(
         actions,
         vec![
-            "kms:Decrypt".to_owned(),
-            "kms:GenerateDataKey".to_owned(),
             "s3-object-lambda:PutObject".to_owned(),
             "s3:GetObject".to_owned(),
             "s3:GetObjectVersion".to_owned(),
@@ -613,8 +604,6 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
     assert_eq!(
         permissions,
         vec![
-            "kms:Decrypt",
-            "kms:GenerateDataKey",
             "s3-object-lambda:PutObject",
             "s3:GetObject",
             "s3:GetObjectVersion",
@@ -626,83 +615,6 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
         ]
     );
 
-    Ok(())
-}
-
-#[test]
-fn includes_documented_service_mediated_kms_permissions() -> Result<(), Box<dyn Error>> {
-    let provider = AwsProvider::new();
-    for (service, operation, expected) in [
-        (
-            "s3",
-            "PutObject",
-            vec!["kms:Decrypt", "kms:GenerateDataKey"],
-        ),
-        (
-            "s3",
-            "HeadObject",
-            vec!["kms:Decrypt", "kms:GenerateDataKey"],
-        ),
-        ("s3", "UploadPart", vec!["kms:Decrypt"]),
-        ("s3", "DeleteObject", vec![]),
-        (
-            "secretsmanager",
-            "CreateSecret",
-            vec!["kms:Decrypt", "kms:GenerateDataKey"],
-        ),
-        (
-            "secretsmanager",
-            "UpdateSecret",
-            vec!["kms:Decrypt", "kms:Encrypt", "kms:GenerateDataKey"],
-        ),
-        (
-            "secretsmanager",
-            "PutSecretValue",
-            vec!["kms:Decrypt", "kms:GenerateDataKey"],
-        ),
-        (
-            "secretsmanager",
-            "ReplicateSecretToRegions",
-            vec!["kms:Decrypt", "kms:GenerateDataKey"],
-        ),
-        ("secretsmanager", "GetSecretValue", vec!["kms:Decrypt"]),
-        ("secretsmanager", "BatchGetSecretValue", vec!["kms:Decrypt"]),
-        ("secretsmanager", "DescribeSecret", vec![]),
-        ("secretsmanager", "DeleteSecret", vec![]),
-    ] {
-        let method = ApiMethod::new(service, operation);
-        let permissions = provider.iam_permissions(&method)?;
-        let kms_permissions = permissions
-            .iter()
-            .copied()
-            .filter(|permission| permission.starts_with("kms:"))
-            .collect::<Vec<_>>();
-        assert_eq!(kms_permissions, expected, "{service}:{operation}");
-        let policy = provider.permissions_policy(&[method])?;
-        let statements = policy["Statement"].as_array().ok_or("missing statements")?;
-        let kms_statements = statements
-            .iter()
-            .filter(|statement| {
-                statement["Action"].as_array().is_some_and(|actions| {
-                    actions.iter().any(|action| {
-                        action
-                            .as_str()
-                            .is_some_and(|action| action.starts_with("kms:"))
-                    })
-                })
-            })
-            .collect::<Vec<_>>();
-        if expected.is_empty() {
-            assert_eq!(kms_statements, Vec::<&serde_json::Value>::new());
-        } else {
-            assert_eq!(kms_statements.len(), 1);
-            assert_eq!(kms_statements[0]["Action"], json!(expected));
-            assert_eq!(
-                kms_statements[0]["Resource"],
-                "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}"
-            );
-        }
-    }
     Ok(())
 }
 
