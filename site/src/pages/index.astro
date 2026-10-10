@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "../styles/iam.css";
 ---
 
 <!doctype html>
@@ -52,8 +53,8 @@ import "../styles/global.css";
           <p class="eyebrow">Cloud data explorer</p>
           <h1 id="welcome-title">Find the connection between AWS APIs, IAM, and Terraform.</h1>
           <p>
-            Search API actions and their IAM permissions, or explore the known API actions
-            and permissions for each Terraform resource lifecycle.
+            Find IAM permissions for API actions, explore resource ARNs and context keys,
+            or follow the permissions used throughout a Terraform resource’s lifecycle.
           </p>
           <div class="examples" aria-label="Try an example search">
             <span>Try an example</span>
@@ -91,7 +92,7 @@ import "../styles/global.css";
         </section>
 
         <aside class="source-note" aria-label="Data provenance">
-          Catalog mappings are generated from AWS service models and Terraform AWS provider snapshots.
+          Catalog data is generated from the AWS Service Authorization Reference and Terraform AWS provider snapshots.
         </aside>
       </div>
     </main>

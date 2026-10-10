@@ -5,6 +5,8 @@ import {
 } from "../lib/catalog";
 import { type Entry, type Kind, type Mapping, resourceMappings } from "../lib/mappings";
 import { mappingTable } from "./mapping-table";
+import { parseIamService, type IamPermission } from "../lib/iam";
+import { iamDetail } from "./iam-detail";
 
 type ViewRoute = { kind: Kind; id: string; version?: string };
 const labels: Record<Kind, string> = { api: "API action", iam: "IAM permission", terraform: "Terraform" };
@@ -38,7 +40,8 @@ let active = -1;
 let versionToken = 0;
 const snapshots = new Map<string, TerraformSnapshot>();
 let routeToken = 0;
-const methodsByPermission = new Map<number, number[]>();
+const iamServices = new Map<string, Promise<Map<string, IamPermission>>>();
+let permissionToken = 0;
 const rowsByResource = new Map<string, TerraformRow[]>();
 
 async function fetchDocument(path: string): Promise<unknown> {
@@ -202,6 +205,7 @@ function mappingLink(item: Entry): HTMLElement {
 function apiEntry(id: number): Entry { return entry("api", catalog.apiMethods[id].canonical, id); }
 function iamEntry(id: number): Entry { return entry("iam", catalog.iamPermissions[id], id); }
 function renderDetail(item: Entry, focus: boolean): void {
+  permissionToken++;
   catalogStatus();
   welcome.hidden = true;
   detail.hidden = false;
@@ -210,18 +214,16 @@ function renderDetail(item: Entry, focus: boolean): void {
   detailHeading.dataset.kind = item.kind;
   detailHeading.replaceChildren(node("p", labels[item.kind], "eyebrow"), node("h1", item.label));
   const description = item.kind === "api" ? "IAM permissions associated with this API action."
-    : item.kind === "iam" ? "API actions associated with this IAM permission."
+    : item.kind === "iam" ? "Explore resource scope and context keys for this permission."
     : "Explore the API actions and IAM permissions used throughout this resource’s lifecycle.";
-  detailHeading.append(node("p", description, "detail-description"));
+  if (item.kind !== "iam") detailHeading.append(node("p", description, "detail-description"));
   detailContent.replaceChildren();
   detailContent.setAttribute("aria-busy", String(item.kind === "terraform" && versionState === "loading"));
   let mappings: Mapping[] | undefined;
   if (item.kind === "api") {
     mappings = [{ apiMethodId: Number(item.id), permissionIds: catalog.apiMethods[Number(item.id)].permissionIds, lifecycles: [] }];
   } else if (item.kind === "iam") {
-    mappings = (methodsByPermission.get(Number(item.id)) ?? []).map(apiMethodId => ({
-      apiMethodId, permissionIds: [Number(item.id)], lifecycles: [],
-    }));
+    void renderPermission(item);
   } else {
     if (!index.versions.includes(versionSelect.value)) {
       detailContent.append(versionMessage("Provider version not indexed", `AWS provider v${versionSelect.value} is not in this catalog. Choose an indexed version above to explore this resource.`));
@@ -249,14 +251,49 @@ function renderDetail(item: Entry, focus: boolean): void {
   if (mappings) detailContent.append(mappingTable(catalog, mappings, item.kind === "terraform", mappingLink));
   if (focus) { detail.focus({ preventScroll: true }); detail.scrollIntoView({ block: "start" }); }
 }
+async function renderPermission(item: Entry): Promise<void> {
+  const token = ++permissionToken;
+  detailContent.setAttribute("aria-busy", "true");
+  detailContent.replaceChildren(versionMessage("Loading permission reference…", "", "loading"));
+  const service = item.label.split(":")[0];
+  try {
+    let request = iamServices.get(service);
+    if (!request) {
+      request = fetchDocument(`data/iam/${encodeURIComponent(service)}.json`).then(document => parseIamService(document, service));
+      iamServices.set(service, request);
+      void request.catch(() => { if (iamServices.get(service) === request) iamServices.delete(service); });
+    }
+    const permissions = await request;
+    if (token !== permissionToken || selected?.kind !== "iam" || selected.label !== item.label) return;
+    const permission = permissions.get(item.label);
+    if (!permission) throw new CatalogError("Permission metadata is not present in SAR.");
+    detailContent.replaceChildren(iamDetail(permission));
+  } catch {
+    if (token !== permissionToken || selected?.kind !== "iam" || selected.label !== item.label) return;
+    const message = versionMessage("Could not load permission reference", "", "error");
+    const button = node("button", "Retry permission reference", "retry-button");
+    button.type = "button";
+    button.addEventListener("click", () => {
+      detail.focus({ preventScroll: true });
+      void renderPermission(item);
+    });
+    message.append(button);
+    detailContent.replaceChildren(message);
+  } finally {
+    if (token === permissionToken) detailContent.setAttribute("aria-busy", "false");
+  }
+}
+
 function versionMessage(title: string, description: string, state = "empty"): HTMLElement {
   const message = node("div", "", "version-message");
   message.setAttribute("role", "status");
   message.dataset.state = state;
-  message.append(node("h2", title), node("p", description));
+  message.append(node("h2", title));
+  if (description) message.append(node("p", description));
   return message;
 }
 function showWelcome(): void {
+  permissionToken++;
   selected = undefined;
   if (!index.versions.includes(versionSelect.value)) versionSelect.value = snapshot?.version ?? index.latest;
   input.value = "";
@@ -270,6 +307,7 @@ function showWelcome(): void {
   catalogStatus();
 }
 function showMissing(route: ViewRoute): void {
+  permissionToken++;
   if (route.kind === "terraform") {
     // Keep the resource and version control available even when this snapshot lacks it.
     select(entry("terraform", route.id, route.id), false, false);
@@ -378,11 +416,6 @@ async function load(): Promise<void> {
     catalog = parseApiCatalog(apiDocument);
     index = parseTerraformIndex(indexDocument);
     entries = [...catalog.apiMethods.map((_, id) => apiEntry(id)), ...catalog.iamPermissions.map((_, id) => iamEntry(id))];
-    methodsByPermission.clear();
-    catalog.apiMethods.forEach((method, id) => method.permissionIds.forEach(permission => {
-      const methods = methodsByPermission.get(permission);
-      if (methods) methods.push(id); else methodsByPermission.set(permission, [id]);
-    }));
     const releases = new Map<string, HTMLOptGroupElement>();
     for (const version of [...index.versions].reverse()) {
       const major = version.split(".")[0];
@@ -406,7 +439,9 @@ async function load(): Promise<void> {
     if (route?.kind === "terraform") select(entry("terraform", route.id, route.id), false, false);
     else if (route) await restoreRoute(false);
     await loadVersion(initialVersion);
-    await restoreRoute(false);
+    // IAM/API routes were restored above; replaying them restarts an in-flight
+    // reference request and can hide its error state. Terraform needs its snapshot.
+    if (!selected || selected.kind === "terraform") await restoreRoute(false);
   } catch (error) {
     retry(`Could not load catalogs. ${error instanceof Error ? error.message : ""}`, () => void load());
   }

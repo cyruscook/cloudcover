@@ -56,6 +56,8 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
             .all(|window| window[0] < window[1])
     );
 
+    assert_iam_reference(&output, &iam_permissions)?;
+
     let api_values = field(&api, "api_methods")?
         .as_array()
         .ok_or("api_methods is not an array")?;
@@ -326,5 +328,90 @@ fn assert_fas_provenance(
             }
         }
     }
+    Ok(())
+}
+
+fn assert_iam_reference(output: &Path, iam_permissions: &[String]) -> Result<(), Box<dyn Error>> {
+    let mut exported = std::collections::BTreeSet::new();
+    for file in fs::read_dir(output.join("iam"))? {
+        let document = read_json(&file?.path())?;
+        assert_eq!(document["schema_version"], 1);
+        for permission in document["permissions"]
+            .as_array()
+            .ok_or("missing IAM details")?
+        {
+            let name = string_value(&permission["permission"], "permission name")?;
+            assert!(exported.insert(name));
+            let resources = permission["resources"]
+                .as_array()
+                .ok_or("missing resources")?;
+            let resource_names = resources
+                .iter()
+                .map(|resource| string_value(&resource["name"], "resource name"))
+                .collect::<Result<std::collections::BTreeSet<_>, _>>()?;
+            for key in permission["context_keys"]
+                .as_array()
+                .ok_or("missing context keys")?
+            {
+                for scope in ["permission_resources", "resource_types"] {
+                    for resource in key[scope].as_array().ok_or("missing context scope")? {
+                        assert!(
+                            resource_names.contains(&string_value(resource, "context resource")?)
+                        );
+                    }
+                }
+            }
+        }
+    }
+    assert_eq!(exported.into_iter().collect::<Vec<_>>(), iam_permissions);
+    let s3 = read_json(&output.join("iam/s3.json"))?;
+    let permissions = s3["permissions"]
+        .as_array()
+        .ok_or("missing S3 permissions")?;
+    let get_object = permissions
+        .iter()
+        .find(|row| row["permission"] == "s3:GetObject")
+        .ok_or("missing GetObject")?;
+    assert!(
+        get_object["resources"]
+            .as_array()
+            .ok_or("missing GetObject resources")?
+            .iter()
+            .any(|resource| resource["name"] == "object"
+                && resource["arn_formats"].as_array().is_some_and(|arns| arns
+                    .iter()
+                    .any(|arn| arn == "arn:${Partition}:s3:::${BucketName}/${ObjectName}")))
+    );
+    assert!(
+        get_object["context_keys"]
+            .as_array()
+            .ok_or("missing GetObject keys")?
+            .iter()
+            .any(|key| key["name"] == "s3:TlsVersion"
+                && key["permission"] == true
+                && key["types"][0] == "Numeric")
+    );
+    let list_buckets = permissions
+        .iter()
+        .find(|row| row["permission"] == "s3:ListAllMyBuckets")
+        .ok_or("missing ListAllMyBuckets")?;
+    assert_eq!(list_buckets["resources"], serde_json::json!([]));
+    let ec2 = read_json(&output.join("iam/ec2.json"))?;
+    let run_instances = ec2["permissions"]
+        .as_array()
+        .ok_or("missing EC2 permissions")?
+        .iter()
+        .find(|row| row["permission"] == "ec2:RunInstances")
+        .ok_or("missing RunInstances")?;
+    assert!(
+        run_instances["context_keys"]
+            .as_array()
+            .ok_or("missing RunInstances keys")?
+            .iter()
+            .any(|key| key["name"] == "ec2:InstanceType"
+                && key["permission_resources"]
+                    .as_array()
+                    .is_some_and(|resources| resources.iter().any(|name| name == "instance")))
+    );
     Ok(())
 }
