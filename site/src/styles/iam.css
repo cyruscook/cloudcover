@@ -1,0 +1,524 @@
+/* IAM reference: policy scope first, then conditions with explicit applicability. */
+.detail-header[data-kind="iam"] .eyebrow {
+  color: #8c5c1d;
+}
+.iam-reference {
+  margin-top: 1.75rem;
+}
+.reference-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid #e4dacb;
+  border-radius: 0.75rem;
+  background: #fdfbf7;
+}
+.reference-scope {
+  display: grid;
+  gap: 0.35rem;
+  margin-right: auto;
+}
+.reference-label {
+  color: #756249;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+.reference-scope strong {
+  color: #60471f;
+  font-size: 0.94rem;
+  font-weight: 650;
+}
+.reference-metrics {
+  display: flex;
+  gap: 2rem;
+}
+.reference-metrics a {
+  display: grid;
+  gap: 0.05rem;
+  color: #526176;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.reference-metrics a strong {
+  color: #25344b;
+  font-size: 1.35rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+.reference-metrics a:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.reference-copy {
+  flex: 0 0 auto;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.8rem;
+  color: #34445c;
+  border: 1px solid #cbd3df;
+  border-radius: 0.4rem;
+  background: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.reference-copy:hover {
+  border-color: #92a2b8;
+  background: #f5f7fa;
+}
+.reference-panel {
+  margin-top: 1.5rem;
+  border: 1px solid #dce1ea;
+  border-radius: 0.75rem;
+  background: #fff;
+  scroll-margin-top: 7rem;
+  overflow: clip;
+}
+.reference-panel-heading {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+.reference-field {
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  color: #805517;
+  border: 1px solid #ebdfca;
+  border-radius: 0.3rem;
+  background: #fbf7ef;
+  font-size: 0.72rem;
+}
+.reference-title-row {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+.reference-title-row h2 {
+  margin: 0;
+  color: #25344b;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+.reference-count {
+  min-width: 1.5rem;
+  padding: 0.1rem 0.4rem;
+  color: #526176;
+  border-radius: 0.3rem;
+  background: #f0f3f7;
+  font-size: 0.72rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.arn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding: 0 1.5rem 1.5rem;
+}
+.arn-card {
+  min-width: 0;
+  border: 1px solid #dce1ea;
+  border-radius: 0.5rem;
+  overflow: clip;
+  background: #fbfcfe;
+}
+.arn-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e7ebf1;
+  background: #fff;
+}
+.arn-card h3 {
+  margin: 0;
+  color: #34445c;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.arn-caption {
+  color: #64748b;
+  font-size: 0.7rem;
+}
+.arn-pattern {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.arn-pattern + .arn-pattern {
+  border-top: 1px solid #e7ebf1;
+}
+.reference-code {
+  min-width: 0;
+  color: #34445c;
+  font-size: 0.78rem;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.arn-variable {
+  display: inline-block;
+  max-width: 100%;
+  color: #805517;
+  background: #f4eee2;
+  border-radius: 0.15rem;
+}
+.arn-pattern .reference-copy {
+  min-height: 2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.7rem;
+}
+.more-resources {
+  border-top: 1px solid #e7ebf1;
+}
+.more-resources summary {
+  padding: 0.85rem 1.5rem;
+  color: #1f5f9d;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.more-resources summary:hover {
+  background: #f7f9fc;
+}
+.more-resources summary:focus-visible {
+  outline: 3px solid #2676d3;
+  outline-offset: -3px;
+}
+.more-resources[open] .arn-grid {
+  padding-top: 0.5rem;
+}
+.reference-note {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  color: #526176;
+  border-top: 1px solid #e7ebf1;
+  background: #fbfcfe;
+  font-size: 0.76rem;
+}
+.reference-note code {
+  color: #805517;
+}
+.wildcard-resource {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1.5rem 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid #e4dacb;
+  border-radius: 0.5rem;
+  background: #fdfbf7;
+}
+.wildcard-resource code {
+  color: #60471f;
+  font-size: 0.95rem;
+}
+.context-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0 1.5rem 1.25rem;
+}
+.context-search {
+  flex: 1 1 16rem;
+}
+.context-search input,
+.context-select select {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.6rem 0.75rem;
+  color: #25344b;
+  border: 1px solid #cbd3df;
+  border-radius: 0.4rem;
+  background: #fff;
+  font-size: 0.82rem;
+}
+.context-search input::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+.context-select {
+  flex: 0 1 16rem;
+}
+.context-select select {
+  padding-right: 2rem;
+}
+.context-result-count {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+.context-scroll {
+  max-height: 32rem;
+  overflow: auto;
+}
+.context-scroll:focus-visible {
+  outline-offset: -3px;
+}
+.context-table {
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left;
+}
+.context-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 0.8rem 1.5rem;
+  color: #526176;
+  border-top: 1px solid #e7ebf1;
+  border-bottom: 1px solid #dce1ea;
+  background: #f5f7fa;
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+.context-table thead th:first-child {
+  width: 42%;
+}
+.context-table thead th:nth-child(2) {
+  width: 18%;
+}
+.context-table tbody th,
+.context-table tbody td {
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid #edf0f5;
+  vertical-align: top;
+}
+.context-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.context-table tbody tr:hover {
+  background: #fbfcfe;
+}
+.context-table tbody th {
+  color: #34445c;
+  font-size: 0.79rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.value-type {
+  display: inline-block;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.15rem 0.4rem;
+  color: #4a5d72;
+  border: 1px solid #e2e7ef;
+  border-radius: 0.25rem;
+  background: #f7f8fb;
+  font-size: 0.71rem;
+  overflow-wrap: anywhere;
+}
+.key-scope {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #526176;
+  font-size: 0.74rem;
+  overflow-wrap: anywhere;
+}
+.key-scope:last-child {
+  margin-bottom: 0;
+}
+.permission-key-scope {
+  color: #805517;
+}
+.context-guidance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e7ebf1;
+  background: #fbfcfe;
+  color: #526176;
+  font-size: 0.76rem;
+}
+.context-guidance .reference-help {
+  flex: 1 1 20rem;
+}
+.context-guidance a,
+.reference-source a {
+  color: #1f5f9d;
+  text-underline-offset: 0.2em;
+}
+.context-guidance a {
+  align-self: center;
+}
+.reference-source {
+  margin: 1rem 0 0;
+  color: #526176;
+  font-size: 0.74rem;
+}
+.reference-empty {
+  margin: 0;
+  padding: 1rem;
+  color: #526176;
+  font-size: 0.82rem;
+}
+.context-empty {
+  padding: 0 1.5rem 1.5rem;
+}
+.context-no-results {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #e7ebf1;
+  text-align: center;
+}
+.context-no-results h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.context-no-results .reference-copy { margin-top: 1rem; }
+
+@media (max-width: 900px) {
+  .arn-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .reference-overview {
+    gap: 1rem;
+    padding: 1.1rem;
+  }
+  .reference-scope {
+    width: 100%;
+  }
+  .reference-metrics {
+    flex: 1;
+    gap: 1.5rem;
+  }
+  .reference-panel {
+    scroll-margin-top: 10rem;
+  }
+  .reference-panel-heading {
+    padding: 1.1rem;
+  }
+  .arn-grid {
+    padding: 0 1.1rem 1.1rem;
+  }
+  .arn-pattern {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+  .reference-code {
+    flex: 1 1 100%;
+  }
+  .reference-note,
+  .context-guidance {
+    padding: 1rem 1.1rem;
+  }
+  .wildcard-resource {
+    margin: 0 1.1rem 1.1rem;
+    padding: 1rem;
+  }
+  .context-toolbar {
+    padding: 0 1.1rem 1.1rem;
+  }
+  .context-select {
+    flex: 1;
+  }
+  .context-scroll {
+    max-height: 30rem;
+  }
+  .context-table thead {
+    display: none;
+  }
+  .context-table tbody tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 1rem 1.1rem;
+    border-top: 1px solid #e7ebf1;
+  }
+  .context-table tbody th,
+  .context-table tbody td {
+    padding: 0;
+    border: 0;
+  }
+  .context-table tbody th {
+    grid-column: 1;
+    padding-right: 0.5rem;
+  }
+  .context-table .context-types {
+    grid-column: 2;
+    max-width: 6rem;
+    text-align: right;
+  }
+  .context-table .context-scopes {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+  .context-table .key-scope {
+    display: inline-block;
+    margin: 0.2rem 0.35rem 0 0;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.2rem;
+    background: #f3f5f9;
+    font-size: 0.7rem;
+  }
+  .context-empty {
+    padding: 0 1.1rem 1.1rem;
+  }
+  .more-resources summary {
+    padding: 0.85rem 1.1rem;
+  }
+  .reference-copy {
+    min-height: 2.75rem;
+  }
+  .arn-pattern .reference-copy {
+    min-height: 2.5rem;
+  }
+}
+.more-key-scopes summary {
+  color: #1f5f9d;
+  font-size: 0.74rem;
+  cursor: pointer;
+}
+.more-key-scopes summary:hover {
+  text-decoration: underline;
+}
+.more-key-scopes summary:focus-visible {
+  outline: 3px solid #2676d3;
+  outline-offset: 2px;
+}
+.more-key-scopes[open] summary {
+  margin-bottom: 0.4rem;
+}
+
+.reference-metrics a span {
+  white-space: nowrap;
+}
+
+.reference-help summary {
+  color: #526176;
+  cursor: pointer;
+  font-size: 0.76rem;
+}
+.reference-help summary:hover {
+  color: #25344b;
+}
+.reference-help summary:focus-visible {
+  outline: 3px solid #2676d3;
+  outline-offset: 3px;
+}
+.reference-help p {
+  max-width: 52rem;
+  margin: 0.6rem 0 0;
+  color: #526176;
+  font-size: 0.76rem;
+}
+.reference-help a {
+  color: #1f5f9d;
+  text-underline-offset: 0.2em;
+}
+
+.workspace:has(.detail:not([hidden]) .detail-header[data-kind="iam"]) .source-note,
+.workspace:has(.detail:not([hidden]) .detail-header[data-kind="iam"]) .status:not(.error) {
+  display: none;
+}

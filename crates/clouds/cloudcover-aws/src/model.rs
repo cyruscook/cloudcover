@@ -29,3 +29,28 @@ pub(crate) struct AwsSdkMethodMapping {
     pub(crate) api_service: &'static str,
     pub(crate) api_name: &'static str,
 }
+
+/// Service Authorization Reference metadata for an IAM permission.
+#[derive(Clone, Copy, Debug)]
+pub struct IamPermission {
+    pub permission: &'static str,
+    pub resources: &'static [IamResource],
+    pub context_keys: &'static [IamContextKey],
+}
+
+/// A resource type applicable to a permission and its ARN patterns.
+#[derive(Clone, Copy, Debug)]
+pub struct IamResource {
+    pub name: &'static str,
+    pub arn_formats: &'static [&'static str],
+}
+
+/// A context key with its SAR value types and applicability.
+#[derive(Clone, Copy, Debug)]
+pub struct IamContextKey {
+    pub name: &'static str,
+    pub types: &'static [&'static str],
+    pub permission: bool,
+    pub permission_resources: &'static [&'static str],
+    pub resource_types: &'static [&'static str],
+}

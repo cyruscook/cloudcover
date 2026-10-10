@@ -5,7 +5,7 @@ use std::{
     path::Path,
 };
 
-use cloudcover_aws::AwsProvider;
+use cloudcover_aws::{AwsProvider, IamPermission, iam_permission_catalog};
 use cloudcover_core::{CloudProvider, Language, MethodReference, ResolvedSdk, Sdk};
 use cloudcover_terraform_provider_aws::{
     TerraformProviderAwsMappingsLookup, provider_versions, sdk_method_mappings,
@@ -44,6 +44,61 @@ struct TerraformVersionArtifact {
     schema_version: u8,
     version: String,
     row_ids: Vec<usize>,
+}
+
+#[derive(Serialize)]
+struct IamArtifact {
+    schema_version: u8,
+    permissions: Vec<PermissionDetails>,
+}
+
+#[derive(Serialize)]
+struct PermissionDetails {
+    permission: &'static str,
+    resources: Vec<ResourceDetails>,
+    context_keys: Vec<ContextKeyDetails>,
+}
+
+#[derive(Serialize)]
+struct ResourceDetails {
+    name: &'static str,
+    arn_formats: &'static [&'static str],
+}
+
+#[derive(Serialize)]
+struct ContextKeyDetails {
+    name: &'static str,
+    types: &'static [&'static str],
+    permission: bool,
+    permission_resources: &'static [&'static str],
+    resource_types: &'static [&'static str],
+}
+
+impl From<&IamPermission> for PermissionDetails {
+    fn from(value: &IamPermission) -> Self {
+        Self {
+            permission: value.permission,
+            resources: value
+                .resources
+                .iter()
+                .map(|resource| ResourceDetails {
+                    name: resource.name,
+                    arn_formats: resource.arn_formats,
+                })
+                .collect(),
+            context_keys: value
+                .context_keys
+                .iter()
+                .map(|key| ContextKeyDetails {
+                    name: key.name,
+                    types: key.types,
+                    permission: key.permission,
+                    permission_resources: key.permission_resources,
+                    resource_types: key.resource_types,
+                })
+                .collect(),
+        }
+    }
 }
 
 struct Catalog {
@@ -93,7 +148,10 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
     api_methods.dedup();
 
     let mut permissions_by_method = Vec::with_capacity(api_methods.len());
-    let mut all_permissions = BTreeSet::new();
+    let mut all_permissions = iam_permission_catalog()
+        .iter()
+        .map(|entry| entry.permission.to_owned())
+        .collect::<BTreeSet<_>>();
     for method in &api_methods {
         let permissions = provider.iam_permissions(method)?;
         for permission in &permissions {
@@ -268,6 +326,23 @@ fn build_terraform_catalog(
 
 fn write_catalog(root: &Path, catalog: &Catalog) -> Result<(), Box<dyn Error>> {
     write_json(&root.join("api.json"), &catalog.api)?;
+    let mut services = BTreeMap::<&str, Vec<PermissionDetails>>::new();
+    for permission in iam_permission_catalog() {
+        let (service, _) = permission
+            .permission
+            .split_once(':')
+            .ok_or("invalid IAM permission")?;
+        services.entry(service).or_default().push(permission.into());
+    }
+    for (service, permissions) in services {
+        write_json(
+            &root.join(format!("iam/{service}.json")),
+            &IamArtifact {
+                schema_version: SCHEMA_VERSION,
+                permissions,
+            },
+        )?;
+    }
     write_json(&root.join("terraform/index.json"), &catalog.terraform_index)?;
     write_json(&root.join("terraform/rows.json"), &catalog.terraform_rows)?;
     for version in &catalog.terraform_versions {

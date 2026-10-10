@@ -12,7 +12,7 @@ use ureq::Agent;
 
 const SERVICE_REFERENCE_URL: &str = "https://servicereference.us-east-1.amazonaws.com/";
 const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
-const CACHE_FILE_NAME: &str = "actions.rs";
+const CACHE_FILE_NAME: &str = "actions-v2.rs";
 const REFRESH_ENV: &str = "CLOUDCOVER_AWS_SAR_REFRESH";
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
@@ -35,6 +35,16 @@ struct ServiceDocument {
     resources: Vec<ServiceResource>,
     #[serde(rename = "Operations", default)]
     operations: Vec<ServiceOperation>,
+    #[serde(rename = "ConditionKeys", default)]
+    condition_keys: Vec<ServiceConditionKey>,
+}
+
+#[derive(serde::Deserialize)]
+struct ServiceConditionKey {
+    #[serde(rename = "Name")]
+    name: String,
+    #[serde(rename = "Types", default)]
+    types: Vec<String>,
 }
 
 #[derive(serde::Deserialize)]
@@ -43,12 +53,16 @@ struct ServiceAction {
     name: String,
     #[serde(rename = "Resources", default)]
     resources: Vec<ActionResource>,
+    #[serde(rename = "ActionConditionKeys", default)]
+    condition_keys: Vec<String>,
 }
 
 #[derive(serde::Deserialize)]
 struct ActionResource {
     #[serde(rename = "Name")]
     name: String,
+    #[serde(rename = "ConditionKeys", default)]
+    condition_keys: Vec<String>,
 }
 
 #[derive(serde::Deserialize)]
@@ -57,6 +71,8 @@ struct ServiceResource {
     name: String,
     #[serde(rename = "ARNFormats", default)]
     arn_formats: Vec<String>,
+    #[serde(rename = "ConditionKeys", default)]
+    condition_keys: Vec<String>,
 }
 
 #[derive(serde::Deserialize)]
@@ -94,6 +110,21 @@ struct ActionRow {
     resource_types: Vec<String>,
     resource_templates: Vec<String>,
     has_complete_resource_templates: bool,
+    resources: Vec<ResourceRow>,
+    context_keys: Vec<ContextKeyRow>,
+}
+
+struct ResourceRow {
+    name: String,
+    arn_formats: Vec<String>,
+}
+
+struct ContextKeyRow {
+    name: String,
+    types: Vec<String>,
+    permission: bool,
+    permission_resources: Vec<String>,
+    resource_types: Vec<String>,
 }
 
 struct OperationRow {
@@ -165,9 +196,15 @@ fn collect_rows(agent: &Agent) -> BuildResult<GeneratedRows> {
             actions: document_actions,
             resources,
             operations: document_operations,
+            condition_keys,
         } = document;
 
-        actions.extend(build_action_rows(&service, document_actions, resources));
+        actions.extend(build_action_rows(
+            &service,
+            document_actions,
+            resources,
+            condition_keys,
+        ));
         operations.extend(build_operation_rows(
             &service,
             &actions,
@@ -201,46 +238,77 @@ fn build_action_rows(
     service: &str,
     actions: Vec<ServiceAction>,
     resources: Vec<ServiceResource>,
+    condition_keys: Vec<ServiceConditionKey>,
 ) -> Vec<ActionRow> {
-    let resource_templates_by_name = resources
+    let resources = resources
         .into_iter()
-        .map(|resource| (resource.name, resource.arn_formats))
+        .map(|resource| (resource.name.clone(), resource))
         .collect::<BTreeMap<_, _>>();
-
+    let key_types = condition_keys
+        .into_iter()
+        .map(|key| (key.name, key.types))
+        .collect::<BTreeMap<_, _>>();
     actions
         .into_iter()
-        .map(|action| build_action_row(service, action, &resource_templates_by_name))
+        .map(|action| build_action_row(service, action, &resources, &key_types))
         .collect()
 }
 
 fn build_action_row(
     service: &str,
     action: ServiceAction,
-    resource_templates_by_name: &BTreeMap<String, Vec<String>>,
+    resource_definitions: &BTreeMap<String, ServiceResource>,
+    key_types: &BTreeMap<String, Vec<String>>,
 ) -> ActionRow {
     let permission = format!("{service}:{name}", name = action.name);
-    let mut resource_types = action
-        .resources
-        .into_iter()
-        .map(|resource| resource.name)
-        .collect::<Vec<_>>();
-    let mut resource_templates = Vec::new();
-    let mut has_complete_resource_templates = true;
-
-    resource_types.sort_unstable();
-    resource_types.dedup();
-
-    for resource_type in &resource_types {
-        let Some(arn_formats) = resource_templates_by_name.get(resource_type) else {
-            has_complete_resource_templates = false;
-            continue;
-        };
-        resource_templates.extend(arn_formats.iter().cloned());
+    let mut resources = BTreeMap::new();
+    let mut keys = BTreeMap::new();
+    for name in action.condition_keys {
+        context_key(&mut keys, &name, key_types).permission = true;
     }
-
-    resource_templates.sort_unstable();
-    resource_templates.dedup();
-
+    let mut has_complete_resource_templates = true;
+    for resource in action.resources {
+        let definition = resource_definitions.get(&resource.name);
+        let arn_formats = definition.map_or_else(Vec::new, |value| value.arn_formats.clone());
+        if definition.is_none() {
+            has_complete_resource_templates = false;
+        }
+        for name in resource.condition_keys {
+            context_key(&mut keys, &name, key_types)
+                .permission_resources
+                .push(resource.name.clone());
+        }
+        if let Some(definition) = definition {
+            for name in &definition.condition_keys {
+                context_key(&mut keys, name, key_types)
+                    .resource_types
+                    .push(resource.name.clone());
+            }
+        }
+        resources.insert(resource.name, arn_formats);
+    }
+    let resource_types = resources.keys().cloned().collect();
+    let resource_templates = resources
+        .values()
+        .flatten()
+        .cloned()
+        .collect::<BTreeSet<_>>()
+        .into_iter()
+        .collect();
+    let resources = resources
+        .into_iter()
+        .map(|(name, arn_formats)| ResourceRow { name, arn_formats })
+        .collect();
+    let context_keys = keys
+        .into_values()
+        .map(|mut key| {
+            key.permission_resources.sort_unstable();
+            key.permission_resources.dedup();
+            key.resource_types.sort_unstable();
+            key.resource_types.dedup();
+            key
+        })
+        .collect();
     ActionRow {
         service: service.to_owned(),
         name: action.name,
@@ -248,7 +316,24 @@ fn build_action_row(
         resource_types,
         resource_templates,
         has_complete_resource_templates,
+        resources,
+        context_keys,
     }
+}
+
+fn context_key<'a>(
+    keys: &'a mut BTreeMap<String, ContextKeyRow>,
+    name: &str,
+    key_types: &BTreeMap<String, Vec<String>>,
+) -> &'a mut ContextKeyRow {
+    keys.entry(name.to_owned())
+        .or_insert_with(|| ContextKeyRow {
+            name: name.to_owned(),
+            types: key_types.get(name).cloned().unwrap_or_default(),
+            permission: false,
+            permission_resources: Vec::new(),
+            resource_types: Vec::new(),
+        })
 }
 
 fn build_operation_rows(
@@ -449,6 +534,7 @@ fn generate_code(rows: &GeneratedRows) -> Result<String, fmt::Error> {
     );
 
     write_actions(&mut generated, &rows.actions)?;
+    write_permission_details(&mut generated, &rows.actions)?;
     write_operations(&mut generated, &rows.operations)?;
     write_sdk_method_mappings(&mut generated, &rows.sdk_mappings)?;
 
@@ -472,6 +558,35 @@ fn write_actions(generated: &mut String, action_rows: &[ActionRow]) -> Result<()
         "];
 ",
     );
+    Ok(())
+}
+
+fn write_permission_details(generated: &mut String, rows: &[ActionRow]) -> Result<(), fmt::Error> {
+    generated.push_str("pub(super) const IAM_PERMISSIONS: &[crate::model::IamPermission] = &[\n");
+    for row in rows {
+        writeln!(
+            generated,
+            "crate::model::IamPermission {{ permission: {:?}, resources: &[",
+            row.permission
+        )?;
+        for resource in &row.resources {
+            writeln!(
+                generated,
+                "crate::model::IamResource {{ name: {:?}, arn_formats: &{:?} }},",
+                resource.name, resource.arn_formats
+            )?;
+        }
+        generated.push_str("], context_keys: &[\n");
+        for key in &row.context_keys {
+            writeln!(
+                generated,
+                "crate::model::IamContextKey {{ name: {:?}, types: &{:?}, permission: {}, permission_resources: &{:?}, resource_types: &{:?} }},",
+                key.name, key.types, key.permission, key.permission_resources, key.resource_types
+            )?;
+        }
+        generated.push_str("] },\n");
+    }
+    generated.push_str("];\n");
     Ok(())
 }
 
