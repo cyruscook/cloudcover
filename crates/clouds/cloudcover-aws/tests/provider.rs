@@ -30,7 +30,10 @@ fn lists_supported_aws_sdks() {
     assert_eq!(sdks[3], Sdk::new("aws-sdk-js-v3", Language::JavaScript));
     assert_eq!(sdks[4], Sdk::new("aws-sdk-js-v3", Language::TypeScript));
     let terraform_sdks = &sdks[5..];
-    assert_eq!(terraform_sdks.len(), 516);
+    assert_eq!(
+        terraform_sdks.len(),
+        cloudcover_terraform_provider_aws::provider_versions().len()
+    );
 }
 
 #[test]
