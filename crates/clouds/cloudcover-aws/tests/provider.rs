@@ -37,6 +37,65 @@ fn lists_supported_aws_sdks() {
 }
 
 #[test]
+fn maps_runtime_sdk_clients_to_shared_iam_services() -> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
+    for (module, version, operation, canonical, permission) in [
+        (
+            "bedrockruntime",
+            "v1.0.0",
+            "InvokeModel",
+            "bedrock",
+            "bedrock:InvokeModel",
+        ),
+        (
+            "sagemakerruntime",
+            "v0.27.0",
+            "InvokeEndpoint",
+            "sagemaker",
+            "sagemaker:InvokeEndpoint",
+        ),
+        (
+            "directoryservicedata",
+            "v1.0.0",
+            "CreateUser",
+            "ds-data",
+            "ds-data:CreateUser",
+        ),
+        (
+            "opensearch",
+            "v1.0.0",
+            "CreateDomain",
+            "opensearch",
+            "es:CreateDomain",
+        ),
+    ] {
+        let package = format!("github.com/aws/aws-sdk-go-v2/service/{module}");
+        let sdk = ResolvedSdk::new(Sdk::new("aws-sdk-go-v2", Language::Go))
+            .with_modules([SdkModule::new(&package, version)]);
+        let mappings = provider.sdk_method_mappings(&sdk)?;
+        let reference = MethodReference::Go(GoMethodReference::new(
+            &package,
+            Some("Client".to_owned()),
+            operation,
+        ));
+        let mapping = mappings
+            .iter()
+            .find(|mapping| mapping.method() == &reference)
+            .ok_or_else(|| format!("missing {module} {operation}"))?;
+        assert_eq!(
+            mapping.api_methods(),
+            &[ApiMethod::new(canonical, operation)]
+        );
+        assert!(
+            provider
+                .iam_permissions(&mapping.api_methods()[0])?
+                .contains(&permission)
+        );
+    }
+    Ok(())
+}
+
+#[test]
 #[allow(clippy::too_many_lines)]
 fn maps_sdk_methods_to_api_methods() -> Result<(), Box<dyn Error>> {
     let provider = AwsProvider::new();

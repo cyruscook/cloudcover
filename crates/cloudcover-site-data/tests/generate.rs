@@ -195,6 +195,61 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     );
 
     assert_resource_permissions(&output, &terraform_rows, &api_rows, &iam_permissions)?;
+    assert_security_group_rule_permissions(&output, &terraform_rows, &api_rows)?;
+    Ok(())
+}
+
+fn assert_security_group_rule_permissions(
+    output: &Path,
+    terraform_rows: &[(String, String, Vec<usize>)],
+    api_rows: &[(String, String, Vec<usize>)],
+) -> Result<(), Box<dyn Error>> {
+    for version in ["4.56.0", "5.46.0", "5.60.0", "5.98.0", "6.68.0"] {
+        let snapshot = read_json(&output.join(format!("terraform/versions/{version}.json")))?;
+        let ids = field(&snapshot, "row_ids")?
+            .as_array()
+            .ok_or("missing row IDs")?;
+        for (resource, direction, opposite) in [
+            ("aws_vpc_security_group_ingress_rule", "Ingress", "Egress"),
+            ("aws_vpc_security_group_egress_rule", "Egress", "Ingress"),
+        ] {
+            for (action, prefix) in [
+                ("create", "Authorize"),
+                ("delete", "Revoke"),
+                ("read", "Describe"),
+            ] {
+                let row = ids
+                    .iter()
+                    .map(|id| usize_value(id, "row ID"))
+                    .collect::<Result<Vec<_>, _>>()?
+                    .into_iter()
+                    .map(|id| &terraform_rows[id])
+                    .find(|row| row.0 == resource && row.1 == action)
+                    .ok_or("missing security group rule row")?;
+                let methods = row
+                    .2
+                    .iter()
+                    .map(|id| &api_rows[*id])
+                    .filter(|api| api.0 == "ec2")
+                    .map(|api| api.1.as_str())
+                    .collect::<Vec<_>>();
+                let expected = if action == "read" {
+                    "DescribeSecurityGroupRules".to_owned()
+                } else {
+                    format!("{prefix}SecurityGroup{direction}")
+                };
+                assert!(
+                    methods.contains(&expected.as_str()),
+                    "{version}: {resource} {action} missing {expected}"
+                );
+                let unwanted = format!("{prefix}SecurityGroup{opposite}");
+                assert!(
+                    !methods.contains(&unwanted.as_str()),
+                    "{version}: {resource} {action} includes {unwanted}"
+                );
+            }
+        }
+    }
     Ok(())
 }
 
@@ -260,6 +315,19 @@ fn assert_resource_permissions(
             );
         }
         if version == "6.68.0" {
+            let user_row = row_ids
+                .iter()
+                .map(|id| &terraform_rows[*id])
+                .find(|row| row.0 == "aws_directoryservicedata_user" && row.1 == "create")
+                .ok_or("missing directory user create")?;
+            let user_permissions = user_row
+                .2
+                .iter()
+                .flat_map(|id| &api_rows[*id].2)
+                .map(|id| iam_permissions[*id].as_str())
+                .collect::<Vec<_>>();
+            assert!(user_permissions.contains(&"ds-data:CreateUser"));
+            assert!(user_permissions.contains(&"ds:AccessDSData"));
             let row = row_ids
                 .iter()
                 .map(|id| &terraform_rows[*id])

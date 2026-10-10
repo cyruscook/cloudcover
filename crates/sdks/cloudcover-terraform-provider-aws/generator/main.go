@@ -102,8 +102,10 @@ type ssaFunctionSourceIdentity struct {
 }
 
 type handlerMethod struct {
-	action string
-	funcs  []*ssa.Function
+	action            string
+	funcs             []*ssa.Function
+	interfaceBindings map[*types.Var]types.Type
+	functionBindings  map[*types.Var][]*ssa.Function
 }
 
 type handlerAPIMethods struct {
@@ -140,6 +142,8 @@ type apiMethodAnalyzer struct {
 	index              *packageIndex
 	sdkMappings        map[sdkMethodKey][]apiMethod
 	summaries          map[*ssa.Function]*apiMethodFunctionSummary
+	interfaceBindings  map[*types.Var]types.Type
+	functionBindings   map[*types.Var][]*ssa.Function
 }
 
 func newAPIMethodAnalyzer(index *packageIndex, sdkMappings map[sdkMethodKey][]apiMethod, servicePackagePath string) *apiMethodAnalyzer {
@@ -213,7 +217,15 @@ func run() error {
 			)
 		}
 		for _, handler := range handlers {
-			analysis, err := analyzer.collect(handler.funcs)
+			handlerAnalyzer := analyzer
+			if len(handler.interfaceBindings) > 0 || len(handler.functionBindings) > 0 {
+				// Shared embedded lifecycle methods dispatch differently for each
+				// factory. Their summaries must not leak into another resource.
+				handlerAnalyzer = newAPIMethodAnalyzer(index, sdkMappings, spec.packagePath)
+				handlerAnalyzer.interfaceBindings = handler.interfaceBindings
+				handlerAnalyzer.functionBindings = handler.functionBindings
+			}
+			analysis, err := handlerAnalyzer.collect(handler.funcs)
 			if err != nil {
 				return fmt.Errorf(
 					"collect API methods for %s %s %s handler: %w",
@@ -1308,6 +1320,144 @@ func resolveSchemaResourceHandlers(index *packageIndex, pkg *packages.Package, d
 	return handlers, nil
 }
 
+// Only retain one unconditional assignment on the returned resource. A later
+// assignment (including a conditional one) invalidates the precise binding.
+func factoryFieldAssignments(pkg *packages.Package, decl *ast.FuncDecl) map[*types.Var]ast.Expr {
+	assignments := make(map[*types.Var]ast.Expr)
+	var returned types.Object
+	for _, stmt := range decl.Body.List {
+		if ret, ok := stmt.(*ast.ReturnStmt); ok && len(ret.Results) > 0 {
+			id, ok := ret.Results[0].(*ast.Ident)
+			if !ok || returned != nil {
+				return assignments
+			}
+			returned = pkg.TypesInfo.ObjectOf(id)
+		}
+	}
+	if returned == nil {
+		return assignments
+	}
+	returns, receiverWrites := 0, 0
+	ast.Inspect(decl.Body, func(node ast.Node) bool {
+		if _, nested := node.(*ast.FuncLit); nested {
+			return false
+		}
+		if _, ok := node.(*ast.ReturnStmt); ok {
+			returns++
+		}
+		if assignment, ok := node.(*ast.AssignStmt); ok {
+			for _, left := range assignment.Lhs {
+				if id, ok := left.(*ast.Ident); ok && pkg.TypesInfo.ObjectOf(id) == returned {
+					receiverWrites++
+				}
+			}
+		}
+		return true
+	})
+	if returns != 1 || receiverWrites != 1 {
+		return assignments
+	}
+	fieldFor := func(expr ast.Expr) *types.Var {
+		selector, ok := expr.(*ast.SelectorExpr)
+		if !ok {
+			return nil
+		}
+		id, ok := selector.X.(*ast.Ident)
+		if !ok || pkg.TypesInfo.ObjectOf(id) != returned {
+			return nil
+		}
+		field, _ := pkg.TypesInfo.ObjectOf(selector.Sel).(*types.Var)
+		if field == nil || !field.IsField() {
+			return nil
+		}
+		return field
+	}
+	writes := make(map[*types.Var]int)
+	ast.Inspect(decl.Body, func(node ast.Node) bool {
+		if assignment, ok := node.(*ast.AssignStmt); ok {
+			for _, left := range assignment.Lhs {
+				if field := fieldFor(left); field != nil {
+					writes[field]++
+				}
+			}
+		}
+		return true
+	})
+	for _, stmt := range decl.Body.List {
+		assignment, ok := stmt.(*ast.AssignStmt)
+		if !ok || len(assignment.Lhs) != 1 || len(assignment.Rhs) != 1 {
+			continue
+		}
+		field := fieldFor(assignment.Lhs[0])
+		if field == nil || writes[field] != 1 {
+			continue
+		}
+		right := assignment.Rhs[0]
+		if selector, ok := right.(*ast.SelectorExpr); ok {
+			right = selector.X
+		}
+		if id, ok := right.(*ast.Ident); ok && pkg.TypesInfo.ObjectOf(id) == returned {
+			assignments[field] = assignment.Rhs[0]
+		}
+	}
+	return assignments
+}
+
+// Factories bind embedded interfaces to themselves, or store lifecycle callbacks
+// in function fields. Keep those targets separate for each concrete resource.
+func factoryCallableBindings(index *packageIndex, pkg *packages.Package, decl *ast.FuncDecl, concreteType types.Type) (map[*types.Var]types.Type, map[*types.Var][]*ssa.Function, error) {
+	interfaces := make(map[*types.Var]types.Type)
+	functions := make(map[*types.Var][]*ssa.Function)
+	for field, right := range factoryFieldAssignments(pkg, decl) {
+		if _, ok := right.(*ast.Ident); ok && isInterfaceType(field.Type()) && types.Identical(pkg.TypesInfo.TypeOf(right), concreteType) && types.AssignableTo(concreteType, field.Type()) {
+			interfaces[field] = concreteType
+			continue
+		}
+		if _, ok := field.Type().Underlying().(*types.Signature); !ok {
+			continue
+		}
+		method, ok := right.(*ast.SelectorExpr)
+		if !ok {
+			continue
+		}
+		selection := pkg.TypesInfo.Selections[method]
+		if selection == nil || selection.Kind() != types.MethodVal {
+			continue
+		}
+		resolved, found, err := directSSAFunctionsForSelection(index, selection, method.Sel.Name)
+		if err != nil {
+			return nil, nil, err
+		}
+		if !found {
+			return nil, nil, fmt.Errorf("factory callback %s is unresolved", method.Sel.Name)
+		}
+		functions[field] = resolved
+	}
+	return interfaces, functions, nil
+}
+
+func promotedInterfaceField(selection *types.Selection) *types.Var {
+	if selection == nil {
+		return nil
+	}
+	typ := selection.Recv()
+	for _, fieldIndex := range selection.Index()[:len(selection.Index())-1] {
+		if pointer, ok := typ.(*types.Pointer); ok {
+			typ = pointer.Elem()
+		}
+		structure, ok := typ.Underlying().(*types.Struct)
+		if !ok {
+			return nil
+		}
+		field := structure.Field(fieldIndex)
+		if isInterfaceType(field.Type()) {
+			return field
+		}
+		typ = field.Type()
+	}
+	return nil
+}
+
 func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, decl *ast.FuncDecl, actions []namedMethodAction) ([]handlerMethod, error) {
 	concreteType, err := resolveReturnedConcreteType(index, pkg, decl)
 	if err != nil {
@@ -1321,6 +1471,10 @@ func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, dec
 		return nil, err
 	}
 	methodSet := types.NewMethodSet(types.NewPointer(named))
+	interfaceBindings, functionBindings, err := factoryCallableBindings(index, pkg, decl, concreteType)
+	if err != nil {
+		return nil, err
+	}
 	handlers := make([]handlerMethod, 0)
 	for _, action := range actions {
 		selection := methodSet.Lookup(nil, action.method)
@@ -1334,7 +1488,7 @@ func resolveConcreteTypeHandlers(index *packageIndex, pkg *packages.Package, dec
 		if !found {
 			return nil, fmt.Errorf("%s handler does not resolve to a concrete method selection", action.method)
 		}
-		handlers = append(handlers, handlerMethod{action: action.action, funcs: funcs})
+		handlers = append(handlers, handlerMethod{action: action.action, funcs: funcs, interfaceBindings: interfaceBindings, functionBindings: functionBindings})
 	}
 	if len(handlers) == 0 {
 		return nil, errors.New("resolved no framework handlers")
@@ -1640,7 +1794,7 @@ func (analyzer *apiMethodAnalyzer) discover(fn *ssa.Function, pending map[*ssa.F
 
 	// The static call graph omits some calls inside range-over-function iterators.
 	// Preserve those provider-local edges from the type-checked AST.
-	localCallees, err := collectDirectLocalCallees(analyzer.index, fn, analyzer.servicePackagePath)
+	localCallees, err := collectDirectLocalCallees(analyzer.index, fn, analyzer.servicePackagePath, analyzer)
 	if err != nil {
 		return err
 	}
@@ -1705,7 +1859,7 @@ func expandRootFunctions(index *packageIndex, roots []*ssa.Function) []*ssa.Func
 	return expanded
 }
 
-func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePackagePath string) ([]*ssa.Function, error) {
+func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePackagePath string, analyzers ...*apiMethodAnalyzer) ([]*ssa.Function, error) {
 	if fn == nil || fn.Syntax() == nil {
 		return nil, nil
 	}
@@ -1728,6 +1882,16 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePac
 		if !ok {
 			return true
 		}
+		if len(analyzers) > 0 {
+			if selector, ok := callExpr.Fun.(*ast.SelectorExpr); ok {
+				if field, ok := sourcePkg.TypesInfo.ObjectOf(selector.Sel).(*types.Var); ok {
+					if bound := analyzers[0].functionBindings[field]; len(bound) > 0 {
+						callees = append(callees, bound...)
+						return true
+					}
+				}
+			}
+		}
 		obj := calledFunctionObject(sourcePkg, callExpr)
 		if obj == nil || obj.Pkg() == nil || !isProviderPackage(obj.Pkg().Path()) {
 			return true
@@ -1735,6 +1899,24 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePac
 		if selection, ok := callExpr.Fun.(*ast.SelectorExpr); ok {
 			if methodSelection := sourcePkg.TypesInfo.Selections[selection]; methodSelection != nil {
 				if isBodylessInterfaceMethod(obj) {
+					if len(analyzers) > 0 {
+						field := promotedInterfaceField(methodSelection)
+						if receiverExpr, ok := selection.X.(*ast.SelectorExpr); ok {
+							if explicit, ok := sourcePkg.TypesInfo.ObjectOf(receiverExpr.Sel).(*types.Var); ok && explicit.IsField() {
+								field = explicit
+							}
+						}
+						if receiver := analyzers[0].interfaceBindings[field]; receiver != nil {
+							implementation := types.NewMethodSet(receiver).Lookup(obj.Pkg(), obj.Name())
+							resolved, found, err := directSSAFunctionsForSelection(index, implementation, obj.FullName())
+							if err != nil || !found {
+								visitErr = fmt.Errorf("bound interface dispatch for %s is unresolved: %v", obj.FullName(), err)
+								return false
+							}
+							callees = append(callees, resolved...)
+							return true
+						}
+					}
 					resolved, relevant, err := providerLocalInterfaceCallees(index, methodSelection, obj.FullName(), servicePackagePath)
 					if err != nil {
 						visitErr = err
@@ -1815,15 +1997,21 @@ func collectProviderLocalInterfaceCallees(index *packageIndex, interfaceSelectio
 	if index == nil || interfaceSelection == nil || interfaceSelection.Kind() != types.MethodVal {
 		return nil, false, nil
 	}
-	interfaceType, ok := interfaceSelection.Recv().Underlying().(*types.Interface)
-	if !ok {
-		return nil, false, nil
-	}
-	interfaceType.Complete()
+	// A promoted interface method's selection receiver is the containing
+	// struct, while the declaration receiver still identifies the interface.
 	method, ok := interfaceSelection.Obj().(*types.Func)
 	if !ok {
 		return nil, false, fmt.Errorf("unresolved provider interface dispatch for %s: selected object is not a function", name)
 	}
+	signature, ok := method.Type().(*types.Signature)
+	if !ok || signature.Recv() == nil {
+		return nil, false, nil
+	}
+	interfaceType, ok := signature.Recv().Type().Underlying().(*types.Interface)
+	if !ok {
+		return nil, false, nil
+	}
+	interfaceType.Complete()
 
 	callees := make([]*ssa.Function, 0, 1)
 	seen := make(map[ssaFunctionSourceIdentity]struct{})

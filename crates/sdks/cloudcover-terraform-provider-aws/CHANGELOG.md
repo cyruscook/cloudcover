@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Follow factory-bound callback fields and promoted interfaces. Restore VPC security group rule create/read/delete operations from provider 4.56.0 onward and remove permissions for the opposite rule direction.
 - Recognize AWS S3 uploader helper calls and restore single-part, multipart, and cleanup operations in S3 object create/update mappings from provider 3.71.0 onward.
 
 ## [0.1.9](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.1.8...cloudcover-terraform-provider-aws-v0.1.9) - 2026-10-10
