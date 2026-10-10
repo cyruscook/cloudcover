@@ -49,7 +49,7 @@ fn report_fas_coverage(methods: &[ApiMethod]) -> Result<(), CliError> {
     }
     if possible > 0 {
         eprintln!(
-            "FAS: included possible downstream requirements for {possible} operations. Review applicability and replace key/Region resource placeholders. Sources: https://github.com/cyruscook/cloudcover/blob/main/docs/fas.md"
+            "FAS: included possible downstream requirements for {possible} operations. Review applicability and replace key/Region resource placeholders. Sources: https://github.com/cyruscook/cloudcover/blob/main/crates/clouds/cloudcover-aws/data/fas.json"
         );
     }
     if unknown > 0 {
