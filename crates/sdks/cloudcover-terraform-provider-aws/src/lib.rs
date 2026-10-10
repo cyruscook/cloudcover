@@ -235,6 +235,38 @@ mod tests {
     }
 
     #[test]
+    fn default_security_group_list_permissions_are_ec2_only() -> Result<(), &'static str> {
+        for version in ["6.67.0", "6.68.0"] {
+            let TerraformProviderAwsMappingsLookup::Supported(mut mappings) =
+                sdk_method_mappings(version)
+            else {
+                return Err("missing security group list provider version");
+            };
+            let mapping = mappings
+                .find(|row| {
+                    row.kind == "list_resource"
+                        && row.type_name == "aws_default_security_group"
+                        && row.action == "list"
+                })
+                .ok_or("missing default security group list mapping")?;
+            assert_eq!(
+                mapping.api_methods.collect::<Vec<_>>(),
+                [
+                    TerraformProviderAwsApiMethodRef {
+                        service: "ec2",
+                        name: "DescribeSecurityGroups",
+                    },
+                    TerraformProviderAwsApiMethodRef {
+                        service: "ec2",
+                        name: "DescribeTags",
+                    },
+                ]
+            );
+        }
+        Ok(())
+    }
+
+    #[test]
     fn mappings_and_api_methods_are_sorted_and_unique() -> Result<(), &'static str> {
         for version in provider_versions() {
             let mappings = match sdk_method_mappings(version) {
