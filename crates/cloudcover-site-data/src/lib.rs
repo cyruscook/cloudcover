@@ -24,6 +24,13 @@ struct ApiArtifact {
     schema_version: u8,
     iam_permissions: Vec<String>,
     api_methods: Vec<ApiRow>,
+    fas: Vec<ApiFas>,
+}
+
+#[derive(Serialize)]
+struct ApiFas {
+    coverage: cloudcover_aws::fas::FasCoverage,
+    dependencies: Vec<cloudcover_aws::fas::FasDependency>,
 }
 
 #[derive(Serialize)]
@@ -134,6 +141,16 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
         })
         .collect::<Result<Vec<_>, io::Error>>()?;
 
+    let fas = api_methods
+        .iter()
+        .map(|method| {
+            Ok(ApiFas {
+                coverage: provider.fas_coverage(method)?,
+                dependencies: provider.fas_dependencies(method)?,
+            })
+        })
+        .collect::<Result<Vec<_>, cloudcover_aws::AwsError>>()?;
+
     let (terraform_index, terraform_rows, terraform_versions) = build_terraform_catalog(&api_ids)?;
 
     Ok(Catalog {
@@ -141,6 +158,7 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
             schema_version: SCHEMA_VERSION,
             iam_permissions,
             api_methods: api_rows,
+            fas,
         },
         terraform_index,
         terraform_rows,
@@ -268,6 +286,7 @@ fn build_terraform_catalog(
 
 fn write_catalog(root: &Path, catalog: &Catalog) -> Result<(), Box<dyn Error>> {
     write_json(&root.join("api.json"), &catalog.api)?;
+    fs::write(root.join("fas.json"), cloudcover_aws::fas::FAS_DOCUMENT)?;
     write_json(&root.join("terraform/index.json"), &catalog.terraform_index)?;
     write_json(&root.join("terraform/rows.json"), &catalog.terraform_rows)?;
     for version in &catalog.terraform_versions {

@@ -445,6 +445,24 @@ fn builds_deterministic_iam_allow_policy() -> Result<(), Box<dyn Error>> {
                 },
                 {
                     "Effect":"Allow",
+                    "Action":["kms:GenerateDataKey"],
+                    "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${DestinationKeyId}",
+                    "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
+                },
+                {
+                    "Effect":"Allow",
+                    "Action":["kms:Decrypt","kms:GenerateDataKey"],
+                    "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${DirectoryKeyId}",
+                    "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
+                },
+                {
+                    "Effect":"Allow",
+                    "Action":["kms:Decrypt"],
+                    "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${ObjectKeyId}",
+                    "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
+                },
+                {
+                    "Effect":"Allow",
                     "Action":[
                         "s3:GetObject",
                         "s3:GetObjectLegalHold",
@@ -583,6 +601,8 @@ fn operation_permissions_use_authorized_actions() -> Result<(), Box<dyn Error>> 
     assert_eq!(
         actions,
         vec![
+            "kms:Decrypt".to_owned(),
+            "kms:GenerateDataKey".to_owned(),
             "s3-object-lambda:PutObject".to_owned(),
             "s3:GetObject".to_owned(),
             "s3:GetObjectVersion".to_owned(),
@@ -604,6 +624,8 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
     assert_eq!(
         permissions,
         vec![
+            "kms:Decrypt",
+            "kms:GenerateDataKey",
             "s3-object-lambda:PutObject",
             "s3:GetObject",
             "s3:GetObjectVersion",
@@ -619,11 +641,11 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
-fn reports_empty_iam_permissions_for_authorized_actionless_operation() -> Result<(), Box<dyn Error>>
+fn supplements_authorized_actionless_operation_with_fas_permissions() -> Result<(), Box<dyn Error>>
 {
     assert_eq!(
         AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "CreateSession"))?,
-        Vec::<&'static str>::new()
+        vec!["kms:Decrypt", "kms:GenerateDataKey"]
     );
     Ok(())
 }
@@ -638,10 +660,18 @@ fn rejects_unknown_api_method_for_iam_permissions() {
 }
 
 #[test]
-fn operation_with_no_authorized_actions_builds_no_policy_statement() -> Result<(), Box<dyn Error>> {
+fn operation_with_no_authorized_actions_builds_fas_policy_statement() -> Result<(), Box<dyn Error>>
+{
     let policy = AwsProvider::new().permissions_policy(&[ApiMethod::new("s3", "CreateSession")])?;
 
-    assert_eq!(policy, json!({"Version":"2012-10-17","Statement":[]}));
+    assert_eq!(
+        policy,
+        json!({"Version":"2012-10-17","Statement":[{
+            "Effect":"Allow", "Action":["kms:Decrypt", "kms:GenerateDataKey"],
+            "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${DirectoryKeyId}",
+            "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
+        }]})
+    );
 
     Ok(())
 }

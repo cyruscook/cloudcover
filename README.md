@@ -1,8 +1,10 @@
 # CloudCover
 
-CloudCover takes your source code (Lambdas, CDK, IaC...) and outputs the exact least-privilege AWS IAM policy required.
+CloudCover takes your source code (Lambdas, CDK, IaC...) and outputs an AWS IAM policy baseline for the operations it discovers.
 
-In paticular, for Terraform IaC, because no plan, apply, or state file is required, you will know the exact IAM policy you need before you've even touched a live AWS account. No more asking your admin to add that one missing action to the permission set.
+For Terraform IaC, no plan, apply, or state file is required. CloudCover can identify
+permissions before deployment; review the generated policy against your resource
+configuration and authorization requirements.
 
 ## Installation
 
@@ -58,3 +60,51 @@ cloudcover policy --language typescript ./path/to/project
 
 JavaScript and TypeScript analysis requires Node.js on `PATH`.
 When present, `tsconfig.json` or `jsconfig.json` sets the project entrypoints.
+
+## Conditional downstream permissions (FAS)
+
+AWS's operation mappings exclude forward access session permissions. CloudCover
+supplements them with a [checked-in, primary-source FAS catalog](docs/fas.md).
+Covered operations include possible requirements for unknown request/resource
+configuration, such as S3 SSE-KMS and Secrets Manager customer-managed keys.
+JSON and HCL preserve KMS service conditions and distinct key resource roles.
+Replace ARN/Region placeholders and review applicability before deployment.
+CLI notes report possible requirements and operations with unknown FAS coverage.
+The website exposes applicability and AWS citations; copied action names omit
+policy conditions. Unlisted operations are not a guarantee of complete coverage.
+
+## Conditional downstream permissions (FAS)
+
+AWS's operation mappings exclude forward access session permissions. CloudCover
+supplements them with a [checked-in, primary-source FAS catalog](docs/fas.md).
+Covered operations include possible requirements for unknown request/resource
+configuration, such as S3 SSE-KMS and Secrets Manager customer-managed keys.
+JSON and HCL preserve KMS service conditions and distinct key resource roles.
+Replace ARN/Region placeholders and review applicability before deployment.
+CLI notes report possible requirements and operations with unknown FAS coverage.
+The website exposes applicability and AWS citations; copied action names omit
+policy conditions. Unlisted operations are not a guarantee of complete coverage.
+
+## Conditional downstream permissions (FAS)
+
+AWS's operation mappings exclude forward access session permissions. CloudCover
+supplements them with a [checked-in, primary-source FAS catalog](docs/fas.md).
+Covered operations include possible requirements for unknown request/resource
+configuration, such as S3 SSE-KMS and Secrets Manager customer-managed keys.
+JSON and HCL preserve KMS service conditions and distinct key resource roles.
+Replace ARN/Region placeholders and review applicability before deployment.
+CLI notes report possible requirements and operations with unknown FAS coverage.
+The website exposes applicability and AWS citations; copied action names omit
+policy conditions. Unlisted operations are not a guarantee of complete coverage.
+
+## Conditional downstream permissions (FAS)
+
+AWS's operation mappings exclude forward access session permissions. CloudCover
+supplements them with a [checked-in, primary-source FAS catalog](docs/fas.md).
+Covered operations include possible requirements for unknown request/resource
+configuration, such as S3 SSE-KMS and Secrets Manager customer-managed keys.
+JSON and HCL preserve KMS service conditions and distinct key resource roles.
+Replace ARN/Region placeholders and review applicability before deployment.
+CLI notes report possible requirements and operations with unknown FAS coverage.
+The website exposes applicability and AWS citations; copied action names omit
+policy conditions. Unlisted operations are not a guarantee of complete coverage.

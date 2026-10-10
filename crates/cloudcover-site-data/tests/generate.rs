@@ -193,6 +193,7 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     );
 
     assert_resource_permissions(&output, &terraform_rows, &api_rows, &iam_permissions)?;
+    assert_fas_provenance(&api, &output, &api_rows, &iam_permissions)?;
     Ok(())
 }
 
@@ -268,6 +269,61 @@ fn assert_resource_permissions(
                     .iter()
                     .any(|id| api_rows[*id].0 == "s3" && api_rows[*id].1 == "PutObject")
             );
+        }
+    }
+    Ok(())
+}
+
+fn assert_fas_provenance(
+    api: &Value,
+    output: &Path,
+    api_rows: &[(String, String, Vec<usize>)],
+    permissions: &[String],
+) -> Result<(), Box<dyn Error>> {
+    let document = read_json(&output.join("fas.json"))?;
+    let embedded: Value = serde_json::from_str(cloudcover_aws::fas::FAS_DOCUMENT)?;
+    assert_eq!(document, embedded);
+    let entries = field(api, "fas")?.as_array().ok_or("missing FAS entries")?;
+    assert_eq!(entries.len(), api_rows.len());
+    let get = api_rows
+        .iter()
+        .position(|r| r.0 == "s3" && r.1 == "GetObject")
+        .ok_or("missing GET")?;
+    assert_eq!(entries[get]["coverage"], "documented_dependencies");
+    assert!(
+        api_rows[get]
+            .2
+            .iter()
+            .any(|id| permissions[*id] == "kms:Decrypt")
+    );
+    let ssm = api_rows
+        .iter()
+        .position(|r| r.0 == "ssm" && r.1 == "GetParameter")
+        .ok_or("missing SSM")?;
+    let dependencies = entries[ssm]["dependencies"]
+        .as_array()
+        .ok_or("missing SSM dependencies")?;
+    assert!(
+        dependencies
+            .iter()
+            .any(|d| d["path"] == serde_json::json!(["ssm-secrets-reference", "secrets-read"]))
+    );
+    for (index, entry) in entries.iter().enumerate() {
+        for dependency in field(entry, "dependencies")?
+            .as_array()
+            .ok_or("missing dependencies")?
+        {
+            for permission in field(dependency, "iam_permissions")?
+                .as_array()
+                .ok_or("missing dependency actions")?
+            {
+                assert!(
+                    api_rows[index]
+                        .2
+                        .iter()
+                        .any(|id| permissions[*id] == permission.as_str().unwrap_or_default())
+                );
+            }
         }
     }
     Ok(())

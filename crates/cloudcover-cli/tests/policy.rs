@@ -53,11 +53,26 @@ fn emits_expected_s3_read_policy() -> Result<(), Box<dyn Error>> {
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert!(output.stderr.is_empty(), "stderr should be empty");
+    assert!(
+        String::from_utf8_lossy(&output.stderr)
+            .contains("FAS: included possible downstream requirements")
+    );
 
     let policy = parse_stdout_json(&output)?;
     let actions = collect_actions(&policy)?;
     assert!(actions.contains(&"s3:GetObject".to_owned()));
+    assert!(actions.contains(&"kms:Decrypt".to_owned()));
+    assert!(actions.contains(&"kms:GenerateDataKey".to_owned()));
+    assert!(
+        policy["Statement"]
+            .as_array()
+            .ok_or("missing statements")?
+            .iter()
+            .any(|statement| {
+                statement["Condition"]["StringEquals"]["kms:ViaService"]
+                    == "s3.${Region}.amazonaws.com"
+            })
+    );
     assert!(actions.contains(&"s3:GetObjectLegalHold".to_owned()));
     assert!(actions.contains(&"s3:GetObjectRetention".to_owned()));
     assert!(actions.contains(&"s3:GetObjectTagging".to_owned()));
@@ -147,7 +162,10 @@ fn emits_terraform_hcl_policy_document() -> Result<(), Box<dyn Error>> {
         String::from_utf8_lossy(&output.stdout),
         String::from_utf8_lossy(&output.stderr)
     );
-    assert!(output.stderr.is_empty(), "stderr should be empty");
+    assert!(
+        String::from_utf8_lossy(&output.stderr)
+            .contains("FAS: included possible downstream requirements")
+    );
     let stdout = String::from_utf8(output.stdout)?;
     assert!(stdout.contains(r#"data "aws_iam_policy_document" "cloudcover""#));
     assert!(stdout.contains("statement {"));

@@ -1,3 +1,4 @@
+pub mod fas;
 mod generated;
 mod model;
 mod policy;

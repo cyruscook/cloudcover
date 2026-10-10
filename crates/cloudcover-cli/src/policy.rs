@@ -16,6 +16,7 @@ pub(crate) fn build_policy(
     language: Language,
 ) -> Result<serde_json::Value, CliError> {
     let api_methods = build_api_methods(path, language)?;
+    report_fas_coverage(&api_methods)?;
     AwsProvider::new()
         .permissions_policy(&api_methods)
         .map_err(|error| CliError::Runtime(error.to_string()))
@@ -26,9 +27,37 @@ pub(crate) fn build_terraform_policy(
     language: Language,
 ) -> Result<String, CliError> {
     let api_methods = build_api_methods(path, language)?;
+    report_fas_coverage(&api_methods)?;
     AwsProvider::new()
         .permissions_policy_hcl(&api_methods)
         .map_err(|error| CliError::Runtime(error.to_string()))
+}
+
+fn report_fas_coverage(methods: &[ApiMethod]) -> Result<(), CliError> {
+    let provider = AwsProvider::new();
+    let mut possible = 0;
+    let mut unknown = 0;
+    for method in methods {
+        match provider
+            .fas_coverage(method)
+            .map_err(|error| CliError::Runtime(error.to_string()))?
+        {
+            cloudcover_aws::fas::FasCoverage::DocumentedDependencies => possible += 1,
+            cloudcover_aws::fas::FasCoverage::Unknown => unknown += 1,
+            cloudcover_aws::fas::FasCoverage::ReviewedNoDependencies => {}
+        }
+    }
+    if possible > 0 {
+        eprintln!(
+            "FAS: included possible downstream requirements for {possible} operations. Review applicability and replace key/Region resource placeholders. Sources: https://github.com/cyruscook/cloudcover/blob/main/docs/fas.md"
+        );
+    }
+    if unknown > 0 {
+        eprintln!(
+            "FAS: supplement coverage is unknown for {unknown} operations; generated policies may need additional downstream permissions."
+        );
+    }
+    Ok(())
 }
 
 fn build_api_methods(path: OsString, language: Language) -> Result<Vec<ApiMethod>, CliError> {
