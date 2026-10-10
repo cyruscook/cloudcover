@@ -66,7 +66,7 @@ func handler() { new(conns.AWSClient).CloudFrontClient() }
 			if err != nil {
 				t.Fatal(err)
 			}
-			analyzer := newAPIMethodAnalyzer(index, nil)
+			analyzer := newAPIMethodAnalyzer(index, nil, "")
 			if _, err := analyzer.collect(roots); err != nil {
 				t.Fatal(err)
 			}
@@ -167,7 +167,7 @@ func read() {}
 				if fn.Name() != helper || fn.Syntax() == nil || len(fn.Blocks) == 0 {
 					t.Fatalf("%s lacks a source-backed SSA body", helper)
 				}
-				analysis, err := newAPIMethodAnalyzer(index, nil).collect(deleteHandler.funcs)
+				analysis, err := newAPIMethodAnalyzer(index, nil, "").collect(deleteHandler.funcs)
 				if err != nil {
 					t.Fatal(err)
 				}
@@ -386,7 +386,7 @@ func TestAPIMethodAnalyzerMemoizesSharedFunctionSummaries(t *testing.T) {
 	t.Parallel()
 
 	index, handlers, mappings, sharedKey := sharedAPIMethodFixture(t)
-	analyzer := newAPIMethodAnalyzer(index, mappings)
+	analyzer := newAPIMethodAnalyzer(index, mappings, "")
 	want := []apiMethod{{Service: "example", Name: "ListThings"}}
 	first, err := analyzer.collect([]*ssa.Function{handlers[0]})
 	if err != nil {
@@ -435,13 +435,13 @@ func (implementation) Call(client *example.Client) {
 	client.ListThings()
 }`)
 	selection := methodSelectionForCall(t, index, handler, "Call")
-	first, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call")
+	first, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call", "")
 	if err != nil || !relevant || len(first) != 1 {
 		t.Fatalf("providerLocalInterfaceCallees() = (%#v, %t, %v), want one relevant callee", first, relevant, err)
 	}
 
 	index.byTypes = nil
-	second, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call")
+	second, relevant, err := providerLocalInterfaceCallees(index, selection, "caller.Call", "")
 	if err != nil || !relevant || !slices.Equal(second, first) {
 		t.Fatalf("cached providerLocalInterfaceCallees() = (%#v, %t, %v), want (%#v, true, nil)", second, relevant, err, first)
 	}
@@ -462,7 +462,7 @@ type secondImplementation struct{}
 func (secondImplementation) Call(client *example.Client) {
 	client.GetThings()
 }`)
-	analysis, err := collectAPIMethods(index, []*ssa.Function{handler}, mappings)
+	analysis, err := newAPIMethodAnalyzer(index, mappings, providerModulePath+"/internal/service/ec2").collect([]*ssa.Function{handler})
 	if err != nil {
 		t.Fatalf("collectAPIMethods() error = %v", err)
 	}
@@ -539,7 +539,7 @@ func handler(value NestedObjectCollectionValue) {
 	value.ToObjectSlice()
 }`)
 
-	callees, err := collectDirectLocalCallees(index, handler)
+	callees, err := collectDirectLocalCallees(index, handler, "")
 	if err != nil {
 		t.Fatalf("collectDirectLocalCallees() error = %v", err)
 	}
@@ -558,7 +558,7 @@ func TestCollectDirectLocalCalleesResolvesNoExpandSelectionInExactSSATypeUnivers
 	index.ssaFuncsByIdentity = nil
 	index.ssaBySyntax = nil
 	for i, handler := range handlers {
-		callees, err := collectDirectLocalCallees(index, handler)
+		callees, err := collectDirectLocalCallees(index, handler, "")
 		if err != nil {
 			t.Fatalf("collectDirectLocalCallees(handler %d) error = %v", i, err)
 		}
@@ -602,7 +602,7 @@ func handler(value *withMeta) {
 		t.Fatal("FuncValue(withMeta.Meta declaration) is missing")
 	}
 
-	callees, err := collectDirectLocalCallees(index, handler)
+	callees, err := collectDirectLocalCallees(index, handler, "")
 	if err != nil {
 		t.Fatalf("collectDirectLocalCallees() error = %v", err)
 	}
@@ -780,7 +780,7 @@ func handler() {
 }`)
 	index.prog = nil
 
-	_, err := collectDirectLocalCallees(index, handler)
+	_, err := collectDirectLocalCallees(index, handler, "")
 	if err == nil || !strings.Contains(err.Error(), "SSA function missing for") {
 		t.Fatalf("collectDirectLocalCallees() error = %v, want missing concrete SSA error", err)
 	}
@@ -800,7 +800,7 @@ func handler() {
 	external()
 }`)
 
-	callees, err := collectDirectLocalCallees(index, handler)
+	callees, err := collectDirectLocalCallees(index, handler, "")
 	if err != nil {
 		t.Fatalf("collectDirectLocalCallees() error = %v", err)
 	}
