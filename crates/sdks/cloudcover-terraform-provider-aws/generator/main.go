@@ -2108,6 +2108,9 @@ func apiMethodsForSDKCallable(obj *types.Func, sdkMappings map[sdkMethodKey][]ap
 	if !ok {
 		return nil, nil
 	}
+	if methods := s3UploaderAPIMethods(key); methods != nil {
+		return methods, nil
+	}
 	if isAWSV2ServicePackage(key.pkg) {
 		if !awsSDKGoV2Operation(obj) {
 			return nil, nil
@@ -2127,6 +2130,30 @@ func apiMethodsForSDKCallable(obj *types.Func, sdkMappings map[sdkMethodKey][]ap
 		return []apiMethod{operation}, nil
 	}
 	return nil, nil
+}
+
+// Uploader bodies are external to the provider and intentionally not loaded.
+// Unlike a service Client method, Upload is a composite operation: single-part,
+// multipart, and failed-upload cleanup paths must all be represented.
+// https://github.com/aws/aws-sdk-go-v2/blob/main/feature/s3/manager/upload.go
+// https://github.com/aws/aws-sdk-go/blob/main/service/s3/s3manager/upload.go
+func s3UploaderAPIMethods(key sdkMethodKey) []apiMethod {
+	if key.receiver != "Uploader" {
+		return nil
+	}
+	v2 := key.pkg == "github.com/aws/aws-sdk-go-v2/feature/s3/manager" && key.method == "Upload"
+	v1 := key.pkg == "github.com/aws/aws-sdk-go/service/s3/s3manager" &&
+		(key.method == "Upload" || key.method == "UploadWithContext")
+	if !v2 && !v1 {
+		return nil
+	}
+	return []apiMethod{
+		{Service: "s3", Name: "AbortMultipartUpload"},
+		{Service: "s3", Name: "CompleteMultipartUpload"},
+		{Service: "s3", Name: "CreateMultipartUpload"},
+		{Service: "s3", Name: "PutObject"},
+		{Service: "s3", Name: "UploadPart"},
+	}
 }
 
 func isAWSV2ServicePackage(path string) bool {

@@ -6,7 +6,7 @@ use std::{
 };
 
 use cloudcover_aws::AwsProvider;
-use cloudcover_core::CloudProvider;
+use cloudcover_core::{CloudProvider, Language, MethodReference, ResolvedSdk, Sdk};
 use cloudcover_terraform_provider_aws::{
     TerraformProviderAwsMappingsLookup, provider_versions, sdk_method_mappings,
 };
@@ -164,7 +164,14 @@ fn build_terraform_catalog(
 
     for version in provider_versions() {
         let mappings = match sdk_method_mappings(version) {
-            TerraformProviderAwsMappingsLookup::Supported(mappings) => mappings,
+            TerraformProviderAwsMappingsLookup::Supported(_) => AwsProvider::new()
+                .sdk_method_mappings(&ResolvedSdk::new(
+                    Sdk::new(
+                        cloudcover_terraform_provider_aws::SDK_NAME,
+                        Language::Terraform,
+                    )
+                    .with_version(*version),
+                ))?,
             TerraformProviderAwsMappingsLookup::Unsupported(_) => continue,
             TerraformProviderAwsMappingsLookup::Unknown => {
                 return Err(io::Error::other(format!(
@@ -176,20 +183,34 @@ fn build_terraform_catalog(
 
         let mut rows = BTreeSet::new();
         for mapping in mappings {
-            if mapping.kind != "resource" || !LIFECYCLE_ACTIONS.contains(&mapping.action) {
+            let MethodReference::Terraform(reference) = mapping.method() else {
+                return Err(io::Error::other("non-Terraform method in Terraform catalog").into());
+            };
+            if reference.kind() != "resource" || !LIFECYCLE_ACTIONS.contains(&reference.action()) {
                 continue;
             }
 
             let mut method_ids = mapping
-                .api_methods
+                .api_methods()
                 .iter()
-                .filter_map(|method| api_ids.get(&(method.service, method.name)).copied())
-                .collect::<Vec<_>>();
+                .map(|method| {
+                    api_ids
+                        .get(&(method.service(), method.name()))
+                        .copied()
+                        .ok_or_else(|| {
+                            io::Error::other(format!(
+                                "missing canonical API method {}:{}",
+                                method.service(),
+                                method.name()
+                            ))
+                        })
+                })
+                .collect::<Result<Vec<_>, _>>()?;
             method_ids.sort_unstable();
             method_ids.dedup();
             rows.insert((
-                mapping.type_name.to_owned(),
-                mapping.action.to_owned(),
+                reference.type_name().to_owned(),
+                reference.action().to_owned(),
                 method_ids,
             ));
         }

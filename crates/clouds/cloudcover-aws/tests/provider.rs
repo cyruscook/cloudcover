@@ -277,6 +277,8 @@ fn maps_terraform_service_names_to_catalog_services() -> Result<(), Box<dyn Erro
         ("aws_cloudwatch_event_rule", "PutRule", "events"),
         ("aws_s3_bucket", "CreateBucket", "s3"),
         ("aws_mwaa_environment", "CreateEnvironment", "airflow"),
+        ("aws_lb", "CreateLoadBalancer", "elasticloadbalancing"),
+        ("aws_alb", "CreateLoadBalancer", "elasticloadbalancing"),
     ] {
         assert!(
             mapping_contains(
