@@ -111,11 +111,23 @@ pub(crate) fn resolve_actions(
 ) -> Result<Vec<&'static crate::model::AwsAction>, AwsError> {
     let operation = find_operation(method)?;
 
-    operation
+    let mut actions = operation
         .authorized_actions
         .iter()
         .map(|authorized_action| find_action(authorized_action, method))
-        .collect()
+        .collect::<Result<Vec<_>, _>>()?;
+    for name in crate::dependencies::kms_actions(method.service(), method.name()) {
+        actions.push(find_action(
+            &crate::model::AwsApiMethodRef {
+                service: "kms",
+                name,
+            },
+            method,
+        )?);
+    }
+    actions.sort_unstable_by_key(|action| (action.service, action.name));
+    actions.dedup_by_key(|action| (action.service, action.name));
+    Ok(actions)
 }
 
 fn find_operation(method: &ApiMethod) -> Result<&'static crate::model::AwsOperation, AwsError> {

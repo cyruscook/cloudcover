@@ -31,6 +31,14 @@ CloudCover analyzes the root module and every module recorded in the
 initialized Terraform module manifest, including remote modules. The command
 writes an AWS IAM policy as JSON to standard output by default.
 
+Permission mappings cover possible API and lifecycle paths, including S3
+multipart uploads and KMS operations performed by S3 and Secrets Manager on
+the caller's behalf. KMS requirements depend on encryption settings, key
+changes, and checksum options. The generated policy includes these possible
+requirements because analysis does not evaluate request arguments or live
+bucket/key configuration. Review and restrict the generated ARN templates
+to the resources and KMS keys your deployment uses.
+
 Use `--format terraform` to write a Terraform `aws_iam_policy_document` data
 source in HCL:
 

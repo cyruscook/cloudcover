@@ -225,6 +225,54 @@ mod tests {
     };
 
     #[test]
+    fn s3_upload_paths_are_present_in_every_affected_provider_version() {
+        let mut uses_uploader = false;
+        for version in provider_versions() {
+            uses_uploader |= *version == "3.71.0";
+            if !uses_uploader {
+                continue;
+            }
+            let TerraformProviderAwsMappingsLookup::Supported(mappings) =
+                sdk_method_mappings(version)
+            else {
+                continue;
+            };
+            let mut count = 0;
+            for mapping in mappings.filter(|row| {
+                row.kind == "resource"
+                    && ["aws_s3_object", "aws_s3_bucket_object"].contains(&row.type_name)
+                    && ["create", "update"].contains(&row.action)
+            }) {
+                count += 1;
+                for name in [
+                    "AbortMultipartUpload",
+                    "CompleteMultipartUpload",
+                    "CreateMultipartUpload",
+                    "PutObject",
+                    "UploadPart",
+                ] {
+                    assert!(
+                        mapping
+                            .api_methods
+                            .contains(&TerraformProviderAwsApiMethodRef {
+                                service: "s3",
+                                name
+                            }),
+                        "{version}: {} {} is missing {name}",
+                        mapping.type_name,
+                        mapping.action
+                    );
+                }
+            }
+            assert!(
+                count >= 2,
+                "{version}: missing S3 object lifecycle mappings"
+            );
+        }
+        assert!(uses_uploader);
+    }
+
+    #[test]
     fn provider_versions_are_sorted_and_unique() {
         assert_ne!(provider_versions(), &[] as &[&str]);
         assert!(

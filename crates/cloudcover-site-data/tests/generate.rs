@@ -192,5 +192,87 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
             .contains(&iam_create_bucket_id)
     );
 
+    assert_resource_permissions(&output, &terraform_rows, &api_rows, &iam_permissions)?;
+    Ok(())
+}
+
+fn assert_resource_permissions(
+    output: &Path,
+    terraform_rows: &[(String, String, Vec<usize>)],
+    api_rows: &[(String, String, Vec<usize>)],
+    iam_permissions: &[String],
+) -> Result<(), Box<dyn Error>> {
+    for version in ["3.74.3", "5.63.1", "6.68.0"] {
+        let snapshot = read_json(&output.join(format!("terraform/versions/{version}.json")))?;
+        let row_ids = field(&snapshot, "row_ids")?
+            .as_array()
+            .ok_or("missing row IDs")?
+            .iter()
+            .map(|value| usize_value(value, "row ID"))
+            .collect::<Result<Vec<_>, _>>()?;
+        for (resource, lifecycle, permission) in [
+            (
+                "aws_lb",
+                "create",
+                "elasticloadbalancing:CreateLoadBalancer",
+            ),
+            (
+                "aws_alb",
+                "delete",
+                "elasticloadbalancing:DeleteLoadBalancer",
+            ),
+            (
+                "aws_lb",
+                "read",
+                "elasticloadbalancing:DescribeLoadBalancers",
+            ),
+            (
+                "aws_alb",
+                "update",
+                "elasticloadbalancing:ModifyLoadBalancerAttributes",
+            ),
+            (
+                "aws_cognito_user_pool",
+                "create",
+                "cognito-idp:CreateUserPool",
+            ),
+            ("aws_cloudwatch_event_rule", "create", "events:PutRule"),
+            ("aws_s3_bucket_object", "create", "s3:PutObject"),
+            ("aws_s3_bucket_object", "update", "s3:PutObject"),
+            ("aws_s3_bucket_object", "create", "s3:AbortMultipartUpload"),
+            ("aws_s3_bucket_object", "create", "kms:GenerateDataKey"),
+            ("aws_secretsmanager_secret", "create", "kms:Decrypt"),
+            ("aws_secretsmanager_secret", "create", "kms:GenerateDataKey"),
+            ("aws_secretsmanager_secret", "update", "kms:Encrypt"),
+        ] {
+            let row = row_ids
+                .iter()
+                .map(|id| &terraform_rows[*id])
+                .find(|row| row.0 == resource && row.1 == lifecycle)
+                .ok_or_else(|| format!("{version}: missing {resource} {lifecycle}"))?;
+            let permissions = row
+                .2
+                .iter()
+                .flat_map(|id| &api_rows[*id].2)
+                .map(|id| iam_permissions[*id].as_str())
+                .collect::<Vec<_>>();
+            assert!(
+                permissions.contains(&permission),
+                "{version}: {resource} {lifecycle} is missing {permission}"
+            );
+        }
+        if version == "6.68.0" {
+            let row = row_ids
+                .iter()
+                .map(|id| &terraform_rows[*id])
+                .find(|row| row.0 == "aws_s3_object" && row.1 == "create")
+                .ok_or("missing aws_s3_object create")?;
+            assert!(
+                row.2
+                    .iter()
+                    .any(|id| api_rows[*id].0 == "s3" && api_rows[*id].1 == "PutObject")
+            );
+        }
+    }
     Ok(())
 }

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Include documented KMS permissions for S3 and Secrets Manager operations performed on the caller's behalf.
+
 ## [0.1.9](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.1.8...cloudcover-aws-v0.1.9) - 2026-10-10
 
 ### Other

@@ -1,3 +1,4 @@
+mod dependencies;
 mod generated;
 mod model;
 mod policy;
