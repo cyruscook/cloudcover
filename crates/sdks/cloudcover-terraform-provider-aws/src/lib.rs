@@ -434,4 +434,67 @@ mod tests {
         );
         assert!(matches[0].api_methods.contains(&expected_api_method));
     }
+    #[test]
+    fn security_group_rule_dispatch_is_complete_and_directional_in_every_version() {
+        let mut affected_versions = 0;
+        for version in provider_versions() {
+            let TerraformProviderAwsMappingsLookup::Supported(mappings) =
+                sdk_method_mappings(version)
+            else {
+                continue;
+            };
+            let mut count = 0;
+            for mapping in mappings.filter(|row| {
+                row.kind == "resource"
+                    && [
+                        "aws_vpc_security_group_ingress_rule",
+                        "aws_vpc_security_group_egress_rule",
+                    ]
+                    .contains(&row.type_name)
+            }) {
+                let (direction, opposite) =
+                    if mapping.type_name == "aws_vpc_security_group_ingress_rule" {
+                        ("Ingress", "Egress")
+                    } else {
+                        ("Egress", "Ingress")
+                    };
+                let prefix = match mapping.action {
+                    "create" => "Authorize",
+                    "delete" => "Revoke",
+                    "read" => "Describe",
+                    _ => continue,
+                };
+                count += 1;
+                let expected = if mapping.action == "read" {
+                    "DescribeSecurityGroupRules".to_owned()
+                } else {
+                    format!("{prefix}SecurityGroup{direction}")
+                };
+                assert!(
+                    mapping
+                        .api_methods
+                        .iter()
+                        .any(|api| api.service == "ec2" && api.name == expected),
+                    "{version}: {} {} missing {expected}",
+                    mapping.type_name,
+                    mapping.action
+                );
+                let unwanted = format!("{prefix}SecurityGroup{opposite}");
+                assert!(
+                    !mapping
+                        .api_methods
+                        .iter()
+                        .any(|api| api.service == "ec2" && api.name == unwanted),
+                    "{version}: {} {} includes {unwanted}",
+                    mapping.type_name,
+                    mapping.action
+                );
+            }
+            if count > 0 {
+                assert_eq!(count, 6, "{version}: incomplete rule lifecycles");
+                affected_versions += 1;
+            }
+        }
+        assert!(affected_versions > 0);
+    }
 }

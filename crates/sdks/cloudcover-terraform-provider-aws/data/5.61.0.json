@@ -394,10 +394,6 @@
         [
           "ec2",
           "AuthorizeSecurityGroupEgress"
-        ],
-        [
-          "ec2",
-          "AuthorizeSecurityGroupIngress"
         ]
       ]
     ],
@@ -406,10 +402,6 @@
       "aws_vpc_security_group_ingress_rule",
       "create",
       [
-        [
-          "ec2",
-          "AuthorizeSecurityGroupEgress"
-        ],
         [
           "ec2",
           "AuthorizeSecurityGroupIngress"

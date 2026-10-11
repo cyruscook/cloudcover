@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Expand documented possible FAS dependencies from a checked-in AWS source catalog, preserving conditions, resource roles, transitive paths, and coverage status.
 
+### Fixed
+
+- Resolve historical SDK display names and runtime client service aliases using AWS-published operation metadata, retaining their API and IAM mappings.
+
 ## [0.1.9](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.1.8...cloudcover-aws-v0.1.9) - 2026-10-10
 
 ### Other
