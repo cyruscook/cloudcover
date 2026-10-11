@@ -3,6 +3,7 @@ use cloudcover_core::{
     MethodReference, PythonMethodReference, ResolvedSdk, Sdk, SdkMethodMapping,
     TerraformMethodReference,
 };
+use std::{collections::BTreeMap, sync::OnceLock};
 
 use crate::{generated, policy};
 
@@ -230,7 +231,9 @@ fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMap
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| {
+                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
+                })
                 .collect::<Vec<_>>();
             if api_methods.is_empty() {
                 return None;
@@ -296,7 +299,9 @@ fn go_sdk_v1_method_mappings(
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| {
+                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
+                })
                 .collect::<Vec<_>>();
             if api_methods.is_empty() {
                 return None;
@@ -357,7 +362,9 @@ fn javascript_sdk_method_mappings(
             let api_methods = row
                 .api_methods
                 .iter()
-                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
+                .filter_map(|api_method| {
+                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
+                })
                 .collect::<Vec<_>>();
             if api_methods.is_empty() {
                 return None;
@@ -433,16 +440,71 @@ fn catalog_api_method(service: &str, name: &str) -> Option<ApiMethod> {
             .binary_search_by(|operation| (operation.service, operation.name).cmp(&(service, name)))
             .is_ok()
     };
-    let service = if exists(service) {
-        service
-    } else {
-        let catalog_service = catalog_service_alias(service)?;
-        if !exists(catalog_service) {
+    if exists(service) {
+        return Some(ApiMethod::new(service, name));
+    }
+    let identifier = sdk_service_identifier(service);
+    if exists(&identifier) {
+        return Some(ApiMethod::new(identifier, name));
+    }
+    if let Some(canonical) = catalog_service_alias(&identifier)
+        && exists(canonical)
+    {
+        return Some(ApiMethod::new(canonical, name));
+    }
+    let canonical = catalog_sdk_aliases()
+        .get(&(identifier, name))
+        .copied()
+        .flatten()?;
+    Some(ApiMethod::new(canonical, name))
+}
+
+fn catalog_sdk_api_method(package: &str, service: &str, name: &str) -> Option<ApiMethod> {
+    catalog_api_method(service, name).or_else(|| {
+        // A signing name can be shared by different clients (for example
+        // OpenSearch and Elasticsearch both sign with "es"). The SDK package
+        // retains the client identity when its signing name cannot be resolved.
+        let client = package
+            .strip_prefix("github.com/aws/aws-sdk-go-v2/service/")
+            .or_else(|| package.strip_prefix("github.com/aws/aws-sdk-go/service/"))
+            .or_else(|| package.strip_prefix("@aws-sdk/client-"))?;
+        if client.contains('/') {
             return None;
         }
-        catalog_service
-    };
-    Some(ApiMethod::new(service, name))
+        catalog_api_method(client, name)
+    })
+}
+
+fn sdk_service_identifier(service: &str) -> String {
+    service
+        .chars()
+        .filter(char::is_ascii_alphanumeric)
+        .map(|character| character.to_ascii_lowercase())
+        .collect()
+}
+
+// AWS publishes the SDK service identifier for each operation. Use that
+// explicit relationship for runtime clients and older SDK display names;
+// matching an operation name across unrelated services is ambiguous.
+type CatalogAliases = BTreeMap<(String, &'static str), Option<&'static str>>;
+
+fn catalog_sdk_aliases() -> &'static CatalogAliases {
+    static ALIASES: OnceLock<CatalogAliases> = OnceLock::new();
+    ALIASES.get_or_init(|| {
+        let mut aliases = BTreeMap::new();
+        for row in generated::SDK_METHOD_MAPPINGS {
+            let key = (sdk_service_identifier(row.sdk_name), row.api_name);
+            aliases
+                .entry(key)
+                .and_modify(|canonical| {
+                    if *canonical != Some(row.api_service) {
+                        *canonical = None;
+                    }
+                })
+                .or_insert(Some(row.api_service));
+        }
+        aliases
+    })
 }
 
 // SDK service identifiers and Service Authorization Reference identifiers differ.
@@ -457,11 +519,12 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "apigatewayv2" => "apigateway",
         "appintegrations" | "appintegrationsservice" => "app-integrations",
         "applicationautoscaling" => "application-autoscaling",
+        "applicationdiscoveryservice" => "discovery",
         "arcregionswitch" => "arc-region-switch",
         "arczonalshift" => "arc-zonal-shift",
         "autoscalingplans" => "autoscaling-plans",
         "bcmdataexports" => "bcm-data-exports",
-        "bedrockagent" => "bedrock",
+        "bedrockagent" | "bedrockruntime" => "bedrock",
         "bedrockagentcorecontrol" => "bedrock-agentcore",
         "chimesdkmediapipelines" | "chimesdkvoice" => "chime",
         "cloudcontrol" | "cloudcontrolapi" => "cloudformation",
@@ -469,6 +532,7 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "cloudhsmv2" => "cloudhsm",
         "cloudwatchevents" | "eventbridge" => "events",
         "cloudwatchevidently" => "evidently",
+        "cloudwatchlogs" => "logs",
         "cloudwatchrum" => "rum",
         "codeguruprofiler" => "codeguru-profiler",
         "codegurureviewer" => "codeguru-reviewer",
@@ -476,6 +540,7 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "codestarnotifications" => "codestar-notifications",
         "cognitoidentity" => "cognito-identity",
         "cognitoidentityprovider" => "cognito-idp",
+        "commander" | "ssmincidents" => "ssm-incidents",
         "computeoptimizer" => "compute-optimizer",
         "configservice" => "config",
         "costandusagereportservice" => "cur",
@@ -485,6 +550,7 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "databasemigrationservice" => "dms",
         "devopsguru" => "devops-guru",
         "directoryservice" => "ds",
+        "directoryservicedata" => "ds-data",
         "docdb" | "neptune" => "rds",
         "docdbelastic" => "docdb-elastic",
         "ecrpublic" => "ecr-public",
@@ -494,14 +560,19 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "emr" => "elasticmapreduce",
         "emrcontainers" => "emr-containers",
         "emrserverless" => "emr-serverless",
+        "iotdataplane" => "iot",
+        "iotjobsdataplane" => "iotjobsdata",
         "keyspaces" => "cassandra",
         "kinesisanalyticsv2" => "kinesisanalytics",
         "lambdacore" | "lambdamicrovms" => "lambda",
-        "lexmodelbuildingservice" | "lexmodelsv2" => "lex",
+        "lexmodelbuildingservice" | "lexmodelsv2" | "lexruntimeservice" | "lexruntimev2" => "lex",
         "licensemanager" => "license-manager",
         "location" | "locationservice" => "geo",
         "mailmanager" | "sesv2" => "ses",
         "managedgrafana" => "grafana",
+        "marketplaceentitlementservice" | "marketplacemetering" => "aws-marketplace",
+        "mechanicalturkrequesterservice" => "mechanicalturk",
+        "migrationhub" => "mgh",
         "mwaa" => "airflow",
         "neptunegraph" => "neptune-graph",
         "networkfirewall" => "network-firewall",
@@ -525,14 +596,145 @@ fn catalog_service_alias(service: &str) -> Option<&'static str> {
         "servicecatalogappregistry" => "servicecatalog",
         "simpledb" => "sdb",
         "ssmcontacts" => "ssm-contacts",
-        "ssmincidents" => "ssm-incidents",
         "ssmquicksetup" => "ssm-quicksetup",
         "ssoadmin" => "sso",
+        "sfn" => "states",
         "timestreaminfluxdb" => "timestream-influxdb",
         "timestreamquery" | "timestreamwrite" => "timestream",
+        "transcribeservice" => "transcribe",
         "vpclattice" => "vpc-lattice",
         "wafregional" => "waf-regional",
         "workspacesweb" => "workspaces-web",
         _ => return None,
     })
+}
+
+#[cfg(test)]
+mod alias_tests {
+    use super::{catalog_api_method, catalog_sdk_api_method, generated};
+    use cloudcover_core::ApiMethod;
+
+    #[test]
+    fn resolves_runtime_and_historical_sdk_service_identifiers() {
+        for (service, name, canonical) in [
+            ("ACM PCA", "CreateCertificateAuthority", "acm-pca"),
+            ("Bedrock Runtime", "InvokeModel", "bedrock"),
+            ("bedrockruntime", "ApplyGuardrail", "bedrock"),
+            ("directoryservicedata", "CreateUser", "ds-data"),
+            ("SageMaker Runtime", "InvokeEndpoint", "sagemaker"),
+            (
+                "paymentcryptographydata",
+                "EncryptData",
+                "payment-cryptography",
+            ),
+            ("Lex Models V2", "CreateBot", "lex"),
+            ("CloudWatch Logs", "AssociateKmsKey", "logs"),
+            ("SFN", "CreateStateMachine", "states"),
+            ("Commander", "CreateResponsePlan", "ssm-incidents"),
+            (
+                "Elastic Load Balancing",
+                "CreateLoadBalancer",
+                "elasticloadbalancing",
+            ),
+            (
+                "Application Discovery Service",
+                "CreateApplication",
+                "discovery",
+            ),
+            (
+                "MechanicalTurkRequesterService",
+                "CreateHIT",
+                "mechanicalturk",
+            ),
+            ("Migration Hub", "AssociateCreatedArtifact", "mgh"),
+            ("IoT Data Plane", "Publish", "iot"),
+            (
+                "IoT Jobs Data Plane",
+                "GetPendingJobExecutions",
+                "iotjobsdata",
+            ),
+            ("Lex Runtime Service", "PostText", "lex"),
+            ("Lex Runtime V2", "RecognizeText", "lex"),
+            ("Marketplace Metering", "MeterUsage", "aws-marketplace"),
+            (
+                "Marketplace Entitlement Service",
+                "GetEntitlements",
+                "aws-marketplace",
+            ),
+            ("transcribeservice", "StartTranscriptionJob", "transcribe"),
+        ] {
+            assert_eq!(
+                catalog_api_method(service, name),
+                Some(ApiMethod::new(canonical, name))
+            );
+        }
+        assert_eq!(catalog_api_method("unrelated", "CreateUser"), None);
+        assert_eq!(catalog_api_method("bedrock-runtime", "CreateUser"), None);
+    }
+
+    #[test]
+    fn every_published_sdk_alias_resolves_to_its_catalog_operation() {
+        for row in generated::SDK_METHOD_MAPPINGS {
+            assert_eq!(
+                catalog_api_method(row.sdk_name, row.api_name),
+                Some(ApiMethod::new(row.api_service, row.api_name)),
+                "{}:{}",
+                row.sdk_name,
+                row.api_name,
+            );
+        }
+    }
+
+    #[test]
+    fn resolves_shared_signing_names_through_known_sdk_packages() {
+        for (package, signer, name, canonical) in [
+            (
+                "github.com/aws/aws-sdk-go/service/opensearchservice",
+                "es",
+                "CreateDomain",
+                "opensearch",
+            ),
+            (
+                "github.com/aws/aws-sdk-go-v2/service/opensearch",
+                "es",
+                "CreateDomain",
+                "opensearch",
+            ),
+            (
+                "@aws-sdk/client-opensearch",
+                "es",
+                "CreateDomain",
+                "opensearch",
+            ),
+            (
+                "github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi",
+                "tagging",
+                "GetResources",
+                "tag",
+            ),
+            (
+                "github.com/aws/aws-sdk-go/service/ssmincidents",
+                "commander",
+                "CreateResponsePlan",
+                "ssm-incidents",
+            ),
+        ] {
+            assert_eq!(
+                catalog_sdk_api_method(package, signer, name),
+                Some(ApiMethod::new(canonical, name))
+            );
+        }
+        assert_eq!(
+            catalog_sdk_api_method("example.com/opensearch", "es", "CreateDomain"),
+            None
+        );
+        assert_eq!(
+            catalog_sdk_api_method(
+                "github.com/aws/aws-sdk-go/service/s3",
+                "unknown",
+                "CreateDomain"
+            ),
+            None
+        );
+    }
 }
