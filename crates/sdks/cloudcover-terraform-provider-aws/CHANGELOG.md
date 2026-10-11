@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.1.9...cloudcover-terraform-provider-aws-v0.2.0) - 2026-10-11
+
+### Other
+
+- Fix SDK service aliases and Terraform security group rule mappings ([#33](https://github.com/cyruscook/cloudcover/pull/33))
+- Fix missing Terraform load balancer and S3 upload permissions ([#29](https://github.com/cyruscook/cloudcover/pull/29))
+
 ### Fixed
 
 - Follow factory-bound callback fields and promoted interfaces. Restore VPC security group rule create/read/delete operations from provider 4.56.0 onward and remove permissions for the opposite rule direction.

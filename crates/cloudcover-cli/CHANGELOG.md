@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.1.9...cloudcover-cli-v0.2.0) - 2026-10-11
+
+### Other
+
+- Add primary-source FAS permission catalog and expansion ([#31](https://github.com/cyruscook/cloudcover/pull/31))
+
 ### Added
 
 - Include possible FAS permissions in JSON/HCL policies and report applicability review and unknown supplement coverage on stderr.
