@@ -1,0 +1,2198 @@
+{
+  "schema_version": 1,
+  "description": "Primary-source supplement for conditional caller permissions omitted from AWS operation AuthorizedActions. Unlisted operations have unknown coverage, not a guarantee of no dependencies.",
+  "rules": [
+    {
+      "id": "s3-putobject",
+      "service": "s3",
+      "operations": [
+        "PutObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "SSE-KMS or DSSE-KMS destination encryption, explicit or bucket default.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html",
+          "evidence": "To upload an object encrypted with an AWS KMS key to Amazon S3, you need kms:GenerateDataKey permissions on the key."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "To upload an object encrypted with an AWS KMS key to Amazon S3, you need kms:GenerateDataKey permissions on the key."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-getobject",
+      "service": "s3",
+      "operations": [
+        "GetObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Reading an SSE-KMS or DSSE-KMS encrypted object.",
+      "resource_role": "object key",
+      "key_placeholder": "ObjectKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html",
+          "evidence": "To download an object encrypted with an AWS KMS key, you need kms:Decrypt permissions for the key."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "To download an object encrypted with an AWS KMS key, you need kms:Decrypt permissions for the key."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-headobject",
+      "service": "s3",
+      "operations": [
+        "HeadObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "ChecksumMode=ENABLED on an SSE-KMS object; general-purpose bucket.",
+      "resource_role": "object key",
+      "key_placeholder": "ObjectKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+          "evidence": "General purpose buckets: checksum mode with an AWS KMS key requires kms:Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "General purpose buckets: checksum mode with an AWS KMS key requires kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-createmultipartupload",
+      "service": "s3",
+      "operations": [
+        "CreateMultipartUpload"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Initiating an SSE-KMS multipart upload; explicit or default destination encryption.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html",
+          "evidence": "The requester must have kms:GenerateDataKey for CreateMultipartUpload, and kms:Decrypt on UploadPart and UploadPartCopy."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "The requester must have kms:GenerateDataKey for CreateMultipartUpload, and kms:Decrypt on UploadPart and UploadPartCopy."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-uploadpart",
+      "service": "s3",
+      "operations": [
+        "UploadPart"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Uploading parts of an SSE-KMS encrypted multipart upload.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html",
+          "evidence": "The requester must have permission to kms:Decrypt on the key."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "The requester must have permission to kms:Decrypt on the key."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-completemultipartupload",
+      "service": "s3",
+      "operations": [
+        "CompleteMultipartUpload"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Completing an SSE-KMS multipart upload, including additional checksum validation.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html",
+          "evidence": "Additional checksum with a KMS encrypted object requires kms:Decrypt; multipart upload requires GenerateDataKey and Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "Additional checksum with a KMS encrypted object requires kms:Decrypt; multipart upload requires GenerateDataKey and Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-putobject",
+      "service": "s3",
+      "operations": [
+        "PutObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-getobject",
+      "service": "s3",
+      "operations": [
+        "GetObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-headobject",
+      "service": "s3",
+      "operations": [
+        "HeadObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS. ChecksumMode=ENABLED.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-getobjectattributes",
+      "service": "s3",
+      "operations": [
+        "GetObjectAttributes"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-createmultipartupload",
+      "service": "s3",
+      "operations": [
+        "CreateMultipartUpload"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-uploadpart",
+      "service": "s3",
+      "operations": [
+        "UploadPart"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-completemultipartupload",
+      "service": "s3",
+      "operations": [
+        "CompleteMultipartUpload"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-directory-createsession",
+      "service": "s3",
+      "operations": [
+        "CreateSession"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Directory bucket uses SSE-KMS.",
+      "resource_role": "directory bucket key",
+      "key_placeholder": "DirectoryKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html",
+          "evidence": "If encrypted with SSE-KMS, kms:GenerateDataKey and kms:Decrypt permissions are required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-copyobject-source",
+      "service": "s3",
+      "operations": [
+        "CopyObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Copy source object is SSE-KMS or DSSE-KMS encrypted.",
+      "resource_role": "source key",
+      "key_placeholder": "SourceKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html",
+          "evidence": "Downloading encrypted objects requires Decrypt; multipart copy requires decryption of encrypted parts."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "Downloading encrypted objects requires Decrypt; multipart copy requires decryption of encrypted parts."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-copyobject-destination",
+      "service": "s3",
+      "operations": [
+        "CopyObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Copy destination uses SSE-KMS; for multipart copy, directory-bucket permissions explicitly include data-key generation.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html",
+          "evidence": "SSE-KMS destination requires GenerateDataKey; directory copy permissions list GenerateDataKey and Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "SSE-KMS destination requires GenerateDataKey; directory copy permissions list GenerateDataKey and Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-copyobject-destination-decrypt",
+      "service": "s3",
+      "operations": [
+        "CopyObject"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Copy destination is a directory bucket using SSE-KMS.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html",
+          "evidence": "Directory copy and multipart upload permissions include kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-uploadpartcopy-source",
+      "service": "s3",
+      "operations": [
+        "UploadPartCopy"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Copy source object is SSE-KMS or DSSE-KMS encrypted.",
+      "resource_role": "source key",
+      "key_placeholder": "SourceKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html",
+          "evidence": "Downloading encrypted objects requires Decrypt; multipart copy requires decryption of encrypted parts."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "Downloading encrypted objects requires Decrypt; multipart copy requires decryption of encrypted parts."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-uploadpartcopy-destination",
+      "service": "s3",
+      "operations": [
+        "UploadPartCopy"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Multipart copy destination is a directory bucket using SSE-KMS; its API permissions explicitly require data-key generation.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html",
+          "evidence": "SSE-KMS destination requires GenerateDataKey; directory copy permissions list GenerateDataKey and Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "SSE-KMS destination requires GenerateDataKey; directory copy permissions list GenerateDataKey and Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "s3-uploadpartcopy-destination-decrypt",
+      "service": "s3",
+      "operations": [
+        "UploadPartCopy"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Destination multipart upload uses SSE-KMS, requiring decryption of encrypted parts for assembly.",
+      "resource_role": "destination key",
+      "key_placeholder": "DestinationKeyId",
+      "via_service": "s3.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html",
+          "evidence": "Directory copy and multipart upload permissions include kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-create-key-validation",
+      "service": "secretsmanager",
+      "operations": [
+        "CreateSecret"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Customer-managed key is established, including key-access validation without a secret value.",
+      "resource_role": "secret key",
+      "key_placeholder": "SecretKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "When you establish or change the KMS key, Secrets Manager calls GenerateDataKey and Decrypt to validate access."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-write-value",
+      "service": "secretsmanager",
+      "operations": [
+        "PutSecretValue"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Writing a secret value encrypted with a customer-managed key.",
+      "resource_role": "secret key",
+      "key_placeholder": "SecretKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "PutSecretValue requests a new data key to encrypt the specified secret value."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-idempotency",
+      "service": "secretsmanager",
+      "operations": [
+        "PutSecretValue",
+        "UpdateSecret"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Idempotency comparison against an existing version encrypted with a customer-managed key.",
+      "resource_role": "existing version key",
+      "key_placeholder": "ExistingKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "PutSecretValue or UpdateSecret decrypts the existing secret value and compares it to the request."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-read",
+      "service": "secretsmanager",
+      "operations": [
+        "GetSecretValue",
+        "BatchGetSecretValue"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Reading secret values encrypted with customer-managed keys.",
+      "resource_role": "secret key",
+      "key_placeholder": "SecretKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "GetSecretValue and BatchGetSecretValue decrypt the secret value before returning it."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-update-new-key",
+      "service": "secretsmanager",
+      "operations": [
+        "UpdateSecret"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Secret value changes or a customer-managed key is established/changed; key validation may occur.",
+      "resource_role": "new secret key",
+      "key_placeholder": "NewKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "UpdateSecret requests a new data key if the value or KMS key changes; key validation uses GenerateDataKey and Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-update-old-key",
+      "service": "secretsmanager",
+      "operations": [
+        "UpdateSecret"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Changing the encryption key for existing secret versions.",
+      "resource_role": "old secret key",
+      "key_placeholder": "OldKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "Secrets Manager decrypts encrypted data keys before re-encrypting existing versions with the new key."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-reencrypt",
+      "service": "secretsmanager",
+      "operations": [
+        "UpdateSecret"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Encrypt"
+      ],
+      "applicability": "Changing the encryption key for AWSCURRENT, AWSPREVIOUS and AWSPENDING versions.",
+      "resource_role": "new secret key",
+      "key_placeholder": "NewKeyId",
+      "via_service": "secretsmanager.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "If you change the KMS key, Secrets Manager re-encrypts the data key that protects existing secret versions with the new key."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "secrets-replicate-primary",
+      "service": "secretsmanager",
+      "operations": [
+        "ReplicateSecretToRegions"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Replication of a secret encrypted with a customer-managed source key.",
+      "resource_role": "primary Region key",
+      "key_placeholder": "PrimaryKeyId",
+      "via_service": "secretsmanager.${PrimaryRegion}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "Secrets Manager first decrypts the secret value in the primary Region before re-encrypting in the replica Region."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "PrimaryRegion"
+    },
+    {
+      "id": "secrets-replicate-replica",
+      "service": "secretsmanager",
+      "operations": [
+        "ReplicateSecretToRegions"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Encrypt",
+        "Decrypt"
+      ],
+      "applicability": "Replica encryption uses a customer-managed key; includes encryption and key-access validation.",
+      "resource_role": "replica Region key",
+      "key_placeholder": "ReplicaKeyId",
+      "via_service": "secretsmanager.${ReplicaRegion}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "Replication requests a data key in the replica Region; the Monitor interaction section also explicitly describes an Encrypt request during replication."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "ReplicaRegion"
+    },
+    {
+      "id": "kinesis-produce",
+      "service": "kinesis",
+      "operations": [
+        "PutRecord",
+        "PutRecords"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Stream uses customer-managed KMS encryption.",
+      "resource_role": "stream key",
+      "key_placeholder": "StreamKeyId",
+      "via_service": "kinesis.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/permissions-user-key-KMS.html",
+          "evidence": "Kinesis stream producers must have kms:GenerateDataKey permission."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "kinesis-consume",
+      "service": "kinesis",
+      "operations": [
+        "GetRecords",
+        "SubscribeToShard"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Consuming records from a stream using customer-managed KMS encryption.",
+      "resource_role": "stream key",
+      "key_placeholder": "StreamKeyId",
+      "via_service": "kinesis.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/permissions-user-key-KMS.html",
+          "evidence": "Kinesis stream consumers must have kms:Decrypt permission."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "sns-publish",
+      "service": "sns",
+      "operations": [
+        "Publish",
+        "PublishBatch"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Publishing to an SSE-KMS encrypted topic; does not apply to direct SMS publication.",
+      "resource_role": "topic key",
+      "key_placeholder": "TopicKeyId",
+      "via_service": "sns.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-key-management.html",
+          "evidence": "The publisher must have kms:GenerateDataKey* and kms:Decrypt; PublishBatch uses the same Publish API action."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-batch-api-actions.html",
+          "evidence": "The publisher must have kms:GenerateDataKey* and kms:Decrypt; PublishBatch uses the same Publish API action."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "sqs-produce",
+      "service": "sqs",
+      "operations": [
+        "SendMessage",
+        "SendMessageBatch"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "Queue uses SSE-KMS; requests after data-key reuse expires validate/generate a key.",
+      "resource_role": "queue key",
+      "key_placeholder": "QueueKeyId",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html",
+          "evidence": "SendMessage or SendMessageBatch triggers Decrypt and GenerateDataKey after data-key reuse expires."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "sqs-consume",
+      "service": "sqs",
+      "operations": [
+        "ReceiveMessage"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Receiving SSE-KMS encrypted messages, including messages encrypted with previous queue keys.",
+      "resource_role": "message key",
+      "key_placeholder": "MessageKeyId",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html",
+          "evidence": "Consumer must have kms:Decrypt for any KMS key used to encrypt messages in the queue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "sqs-dead-letter",
+      "service": "sqs",
+      "operations": [
+        "ReceiveMessage"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Receiving messages from a dead-letter queue whose source queue uses a different KMS key.",
+      "resource_role": "source queue key",
+      "key_placeholder": "SourceQueueKeyId",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html",
+          "evidence": "A dead-letter queue consumer must also have kms:Decrypt for any key used to encrypt messages in the source queue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-standard-write",
+      "service": "ssm",
+      "operations": [
+        "PutParameter"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Encrypt"
+      ],
+      "applicability": "Type=SecureString, standard tier, customer-managed key.",
+      "resource_role": "parameter key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "To encrypt a standard SecureString value, the user needs kms:Encrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-advanced-write",
+      "service": "ssm",
+      "operations": [
+        "PutParameter"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey"
+      ],
+      "applicability": "Type=SecureString, advanced tier (including Intelligent-Tiering selecting advanced), customer-managed key.",
+      "resource_role": "parameter key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "To encrypt an advanced SecureString value, the user needs kms:GenerateDataKey."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-read-getparameter",
+      "service": "ssm",
+      "operations": [
+        "GetParameter"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "WithDecryption=true for SecureString values encrypted with customer-managed keys.",
+      "resource_role": "parameter/version key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-read-getparameters",
+      "service": "ssm",
+      "operations": [
+        "GetParameters"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "WithDecryption=true for SecureString values encrypted with customer-managed keys.",
+      "resource_role": "parameter/version key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-read-getparametersbypath",
+      "service": "ssm",
+      "operations": [
+        "GetParametersByPath"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "WithDecryption=true for SecureString values encrypted with customer-managed keys.",
+      "resource_role": "parameter/version key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-read-getparameterhistory",
+      "service": "ssm",
+      "operations": [
+        "GetParameterHistory"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "WithDecryption=true for SecureString values encrypted with customer-managed keys.",
+      "resource_role": "parameter/version key",
+      "key_placeholder": "ParameterKeyId",
+      "via_service": "ssm.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/secure-string-parameter-kms-encryption.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html",
+          "evidence": "WithDecryption returns decrypted SecureString values; decrypting either tier requires kms:Decrypt."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "ssm-secrets-reference",
+      "service": "ssm",
+      "operations": [
+        "GetParameter",
+        "GetParameters"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "Name has /aws/reference/secretsmanager/ prefix; Parameter Store honors the caller's secret permissions.",
+      "resource_role": "referenced secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html",
+          "evidence": "Only GetParameter and GetParameters support secret references. Parameter Store functions as a pass-through service."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "dynamodb-access",
+      "service": "dynamodb",
+      "operations": [
+        "GetItem",
+        "BatchGetItem",
+        "Query",
+        "Scan",
+        "TransactGetItems",
+        "PutItem",
+        "BatchWriteItem",
+        "UpdateItem",
+        "DeleteItem",
+        "TransactWriteItems",
+        "ExecuteStatement",
+        "BatchExecuteStatement",
+        "ExecuteTransaction"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Table uses customer-managed or AWS-managed KMS encryption; table-key cache miss on caller access. AWS-owned keys need no additional permissions.",
+      "resource_role": "table key",
+      "key_placeholder": "TableKeyId",
+      "via_service": "dynamodb.*.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/encryption.usagenotes.html",
+          "evidence": "When you access an encrypted table, DynamoDB sends a Decrypt request; the user in the event is the principal accessing the table."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "dynamodb-select-key",
+      "service": "dynamodb",
+      "operations": [
+        "CreateTable",
+        "UpdateTable"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Encrypt",
+        "Decrypt",
+        "ReEncrypt",
+        "GenerateDataKey",
+        "GenerateDataKeyWithoutPlaintext",
+        "DescribeKey",
+        "CreateGrant"
+      ],
+      "applicability": "Selecting a customer-managed table encryption key. Background maintenance uses grants rather than adding its calls to every caller.",
+      "resource_role": "selected table key",
+      "key_placeholder": "TableKeyId",
+      "via_service": "dynamodb.*.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/encryption.usagenotes.html",
+          "evidence": "The principal who selects the customer-managed key must have Encrypt, Decrypt, ReEncrypt*, GenerateDataKey*, DescribeKey and CreateGrant."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-executestatement-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "ExecuteStatement"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-executestatement-iam",
+      "service": "redshift-data",
+      "operations": [
+        "ExecuteStatement"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-executestatement-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "ExecuteStatement"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-executestatement-secret",
+      "service": "redshift-data",
+      "operations": [
+        "ExecuteStatement"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-batchexecutestatement-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "BatchExecuteStatement"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-batchexecutestatement-iam",
+      "service": "redshift-data",
+      "operations": [
+        "BatchExecuteStatement"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-batchexecutestatement-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "BatchExecuteStatement"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-batchexecutestatement-secret",
+      "service": "redshift-data",
+      "operations": [
+        "BatchExecuteStatement"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_BatchExecuteStatement.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-describetable-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "DescribeTable"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-describetable-iam",
+      "service": "redshift-data",
+      "operations": [
+        "DescribeTable"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-describetable-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "DescribeTable"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-describetable-secret",
+      "service": "redshift-data",
+      "operations": [
+        "DescribeTable"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listdatabases-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "ListDatabases"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listdatabases-iam",
+      "service": "redshift-data",
+      "operations": [
+        "ListDatabases"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listdatabases-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "ListDatabases"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listdatabases-secret",
+      "service": "redshift-data",
+      "operations": [
+        "ListDatabases"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listschemas-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "ListSchemas"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listschemas-iam",
+      "service": "redshift-data",
+      "operations": [
+        "ListSchemas"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listschemas-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "ListSchemas"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listschemas-secret",
+      "service": "redshift-data",
+      "operations": [
+        "ListSchemas"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listtables-serverless",
+      "service": "redshift-data",
+      "operations": [
+        "ListTables"
+      ],
+      "downstream_service": "redshift-serverless",
+      "downstream_operations": [
+        "GetCredentials"
+      ],
+      "applicability": "Temporary credentials for a serverless workgroup.",
+      "resource_role": "workgroup credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html",
+          "evidence": "Permission to call redshift-serverless:GetCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listtables-iam",
+      "service": "redshift-data",
+      "operations": [
+        "ListTables"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentialsWithIAM"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as an IAM identity.",
+      "resource_role": "cluster credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html",
+          "evidence": "Permission to call redshift:GetClusterCredentialsWithIAM is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listtables-dbuser",
+      "service": "redshift-data",
+      "operations": [
+        "ListTables"
+      ],
+      "downstream_service": "redshift",
+      "downstream_operations": [
+        "GetClusterCredentials"
+      ],
+      "applicability": "Temporary credentials for a provisioned cluster as a database user (DbUser supplied).",
+      "resource_role": "cluster/database user credentials",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html",
+          "evidence": "Permission to call redshift:GetClusterCredentials is required."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-listtables-secret",
+      "service": "redshift-data",
+      "operations": [
+        "ListTables"
+      ],
+      "downstream_service": "secretsmanager",
+      "downstream_operations": [
+        "GetSecretValue"
+      ],
+      "applicability": "SecretArn supplied for Secrets Manager database authentication.",
+      "resource_role": "database credential secret",
+      "key_placeholder": null,
+      "via_service": null,
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-iam.html",
+          "evidence": "Secrets Manager authentication uses the secret containing username and password; the Data API user policy grants secretsmanager:GetSecretValue."
+        }
+      ],
+      "reviewed": "2026-10-10",
+      "region_placeholder": "Region"
+    },
+    {
+      "id": "redshift-data-grant",
+      "service": "redshift-data",
+      "operations": [
+        "ExecuteStatement",
+        "BatchExecuteStatement"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "CreateGrant",
+        "DescribeKey"
+      ],
+      "applicability": "Querying a cluster or serverless workgroup encrypted with a customer-managed key; Data API creates a grant for query/result encryption.",
+      "resource_role": "cluster/workgroup key",
+      "key_placeholder": "WarehouseKeyId",
+      "region_placeholder": "Region",
+      "via_service": "redshift.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-kms.html",
+          "evidence": "ExecuteStatement or BatchExecuteStatement creates a grant on your behalf. The example key policy grants DescribeKey and CreateGrant with kms:ViaService=redshift.amazonaws.com."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-configure",
+      "service": "states",
+      "operations": [
+        "CreateStateMachine",
+        "UpdateStateMachine"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "DescribeKey",
+        "GenerateDataKey"
+      ],
+      "applicability": "State machine encryption uses a customer-managed KMS key.",
+      "resource_role": "state machine key",
+      "key_placeholder": "StateMachineKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-describe",
+      "service": "states",
+      "operations": [
+        "DescribeStateMachine",
+        "DescribeStateMachineForExecution"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Customer-managed key encryption and includedData requests encrypted data rather than METADATA_ONLY.",
+      "resource_role": "state machine key",
+      "key_placeholder": "StateMachineKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-execution-data",
+      "service": "states",
+      "operations": [
+        "DescribeExecution",
+        "GetExecutionHistory"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Retrieving encrypted execution data; metadata-only/excluded execution-data requests may avoid KMS permissions.",
+      "resource_role": "state machine key",
+      "key_placeholder": "StateMachineKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-sync",
+      "service": "states",
+      "operations": [
+        "StartSyncExecution"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Synchronous Express workflow uses a customer-managed encryption key and returns execution data.",
+      "resource_role": "state machine key",
+      "key_placeholder": "StateMachineKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-activity-create",
+      "service": "states",
+      "operations": [
+        "CreateActivity"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "DescribeKey"
+      ],
+      "applicability": "Activity encryption uses a customer-managed key.",
+      "resource_role": "activity key",
+      "key_placeholder": "ActivityKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "states-activity-task",
+      "service": "states",
+      "operations": [
+        "GetActivityTask"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Retrieving task data from an activity encrypted with a customer-managed key.",
+      "resource_role": "activity key",
+      "key_placeholder": "ActivityKeyId",
+      "region_placeholder": "Region",
+      "via_service": "states.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table lists these actions. The service calls KMS on behalf of the API caller; execution-role calls are separate."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ecr-create",
+      "service": "ecr",
+      "operations": [
+        "CreateRepository"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "DescribeKey",
+        "CreateGrant",
+        "RetireGrant"
+      ],
+      "applicability": "Repository encryptionType=KMS or KMS_DSSE; the creator configures KMS-backed repository encryption.",
+      "resource_role": "repository key",
+      "key_placeholder": "RepositoryKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ecr.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html",
+          "evidence": "The repository creator must have kms:CreateGrant, kms:RetireGrant and kms:DescribeKey. ECR uses grants for image encryption/decryption."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ecr-delete",
+      "service": "ecr",
+      "operations": [
+        "DeleteRepository"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "RetireGrant"
+      ],
+      "applicability": "Deleting a KMS-encrypted repository and retiring its encryption grants.",
+      "resource_role": "repository key",
+      "key_placeholder": "RepositoryKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ecr.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html",
+          "evidence": "The IAM principal that deletes the repository must have kms:RetireGrant permission."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ec2-volume",
+      "service": "ec2",
+      "operations": [
+        "CreateVolume"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "CreateGrant",
+        "GenerateDataKeyWithoutPlaintext",
+        "Decrypt"
+      ],
+      "applicability": "Creating an encrypted EBS volume, including encryption by default, from an unencrypted snapshot.",
+      "resource_role": "volume key",
+      "key_placeholder": "VolumeKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ec2.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/how-ebs-encryption-works.html",
+          "evidence": "EC2 sends CreateGrant, GenerateDataKeyWithoutPlaintext and Decrypt when creating an encrypted volume from an unencrypted snapshot."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ec2-volume-encrypted-snapshot",
+      "service": "ec2",
+      "operations": [
+        "CreateVolume"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKeyWithoutPlaintext"
+      ],
+      "applicability": "Creating an encrypted volume from an encrypted snapshot owned by the caller. This covers the documented same-key case; different-key source permissions remain unknown.",
+      "resource_role": "volume key",
+      "key_placeholder": "VolumeKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ec2.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/how-ebs-encryption-works.html",
+          "evidence": "EC2 sends GenerateDataKeyWithoutPlaintext with the KMS key chosen for volume encryption."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ec2-attach",
+      "service": "ec2",
+      "operations": [
+        "AttachVolume"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "CreateGrant",
+        "Decrypt"
+      ],
+      "applicability": "Attaching an encrypted EBS volume to an instance.",
+      "resource_role": "volume key",
+      "key_placeholder": "VolumeKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ec2.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/how-ebs-encryption-works.html",
+          "evidence": "When you attach an encrypted volume to an instance, EC2 sends CreateGrant and Decrypt requests to KMS."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "ec2-ebs-key-validation",
+      "service": "ec2",
+      "operations": [
+        "CreateVolume",
+        "AttachVolume"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "DescribeKey"
+      ],
+      "applicability": "Using a KMS key for EBS encryption.",
+      "resource_role": "volume key",
+      "key_placeholder": "VolumeKeyId",
+      "region_placeholder": "Region",
+      "via_service": "ec2.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html",
+          "evidence": "Required user permissions for EBS encryption include kms:DescribeKey."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "lambda-configure-key",
+      "service": "lambda",
+      "operations": [
+        "CreateFunction",
+        "UpdateFunctionConfiguration"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "CreateGrant",
+        "Encrypt"
+      ],
+      "applicability": "Configuring a customer-managed KMS key for server-side environment-variable encryption.",
+      "resource_role": "function key",
+      "key_placeholder": "FunctionKeyId",
+      "region_placeholder": "Region",
+      "via_service": "lambda.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars-encryption.html",
+          "evidence": "kms:CreateGrant and kms:Encrypt are needed to configure a customer-managed key on a function. Lambda uses your permissions to create a grant."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "lambda-view-env",
+      "service": "lambda",
+      "operations": [
+        "GetFunction",
+        "GetFunctionConfiguration"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Viewing environment variables encrypted with a customer-managed key.",
+      "resource_role": "function key",
+      "key_placeholder": "FunctionKeyId",
+      "region_placeholder": "Region",
+      "via_service": "lambda.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars-encryption.html",
+          "evidence": "kms:Decrypt is needed to view and manage environment variables encrypted with a customer-managed key."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "sqs-redrive-dlq",
+      "service": "sqs",
+      "operations": [
+        "StartMessageMoveTask",
+        "CancelMessageMoveTask"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "The dead-letter queue has messages encrypted with KMS; applies to starting and cancelling redrive.",
+      "resource_role": "dead-letter message key",
+      "key_placeholder": "DeadLetterKeyId",
+      "region_placeholder": "Region",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-dead-letter-queue-redrive.html",
+          "evidence": "Starting redrive requires Decrypt for any key used to encrypt messages; cancelling redrive also requires Decrypt when the dead-letter queue is encrypted."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "sqs-redrive-original",
+      "service": "sqs",
+      "operations": [
+        "StartMessageMoveTask"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "Decrypt"
+      ],
+      "applicability": "Redriving messages whose original source queue used KMS encryption, possibly with a different or historical key.",
+      "resource_role": "original source queue key",
+      "key_placeholder": "OriginalQueueKeyId",
+      "region_placeholder": "Region",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-dead-letter-queue-redrive.html",
+          "evidence": "If either the dead-letter queue or the original source queue is encrypted, Decrypt for any key used to encrypt the messages is required."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "id": "sqs-redrive-destination",
+      "service": "sqs",
+      "operations": [
+        "StartMessageMoveTask"
+      ],
+      "downstream_service": "kms",
+      "downstream_operations": [
+        "GenerateDataKey",
+        "Decrypt"
+      ],
+      "applicability": "The destination queue uses SSE-KMS encryption.",
+      "resource_role": "redrive destination key",
+      "key_placeholder": "DestinationQueueKeyId",
+      "region_placeholder": "Region",
+      "via_service": "sqs.${Region}.amazonaws.com",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-dead-letter-queue-redrive.html",
+          "evidence": "If the destination queue is encrypted, GenerateDataKey and Decrypt are required."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    }
+  ],
+  "reviewed_no_dependencies": [
+    {
+      "service": "secretsmanager",
+      "operations": [
+        "DescribeSecret",
+        "ListSecrets",
+        "ListSecretVersionIds",
+        "DeleteSecret",
+        "TagResource",
+        "UntagResource",
+        "RotateSecret"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html",
+          "evidence": "Cryptographic permission section enumerates value/key operations. RotateSecret itself does not change a value; a rotation Lambda uses its own role."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "service": "s3",
+      "operations": [
+        "DeleteObject",
+        "DeleteObjects",
+        "ListObjects",
+        "ListObjectsV2",
+        "AbortMultipartUpload"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+          "evidence": "KMS permissions are for encrypted object data access and upload, not deleting/listing objects or aborting uploads."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "service": "states",
+      "operations": [
+        "StartExecution",
+        "SendTaskSuccess",
+        "SendTaskFailure",
+        "StopExecution",
+        "RedriveExecution"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html",
+          "evidence": "The Required permissions for API callers table shows no caller KMS permission for these APIs. The state machine execution role supplies the execution permissions."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    },
+    {
+      "service": "ecr",
+      "operations": [
+        "PutImage",
+        "UploadLayerPart",
+        "CompleteLayerUpload",
+        "InitiateLayerUpload",
+        "BatchGetImage",
+        "GetDownloadUrlForLayer"
+      ],
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html",
+          "evidence": "ECR creates grants at repository creation to authorize image encryption/decryption; do not add those grant-authorized internal cryptographic calls to image callers."
+        }
+      ],
+      "reviewed": "2026-10-10"
+    }
+  ]
+}

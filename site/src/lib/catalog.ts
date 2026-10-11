@@ -5,6 +5,22 @@ export type ApiMethod = {
   name: string;
   canonical: string;
   permissionIds: number[];
+  fas?: FasInfo;
+};
+
+export type FasDependency = {
+  ruleId: string;
+  applicability: string;
+  resourceRole: string;
+  viaService?: string;
+  sources: { url: string; evidence: string }[];
+  path: string[];
+  permissions: string[];
+};
+
+export type FasInfo = {
+  coverage: "documented_dependencies" | "reviewed_no_dependencies" | "unknown";
+  dependencies: FasDependency[];
 };
 
 export type ApiCatalog = {
@@ -40,6 +56,10 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
   schemaVersion(document, "API catalog");
   const iamPermissions = strings(document.iam_permissions, "API IAM permissions");
   const apiMethodsValue = array(document.api_methods, "API methods");
+  const fasEntries = document.fas === undefined ? undefined : array(document.fas, "FAS entries");
+  if (fasEntries && fasEntries.length !== apiMethodsValue.length) {
+    throw new CatalogError("FAS entries do not match the API method index");
+  }
   const apiMethods = apiMethodsValue.map((row, index) => {
     const values = tuple(row, 3, `API method ${index}`);
     const service = string(values[0], `API method ${index} service`);
@@ -58,7 +78,11 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
     if (!strictlyIncreasing(permissionIds)) {
       throw new CatalogError(`API method ${index} has unsorted IAM permission IDs`);
     }
-    return { service, name, canonical: `${service}.${name}`, permissionIds };
+    const fas = fasEntries ? parseFasInfo(fasEntries[index]) : undefined;
+    if (fas && fas.dependencies.some(dependency => dependency.permissions.some(
+      permission => !permissionIds.some(id => iamPermissions[id] === permission),
+    ))) throw new CatalogError(`API method ${index} omits a FAS permission`);
+    return { service, name, canonical: `${service}.${name}`, permissionIds, fas };
   });
 
   if (
@@ -72,6 +96,34 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
   }
 
   return { iamPermissions, apiMethods };
+}
+
+function parseFasInfo(value: unknown): FasInfo {
+  const entry = record(value, "FAS entry");
+  const coverage = string(entry.coverage, "FAS coverage");
+  if (!["documented_dependencies", "reviewed_no_dependencies", "unknown"].includes(coverage)) {
+    throw new CatalogError("Unknown FAS coverage status");
+  }
+  const dependencies = array(entry.dependencies, "FAS dependencies").map(value => {
+    const dependency = record(value, "FAS dependency");
+    const rule = record(dependency.rule, "FAS rule");
+    const sources = array(rule.sources, "FAS sources").map(value => {
+      const source = record(value, "FAS source");
+      const url = string(source.url, "FAS source URL");
+      if (!url.startsWith("https://docs.aws.amazon.com/")) throw new CatalogError("FAS source is not AWS documentation");
+      return { url, evidence: string(source.evidence, "FAS evidence") };
+    });
+    const viaService = rule.via_service === null ? undefined : string(rule.via_service, "KMS ViaService");
+    return {
+      ruleId: string(rule.id, "FAS rule ID"),
+      applicability: string(rule.applicability, "FAS applicability"),
+      resourceRole: string(rule.resource_role, "FAS resource role"),
+      viaService, sources,
+      path: strings(dependency.path, "FAS path"),
+      permissions: strings(dependency.iam_permissions, "FAS permissions"),
+    };
+  });
+  return { coverage: coverage as FasInfo["coverage"], dependencies };
 }
 
 export function parseTerraformIndex(value: unknown): TerraformIndex {

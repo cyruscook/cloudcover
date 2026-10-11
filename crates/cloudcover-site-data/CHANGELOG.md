@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Publish FAS applicability, AWS citations, transitive provenance, and coverage alongside API permissions and distribute the checked-in supplement.
+
 ### Fixed
 
 - Resolve Terraform service aliases through the AWS provider so load balancers and other aliased services retain their API and IAM mappings.

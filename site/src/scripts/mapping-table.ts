@@ -109,6 +109,7 @@ export function mappingTable(
   scroll.tabIndex = 0;
   const table = node("table", "", `mapping-table${terraform ? " resource-table" : ""}`);
   table.id = "mapping-table";
+  section.append(node("p", "FAS permissions are possible requirements based on request options and resource configuration. Copied action names omit policy conditions; review the AWS sources and scope each grant to the relevant resource.", "fas-note"));
   table.append(node("caption", `Each API action is grouped with its indexed IAM permissions.${terraform ? " Lifecycle steps indicate where Terraform uses the action." : ""}`, "sr-only"));
   const columns = node("colgroup");
   columns.append(node("col", "", "action-column"), node("col", "", "permission-column"));
@@ -195,6 +196,12 @@ export function mappingTable(
             for (const step of mapping.lifecycles) steps.append(node("span", stepLabel(step), "lifecycle-tag"));
             context.append(steps);
           }
+          const coverage = method.fas?.coverage ?? "unknown";
+          context.append(node("small", coverage === "unknown"
+            ? "FAS coverage unknown"
+            : coverage === "reviewed_no_dependencies"
+              ? "No caller FAS dependency found in review"
+              : "Includes possible FAS requirements", "fas-coverage"));
           action.append(context);
           row.append(action);
         }
@@ -203,6 +210,28 @@ export function mappingTable(
         else {
           const name = catalog.iamPermissions[id];
           permission.append(link({ kind: "iam", id, label: name, normalized: name.toLowerCase() }));
+          const dependencies = method.fas?.dependencies.filter(dependency => dependency.permissions.includes(name)) ?? [];
+          if (dependencies.length) {
+            const details = node("details", "", "fas-details");
+            details.append(node("summary", "Possible FAS requirement"));
+            for (const dependency of dependencies) {
+              details.append(node("p", `${dependency.applicability} Resource: ${dependency.resourceRole}.`));
+              if (dependency.viaService) details.append(node("p", `kms:ViaService = ${dependency.viaService}`));
+              for (const parentId of dependency.path.slice(0, -1)) {
+                const parent = method.fas?.dependencies.find(value => value.ruleId === parentId);
+                if (parent) details.append(node("p", `Through ${parent.resourceRole}: ${parent.applicability}`));
+              }
+              for (const source of dependency.sources) {
+                const citation = node("a", "AWS documentation");
+                citation.href = source.url;
+                citation.target = "_blank";
+                citation.rel = "noopener noreferrer";
+                citation.title = source.evidence;
+                details.append(citation);
+              }
+            }
+            permission.append(details);
+          }
         }
         row.append(permission);
         if (terraform && position === 0) {

@@ -15,7 +15,10 @@ impl AwsProvider {
     pub const fn new() -> Self {
         Self
     }
-    /// Returns the IAM permissions authorized by an AWS API operation.
+    /// Returns direct IAM permissions plus documented possible FAS permissions.
+    ///
+    /// This action-only projection omits conditions and applicability. Use
+    /// `fas_dependencies` for evidence and `permissions_policy` for scoped grants.
     ///
     /// # Errors
     ///
@@ -31,6 +34,25 @@ impl AwsProvider {
         Ok(permissions)
     }
 
+    /// Returns conditional downstream permissions with primary sources and parent paths.
+    ///
+    /// # Errors
+    /// Returns an error for an unknown operation or an invalid supplement reference.
+    pub fn fas_dependencies(
+        &self,
+        method: &ApiMethod,
+    ) -> Result<Vec<crate::fas::FasDependency>, AwsError> {
+        crate::fas::dependencies(method)
+    }
+
+    /// Returns the supplement's review coverage for this operation.
+    ///
+    /// # Errors
+    /// Returns an error for an unknown operation or an invalid catalog.
+    pub fn fas_coverage(&self, method: &ApiMethod) -> Result<crate::fas::FasCoverage, AwsError> {
+        crate::fas::coverage(method)
+    }
+
     /// Returns the IAM permissions policy as a Terraform HCL data source.
     ///
     /// # Errors
@@ -44,6 +66,8 @@ impl AwsProvider {
 
 #[derive(Debug, thiserror::Error)]
 pub enum AwsError {
+    #[error("invalid FAS catalog: {message}")]
+    InvalidFasCatalog { message: String },
     #[error("unknown AWS API method {service}:{name}")]
     UnknownApiMethod { service: String, name: String },
     #[error("failed to encode IAM policy as Terraform HCL: {source}")]

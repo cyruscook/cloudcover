@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Expand documented possible FAS dependencies from a checked-in AWS source catalog, preserving conditions, resource roles, transitive paths, and coverage status.
+
 ### Fixed
 
 - Resolve historical SDK display names and runtime client service aliases using AWS-published operation metadata, retaining their API and IAM mappings.
