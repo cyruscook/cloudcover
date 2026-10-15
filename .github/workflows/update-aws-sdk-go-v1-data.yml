@@ -1,0 +1,103 @@
+name: Update AWS SDK Go v1 mapping data
+
+on:
+  schedule:
+    - cron: '37 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-aws-sdk-go-v1-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Check out repository # zizmor: ignore[artipacked]
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249 # stable
+        with:
+          toolchain: stable
+
+      - name: Install Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.26.x'
+
+      - name: Clone SDK release history
+        run: |
+          mkdir -p target/aws-sdk-go-v1-data
+          git clone --bare https://github.com/aws/aws-sdk-go.git target/aws-sdk-go-v1-data/repository.git
+
+      - name: Generate all stable releases
+        run: cargo run -p cloudcover-aws-sdk-go-v1 --features generator --bin generate-aws-sdk-go-v1-data -- --force
+
+      - name: Detect generated data changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain -- crates/sdks/cloudcover-aws-sdk-go-v1/data)" ]; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepare pull request body
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          {
+            echo 'Generated AWS SDK Go v1 mapping data for:'
+            git status --porcelain -- crates/sdks/cloudcover-aws-sdk-go-v1/data \
+              | sed 's/^/- /'
+          } > "$RUNNER_TEMP/aws-sdk-go-v1-data-pr-body.md"
+
+      - name: Run focused data tests
+        if: steps.changes.outputs.changed == 'true'
+        run: cargo test -p cloudcover-aws-sdk-go-v1
+
+      - name: Commit generated data
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/aws-sdk-go-v1-data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- crates/sdks/cloudcover-aws-sdk-go-v1/data
+          git commit -m 'Update AWS SDK Go v1 mapping data'
+
+      - name: Push generated data branch
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/aws-sdk-go-v1-data
+        run: |
+          remote_sha="$(git ls-remote --heads origin "$BRANCH" | awk 'NR == 1 { print $1 }')"
+          if [ -n "$remote_sha" ]; then
+            git fetch origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+          fi
+          git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$remote_sha"
+
+      - name: Create or update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH: automation/aws-sdk-go-v1-data
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          pull_request="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -n "$pull_request" ]; then
+            gh pr edit "$pull_request" \
+              --title 'Update AWS SDK Go v1 mapping data' \
+              --body-file "$RUNNER_TEMP/aws-sdk-go-v1-data-pr-body.md"
+          else
+            gh pr create \
+              --head "$BRANCH" \
+              --base "$DEFAULT_BRANCH" \
+              --title 'Update AWS SDK Go v1 mapping data' \
+              --body-file "$RUNNER_TEMP/aws-sdk-go-v1-data-pr-body.md"
+          fi

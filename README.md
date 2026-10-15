@@ -58,3 +58,21 @@ cloudcover policy --language typescript ./path/to/project
 
 JavaScript and TypeScript analysis requires Node.js on `PATH`.
 When present, `tsconfig.json` or `jsconfig.json` sets the project entrypoints.
+
+## Scheduled mapping updates
+
+GitHub Actions refreshes Terraform AWS provider data and the AWS SDK mappings
+daily. Each workflow tests changed data and creates or updates a dedicated
+automation PR; runs with no data changes do not create a commit or PR.
+
+| Mapping | Daily schedule (UTC) | Manual generation |
+| --- | --- | --- |
+| Terraform AWS provider | 06:17 | Exact `version`, inclusive `from`/`to` range, or all stable releases |
+| AWS SDK Go v1 | 06:37 | All stable v1 releases from a fresh bare SDK clone |
+| AWS SDK Go v2 | 06:47 | Exact service `tag` (for example, `service/s3/v1.104.0`), or all stable service releases |
+| AWS SDK JavaScript/TypeScript v3 | 06:57 | All stable current and historical client package releases |
+
+Run these workflows from the repository's Actions tab using **Run workflow**.
+Go v2 skips already recorded releases. Go v1 and JavaScript/TypeScript regenerate
+their complete histories because their generators replace the output file.
+JavaScript and TypeScript share the same SDK mapping data and update workflow.
