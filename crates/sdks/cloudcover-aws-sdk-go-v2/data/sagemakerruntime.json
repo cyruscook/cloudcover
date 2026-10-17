@@ -1171,6 +1171,60 @@
       "module_version": "1.49.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerruntime",
+          "Client",
+          "InvokeEndpoint",
+          [
+            [
+              "sagemaker",
+              "InvokeEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerruntime",
+          "Client",
+          "InvokeEndpointAsync",
+          [
+            [
+              "sagemaker",
+              "InvokeEndpointAsync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerruntime",
+          "Client",
+          "InvokeEndpointWithResponseStream",
+          [
+            [
+              "sagemaker",
+              "InvokeEndpointWithResponseStream"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

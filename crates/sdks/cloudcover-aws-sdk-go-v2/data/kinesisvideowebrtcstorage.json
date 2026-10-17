@@ -801,6 +801,49 @@
       "module_version": "1.28.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.28.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kinesisvideowebrtcstorage",
+          "Client",
+          "JoinStorageSession",
+          [
+            [
+              "kinesisvideo",
+              "JoinStorageSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kinesisvideowebrtcstorage",
+          "Client",
+          "JoinStorageSessionAsViewer",
+          [
+            [
+              "kinesisvideo",
+              "JoinStorageSessionAsViewer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.28.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

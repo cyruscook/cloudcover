@@ -2900,6 +2900,137 @@
       "module_version": "1.82.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.82.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.83.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "GetRemediationsV2",
+          [
+            [
+              "securityhub",
+              "GetRemediationsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "ListExposuresByRemediationV2",
+          [
+            [
+              "securityhub",
+              "ListExposuresByRemediationV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "GetRemediationsV2Paginator",
+          "NextPage",
+          [
+            [
+              "securityhub",
+              "GetRemediationsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "ListExposuresByRemediationV2Paginator",
+          "NextPage",
+          [
+            [
+              "securityhub",
+              "ListExposuresByRemediationV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.83.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.84.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "CancelExportJobV2",
+          [
+            [
+              "securityhub",
+              "CancelExportJobV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "GetExportJobV2",
+          [
+            [
+              "securityhub",
+              "GetExportJobV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "ListExportJobsV2",
+          [
+            [
+              "securityhub",
+              "ListExportJobsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "StartExportJobV2",
+          [
+            [
+              "securityhub",
+              "StartExportJobV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "ListExportJobsV2Paginator",
+          "NextPage",
+          [
+            [
+              "securityhub",
+              "ListExportJobsV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.84.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.85.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

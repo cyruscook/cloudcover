@@ -1099,6 +1099,115 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "CreateConfigurationSet",
+          [
+            [
+              "sms-voice",
+              "CreateConfigurationSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "CreateConfigurationSetEventDestination",
+          [
+            [
+              "sms-voice",
+              "CreateConfigurationSetEventDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "DeleteConfigurationSet",
+          [
+            [
+              "sms-voice",
+              "DeleteConfigurationSet"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "DeleteConfigurationSetEventDestination",
+          [
+            [
+              "sms-voice",
+              "DeleteConfigurationSetEventDestination"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "GetConfigurationSetEventDestinations",
+          [
+            [
+              "sms-voice",
+              "GetConfigurationSetEventDestinations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "ListConfigurationSets",
+          [
+            [
+              "sms-voice",
+              "ListConfigurationSets"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "SendVoiceMessage",
+          [
+            [
+              "sms-voice",
+              "SendVoiceMessage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/pinpointsmsvoice",
+          "Client",
+          "UpdateConfigurationSetEventDestination",
+          [
+            [
+              "sms-voice",
+              "UpdateConfigurationSetEventDestination"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -105,6 +105,81 @@
       "module_version": "1.6.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistry",
+          "Client",
+          "BatchGetDiscoverableRegistryRecord",
+          [
+            [
+              "agent-registry",
+              "BatchGetDiscoverableRegistryRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistry",
+          "Client",
+          "ListDiscoverableRegistryRecords",
+          [
+            [
+              "agent-registry",
+              "ListDiscoverableRegistryRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistry",
+          "Client",
+          "SearchDiscoverableRegistryRecords",
+          [
+            [
+              "agent-registry",
+              "SearchDiscoverableRegistryRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistry",
+          "ListDiscoverableRegistryRecordsPaginator",
+          "NextPage",
+          [
+            [
+              "agent-registry",
+              "ListDiscoverableRegistryRecords"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

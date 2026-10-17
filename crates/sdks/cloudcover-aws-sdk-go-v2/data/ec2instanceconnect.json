@@ -1049,6 +1049,54 @@
       "module_version": "1.40.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2instanceconnect",
+          "Client",
+          "SendSSHPublicKey",
+          [
+            [
+              "ec2-instance-connect",
+              "SendSSHPublicKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2instanceconnect",
+          "Client",
+          "SendSerialConsoleSSHPublicKey",
+          [
+            [
+              "ec2-instance-connect",
+              "SendSerialConsoleSSHPublicKey"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

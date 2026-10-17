@@ -630,6 +630,71 @@
       "module_version": "1.19.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "aws-marketplace",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "PutDeploymentParameter",
+          [
+            [
+              "aws-marketplace",
+              "PutDeploymentParameter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "TagResource",
+          [
+            [
+              "aws-marketplace",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "aws-marketplace",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

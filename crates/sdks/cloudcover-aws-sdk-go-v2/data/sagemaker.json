@@ -7565,6 +7565,123 @@
       "module_version": "1.278.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.279.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.279.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.280.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.281.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.282.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.282.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.282.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.282.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.283.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateTrainingSession",
+          [
+            [
+              "sagemaker",
+              "CreateTrainingSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteTrainingSession",
+          [
+            [
+              "sagemaker",
+              "DeleteTrainingSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeTrainingSession",
+          [
+            [
+              "sagemaker",
+              "DescribeTrainingSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListTrainingSessions",
+          [
+            [
+              "sagemaker",
+              "ListTrainingSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "StopTrainingSession",
+          [
+            [
+              "sagemaker",
+              "StopTrainingSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListTrainingSessionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListTrainingSessions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.284.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

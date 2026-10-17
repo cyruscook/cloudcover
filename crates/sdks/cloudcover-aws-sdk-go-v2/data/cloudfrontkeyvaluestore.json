@@ -688,6 +688,104 @@
       "module_version": "1.20.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.20.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "DeleteKey",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "DeleteKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "DescribeKeyValueStore",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "DescribeKeyValueStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "GetKey",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "GetKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "ListKeys",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "ListKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "PutKey",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "PutKey"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "Client",
+          "UpdateKeys",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "UpdateKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudfrontkeyvaluestore",
+          "ListKeysPaginator",
+          "NextPage",
+          [
+            [
+              "cloudfront-keyvaluestore",
+              "ListKeys"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.20.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

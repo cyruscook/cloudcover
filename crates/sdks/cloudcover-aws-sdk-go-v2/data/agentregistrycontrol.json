@@ -248,6 +248,224 @@
       "module_version": "1.6.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "CreateRegistry",
+          [
+            [
+              "agent-registry",
+              "CreateRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "CreateRegistryRecord",
+          [
+            [
+              "agent-registry",
+              "CreateRegistryRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "DeleteRegistry",
+          [
+            [
+              "agent-registry",
+              "DeleteRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "DeleteRegistryRecord",
+          [
+            [
+              "agent-registry",
+              "DeleteRegistryRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "GetRegistry",
+          [
+            [
+              "agent-registry",
+              "GetRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "GetRegistryRecord",
+          [
+            [
+              "agent-registry",
+              "GetRegistryRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "ListRegistries",
+          [
+            [
+              "agent-registry",
+              "ListRegistries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "ListRegistryRecords",
+          [
+            [
+              "agent-registry",
+              "ListRegistryRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "agent-registry",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "SubmitRegistryRecordForApproval",
+          [
+            [
+              "agent-registry",
+              "SubmitRegistryRecordForApproval"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "TagResource",
+          [
+            [
+              "agent-registry",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "agent-registry",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "UpdateRegistry",
+          [
+            [
+              "agent-registry",
+              "UpdateRegistry"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "UpdateRegistryRecord",
+          [
+            [
+              "agent-registry",
+              "UpdateRegistryRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "Client",
+          "UpdateRegistryRecordStatus",
+          [
+            [
+              "agent-registry",
+              "UpdateRegistryRecordStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "ListRegistriesPaginator",
+          "NextPage",
+          [
+            [
+              "agent-registry",
+              "ListRegistries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistrycontrol",
+          "ListRegistryRecordsPaginator",
+          "NextPage",
+          [
+            [
+              "agent-registry",
+              "ListRegistryRecords"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

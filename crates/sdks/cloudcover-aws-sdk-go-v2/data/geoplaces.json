@@ -483,6 +483,104 @@
       "module_version": "1.17.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.17.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "Autocomplete",
+          [
+            [
+              "geo-places",
+              "Autocomplete"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "Geocode",
+          [
+            [
+              "geo-places",
+              "Geocode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "GetPlace",
+          [
+            [
+              "geo-places",
+              "GetPlace"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "ReverseGeocode",
+          [
+            [
+              "geo-places",
+              "ReverseGeocode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "SearchNearby",
+          [
+            [
+              "geo-places",
+              "SearchNearby"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "SearchText",
+          [
+            [
+              "geo-places",
+              "SearchText"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geoplaces",
+          "Client",
+          "Suggest",
+          [
+            [
+              "geo-places",
+              "Suggest"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.17.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

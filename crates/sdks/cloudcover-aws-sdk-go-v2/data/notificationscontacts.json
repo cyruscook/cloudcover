@@ -481,6 +481,137 @@
       "module_version": "1.14.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.14.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "ActivateEmailContact",
+          [
+            [
+              "notifications-contacts",
+              "ActivateEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "CreateEmailContact",
+          [
+            [
+              "notifications-contacts",
+              "CreateEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "DeleteEmailContact",
+          [
+            [
+              "notifications-contacts",
+              "DeleteEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "GetEmailContact",
+          [
+            [
+              "notifications-contacts",
+              "GetEmailContact"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "ListEmailContacts",
+          [
+            [
+              "notifications-contacts",
+              "ListEmailContacts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "notifications-contacts",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "SendActivationCode",
+          [
+            [
+              "notifications-contacts",
+              "SendActivationCode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "TagResource",
+          [
+            [
+              "notifications-contacts",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "notifications-contacts",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/notificationscontacts",
+          "ListEmailContactsPaginator",
+          "NextPage",
+          [
+            [
+              "notifications-contacts",
+              "ListEmailContacts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.14.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -1038,6 +1038,49 @@
       "module_version": "1.36.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.36.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kinesisvideosignaling",
+          "Client",
+          "GetIceServerConfig",
+          [
+            [
+              "kinesisvideo",
+              "GetIceServerConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kinesisvideosignaling",
+          "Client",
+          "SendAlexaOfferToMaster",
+          [
+            [
+              "kinesisvideo",
+              "SendAlexaOfferToMaster"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.36.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.36.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
