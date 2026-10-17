@@ -1053,6 +1053,82 @@
       "module_version": "1.44.1",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/transcribestreaming",
+          "Client",
+          "GetMedicalScribeStream",
+          [
+            [
+              "transcribe",
+              "GetMedicalScribeStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/transcribestreaming",
+          "Client",
+          "StartCallAnalyticsStreamTranscription",
+          [
+            [
+              "transcribe",
+              "StartCallAnalyticsStreamTranscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/transcribestreaming",
+          "Client",
+          "StartMedicalScribeStream",
+          [
+            [
+              "transcribe",
+              "StartMedicalScribeStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/transcribestreaming",
+          "Client",
+          "StartMedicalStreamTranscription",
+          [
+            [
+              "transcribe",
+              "StartMedicalStreamTranscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/transcribestreaming",
+          "Client",
+          "StartStreamTranscription",
+          [
+            [
+              "transcribe",
+              "StartStreamTranscription"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

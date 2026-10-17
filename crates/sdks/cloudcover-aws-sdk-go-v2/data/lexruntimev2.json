@@ -1048,6 +1048,93 @@
       "module_version": "1.44.1",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.44.2",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "DeleteSession",
+          [
+            [
+              "lex",
+              "DeleteSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "GetSession",
+          [
+            [
+              "lex",
+              "GetSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "PutSession",
+          [
+            [
+              "lex",
+              "PutSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "RecognizeText",
+          [
+            [
+              "lex",
+              "RecognizeText"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "RecognizeUtterance",
+          [
+            [
+              "lex",
+              "RecognizeUtterance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimev2",
+          "Client",
+          "StartConversation",
+          [
+            [
+              "lex",
+              "StartConversation"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.44.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

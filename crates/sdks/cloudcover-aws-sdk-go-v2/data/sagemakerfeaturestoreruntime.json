@@ -1102,6 +1102,120 @@
       "module_version": "1.44.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "BatchGetRecord",
+          [
+            [
+              "sagemaker",
+              "BatchGetRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "BatchWriteRecord",
+          [
+            [
+              "sagemaker",
+              "BatchWriteRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "DeleteRecord",
+          [
+            [
+              "sagemaker",
+              "DeleteRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "GetRecord",
+          [
+            [
+              "sagemaker",
+              "GetRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "ListRecords",
+          [
+            [
+              "sagemaker",
+              "ListRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "PutRecord",
+          [
+            [
+              "sagemaker",
+              "PutRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "Client",
+          "UpdateRecord",
+          [
+            [
+              "sagemaker",
+              "UpdateRecord"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerfeaturestoreruntime",
+          "ListRecordsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListRecords"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.48.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -1152,6 +1152,126 @@
       "module_version": "1.42.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "CloseTunnel",
+          [
+            [
+              "IoTSecuredTunneling",
+              "CloseTunnel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "DescribeTunnel",
+          [
+            [
+              "IoTSecuredTunneling",
+              "DescribeTunnel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "IoTSecuredTunneling",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "ListTunnels",
+          [
+            [
+              "IoTSecuredTunneling",
+              "ListTunnels"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "OpenTunnel",
+          [
+            [
+              "IoTSecuredTunneling",
+              "OpenTunnel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "RotateTunnelAccessToken",
+          [
+            [
+              "IoTSecuredTunneling",
+              "RotateTunnelAccessToken"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "TagResource",
+          [
+            [
+              "IoTSecuredTunneling",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "IoTSecuredTunneling",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotsecuretunneling",
+          "ListTunnelsPaginator",
+          "NextPage",
+          [
+            [
+              "IoTSecuredTunneling",
+              "ListTunnels"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

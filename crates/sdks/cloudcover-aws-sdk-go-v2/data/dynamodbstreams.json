@@ -1160,6 +1160,81 @@
       "module_version": "1.41.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dynamodbstreams",
+          "Client",
+          "DescribeStream",
+          [
+            [
+              "dynamodb",
+              "DescribeStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dynamodbstreams",
+          "Client",
+          "GetRecords",
+          [
+            [
+              "dynamodb",
+              "GetRecords"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dynamodbstreams",
+          "Client",
+          "GetShardIterator",
+          [
+            [
+              "dynamodb",
+              "GetShardIterator"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/dynamodbstreams",
+          "Client",
+          "ListStreams",
+          [
+            [
+              "dynamodb",
+              "ListStreams"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

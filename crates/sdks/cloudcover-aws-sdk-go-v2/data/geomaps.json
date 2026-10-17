@@ -471,6 +471,82 @@
       "module_version": "1.19.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geomaps",
+          "Client",
+          "GetGlyphs",
+          [
+            [
+              "geo-maps",
+              "GetGlyphs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geomaps",
+          "Client",
+          "GetSprites",
+          [
+            [
+              "geo-maps",
+              "GetSprites"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geomaps",
+          "Client",
+          "GetStaticMap",
+          [
+            [
+              "geo-maps",
+              "GetStaticMap"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geomaps",
+          "Client",
+          "GetStyleDescriptor",
+          [
+            [
+              "geo-maps",
+              "GetStyleDescriptor"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/geomaps",
+          "Client",
+          "GetTile",
+          [
+            [
+              "geo-maps",
+              "GetTile"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

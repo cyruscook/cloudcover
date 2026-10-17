@@ -1039,6 +1039,65 @@
       "module_version": "1.37.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/apigatewaymanagementapi",
+          "Client",
+          "DeleteConnection",
+          [
+            [
+              "execute-api",
+              "DeleteConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/apigatewaymanagementapi",
+          "Client",
+          "GetConnection",
+          [
+            [
+              "execute-api",
+              "GetConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/apigatewaymanagementapi",
+          "Client",
+          "PostToConnection",
+          [
+            [
+              "execute-api",
+              "PostToConnection"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

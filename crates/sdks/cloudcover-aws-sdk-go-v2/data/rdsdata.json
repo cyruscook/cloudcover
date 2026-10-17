@@ -1092,6 +1092,93 @@
       "module_version": "1.40.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "BatchExecuteStatement",
+          [
+            [
+              "rds-data",
+              "BatchExecuteStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "BeginTransaction",
+          [
+            [
+              "rds-data",
+              "BeginTransaction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "CommitTransaction",
+          [
+            [
+              "rds-data",
+              "CommitTransaction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "ExecuteSql",
+          [
+            [
+              "rds-data",
+              "ExecuteSql"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "ExecuteStatement",
+          [
+            [
+              "rds-data",
+              "ExecuteStatement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rdsdata",
+          "Client",
+          "RollbackTransaction",
+          [
+            [
+              "rds-data",
+              "RollbackTransaction"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

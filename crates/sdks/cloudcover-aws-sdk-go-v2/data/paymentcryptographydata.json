@@ -905,6 +905,197 @@
       "module_version": "1.36.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "DecryptData",
+          [
+            [
+              "payment-cryptography",
+              "DecryptData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "EncryptData",
+          [
+            [
+              "payment-cryptography",
+              "EncryptData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GenerateAs2805KekValidation",
+          [
+            [
+              "payment-cryptography",
+              "GenerateAs2805KekValidation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GenerateAuthRequestCryptogram",
+          [
+            [
+              "payment-cryptography",
+              "GenerateAuthRequestCryptogram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GenerateCardValidationData",
+          [
+            [
+              "payment-cryptography",
+              "GenerateCardValidationData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GenerateMac",
+          [
+            [
+              "payment-cryptography",
+              "GenerateMac"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GenerateMacEmvPinChange",
+          [
+            [
+              "payment-cryptography",
+              "GenerateMacEmvPinChange"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "GeneratePinData",
+          [
+            [
+              "payment-cryptography",
+              "GeneratePinData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "ReEncryptData",
+          [
+            [
+              "payment-cryptography",
+              "ReEncryptData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "TranslateKeyMaterial",
+          [
+            [
+              "payment-cryptography",
+              "TranslateKeyMaterial"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "TranslatePinData",
+          [
+            [
+              "payment-cryptography",
+              "TranslatePinData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "VerifyAuthRequestCryptogram",
+          [
+            [
+              "payment-cryptography",
+              "VerifyAuthRequestCryptogram"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "VerifyCardValidationData",
+          [
+            [
+              "payment-cryptography",
+              "VerifyCardValidationData"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "VerifyMac",
+          [
+            [
+              "payment-cryptography",
+              "VerifyMac"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/paymentcryptographydata",
+          "Client",
+          "VerifyPinData",
+          [
+            [
+              "payment-cryptography",
+              "VerifyPinData"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

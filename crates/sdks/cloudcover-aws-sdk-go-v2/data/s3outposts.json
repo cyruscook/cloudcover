@@ -1102,6 +1102,115 @@
       "module_version": "1.42.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "Client",
+          "CreateEndpoint",
+          [
+            [
+              "s3-outposts",
+              "CreateEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "Client",
+          "DeleteEndpoint",
+          [
+            [
+              "s3-outposts",
+              "DeleteEndpoint"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "Client",
+          "ListEndpoints",
+          [
+            [
+              "s3-outposts",
+              "ListEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "Client",
+          "ListOutpostsWithS3",
+          [
+            [
+              "s3-outposts",
+              "ListOutpostsWithS3"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "Client",
+          "ListSharedEndpoints",
+          [
+            [
+              "s3-outposts",
+              "ListSharedEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "ListEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "s3-outposts",
+              "ListEndpoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "ListOutpostsWithS3Paginator",
+          "NextPage",
+          [
+            [
+              "s3-outposts",
+              "ListOutpostsWithS3"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3outposts",
+          "ListSharedEndpointsPaginator",
+          "NextPage",
+          [
+            [
+              "s3-outposts",
+              "ListSharedEndpoints"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.42.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

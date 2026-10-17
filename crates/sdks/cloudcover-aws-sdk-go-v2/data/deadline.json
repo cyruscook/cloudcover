@@ -2322,6 +2322,59 @@
       "module_version": "1.42.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.42.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.44.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/deadline",
+          "Client",
+          "ListMemberships",
+          [
+            [
+              "deadline",
+              "ListMemberships"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/deadline",
+          "ListMembershipsPaginator",
+          "NextPage",
+          [
+            [
+              "deadline",
+              "ListMemberships"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.44.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

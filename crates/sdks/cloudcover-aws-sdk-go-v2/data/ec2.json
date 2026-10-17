@@ -13246,6 +13246,119 @@
       "module_version": "1.335.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.336.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "CreateCapacityReservationDateChangeQuote",
+          [
+            [
+              "ec2",
+              "CreateCapacityReservationDateChangeQuote"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DescribeCapacityReservationDateChangeQuotes",
+          [
+            [
+              "ec2",
+              "DescribeCapacityReservationDateChangeQuotes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "DescribeCapacityReservationDateChangeQuotesPaginator",
+          "NextPage",
+          [
+            [
+              "ec2",
+              "DescribeCapacityReservationDateChangeQuotes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.336.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.337.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DeleteClientVpnEndpointAuthorizationPolicy",
+          [
+            [
+              "ec2",
+              "DeleteClientVpnEndpointAuthorizationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "GetClientVpnEndpointAuthorizationPolicy",
+          [
+            [
+              "ec2",
+              "GetClientVpnEndpointAuthorizationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "ModifyClientVpnEndpointAuthorizationPolicy",
+          [
+            [
+              "ec2",
+              "ModifyClientVpnEndpointAuthorizationPolicy"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.338.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.338.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.338.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.338.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.338.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.339.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -1073,6 +1073,82 @@
       "module_version": "1.40.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/personalizeevents",
+          "Client",
+          "PutActionInteractions",
+          [
+            [
+              "personalize",
+              "PutActionInteractions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/personalizeevents",
+          "Client",
+          "PutActions",
+          [
+            [
+              "personalize",
+              "PutActions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/personalizeevents",
+          "Client",
+          "PutEvents",
+          [
+            [
+              "personalize",
+              "PutEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/personalizeevents",
+          "Client",
+          "PutItems",
+          [
+            [
+              "personalize",
+              "PutItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/personalizeevents",
+          "Client",
+          "PutUsers",
+          [
+            [
+              "personalize",
+              "PutUsers"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

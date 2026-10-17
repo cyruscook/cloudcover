@@ -1078,6 +1078,93 @@
       "module_version": "1.40.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.40.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "Client",
+          "DeleteHumanLoop",
+          [
+            [
+              "sagemaker",
+              "DeleteHumanLoop"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "Client",
+          "DescribeHumanLoop",
+          [
+            [
+              "sagemaker",
+              "DescribeHumanLoop"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "Client",
+          "ListHumanLoops",
+          [
+            [
+              "sagemaker",
+              "ListHumanLoops"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "Client",
+          "StartHumanLoop",
+          [
+            [
+              "sagemaker",
+              "StartHumanLoop"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "Client",
+          "StopHumanLoop",
+          [
+            [
+              "sagemaker",
+              "StopHumanLoop"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakera2iruntime",
+          "ListHumanLoopsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListHumanLoops"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.40.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

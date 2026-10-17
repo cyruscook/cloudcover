@@ -464,6 +464,93 @@
       "module_version": "1.19.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "GetDataAutomationStatus",
+          [
+            [
+              "bedrock",
+              "GetDataAutomationStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "InvokeDataAutomation",
+          [
+            [
+              "bedrock",
+              "InvokeDataAutomation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "InvokeDataAutomationAsync",
+          [
+            [
+              "bedrock",
+              "InvokeDataAutomationAsync"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "bedrock",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "TagResource",
+          [
+            [
+              "bedrock",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockdataautomationruntime",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "bedrock",
+              "UntagResource"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

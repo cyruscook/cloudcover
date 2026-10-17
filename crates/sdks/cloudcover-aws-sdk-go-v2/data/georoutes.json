@@ -451,6 +451,82 @@
       "module_version": "1.19.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.19.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/georoutes",
+          "Client",
+          "CalculateIsolines",
+          [
+            [
+              "geo-routes",
+              "CalculateIsolines"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/georoutes",
+          "Client",
+          "CalculateRouteMatrix",
+          [
+            [
+              "geo-routes",
+              "CalculateRouteMatrix"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/georoutes",
+          "Client",
+          "CalculateRoutes",
+          [
+            [
+              "geo-routes",
+              "CalculateRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/georoutes",
+          "Client",
+          "OptimizeWaypoints",
+          [
+            [
+              "geo-routes",
+              "OptimizeWaypoints"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/georoutes",
+          "Client",
+          "SnapToRoads",
+          [
+            [
+              "geo-routes",
+              "SnapToRoads"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.19.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
