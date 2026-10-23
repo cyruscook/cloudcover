@@ -58,6 +58,59 @@
       "module_version": "1.4.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.4.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iamtoolbox",
+          "Client",
+          "GetRequestAuthorizationDetails",
+          [
+            [
+              "iam",
+              "GetRequestAuthorizationDetails"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iamtoolbox",
+          "GetRequestAuthorizationDetailsPaginator",
+          "NextPage",
+          [
+            [
+              "iam",
+              "GetRequestAuthorizationDetails"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.4.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.4.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

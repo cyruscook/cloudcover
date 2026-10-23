@@ -862,6 +862,186 @@
       "module_version": "1.30.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.30.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "BatchGetTokenBalance",
+          [
+            [
+              "managedblockchain-query",
+              "BatchGetTokenBalance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "GetAssetContract",
+          [
+            [
+              "managedblockchain-query",
+              "GetAssetContract"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "GetTokenBalance",
+          [
+            [
+              "managedblockchain-query",
+              "GetTokenBalance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "GetTransaction",
+          [
+            [
+              "managedblockchain-query",
+              "GetTransaction"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "ListAssetContracts",
+          [
+            [
+              "managedblockchain-query",
+              "ListAssetContracts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "ListFilteredTransactionEvents",
+          [
+            [
+              "managedblockchain-query",
+              "ListFilteredTransactionEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "ListTokenBalances",
+          [
+            [
+              "managedblockchain-query",
+              "ListTokenBalances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "ListTransactionEvents",
+          [
+            [
+              "managedblockchain-query",
+              "ListTransactionEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "Client",
+          "ListTransactions",
+          [
+            [
+              "managedblockchain-query",
+              "ListTransactions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "ListAssetContractsPaginator",
+          "NextPage",
+          [
+            [
+              "managedblockchain-query",
+              "ListAssetContracts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "ListFilteredTransactionEventsPaginator",
+          "NextPage",
+          [
+            [
+              "managedblockchain-query",
+              "ListFilteredTransactionEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "ListTokenBalancesPaginator",
+          "NextPage",
+          [
+            [
+              "managedblockchain-query",
+              "ListTokenBalances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "ListTransactionEventsPaginator",
+          "NextPage",
+          [
+            [
+              "managedblockchain-query",
+              "ListTransactionEvents"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/managedblockchainquery",
+          "ListTransactionsPaginator",
+          "NextPage",
+          [
+            [
+              "managedblockchain-query",
+              "ListTransactions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.30.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.30.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

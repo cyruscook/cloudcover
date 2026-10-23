@@ -165,6 +165,76 @@
       "module_version": "1.7.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.7.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerjobruntime",
+          "Client",
+          "CompleteRollout",
+          [
+            [
+              "sagemaker",
+              "CompleteRollout"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerjobruntime",
+          "Client",
+          "Sample",
+          [
+            [
+              "sagemaker",
+              "Sample"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerjobruntime",
+          "Client",
+          "SampleWithResponseStream",
+          [
+            [
+              "sagemaker",
+              "SampleWithResponseStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerjobruntime",
+          "Client",
+          "UpdateReward",
+          [
+            [
+              "sagemaker",
+              "UpdateReward"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.7.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.7.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

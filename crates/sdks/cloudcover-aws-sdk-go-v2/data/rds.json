@@ -4071,6 +4071,97 @@
       "module_version": "1.129.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.129.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.130.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.131.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CancelDBCapacityReservation",
+          [
+            [
+              "rds",
+              "CancelDBCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "CreateDBCapacityReservation",
+          [
+            [
+              "rds",
+              "CreateDBCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "DescribeDBCapacityReservations",
+          [
+            [
+              "rds",
+              "DescribeDBCapacityReservations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "Client",
+          "ModifyDBCapacityReservation",
+          [
+            [
+              "rds",
+              "ModifyDBCapacityReservation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/rds",
+          "DescribeDBCapacityReservationsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeDBCapacityReservations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.131.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -363,6 +363,234 @@
       "module_version": "1.11.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "ActivateSubscription",
+          [
+            [
+              "health-agent",
+              "ActivateSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "CreateDomain",
+          [
+            [
+              "health-agent",
+              "CreateDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "CreateSubscription",
+          [
+            [
+              "health-agent",
+              "CreateSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "DeactivateSubscription",
+          [
+            [
+              "health-agent",
+              "DeactivateSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "DeleteDomain",
+          [
+            [
+              "health-agent",
+              "DeleteDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "GetDomain",
+          [
+            [
+              "health-agent",
+              "GetDomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "GetMedicalScribeListeningSession",
+          [
+            [
+              "health-agent",
+              "GetMedicalScribeListeningSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "GetPatientInsightsJob",
+          [
+            [
+              "health-agent",
+              "GetPatientInsightsJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "GetSubscription",
+          [
+            [
+              "health-agent",
+              "GetSubscription"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "ListDomains",
+          [
+            [
+              "health-agent",
+              "ListDomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "ListSubscriptions",
+          [
+            [
+              "health-agent",
+              "ListSubscriptions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "health-agent",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "StartPatientInsightsJob",
+          [
+            [
+              "health-agent",
+              "StartPatientInsightsJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "TagResource",
+          [
+            [
+              "health-agent",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "health-agent",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "ListDomainsPaginator",
+          "NextPage",
+          [
+            [
+              "health-agent",
+              "ListDomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connecthealth",
+          "ListSubscriptionsPaginator",
+          "NextPage",
+          [
+            [
+              "health-agent",
+              "ListSubscriptions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

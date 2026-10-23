@@ -2149,6 +2149,59 @@
       "module_version": "1.78.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.78.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/autoscaling",
+          "Client",
+          "DescribeAccountSettings",
+          [
+            [
+              "autoscaling",
+              "DescribeAccountSettings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/autoscaling",
+          "Client",
+          "PutAccountSetting",
+          [
+            [
+              "autoscaling",
+              "PutAccountSetting"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.79.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

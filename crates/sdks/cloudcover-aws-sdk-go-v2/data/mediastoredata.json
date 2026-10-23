@@ -1083,6 +1083,103 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "Client",
+          "DeleteObject",
+          [
+            [
+              "mediastore",
+              "DeleteObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "Client",
+          "DescribeObject",
+          [
+            [
+              "mediastore",
+              "DescribeObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "Client",
+          "GetObject",
+          [
+            [
+              "mediastore",
+              "GetObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "Client",
+          "ListItems",
+          [
+            [
+              "mediastore",
+              "ListItems"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "Client",
+          "PutObject",
+          [
+            [
+              "mediastore",
+              "PutObject"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mediastoredata",
+          "ListItemsPaginator",
+          "NextPage",
+          [
+            [
+              "mediastore",
+              "ListItems"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

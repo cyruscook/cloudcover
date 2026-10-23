@@ -1008,6 +1008,119 @@
       "module_version": "1.35.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.36.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "DeleteReportDefinition",
+          [
+            [
+              "application-cost-profiler",
+              "DeleteReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "GetReportDefinition",
+          [
+            [
+              "application-cost-profiler",
+              "GetReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "ImportApplicationUsage",
+          [
+            [
+              "application-cost-profiler",
+              "ImportApplicationUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "ListReportDefinitions",
+          [
+            [
+              "application-cost-profiler",
+              "ListReportDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "PutReportDefinition",
+          [
+            [
+              "application-cost-profiler",
+              "PutReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "Client",
+          "UpdateReportDefinition",
+          [
+            [
+              "application-cost-profiler",
+              "UpdateReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/applicationcostprofiler",
+          "ListReportDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "application-cost-profiler",
+              "ListReportDefinitions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

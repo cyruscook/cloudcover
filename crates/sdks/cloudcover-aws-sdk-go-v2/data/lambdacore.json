@@ -167,6 +167,136 @@
       "module_version": "1.7.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "CreateNetworkConnector",
+          [
+            [
+              "lambda",
+              "CreateNetworkConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "DeleteNetworkConnector",
+          [
+            [
+              "lambda",
+              "DeleteNetworkConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "GetNetworkConnector",
+          [
+            [
+              "lambda",
+              "GetNetworkConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "ListNetworkConnectors",
+          [
+            [
+              "lambda",
+              "ListNetworkConnectors"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "UpdateNetworkConnector",
+          [
+            [
+              "lambda",
+              "UpdateNetworkConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "ListNetworkConnectorsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListNetworkConnectors"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.11.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "Client",
+          "ListNetworkConnectorVersions",
+          [
+            [
+              "lambda",
+              "ListNetworkConnectorVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lambdacore",
+          "ListNetworkConnectorVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "lambda",
+              "ListNetworkConnectorVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.2",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

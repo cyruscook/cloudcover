@@ -1447,6 +1447,119 @@
       "module_version": "1.17.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.19.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityagent",
+          "Client",
+          "ListActorMessages",
+          [
+            [
+              "securityagent",
+              "ListActorMessages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityagent",
+          "ListActorMessagesPaginator",
+          "NextPage",
+          [
+            [
+              "securityagent",
+              "ListActorMessages"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.20.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityagent",
+          "Client",
+          "UpdateIntegration",
+          [
+            [
+              "securityagent",
+              "UpdateIntegration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.23.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityagent",
+          "Client",
+          "BatchDisassociateFindingIssue",
+          [
+            [
+              "securityagent",
+              "BatchDisassociateFindingIssue"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityagent",
+          "Client",
+          "BatchExportFindings",
+          [
+            [
+              "securityagent",
+              "BatchExportFindings"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

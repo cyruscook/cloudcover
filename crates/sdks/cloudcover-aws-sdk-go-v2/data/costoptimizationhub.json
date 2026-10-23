@@ -799,6 +799,174 @@
       "module_version": "1.31.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.32.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "GetPreferences",
+          [
+            [
+              "cost-optimization-hub",
+              "GetPreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "GetRecommendation",
+          [
+            [
+              "cost-optimization-hub",
+              "GetRecommendation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "ListEfficiencyMetrics",
+          [
+            [
+              "cost-optimization-hub",
+              "ListEfficiencyMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "ListEnrollmentStatuses",
+          [
+            [
+              "cost-optimization-hub",
+              "ListEnrollmentStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "ListRecommendationSummaries",
+          [
+            [
+              "cost-optimization-hub",
+              "ListRecommendationSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "ListRecommendations",
+          [
+            [
+              "cost-optimization-hub",
+              "ListRecommendations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "UpdateEnrollmentStatus",
+          [
+            [
+              "cost-optimization-hub",
+              "UpdateEnrollmentStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "Client",
+          "UpdatePreferences",
+          [
+            [
+              "cost-optimization-hub",
+              "UpdatePreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "ListEfficiencyMetricsPaginator",
+          "NextPage",
+          [
+            [
+              "cost-optimization-hub",
+              "ListEfficiencyMetrics"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "ListEnrollmentStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "cost-optimization-hub",
+              "ListEnrollmentStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "ListRecommendationSummariesPaginator",
+          "NextPage",
+          [
+            [
+              "cost-optimization-hub",
+              "ListRecommendationSummaries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costoptimizationhub",
+          "ListRecommendationsPaginator",
+          "NextPage",
+          [
+            [
+              "cost-optimization-hub",
+              "ListRecommendations"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.33.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.34.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.35.3",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

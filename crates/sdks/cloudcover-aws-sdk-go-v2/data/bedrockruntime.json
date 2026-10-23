@@ -912,6 +912,163 @@
       "module_version": "1.63.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "ApplyGuardrail",
+          [
+            [
+              "bedrock",
+              "ApplyGuardrail"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "Converse",
+          [
+            [
+              "bedrock",
+              "Converse"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "ConverseStream",
+          [
+            [
+              "bedrock",
+              "ConverseStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "CountTokens",
+          [
+            [
+              "bedrock",
+              "CountTokens"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "GetAsyncInvoke",
+          [
+            [
+              "bedrock",
+              "GetAsyncInvoke"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "InvokeGuardrailChecks",
+          [
+            [
+              "bedrock",
+              "InvokeGuardrailChecks"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "InvokeModel",
+          [
+            [
+              "bedrock",
+              "InvokeModel"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "InvokeModelWithResponseStream",
+          [
+            [
+              "bedrock",
+              "InvokeModelWithResponseStream"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "ListAsyncInvokes",
+          [
+            [
+              "bedrock",
+              "ListAsyncInvokes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "Client",
+          "StartAsyncInvoke",
+          [
+            [
+              "bedrock",
+              "StartAsyncInvoke"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockruntime",
+          "ListAsyncInvokesPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock",
+              "ListAsyncInvokes"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.7",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

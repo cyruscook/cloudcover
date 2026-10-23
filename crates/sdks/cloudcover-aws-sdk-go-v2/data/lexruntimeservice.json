@@ -1056,6 +1056,87 @@
       "module_version": "1.37.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.37.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimeservice",
+          "Client",
+          "DeleteSession",
+          [
+            [
+              "lex",
+              "DeleteSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimeservice",
+          "Client",
+          "GetSession",
+          [
+            [
+              "lex",
+              "GetSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimeservice",
+          "Client",
+          "PostContent",
+          [
+            [
+              "lex",
+              "PostContent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimeservice",
+          "Client",
+          "PostText",
+          [
+            [
+              "lex",
+              "PostText"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lexruntimeservice",
+          "Client",
+          "PutSession",
+          [
+            [
+              "lex",
+              "PutSession"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.37.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.37.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

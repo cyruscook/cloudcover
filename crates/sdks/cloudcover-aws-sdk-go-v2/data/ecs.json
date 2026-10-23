@@ -2508,6 +2508,201 @@
       "module_version": "1.99.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.99.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.100.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.101.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.102.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "AssociateGatewayWithCluster",
+          [
+            [
+              "ecs",
+              "AssociateGatewayWithCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "CreateGateway",
+          [
+            [
+              "ecs",
+              "CreateGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "DeleteGateway",
+          [
+            [
+              "ecs",
+              "DeleteGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "DescribeGateway",
+          [
+            [
+              "ecs",
+              "DescribeGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "DescribeGatewayResources",
+          [
+            [
+              "ecs",
+              "DescribeGatewayResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "DescribeGatewayRoute",
+          [
+            [
+              "ecs",
+              "DescribeGatewayRoute"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "DisassociateGatewayFromCluster",
+          [
+            [
+              "ecs",
+              "DisassociateGatewayFromCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "ListGatewayClusterAssociations",
+          [
+            [
+              "ecs",
+              "ListGatewayClusterAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "ListGatewayRoutes",
+          [
+            [
+              "ecs",
+              "ListGatewayRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "ListGateways",
+          [
+            [
+              "ecs",
+              "ListGateways"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "Client",
+          "UpdateGateway",
+          [
+            [
+              "ecs",
+              "UpdateGateway"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "ListGatewayClusterAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "ecs",
+              "ListGatewayClusterAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "ListGatewayRoutesPaginator",
+          "NextPage",
+          [
+            [
+              "ecs",
+              "ListGatewayRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecs",
+          "ListGatewaysPaginator",
+          "NextPage",
+          [
+            [
+              "ecs",
+              "ListGateways"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.102.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

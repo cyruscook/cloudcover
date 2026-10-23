@@ -1371,6 +1371,91 @@
       "module_version": "1.44.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.45.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.47.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/identitystore",
+          "Client",
+          "DescribeIdentityStore",
+          [
+            [
+              "identitystore",
+              "DescribeIdentityStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/identitystore",
+          "Client",
+          "ListIdentityStores",
+          [
+            [
+              "identitystore",
+              "ListIdentityStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/identitystore",
+          "Client",
+          "UpdateIdentityStore",
+          [
+            [
+              "identitystore",
+              "UpdateIdentityStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/identitystore",
+          "ListIdentityStoresPaginator",
+          "NextPage",
+          [
+            [
+              "identitystore",
+              "ListIdentityStores"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.48.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.49.3",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

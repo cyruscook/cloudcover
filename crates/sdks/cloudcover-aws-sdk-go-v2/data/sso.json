@@ -1158,6 +1158,98 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "Client",
+          "GetRoleCredentials",
+          [
+            [
+              "awsssoportal",
+              "GetRoleCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "Client",
+          "ListAccountRoles",
+          [
+            [
+              "awsssoportal",
+              "ListAccountRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "Client",
+          "ListAccounts",
+          [
+            [
+              "awsssoportal",
+              "ListAccounts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "Client",
+          "Logout",
+          [
+            [
+              "awsssoportal",
+              "Logout"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "ListAccountRolesPaginator",
+          "NextPage",
+          [
+            [
+              "awsssoportal",
+              "ListAccountRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sso",
+          "ListAccountsPaginator",
+          "NextPage",
+          [
+            [
+              "awsssoportal",
+              "ListAccounts"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

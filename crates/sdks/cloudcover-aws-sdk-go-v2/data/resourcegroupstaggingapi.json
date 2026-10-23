@@ -1262,6 +1262,191 @@
       "module_version": "1.41.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.41.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "DescribeReportCreation",
+          [
+            [
+              "tagging",
+              "DescribeReportCreation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "GetComplianceSummary",
+          [
+            [
+              "tagging",
+              "GetComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "GetResources",
+          [
+            [
+              "tagging",
+              "GetResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "GetTagKeys",
+          [
+            [
+              "tagging",
+              "GetTagKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "GetTagValues",
+          [
+            [
+              "tagging",
+              "GetTagValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "ListRequiredTags",
+          [
+            [
+              "tagging",
+              "ListRequiredTags"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "StartReportCreation",
+          [
+            [
+              "tagging",
+              "StartReportCreation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "TagResources",
+          [
+            [
+              "tagging",
+              "TagResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "Client",
+          "UntagResources",
+          [
+            [
+              "tagging",
+              "UntagResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "GetComplianceSummaryPaginator",
+          "NextPage",
+          [
+            [
+              "tagging",
+              "GetComplianceSummary"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "GetResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "tagging",
+              "GetResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "GetTagKeysPaginator",
+          "NextPage",
+          [
+            [
+              "tagging",
+              "GetTagKeys"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "GetTagValuesPaginator",
+          "NextPage",
+          [
+            [
+              "tagging",
+              "GetTagValues"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+          "ListRequiredTagsPaginator",
+          "NextPage",
+          [
+            [
+              "tagging",
+              "ListRequiredTags"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.41.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

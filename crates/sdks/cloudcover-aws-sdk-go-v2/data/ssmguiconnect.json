@@ -334,6 +334,65 @@
       "module_version": "1.13.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssmguiconnect",
+          "Client",
+          "DeleteConnectionRecordingPreferences",
+          [
+            [
+              "ssm-guiconnect",
+              "DeleteConnectionRecordingPreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssmguiconnect",
+          "Client",
+          "GetConnectionRecordingPreferences",
+          [
+            [
+              "ssm-guiconnect",
+              "GetConnectionRecordingPreferences"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssmguiconnect",
+          "Client",
+          "UpdateConnectionRecordingPreferences",
+          [
+            [
+              "ssm-guiconnect",
+              "UpdateConnectionRecordingPreferences"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

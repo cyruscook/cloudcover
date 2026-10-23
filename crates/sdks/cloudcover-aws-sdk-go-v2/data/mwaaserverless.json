@@ -400,6 +400,251 @@
       "module_version": "1.9.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.10.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "CreateWorkflow",
+          [
+            [
+              "airflow-serverless",
+              "CreateWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "DeleteWorkflow",
+          [
+            [
+              "airflow-serverless",
+              "DeleteWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "GetTaskInstance",
+          [
+            [
+              "airflow-serverless",
+              "GetTaskInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "GetWorkflow",
+          [
+            [
+              "airflow-serverless",
+              "GetWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "GetWorkflowRun",
+          [
+            [
+              "airflow-serverless",
+              "GetWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "airflow-serverless",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "ListTaskInstances",
+          [
+            [
+              "airflow-serverless",
+              "ListTaskInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "ListWorkflowRuns",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflowRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "ListWorkflowVersions",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflowVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "ListWorkflows",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflows"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "StartWorkflowRun",
+          [
+            [
+              "airflow-serverless",
+              "StartWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "StopWorkflowRun",
+          [
+            [
+              "airflow-serverless",
+              "StopWorkflowRun"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "TagResource",
+          [
+            [
+              "airflow-serverless",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "airflow-serverless",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "Client",
+          "UpdateWorkflow",
+          [
+            [
+              "airflow-serverless",
+              "UpdateWorkflow"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "ListTaskInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "airflow-serverless",
+              "ListTaskInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "ListWorkflowRunsPaginator",
+          "NextPage",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflowRuns"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "ListWorkflowVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflowVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/mwaaserverless",
+          "ListWorkflowsPaginator",
+          "NextPage",
+          [
+            [
+              "airflow-serverless",
+              "ListWorkflows"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.13.3",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

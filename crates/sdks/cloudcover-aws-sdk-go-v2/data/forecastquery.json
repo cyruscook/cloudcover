@@ -1044,6 +1044,59 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecastquery",
+          "Client",
+          "QueryForecast",
+          [
+            [
+              "forecast",
+              "QueryForecast"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/forecastquery",
+          "Client",
+          "QueryWhatIfForecast",
+          [
+            [
+              "forecast",
+              "QueryWhatIfForecast"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -1106,6 +1106,147 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "CancelResourceRequest",
+          [
+            [
+              "cloudcontrolapi",
+              "CancelResourceRequest"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "CreateResource",
+          [
+            [
+              "cloudcontrolapi",
+              "CreateResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "DeleteResource",
+          [
+            [
+              "cloudcontrolapi",
+              "DeleteResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "GetResource",
+          [
+            [
+              "cloudcontrolapi",
+              "GetResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "GetResourceRequestStatus",
+          [
+            [
+              "cloudcontrolapi",
+              "GetResourceRequestStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "ListResourceRequests",
+          [
+            [
+              "cloudcontrolapi",
+              "ListResourceRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "ListResources",
+          [
+            [
+              "cloudcontrolapi",
+              "ListResources"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "Client",
+          "UpdateResource",
+          [
+            [
+              "cloudcontrolapi",
+              "UpdateResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "ListResourceRequestsPaginator",
+          "NextPage",
+          [
+            [
+              "cloudcontrolapi",
+              "ListResourceRequests"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudcontrol",
+          "ListResourcesPaginator",
+          "NextPage",
+          [
+            [
+              "cloudcontrolapi",
+              "ListResources"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
