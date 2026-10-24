@@ -1,4 +1,4 @@
-use serde::de::DeserializeOwned;
+use sha2::{Digest, Sha256};
 use std::{
     collections::{BTreeMap, BTreeSet},
     env,
@@ -6,14 +6,9 @@ use std::{
     fmt::{self, Write},
     fs,
     path::{Path, PathBuf},
-    time::Duration,
 };
-use ureq::Agent;
 
-const SERVICE_REFERENCE_URL: &str = "https://servicereference.us-east-1.amazonaws.com/";
-const CACHE_DIR_NAME: &str = "cloudcover-build-cache";
 const CACHE_FILE_NAME: &str = "actions-v2.rs";
-const REFRESH_ENV: &str = "CLOUDCOVER_AWS_SAR_REFRESH";
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 
@@ -147,47 +142,97 @@ struct GeneratedRows {
     sdk_mappings: Vec<SdkMappingRow>,
 }
 
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct Catalog {
+    schema_version: u32,
+    services: Vec<CatalogService>,
+}
+
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CatalogService {
+    service: String,
+    url: String,
+    modified: u64,
+    source_sha256: String,
+    document: ServiceDocument,
+}
+
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct Manifest {
+    schema_version: u32,
+    source: String,
+    retrieved_at: String,
+    index_sha256: String,
+    catalog_sha256: String,
+    refresh_script_sha256: String,
+    extractor_revision: String,
+    service_count: usize,
+}
+
+fn validate_manifest(manifest: &Manifest, contents: &[u8]) -> BuildResult<()> {
+    let digest = format!("{:x}", Sha256::digest(contents));
+    if manifest.schema_version != 1
+        || manifest.catalog_sha256 != digest
+        || manifest.source != "https://servicereference.us-east-1.amazonaws.com/"
+        || manifest.retrieved_at.is_empty()
+        || manifest.extractor_revision.is_empty()
+        || [&manifest.index_sha256, &manifest.refresh_script_sha256]
+            .iter()
+            .any(|hash| hash.len() != 64 || !hash.bytes().all(|b| b.is_ascii_hexdigit()))
+    {
+        return Err(
+            "SAR manifest schema, provenance or checksum mismatch; run tools/refresh_sar.py".into(),
+        );
+    }
+    Ok(())
+}
+
 fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-env-changed={REFRESH_ENV}");
-
-    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let cache_dir = shared_cache_dir(&out_dir)?.join("cloudcover-aws");
-    fs::create_dir_all(&cache_dir)?;
-
-    let cached_output_path = cache_dir.join(CACHE_FILE_NAME);
-    if !env_var_requested(REFRESH_ENV) && cached_output_path.exists() {
-        let generated = fs::read_to_string(&cached_output_path)?;
-        return write_generated_file(&generated);
-    }
-
-    let agent = build_agent();
-    let mut rows = collect_rows(&agent)?;
+    println!("cargo:rerun-if-changed=data/sar/catalog.json");
+    println!("cargo:rerun-if-changed=data/sar/manifest.json");
+    let mut rows = collect_rows()?;
     let action_keys = sort_and_validate_action_rows(&mut rows.actions)?;
-
     sort_and_validate_operation_rows(&mut rows.operations, &action_keys)?;
     sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
-
-    let generated = generate_code(&rows)?;
-    write_if_changed(&cached_output_path, &generated)?;
-    write_generated_file(&generated)
+    write_generated_file(&generate_code(&rows)?)
 }
 
-fn build_agent() -> Agent {
-    let config = Agent::config_builder()
-        .timeout_global(Some(Duration::from_secs(30)))
-        .build();
-    Agent::new_with_config(config)
-}
-
-fn collect_rows(agent: &Agent) -> BuildResult<GeneratedRows> {
-    let index: Vec<ServiceIndexEntry> = fetch_json(agent, SERVICE_REFERENCE_URL)?;
+fn collect_rows() -> BuildResult<GeneratedRows> {
+    let contents = fs::read("data/sar/catalog.json")?;
+    let manifest: Manifest = serde_json::from_slice(&fs::read("data/sar/manifest.json")?)?;
+    validate_manifest(&manifest, &contents)?;
+    let catalog: Catalog = serde_json::from_slice(&contents)?;
+    if catalog.schema_version != 1
+        || catalog.services.is_empty()
+        || manifest.service_count != catalog.services.len()
+    {
+        return Err("invalid SAR catalog schema or service count".into());
+    }
+    let mut previous = None;
+    for entry in &catalog.services {
+        if previous.is_some_and(|name: &str| name >= entry.service.as_str())
+            || entry.source_sha256.len() != 64
+            || !entry.source_sha256.bytes().all(|b| b.is_ascii_hexdigit())
+        {
+            return Err("SAR services must be unique, sorted, and have source checksums".into());
+        }
+        previous = Some(entry.service.as_str());
+    }
     let mut actions = Vec::new();
     let mut operations = Vec::new();
     let mut sdk_mappings = Vec::new();
 
-    for entry in index {
-        let document: ServiceDocument = fetch_json(agent, &entry.url)?;
+    for entry in catalog.services {
+        let document = entry.document;
+        let entry = ServiceIndexEntry {
+            service: entry.service,
+            url: entry.url,
+            _modified: entry.modified,
+        };
         validate_service_name(&entry, &document)?;
 
         let service = entry.service;
@@ -646,45 +691,6 @@ fn write_generated_file(generated: &str) -> BuildResult<()> {
     write_if_changed(&output_path, generated)
 }
 
-fn shared_cache_dir(out_dir: &Path) -> BuildResult<PathBuf> {
-    if let Some(target_dir) = env::var_os("CARGO_TARGET_DIR") {
-        return Ok(PathBuf::from(target_dir).join(CACHE_DIR_NAME));
-    }
-
-    let profile = env::var("PROFILE")?;
-    let target = env::var("TARGET")?;
-    let profile_dir = out_dir
-        .ancestors()
-        .find(|ancestor| {
-            ancestor.file_name().and_then(|name| name.to_str()) == Some(profile.as_str())
-        })
-        .ok_or_else(|| {
-            format!(
-                "failed to infer target directory from {}",
-                out_dir.display()
-            )
-        })?;
-    let parent = profile_dir.parent().ok_or_else(|| {
-        format!(
-            "failed to infer target directory parent from {}",
-            profile_dir.display()
-        )
-    })?;
-
-    if parent.file_name().and_then(|name| name.to_str()) == Some(target.as_str()) {
-        return Ok(parent
-            .parent()
-            .ok_or_else(|| format!("failed to infer target root from {}", out_dir.display()))?
-            .join(CACHE_DIR_NAME));
-    }
-
-    Ok(parent.join(CACHE_DIR_NAME))
-}
-
-fn env_var_requested(name: &str) -> bool {
-    env::var_os(name).is_some_and(|value| !value.is_empty() && value != "0")
-}
-
 fn write_if_changed(path: &Path, contents: &str) -> BuildResult<()> {
     match fs::read_to_string(path) {
         Ok(existing) if existing == contents => Ok(()),
@@ -710,20 +716,29 @@ fn format_authorized_actions(authorized_actions: &[(String, String)]) -> String 
     format!("[ {} ]", entries.join(", "))
 }
 
-fn fetch_json<T>(agent: &Agent, url: &str) -> BuildResult<T>
-where
-    T: DeserializeOwned,
-{
-    let mut response = agent
-        .get(url)
-        .call()
-        .map_err(|error| format!("failed to fetch {url}: {error}"))?;
-    let body = response
-        .body_mut()
-        .read_to_string()
-        .map_err(|error| format!("failed to read response body from {url}: {error}"))?;
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    serde_json::from_str(&body)
-        .map_err(|error| format!("failed to parse JSON from {url}: {error}"))
-        .map_err(Into::into)
+    #[test]
+    fn rejects_corruption_and_unsupported_schema() -> BuildResult<()> {
+        let mut manifest: Manifest = serde_json::from_slice(&fs::read("data/sar/manifest.json")?)?;
+        assert!(validate_manifest(&manifest, b"corrupted catalog").is_err());
+        manifest.schema_version += 1;
+        assert!(validate_manifest(&manifest, &fs::read("data/sar/catalog.json")?).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn pinned_catalog_generates_identical_bytes() -> BuildResult<()> {
+        fn generate() -> BuildResult<String> {
+            let mut rows = collect_rows()?;
+            let keys = sort_and_validate_action_rows(&mut rows.actions)?;
+            sort_and_validate_operation_rows(&mut rows.operations, &keys)?;
+            sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
+            generate_code(&rows).map_err(Into::into)
+        }
+        assert_eq!(generate()?, generate()?);
+        Ok(())
+    }
 }
