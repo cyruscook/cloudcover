@@ -51,7 +51,7 @@ const FIXTURE: &str = r#"
 #[test]
 fn generated_lookup_supports_arbitrary_packages_and_exact_releases() -> Result<(), Box<dyn Error>> {
     let generated = build_script::generate(FIXTURE)?;
-    assert_eq!(generated.matches("static RELEASE_").count(), 3);
+    assert_eq!(generated.matches("_MAPPINGS: &[u32]").count(), 3);
     let temp_dir = env::temp_dir().join(format!(
         "cloudcover-js-v3-release-lookup-{}",
         std::process::id()
@@ -185,4 +185,18 @@ fn rejects_unknown_schema_duplicate_package_and_invalid_api_identity() {
     ] {
         assert!(build_script::generate(invalid).is_err());
     }
+}
+
+#[test]
+fn pooled_views_preserve_access_and_reject_unrecorded_spellings() -> Result<(), Box<dyn Error>> {
+    const S3: &str = "@aws-sdk/client-s3";
+    let rows =
+        cloudcover_aws_sdk_js_v3::service_method_mappings(S3, "3.0.0").ok_or("missing S3")?;
+    assert_eq!(rows.get(0), Some(&rows[0]));
+    assert_eq!(rows.get(rows.len()), None);
+    assert_eq!(rows.to_vec(), rows.iter().copied().collect::<Vec<_>>());
+    for version in ["03.0.0", "3.0.0+local", "3.0.0-alpha", "3.0.0.0"] {
+        assert!(cloudcover_aws_sdk_js_v3::service_method_mappings(S3, version).is_none());
+    }
+    Ok(())
 }

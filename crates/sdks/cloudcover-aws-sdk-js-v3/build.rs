@@ -120,7 +120,8 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
     let mut modules = Vec::new();
     let mut versions = Vec::new();
     let mut ranges = Vec::new();
-    let mut lookup = Vec::new();
+    let mut release_snapshots = Vec::new();
+    let mut mapping_records = Vec::new();
     let mut api_ids = BTreeMap::<Vec<ApiMethodValue>, usize>::new();
     let mut mapping_ids = BTreeMap::<(String, MappingValue), usize>::new();
     let mut release_mapping_ids = BTreeMap::<Vec<usize>, usize>::new();
@@ -176,14 +177,9 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
                         writeln!(generated, "];\n")?;
                         api_index
                     };
-                    let mapping_constant = format!("MAPPING_{mapping_index}");
-                    writeln!(
-                        generated,
-                        "static {mapping_constant}: AwsSdkJsV3MethodMapping = AwsSdkJsV3MethodMapping {{ package: {}, receiver: {}, method: {}, api_methods: API_METHODS_{api_index} }};",
-                        quoted(&package.package),
-                        option_string(mapping.receiver.as_deref()),
-                        quoted(&mapping.method),
-                    )?;
+                    mapping_records.push(format!(
+                        "    AwsSdkJsV3MethodMapping {{ package: {}, receiver: {}, method: {}, api_methods: API_METHODS_{api_index} }},",
+                        quoted(&package.package), option_string(mapping.receiver.as_deref()), quoted(&mapping.method)));
                     mapping_ids.insert(key, mapping_index);
                     mapping_index
                 };
@@ -194,12 +190,9 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
             } else {
                 let mappings_index = release_index;
                 let mapping_constant = format!("RELEASE_{mappings_index}_MAPPINGS");
-                writeln!(
-                    generated,
-                    "static {mapping_constant}: &[AwsSdkJsV3MethodMapping] = &["
-                )?;
+                writeln!(generated, "static {mapping_constant}: &[u32] = &[")?;
                 for mapping_index in &mapping_indices {
-                    writeln!(generated, "    MAPPING_{mapping_index},")?;
+                    writeln!(generated, "    {},", u32::try_from(*mapping_index)?)?;
                 }
                 writeln!(generated, "];\n")?;
                 release_mapping_ids.insert(mapping_indices, mappings_index);
@@ -207,11 +200,7 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
                 mappings_index
             };
             versions.push(release.version.as_str());
-            lookup.push((
-                package.package.as_str(),
-                release.version.as_str(),
-                mappings_index,
-            ));
+            release_snapshots.push(u32::try_from(mappings_index)?);
         }
         if package.releases.is_empty() {
             return Err(format!("package {} contains no stable releases", package.package).into());
@@ -246,16 +235,18 @@ pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
     writeln!(generated, "];")?;
     writeln!(
         generated,
-        "static VERSION_LOOKUP: &[(&str, &str, &[AwsSdkJsV3MethodMapping])] = &["
+        "static MAPPINGS: &[AwsSdkJsV3MethodMapping] = &["
     )?;
-    lookup.sort_by(|left, right| (left.0, left.1).cmp(&(right.0, right.1)));
-    for (package, version, index) in lookup {
-        writeln!(
-            generated,
-            "    ({}, {}, RELEASE_{index}_MAPPINGS),",
-            quoted(package),
-            quoted(version)
-        )?;
+    for mapping in mapping_records {
+        writeln!(generated, "{mapping}")?;
+    }
+    writeln!(generated, "];\nstatic SNAPSHOTS: &[&[u32]] = &[")?;
+    for index in 0..release_index {
+        writeln!(generated, "    RELEASE_{index}_MAPPINGS,")?;
+    }
+    writeln!(generated, "];\nstatic RELEASE_SNAPSHOTS: &[u32] = &[")?;
+    for index in release_snapshots {
+        writeln!(generated, "    {index},")?;
     }
     writeln!(generated, "];")?;
     Ok(generated)
