@@ -350,14 +350,12 @@ fn prepare_publish(
             .get(&version)
             .map(|path| load_snapshot(path, &version))
             .transpose()?;
-        let unsupported_reason = replacement
-            .as_ref()
-            .and_then(|snapshot| snapshot.unsupported_reason)
-            .or_else(|| {
-                existing_files
-                    .get(&version)
-                    .and_then(|file| file.unsupported_reason)
-            });
+        let unsupported_reason = match &replacement {
+            Some(snapshot) => snapshot.unsupported_reason,
+            None => existing_files
+                .get(&version)
+                .and_then(|file| file.unsupported_reason),
+        };
         let mut delta = match (unsupported_reason, replacement) {
             (Some(reason), _) => PermissionDataFile {
                 provider_version: version.to_string(),
@@ -1457,6 +1455,34 @@ mod tests {
         )?;
 
         load_existing_files(&publish_dir.join("data"), &BTreeSet::new())?;
+        Ok(())
+    }
+
+    #[test]
+    fn supported_replacement_clears_old_unsupported_status() -> Result<(), Box<dyn Error>> {
+        let version = Version::parse("0.1.0")?;
+        let work = TempDir::new()?;
+        let snapshots = work.path().join("snapshots");
+        fs::create_dir(&snapshots)?;
+        let expected = mapping_state("Replacement");
+        persist_snapshot(&snapshots, &version, &expected)?;
+        let original = PermissionDataFile {
+            provider_version: version.to_string(),
+            unsupported_reason: Some(TerraformProviderAwsUnsupportedReason::AwsSdkGoV1),
+            remove: vec![],
+            upsert: vec![],
+        };
+        let directory = prepare_publish(
+            work.path(),
+            BTreeMap::from([(version.clone(), original)]),
+            &BTreeMap::from([(version.clone(), snapshots.join("0.1.0.json"))]),
+        )?;
+        let mut file: PermissionDataFile =
+            serde_json::from_slice(&fs::read(directory.join("data/0.1.0.json"))?)?;
+        assert_eq!(file.unsupported_reason, None);
+        let mut actual = MappingState::new();
+        data::validate_and_apply_file(&mut file, Some("0.1.0"), &mut actual)?;
+        assert_eq!(actual, expected);
         Ok(())
     }
 
