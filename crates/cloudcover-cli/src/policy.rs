@@ -6,7 +6,7 @@ use std::{
 use cloudcover_aws::AwsProvider;
 use cloudcover_core::{
     ApiMethod, CloudProvider, GoMethodReference, Language, MethodReference, ResolvedSdk, Sdk,
-    TerraformMethodReference,
+    SdkMethodMapping, TerraformMethodReference,
 };
 
 use crate::error::CliError;
@@ -77,7 +77,7 @@ fn build_go_api_methods(path: OsString) -> Result<Vec<ApiMethod>, CliError> {
     let provider = AwsProvider::new();
     let analysis = cloudcover_go::analyze_dir(path)
         .map_err(|error| CliError::Runtime(format!("failed to analyze Go code: {error}")))?;
-    let mut methods_by_sdk = BTreeMap::<(String, Option<String>, String), Vec<ApiMethod>>::new();
+    let mut methods_by_sdk = BTreeMap::<(String, Option<String>, String), SdkMethodMapping>::new();
     for sdk_name in ["aws-sdk-go-v2", "aws-sdk-go-v1"] {
         let resolved_sdk = ResolvedSdk::new(Sdk::new(sdk_name, Language::Go))
             .with_modules(analysis.modules().iter().cloned());
@@ -88,17 +88,25 @@ fn build_go_api_methods(path: OsString) -> Result<Vec<ApiMethod>, CliError> {
             let MethodReference::Go(go_method) = mapping.method() else {
                 continue;
             };
-            methods_by_sdk
-                .entry(go_method_key(go_method))
-                .or_default()
-                .extend(mapping.api_methods().iter().cloned());
+            methods_by_sdk.insert(go_method_key(go_method), mapping);
         }
     }
 
     let mut api_methods = BTreeSet::new();
     for go_method in analysis.methods() {
-        if let Some(mapped_methods) = methods_by_sdk.get(&go_method_key(go_method)) {
-            api_methods.extend(mapped_methods.iter().cloned());
+        if let Some(mapping) = methods_by_sdk.get(&go_method_key(go_method)) {
+            api_methods.extend(complete_api_methods(mapping)?.iter().cloned());
+        } else if go_method.receiver().is_some()
+            && (go_method
+                .package()
+                .starts_with("github.com/aws/aws-sdk-go/service/")
+                || go_method
+                    .package()
+                    .starts_with("github.com/aws/aws-sdk-go-v2/service/"))
+        {
+            return Err(CliError::Runtime(format!(
+                "AWS Go SDK reference is not mapped: {go_method:?}"
+            )));
         }
     }
     Ok(api_methods.into_iter().collect())
@@ -111,7 +119,7 @@ fn build_terraform_api_methods(path: &OsString) -> Result<Vec<ApiMethod>, CliErr
     let sdk = Sdk::new("terraform-provider-aws", Language::Terraform)
         .with_version(analysis.provider_version());
     let resolved_sdk = ResolvedSdk::new(sdk);
-    let mut methods_by_reference = BTreeMap::<(String, String, String), Vec<ApiMethod>>::new();
+    let mut methods_by_reference = BTreeMap::<(String, String, String), SdkMethodMapping>::new();
     for mapping in provider
         .sdk_method_mappings(&resolved_sdk)
         .map_err(|error| CliError::Runtime(error.to_string()))?
@@ -119,21 +127,13 @@ fn build_terraform_api_methods(path: &OsString) -> Result<Vec<ApiMethod>, CliErr
         let MethodReference::Terraform(terraform_method) = mapping.method() else {
             continue;
         };
-        methods_by_reference
-            .entry(terraform_method_key(terraform_method))
-            .or_default()
-            .extend(mapping.api_methods().iter().cloned());
+        methods_by_reference.insert(terraform_method_key(terraform_method), mapping);
     }
 
     let mut api_methods = BTreeSet::new();
     for method in analysis.methods() {
         let key = terraform_method_key(method);
         let Some(mapped_methods) = methods_by_reference.get(&key) else {
-            if methods_by_reference.keys().any(|(kind, type_name, _)| {
-                kind == method.kind() && type_name == method.type_name()
-            }) {
-                continue;
-            }
             return Err(CliError::Runtime(format!(
                 "Terraform reference is not mapped by AWS provider data: {} {} {}",
                 method.kind(),
@@ -141,10 +141,7 @@ fn build_terraform_api_methods(path: &OsString) -> Result<Vec<ApiMethod>, CliErr
                 method.action()
             )));
         };
-        if mapped_methods.is_empty() {
-            continue;
-        }
-        api_methods.extend(mapped_methods.iter().cloned());
+        api_methods.extend(complete_api_methods(mapped_methods)?.iter().cloned());
     }
     Ok(api_methods.into_iter().collect())
 }
@@ -182,7 +179,7 @@ fn build_javascript_api_methods(
     let mut methods_by_reference = BTreeMap::new();
     for mapping in &mappings {
         if let MethodReference::JavaScript(method) = mapping.method() {
-            methods_by_reference.insert(method, mapping.api_methods());
+            methods_by_reference.insert(method, mapping);
         }
     }
     let mut api_methods = BTreeSet::new();
@@ -197,7 +194,37 @@ fn build_javascript_api_methods(
                 method.name(),
             ))
         })?;
-        api_methods.extend(mapped_methods.iter().cloned());
+        api_methods.extend(complete_api_methods(mapped_methods)?.iter().cloned());
     }
     Ok(api_methods.into_iter().collect())
+}
+
+fn complete_api_methods(mapping: &SdkMethodMapping) -> Result<&[ApiMethod], CliError> {
+    if !mapping.is_complete() {
+        return Err(CliError::Runtime(format!(
+            "incomplete AWS catalog mapping for {:?}: unresolved operations {:?}",
+            mapping.method(),
+            mapping.unresolved_api_methods()
+        )));
+    }
+    Ok(mapping.api_methods())
+}
+
+#[cfg(test)]
+mod coverage_tests {
+    use super::*;
+
+    #[test]
+    fn requested_partial_mapping_fails_but_known_no_calls_succeeds() {
+        let mapping = SdkMethodMapping::new(
+            Sdk::new("test", Language::Go),
+            MethodReference::Go(GoMethodReference::new("pkg", Some("Client".into()), "Call")),
+            vec![ApiMethod::new("s3", "GetObject")],
+        )
+        .with_unresolved_api_methods(vec![ApiMethod::new("unknown", "Missing")]);
+        assert!(complete_api_methods(&mapping).is_err());
+        let no_calls =
+            SdkMethodMapping::new(mapping.sdk().clone(), mapping.method().clone(), vec![]);
+        assert!(complete_api_methods(&no_calls).is_ok());
+    }
 }
