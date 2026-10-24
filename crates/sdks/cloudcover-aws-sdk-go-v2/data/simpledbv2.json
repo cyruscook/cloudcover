@@ -205,6 +205,76 @@
       "module_version": "1.8.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.8.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/simpledbv2",
+          "Client",
+          "GetExport",
+          [
+            [
+              "sdb",
+              "GetExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/simpledbv2",
+          "Client",
+          "ListExports",
+          [
+            [
+              "sdb",
+              "ListExports"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/simpledbv2",
+          "Client",
+          "StartDomainExport",
+          [
+            [
+              "sdb",
+              "StartDomainExport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/simpledbv2",
+          "ListExportsPaginator",
+          "NextPage",
+          [
+            [
+              "sdb",
+              "ListExports"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.8.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.8.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

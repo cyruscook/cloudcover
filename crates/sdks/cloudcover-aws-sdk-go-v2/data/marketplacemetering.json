@@ -1150,6 +1150,91 @@
       "module_version": "1.45.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacemetering",
+          "Client",
+          "BatchMeterUsage",
+          [
+            [
+              "aws-marketplace",
+              "BatchMeterUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacemetering",
+          "Client",
+          "MeterUsage",
+          [
+            [
+              "aws-marketplace",
+              "MeterUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacemetering",
+          "Client",
+          "RegisterUsage",
+          [
+            [
+              "aws-marketplace",
+              "RegisterUsage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacemetering",
+          "Client",
+          "ResolveCustomer",
+          [
+            [
+              "aws-marketplace",
+              "ResolveCustomer"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

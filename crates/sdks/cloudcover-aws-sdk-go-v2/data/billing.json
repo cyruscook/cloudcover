@@ -664,6 +664,114 @@
       "module_version": "1.20.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListBillingViewSegments",
+          [
+            [
+              "billing",
+              "ListBillingViewSegments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListBillingViewSegmentsPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListBillingViewSegments"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.21.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListBusinessSupportAccountCharges",
+          [
+            [
+              "billing",
+              "ListBusinessSupportAccountCharges"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "ListBusinessSupportSubscriptionHistory",
+          [
+            [
+              "billing",
+              "ListBusinessSupportSubscriptionHistory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListBusinessSupportAccountChargesPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListBusinessSupportAccountCharges"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "ListBusinessSupportSubscriptionHistoryPaginator",
+          "NextPage",
+          [
+            [
+              "billing",
+              "ListBusinessSupportSubscriptionHistory"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.22.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.22.5",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

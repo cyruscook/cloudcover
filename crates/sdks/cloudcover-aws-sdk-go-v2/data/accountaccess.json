@@ -199,6 +199,180 @@
       "module_version": "1.6.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.6.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "CreateApplication",
+          [
+            [
+              "account-access",
+              "CreateApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "CreateEntitlement",
+          [
+            [
+              "account-access",
+              "CreateEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "DeleteApplication",
+          [
+            [
+              "account-access",
+              "DeleteApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "DeleteEntitlement",
+          [
+            [
+              "account-access",
+              "DeleteEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "GetApplication",
+          [
+            [
+              "account-access",
+              "GetApplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "GetEntitlement",
+          [
+            [
+              "account-access",
+              "GetEntitlement"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "ListApplications",
+          [
+            [
+              "account-access",
+              "ListApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "ListEntitlements",
+          [
+            [
+              "account-access",
+              "ListEntitlements"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "account-access",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "TagResource",
+          [
+            [
+              "account-access",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "account-access",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "ListApplicationsPaginator",
+          "NextPage",
+          [
+            [
+              "account-access",
+              "ListApplications"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccess",
+          "ListEntitlementsPaginator",
+          "NextPage",
+          [
+            [
+              "account-access",
+              "ListEntitlements"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.6.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.6.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

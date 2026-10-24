@@ -556,6 +556,59 @@
       "module_version": "1.15.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3vectors",
+          "Client",
+          "PutVectorBucketDefaultIndexMode",
+          [
+            [
+              "s3vectors",
+              "PutVectorBucketDefaultIndexMode"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3vectors",
+          "Client",
+          "UpdateIndexMode",
+          [
+            [
+              "s3vectors",
+              "UpdateIndexMode"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.16.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.4",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

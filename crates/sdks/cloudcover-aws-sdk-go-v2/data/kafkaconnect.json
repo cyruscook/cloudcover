@@ -1213,6 +1213,64 @@
       "module_version": "1.39.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.39.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafkaconnect",
+          "Client",
+          "PauseConnector",
+          [
+            [
+              "kafkaconnect",
+              "PauseConnector"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kafkaconnect",
+          "Client",
+          "ResumeConnector",
+          [
+            [
+              "kafkaconnect",
+              "ResumeConnector"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

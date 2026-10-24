@@ -911,6 +911,147 @@
       "module_version": "1.25.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "CreateRescoreExecutionPlan",
+          [
+            [
+              "kendra-ranking",
+              "CreateRescoreExecutionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "DeleteRescoreExecutionPlan",
+          [
+            [
+              "kendra-ranking",
+              "DeleteRescoreExecutionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "DescribeRescoreExecutionPlan",
+          [
+            [
+              "kendra-ranking",
+              "DescribeRescoreExecutionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "ListRescoreExecutionPlans",
+          [
+            [
+              "kendra-ranking",
+              "ListRescoreExecutionPlans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "kendra-ranking",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "Rescore",
+          [
+            [
+              "kendra-ranking",
+              "Rescore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "TagResource",
+          [
+            [
+              "kendra-ranking",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "kendra-ranking",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "Client",
+          "UpdateRescoreExecutionPlan",
+          [
+            [
+              "kendra-ranking",
+              "UpdateRescoreExecutionPlan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kendraranking",
+          "ListRescoreExecutionPlansPaginator",
+          "NextPage",
+          [
+            [
+              "kendra-ranking",
+              "ListRescoreExecutionPlans"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

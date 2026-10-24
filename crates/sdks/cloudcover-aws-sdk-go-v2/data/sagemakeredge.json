@@ -1025,6 +1025,75 @@
       "module_version": "1.39.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakeredge",
+          "Client",
+          "GetDeployments",
+          [
+            [
+              "sagemaker",
+              "GetDeployments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakeredge",
+          "Client",
+          "GetDeviceRegistration",
+          [
+            [
+              "sagemaker",
+              "GetDeviceRegistration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakeredge",
+          "Client",
+          "SendHeartbeat",
+          [
+            [
+              "sagemaker",
+              "SendHeartbeat"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.41.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.42.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

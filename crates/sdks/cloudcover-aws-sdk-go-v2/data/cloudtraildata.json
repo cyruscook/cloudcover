@@ -767,6 +767,48 @@
       "module_version": "1.25.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.25.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cloudtraildata",
+          "Client",
+          "PutAuditEvents",
+          [
+            [
+              "cloudtrail-data",
+              "PutAuditEvents"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.25.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.26.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

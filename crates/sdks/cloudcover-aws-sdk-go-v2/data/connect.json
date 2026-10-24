@@ -7195,6 +7195,163 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.201.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.202.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.203.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListEvaluationFormAIVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListEvaluationFormAIVersions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.204.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.204.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.204.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.204.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.205.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "CreateContactFlowAlias",
+          [
+            [
+              "connect",
+              "CreateContactFlowAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteContactFlowAlias",
+          [
+            [
+              "connect",
+              "DeleteContactFlowAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DescribeContactFlowAlias",
+          [
+            [
+              "connect",
+              "DescribeContactFlowAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListContactFlowAliases",
+          [
+            [
+              "connect",
+              "ListContactFlowAliases"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "UpdateContactFlowAlias",
+          [
+            [
+              "connect",
+              "UpdateContactFlowAlias"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListContactFlowAliasesPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListContactFlowAliases"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.206.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.207.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.208.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "ListReplicationFindings",
+          [
+            [
+              "connect",
+              "ListReplicationFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "ListReplicationFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "connect",
+              "ListReplicationFindings"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

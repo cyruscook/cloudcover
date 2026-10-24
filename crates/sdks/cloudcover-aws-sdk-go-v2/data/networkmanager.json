@@ -2408,6 +2408,81 @@
       "module_version": "1.50.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.50.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.50.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkmanager",
+          "Client",
+          "ListAttachmentNatConfigurations",
+          [
+            [
+              "networkmanager",
+              "ListAttachmentNatConfigurations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkmanager",
+          "Client",
+          "UpdateAttachmentNatConfiguration",
+          [
+            [
+              "networkmanager",
+              "UpdateAttachmentNatConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkmanager",
+          "GetNetworkRoutesPaginator",
+          "NextPage",
+          [
+            [
+              "networkmanager",
+              "GetNetworkRoutes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkmanager",
+          "ListAttachmentNatConfigurationsPaginator",
+          "NextPage",
+          [
+            [
+              "networkmanager",
+              "ListAttachmentNatConfigurations"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

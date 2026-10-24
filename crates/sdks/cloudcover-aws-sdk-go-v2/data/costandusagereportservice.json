@@ -1126,6 +1126,125 @@
       "module_version": "1.43.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.43.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "DeleteReportDefinition",
+          [
+            [
+              "cur",
+              "DeleteReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "DescribeReportDefinitions",
+          [
+            [
+              "cur",
+              "DescribeReportDefinitions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "cur",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "ModifyReportDefinition",
+          [
+            [
+              "cur",
+              "ModifyReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "PutReportDefinition",
+          [
+            [
+              "cur",
+              "PutReportDefinition"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "TagResource",
+          [
+            [
+              "cur",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "cur",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/costandusagereportservice",
+          "DescribeReportDefinitionsPaginator",
+          "NextPage",
+          [
+            [
+              "cur",
+              "DescribeReportDefinitions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.43.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.43.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

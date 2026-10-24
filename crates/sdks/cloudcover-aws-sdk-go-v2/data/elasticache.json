@@ -2209,6 +2209,64 @@
       "module_version": "1.61.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.63.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.64.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/elasticache",
+          "Client",
+          "PrepareMigration",
+          [
+            [
+              "elasticache",
+              "PrepareMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/elasticache",
+          "Client",
+          "StopMigration",
+          [
+            [
+              "elasticache",
+              "StopMigration"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.64.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

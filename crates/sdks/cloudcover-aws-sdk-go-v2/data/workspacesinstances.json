@@ -482,6 +482,230 @@
       "module_version": "1.15.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.15.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "AssociateVolume",
+          [
+            [
+              "workspaces-instances",
+              "AssociateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "CreateVolume",
+          [
+            [
+              "workspaces-instances",
+              "CreateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "CreateWorkspaceInstance",
+          [
+            [
+              "workspaces-instances",
+              "CreateWorkspaceInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "DeleteVolume",
+          [
+            [
+              "workspaces-instances",
+              "DeleteVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "DeleteWorkspaceInstance",
+          [
+            [
+              "workspaces-instances",
+              "DeleteWorkspaceInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "DisassociateVolume",
+          [
+            [
+              "workspaces-instances",
+              "DisassociateVolume"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "GetWorkspaceInstance",
+          [
+            [
+              "workspaces-instances",
+              "GetWorkspaceInstance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "ListInstanceTypes",
+          [
+            [
+              "workspaces-instances",
+              "ListInstanceTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "ListRegions",
+          [
+            [
+              "workspaces-instances",
+              "ListRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "ListTagsForResource",
+          [
+            [
+              "workspaces-instances",
+              "ListTagsForResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "ListWorkspaceInstances",
+          [
+            [
+              "workspaces-instances",
+              "ListWorkspaceInstances"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "TagResource",
+          [
+            [
+              "workspaces-instances",
+              "TagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "UntagResource",
+          [
+            [
+              "workspaces-instances",
+              "UntagResource"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "ListInstanceTypesPaginator",
+          "NextPage",
+          [
+            [
+              "workspaces-instances",
+              "ListInstanceTypes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "ListRegionsPaginator",
+          "NextPage",
+          [
+            [
+              "workspaces-instances",
+              "ListRegions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "ListWorkspaceInstancesPaginator",
+          "NextPage",
+          [
+            [
+              "workspaces-instances",
+              "ListWorkspaceInstances"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.15.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.15.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.16.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/workspacesinstances",
+          "Client",
+          "ModifyVolume",
+          [
+            [
+              "workspaces-instances",
+              "ModifyVolume"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.17.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.18.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

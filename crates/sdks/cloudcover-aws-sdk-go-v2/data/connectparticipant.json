@@ -1202,6 +1202,169 @@
       "module_version": "1.45.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.45.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "CancelParticipantAuthentication",
+          [
+            [
+              "execute-api",
+              "CancelParticipantAuthentication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "CompleteAttachmentUpload",
+          [
+            [
+              "execute-api",
+              "CompleteAttachmentUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "CreateParticipantConnection",
+          [
+            [
+              "execute-api",
+              "CreateParticipantConnection"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "DescribeView",
+          [
+            [
+              "execute-api",
+              "DescribeView"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "DisconnectParticipant",
+          [
+            [
+              "execute-api",
+              "DisconnectParticipant"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "GetAttachment",
+          [
+            [
+              "execute-api",
+              "GetAttachment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "GetAuthenticationUrl",
+          [
+            [
+              "execute-api",
+              "GetAuthenticationUrl"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "GetTranscript",
+          [
+            [
+              "execute-api",
+              "GetTranscript"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "SendEvent",
+          [
+            [
+              "execute-api",
+              "SendEvent"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "SendMessage",
+          [
+            [
+              "execute-api",
+              "SendMessage"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "Client",
+          "StartAttachmentUpload",
+          [
+            [
+              "execute-api",
+              "StartAttachmentUpload"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectparticipant",
+          "GetTranscriptPaginator",
+          "NextPage",
+          [
+            [
+              "execute-api",
+              "GetTranscript"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.45.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.45.6",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

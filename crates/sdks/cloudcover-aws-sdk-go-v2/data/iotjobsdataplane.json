@@ -1072,6 +1072,92 @@
       "module_version": "1.38.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.38.1",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotjobsdataplane",
+          "Client",
+          "DescribeJobExecution",
+          [
+            [
+              "iot-jobs-data",
+              "DescribeJobExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotjobsdataplane",
+          "Client",
+          "GetPendingJobExecutions",
+          [
+            [
+              "iot-jobs-data",
+              "GetPendingJobExecutions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotjobsdataplane",
+          "Client",
+          "StartCommandExecution",
+          [
+            [
+              "iot-jobs-data",
+              "StartCommandExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotjobsdataplane",
+          "Client",
+          "StartNextPendingJobExecution",
+          [
+            [
+              "iot-jobs-data",
+              "StartNextPendingJobExecution"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/iotjobsdataplane",
+          "Client",
+          "UpdateJobExecution",
+          [
+            [
+              "iot-jobs-data",
+              "UpdateJobExecution"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.38.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.38.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.39.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.40.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
