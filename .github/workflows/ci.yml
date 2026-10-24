@@ -14,6 +14,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  sar-refresh:
+    name: SAR refresh contract
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Test no-op, pending PR and changed-catalog behavior
+        run: python3 -B -m unittest discover -s tools -p 'test_refresh_sar.py'
+
   aws-sdk-go-v1-generator:
     name: AWS SDK Go v1 generator
     runs-on: ubuntu-latest

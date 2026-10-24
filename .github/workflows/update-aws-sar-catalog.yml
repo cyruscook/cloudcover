@@ -1,0 +1,124 @@
+name: Update pinned AWS SAR catalog
+
+on:
+  schedule:
+    - cron: '19 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-aws-sar-catalog
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      BRANCH: automation/aws-sar-catalog
+      SAR_DIR: crates/clouds/cloudcover-aws/data/sar
+    steps:
+      - name: Check out default branch # zizmor: ignore[artipacked]
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Test refresh behavior without network access
+        run: python3 -B -m unittest discover -s tools -p 'test_refresh_sar.py'
+
+      - name: Read pending update snapshot as data
+        id: baseline
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          remote_sha="$(git ls-remote --heads origin "refs/heads/$BRANCH" | awk 'NR == 1 { print $1 }')"
+          printf 'remote_sha=%s\n' "$remote_sha" >> "$GITHUB_OUTPUT"
+          pull_request="$(gh pr list --head "$BRANCH" --base "$DEFAULT_BRANCH" --state open --json number,headRepository,headRepositoryOwner --jq 'map(select((.headRepositoryOwner.login + "/" + .headRepository.name) == env.GITHUB_REPOSITORY)) | .[0].number // empty')"
+          if [ -n "$pull_request" ]; then
+            git fetch --no-tags origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+            mkdir -p "$RUNNER_TEMP/sar-previous"
+            git show "refs/remotes/origin/$BRANCH:$SAR_DIR/catalog.json" > "$RUNNER_TEMP/sar-previous/catalog.json"
+            git show "refs/remotes/origin/$BRANCH:$SAR_DIR/manifest.json" > "$RUNNER_TEMP/sar-previous/manifest.json"
+          fi
+
+      - name: Refresh live SAR inputs
+        run: |
+          previous=()
+          if [ -d "$RUNNER_TEMP/sar-previous" ]; then
+            previous=(--previous-dir "$RUNNER_TEMP/sar-previous")
+          fi
+          python3 tools/refresh_sar.py "${previous[@]}" --summary "$RUNNER_TEMP/aws-sar-pr-body.md"
+
+      - name: Detect changed catalog bytes
+        id: changes
+        run: |
+          if git diff --quiet -- "$SAR_DIR/catalog.json"; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Rust
+        if: steps.changes.outputs.changed == 'true'
+        uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249 # stable
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+
+      - name: Install Go
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.26.x'
+          cache: false
+
+      - name: Install Node.js
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site dependencies
+        if: steps.changes.outputs.changed == 'true'
+        run: npm --prefix site ci
+
+      - name: Validate catalog, deterministic compilation and policy integration
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          make check
+          cargo test --locked --workspace --all-features
+
+      - name: Commit catalog and provenance together
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- "$SAR_DIR/catalog.json" "$SAR_DIR/manifest.json"
+          git commit -m 'Update pinned AWS SAR catalog'
+
+      - name: Push the stable update branch
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          REMOTE_SHA: ${{ steps.baseline.outputs.remote_sha }}
+        run: git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$REMOTE_SHA"
+
+      - name: Create or update the catalog pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          pull_request="$(gh pr list --head "$BRANCH" --base "$DEFAULT_BRANCH" --state open --json number,headRepository,headRepositoryOwner --jq 'map(select((.headRepositoryOwner.login + "/" + .headRepository.name) == env.GITHUB_REPOSITORY)) | .[0].number // empty')"
+          if [ -n "$pull_request" ]; then
+            gh pr edit "$pull_request" --title 'Update pinned AWS SAR catalog' --body-file "$RUNNER_TEMP/aws-sar-pr-body.md"
+          else
+            gh pr create --draft --head "$BRANCH" --base "$DEFAULT_BRANCH" --title 'Update pinned AWS SAR catalog' --body-file "$RUNNER_TEMP/aws-sar-pr-body.md"
+          fi
