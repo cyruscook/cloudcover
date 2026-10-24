@@ -89,7 +89,11 @@ func run() error {
 		if err != nil {
 			return err
 		}
-		currentRelease := release{ModuleVersion: strings.TrimPrefix(current.raw, "v")}
+		currentRelease := release{
+			ModuleVersion: strings.TrimPrefix(current.raw, "v"),
+			Remove:        make([][3]string, 0),
+			Upsert:        make([][]any, 0),
+		}
 		for _, service := range changed {
 			change, err := updateService(batch, current.raw, service, state)
 			if err != nil {

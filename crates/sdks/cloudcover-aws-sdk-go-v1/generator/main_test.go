@@ -2,13 +2,80 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"errors"
 	"io"
+	"os"
+	"os/exec"
+	"path/filepath"
 	"reflect"
 	"strconv"
 	"strings"
 	"testing"
 )
+
+func TestGeneratorSerializesEmptyDeltaListsAsArrays(t *testing.T) {
+	t.Parallel()
+	repository := t.TempDir()
+	git := func(args ...string) {
+		t.Helper()
+		cmd := exec.Command("git", args...)
+		cmd.Dir = repository
+		if output, err := cmd.CombinedOutput(); err != nil {
+			t.Fatalf("git %v: %v\n%s", args, err, output)
+		}
+	}
+	git("init")
+	serviceDir := filepath.Join(repository, "service", "widgets")
+	if err := os.MkdirAll(serviceDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	for name, contents := range map[string]string{
+		"api.go":     "package widgets\ntype Client struct{}\nfunc (c *Client) ListWidgets() {}\nfunc (c *Client) ListWidgetsRequest() {}\n",
+		"service.go": serviceMetadata("widgets"),
+	} {
+		if err := os.WriteFile(filepath.Join(serviceDir, name), []byte(contents), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	commit := func(tag string) {
+		t.Helper()
+		git("add", ".")
+		git("-c", "user.name=Test", "-c", "user.email=test@example.com", "-c", "commit.gpgsign=false", "commit", "--allow-empty", "-m", tag)
+		git("tag", tag)
+	}
+	commit("v1.0.0") // Additions only: remove must be [].
+	commit("v1.0.1") // No changes: both lists must be [].
+	if err := os.RemoveAll(serviceDir); err != nil {
+		t.Fatal(err)
+	}
+	commit("v1.0.2") // Removals only: upsert must be [].
+	outputPath := filepath.Join(t.TempDir(), "mappings.json")
+	cmd := exec.Command("go", "run", "./main.go", "--repository", filepath.Join(repository, ".git"), "--output", outputPath)
+	if output, err := cmd.CombinedOutput(); err != nil {
+		t.Fatalf("generate: %v\n%s", err, output)
+	}
+	contents, err := os.ReadFile(outputPath)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var file dataFile
+	if err := json.Unmarshal(contents, &file); err != nil {
+		t.Fatal(err)
+	}
+	if len(file.Releases) != 3 {
+		t.Fatalf("got %d releases, want 3", len(file.Releases))
+	}
+	for i, want := range [][2]int{{0, 1}, {0, 0}, {1, 0}} {
+		release := file.Releases[i]
+		if release.Remove == nil || release.Upsert == nil {
+			t.Errorf("release %s contains null or missing delta lists", release.ModuleVersion)
+		}
+		if len(release.Remove) != want[0] || len(release.Upsert) != want[1] {
+			t.Errorf("release %s has %d removals and %d upserts, want %v", release.ModuleVersion, len(release.Remove), len(release.Upsert), want)
+		}
+	}
+}
 
 type testWriteCloser struct {
 	io.Writer
