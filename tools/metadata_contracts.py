@@ -17,30 +17,57 @@ def version(raw):
         raise ValueError(f'invalid exact stable version: {raw!r}')
     return tuple(map(int, raw.split('.')))
 
+def mapping_key(raw, javascript):
+    arity = 2 if javascript else 3
+    if not isinstance(raw, list) or len(raw) != arity:
+        raise ValueError(f'mapping key must be an array of length {arity}')
+    for position, value in enumerate(raw):
+        if javascript and position == 0 and value is None:
+            continue
+        if not isinstance(value, str) or not value:
+            raise ValueError('mapping key fields must be nonempty strings; only JS receiver may be null')
+    return tuple(raw)
+
+def api_pairs(raw, javascript):
+    if not isinstance(raw, list):
+        raise ValueError('API methods must be an array')
+    pairs = []
+    for api in raw:
+        if javascript:
+            if not isinstance(api, dict) or set(api) != {'service', 'name'}:
+                raise ValueError('JS API methods must have service and name fields')
+            api = [api['service'], api['name']]
+        if not isinstance(api, list) or len(api) != 2 or any(not isinstance(x, str) or not x for x in api):
+            raise ValueError('API tuple must be an array of two nonempty strings')
+        pairs.append(tuple(api))
+    return tuple(sorted(set(pairs)))
+
 def apply(release, state, javascript=False, allow_empty=False):
     removes, upserts = release['remove'], release['upsert']
     if not isinstance(removes, list) or not isinstance(upserts, list):
         raise ValueError('remove and upsert must be arrays')
     keys = set()
-    for key in removes:
-        key = tuple(key)
+    for raw in removes:
+        key = mapping_key(raw, javascript)
         if key in keys or key not in state:
             raise ValueError(f'duplicate or missing removal: {key}')
         keys.add(key)
     additions = {}
     for row in upserts:
         if javascript:
-            key = (row['receiver'], row['method'])
-            apis = [(api['service'], api['name']) for api in row['api_methods']]
+            if not isinstance(row, dict) or set(row) != {'receiver', 'method', 'api_methods'}:
+                raise ValueError('JS mapping row must have receiver, method and api_methods fields')
+            key = mapping_key([row['receiver'], row['method']], True)
+            apis = api_pairs(row['api_methods'], True)
         else:
-            key = tuple(row[:3]); apis = row[3]
-        if key in keys or key in additions or any(not isinstance(k, str) or not k for k in key if k is not None):
-            raise ValueError(f'duplicate, conflicting or invalid key: {key}')
-        if not isinstance(apis, list) or (not apis and not allow_empty):
-            raise ValueError(f'invalid API list: {key}')
-        if any(len(api) != 2 or any(not isinstance(x, str) or not x for x in api) for api in apis):
-            raise ValueError(f'invalid API identity: {key}')
-        apis = tuple(sorted(set(map(tuple, apis))))
+            if not isinstance(row, list) or len(row) != 4:
+                raise ValueError('mapping row must be an array of length four')
+            key = mapping_key(row[:3], False)
+            apis = api_pairs(row[3], False)
+        if key in keys or key in additions:
+            raise ValueError(f'duplicate or conflicting key: {key}')
+        if not apis and not allow_empty:
+            raise ValueError(f'empty API list: {key}')
         if state.get(key) == apis:
             raise ValueError(f'redundant upsert: {key}')
         additions[key] = apis
