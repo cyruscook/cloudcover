@@ -197,6 +197,6 @@ fn missing_lifecycle_mapping_reports_incomplete_coverage() -> Result<(), Box<dyn
     ])?;
     assert!(!output.status.success());
     assert!(String::from_utf8_lossy(&output.stderr).contains("Terraform reference is not mapped"));
-    assert!(output.stdout.is_empty());
+    assert_eq!(output.stdout, Vec::<u8>::new());
     Ok(())
 }

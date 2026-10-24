@@ -96,17 +96,6 @@ fn build_go_api_methods(path: OsString) -> Result<Vec<ApiMethod>, CliError> {
     for go_method in analysis.methods() {
         if let Some(mapping) = methods_by_sdk.get(&go_method_key(go_method)) {
             api_methods.extend(complete_api_methods(mapping)?.iter().cloned());
-        } else if go_method.receiver().is_some()
-            && (go_method
-                .package()
-                .starts_with("github.com/aws/aws-sdk-go/service/")
-                || go_method
-                    .package()
-                    .starts_with("github.com/aws/aws-sdk-go-v2/service/"))
-        {
-            return Err(CliError::Runtime(format!(
-                "AWS Go SDK reference is not mapped: {go_method:?}"
-            )));
         }
     }
     Ok(api_methods.into_iter().collect())

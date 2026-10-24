@@ -10,8 +10,9 @@ An empty API list with no unresolved operations preserves the existing Terraform
 known-no-call meaning. An empty list with unresolved source operations is
 incomplete. CLI policy commands fail on either partial or wholly unresolved
 requested mappings and missing Terraform lifecycle mappings. Unused catalog gaps
-do not prevent policy generation. Missing AWS Go receiver-method references now
-also produce errors; SDK constructors and other free functions remain excluded.
+do not prevent policy generation. Go references absent from the SDK extractor remain excluded: the analyzer also
+returns transitive SDK helper and waiter references, so absence alone is not proof
+of a missing API mapping. Source-operation catalog gaps are always retained.
 
 Migration: the additional serialized `unresolved_api_methods` field is optional
 and defaults to empty for older values. Existing constructors and resolved lists
