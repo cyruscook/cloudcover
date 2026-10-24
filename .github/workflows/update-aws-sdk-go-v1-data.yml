@@ -39,6 +39,9 @@ jobs:
       - name: Generate all stable releases
         run: cargo run -p cloudcover-aws-sdk-go-v1 --features generator --bin generate-aws-sdk-go-v1-data -- --force
 
+      - name: Refresh metadata manifests
+        run: python3 tools/metadata_contracts.py --write
+
       - name: Detect generated data changes
         id: changes
         run: |
@@ -52,6 +55,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: |
           {
+            python3 tools/metadata_contracts.py
             echo 'Generated AWS SDK Go v1 mapping data for:'
             git status --porcelain -- crates/sdks/cloudcover-aws-sdk-go-v1/data \
               | sed 's/^/- /'
@@ -69,6 +73,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- crates/sdks/cloudcover-aws-sdk-go-v1/data
+          git add -- crates/sdks/*/metadata-manifest.json
           git commit -m 'Update AWS SDK Go v1 mapping data'
 
       - name: Push generated data branch

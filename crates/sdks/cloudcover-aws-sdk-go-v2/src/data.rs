@@ -90,6 +90,18 @@ pub fn validate_and_apply_release(
     for (package, receiver, method) in &release.remove {
         validate_key(package, receiver, method)?;
     }
+    let remove_keys = release
+        .remove
+        .iter()
+        .collect::<std::collections::BTreeSet<_>>();
+    let upsert_keys = release
+        .upsert
+        .iter()
+        .map(|row| (&row.0, &row.1, &row.2))
+        .collect::<std::collections::BTreeSet<_>>();
+    if remove_keys.len() != release.remove.len() || upsert_keys.len() != release.upsert.len() {
+        return Err("metadata delta contains duplicate keys".to_owned());
+    }
     release.remove.sort();
     release.remove.dedup();
 
@@ -218,4 +230,25 @@ fn row_to_compact(row: (String, String, String, Vec<ApiMethodRefRow>)) -> Compac
             .map(|api_method| (api_method.service, api_method.name))
             .collect(),
     )
+}
+
+#[cfg(test)]
+mod contract_tests {
+    use super::*;
+
+    #[test]
+    fn rejects_duplicate_keys_and_null_collections() -> Result<(), Box<dyn std::error::Error>> {
+        let mut release: SdkDataRelease = serde_json::from_str(
+            r#"{"module_version":"1.0.0","remove":[],"upsert":[["p","C","M",[["s","A"]]],["p","C","M",[["s","A"]]]]}"#,
+        )?;
+        let mut state = MappingState::new();
+        assert!(validate_and_apply_release(&mut release, &mut state).is_err());
+        assert!(
+            serde_json::from_str::<SdkDataRelease>(
+                r#"{"module_version":"1.0.0","remove":null,"upsert":[]}"#
+            )
+            .is_err()
+        );
+        Ok(())
+    }
 }

@@ -45,6 +45,9 @@ jobs:
       - name: Generate all stable package releases
         run: node crates/sdks/cloudcover-aws-sdk-js-v3/generator/generate.mjs --all
 
+      - name: Refresh metadata manifests
+        run: python3 tools/metadata_contracts.py --write
+
       - name: Detect generated data changes
         id: changes
         run: |
@@ -58,6 +61,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: |
           {
+            python3 tools/metadata_contracts.py
             echo 'Generated AWS SDK JavaScript/TypeScript v3 mapping data for:'
             git status --porcelain -- crates/sdks/cloudcover-aws-sdk-js-v3/data \
               | sed 's/^/- /'
@@ -75,6 +79,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- crates/sdks/cloudcover-aws-sdk-js-v3/data
+          git add -- crates/sdks/*/metadata-manifest.json
           git commit -m 'Update AWS SDK JavaScript/TypeScript v3 mapping data'
 
       - name: Push generated data branch

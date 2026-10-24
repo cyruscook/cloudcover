@@ -80,6 +80,18 @@ pub fn validate_and_apply_file(
         return Ok(version);
     }
 
+    let remove_keys = file
+        .remove
+        .iter()
+        .collect::<std::collections::BTreeSet<_>>();
+    let upsert_keys = file
+        .upsert
+        .iter()
+        .map(|row| (&row.0, &row.1, &row.2))
+        .collect::<std::collections::BTreeSet<_>>();
+    if remove_keys.len() != file.remove.len() || upsert_keys.len() != file.upsert.len() {
+        return Err("metadata delta contains duplicate keys".to_owned());
+    }
     let mut upsert_rows = file
         .upsert
         .drain(..)
@@ -213,4 +225,25 @@ fn row_to_compact(row: TerraformProviderAwsMethodMappingRow) -> CompactMappingRo
             .map(|api_method| (api_method.service, api_method.name))
             .collect(),
     )
+}
+
+#[cfg(test)]
+mod contract_tests {
+    use super::*;
+
+    #[test]
+    fn rejects_duplicate_keys_and_null_collections() -> Result<(), Box<dyn std::error::Error>> {
+        let mut release: PermissionDataFile = serde_json::from_str(
+            r#"{"provider_version":"1.0.0","remove":[],"upsert":[["p","C","M",[["s","A"]]],["p","C","M",[["s","A"]]]]}"#,
+        )?;
+        let mut state = MappingState::new();
+        assert!(validate_and_apply_file(&mut release, None, &mut state).is_err());
+        assert!(
+            serde_json::from_str::<PermissionDataFile>(
+                r#"{"provider_version":"1.0.0","remove":null,"upsert":[]}"#
+            )
+            .is_err()
+        );
+        Ok(())
+    }
 }

@@ -70,8 +70,13 @@ impl IndexBuilder {
     pub(crate) fn from_releases(releases: &mut [data::SdkDataRelease]) -> Result<Self, String> {
         let mut builder = Self::default();
         let mut state = data::MappingState::new();
+        let mut previous = None;
         for release in releases {
             let version = data::validate_and_apply_release(release, &mut state)?;
+            if previous.as_ref().is_some_and(|prior| prior >= &version) {
+                return Err("SDK releases must be strictly increasing".into());
+            }
+            previous = Some(version.clone());
             builder
                 .version_string_ids
                 .push(builder.strings.intern(&version.to_string())?);
