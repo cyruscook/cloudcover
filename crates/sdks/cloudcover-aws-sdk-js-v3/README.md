@@ -12,7 +12,7 @@ mapping arrays, and generates an exact package/version lookup.
 
 ## Regenerate
 
-Install Git and Node.js 24 or later. From the repository root:
+Install Git and Node.js 24.22.1 or a newer patched supported release. From the repository root:
 
 ```sh
 npm ci --prefix crates/sdks/cloudcover-aws-sdk-js-v3/generator

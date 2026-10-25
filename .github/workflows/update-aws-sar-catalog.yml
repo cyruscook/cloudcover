@@ -82,9 +82,12 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: 24
+          node-version: "24.22.1"
           cache: npm
           cache-dependency-path: site/package-lock.json
+      - name: Verify patched Node.js release
+        if: steps.changes.outputs.changed == 'true'
+        run: node -e "if (process.versions.node !== '24.22.1') throw new Error('Unexpected Node.js release'); console.log(process.version)"
 
       - name: Install site dependencies
         if: steps.changes.outputs.changed == 'true'
