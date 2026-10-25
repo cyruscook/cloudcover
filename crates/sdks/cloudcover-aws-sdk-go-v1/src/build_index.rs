@@ -251,15 +251,21 @@ fn encode_binary(
 
     let mut row_ids_bytes = Vec::new();
     let mut version_index = Vec::with_capacity(snapshot_row_ids.len());
+    let mut snapshots = BTreeMap::<Vec<u16>, (u32, u32)>::new();
     for snapshot in snapshot_row_ids {
-        let start = u32::try_from(row_ids_bytes.len() / 2).map_err(|error| error.to_string())?;
-        for row_id in snapshot {
-            push_u16(&mut row_ids_bytes, row_id);
-        }
-        version_index.push((
-            start,
-            u32::try_from(row_ids_bytes.len() / 2).map_err(|error| error.to_string())? - start,
-        ));
+        let index = if let Some(index) = snapshots.get(&snapshot) {
+            *index
+        } else {
+            let start =
+                u32::try_from(row_ids_bytes.len() / 2).map_err(|error| error.to_string())?;
+            let len = u32::try_from(snapshot.len()).map_err(|error| error.to_string())?;
+            for &row_id in &snapshot {
+                push_u16(&mut row_ids_bytes, row_id);
+            }
+            snapshots.insert(snapshot, (start, len));
+            (start, len)
+        };
+        version_index.push(index);
     }
 
     let api_methods_offset = rows_bytes.len();
@@ -387,6 +393,38 @@ mod tests {
             })
             .collect::<Option<Vec<_>>>()?;
         Some(rows)
+    }
+
+    #[test]
+    fn repeated_nonadjacent_and_empty_snapshots_share_row_storage() -> Result<(), String> {
+        let mut file = synthetic_data();
+        file.releases.push(data::SdkDataRelease {
+            module_version: "1.3.0".into(),
+            remove: vec![],
+            upsert: vec![],
+        });
+        file.releases.push(data::SdkDataRelease {
+            module_version: "1.4.0".into(),
+            remove: vec![("pkg".into(), "Client".into(), "Second".into())],
+            upsert: file.releases[0].upsert.clone(),
+        });
+        file.releases.push(data::SdkDataRelease {
+            module_version: "1.5.0".into(),
+            remove: vec![("pkg".into(), "Client".into(), "First".into())],
+            upsert: vec![],
+        });
+        file.releases.push(data::SdkDataRelease {
+            module_version: "1.6.0".into(),
+            remove: vec![],
+            upsert: vec![],
+        });
+        let encoded = IndexBuilder::from_releases(&mut file.releases)?.encode()?;
+        assert_eq!(encoded.version_index[2], encoded.version_index[3]);
+        assert_eq!(encoded.version_index[0], encoded.version_index[4]);
+        assert_eq!(encoded.version_index[5], encoded.version_index[6]);
+        assert_eq!(encoded.version_index[5].1, 0);
+        assert_eq!(encoded.binary.len() - encoded.row_ids_offset, 6);
+        Ok(())
     }
 
     #[test]
