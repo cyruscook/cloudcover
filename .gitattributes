@@ -1,0 +1,8 @@
+# These inputs are hashed as raw bytes. Keep their checked-in LF bytes on every OS.
+/crates/clouds/cloudcover-aws/data/sar/*.json text eol=lf
+/tools/refresh_sar.py text eol=lf
+/crates/sdks/*/data/*.json text eol=lf
+/crates/sdks/*/metadata-manifest.json text eol=lf
+/crates/sdks/*/generator/** text=auto eol=lf
+/crates/sdks/*/src/bin/*.rs text eol=lf
+/crates/sdks/*/src/data.rs text eol=lf

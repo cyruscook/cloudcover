@@ -163,7 +163,7 @@ def refresh(directory=DATA_DIR, previous_dir=None, summary_path=None):
             temporary = output.name
         os.replace(temporary, directory / name)
     if summary_path:
-        summary_path.write_text(report)
+        summary_path.write_bytes(report.encode('utf-8'))
     print(f'pinned {len(catalog["services"])} services, {len(content)} bytes, sha256={sha256(content)}')
     return True
 

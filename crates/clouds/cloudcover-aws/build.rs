@@ -730,6 +730,21 @@ mod tests {
     }
 
     #[test]
+    fn checksum_rejects_line_ending_conversion() -> BuildResult<()> {
+        let mut manifest: Manifest = serde_json::from_slice(&fs::read("data/sar/manifest.json")?)?;
+        let lf = "{\n  \"schema_version\": 1\n}\n";
+        manifest.catalog_sha256 = format!("{:x}", Sha256::digest(lf.as_bytes()));
+        validate_manifest(&manifest, lf.as_bytes())?;
+        let crlf = lf.replace('\n', "\r\n");
+        assert_eq!(
+            serde_json::from_str::<serde_json::Value>(lf)?,
+            serde_json::from_str::<serde_json::Value>(&crlf)?
+        );
+        assert!(validate_manifest(&manifest, crlf.as_bytes()).is_err());
+        Ok(())
+    }
+
+    #[test]
     fn pinned_catalog_generates_identical_bytes() -> BuildResult<()> {
         fn generate() -> BuildResult<String> {
             let mut rows = collect_rows()?;

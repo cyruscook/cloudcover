@@ -14,6 +14,79 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  windows-build:
+    name: Windows metadata and CLI (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-pc-windows-msvc
+            os: windows-2025
+          - target: aarch64-pc-windows-msvc
+            os: windows-11-arm
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Install Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.27.x'
+          cache: false
+
+      - name: Configure ARM64 C compiler
+        if: matrix.target == 'aarch64-pc-windows-msvc'
+        shell: pwsh
+        run: |
+          @'
+          import subprocess
+          import sys
+
+          args = [arg for arg in sys.argv[1:] if arg != "-mthreads"]
+          sys.exit(subprocess.call(["clang", "--target=aarch64-pc-windows-msvc", *args]))
+          '@ | Set-Content "$env:RUNNER_TEMP\cloudcover-cc.py"
+          "CC=python $env:RUNNER_TEMP\cloudcover-cc.py" | Add-Content $env:GITHUB_ENV
+
+      - name: Verify CRLF checkout, contracts and deterministic manifest writes
+        run: |
+          python -B -m unittest discover -s tools -p 'test_*.py'
+          python -B tools/metadata_contracts.py
+          python -B tools/metadata_contracts.py --write
+          git diff --exit-code
+
+      - name: Test pinned AWS catalog and policy mappings
+        run: cargo test --locked --release -p cloudcover-aws --target ${{ matrix.target }}
+
+      - name: Build release CLI without publishing
+        run: cargo build --locked --release -p cloudcover-cli --target ${{ matrix.target }}
+
+      - name: Verify native CLI startup
+        env:
+          CLOUDCOVER_SMOKE_BINARY: target/${{ matrix.target }}/release/cloudcover.exe
+        run: |
+          python - <<'PY'
+          import os
+          import subprocess
+
+          output = subprocess.check_output([
+              os.environ['CLOUDCOVER_SMOKE_BINARY'], '--help',
+          ], timeout=30).decode('utf-8')
+          assert output.startswith('Usage: cloudcover policy '), output
+          print('Native CLI startup and help passed')
+          PY
+
   sar-refresh:
     name: SAR refresh contract
     runs-on: ubuntu-latest
@@ -168,7 +241,7 @@ jobs:
 
       - name: Validate metadata manifests and contract fixtures
         run: |
-          python3 -m unittest discover -s tools -p 'test_metadata_contracts.py'
+          python3 -B -m unittest discover -s tools -p 'test_*.py'
           python3 tools/metadata_contracts.py
 
       - name: Run tests

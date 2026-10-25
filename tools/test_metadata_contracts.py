@@ -1,5 +1,13 @@
+import contextlib
+import io
+import json
+import pathlib
 import random
+import sys
+import tempfile
 import unittest
+from unittest import mock
+import metadata_contracts
 from metadata_contracts import apply, version, digest
 
 class Contracts(unittest.TestCase):
@@ -73,3 +81,49 @@ class Shapes(unittest.TestCase):
         for removal in [[None,None], [None,'M','extra'], 'MM']:
             with self.assertRaises(ValueError):
                 apply(dict(remove=[removal], upsert=[]), state, javascript=True)
+
+
+class ManifestPortability(unittest.TestCase):
+    def test_portable_paths_deterministic_writes_and_strict_line_endings(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = pathlib.Path(temporary)
+            go = root / 'cloudcover-aws-sdk-go-v1'
+            terraform = root / 'cloudcover-terraform-provider-aws'
+            for directory in [go, terraform]:
+                (directory / 'data').mkdir(parents=True)
+            (go / 'data/café.json').write_bytes(json.dumps({
+                'module_path': 'example/sdk',
+                'releases': [{'module_version': '1.0.0', 'remove': [], 'upsert': []}],
+            }).encode('utf-8'))
+            (terraform / 'data/1.0.0.json').write_bytes(json.dumps({
+                'provider_version': '1.0.0', 'remove': [], 'upsert': [],
+            }).encode('utf-8'))
+            (go / 'generator').mkdir()
+            (go / 'generator/extractor.go').write_bytes('// café\n'.encode('utf-8'))
+            (go / 'src/bin').mkdir(parents=True)
+            (go / 'src/bin/generate.rs').write_bytes(b'// extractor\n')
+            (go / 'src/data.rs').write_bytes(b'// reader\n')
+
+            def run(*arguments):
+                with mock.patch.object(metadata_contracts, 'SDK_ROOT', root), \
+                        mock.patch.object(sys, 'argv', ['metadata_contracts.py', *arguments]), \
+                        contextlib.redirect_stdout(io.StringIO()):
+                    metadata_contracts.main()
+
+            run('--write')
+            paths = [go / 'metadata-manifest.json', terraform / 'metadata-manifest.json']
+            original = [path.read_bytes() for path in paths]
+            for content in original:
+                self.assertTrue(content.endswith(b'\n'))
+                self.assertNotIn(b'\r', content)
+            manifest = json.loads(original[0])
+            self.assertEqual(set(manifest['sources']), {'data/café.json'})
+            self.assertEqual(set(manifest['extractor_sources']), {
+                'generator/extractor.go', 'src/bin/generate.rs', 'src/data.rs',
+            })
+            run()
+            run('--write')
+            self.assertEqual([path.read_bytes() for path in paths], original)
+            paths[0].write_bytes(original[0].replace(b'\n', b'\r\n'))
+            with self.assertRaisesRegex(SystemExit, 'manifest is stale'):
+                run()
