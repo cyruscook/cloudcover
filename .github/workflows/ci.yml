@@ -67,13 +67,33 @@ jobs:
           git diff --exit-code
 
       - name: Test pinned AWS catalog and policy mappings
-        run: cargo test --locked -p cloudcover-aws
+        run: cargo test --locked --release -p cloudcover-aws --target ${{ matrix.target }}
 
       - name: Build release CLI without publishing
         run: cargo build --locked --release -p cloudcover-cli --target ${{ matrix.target }}
 
-      - name: Run native CLI
-        run: target/${{ matrix.target }}/release/cloudcover.exe --version
+      - name: Verify native CLI policy output
+        env:
+          CLOUDCOVER_SMOKE_BINARY: target/${{ matrix.target }}/release/cloudcover.exe
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+
+          output = subprocess.check_output([
+              os.environ['CLOUDCOVER_SMOKE_BINARY'], 'policy', '--language', 'terraform',
+              'crates/cloudcover-cli/tests/fixtures/aws-terraform',
+          ])
+          policy = json.loads(output)
+          actions = set()
+          for statement in policy['Statement']:
+              values = statement['Action']
+              actions.update(values if isinstance(values, list) else [values])
+          required = {'s3:CreateBucket', 'ecr:DescribeRepositories'}
+          assert required <= actions, sorted(actions)
+          print('Native CLI produced the expected S3 and ECR permissions')
+          PY
 
   sar-refresh:
     name: SAR refresh contract
