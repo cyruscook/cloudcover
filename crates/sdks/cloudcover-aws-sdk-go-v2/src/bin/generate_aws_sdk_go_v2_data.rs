@@ -180,31 +180,8 @@ fn run() -> GeneratorResult<()> {
             &module_cache,
             args.repository_dir.as_deref(),
         )?;
-        let mut state = MappingState::new();
-        let mut output_releases = Vec::with_capacity(releases.len());
-        for release in releases {
-            let previous = state.clone();
-            let current = match (!args.force).then(|| {
-                existing_service.and_then(|service| service.releases.get(&release.version))
-            }) {
-                Some(Some(ExistingRelease::Delta(existing_release))) => {
-                    let mut candidate = state.clone();
-                    let mut existing_release = existing_release.clone();
-                    data::validate_and_apply_release(&mut existing_release, &mut candidate)
-                        .map_err(|error| format!("{}: {error}", release.tag))?;
-                    candidate
-                }
-                Some(Some(ExistingRelease::Snapshot(snapshot))) => snapshot.clone(),
-                _ => analyzed
-                    .remove(&release.version)
-                    .ok_or_else(|| format!("missing analyzed mapping for {}", release.tag))?,
-            };
-            let delta = delta_release(&release.version.to_string(), &previous, &current);
-            let mut validated = delta.clone();
-            data::validate_and_apply_release(&mut validated, &mut state)
-                .map_err(|error| format!("{}: generated invalid data: {error}", release.tag))?;
-            output_releases.push(delta);
-        }
+        let output_releases =
+            rewrite_releases(&releases, existing_service, &mut analyzed, args.force)?;
         let file = SdkDataFile {
             module_path,
             releases: output_releases,
@@ -216,6 +193,41 @@ fn run() -> GeneratorResult<()> {
         }
     }
     Ok(())
+}
+
+// Replay original history independently: successor deltas are relative to their
+// original predecessor, never to an inserted/replaced output snapshot.
+fn rewrite_releases(
+    releases: &BTreeSet<ServiceRelease>,
+    existing: Option<&ExistingService>,
+    analyzed: &mut BTreeMap<Version, MappingState>,
+    force: bool,
+) -> GeneratorResult<Vec<SdkDataRelease>> {
+    let mut original = MappingState::new();
+    let mut rewritten = MappingState::new();
+    let mut output = Vec::with_capacity(releases.len());
+    for release in releases {
+        let prior = existing.and_then(|service| service.releases.get(&release.version));
+        if let Some(prior) = prior {
+            match prior {
+                ExistingRelease::Snapshot(snapshot) => original = snapshot.clone(),
+                ExistingRelease::Delta(delta) => {
+                    data::validate_and_apply_release(&mut delta.clone(), &mut original)?;
+                }
+            }
+        }
+        let current = if !force && prior.is_some() {
+            original.clone()
+        } else {
+            analyzed
+                .remove(&release.version)
+                .ok_or_else(|| format!("missing analyzed mapping for {}", release.tag))?
+        };
+        let delta = delta_release(&release.version.to_string(), &rewritten, &current);
+        data::validate_and_apply_release(&mut delta.clone(), &mut rewritten)?;
+        output.push(delta);
+    }
+    Ok(output)
 }
 
 fn select_releases(args: &Args) -> GeneratorResult<Vec<ServiceRelease>> {
@@ -662,4 +674,118 @@ fn absolute_path(path: &Path) -> GeneratorResult<PathBuf> {
 fn path_arg(path: &Path) -> GeneratorResult<&str> {
     path.to_str()
         .ok_or_else(|| format!("path is not valid UTF-8: {}", path.display()).into())
+}
+
+#[cfg(test)]
+#[allow(clippy::unwrap_used)]
+mod tests {
+    use super::*;
+
+    fn state(names: &[&str]) -> MappingState {
+        names
+            .iter()
+            .map(|name| {
+                (
+                    ("pkg".into(), "Client".into(), (*name).into()),
+                    vec![ApiMethodRefRow {
+                        service: "svc".into(),
+                        name: (*name).into(),
+                    }],
+                )
+            })
+            .collect()
+    }
+
+    fn release(version: &str) -> ServiceRelease {
+        ServiceRelease {
+            service: "test".into(),
+            module_path: "github.com/aws/aws-sdk-go-v2/service/test".into(),
+            version: Version::parse(version).unwrap(),
+            tag: format!("service/test/v{version}"),
+        }
+    }
+
+    #[test]
+    fn historical_insertion_preserves_successor_snapshots() -> GeneratorResult<()> {
+        for successor in [state(&["A"]), state(&["A", "B"])] {
+            let first = state(&["A"]);
+            let existing = ExistingService {
+                module_path: release("1.0.0").module_path,
+                releases: BTreeMap::from([
+                    (
+                        Version::parse("1.0.0")?,
+                        ExistingRelease::Snapshot(first.clone()),
+                    ),
+                    (
+                        Version::parse("1.2.0")?,
+                        ExistingRelease::Delta(delta_release("1.2.0", &first, &successor)),
+                    ),
+                ]),
+            };
+            let releases = BTreeSet::from([release("1.0.0"), release("1.1.0"), release("1.2.0")]);
+            let mut analyzed = BTreeMap::from([(Version::parse("1.1.0")?, state(&["B", "C"]))]);
+            let rewritten = rewrite_releases(&releases, Some(&existing), &mut analyzed, false)?;
+            let mut actual = MappingState::new();
+            for mut delta in rewritten {
+                data::validate_and_apply_release(&mut delta, &mut actual)?;
+            }
+            assert_eq!(actual, successor);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn forced_replacements_do_not_replay_old_deltas_on_new_states() -> GeneratorResult<()> {
+        let first = state(&["A"]);
+        let last = state(&["A", "B"]);
+        let existing = ExistingService {
+            module_path: release("1.0.0").module_path,
+            releases: BTreeMap::from([
+                (
+                    Version::parse("1.0.0")?,
+                    ExistingRelease::Snapshot(first.clone()),
+                ),
+                (
+                    Version::parse("1.2.0")?,
+                    ExistingRelease::Delta(delta_release("1.2.0", &first, &last)),
+                ),
+            ]),
+        };
+        let releases = BTreeSet::from([release("1.0.0"), release("1.2.0")]);
+        let mut analyzed = BTreeMap::from([
+            (Version::parse("1.0.0")?, state(&["C"])),
+            (Version::parse("1.2.0")?, last.clone()),
+        ]);
+        let deltas = rewrite_releases(&releases, Some(&existing), &mut analyzed, true)?;
+        let mut actual = MappingState::new();
+        for mut delta in deltas {
+            data::validate_and_apply_release(&mut delta, &mut actual)?;
+        }
+        assert_eq!(actual, last);
+        Ok(())
+    }
+
+    #[test]
+    fn every_checked_in_history_rewrites_identically() -> GeneratorResult<()> {
+        let directory = Path::new(env!("CARGO_MANIFEST_DIR")).join("data");
+        for service in load_existing(&directory)?.into_values() {
+            let releases = service
+                .releases
+                .keys()
+                .map(|v| ServiceRelease {
+                    service: service_name(&service.module_path).unwrap(),
+                    module_path: service.module_path.clone(),
+                    version: v.clone(),
+                    tag: v.to_string(),
+                })
+                .collect();
+            let rewritten =
+                rewrite_releases(&releases, Some(&service), &mut BTreeMap::new(), false)?;
+            let filename = format!("{}.json", service_name(&service.module_path)?);
+            let original: SdkDataFile =
+                serde_json::from_str(&fs::read_to_string(directory.join(filename))?)?;
+            assert_eq!(rewritten, original.releases, "{}", service.module_path);
+        }
+        Ok(())
+    }
 }
