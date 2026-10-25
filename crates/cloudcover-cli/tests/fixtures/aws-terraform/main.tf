@@ -29,10 +29,6 @@ data "aws_iam_policy_document" "local" {
   provider = amazon
 }
 
-resource "aws_acm_certificate_validation" "certificate" {
-  provider = amazon
-}
-
 resource "aws_bedrockagentcore_gateway" "root" {}
 
 resource "aws_cognito_user_pool" "root" {}

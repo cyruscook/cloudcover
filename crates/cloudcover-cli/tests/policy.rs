@@ -184,3 +184,19 @@ fn unsupported_language_is_usage_error() -> Result<(), Box<dyn Error>> {
     assert_eq!(output.status.code(), Some(2));
     Ok(())
 }
+
+#[test]
+fn missing_lifecycle_mapping_reports_incomplete_coverage() -> Result<(), Box<dyn Error>> {
+    let fixture =
+        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/aws-terraform-missing");
+    let output = run_policy(&[
+        "policy",
+        "--language",
+        "terraform",
+        &fixture.to_string_lossy(),
+    ])?;
+    assert!(!output.status.success());
+    assert!(String::from_utf8_lossy(&output.stderr).contains("Terraform reference is not mapped"));
+    assert_eq!(output.stdout, Vec::<u8>::new());
+    Ok(())
+}

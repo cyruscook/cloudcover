@@ -251,19 +251,13 @@ fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMap
             });
         };
 
-        mappings.extend(rows.filter_map(|row| {
-            let api_methods = row
-                .api_methods
-                .iter()
-                .filter_map(|api_method| {
-                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
-                })
-                .collect::<Vec<_>>();
-            if api_methods.is_empty() {
-                return None;
-            }
+        mappings.extend(rows.map(|row| {
+            let (api_methods, unresolved) = resolve_sdk_operations(
+                row.package,
+                row.api_methods.iter().map(|api| (api.service, api.name)),
+            );
 
-            Some(SdkMethodMapping::new(
+            SdkMethodMapping::new(
                 sdk.clone(),
                 MethodReference::Go(GoMethodReference::new(
                     row.package,
@@ -271,7 +265,8 @@ fn go_sdk_method_mappings(resolved_sdk: &ResolvedSdk) -> Result<Vec<SdkMethodMap
                     row.method,
                 )),
                 api_methods,
-            ))
+            )
+            .with_unresolved_api_methods(unresolved)
         }));
     }
     mappings.sort();
@@ -319,18 +314,12 @@ fn go_sdk_v1_method_mappings(
                 version: module.version().to_owned(),
             });
         };
-        mappings.extend(rows.filter_map(|row| {
-            let api_methods = row
-                .api_methods
-                .iter()
-                .filter_map(|api_method| {
-                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
-                })
-                .collect::<Vec<_>>();
-            if api_methods.is_empty() {
-                return None;
-            }
-            Some(SdkMethodMapping::new(
+        mappings.extend(rows.map(|row| {
+            let (api_methods, unresolved) = resolve_sdk_operations(
+                row.package,
+                row.api_methods.iter().map(|api| (api.service, api.name)),
+            );
+            SdkMethodMapping::new(
                 sdk.clone(),
                 MethodReference::Go(GoMethodReference::new(
                     row.package,
@@ -338,7 +327,8 @@ fn go_sdk_v1_method_mappings(
                     row.method,
                 )),
                 api_methods,
-            ))
+            )
+            .with_unresolved_api_methods(unresolved)
         }));
     }
     mappings.sort();
@@ -382,18 +372,12 @@ fn javascript_sdk_method_mappings(
                 version: module.version().to_owned(),
             });
         };
-        mappings.extend(rows.iter().filter_map(|row| {
-            let api_methods = row
-                .api_methods
-                .iter()
-                .filter_map(|api_method| {
-                    catalog_sdk_api_method(row.package, api_method.service, api_method.name)
-                })
-                .collect::<Vec<_>>();
-            if api_methods.is_empty() {
-                return None;
-            }
-            Some(SdkMethodMapping::new(
+        mappings.extend(rows.iter().map(|row| {
+            let (api_methods, unresolved) = resolve_sdk_operations(
+                row.package,
+                row.api_methods.iter().map(|api| (api.service, api.name)),
+            );
+            SdkMethodMapping::new(
                 sdk.clone(),
                 MethodReference::JavaScript(JavaScriptMethodReference::new(
                     row.package,
@@ -401,7 +385,8 @@ fn javascript_sdk_method_mappings(
                     row.method,
                 )),
                 api_methods,
-            ))
+            )
+            .with_unresolved_api_methods(unresolved)
         }));
     }
     mappings.sort();
@@ -435,11 +420,10 @@ fn terraform_provider_aws_sdk_method_mappings(
     Ok(rows
         .iter()
         .map(|row| {
-            let api_methods = row
-                .api_methods
-                .iter()
-                .filter_map(|api_method| catalog_api_method(api_method.service, api_method.name))
-                .collect::<Vec<_>>();
+            let (api_methods, unresolved) = resolve_sdk_operations(
+                "",
+                row.api_methods.iter().map(|api| (api.service, api.name)),
+            );
 
             SdkMethodMapping::new(
                 Sdk::new(
@@ -454,8 +438,25 @@ fn terraform_provider_aws_sdk_method_mappings(
                 )),
                 api_methods,
             )
+            .with_unresolved_api_methods(unresolved)
         })
         .collect())
+}
+
+fn resolve_sdk_operations<'a>(
+    package: &str,
+    methods: impl Iterator<Item = (&'a str, &'a str)>,
+) -> (Vec<ApiMethod>, Vec<ApiMethod>) {
+    let mut resolved = Vec::new();
+    let mut unresolved = Vec::new();
+    for (service, name) in methods {
+        if let Some(method) = catalog_sdk_api_method(package, service, name) {
+            resolved.push(method);
+        } else {
+            unresolved.push(ApiMethod::new(service, name));
+        }
+    }
+    (resolved, unresolved)
 }
 
 fn catalog_api_method(service: &str, name: &str) -> Option<ApiMethod> {
@@ -759,6 +760,28 @@ mod alias_tests {
                 "CreateDomain"
             ),
             None
+        );
+    }
+}
+
+#[cfg(test)]
+mod coverage_tests {
+    use super::*;
+
+    #[test]
+    fn partial_and_total_catalog_gaps_remain_visible() {
+        let (mapped, unresolved) = resolve_sdk_operations(
+            "",
+            [("s3", "GetObject"), ("unknown", "Missing")].into_iter(),
+        );
+        assert_eq!(mapped, [ApiMethod::new("s3", "GetObject")]);
+        assert_eq!(unresolved, [ApiMethod::new("unknown", "Missing")]);
+        let (mapped, unresolved) = resolve_sdk_operations("", [("unknown", "Missing")].into_iter());
+        assert_eq!(mapped, []);
+        assert_eq!(unresolved.len(), 1);
+        assert_eq!(
+            resolve_sdk_operations("", std::iter::empty()),
+            (vec![], vec![])
         );
     }
 }

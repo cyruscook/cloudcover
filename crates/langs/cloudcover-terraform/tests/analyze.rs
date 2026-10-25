@@ -21,12 +21,17 @@ fn analyzes_reachable_initialized_modules_and_ignores_stale_manifest_entries()
             action,
         )));
     }
+    let validation = analyze_dir(fixture_dir().with_file_name("aws-terraform-missing"))?;
     for action in ["create", "read", "update", "delete"] {
-        assert!(analysis.methods().contains(&TerraformMethodReference::new(
-            "resource",
-            "aws_acm_certificate_validation",
-            action,
-        )));
+        assert!(
+            validation
+                .methods()
+                .contains(&TerraformMethodReference::new(
+                    "resource",
+                    "aws_acm_certificate_validation",
+                    action,
+                ))
+        );
     }
     assert!(analysis.methods().contains(&TerraformMethodReference::new(
         "data_source",
