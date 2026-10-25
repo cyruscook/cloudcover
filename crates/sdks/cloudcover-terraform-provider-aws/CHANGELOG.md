@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.2.1...cloudcover-terraform-provider-aws-v0.2.2) - 2026-10-25
+
+### Other
+
+- Validate SDK metadata contracts and add provenance manifests ([#46](https://github.com/cyruscook/cloudcover/pull/46))
+- Preserve successor snapshots when backfilling SDK histories ([#45](https://github.com/cyruscook/cloudcover/pull/45))
+
 ## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.1.9...cloudcover-terraform-provider-aws-v0.2.0) - 2026-10-11
 
 ### Other

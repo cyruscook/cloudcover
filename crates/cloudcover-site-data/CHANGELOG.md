@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-site-data-v0.2.1...cloudcover-site-data-v0.2.2) - 2026-10-25
+
+### Other
+
+- update Cargo.lock dependencies
+
 ## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-site-data-v0.1.9...cloudcover-site-data-v0.2.0) - 2026-10-11
 
 ### Other

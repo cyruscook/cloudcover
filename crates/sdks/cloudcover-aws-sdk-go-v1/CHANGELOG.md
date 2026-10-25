@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-go-v1-v0.2.1...cloudcover-aws-sdk-go-v1-v0.2.2) - 2026-10-25
+
+### Other
+
+- Validate SDK metadata contracts and add provenance manifests ([#46](https://github.com/cyruscook/cloudcover/pull/46))
+- Deduplicate identical Go v1 mapping snapshots ([#47](https://github.com/cyruscook/cloudcover/pull/47))
+- release v0.2.1 ([#39](https://github.com/cyruscook/cloudcover/pull/39))
+
 ## [0.2.1](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-go-v1-v0.2.0...cloudcover-aws-sdk-go-v1-v0.2.1) - 2026-10-24
 
 ### Other

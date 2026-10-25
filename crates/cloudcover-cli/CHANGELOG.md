@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.2.1...cloudcover-cli-v0.2.2) - 2026-10-25
+
+### Other
+
+- Retain unresolved SDK operations and reject incomplete policies ([#51](https://github.com/cyruscook/cloudcover/pull/51))
+
 ## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.1.9...cloudcover-cli-v0.2.0) - 2026-10-11
 
 ### Other
