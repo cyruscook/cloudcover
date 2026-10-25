@@ -91,7 +91,9 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: 24
+          node-version: "24.22.1"
+      - name: Verify patched Node.js release
+        run: node -e "if (process.versions.node !== '24.22.1') throw new Error('Unexpected Node.js release'); console.log(process.version)"
       - run: npm ci
         working-directory: crates/sdks/cloudcover-aws-sdk-js-v3/generator
       - run: npm test
