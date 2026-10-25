@@ -3,8 +3,17 @@ use std::{collections::BTreeMap, error::Error, fmt::Write as _};
 use serde::Deserialize;
 
 #[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
 struct Data {
+    #[serde(default = "legacy_schema")]
+    schema_version: u32,
+    #[serde(default, rename = "provenance")]
+    _provenance: Option<serde_json::Value>,
     packages: Vec<PackageHistory>,
+}
+
+fn legacy_schema() -> u32 {
+    1
 }
 
 #[derive(Deserialize)]
@@ -94,9 +103,19 @@ fn main() -> Result<(), Box<dyn Error>> {
 #[allow(clippy::too_many_lines)]
 pub(crate) fn generate(contents: &str) -> Result<String, Box<dyn Error>> {
     let mut data: Data = serde_json::from_str(contents)?;
+    if !matches!(data.schema_version, 1 | 2) {
+        return Err("unsupported SDK metadata schema version".into());
+    }
     data.packages
         .sort_by(|left, right| left.package.cmp(&right.package));
 
+    if data
+        .packages
+        .windows(2)
+        .any(|pair| pair[0].package == pair[1].package)
+    {
+        return Err("duplicate SDK package identity".into());
+    }
     let mut generated = String::new();
     let mut modules = Vec::new();
     let mut versions = Vec::new();
@@ -296,8 +315,22 @@ fn apply_release(
         )
         .into());
     }
-    for (key, value) in upserts {
-        if value.method.is_empty() || value.api_methods.is_empty() {
+    for (key, mut value) in upserts {
+        value.api_methods.sort();
+        value.api_methods.dedup();
+        if value.method.is_empty()
+            || value.receiver.as_ref().is_some_and(String::is_empty)
+            || value.api_methods.is_empty()
+            || value
+                .api_methods
+                .iter()
+                .any(|api| api.service.is_empty() || api.name.is_empty())
+            || release
+                .remove
+                .iter()
+                .any(|remove| (&remove.0, &remove.1) == (&key.0, &key.1))
+            || state.get(&key) == Some(&value)
+        {
             return Err(format!(
                 "package {package} release {} has an invalid mapping",
                 release.version

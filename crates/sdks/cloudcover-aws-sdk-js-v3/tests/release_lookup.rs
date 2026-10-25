@@ -175,3 +175,14 @@ fn duplicate_exact_package_release_is_rejected() {
     "#;
     assert!(build_script::generate(duplicate).is_err());
 }
+
+#[test]
+fn rejects_unknown_schema_duplicate_package_and_invalid_api_identity() {
+    for invalid in [
+        r#"{"schema_version":99,"packages":[]}"#,
+        r#"{"packages":[{"package":"p","releases":[]},{"package":"p","releases":[]}]}"#,
+        r#"{"packages":[{"package":"p","releases":[{"version":"1.0.0","remove":[],"upsert":[{"receiver":null,"method":"M","api_methods":[{"service":"","name":"A"}]}]}]}]}"#,
+    ] {
+        assert!(build_script::generate(invalid).is_err());
+    }
+}

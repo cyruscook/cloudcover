@@ -82,6 +82,23 @@ jobs:
         working-directory: crates/sdks/cloudcover-terraform-provider-aws/generator
         run: go test ./...
 
+  javascript-generator:
+    name: JavaScript generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.22.1"
+      - name: Verify patched Node.js release
+        run: node -e "if (process.versions.node !== '24.22.1') throw new Error('Unexpected Node.js release'); console.log(process.version)"
+      - run: npm ci
+        working-directory: crates/sdks/cloudcover-aws-sdk-js-v3/generator
+      - run: npm test
+        working-directory: crates/sdks/cloudcover-aws-sdk-js-v3/generator
+
   formatting:
     name: Formatting
     runs-on: ubuntu-latest
@@ -148,6 +165,11 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249 # stable
+
+      - name: Validate metadata manifests and contract fixtures
+        run: |
+          python3 -m unittest discover -s tools -p 'test_metadata_contracts.py'
+          python3 tools/metadata_contracts.py
 
       - name: Run tests
         run: cargo test --workspace --all-features
