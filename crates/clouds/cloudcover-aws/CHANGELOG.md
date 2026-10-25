@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.2.1...cloudcover-aws-v0.2.2) - 2026-10-25
+
+### Other
+
+- Retain unresolved SDK operations and reject incomplete policies ([#51](https://github.com/cyruscook/cloudcover/pull/51))
+- Refresh the pinned SAR catalog through a daily update PR ([#49](https://github.com/cyruscook/cloudcover/pull/49))
+- Pin SAR catalog inputs for reproducible offline builds ([#43](https://github.com/cyruscook/cloudcover/pull/43))
+
 ## [0.2.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.1.9...cloudcover-aws-v0.2.0) - 2026-10-11
 
 ### Other
