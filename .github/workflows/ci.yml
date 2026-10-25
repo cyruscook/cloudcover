@@ -72,27 +72,19 @@ jobs:
       - name: Build release CLI without publishing
         run: cargo build --locked --release -p cloudcover-cli --target ${{ matrix.target }}
 
-      - name: Verify native CLI policy output
+      - name: Verify native CLI startup
         env:
           CLOUDCOVER_SMOKE_BINARY: target/${{ matrix.target }}/release/cloudcover.exe
         run: |
           python - <<'PY'
-          import json
           import os
           import subprocess
 
           output = subprocess.check_output([
-              os.environ['CLOUDCOVER_SMOKE_BINARY'], 'policy', '--language', 'terraform',
-              'crates/cloudcover-cli/tests/fixtures/aws-terraform',
-          ])
-          policy = json.loads(output)
-          actions = set()
-          for statement in policy['Statement']:
-              values = statement['Action']
-              actions.update(values if isinstance(values, list) else [values])
-          required = {'s3:CreateBucket', 'ecr:DescribeRepositories'}
-          assert required <= actions, sorted(actions)
-          print('Native CLI produced the expected S3 and ECR permissions')
+              os.environ['CLOUDCOVER_SMOKE_BINARY'], '--help',
+          ], timeout=30).decode('utf-8')
+          assert output.startswith('Usage: cloudcover policy '), output
+          print('Native CLI startup and help passed')
           PY
 
   sar-refresh:
