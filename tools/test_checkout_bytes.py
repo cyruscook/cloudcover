@@ -33,6 +33,11 @@ class CheckoutBytes(unittest.TestCase):
             directory = pathlib.Path(temporary)
             environment = dict(os.environ, GIT_INDEX_FILE=str(directory / 'index'))
             subprocess.run(['git', 'read-tree', 'HEAD'], cwd=ROOT, env=environment, check=True)
+            # Capture current edits only in the temporary index, leaving the real
+            # index and working tree intact so this test also works before commit.
+            subprocess.run(['git', 'add', '--pathspec-from-file=-', '--pathspec-file-nul'],
+                           input=('\0'.join(sorted(inputs | {'.gitattributes'})) + '\0').encode('utf-8'),
+                           cwd=ROOT, env=environment, check=True, capture_output=True)
             subprocess.run([
                 'git', '-c', 'core.autocrlf=true', '-c', 'core.eol=crlf',
                 'checkout-index', '--prefix=' + directory.as_posix() + '/checkout/', '-z', '--stdin',
