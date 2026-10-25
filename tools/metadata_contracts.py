@@ -110,9 +110,9 @@ def manifest(directory):
                 no_calls += sum(not apis for apis in state.values()) if terraform else 0
             snapshots.add(snapshot_hash)
             stream.update((json.dumps([identity, raw, status, snapshot_hash], separators=(',', ':'))+'\n').encode())
-    sources = {str(p.relative_to(directory)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+    sources = {p.relative_to(directory).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
     extractor_files = sorted([p for p in (directory/'generator').rglob('*') if p.is_file() and 'node_modules' not in p.parts] + list((directory/'src/bin').glob('*.rs')) + ([directory/'src/data.rs'] if (directory/'src/data.rs').exists() else []))
-    extractors = {str(p.relative_to(directory)): hashlib.sha256(p.read_bytes()).hexdigest() for p in extractor_files}
+    extractors = {p.relative_to(directory).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in extractor_files}
     return {'schema_version': 1, 'sdk_identity': directory.name, 'sources': sources,
         'extractor_sources': extractors, 'source_identity': 'legacy: exact upstream release names retained in histories',
         'source_content_digest': None, 'extraction_options': None,
@@ -131,9 +131,9 @@ def main():
     tf['diagnostics'].append('Dependency digests identify the migrated SDK inventory; historical per-release dependency selection was not recorded.')
     for name, value in results.items():
         path = SDK_ROOT/name/'metadata-manifest.json'
-        output = json.dumps(value, sort_keys=True, indent=2)+'\n'
-        if args.write: path.write_text(output)
-        elif not path.exists() or path.read_text() != output: raise SystemExit(f'{path}: manifest is stale; run python3 tools/metadata_contracts.py --write')
+        output = (json.dumps(value, sort_keys=True, indent=2)+'\n').encode('utf-8')
+        if args.write: path.write_bytes(output)
+        elif not path.exists() or path.read_bytes() != output: raise SystemExit(f'{path}: manifest is stale; run python3 tools/metadata_contracts.py --write')
         print(f'{name}: {value["release_count"]} releases verified; snapshot index {value["release_snapshot_index_sha256"]}')
 
 if __name__ == '__main__': main()

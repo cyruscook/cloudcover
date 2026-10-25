@@ -6,6 +6,13 @@ sidecars. Run with `--write` after data/extractor changes; ordinary CI verifies 
 sidecars without modifying inputs. Scheduled updater PRs refresh and stage all
 changed manifests, including the Terraform dependency inventory.
 
+SAR catalogs, SDK histories and hashed extractor sources use raw-byte checksums.
+The scoped `.gitattributes` rules preserve their LF bytes during Windows checkouts;
+verifiers do not normalize bytes to accept altered inputs. Sidecar paths always
+use `/`, and the verifier writes and compares exact UTF-8/LF bytes on every OS.
+Existing Windows clones need to check out the protected files again after fetching
+these attributes; a fresh checkout avoids retaining previously converted CRLF files.
+
 The adapters enforce canonical exact stable versions, unique package/module and
 mapping identities, arrays rather than null collections, valid removals,
 non-conflicting non-redundant changes, and nonempty API identities. Terraform
