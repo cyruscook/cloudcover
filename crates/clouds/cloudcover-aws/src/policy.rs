@@ -78,7 +78,19 @@ struct PolicyStatement {
 }
 
 fn resources(action: &AwsAction) -> Vec<String> {
-    if action.resource_types.is_empty() || !action.has_complete_resource_templates {
+    // AgentArns is optional for these APIs (S3 uses it only on Outposts).
+    // SAR can list an agent resource even though agentless requests need "*".
+    // Source analysis does not resolve request arguments, so support both paths.
+    // https://docs.aws.amazon.com/datasync/latest/apireference/API_CreateLocationS3.html
+    // https://docs.aws.amazon.com/datasync/latest/apireference/API_CreateLocationAzureBlob.html
+    // https://docs.aws.amazon.com/datasync/latest/apireference/API_CreateLocationObjectStorage.html
+    let optional_agent = action.service == "datasync"
+        && matches!(
+            action.name,
+            "CreateLocationS3" | "CreateLocationAzureBlob" | "CreateLocationObjectStorage"
+        );
+    if optional_agent || action.resource_types.is_empty() || !action.has_complete_resource_templates
+    {
         vec!["*".to_owned()]
     } else {
         action
@@ -198,4 +210,83 @@ fn find_action(
         })?;
 
     Ok(&generated::ACTIONS[action_index])
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const AGENT: &str = "arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}";
+    const LOCATION: &str =
+        "arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}";
+
+    fn agent_action(name: &'static str) -> AwsAction {
+        // Model the agent metadata introduced by the pending SAR refresh, even
+        // while main's pinned catalog still has no resources for these actions.
+        AwsAction {
+            service: "datasync",
+            name,
+            permission: "unused",
+            resource_types: &["agent"],
+            resource_templates: &[AGENT],
+            has_complete_resource_templates: true,
+        }
+    }
+
+    #[test]
+    fn optional_agent_creation_keeps_wildcard_with_agent_metadata() {
+        for name in [
+            "CreateLocationS3",
+            "CreateLocationAzureBlob",
+            "CreateLocationObjectStorage",
+        ] {
+            assert_eq!(resources(&agent_action(name)), ["*"], "{name}");
+        }
+    }
+
+    #[test]
+    fn required_agents_and_location_updates_retain_their_resources() {
+        for name in [
+            "CreateLocationNfs",
+            "CreateLocationSmb",
+            "CreateLocationHdfs",
+        ] {
+            assert_eq!(resources(&agent_action(name)), [AGENT], "{name}");
+        }
+        for name in [
+            "UpdateLocationS3",
+            "UpdateLocationAzureBlob",
+            "UpdateLocationObjectStorage",
+            "UpdateLocationNfs",
+            "UpdateLocationSmb",
+            "UpdateLocationHdfs",
+        ] {
+            let action = AwsAction {
+                resource_types: &["agent", "location"],
+                resource_templates: &[AGENT, LOCATION],
+                ..agent_action(name)
+            };
+            assert_eq!(resources(&action), [AGENT, LOCATION], "{name}");
+        }
+    }
+
+    #[test]
+    fn optional_agent_override_is_service_specific_and_keeps_existing_fallbacks() {
+        let action = AwsAction {
+            service: "another-service",
+            ..agent_action("CreateLocationS3")
+        };
+        assert_eq!(resources(&action), [AGENT]);
+        let action = AwsAction {
+            has_complete_resource_templates: false,
+            ..agent_action("CreateLocationNfs")
+        };
+        assert_eq!(resources(&action), ["*"]);
+        let action = AwsAction {
+            resource_types: &[],
+            resource_templates: &[],
+            ..agent_action("CreateLocationNfs")
+        };
+        assert_eq!(resources(&action), ["*"]);
+    }
 }
