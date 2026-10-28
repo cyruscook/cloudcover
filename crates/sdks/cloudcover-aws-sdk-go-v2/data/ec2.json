@@ -13392,6 +13392,34 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.342.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "GetImageFindings",
+          [
+            [
+              "ec2",
+              "GetImageFindings"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "GetImageFindingsPaginator",
+          "NextPage",
+          [
+            [
+              "ec2",
+              "GetImageFindings"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

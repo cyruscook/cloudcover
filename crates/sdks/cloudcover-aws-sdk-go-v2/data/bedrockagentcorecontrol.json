@@ -5215,6 +5215,23 @@
       "module_version": "1.75.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockagentcorecontrol",
+          "Client",
+          "ResetTokenVaultKeyMaterial",
+          [
+            [
+              "bedrock-agentcore",
+              "ResetTokenVaultKeyMaterial"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

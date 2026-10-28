@@ -2164,6 +2164,56 @@
       "module_version": "1.61.5",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/inspector2",
+          "Client",
+          "GetOnDemandScanStatus",
+          [
+            [
+              "inspector2",
+              "GetOnDemandScanStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/inspector2",
+          "Client",
+          "ListOnDemandScans",
+          [
+            [
+              "inspector2",
+              "ListOnDemandScans"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/inspector2",
+          "Client",
+          "StartOnDemandScan",
+          [
+            [
+              "inspector2",
+              "StartOnDemandScan"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/inspector2",
+          "ListOnDemandScansPaginator",
+          "NextPage",
+          [
+            [
+              "inspector2",
+              "ListOnDemandScans"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
