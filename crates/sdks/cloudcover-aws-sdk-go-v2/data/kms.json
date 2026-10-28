@@ -1950,6 +1950,39 @@
       "module_version": "1.61.6",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.62.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Decapsulate",
+          [
+            [
+              "kms",
+              "Decapsulate"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/kms",
+          "Client",
+          "Encapsulate",
+          [
+            [
+              "kms",
+              "Encapsulate"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.62.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -1975,6 +1975,83 @@
       "module_version": "1.66.6",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.67.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "DescribeReplicationBackfillResults",
+          [
+            [
+              "ecr",
+              "DescribeReplicationBackfillResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "ListReplicationBackfills",
+          [
+            [
+              "ecr",
+              "ListReplicationBackfills"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "StartReplicationBackfill",
+          [
+            [
+              "ecr",
+              "StartReplicationBackfill"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "Client",
+          "StopReplicationBackfill",
+          [
+            [
+              "ecr",
+              "StopReplicationBackfill"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "DescribeReplicationBackfillResultsPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "DescribeReplicationBackfillResults"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ecr",
+          "ListReplicationBackfillsPaginator",
+          "NextPage",
+          [
+            [
+              "ecr",
+              "ListReplicationBackfills"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.67.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -355,6 +355,28 @@
       "module_version": "1.10.5",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.11.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/signin",
+          "Client",
+          "CreateOAuth2TokenWithTokenExchange",
+          [
+            [
+              "signin",
+              "CreateOAuth2TokenWithTokenExchange"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
