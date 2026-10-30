@@ -700,12 +700,14 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
-fn supplements_authorized_actionless_operation_with_fas_permissions() -> Result<(), Box<dyn Error>>
-{
-    assert_eq!(
-        AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "CreateSession"))?,
-        vec!["kms:Decrypt", "kms:GenerateDataKey"]
-    );
+fn fas_metadata_does_not_establish_missing_direct_authorization() -> Result<(), Box<dyn Error>> {
+    let method = ApiMethod::new("s3", "CreateSession");
+    let dependencies = AwsProvider::new().fas_dependencies(&method)?;
+    assert!(!dependencies.is_empty());
+    assert!(matches!(
+        AwsProvider::new().iam_permissions(&method),
+        Err(AwsError::UnresolvedAuthorization { .. })
+    ));
     Ok(())
 }
 
@@ -719,19 +721,75 @@ fn rejects_unknown_api_method_for_iam_permissions() {
 }
 
 #[test]
-fn operation_with_no_authorized_actions_builds_fas_policy_statement() -> Result<(), Box<dyn Error>>
-{
-    let policy = AwsProvider::new().permissions_policy(&[ApiMethod::new("s3", "CreateSession")])?;
+fn missing_authorization_rejects_sole_and_mixed_json_and_hcl_policies() {
+    // AWS requires s3express:CreateSession; FAS KMS evidence cannot substitute
+    // for the missing direct authorization mapping.
+    // https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
+    let unresolved = ApiMethod::new("s3", "CreateSession");
+    for methods in [
+        vec![unresolved.clone()],
+        vec![
+            ApiMethod::new("ec2", "DescribeInstances"),
+            unresolved.clone(),
+        ],
+        vec![unresolved, ApiMethod::new("ec2", "DescribeInstances")],
+    ] {
+        let provider = AwsProvider::new();
+        for result in [
+            provider.permissions_policy(&methods).map(|_| ()),
+            provider.permissions_policy_hcl(&methods).map(|_| ()),
+        ] {
+            assert!(matches!(
+                result,
+                Err(AwsError::UnresolvedAuthorization { service, name })
+                    if service == "s3" && name == "CreateSession"
+            ));
+        }
+    }
+}
 
-    assert_eq!(
-        policy,
-        json!({"Version":"2012-10-17","Statement":[{
-            "Effect":"Allow", "Action":["kms:Decrypt", "kms:GenerateDataKey"],
-            "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${DirectoryKeyId}",
-            "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
-        }]})
-    );
+#[test]
+fn documented_token_and_permissionless_calls_keep_resolved_empty_policies()
+-> Result<(), Box<dyn Error>> {
+    use cloudcover_aws::AuthorizationCoverage;
 
+    let provider = AwsProvider::new();
+    for (service, name) in [
+        ("sts", "GetCallerIdentity"),
+        ("sts", "AssumeRoleWithSAML"),
+        ("sts", "AssumeRoleWithWebIdentity"),
+        ("cognito-idp", "CompleteWebAuthnRegistration"),
+        ("cognito-idp", "DeleteWebAuthnCredential"),
+        ("cognito-idp", "GetClientToken"),
+        ("cognito-idp", "GetUserAuthFactors"),
+        ("cognito-idp", "ListWebAuthnCredentials"),
+        ("cognito-idp", "StartWebAuthnRegistration"),
+        ("sso", "GetRoleCredentials"),
+        ("sso", "ListAccountRoles"),
+        ("sso", "ListAccounts"),
+        ("sso", "Logout"),
+        ("sso-oauth", "RegisterClient"),
+        ("sso-oauth", "StartDeviceAuthorization"),
+    ] {
+        let method = ApiMethod::new(service, name);
+        assert_eq!(
+            provider.authorization_coverage(&method)?,
+            AuthorizationCoverage::NotRequired,
+            "{service}:{name}"
+        );
+        assert_eq!(provider.iam_permissions(&method)?, Vec::<&str>::new());
+        assert_eq!(
+            provider.permissions_policy(std::slice::from_ref(&method))?,
+            json!({"Version":"2012-10-17","Statement":[]}),
+            "{service}:{name}"
+        );
+        let mixed =
+            provider.permissions_policy(&[method, ApiMethod::new("ec2", "DescribeInstances")])?;
+        assert_eq!(
+            mixed["Statement"][0]["Action"],
+            json!(["ec2:DescribeInstances"])
+        );
+    }
     Ok(())
 }
 

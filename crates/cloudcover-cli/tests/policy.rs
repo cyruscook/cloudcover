@@ -3,7 +3,7 @@ use std::{error::Error, io, path::PathBuf, process::Command};
 use serde_json::Value;
 
 fn fixture_dir() -> PathBuf {
-    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/aws-s3")
+    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/aws-s3-resolved")
 }
 
 fn terraform_fixture_dir() -> PathBuf {
@@ -43,7 +43,7 @@ fn collect_actions(policy: &Value) -> Result<Vec<String>, Box<dyn Error>> {
 }
 
 #[test]
-fn emits_expected_s3_read_policy() -> Result<(), Box<dyn Error>> {
+fn emits_expected_s3_read_policy_for_pre_session_sdk() -> Result<(), Box<dyn Error>> {
     let fixture = fixture_dir().to_string_lossy().into_owned();
     let output = run_policy(&["policy", "--language", "go", &fixture])?;
 
@@ -198,5 +198,22 @@ fn missing_lifecycle_mapping_reports_incomplete_coverage() -> Result<(), Box<dyn
     assert!(!output.status.success());
     assert!(String::from_utf8_lossy(&output.stderr).contains("Terraform reference is not mapped"));
     assert_eq!(output.stdout, Vec::<u8>::new());
+    Ok(())
+}
+
+#[test]
+fn modern_s3_helpers_reject_unresolved_authorization_without_partial_output()
+-> Result<(), Box<dyn Error>> {
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("tests/fixtures/aws-s3")
+        .to_string_lossy()
+        .into_owned();
+    for format in ["json", "terraform"] {
+        let output = run_policy(&["policy", "--format", format, "--language", "go", &fixture])?;
+        assert_eq!(output.status.code(), Some(1));
+        assert_eq!(output.stdout, Vec::<u8>::new());
+        let error = String::from_utf8(output.stderr)?;
+        assert!(error.contains("unresolved AWS authorization coverage for s3:CreateSession"));
+    }
     Ok(())
 }

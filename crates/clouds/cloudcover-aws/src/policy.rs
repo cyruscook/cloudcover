@@ -105,9 +105,6 @@ fn build_policy_statements(methods: &[ApiMethod]) -> Result<Vec<PolicyStatement>
     let mut statements = BTreeMap::<PolicyScope, BTreeSet<&'static str>>::new();
     for method in methods {
         for action in resolve_direct_actions(method)? {
-            if action.permission == "sts:GetCallerIdentity" {
-                continue;
-            }
             statements
                 .entry(PolicyScope {
                     service: action.service,
@@ -174,6 +171,24 @@ pub(crate) fn resolve_direct_actions(
 ) -> Result<Vec<&'static crate::model::AwsAction>, AwsError> {
     let operation = find_operation(method)?;
 
+    resolve_operation_actions(method, operation)
+}
+
+fn resolve_operation_actions(
+    method: &ApiMethod,
+    operation: &crate::model::AwsOperation,
+) -> Result<Vec<&'static crate::model::AwsAction>, AwsError> {
+    match operation.authorization_coverage() {
+        crate::AuthorizationCoverage::NotRequired => return Ok(Vec::new()),
+        crate::AuthorizationCoverage::Unresolved => {
+            return Err(AwsError::UnresolvedAuthorization {
+                service: method.service().to_owned(),
+                name: method.name().to_owned(),
+            });
+        }
+        crate::AuthorizationCoverage::Mapped => {}
+    }
+
     operation
         .authorized_actions
         .iter()
@@ -219,6 +234,33 @@ mod tests {
     const AGENT: &str = "arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}";
     const LOCATION: &str =
         "arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}";
+
+    #[test]
+    fn pending_catalog_operations_with_missing_authorization_are_rejected() {
+        // Exact unresolved operations in SAR refresh #57. Exercise the policy
+        // resolver without making the test depend on merging that data update.
+        for (service, name) in [
+            ("ec2", "GetCapacityManagerSupportabilityScores"),
+            ("neptune-db", "CancelIndexRebuild"),
+            ("neptune-db", "GetIndexRebuildStatus"),
+            ("neptune-db", "GetStorageInfo"),
+            ("neptune-db", "ListIndexRebuilds"),
+            ("neptune-db", "StartIndexRebuild"),
+            ("opensearch", "FailoverReplication"),
+        ] {
+            let method = ApiMethod::new(service, name);
+            let operation = crate::model::AwsOperation {
+                service,
+                name,
+                authorized_actions: &[],
+            };
+            assert!(matches!(
+                resolve_operation_actions(&method, &operation),
+                Err(AwsError::UnresolvedAuthorization { service: s, name: n })
+                    if s == service && n == name
+            ));
+        }
+    }
 
     fn agent_action(name: &'static str) -> AwsAction {
         // Model the agent metadata introduced by the pending SAR refresh, even

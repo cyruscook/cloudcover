@@ -41,7 +41,7 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     generate(&output)?;
 
     let api = read_json(&output.join("api.json"))?;
-    assert_eq!(field(&api, "schema_version")?.as_u64(), Some(1));
+    assert_eq!(field(&api, "schema_version")?.as_u64(), Some(2));
     let iam_values = field(&api, "iam_permissions")?
         .as_array()
         .ok_or("iam_permissions is not an array")?;
@@ -67,18 +67,22 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
         assert_eq!(row.len(), 3, "API method row {index} has the wrong shape");
         let service = string_value(array_item(value, 0)?, "API service")?;
         let name = string_value(array_item(value, 1)?, "API operation")?;
-        let permission_ids = array_item(value, 2)?
-            .as_array()
-            .ok_or("API permission IDs are not an array")?
-            .iter()
-            .map(|value| {
-                let permission_id = usize_value(value, "API permission ID")?;
-                if permission_id >= iam_permissions.len() {
-                    return Err(format!("API permission ID {permission_id} is dangling").into());
-                }
-                Ok(permission_id)
-            })
-            .collect::<Result<Vec<_>, Box<dyn Error>>>()?;
+        let permission_ids = if array_item(value, 2)?.is_null() {
+            Vec::new()
+        } else {
+            array_item(value, 2)?
+                .as_array()
+                .ok_or("API permission IDs are not an array")?
+                .iter()
+                .map(|value| {
+                    let permission_id = usize_value(value, "API permission ID")?;
+                    if permission_id >= iam_permissions.len() {
+                        return Err(format!("API permission ID {permission_id} is dangling").into());
+                    }
+                    Ok(permission_id)
+                })
+                .collect::<Result<Vec<_>, Box<dyn Error>>>()?
+        };
         assert!(
             permission_ids
                 .windows(2)
@@ -89,6 +93,23 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     assert!(api_rows.windows(2).all(|window| {
         (window[0].0.as_str(), window[0].1.as_str()) < (window[1].0.as_str(), window[1].1.as_str())
     }));
+    for (service, name, unresolved) in [
+        ("s3", "CreateSession", true),
+        ("sts", "AssumeRoleWithSAML", false),
+        ("sts", "AssumeRoleWithWebIdentity", false),
+        ("sts", "GetCallerIdentity", false),
+    ] {
+        let index = api_rows
+            .iter()
+            .position(|row| row.0 == service && row.1 == name)
+            .ok_or("missing authorization regression operation")?;
+        let permissions = array_item(&api_values[index], 2)?;
+        if unresolved {
+            assert!(permissions.is_null());
+        } else {
+            assert_eq!(permissions, &serde_json::json!([]));
+        }
+    }
 
     let api_create_bucket_id = api_rows
         .iter()
@@ -379,6 +400,10 @@ fn assert_fas_provenance(
             .any(|d| d["path"] == serde_json::json!(["ssm-secrets-reference", "secrets-read"]))
     );
     for (index, entry) in entries.iter().enumerate() {
+        if entry.is_null() {
+            assert!(api["api_methods"][index][2].is_null());
+            continue;
+        }
         for dependency in field(entry, "dependencies")?
             .as_array()
             .ok_or("missing dependencies")?
@@ -388,10 +413,11 @@ fn assert_fas_provenance(
                 .ok_or("missing dependency actions")?
             {
                 assert!(
-                    api_rows[index]
-                        .2
-                        .iter()
-                        .any(|id| permissions[*id] == permission.as_str().unwrap_or_default())
+                    api["api_methods"][index][2].is_null()
+                        || api_rows[index]
+                            .2
+                            .iter()
+                            .any(|id| permissions[*id] == permission.as_str().unwrap_or_default())
                 );
             }
         }
