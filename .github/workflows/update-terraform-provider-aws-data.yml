@@ -44,7 +44,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
-          go-version: '1.26.x'
+          go-version-file: crates/sdks/cloudcover-terraform-provider-aws/generator/go.mod
 
       - name: Generate scheduled stable releases
         if: github.event_name == 'schedule'
