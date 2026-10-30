@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "mappings": [
+    {
+      "service": "s3",
+      "operation": "CreateSession",
+      "authorized_actions": [
+        { "service": "s3express", "name": "CreateSession" }
+      ],
+      "reviewed": "2026-10-30",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html",
+          "evidence": "The S3 CreateSession API requires the s3express:CreateSession IAM action for the directory bucket."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3express.html",
+          "evidence": "The S3 Express CreateSession action supplies the resource types and condition keys; reuse the pinned SAR action rather than inventing an s3 action."
+        }
+      ]
+    }
+  ]
+}

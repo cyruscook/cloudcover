@@ -33,3 +33,32 @@ fn rejects_file_paths_before_ffi() {
 
     assert!(matches!(err, Some(GoAnalysisError::NotDirectory(_))));
 }
+
+#[test]
+fn source_roots_keep_library_wrappers_and_skip_unused_dependency_functions()
+-> Result<(), Box<dyn Error>> {
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source-roots");
+    let analysis = analyze_dir(fixture)?;
+    let methods = analysis.methods();
+    for name in ["Live", "FromInit", "FromClosure"] {
+        assert!(
+            methods.contains(&GoMethodReference::new(
+                "example.com/cloudcover/dependency",
+                Some("Client".to_owned()),
+                name,
+            )),
+            "missing reachable dependency method {name}"
+        );
+    }
+    assert!(methods.contains(&GoMethodReference::new(
+        "example.com/cloudcover/dependency",
+        None,
+        "Wrapper",
+    )));
+    assert!(!methods.contains(&GoMethodReference::new(
+        "example.com/cloudcover/dependency",
+        Some("Client".to_owned()),
+        "Dead",
+    )));
+    Ok(())
+}

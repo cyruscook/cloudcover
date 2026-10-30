@@ -94,7 +94,7 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
         (window[0].0.as_str(), window[0].1.as_str()) < (window[1].0.as_str(), window[1].1.as_str())
     }));
     for (service, name, unresolved) in [
-        ("s3", "CreateSession", true),
+        ("s3", "RenameObject", true),
         ("sts", "AssumeRoleWithSAML", false),
         ("sts", "AssumeRoleWithWebIdentity", false),
         ("sts", "GetCallerIdentity", false),
@@ -110,6 +110,16 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
             assert_eq!(permissions, &serde_json::json!([]));
         }
     }
+
+    let session = api_rows
+        .iter()
+        .find(|row| row.0 == "s3" && row.1 == "CreateSession")
+        .ok_or("missing CreateSession")?;
+    let session_permission = iam_permissions
+        .iter()
+        .position(|permission| permission == "s3express:CreateSession")
+        .ok_or("missing s3express:CreateSession")?;
+    assert!(session.2.contains(&session_permission));
 
     let api_create_bucket_id = api_rows
         .iter()

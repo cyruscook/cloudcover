@@ -240,6 +240,7 @@ mod tests {
         // Exact unresolved operations in SAR refresh #57. Exercise the policy
         // resolver without making the test depend on merging that data update.
         for (service, name) in [
+            ("s3", "CreateSession"), // FAS alone cannot resolve a missing direct link.
             ("ec2", "GetCapacityManagerSupportabilityScores"),
             ("neptune-db", "CancelIndexRebuild"),
             ("neptune-db", "GetIndexRebuildStatus"),

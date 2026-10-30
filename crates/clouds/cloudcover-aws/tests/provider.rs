@@ -700,14 +700,52 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
-fn fas_metadata_does_not_establish_missing_direct_authorization() -> Result<(), Box<dyn Error>> {
+fn direct_getobject_does_not_inherit_sdk_session_helpers() -> Result<(), Box<dyn Error>> {
+    let permissions = AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "GetObject"))?;
+    assert!(permissions.contains(&"s3:GetObject"));
+    assert!(!permissions.contains(&"s3express:CreateSession"));
+    Ok(())
+}
+
+#[test]
+fn documented_session_bridge_retains_conditional_kms_permissions() -> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
     let method = ApiMethod::new("s3", "CreateSession");
-    let dependencies = AwsProvider::new().fas_dependencies(&method)?;
-    assert!(!dependencies.is_empty());
-    assert!(matches!(
-        AwsProvider::new().iam_permissions(&method),
-        Err(AwsError::UnresolvedAuthorization { .. })
-    ));
+    assert_eq!(
+        provider.authorization_coverage(&method)?,
+        cloudcover_aws::AuthorizationCoverage::Mapped
+    );
+    assert_eq!(
+        provider.iam_permissions(&method)?,
+        [
+            "kms:Decrypt",
+            "kms:GenerateDataKey",
+            "s3express:CreateSession"
+        ]
+    );
+    let policy = provider.permissions_policy(std::slice::from_ref(&method))?;
+    let statements = policy["Statement"].as_array().ok_or("missing statements")?;
+    let session = statements
+        .iter()
+        .find(|statement| statement["Action"] == json!(["s3express:CreateSession"]))
+        .ok_or("missing session grant")?;
+    assert!(
+        session["Resource"]
+            .to_string()
+            .contains("arn:${Partition}:s3express:${Region}:${Account}:bucket/${BucketName}")
+    );
+    assert!(
+        !session["Resource"]
+            .to_string()
+            .contains("arn:${Partition}:s3:::")
+    );
+    assert_ne!(session["Resource"], "*");
+    let hcl = provider.permissions_policy_hcl(&[method])?;
+    assert!(hcl.contains("s3express:CreateSession"));
+    assert!(
+        hcl.contains("arn:$${Partition}:s3express:$${Region}:$${Account}:bucket/$${BucketName}")
+    );
+    assert!(!hcl.contains("\"s3:CreateSession\""));
     Ok(())
 }
 
@@ -722,10 +760,8 @@ fn rejects_unknown_api_method_for_iam_permissions() {
 
 #[test]
 fn missing_authorization_rejects_sole_and_mixed_json_and_hcl_policies() {
-    // AWS requires s3express:CreateSession; FAS KMS evidence cannot substitute
-    // for the missing direct authorization mapping.
-    // https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html
-    let unresolved = ApiMethod::new("s3", "CreateSession");
+    // The reviewed CreateSession bridge does not resolve unrelated missing links.
+    let unresolved = ApiMethod::new("s3", "RenameObject");
     for methods in [
         vec![unresolved.clone()],
         vec![
@@ -742,7 +778,7 @@ fn missing_authorization_rejects_sole_and_mixed_json_and_hcl_policies() {
             assert!(matches!(
                 result,
                 Err(AwsError::UnresolvedAuthorization { service, name })
-                    if service == "s3" && name == "CreateSession"
+                    if service == "s3" && name == "RenameObject"
             ));
         }
     }

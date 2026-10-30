@@ -79,6 +79,8 @@ fn emits_expected_s3_read_policy_for_pre_session_sdk() -> Result<(), Box<dyn Err
     assert!(actions.contains(&"s3:GetObjectVersion".to_owned()));
     assert!(actions.contains(&"s3-object-lambda:GetObject".to_owned()));
     assert!(!actions.contains(&"s3:PutObject".to_owned()));
+    assert!(!actions.contains(&"s3express:CreateSession".to_owned()));
+    assert!(!String::from_utf8_lossy(&output.stderr).contains("S3 Express:"));
 
     Ok(())
 }
@@ -202,7 +204,7 @@ fn missing_lifecycle_mapping_reports_incomplete_coverage() -> Result<(), Box<dyn
 }
 
 #[test]
-fn modern_s3_helpers_reject_unresolved_authorization_without_partial_output()
+fn modern_s3_helpers_resolve_documented_session_authorization_with_warning()
 -> Result<(), Box<dyn Error>> {
     let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("tests/fixtures/aws-s3")
@@ -210,10 +212,39 @@ fn modern_s3_helpers_reject_unresolved_authorization_without_partial_output()
         .into_owned();
     for format in ["json", "terraform"] {
         let output = run_policy(&["policy", "--format", format, "--language", "go", &fixture])?;
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        let policy = String::from_utf8(output.stdout)?;
+        assert!(policy.contains("s3:GetObject"));
+        assert!(policy.contains("s3express:CreateSession"));
+        assert!(!policy.contains("\"s3:CreateSession\""));
+        assert!(policy.contains("s3express:"));
+        let warning = String::from_utf8(output.stderr)?;
+        assert!(warning.contains("S3 Express: this conservative policy"));
+        assert!(warning.contains("ordinary general-purpose GetObject does not require this grant"));
+        assert!(warning.contains("Bucket, endpoint and session mode are not inferred"));
+    }
+    Ok(())
+}
+
+#[test]
+fn unrelated_missing_authorization_still_rejects_mixed_modern_s3_output()
+-> Result<(), Box<dyn Error>> {
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("tests/fixtures/aws-s3-unresolved")
+        .to_string_lossy()
+        .into_owned();
+    for format in ["json", "terraform"] {
+        let output = run_policy(&["policy", "--format", format, "--language", "go", &fixture])?;
         assert_eq!(output.status.code(), Some(1));
         assert_eq!(output.stdout, Vec::<u8>::new());
-        let error = String::from_utf8(output.stderr)?;
-        assert!(error.contains("unresolved AWS authorization coverage for s3:CreateSession"));
+        assert!(
+            String::from_utf8(output.stderr)?
+                .contains("unresolved AWS authorization coverage for s3:RenameObject")
+        );
     }
     Ok(())
 }

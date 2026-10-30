@@ -443,7 +443,7 @@ mod authorization_tests {
         assert_eq!(
             resolved_authorization::<Vec<String>>(Err(AwsError::UnresolvedAuthorization {
                 service: "s3".to_owned(),
-                name: "CreateSession".to_owned(),
+                name: "RenameObject".to_owned(),
             }))
             .ok(),
             Some(None)

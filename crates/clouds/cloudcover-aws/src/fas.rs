@@ -295,7 +295,7 @@ mod tests {
         catalog.reviewed_no_dependencies.clear();
         let rule = catalog.rules.first_mut().ok_or("missing test rule")?;
         rule.downstream_service = "s3".to_owned();
-        rule.downstream_operations = vec!["CreateSession".to_owned()];
+        rule.downstream_operations = vec!["RenameObject".to_owned()];
         rule.via_service = None;
         rule.key_placeholder = None;
         let catalog: &'static Catalog = Box::leak(Box::new(catalog));
@@ -309,7 +309,7 @@ mod tests {
                 &mut Vec::new(),
             ),
             Err(AwsError::UnresolvedAuthorization { service, name })
-                if service == "s3" && name == "CreateSession"
+                if service == "s3" && name == "RenameObject"
         ));
         expand(
             catalog,
