@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.2.3...cloudcover-terraform-provider-aws-v0.2.4) - 2026-10-30
+
+### Other
+
+- Fix Terraform analyzer compatibility with Go 1.27 ([#63](https://github.com/cyruscook/cloudcover/pull/63))
+
 ## [0.2.3](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.2.2...cloudcover-terraform-provider-aws-v0.2.3) - 2026-10-28
 
 ### Other
