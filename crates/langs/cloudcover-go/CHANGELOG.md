@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Restrict dependency calls to paths reachable from the requested source packages, while retaining all user functions, library entrypoints, initialization, closures and interface dispatch.
+
 ## [0.1.3](https://github.com/cyruscook/cloudcover/compare/cloudcover-go-v0.1.2...cloudcover-go-v0.1.3) - 2026-09-23
 
 ### Other

@@ -1,10 +1,12 @@
 export const SCHEMA_VERSION = 1;
+export const API_SCHEMA_VERSION = 2;
 
 export type ApiMethod = {
   service: string;
   name: string;
   canonical: string;
   permissionIds: number[];
+  authorizationCoverage: "mapped" | "not_required" | "unresolved";
   fas?: FasInfo;
 };
 
@@ -53,8 +55,9 @@ export class CatalogError extends Error {
 
 export function parseApiCatalog(value: unknown): ApiCatalog {
   const document = record(value, "API catalog");
-  schemaVersion(document, "API catalog");
+  schemaVersion(document, "API catalog", API_SCHEMA_VERSION);
   const iamPermissions = strings(document.iam_permissions, "API IAM permissions");
+  const iamPermissionNames = new Set(iamPermissions);
   const apiMethodsValue = array(document.api_methods, "API methods");
   const fasEntries = document.fas === undefined ? undefined : array(document.fas, "FAS entries");
   if (fasEntries && fasEntries.length !== apiMethodsValue.length) {
@@ -64,7 +67,8 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
     const values = tuple(row, 3, `API method ${index}`);
     const service = string(values[0], `API method ${index} service`);
     const name = string(values[1], `API method ${index} operation`);
-    const permissionIds = integerArray(
+    const unresolved = values[2] === null;
+    const permissionIds = unresolved ? [] : integerArray(
       values[2],
       `API method ${index} IAM permission IDs`,
     );
@@ -78,11 +82,19 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
     if (!strictlyIncreasing(permissionIds)) {
       throw new CatalogError(`API method ${index} has unsorted IAM permission IDs`);
     }
-    const fas = fasEntries ? parseFasInfo(fasEntries[index]) : undefined;
+    if (fasEntries?.[index] === null && !unresolved) {
+      throw new CatalogError(`API method ${index} has unresolved FAS authorization without an unresolved permission marker`);
+    }
+    const fas = fasEntries && fasEntries[index] !== null ? parseFasInfo(fasEntries[index]) : undefined;
     if (fas && fas.dependencies.some(dependency => dependency.permissions.some(
+      permission => !iamPermissionNames.has(permission),
+    ))) throw new CatalogError(`API method ${index} references an unknown FAS permission`);
+    if (!unresolved && fas && fas.dependencies.some(dependency => dependency.permissions.some(
       permission => !permissionIds.some(id => iamPermissions[id] === permission),
     ))) throw new CatalogError(`API method ${index} omits a FAS permission`);
-    return { service, name, canonical: `${service}.${name}`, permissionIds, fas };
+    const authorizationCoverage: ApiMethod["authorizationCoverage"] = unresolved
+      ? "unresolved" : permissionIds.length ? "mapped" : "not_required";
+    return { service, name, canonical: `${service}.${name}`, permissionIds, authorizationCoverage, fas };
   });
 
   if (
@@ -209,8 +221,8 @@ function record(value: unknown, context: string): Record<string, unknown> {
   return value as Record<string, unknown>;
 }
 
-function schemaVersion(document: Record<string, unknown>, context: string): void {
-  if (document.schema_version !== SCHEMA_VERSION) {
+function schemaVersion(document: Record<string, unknown>, context: string, expected = SCHEMA_VERSION): void {
+  if (document.schema_version !== expected) {
     throw new CatalogError(`${context} has unsupported schema version`);
   }
 }

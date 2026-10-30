@@ -700,12 +700,52 @@ fn lists_iam_permissions_for_api_operations() -> Result<(), Box<dyn Error>> {
 }
 
 #[test]
-fn supplements_authorized_actionless_operation_with_fas_permissions() -> Result<(), Box<dyn Error>>
-{
+fn direct_getobject_does_not_inherit_sdk_session_helpers() -> Result<(), Box<dyn Error>> {
+    let permissions = AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "GetObject"))?;
+    assert!(permissions.contains(&"s3:GetObject"));
+    assert!(!permissions.contains(&"s3express:CreateSession"));
+    Ok(())
+}
+
+#[test]
+fn documented_session_bridge_retains_conditional_kms_permissions() -> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
+    let method = ApiMethod::new("s3", "CreateSession");
     assert_eq!(
-        AwsProvider::new().iam_permissions(&ApiMethod::new("s3", "CreateSession"))?,
-        vec!["kms:Decrypt", "kms:GenerateDataKey"]
+        provider.authorization_coverage(&method)?,
+        cloudcover_aws::AuthorizationCoverage::Mapped
     );
+    assert_eq!(
+        provider.iam_permissions(&method)?,
+        [
+            "kms:Decrypt",
+            "kms:GenerateDataKey",
+            "s3express:CreateSession"
+        ]
+    );
+    let policy = provider.permissions_policy(std::slice::from_ref(&method))?;
+    let statements = policy["Statement"].as_array().ok_or("missing statements")?;
+    let session = statements
+        .iter()
+        .find(|statement| statement["Action"] == json!(["s3express:CreateSession"]))
+        .ok_or("missing session grant")?;
+    assert!(
+        session["Resource"]
+            .to_string()
+            .contains("arn:${Partition}:s3express:${Region}:${Account}:bucket/${BucketName}")
+    );
+    assert!(
+        !session["Resource"]
+            .to_string()
+            .contains("arn:${Partition}:s3:::")
+    );
+    assert_ne!(session["Resource"], "*");
+    let hcl = provider.permissions_policy_hcl(&[method])?;
+    assert!(hcl.contains("s3express:CreateSession"));
+    assert!(
+        hcl.contains("arn:$${Partition}:s3express:$${Region}:$${Account}:bucket/$${BucketName}")
+    );
+    assert!(!hcl.contains("\"s3:CreateSession\""));
     Ok(())
 }
 
@@ -719,19 +759,73 @@ fn rejects_unknown_api_method_for_iam_permissions() {
 }
 
 #[test]
-fn operation_with_no_authorized_actions_builds_fas_policy_statement() -> Result<(), Box<dyn Error>>
-{
-    let policy = AwsProvider::new().permissions_policy(&[ApiMethod::new("s3", "CreateSession")])?;
+fn missing_authorization_rejects_sole_and_mixed_json_and_hcl_policies() {
+    // The reviewed CreateSession bridge does not resolve unrelated missing links.
+    let unresolved = ApiMethod::new("s3", "RenameObject");
+    for methods in [
+        vec![unresolved.clone()],
+        vec![
+            ApiMethod::new("ec2", "DescribeInstances"),
+            unresolved.clone(),
+        ],
+        vec![unresolved, ApiMethod::new("ec2", "DescribeInstances")],
+    ] {
+        let provider = AwsProvider::new();
+        for result in [
+            provider.permissions_policy(&methods).map(|_| ()),
+            provider.permissions_policy_hcl(&methods).map(|_| ()),
+        ] {
+            assert!(matches!(
+                result,
+                Err(AwsError::UnresolvedAuthorization { service, name })
+                    if service == "s3" && name == "RenameObject"
+            ));
+        }
+    }
+}
 
-    assert_eq!(
-        policy,
-        json!({"Version":"2012-10-17","Statement":[{
-            "Effect":"Allow", "Action":["kms:Decrypt", "kms:GenerateDataKey"],
-            "Resource":"arn:${Partition}:kms:${Region}:${Account}:key/${DirectoryKeyId}",
-            "Condition":{"StringEquals":{"kms:ViaService":"s3.${Region}.amazonaws.com"}}
-        }]})
-    );
+#[test]
+fn documented_token_and_permissionless_calls_keep_resolved_empty_policies()
+-> Result<(), Box<dyn Error>> {
+    use cloudcover_aws::AuthorizationCoverage;
 
+    let provider = AwsProvider::new();
+    for (service, name) in [
+        ("sts", "GetCallerIdentity"),
+        ("sts", "AssumeRoleWithSAML"),
+        ("sts", "AssumeRoleWithWebIdentity"),
+        ("cognito-idp", "CompleteWebAuthnRegistration"),
+        ("cognito-idp", "DeleteWebAuthnCredential"),
+        ("cognito-idp", "GetClientToken"),
+        ("cognito-idp", "GetUserAuthFactors"),
+        ("cognito-idp", "ListWebAuthnCredentials"),
+        ("cognito-idp", "StartWebAuthnRegistration"),
+        ("sso", "GetRoleCredentials"),
+        ("sso", "ListAccountRoles"),
+        ("sso", "ListAccounts"),
+        ("sso", "Logout"),
+        ("sso-oauth", "RegisterClient"),
+        ("sso-oauth", "StartDeviceAuthorization"),
+    ] {
+        let method = ApiMethod::new(service, name);
+        assert_eq!(
+            provider.authorization_coverage(&method)?,
+            AuthorizationCoverage::NotRequired,
+            "{service}:{name}"
+        );
+        assert_eq!(provider.iam_permissions(&method)?, Vec::<&str>::new());
+        assert_eq!(
+            provider.permissions_policy(std::slice::from_ref(&method))?,
+            json!({"Version":"2012-10-17","Statement":[]}),
+            "{service}:{name}"
+        );
+        let mixed =
+            provider.permissions_policy(&[method, ApiMethod::new("ec2", "DescribeInstances")])?;
+        assert_eq!(
+            mixed["Statement"][0]["Action"],
+            json!(["ec2:DescribeInstances"])
+        );
+    }
     Ok(())
 }
 

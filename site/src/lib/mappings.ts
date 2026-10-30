@@ -52,3 +52,10 @@ export function filterMappings(
 export function mappingPermissionIds(mappings: Mapping[]): number[] {
   return [...new Set(mappings.flatMap(mapping => mapping.permissionIds))].sort((left, right) => left - right);
 }
+
+export function authorizationResolved(mappings: Mapping[], catalog: ApiCatalog): boolean {
+  return mappings.every(mapping => {
+    const coverage = catalog.apiMethods[mapping.apiMethodId].authorizationCoverage;
+    return coverage === "mapped" || coverage === "not_required";
+  });
+}

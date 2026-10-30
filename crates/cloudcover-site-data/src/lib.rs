@@ -5,7 +5,7 @@ use std::{
     path::Path,
 };
 
-use cloudcover_aws::{AwsProvider, IamPermission, iam_permission_catalog};
+use cloudcover_aws::{AwsError, AwsProvider, IamPermission, iam_permission_catalog};
 use cloudcover_core::{CloudProvider, Language, MethodReference, ResolvedSdk, Sdk};
 use cloudcover_terraform_provider_aws::{
     TerraformProviderAwsMappingsLookup, provider_versions, sdk_method_mappings,
@@ -14,9 +14,11 @@ use serde::Serialize;
 use tempfile::Builder;
 
 const SCHEMA_VERSION: u8 = 1;
+const API_SCHEMA_VERSION: u8 = 2;
 const LIFECYCLE_ACTIONS: [&str; 4] = ["create", "read", "update", "delete"];
 
-type ApiRow = (String, String, Vec<usize>);
+// null means unresolved authorization; [] is an affirmatively resolved empty set.
+type ApiRow = (String, String, Option<Vec<usize>>);
 type TerraformRow = (String, String, Vec<usize>);
 
 #[derive(Serialize)]
@@ -24,7 +26,7 @@ struct ApiArtifact {
     schema_version: u8,
     iam_permissions: Vec<String>,
     api_methods: Vec<ApiRow>,
-    fas: Vec<ApiFas>,
+    fas: Vec<Option<ApiFas>>,
 }
 
 #[derive(Serialize)]
@@ -160,8 +162,8 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
         .map(|entry| entry.permission.to_owned())
         .collect::<BTreeSet<_>>();
     for method in &api_methods {
-        let permissions = provider.iam_permissions(method)?;
-        for permission in &permissions {
+        let permissions = resolved_authorization(provider.iam_permissions(method))?;
+        for permission in permissions.iter().flatten() {
             all_permissions.insert((*permission).to_owned());
         }
         permissions_by_method.push(permissions);
@@ -184,13 +186,17 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
         .zip(permissions_by_method)
         .map(|(method, permissions)| {
             let permission_ids = permissions
-                .into_iter()
-                .map(|permission| {
-                    permission_ids.get(permission).copied().ok_or_else(|| {
-                        io::Error::other(format!("missing IAM permission {permission:?}"))
-                    })
+                .map(|permissions| {
+                    permissions
+                        .into_iter()
+                        .map(|permission| {
+                            permission_ids.get(permission).copied().ok_or_else(|| {
+                                io::Error::other(format!("missing IAM permission {permission:?}"))
+                            })
+                        })
+                        .collect::<Result<Vec<_>, _>>()
                 })
-                .collect::<Result<Vec<_>, _>>()?;
+                .transpose()?;
             Ok((
                 method.service().to_owned(),
                 method.name().to_owned(),
@@ -202,10 +208,15 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
     let fas = api_methods
         .iter()
         .map(|method| {
-            Ok(ApiFas {
-                coverage: provider.fas_coverage(method)?,
-                dependencies: provider.fas_dependencies(method)?,
-            })
+            let coverage = provider.fas_coverage(method)?;
+            Ok(
+                resolved_authorization(provider.fas_dependencies(method))?.map(|dependencies| {
+                    ApiFas {
+                        coverage,
+                        dependencies,
+                    }
+                }),
+            )
         })
         .collect::<Result<Vec<_>, cloudcover_aws::AwsError>>()?;
 
@@ -213,7 +224,7 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
 
     Ok(Catalog {
         api: ApiArtifact {
-            schema_version: SCHEMA_VERSION,
+            schema_version: API_SCHEMA_VERSION,
             iam_permissions,
             api_methods: api_rows,
             fas,
@@ -222,6 +233,14 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
         terraform_rows,
         terraform_versions,
     })
+}
+
+fn resolved_authorization<T>(value: Result<T, AwsError>) -> Result<Option<T>, AwsError> {
+    match value {
+        Ok(value) => Ok(Some(value)),
+        Err(AwsError::UnresolvedAuthorization { .. }) => Ok(None),
+        Err(error) => Err(error),
+    }
 }
 
 fn build_terraform_catalog(
@@ -409,4 +428,38 @@ fn replace_output(
     }
     drop(backup);
     Ok(())
+}
+
+#[cfg(test)]
+mod authorization_tests {
+    use super::*;
+
+    #[test]
+    fn missing_authorization_uses_null_but_other_errors_remain_errors() {
+        assert_eq!(
+            resolved_authorization(Ok(Vec::<String>::new())).ok(),
+            Some(Some(Vec::new()))
+        );
+        assert_eq!(
+            resolved_authorization::<Vec<String>>(Err(AwsError::UnresolvedAuthorization {
+                service: "s3".to_owned(),
+                name: "RenameObject".to_owned(),
+            }))
+            .ok(),
+            Some(None)
+        );
+        assert!(matches!(
+            resolved_authorization::<()>(Err(AwsError::UnknownApiMethod {
+                service: "missing".to_owned(),
+                name: "Missing".to_owned(),
+            })),
+            Err(AwsError::UnknownApiMethod { .. })
+        ));
+        assert!(matches!(
+            resolved_authorization::<()>(Err(AwsError::InvalidFasCatalog {
+                message: "invalid evidence".to_owned(),
+            })),
+            Err(AwsError::InvalidFasCatalog { .. })
+        ));
+    }
 }

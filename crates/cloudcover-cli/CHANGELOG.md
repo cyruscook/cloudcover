@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Restore modern Go S3 policy generation with explicit warnings for conservatively included directory-session permissions; preserve failure for unrelated unresolved authorization.
+
 ## [0.2.2](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.2.1...cloudcover-cli-v0.2.2) - 2026-10-25
 
 ### Other

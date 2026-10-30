@@ -34,6 +34,14 @@ pub(crate) fn build_terraform_policy(
 }
 
 fn report_fas_coverage(methods: &[ApiMethod]) -> Result<(), CliError> {
+    if methods
+        .iter()
+        .any(|method| method.service() == "s3" && method.name() == "CreateSession")
+    {
+        eprintln!(
+            "S3 Express: this conservative policy includes s3express:CreateSession. Go SDK helper calls can be conditional; ordinary general-purpose GetObject does not require this grant. Bucket, endpoint and session mode are not inferred. Review directory-bucket/access-point resource placeholders and session scope before use. Sources: https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html"
+        );
+    }
     let provider = AwsProvider::new();
     let mut possible = 0;
     let mut unknown = 0;

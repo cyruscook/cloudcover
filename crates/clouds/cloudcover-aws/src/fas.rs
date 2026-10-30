@@ -172,7 +172,14 @@ fn validate_catalog(catalog: &Catalog) -> Result<(), String> {
         validate_operations(&rule.downstream_service, &rule.downstream_operations)?;
         for operation in &rule.downstream_operations {
             let method = ApiMethod::new(&rule.downstream_service, operation);
-            let actions = policy::resolve_direct_actions(&method).map_err(|e| e.to_string())?;
+            let actions = match policy::resolve_direct_actions(&method) {
+                Ok(actions) => actions,
+                // The operation exists, but its upstream authorization mapping
+                // is incomplete. Reject requests that expand this dependency;
+                // do not invalidate unrelated operations' FAS metadata.
+                Err(AwsError::UnresolvedAuthorization { .. }) => continue,
+                Err(error) => return Err(error.to_string()),
+            };
             if actions.is_empty() {
                 return Err(format!(
                     "{} references an actionless downstream operation",
@@ -276,6 +283,42 @@ mod tests {
 
     fn document() -> Result<Catalog, Box<dyn std::error::Error>> {
         Ok(serde_json::from_str(FAS_DOCUMENT)?)
+    }
+
+    #[test]
+    fn unresolved_downstream_authorization_is_rejected_only_when_requested()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let mut catalog = document()?;
+        catalog
+            .rules
+            .retain(|rule| rule.id == "ssm-secrets-reference");
+        catalog.reviewed_no_dependencies.clear();
+        let rule = catalog.rules.first_mut().ok_or("missing test rule")?;
+        rule.downstream_service = "s3".to_owned();
+        rule.downstream_operations = vec!["RenameObject".to_owned()];
+        rule.via_service = None;
+        rule.key_placeholder = None;
+        let catalog: &'static Catalog = Box::leak(Box::new(catalog));
+        validate_catalog(catalog)?;
+        assert!(matches!(
+            expand(
+                catalog,
+                &ApiMethod::new("ssm", "GetParameter"),
+                &mut Vec::new(),
+                &mut Vec::new(),
+                &mut Vec::new(),
+            ),
+            Err(AwsError::UnresolvedAuthorization { service, name })
+                if service == "s3" && name == "RenameObject"
+        ));
+        expand(
+            catalog,
+            &ApiMethod::new("ec2", "DescribeInstances"),
+            &mut Vec::new(),
+            &mut Vec::new(),
+            &mut Vec::new(),
+        )?;
+        Ok(())
     }
 
     #[test]

@@ -4,7 +4,7 @@ import { parseApiCatalog } from "../src/lib/catalog.ts";
 
 function document() {
   return {
-    schema_version: 1,
+    schema_version: 2,
     iam_permissions: ["kms:Decrypt", "secretsmanager:GetSecretValue", "ssm:GetParameter"],
     api_methods: [["ssm", "GetParameter", [0, 1, 2]]],
     fas: [{
@@ -47,4 +47,26 @@ test("catalog rejects missing action IDs, dangling FAS entries, and indirect cit
   input = document();
   input.fas[0].dependencies[0].rule.sources[0].url = "https://example.com/map.json";
   assert.throws(() => parseApiCatalog(input), /not AWS documentation/);
+});
+
+test("unresolved authorization stays distinct from documented empty permissions", () => {
+  const input = document();
+  input.api_methods[0][2] = null;
+  let method = parseApiCatalog(input).apiMethods[0];
+  assert.equal(method.authorizationCoverage, "unresolved");
+  assert.deepEqual(method.permissionIds, []);
+  assert.equal(method.fas.dependencies.length, 1);
+  input.fas[0].dependencies[0].iam_permissions = ["kms:InventedPermission"];
+  assert.throws(() => parseApiCatalog(input), /unknown FAS permission/);
+  input.fas[0].dependencies[0].iam_permissions = ["kms:Decrypt"];
+  input.fas[0] = null;
+  method = parseApiCatalog(input).apiMethods[0];
+  assert.equal(method.authorizationCoverage, "unresolved");
+  assert.equal(method.fas, undefined);
+  input.api_methods[0][2] = [];
+  assert.throws(() => parseApiCatalog(input), /unresolved FAS authorization/);
+  input.fas[0] = { coverage: "unknown", dependencies: [] };
+  assert.equal(parseApiCatalog(input).apiMethods[0].authorizationCoverage, "not_required");
+  input.schema_version = 1;
+  assert.throws(() => parseApiCatalog(input), /unsupported schema/);
 });
