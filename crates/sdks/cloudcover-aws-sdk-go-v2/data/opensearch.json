@@ -3694,6 +3694,83 @@
       "module_version": "1.86.2",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.87.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "AddReplicationPeer",
+          [
+            [
+              "es",
+              "AddReplicationPeer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "CompareDomainConfiguration",
+          [
+            [
+              "es",
+              "CompareDomainConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "DescribeDomainReplication",
+          [
+            [
+              "es",
+              "DescribeDomainReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "FailoverReplication",
+          [
+            [
+              "es",
+              "FailoverReplication"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "RemoveReplicationPeer",
+          [
+            [
+              "es",
+              "RemoveReplicationPeer"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/opensearch",
+          "Client",
+          "SwitchoverReplication",
+          [
+            [
+              "es",
+              "SwitchoverReplication"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.87.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

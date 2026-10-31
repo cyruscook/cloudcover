@@ -1633,6 +1633,72 @@
       "module_version": "1.26.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.27.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptunedata",
+          "Client",
+          "CancelIndexRebuild",
+          [
+            [
+              "neptune-db",
+              "CancelIndexRebuild"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptunedata",
+          "Client",
+          "GetIndexRebuildStatus",
+          [
+            [
+              "neptune-db",
+              "GetIndexRebuildStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptunedata",
+          "Client",
+          "GetStorageInfo",
+          [
+            [
+              "neptune-db",
+              "GetStorageInfo"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptunedata",
+          "Client",
+          "ListIndexRebuilds",
+          [
+            [
+              "neptune-db",
+              "ListIndexRebuilds"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptunedata",
+          "Client",
+          "StartIndexRebuild",
+          [
+            [
+              "neptune-db",
+              "StartIndexRebuild"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.27.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -13420,6 +13420,23 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.343.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "GetCapacityManagerSupportabilityScores",
+          [
+            [
+              "ec2",
+              "GetCapacityManagerSupportabilityScores"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
