@@ -2683,6 +2683,34 @@
       "module_version": "1.57.6",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/docdb",
+          "Client",
+          "DescribeServerlessV2PlatformVersions",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/docdb",
+          "DescribeServerlessV2PlatformVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
