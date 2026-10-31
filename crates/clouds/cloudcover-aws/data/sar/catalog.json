@@ -4314,7 +4314,7 @@
         "ServiceName": "Account",
         "Version": "v1.5"
       },
-      "modified": 1792604740,
+      "modified": 1793041329,
       "service": "account",
       "source_sha256": "843767e6ea45a5bf5d59101571052686b58da7995893cde625c7be86f24a19c6",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/account/account.json"
@@ -10359,6 +10359,21 @@
                 "IsWrite": false
               }
             },
+            "Name": "GetCatalogCapability",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "GetKnowledgeItem",
             "Resources": [
               {
@@ -10634,6 +10649,51 @@
                 "Name": "agentspace"
               }
             ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListCatalogCapabilities",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListCatalogCapabilityFiles",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListCatalogCapabilityTypes",
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -10987,6 +11047,30 @@
               }
             },
             "Name": "RotateAccessToken",
+            "Resources": [
+              {
+                "Name": "agentspace"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "ActionConditionKeys": [
+              "aidevops:SourceAgentSpaceArn",
+              "aidevops:TargetAgentSpaceArn"
+            ],
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "SearchAssets",
             "Resources": [
               {
                 "Name": "agentspace"
@@ -12345,9 +12429,9 @@
         "ServiceName": "DevOps Agent",
         "Version": "v1.5"
       },
-      "modified": 1792604734,
+      "modified": 1793210529,
       "service": "aidevops",
-      "source_sha256": "8092956372907507060f7ac90da9b2aa4ed479f22e3862064e6590e97da317d7",
+      "source_sha256": "b9d90319a59e4e0546ad052409f85188fa9a032b0cede21aea516e589892b058",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/aidevops/aidevops.json"
     },
     {
@@ -13266,6 +13350,33 @@
       "document": {
         "Actions": [
           {
+            "ActionConditionKeys": [
+              "airflow:DagAccessEntity",
+              "airflow:ResourceAction",
+              "airflow:ResourceId",
+              "airflow:ResourceType",
+              "airflow:TeamNames"
+            ],
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "AccessAirflowResource",
+            "Resources": [
+              {
+                "Name": "environment"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "Annotations": {
               "Properties": {
                 "IsDataPlane": false,
@@ -13829,9 +13940,9 @@
         "ServiceName": "MWAA",
         "Version": "v1.5"
       },
-      "modified": 1792604708,
+      "modified": 1793386926,
       "service": "airflow",
-      "source_sha256": "26cd8879c73a5fd2bee7b824e846e40f1862cdfe7221358ef7cc4abee7b0fa3d",
+      "source_sha256": "6f36003703e0590518a5e2fbc593fdbb1c5c03b7807b335689c14e90cf585fd5",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/airflow/airflow.json"
     },
     {
@@ -19190,7 +19301,6 @@
           {
             "Annotations": {
               "Properties": {
-                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -20704,9 +20814,9 @@
         "ServiceName": "OpenSearch Serverless",
         "Version": "v1.5"
       },
-      "modified": 1792818127,
+      "modified": 1793422920,
       "service": "aoss",
-      "source_sha256": "8aec18dbe7d66aecbda94ae2d109deeec36fcd02b42e107434f0217109f48486",
+      "source_sha256": "d04d851a66e1252db0fd985493a26d137c9652bc8a43244e878db753a556d6d1",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/aoss/aoss.json"
     },
     {
@@ -95946,6 +96056,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -100665,6 +100776,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "ResetTokenVaultKeyMaterial",
+                "Service": "bedrock-agentcore"
+              }
+            ],
+            "Name": "ResetTokenVaultKeyMaterial",
+            "SDK": [
+              {
+                "Method": "reset_token_vault_key_material",
+                "Name": "bedrock-agentcore-control",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "RetrieveMemoryRecords",
                 "Service": "bedrock-agentcore"
               }
@@ -101810,9 +101937,9 @@
         "ServiceName": "Bedrock-Agentcore",
         "Version": "v1.5"
       },
-      "modified": 1792645327,
+      "modified": 1793134932,
       "service": "bedrock-agentcore",
-      "source_sha256": "401b061557324aad77054727b5d2503003568071b27b12938aeeaf5adc1b3c99",
+      "source_sha256": "1d64681e7141810fbbbcd1e920c8b56ce7806e5fde5787a2397f195cf531edbd",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/bedrock-agentcore/bedrock-agentcore.json"
     },
     {
@@ -102987,6 +103114,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103031,6 +103159,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103076,6 +103205,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103143,6 +103273,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103308,6 +103439,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103510,6 +103642,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": true,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103525,6 +103658,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103545,6 +103679,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103565,6 +103700,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -103908,6 +104044,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "AssociateContract",
+                "Service": "billing"
+              }
+            ],
+            "Name": "AssociateContract",
+            "SDK": [
+              {
+                "Method": "associate_contract",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "AssociateSourceViews",
                 "Service": "billing"
               },
@@ -103920,6 +104072,22 @@
             "SDK": [
               {
                 "Method": "associate_source_views",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "CancelContractualInvestmentAttestation",
+                "Service": "billing"
+              }
+            ],
+            "Name": "CancelContractualInvestmentAttestation",
+            "SDK": [
+              {
+                "Method": "cancel_contractual_investment_attestation",
                 "Name": "billing",
                 "Package": "Boto3"
               }
@@ -103952,6 +104120,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "CreateContractualInvestmentAttestation",
+                "Service": "billing"
+              }
+            ],
+            "Name": "CreateContractualInvestmentAttestation",
+            "SDK": [
+              {
+                "Method": "create_contractual_investment_attestation",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "DeleteBillingView",
                 "Service": "billing"
               }
@@ -103960,6 +104144,22 @@
             "SDK": [
               {
                 "Method": "delete_billing_view",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "DisassociateContract",
+                "Service": "billing"
+              }
+            ],
+            "Name": "DisassociateContract",
+            "SDK": [
+              {
+                "Method": "disassociate_contract",
                 "Name": "billing",
                 "Package": "Boto3"
               }
@@ -104012,6 +104212,22 @@
             "SDK": [
               {
                 "Method": "get_billing_view",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "GetContractInformation",
+                "Service": "billing"
+              }
+            ],
+            "Name": "GetContractInformation",
+            "SDK": [
+              {
+                "Method": "get_contract_information",
                 "Name": "billing",
                 "Package": "Boto3"
               }
@@ -104160,6 +104376,70 @@
             "SDK": [
               {
                 "Method": "list_business_support_subscription_history",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListContracts",
+                "Service": "billing"
+              }
+            ],
+            "Name": "ListContracts",
+            "SDK": [
+              {
+                "Method": "list_contracts",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListContractualInvestmentAttestations",
+                "Service": "billing"
+              }
+            ],
+            "Name": "ListContractualInvestmentAttestations",
+            "SDK": [
+              {
+                "Method": "list_contractual_investment_attestations",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListContractualInvestmentSummaries",
+                "Service": "billing"
+              }
+            ],
+            "Name": "ListContractualInvestmentSummaries",
+            "SDK": [
+              {
+                "Method": "list_contractual_investment_summaries",
+                "Name": "billing",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListContractualInvestments",
+                "Service": "billing"
+              }
+            ],
+            "Name": "ListContractualInvestments",
+            "SDK": [
+              {
+                "Method": "list_contractual_investments",
                 "Name": "billing",
                 "Package": "Boto3"
               }
@@ -104322,9 +104602,9 @@
         "ServiceName": "Billing",
         "Version": "v1.5"
       },
-      "modified": 1792604728,
+      "modified": 1793048526,
       "service": "billing",
-      "source_sha256": "176f32a44e468daed337ab8b1d748d3df45dce0c7706efe78c5e2e8620ebd0fe",
+      "source_sha256": "b283f4a85cf96ccbb3439fd2892b88820ff3787daf0a9400837d4407a75a0c6c",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/billing/billing.json"
     },
     {
@@ -151278,7 +151558,6 @@
             ],
             "Annotations": {
               "Properties": {
-                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -152657,6 +152936,32 @@
             ],
             "Annotations": {
               "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "GetProfileRecords",
+            "Resources": [
+              {
+                "ConditionKeys": [
+                  "aws:ResourceTag/${TagKey}"
+                ],
+                "Name": "dataset"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "ActionConditionKeys": [
+              "cloudwatch:HasAccessGrant"
+            ],
+            "Annotations": {
+              "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
@@ -153714,6 +154019,29 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "PutProfileRecords",
+            "Resources": [
+              {
+                "ConditionKeys": [
+                  "aws:ResourceTag/${TagKey}"
+                ],
+                "Name": "dataset"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "cloudwatch:HasAccessGrant"
             ],
@@ -154540,12 +154868,6 @@
             ]
           },
           {
-            "AuthorizedActions": [
-              {
-                "Name": "CreateAlert",
-                "Service": "cloudwatch"
-              }
-            ],
             "Name": "CreateAlert",
             "SDK": [
               {
@@ -155913,6 +156235,10 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "ListTagsForResource",
+                "Service": "cloudwatch"
+              },
+              {
                 "Name": "PutCompositeAlarm",
                 "Service": "cloudwatch"
               },
@@ -156663,9 +156989,9 @@
         "ServiceName": "CloudWatch",
         "Version": "v1.5"
       },
-      "modified": 1792604702,
+      "modified": 1793376125,
       "service": "cloudwatch",
-      "source_sha256": "c104f1c018ad56586a6c4d90c1969ac237665899cfaba33a7245953b811be701",
+      "source_sha256": "b9d5a1437ba06c70429a21a202a515521b67d61c7a2358892bfb407675e6d2ce",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/cloudwatch/cloudwatch.json"
     },
     {
@@ -173393,491 +173719,6 @@
       "document": {
         "Actions": [
           {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": true,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "AssociateTeamMember",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "ActionConditionKeys": [
-              "aws:RequestTag/${TagKey}",
-              "aws:TagKeys"
-            ],
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": true,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "CreateProject",
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "CreateUserProfile",
-            "Resources": [
-              {
-                "Name": "user"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "DeleteExtendedAccess",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": false,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": true,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "DeleteProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "DeleteUserProfile",
-            "Resources": [
-              {
-                "Name": "user"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "DescribeProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "DescribeUserProfile",
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": true,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "DisassociateTeamMember",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "GetExtendedAccess",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": false,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "ListProjects",
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "ListResources",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "ListTagsForProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "ListTeamMembers",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "ListUserProfiles",
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "PutExtendedAccess",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": false,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "ActionConditionKeys": [
-              "aws:RequestTag/${TagKey}",
-              "aws:TagKeys"
-            ],
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": true,
-                "IsWrite": true
-              }
-            },
-            "Name": "TagProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "ActionConditionKeys": [
-              "aws:TagKeys"
-            ],
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": true,
-                "IsWrite": true
-              }
-            },
-            "Name": "UntagProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": false
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "UpdateProject",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": true,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "UpdateTeamMember",
-            "Resources": [
-              {
-                "Name": "project"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": false,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": true
-              }
-            },
-            "Name": "UpdateUserProfile",
-            "Resources": [
-              {
-                "Name": "user"
-              }
-            ],
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": true,
-              "IAM Action Last Accessed": true
-            }
-          },
-          {
-            "Annotations": {
-              "Properties": {
-                "IsList": true,
-                "IsPermissionManagement": false,
-                "IsTaggingOnly": false,
-                "IsWrite": false
-              }
-            },
-            "Name": "VerifyServiceRole",
-            "SupportedBy": {
-              "IAM Access Analyzer Policy Generation": false,
-              "IAM Action Last Accessed": false
-            }
-          }
-        ],
-        "ConditionKeys": [
-          {
-            "Name": "aws:RequestTag/${TagKey}",
-            "Types": [
-              "String"
-            ]
-          },
-          {
-            "Name": "aws:ResourceTag/${TagKey}",
-            "Types": [
-              "String"
-            ]
-          },
-          {
-            "Name": "aws:TagKeys",
-            "Types": [
-              "ArrayOfString"
-            ]
-          },
-          {
-            "Name": "iam:ResourceTag/${TagKey}",
-            "Types": [
-              "String"
-            ]
-          }
-        ],
-        "Name": "codestar",
-        "Resources": [
-          {
-            "ARNFormats": [
-              "arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}"
-            ],
-            "ConditionKeys": [
-              "aws:ResourceTag/${TagKey}"
-            ],
-            "Name": "project"
-          },
-          {
-            "ARNFormats": [
-              "arn:${Partition}:iam::${Account}:user/${AwsUserName}"
-            ],
-            "ConditionKeys": [
-              "iam:ResourceTag/${TagKey}"
-            ],
-            "Name": "user"
-          }
-        ],
-        "ServiceName": "CodeStar",
-        "Version": "v1.5"
-      },
-      "modified": 1792604711,
-      "service": "codestar",
-      "source_sha256": "6062c37eec193c41053e24d9e3288f6d632fd79a6237a1168b8b90d1ba13e9cb",
-      "url": "https://servicereference.us-east-1.amazonaws.com/v1/codestar/codestar.json"
-    },
-    {
-      "document": {
-        "Actions": [
-          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys",
@@ -176351,6 +176192,29 @@
           },
           {
             "ActionConditionKeys": [
+              "aws:ResourceTag/${TagKey}"
+            ],
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "TestOtelConnection",
+            "Resources": [
+              {
+                "Name": "profile"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "ActionConditionKeys": [
               "aws:ResourceTag/${TagKey}",
               "aws:TagKeys"
             ],
@@ -176467,9 +176331,9 @@
         "ServiceName": "CodeWhisperer",
         "Version": "v1.5"
       },
-      "modified": 1792604701,
+      "modified": 1793386924,
       "service": "codewhisperer",
-      "source_sha256": "1527d4720f11f87f09f3307e038b95305ef9251ca0d03177956692e7eab4a97b",
+      "source_sha256": "a6aa8d863d21a17bcbe0a27cf0eb47e33f869bba25fd5319a87c0bb61b4a3e4f",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/codewhisperer/codewhisperer.json"
     },
     {
@@ -177323,6 +177187,11 @@
           {
             "AuthorizedActions": [
               {
+                "Context": {
+                  "iam:PassedToService": [
+                    "cognito-identity.amazonaws.com"
+                  ]
+                },
                 "Name": "PassRole",
                 "Service": "iam"
               },
@@ -177459,9 +177328,9 @@
         "ServiceName": "Cognito Identity",
         "Version": "v1.5"
       },
-      "modified": 1792604695,
+      "modified": 1793073719,
       "service": "cognito-identity",
-      "source_sha256": "b32d625147846a80233311825ef6694b879c0aa1807ab229b7f909b09849079b",
+      "source_sha256": "83d4adba69391e3341f0d9daa05ac38587a2b0985bdbc5d4e0c0972fc0e9a7f2",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/cognito-identity/cognito-identity.json"
     },
     {
@@ -178788,6 +178657,27 @@
                 "IsWrite": false
               }
             },
+            "Name": "DescribeTermsByClient",
+            "Resources": [
+              {
+                "Name": "userpool"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "DescribeUserImportJob",
             "Resources": [
               {
@@ -178928,6 +178818,22 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "GetClientToken",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -181112,6 +181018,10 @@
               {
                 "Name": "DescribeTerms",
                 "Service": "cognito-idp"
+              },
+              {
+                "Name": "DescribeTermsByClient",
+                "Service": "cognito-idp"
               }
             ],
             "Name": "DescribeTermsByClient",
@@ -181236,6 +181146,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "GetClientToken",
+                "Service": "cognito-idp"
+              }
+            ],
             "Name": "GetClientToken",
             "SDK": [
               {
@@ -182200,9 +182116,9 @@
         "ServiceName": "Cognito User Pools",
         "Version": "v1.5"
       },
-      "modified": 1792604706,
+      "modified": 1793397716,
       "service": "cognito-idp",
-      "source_sha256": "5970538b768bb26231f9ed22834f34e81001e162c2fe4e148468e0b9cc0880e5",
+      "source_sha256": "1bcae538aa0dc22c4377b7eb542f2dff1e8ff4ac3155ededd18bdbad9a1138a2",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/cognito-idp/cognito-idp.json"
     },
     {
@@ -208751,6 +208667,16 @@
             ]
           },
           {
+            "Name": "UpdateOutboundEmailContactMessage",
+            "SDK": [
+              {
+                "Method": "update_outbound_email_contact_message",
+                "Name": "connect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "AuthorizedActions": [
               {
                 "Name": "UpdateParticipantAuthentication",
@@ -209771,9 +209697,9 @@
         "ServiceName": "Connect",
         "Version": "v1.5"
       },
-      "modified": 1792699325,
+      "modified": 1793044922,
       "service": "connect",
-      "source_sha256": "db1497bf57e57a7fce23dfb9845cc9a84aa62eff90e7755b8202bfc740711327",
+      "source_sha256": "5763cdf991d1ccdebe8c3715695b277f69c94a0fbfd472438ecacfaf9d8ee2fc",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/connect/connect.json"
     },
     {
@@ -219862,6 +219788,11 @@
               }
             },
             "Name": "CreateLocationAzureBlob",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -219982,6 +219913,11 @@
               }
             },
             "Name": "CreateLocationHdfs",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -220002,6 +219938,11 @@
               }
             },
             "Name": "CreateLocationNfs",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -220022,6 +219963,11 @@
               }
             },
             "Name": "CreateLocationObjectStorage",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -220042,6 +219988,11 @@
               }
             },
             "Name": "CreateLocationS3",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -220062,6 +220013,11 @@
               }
             },
             "Name": "CreateLocationSmb",
+            "Resources": [
+              {
+                "Name": "agent"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -220907,6 +220863,9 @@
             "Name": "UpdateLocationAzureBlob",
             "Resources": [
               {
+                "Name": "agent"
+              },
+              {
                 "Name": "location"
               }
             ],
@@ -221033,6 +220992,9 @@
             "Name": "UpdateLocationHdfs",
             "Resources": [
               {
+                "Name": "agent"
+              },
+              {
                 "Name": "location"
               }
             ],
@@ -221054,6 +221016,9 @@
             "Name": "UpdateLocationNfs",
             "Resources": [
               {
+                "Name": "agent"
+              },
+              {
                 "Name": "location"
               }
             ],
@@ -221074,6 +221039,9 @@
             },
             "Name": "UpdateLocationObjectStorage",
             "Resources": [
+              {
+                "Name": "agent"
+              },
               {
                 "Name": "location"
               }
@@ -221116,6 +221084,9 @@
             },
             "Name": "UpdateLocationSmb",
             "Resources": [
+              {
+                "Name": "agent"
+              },
               {
                 "Name": "location"
               }
@@ -222348,9 +222319,9 @@
         "ServiceName": "DataSync",
         "Version": "v1.5"
       },
-      "modified": 1792604740,
+      "modified": 1793023330,
       "service": "datasync",
-      "source_sha256": "711be5e8345309831fa4ea4fbb6603e209167c6c581c6902f95d5e03c84185a4",
+      "source_sha256": "71cfe6d043050226a83f6c9df29cd3afe238fc4770e7750e27e447824ca2e7f0",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/datasync/datasync.json"
     },
     {
@@ -262962,6 +262933,10 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "ReadDataForReplication",
+                "Service": "dynamodb"
+              },
+              {
                 "Name": "Scan",
                 "Service": "dynamodb"
               }
@@ -263326,9 +263301,9 @@
         "ServiceName": "DynamoDB",
         "Version": "v1.5"
       },
-      "modified": 1792604694,
+      "modified": 1792904518,
       "service": "dynamodb",
-      "source_sha256": "1864b67fb1b763654b323fa7303fb706835a86572817d993e2932e34b1e110bf",
+      "source_sha256": "402e6333e42297fdbaa5bc54f64d242a012591a604b4cfa285a40938a467cd2d",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/dynamodb/dynamodb.json"
     },
     {
@@ -301500,6 +301475,16 @@
             ]
           },
           {
+            "Name": "GetCapacityManagerSupportabilityScores",
+            "SDK": [
+              {
+                "Method": "get_capacity_manager_supportability_scores",
+                "Name": "ec2",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "AuthorizedActions": [
               {
                 "Name": "GetCapacityReservationUsage",
@@ -301728,6 +301713,16 @@
             "SDK": [
               {
                 "Method": "get_image_block_public_access_state",
+                "Name": "ec2",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "Name": "GetImageFindings",
+            "SDK": [
+              {
+                "Method": "get_image_findings",
                 "Name": "ec2",
                 "Package": "Boto3"
               }
@@ -307273,9 +307268,9 @@
         "ServiceName": "EC2",
         "Version": "v1.5"
       },
-      "modified": 1792699333,
+      "modified": 1793217728,
       "service": "ec2",
-      "source_sha256": "5e688934071fefe90db27b61e380ce69f232c61dadcd8245dbb9634b10829e98",
+      "source_sha256": "ec4c773407db5ac2c87f87e0c3aa5fa90066e53bbbad65ebced7eeed31949ade",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/ec2/ec2.json"
     },
     {
@@ -308040,6 +308035,22 @@
                 "IsWrite": false
               }
             },
+            "Name": "DescribeReplicationBackfillResults",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "DescribeRepositories",
             "Resources": [
               {
@@ -308313,6 +308324,22 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListReplicationBackfills",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys"
@@ -308543,6 +308570,26 @@
           {
             "Annotations": {
               "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "ReplicateImageDelete",
+            "Resources": [
+              {
+                "Name": "repository"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": true,
@@ -308601,6 +308648,38 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "StartReplicationBackfill",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "StopReplicationBackfill",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -309178,6 +309257,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "DescribeReplicationBackfillResults",
+                "Service": "ecr"
+              }
+            ],
+            "Name": "DescribeReplicationBackfillResults",
+            "SDK": [
+              {
+                "Method": "describe_replication_backfill_results",
+                "Name": "ecr",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "DescribeRepositories",
                 "Service": "ecr"
               }
@@ -309430,6 +309525,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "ListReplicationBackfills",
+                "Service": "ecr"
+              }
+            ],
+            "Name": "ListReplicationBackfills",
+            "SDK": [
+              {
+                "Method": "list_replication_backfills",
+                "Name": "ecr",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "ListTagsForResource",
                 "Service": "ecr"
               }
@@ -309654,6 +309765,38 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "StartReplicationBackfill",
+                "Service": "ecr"
+              }
+            ],
+            "Name": "StartReplicationBackfill",
+            "SDK": [
+              {
+                "Method": "start_replication_backfill",
+                "Name": "ecr",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "StopReplicationBackfill",
+                "Service": "ecr"
+              }
+            ],
+            "Name": "StopReplicationBackfill",
+            "SDK": [
+              {
+                "Method": "stop_replication_backfill",
+                "Name": "ecr",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "TagResource",
                 "Service": "ecr"
               }
@@ -309809,9 +309952,9 @@
         "ServiceName": "Elastic Container Registry",
         "Version": "v1.5"
       },
-      "modified": 1792604734,
+      "modified": 1793217728,
       "service": "ecr",
-      "source_sha256": "4391a3c3653c5b2c11e694b07d669474d684908f147693383994dc0f92896467",
+      "source_sha256": "41982d1fe99f591ec84d090110c4f594ba3327f28607b684be51a50721329702",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/ecr/ecr.json"
     },
     {
@@ -332876,6 +333019,27 @@
                 "IsWrite": true
               }
             },
+            "Name": "CreateScheduleAction",
+            "Resources": [
+              {
+                "Name": "feed"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "DeleteDictionary",
             "Resources": [
               {
@@ -332919,6 +333083,27 @@
               }
             },
             "Name": "DeleteFeedPolicy",
+            "Resources": [
+              {
+                "Name": "feed"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "DeleteScheduleAction",
             "Resources": [
               {
                 "Name": "feed"
@@ -333081,6 +333266,27 @@
               }
             },
             "Name": "ListFeeds",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListScheduleActions",
+            "Resources": [
+              {
+                "Name": "feed"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -333329,6 +333535,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "CreateScheduleAction",
+                "Service": "elemental-inference"
+              }
+            ],
             "Name": "CreateScheduleAction",
             "SDK": [
               {
@@ -333387,6 +333599,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "DeleteScheduleAction",
+                "Service": "elemental-inference"
+              }
+            ],
             "Name": "DeleteScheduleAction",
             "SDK": [
               {
@@ -333519,6 +333737,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "ListScheduleActions",
+                "Service": "elemental-inference"
+              }
+            ],
             "Name": "ListScheduleActions",
             "SDK": [
               {
@@ -333667,9 +333891,9 @@
         "ServiceName": "Elemental Inference",
         "Version": "v1.5"
       },
-      "modified": 1792699326,
+      "modified": 1793117955,
       "service": "elemental-inference",
-      "source_sha256": "17e9cc537808ec44921e30b6828a8b509d69c086d6b1d836e5cff482e222d6ab",
+      "source_sha256": "4364a7466acc8b4f26dc223f069888ce842df0423f8ea591d155445d64d7d17e",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/elemental-inference/elemental-inference.json"
     },
     {
@@ -338745,6 +338969,26 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "AddReplicationPeer",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys"
@@ -338916,6 +339160,26 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "CompareDomainConfiguration",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys"
@@ -338937,7 +339201,9 @@
           {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
-              "aws:TagKeys"
+              "aws:TagKeys",
+              "es:SecurityGroupIds",
+              "es:SubnetIds"
             ],
             "Annotations": {
               "Properties": {
@@ -338962,7 +339228,9 @@
           {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
-              "aws:TagKeys"
+              "aws:TagKeys",
+              "es:SecurityGroupIds",
+              "es:SubnetIds"
             ],
             "Annotations": {
               "Properties": {
@@ -339508,6 +339776,26 @@
           {
             "Annotations": {
               "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "DescribeDomainReplication",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
                 "IsDataPlane": false,
                 "IsList": true,
                 "IsPermissionManagement": false,
@@ -340012,6 +340300,26 @@
               }
             },
             "Name": "ESHttpPut",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "FailoverReplication",
             "Resources": [
               {
                 "Name": "domain"
@@ -340773,6 +341081,26 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "RemoveReplicationPeer",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:TagKeys"
             ],
@@ -340938,6 +341266,26 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "SwitchoverReplication",
+            "Resources": [
+              {
+                "Name": "domain"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -341187,6 +341535,18 @@
           },
           {
             "Name": "aws:TagKeys",
+            "Types": [
+              "ArrayOfString"
+            ]
+          },
+          {
+            "Name": "es:SecurityGroupIds",
+            "Types": [
+              "ArrayOfString"
+            ]
+          },
+          {
+            "Name": "es:SubnetIds",
             "Types": [
               "ArrayOfString"
             ]
@@ -342176,9 +342536,9 @@
         "ServiceName": "OpenSearch Service",
         "Version": "v1.5"
       },
-      "modified": 1792604694,
+      "modified": 1793041321,
       "service": "es",
-      "source_sha256": "0b0fe71175f729c1e4621d50d4d096181768f65acf15efd5d566618209e6f6b5",
+      "source_sha256": "81314272b1d95adfcc8b8f4dc014cdb11442cea419240e60a707dcee8624d48d",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/es/es.json"
     },
     {
@@ -386941,19 +387301,6 @@
           {
             "AuthorizedActions": [
               {
-                "Name": "CreateWorkspace",
-                "Service": "grafana"
-              },
-              {
-                "Context": {
-                  "iam:PassedToService": [
-                    "grafana.amazonaws.com"
-                  ]
-                },
-                "Name": "PassRole",
-                "Service": "iam"
-              },
-              {
                 "Name": "TagResource",
                 "Service": "grafana"
               }
@@ -387071,9 +387418,9 @@
         "ServiceName": "Managed Grafana",
         "Version": "v1.5"
       },
-      "modified": 1792604701,
+      "modified": 1793250124,
       "service": "grafana",
-      "source_sha256": "45ec7f125f680d1f334ea28c0020ad9f545525f80543416b631555b4e38f79c5",
+      "source_sha256": "051053b5ac88e9f494856b9a28b9eb841a89dea165aa837fef229d8088849f5a",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/grafana/grafana.json"
     },
     {
@@ -410550,7 +410897,7 @@
         "ServiceName": "Identity Store",
         "Version": "v1.5"
       },
-      "modified": 1792604687,
+      "modified": 1793041319,
       "service": "identitystore",
       "source_sha256": "b1296c93b5b3fc8d679639f3877bb08ba316a3fe6df5542346e6e2d4fc1b0042",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/identitystore/identitystore.json"
@@ -414665,7 +415012,6 @@
           {
             "Annotations": {
               "Properties": {
-                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -415478,21 +415824,6 @@
             ]
           },
           {
-            "AuthorizedActions": [
-              {
-                "Context": {
-                  "iam:PassedToService": [
-                    "inspector.amazonaws.com"
-                  ]
-                },
-                "Name": "PassRole",
-                "Service": "iam"
-              },
-              {
-                "Name": "RegisterCrossAccountAccessRole",
-                "Service": "inspector"
-              }
-            ],
             "Name": "RegisterCrossAccountAccessRole",
             "SDK": [
               {
@@ -415668,9 +415999,9 @@
         "ServiceName": "Inspector",
         "Version": "v1.5"
       },
-      "modified": 1792604710,
+      "modified": 1793160124,
       "service": "inspector",
-      "source_sha256": "9dab8675dca1a743fac24074c88cbd790d39029b39ef5654f05f242118cd1833",
+      "source_sha256": "3231a5548f4c7ebcfd6b8de0442090e87964204b4c8bd3175e2c687afc70f603",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/inspector/inspector.json"
     },
     {
@@ -416026,6 +416357,9 @@
             }
           },
           {
+            "ActionConditionKeys": [
+              "inspector2:ExpectedBucketOwner"
+            ],
             "Annotations": {
               "Properties": {
                 "IsDataPlane": false,
@@ -416042,6 +416376,9 @@
             }
           },
           {
+            "ActionConditionKeys": [
+              "inspector2:ExpectedBucketOwner"
+            ],
             "Annotations": {
               "Properties": {
                 "IsDataPlane": false,
@@ -416463,6 +416800,22 @@
                 "IsWrite": false
               }
             },
+            "Name": "GetOnDemandScanStatus",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "GetSbomExport",
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
@@ -416745,6 +417098,22 @@
             "Annotations": {
               "Properties": {
                 "IsDataPlane": false,
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListOnDemandScans",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -416867,6 +417236,22 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "StartOnDemandScan",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -417197,6 +417582,12 @@
             "Name": "aws:TagKeys",
             "Types": [
               "ArrayOfString"
+            ]
+          },
+          {
+            "Name": "inspector2:ExpectedBucketOwner",
+            "Types": [
+              "String"
             ]
           }
         ],
@@ -417881,6 +418272,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "GetOnDemandScanStatus",
+                "Service": "inspector2"
+              }
+            ],
+            "Name": "GetOnDemandScanStatus",
+            "SDK": [
+              {
+                "Method": "get_on_demand_scan_status",
+                "Name": "inspector2",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "GetSbomExport",
                 "Service": "inspector2"
               }
@@ -418169,6 +418576,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "ListOnDemandScans",
+                "Service": "inspector2"
+              }
+            ],
+            "Name": "ListOnDemandScans",
+            "SDK": [
+              {
+                "Method": "list_on_demand_scans",
+                "Name": "inspector2",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "ListTagsForResource",
                 "Service": "inspector2"
               }
@@ -418289,6 +418712,22 @@
             "SDK": [
               {
                 "Method": "start_code_security_scan",
+                "Name": "inspector2",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "StartOnDemandScan",
+                "Service": "inspector2"
+              }
+            ],
+            "Name": "StartOnDemandScan",
+            "SDK": [
+              {
+                "Method": "start_on_demand_scan",
                 "Name": "inspector2",
                 "Package": "Boto3"
               }
@@ -418575,9 +419014,9 @@
         "ServiceName": "Inspector2",
         "Version": "v1.5"
       },
-      "modified": 1792604689,
+      "modified": 1793134924,
       "service": "inspector2",
-      "source_sha256": "6df1b279feda0421a89c4da668f6a0308166a140aab3d3a56d9fa862381df743",
+      "source_sha256": "f9a998dde3b0b3ad832d1f9a4a171b34b35cce10de6d62b2696ec2a2ffc94a0a",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/inspector2/inspector2.json"
     },
     {
@@ -454065,6 +454504,31 @@
                 "IsWrite": true
               }
             },
+            "Name": "CreateFailoverSlateConfiguration",
+            "Resources": [
+              {
+                "Name": "Failover-Slate-Configuration"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "ActionConditionKeys": [
+              "aws:RequestTag/${TagKey}",
+              "aws:TagKeys"
+            ],
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "CreateIngestConfiguration",
             "Resources": [
               {
@@ -454290,6 +454754,27 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "DeleteFailoverSlateConfiguration",
+            "Resources": [
+              {
+                "Name": "Failover-Slate-Configuration"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -454563,6 +455048,27 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "GetFailoverSlateConfiguration",
+            "Resources": [
+              {
+                "Name": "Failover-Slate-Configuration"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -454975,6 +455481,27 @@
                 "IsWrite": false
               }
             },
+            "Name": "ListFailoverSlateConfigurations",
+            "Resources": [
+              {
+                "Name": "Failover-Slate-Configuration"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "ListIngestConfigurations",
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
@@ -455271,6 +455798,9 @@
                 "Name": "Encoder-Configuration"
               },
               {
+                "Name": "Failover-Slate-Configuration"
+              },
+              {
                 "Name": "Ingest-Configuration"
               },
               {
@@ -455287,6 +455817,9 @@
               },
               {
                 "Name": "Stage"
+              },
+              {
+                "Name": "Stage-Logging-Configuration"
               },
               {
                 "Name": "Storage-Configuration"
@@ -455509,6 +456042,9 @@
                 "Name": "Encoder-Configuration"
               },
               {
+                "Name": "Failover-Slate-Configuration"
+              },
+              {
                 "Name": "Ingest-Configuration"
               },
               {
@@ -455525,6 +456061,9 @@
               },
               {
                 "Name": "Stage"
+              },
+              {
+                "Name": "Stage-Logging-Configuration"
               },
               {
                 "Name": "Storage-Configuration"
@@ -455566,6 +456105,9 @@
                 "Name": "Encoder-Configuration"
               },
               {
+                "Name": "Failover-Slate-Configuration"
+              },
+              {
                 "Name": "Ingest-Configuration"
               },
               {
@@ -455582,6 +456124,9 @@
               },
               {
                 "Name": "Stage"
+              },
+              {
+                "Name": "Stage-Logging-Configuration"
               },
               {
                 "Name": "Storage-Configuration"
@@ -455630,6 +456175,27 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "UpdateFailoverSlateConfiguration",
+            "Resources": [
+              {
+                "Name": "Failover-Slate-Configuration"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -455829,6 +456395,26 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "CreateFailoverSlateConfiguration",
+                "Service": "ivs"
+              },
+              {
+                "Name": "TagResource",
+                "Service": "ivs"
+              }
+            ],
+            "Name": "CreateFailoverSlateConfiguration",
+            "SDK": [
+              {
+                "Method": "create_failover_slate_configuration",
+                "Name": "ivs",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "CreateIngestConfiguration",
                 "Service": "ivs"
               },
@@ -456006,6 +456592,22 @@
               {
                 "Method": "delete_encoder_configuration",
                 "Name": "ivs-realtime",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "DeleteFailoverSlateConfiguration",
+                "Service": "ivs"
+              }
+            ],
+            "Name": "DeleteFailoverSlateConfiguration",
+            "SDK": [
+              {
+                "Method": "delete_failover_slate_configuration",
+                "Name": "ivs",
                 "Package": "Boto3"
               }
             ]
@@ -456214,6 +456816,22 @@
               {
                 "Method": "get_encoder_configuration",
                 "Name": "ivs-realtime",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "GetFailoverSlateConfiguration",
+                "Service": "ivs"
+              }
+            ],
+            "Name": "GetFailoverSlateConfiguration",
+            "SDK": [
+              {
+                "Method": "get_failover_slate_configuration",
+                "Name": "ivs",
                 "Package": "Boto3"
               }
             ]
@@ -456526,6 +457144,22 @@
               {
                 "Method": "list_encoder_configurations",
                 "Name": "ivs-realtime",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListFailoverSlateConfigurations",
+                "Service": "ivs"
+              }
+            ],
+            "Name": "ListFailoverSlateConfigurations",
+            "SDK": [
+              {
+                "Method": "list_failover_slate_configurations",
+                "Name": "ivs",
                 "Package": "Boto3"
               }
             ]
@@ -456984,6 +457618,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "UpdateFailoverSlateConfiguration",
+                "Service": "ivs"
+              }
+            ],
+            "Name": "UpdateFailoverSlateConfiguration",
+            "SDK": [
+              {
+                "Method": "update_failover_slate_configuration",
+                "Name": "ivs",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "UpdateIngestConfiguration",
                 "Service": "ivs"
               }
@@ -457069,6 +457719,15 @@
           },
           {
             "ARNFormats": [
+              "arn:${Partition}:ivs:${Region}:${Account}:failover-slate-configuration/${ResourceId}"
+            ],
+            "ConditionKeys": [
+              "aws:ResourceTag/${TagKey}"
+            ],
+            "Name": "Failover-Slate-Configuration"
+          },
+          {
+            "ARNFormats": [
               "arn:${Partition}:ivs:${Region}:${Account}:ingest-configuration/${ResourceId}"
             ],
             "ConditionKeys": [
@@ -457143,9 +457802,9 @@
         "ServiceName": "Interactive Video Service",
         "Version": "v1.5"
       },
-      "modified": 1792710130,
+      "modified": 1793383328,
       "service": "ivs",
-      "source_sha256": "2686dd8ef25925601576e53cd2657fe2c9240482da7957a59318292aaa3c6b0b",
+      "source_sha256": "e10a6b62492b6742e078715fd7a87edf237b2544ab887f4c6b68f6ea55bbb913",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/ivs/ivs.json"
     },
     {
@@ -461172,6 +461831,69 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "PauseConnector",
+            "Resources": [
+              {
+                "Name": "connector"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "RestartConnector",
+            "Resources": [
+              {
+                "Name": "connector"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "ResumeConnector",
+            "Resources": [
+              {
+                "Name": "connector"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys"
@@ -461566,6 +462288,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "PauseConnector",
+                "Service": "kafkaconnect"
+              }
+            ],
             "Name": "PauseConnector",
             "SDK": [
               {
@@ -461576,6 +462304,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "RestartConnector",
+                "Service": "kafkaconnect"
+              }
+            ],
             "Name": "RestartConnector",
             "SDK": [
               {
@@ -461586,6 +462320,12 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "ResumeConnector",
+                "Service": "kafkaconnect"
+              }
+            ],
             "Name": "ResumeConnector",
             "SDK": [
               {
@@ -461685,9 +462425,9 @@
         "ServiceName": "MSK Connect",
         "Version": "v1.5"
       },
-      "modified": 1792699334,
+      "modified": 1793142125,
       "service": "kafkaconnect",
-      "source_sha256": "cc9412b68dd14c6029003a45778f38b2a5a8b7282150221b6c92e6bb5e997039",
+      "source_sha256": "043afb60f3f10102aaf8bf6af23eecd6f8c5d913d5c0dca409283797c03560d4",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/kafkaconnect/kafkaconnect.json"
     },
     {
@@ -470232,6 +470972,7 @@
             ],
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -470668,6 +471409,7 @@
             ],
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -472542,6 +473284,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "Decapsulate",
+                "Service": "kms"
+              }
+            ],
+            "Name": "Decapsulate",
+            "SDK": [
+              {
+                "Method": "decapsulate",
+                "Name": "kms",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "Decrypt",
                 "Service": "kms"
               }
@@ -472726,6 +473484,22 @@
             "SDK": [
               {
                 "Method": "enable_key_rotation",
+                "Name": "kms",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "Encapsulate",
+                "Service": "kms"
+              }
+            ],
+            "Name": "Encapsulate",
+            "SDK": [
+              {
+                "Method": "encapsulate",
                 "Name": "kms",
                 "Package": "Boto3"
               }
@@ -473338,9 +474112,9 @@
         "ServiceName": "KMS",
         "Version": "v1.5"
       },
-      "modified": 1792623727,
+      "modified": 1793048527,
       "service": "kms",
-      "source_sha256": "8e9792cfe631c1f947afa9c7e7e189f56f3cef173956e6e5f543b001894c101d",
+      "source_sha256": "803516fcb4944d0925feba6f949c864600456549200947420e17f5d654e946d0",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/kms/kms.json"
     },
     {
@@ -480871,7 +481645,7 @@
         "ServiceName": "Lambda",
         "Version": "v1.5"
       },
-      "modified": 1792604712,
+      "modified": 1793041324,
       "service": "lambda",
       "source_sha256": "2c9190fe6b3dd3340f2c217d87f2c94ba772c6b866d1701a5729cd94918fdfcc",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/lambda/lambda.json"
@@ -502254,7 +503028,7 @@
         "ServiceName": "CloudWatch Logs",
         "Version": "v1.5"
       },
-      "modified": 1792604707,
+      "modified": 1793041323,
       "service": "logs",
       "source_sha256": "927b60e7fe3fa10276f5a95dddf3dca03c330da1e382ea709d33c2ed6e3d53f1",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/logs/logs.json"
@@ -514046,6 +514820,27 @@
                 "IsWrite": true
               }
             },
+            "Name": "ConnectEndpoints",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "CreateBridge",
             "Resources": [
               {
@@ -514244,6 +515039,21 @@
           {
             "Annotations": {
               "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": true,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "DeleteResourcePolicy",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
@@ -514314,6 +515124,27 @@
                 "IsWrite": true
               }
             },
+            "Name": "DeregisterDestinationEndpoint",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "DeregisterGatewayInstance",
             "Resources": [
               {
@@ -514323,6 +515154,27 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "DeregisterSourceEndpoint",
+            "Resources": [
+              {
+                "Name": "SourceEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -514496,6 +515348,27 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "DisconnectEndpoints",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -514508,6 +515381,42 @@
                 "Name": "Gateway"
               }
             ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "GetDestinationEndpoint",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "GetResourcePolicy",
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -514619,6 +515528,27 @@
             }
           },
           {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "GetSourceEndpoint",
+            "Resources": [
+              {
+                "Name": "SourceEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
             "ActionConditionKeys": [
               "aws:RequestTag/${TagKey}",
               "aws:TagKeys"
@@ -514627,7 +515557,7 @@
               "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
-                "IsPermissionManagement": false,
+                "IsPermissionManagement": true,
                 "IsTaggingOnly": false,
                 "IsWrite": true
               }
@@ -514660,6 +515590,22 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListDestinationEndpoints",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -514810,6 +515756,22 @@
             "Annotations": {
               "Properties": {
                 "IsDataPlane": false,
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
+            "Name": "ListSourceEndpoints",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -514856,6 +515818,63 @@
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": true
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": true,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "PutResourcePolicy",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "RegisterDestinationEndpoint",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "RegisterSourceEndpoint",
+            "Resources": [
+              {
+                "Name": "SourceEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
             }
           },
           {
@@ -515043,7 +516062,7 @@
               "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
-                "IsPermissionManagement": false,
+                "IsPermissionManagement": true,
                 "IsTaggingOnly": false,
                 "IsWrite": true
               }
@@ -515220,6 +516239,9 @@
             "Name": "TagResource",
             "Resources": [
               {
+                "Name": "DestinationEndpoint"
+              },
+              {
                 "Name": "Entitlement"
               },
               {
@@ -515242,6 +516264,9 @@
               },
               {
                 "Name": "Source"
+              },
+              {
+                "Name": "SourceEndpoint"
               },
               {
                 "Name": "VpcInterface"
@@ -515289,6 +516314,9 @@
             "Name": "UntagResource",
             "Resources": [
               {
+                "Name": "DestinationEndpoint"
+              },
+              {
                 "Name": "Entitlement"
               },
               {
@@ -515311,6 +516339,9 @@
               },
               {
                 "Name": "Source"
+              },
+              {
+                "Name": "SourceEndpoint"
               },
               {
                 "Name": "VpcInterface"
@@ -515415,6 +516446,27 @@
                 "IsWrite": true
               }
             },
+            "Name": "UpdateDestinationEndpoint",
+            "Resources": [
+              {
+                "Name": "DestinationEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "UpdateFlow",
             "Resources": [
               {
@@ -515431,7 +516483,7 @@
               "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
-                "IsPermissionManagement": false,
+                "IsPermissionManagement": true,
                 "IsTaggingOnly": false,
                 "IsWrite": true
               }
@@ -515602,6 +516654,27 @@
               "IAM Access Analyzer Policy Generation": true,
               "IAM Action Last Accessed": false
             }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "UpdateSourceEndpoint",
+            "Resources": [
+              {
+                "Name": "SourceEndpoint"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
           }
         ],
         "ConditionKeys": [
@@ -515768,6 +516841,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "GetDestinationEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "BatchGetDestinationEndpoint",
+            "SDK": [
+              {
+                "Method": "batch_get_destination_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "GetRouterInput",
                 "Service": "mediaconnect"
               }
@@ -515808,6 +516897,38 @@
             "SDK": [
               {
                 "Method": "batch_get_router_output",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "GetSourceEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "BatchGetSourceEndpoint",
+            "SDK": [
+              {
+                "Method": "batch_get_source_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ConnectEndpoints",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "ConnectEndpoints",
+            "SDK": [
+              {
+                "Method": "connect_endpoints",
                 "Name": "mediaconnect",
                 "Package": "Boto3"
               }
@@ -515922,6 +517043,10 @@
                 "Service": "iam"
               },
               {
+                "Name": "RegisterDestinationEndpoint",
+                "Service": "mediaconnect"
+              },
+              {
                 "Name": "TagResource",
                 "Service": "mediaconnect"
               },
@@ -515977,6 +517102,10 @@
                 },
                 "Name": "PassRole",
                 "Service": "iam"
+              },
+              {
+                "Name": "RegisterSourceEndpoint",
+                "Service": "mediaconnect"
               },
               {
                 "Name": "TagResource",
@@ -516079,6 +517208,10 @@
                 "Service": "mediaconnect"
               },
               {
+                "Name": "DeregisterDestinationEndpoint",
+                "Service": "mediaconnect"
+              },
+              {
                 "Name": "UpdateFlowOutput",
                 "Service": "mediaconnect"
               }
@@ -516115,6 +517248,10 @@
                 "Service": "mediaconnect"
               },
               {
+                "Name": "DeregisterSourceEndpoint",
+                "Service": "mediaconnect"
+              },
+              {
                 "Name": "UpdateFlowSource",
                 "Service": "mediaconnect"
               }
@@ -516131,6 +517268,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "DeregisterDestinationEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "DeregisterDestinationEndpoint",
+            "SDK": [
+              {
+                "Method": "deregister_destination_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "DeregisterGatewayInstance",
                 "Service": "mediaconnect"
               }
@@ -516139,6 +517292,22 @@
             "SDK": [
               {
                 "Method": "deregister_gateway_instance",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "DeregisterSourceEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "DeregisterSourceEndpoint",
+            "SDK": [
+              {
+                "Method": "deregister_source_endpoint",
                 "Name": "mediaconnect",
                 "Package": "Boto3"
               }
@@ -516275,6 +517444,38 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "DisconnectEndpoints",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "DisconnectEndpoints",
+            "SDK": [
+              {
+                "Method": "disconnect_endpoints",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "GetDestinationEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "GetDestinationEndpoint",
+            "SDK": [
+              {
+                "Method": "get_destination_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "GetRouterInput",
                 "Service": "mediaconnect"
               }
@@ -516355,6 +517556,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "GetSourceEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "GetSourceEndpoint",
+            "SDK": [
+              {
+                "Method": "get_source_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "GrantFlowEntitlements",
                 "Service": "mediaconnect"
               },
@@ -516392,6 +517609,22 @@
             "SDK": [
               {
                 "Method": "list_bridges",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "ListDestinationEndpoints",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "ListDestinationEndpoints",
+            "SDK": [
+              {
+                "Method": "list_destination_endpoints",
                 "Name": "mediaconnect",
                 "Package": "Boto3"
               }
@@ -516542,6 +517775,22 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "ListSourceEndpoints",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "ListSourceEndpoints",
+            "SDK": [
+              {
+                "Method": "list_source_endpoints",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "Name": "ListTagsForGlobalResource",
             "SDK": [
               {
@@ -516578,6 +517827,46 @@
             "SDK": [
               {
                 "Method": "purchase_offering",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "RegisterDestinationEndpoint",
+                "Service": "mediaconnect"
+              },
+              {
+                "Name": "TagResource",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "RegisterDestinationEndpoint",
+            "SDK": [
+              {
+                "Method": "register_destination_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "RegisterSourceEndpoint",
+                "Service": "mediaconnect"
+              },
+              {
+                "Name": "TagResource",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "RegisterSourceEndpoint",
+            "SDK": [
+              {
+                "Method": "register_source_endpoint",
                 "Name": "mediaconnect",
                 "Package": "Boto3"
               }
@@ -516958,6 +518247,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "UpdateDestinationEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "UpdateDestinationEndpoint",
+            "SDK": [
+              {
+                "Method": "update_destination_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "UpdateFlow",
                 "Service": "mediaconnect"
               }
@@ -517159,6 +518464,22 @@
                 "Package": "Boto3"
               }
             ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "UpdateSourceEndpoint",
+                "Service": "mediaconnect"
+              }
+            ],
+            "Name": "UpdateSourceEndpoint",
+            "SDK": [
+              {
+                "Method": "update_source_endpoint",
+                "Name": "mediaconnect",
+                "Package": "Boto3"
+              }
+            ]
           }
         ],
         "Resources": [
@@ -517167,6 +518488,15 @@
               "arn:${Partition}:mediaconnect:${Region}:${Account}:bridge:${BridgeId}:${BridgeName}"
             ],
             "Name": "Bridge"
+          },
+          {
+            "ARNFormats": [
+              "arn:${Partition}:mediaconnect:${Region}:${Account}:destinationEndpoint:${DestinationEndpointId}"
+            ],
+            "ConditionKeys": [
+              "aws:ResourceTag/${TagKey}"
+            ],
+            "Name": "DestinationEndpoint"
           },
           {
             "ARNFormats": [
@@ -517266,6 +518596,15 @@
           },
           {
             "ARNFormats": [
+              "arn:${Partition}:mediaconnect:${Region}:${Account}:sourceEndpoint:${SourceEndpointId}"
+            ],
+            "ConditionKeys": [
+              "aws:ResourceTag/${TagKey}"
+            ],
+            "Name": "SourceEndpoint"
+          },
+          {
+            "ARNFormats": [
               "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}/vpcInterface/${VpcInterfaceName}"
             ],
             "ConditionKeys": [
@@ -517277,9 +518616,9 @@
         "ServiceName": "MediaConnect",
         "Version": "v1.5"
       },
-      "modified": 1792604714,
+      "modified": 1793296930,
       "service": "mediaconnect",
-      "source_sha256": "b3b065b1d7511b14f2bdd25a9d3a793854ab95521054d8a8d7bd30524014d2a3",
+      "source_sha256": "c6693a2444fa8b39bde84605036332b177e9ba827107b5c0dc35222fb19a9882",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/mediaconnect/mediaconnect.json"
     },
     {
@@ -548674,6 +550013,16 @@
             ]
           },
           {
+            "Name": "CancelIndexRebuild",
+            "SDK": [
+              {
+                "Method": "cancel_index_rebuild",
+                "Name": "neptunedata",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "Name": "CancelLoaderJob",
             "SDK": [
               {
@@ -548844,6 +550193,16 @@
             ]
           },
           {
+            "Name": "GetIndexRebuildStatus",
+            "SDK": [
+              {
+                "Method": "get_index_rebuild_status",
+                "Name": "neptunedata",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "Name": "GetLoaderJobStatus",
             "SDK": [
               {
@@ -548964,10 +550323,30 @@
             ]
           },
           {
+            "Name": "GetStorageInfo",
+            "SDK": [
+              {
+                "Method": "get_storage_info",
+                "Name": "neptunedata",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "Name": "ListGremlinQueries",
             "SDK": [
               {
                 "Method": "list_gremlin_queries",
+                "Name": "neptunedata",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "Name": "ListIndexRebuilds",
+            "SDK": [
+              {
+                "Method": "list_index_rebuilds",
                 "Name": "neptunedata",
                 "Package": "Boto3"
               }
@@ -549054,6 +550433,16 @@
             ]
           },
           {
+            "Name": "StartIndexRebuild",
+            "SDK": [
+              {
+                "Method": "start_index_rebuild",
+                "Name": "neptunedata",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "Name": "StartLoaderJob",
             "SDK": [
               {
@@ -549105,9 +550494,9 @@
         "ServiceName": "Neptune",
         "Version": "v1.5"
       },
-      "modified": 1792604711,
+      "modified": 1793217724,
       "service": "neptune-db",
-      "source_sha256": "4f17f57b39bcd4bab18adc4dcb2c96fd5abe3993d57f424a07ca8c061969175a",
+      "source_sha256": "96ba8f8d61ff15bc8bfc957b30438e1d77c279751e3d8a6b6eee20f7293e07e6",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/neptune-db/neptune-db.json"
     },
     {
@@ -568020,8 +569409,7 @@
               {
                 "Context": {
                   "iam:PassedToService": [
-                    "logs.amazonaws.com",
-                    "test.logs.amazonaws.com"
+                    "logs.amazonaws.com"
                   ]
                 },
                 "Name": "PassRole",
@@ -568815,9 +570203,9 @@
         "ServiceName": "CloudWatch Observability Admin",
         "Version": "v1.5"
       },
-      "modified": 1792604704,
+      "modified": 1792990922,
       "service": "observabilityadmin",
-      "source_sha256": "c7cb3bddc65ee67fb92f6f90db3726ef98d2c5c9d38578dcf6e0ee5ff21f7fb7",
+      "source_sha256": "66f1ac97ca72e52ed6eae864a74ff51409f1a0dafc8514bdaa99d6ce488cd508",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/observabilityadmin/observabilityadmin.json"
     },
     {
@@ -569022,6 +570410,9 @@
                 "Name": "cloud-exadata-infrastructure"
               },
               {
+                "Name": "exascale-db-storage-vault"
+              },
+              {
                 "Name": "odb-network"
               }
             ],
@@ -569094,6 +570485,11 @@
               }
             },
             "Name": "CreateExascaleDbStorageVault",
+            "Resources": [
+              {
+                "Name": "cloud-exadata-infrastructure"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -569311,6 +570707,7 @@
           {
             "Annotations": {
               "Properties": {
+                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -569459,7 +570856,6 @@
           {
             "Annotations": {
               "Properties": {
-                "IsDataPlane": false,
                 "IsList": false,
                 "IsPermissionManagement": false,
                 "IsTaggingOnly": false,
@@ -570112,6 +571508,11 @@
               }
             },
             "Name": "ListExascaleDbStorageVaults",
+            "Resources": [
+              {
+                "Name": "cloud-exadata-infrastructure"
+              }
+            ],
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
               "IAM Action Last Accessed": false
@@ -570692,6 +572093,27 @@
                 "IsWrite": true
               }
             },
+            "Name": "UpdateExascaleCloudExadataInfrastructure",
+            "Resources": [
+              {
+                "Name": "cloud-exadata-infrastructure"
+              }
+            ],
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
+                "IsDataPlane": false,
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
             "Name": "UpdateExascaleDbStorageVault",
             "Resources": [
               {
@@ -571151,6 +572573,16 @@
             ]
           },
           {
+            "AuthorizedActions": [
+              {
+                "Name": "DeleteDbNode",
+                "Service": "odb"
+              },
+              {
+                "Name": "DeleteExadbVmCluster",
+                "Service": "odb"
+              }
+            ],
             "Name": "DeleteExadbVmCluster",
             "SDK": [
               {
@@ -571225,12 +572657,6 @@
             ]
           },
           {
-            "AuthorizedActions": [
-              {
-                "Name": "DisassociateVirtualMachinesFromExadbVmCluster",
-                "Service": "odb"
-              }
-            ],
             "Name": "DisassociateVirtualMachinesFromExadbVmCluster",
             "SDK": [
               {
@@ -572100,6 +573526,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "UpdateExascaleCloudExadataInfrastructure",
+                "Service": "odb"
+              }
+            ],
+            "Name": "UpdateExascaleCloudExadataInfrastructure",
+            "SDK": [
+              {
+                "Method": "update_exascale_cloud_exadata_infrastructure",
+                "Name": "odb",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "UpdateExascaleDbStorageVault",
                 "Service": "odb"
               }
@@ -572241,9 +573683,9 @@
         "ServiceName": "Oracle Database@AWS",
         "Version": "v1.5"
       },
-      "modified": 1792604701,
+      "modified": 1793336522,
       "service": "odb",
-      "source_sha256": "4f60ba4fb477da5230ec69fa7eb979111705fb42e288fd93c9a326dcbb88030c",
+      "source_sha256": "b14c89cb8bef4a398dc0ab108353ba867d613d2bea81b9a6030e38a5baab5dab",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/odb/odb.json"
     },
     {
@@ -572877,7 +574319,7 @@
               "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
-                "IsPermissionManagement": false,
+                "IsPermissionManagement": true,
                 "IsTaggingOnly": false,
                 "IsWrite": true
               }
@@ -574005,7 +575447,7 @@
               "Properties": {
                 "IsDataPlane": false,
                 "IsList": false,
-                "IsPermissionManagement": false,
+                "IsPermissionManagement": true,
                 "IsTaggingOnly": false,
                 "IsWrite": true
               }
@@ -576583,9 +578025,9 @@
         "ServiceName": "Omics",
         "Version": "v1.5"
       },
-      "modified": 1792604708,
+      "modified": 1793318521,
       "service": "omics",
-      "source_sha256": "3d1a735091f26dbab4c6d837b47dbeff1dd3b6fe8f0890d4a3242b666f42c42a",
+      "source_sha256": "5b1258591af4beb73b45d62ae62e648c4f8a36ce0dad64dd019b3b489416423d",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/omics/omics.json"
     },
     {
@@ -577548,6 +578990,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "AddReplicationPeer",
+                "Service": "es"
+              }
+            ],
+            "Name": "AddReplicationPeer",
+            "SDK": [
+              {
+                "Method": "add_replication_peer",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "AddTags",
                 "Service": "es"
               }
@@ -577656,6 +579114,22 @@
             "SDK": [
               {
                 "Method": "cancel_service_software_update",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "CompareDomainConfiguration",
+                "Service": "es"
+              }
+            ],
+            "Name": "CompareDomainConfiguration",
+            "SDK": [
+              {
+                "Method": "compare_domain_configuration",
                 "Name": "opensearch",
                 "Package": "Boto3"
               }
@@ -578077,6 +579551,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "DescribeDomainReplication",
+                "Service": "es"
+              }
+            ],
+            "Name": "DescribeDomainReplication",
+            "SDK": [
+              {
+                "Method": "describe_domain_replication",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "DescribeDomains",
                 "Service": "es"
               },
@@ -578301,6 +579791,16 @@
             "SDK": [
               {
                 "Method": "dissociate_packages",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "Name": "FailoverReplication",
+            "SDK": [
+              {
+                "Method": "failover_replication",
                 "Name": "opensearch",
                 "Package": "Boto3"
               }
@@ -578873,6 +580373,22 @@
           {
             "AuthorizedActions": [
               {
+                "Name": "RemoveReplicationPeer",
+                "Service": "es"
+              }
+            ],
+            "Name": "RemoveReplicationPeer",
+            "SDK": [
+              {
+                "Method": "remove_replication_peer",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
                 "Name": "RemoveTags",
                 "Service": "es"
               }
@@ -578969,6 +580485,22 @@
             "SDK": [
               {
                 "Method": "start_service_software_update",
+                "Name": "opensearch",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
+            "AuthorizedActions": [
+              {
+                "Name": "SwitchoverReplication",
+                "Service": "es"
+              }
+            ],
+            "Name": "SwitchoverReplication",
+            "SDK": [
+              {
+                "Method": "switchover_replication",
                 "Name": "opensearch",
                 "Package": "Boto3"
               }
@@ -579187,9 +580719,9 @@
         "ServiceName": "OpenSearch",
         "Version": "v1.5"
       },
-      "modified": 1792604726,
+      "modified": 1793217727,
       "service": "opensearch",
-      "source_sha256": "45d20b142e4c06429d705b9c4a8e31a5d0227db4192cc35e4463e02db2a71f80",
+      "source_sha256": "2ab70829a3d264c50f7122bf0e39fe327b106d4a0cfdafab15907b07158d2893",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/opensearch/opensearch.json"
     },
     {
@@ -589371,6 +590903,24 @@
                 "IsWrite": false
               }
             },
+            "Name": "SearchOpportunities",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "ActionConditionKeys": [
+              "partnercentral:Catalog"
+            ],
+            "Annotations": {
+              "Properties": {
+                "IsList": true,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": false
+              }
+            },
             "Name": "SearchPartnerCentralContent",
             "SupportedBy": {
               "IAM Access Analyzer Policy Generation": false,
@@ -592420,9 +593970,9 @@
         "ServiceName": "Partner Central",
         "Version": "v1.5"
       },
-      "modified": 1792604717,
+      "modified": 1793113332,
       "service": "partnercentral",
-      "source_sha256": "21536dd16011bcf07f9085cd5ace1799cd03ed2e72319dc121b3829186479103",
+      "source_sha256": "1576a260b05a9aaa53e371f802704f7f04841abc5cd8dc7ce48ab22f86fbe903",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/partnercentral/partnercentral.json"
     },
     {
@@ -641322,6 +642872,11 @@
             "SDK": [
               {
                 "Method": "describe_serverless_v2_platform_versions",
+                "Name": "docdb",
+                "Package": "Boto3"
+              },
+              {
+                "Method": "describe_serverless_v2_platform_versions",
                 "Name": "rds",
                 "Package": "Boto3"
               }
@@ -643089,9 +644644,9 @@
         "ServiceName": "RDS",
         "Version": "v1.5"
       },
-      "modified": 1792818121,
+      "modified": 1793390517,
       "service": "rds",
-      "source_sha256": "44e87e6a1b63683a8b7ced61c7615586bd6d724f6e014271b9d3b02d2aec42f6",
+      "source_sha256": "016bd1500a62d5e4e8273e61efde26f1b97c14ac9775cd3e98136406df8dabe7",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/rds/rds.json"
     },
     {
@@ -756406,6 +757961,16 @@
             ]
           },
           {
+            "Name": "CreateOAuth2TokenWithTokenExchange",
+            "SDK": [
+              {
+                "Method": "create_o_auth2_token_with_token_exchange",
+                "Name": "signin",
+                "Package": "Boto3"
+              }
+            ]
+          },
+          {
             "AuthorizedActions": [
               {
                 "Name": "DeleteConsoleAuthorizationConfiguration",
@@ -756585,9 +758150,9 @@
         "ServiceName": "Signin",
         "Version": "v1.5"
       },
-      "modified": 1792604707,
+      "modified": 1793044926,
       "service": "signin",
-      "source_sha256": "7c88724ee939e14fef4c410a5c5642a361a236746893e02dc40de44f2b7b5dd4",
+      "source_sha256": "5a92dae954eaa7661de421bdad4cc3cec0431897badaea09f1a52e2adbc82162",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/signin/signin.json"
     },
     {
@@ -760146,15 +761711,6 @@
               {
                 "Name": "CreateConfigurationSetEventDestination",
                 "Service": "sms-voice"
-              },
-              {
-                "Context": {
-                  "iam:PassedToService": [
-                    "sms-voice.amazonaws.com"
-                  ]
-                },
-                "Name": "PassRole",
-                "Service": "iam"
               }
             ],
             "Name": "CreateConfigurationSetEventDestination",
@@ -762179,9 +763735,9 @@
         "ServiceName": "Pinpoint SMS Voice",
         "Version": "v1.5"
       },
-      "modified": 1792604730,
+      "modified": 1793336527,
       "service": "sms-voice",
-      "source_sha256": "b41ea9f2b07b875970ff635eb221fe77218fb54b7a8e25b6d918fc3a2000a4aa",
+      "source_sha256": "a34936e85f3ba00370257bf1bb6d81145511a56a21e83b4f4f2e1763522a60c0",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/sms-voice/sms-voice.json"
     },
     {
@@ -828440,7 +829996,7 @@
         "ServiceName": "WAF V2",
         "Version": "v1.5"
       },
-      "modified": 1792604697,
+      "modified": 1793041322,
       "service": "wafv2",
       "source_sha256": "25ebc5ff92480a3805ab8f2f2c1d6e4ae2a3022572e97d0bb1163f5da7e628de",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/wafv2/wafv2.json"
@@ -852185,6 +853741,21 @@
           {
             "Annotations": {
               "Properties": {
+                "IsList": false,
+                "IsPermissionManagement": false,
+                "IsTaggingOnly": false,
+                "IsWrite": true
+              }
+            },
+            "Name": "CallWithBearerToken",
+            "SupportedBy": {
+              "IAM Access Analyzer Policy Generation": false,
+              "IAM Action Last Accessed": false
+            }
+          },
+          {
+            "Annotations": {
+              "Properties": {
                 "IsDataPlane": true,
                 "IsList": false,
                 "IsPermissionManagement": false,
@@ -853619,9 +855190,9 @@
         "ServiceName": "X-Ray",
         "Version": "v1.5"
       },
-      "modified": 1792604691,
+      "modified": 1793052119,
       "service": "xray",
-      "source_sha256": "475c7b6ff605621df4f43d9604f6ae920cd5a7049fabbead6a80d5af674372dc",
+      "source_sha256": "4c62ddf120301fe996e69ba7bb2af8de3a68387a859ad185263bf345bd55a8bf",
       "url": "https://servicereference.us-east-1.amazonaws.com/v1/xray/xray.json"
     }
   ]
