@@ -128,12 +128,9 @@ jobs:
         env:
           BRANCH: automation/terraform-provider-aws-data
         run: |
-          remote_sha="$(git ls-remote --heads origin "$BRANCH" | awk 'NR == 1 { print $1 }')"
-          if [ -n "$remote_sha" ]; then
-            git fetch origin "refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
-          fi
-          git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$remote_sha"
+          python3 tools/publish_generated_branch.py "$BRANCH"
 
+      # Run even when publication preserved an identical existing branch: recover a missing PR.
       - name: Create or update pull request
         if: steps.changes.outputs.changed == 'true'
         env:
