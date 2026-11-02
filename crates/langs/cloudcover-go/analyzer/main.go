@@ -105,17 +105,7 @@ func analyzeDir(dir string) ([]method, []module, error) {
 	prog.Build()
 	cg := vta.CallGraph(ssautil.AllFunctions(prog), nil)
 
-	methods := make([]method, 0)
-	visitErr := callgraph.GraphVisitEdges(cg, func(edge *callgraph.Edge) error {
-		calleeMethod, ok := edgeToMethod(edge)
-		if ok {
-			methods = append(methods, calleeMethod)
-		}
-		return nil
-	})
-	if visitErr != nil {
-		return nil, nil, visitErr
-	}
+	methods := reachableMethods(cg, initial)
 
 	slices.SortFunc(methods, compareMethods)
 	methods = slices.CompactFunc(methods, func(left, right method) bool {
@@ -127,6 +117,56 @@ func analyzeDir(dir string) ([]method, []module, error) {
 	}
 	slices.SortFunc(modules, compareModules)
 	return methods, modules, nil
+}
+
+// reachableMethods retains calls from every function in the requested packages,
+// including library entrypoints, closures and init functions. This is source
+// analysis, not executable-only dead-code elimination: an uncalled user function
+// remains in scope, but an uncalled function in an imported dependency does not.
+//
+// Keep following dependency edges, including wrappers and interface dispatch.
+// SDK-internal calls can be real conditional requirements (for example S3 Express
+// CreateSession); reachability alone does not establish request applicability.
+func reachableMethods(cg *callgraph.Graph, initial []*packages.Package) []method {
+	rootPackages := make(map[*types.Package]bool, len(initial))
+	for _, pkg := range initial {
+		rootPackages[pkg.Types] = true
+	}
+
+	seen := make(map[*callgraph.Node]bool)
+	pending := make([]*callgraph.Node, 0)
+	for fn, node := range cg.Nodes {
+		if isInitialFunction(fn, rootPackages) {
+			seen[node] = true
+			pending = append(pending, node)
+		}
+	}
+
+	methods := make([]method, 0)
+	for len(pending) > 0 {
+		node := pending[0]
+		pending = pending[1:]
+		for _, edge := range node.Out {
+			if callee, ok := edgeToMethod(edge); ok {
+				methods = append(methods, callee)
+			}
+			if edge.Callee != nil && !seen[edge.Callee] {
+				seen[edge.Callee] = true
+				pending = append(pending, edge.Callee)
+			}
+		}
+	}
+	return methods
+}
+
+func isInitialFunction(fn *ssa.Function, rootPackages map[*types.Package]bool) bool {
+	for fn != nil {
+		if pkg := fn.Package(); pkg != nil && pkg.Pkg != nil {
+			return rootPackages[pkg.Pkg]
+		}
+		fn = fn.Parent()
+	}
+	return false
 }
 
 func resolvedModule(value *packages.Module) module {

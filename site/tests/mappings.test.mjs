@@ -1,13 +1,13 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { filterMappings, mappingPermissionIds, resourceMappings } from "../src/lib/mappings.ts";
+import { authorizationResolved, filterMappings, mappingPermissionIds, resourceMappings } from "../src/lib/mappings.ts";
 
 const catalog = {
   iamPermissions: ["iam:PassRole", "s3:GetObject", "s3:PutObject"],
   apiMethods: [
-    { canonical: "s3.GetObject", permissionIds: [1] },
-    { canonical: "s3.HeadBucket", permissionIds: [] },
-    { canonical: "s3.PutObject", permissionIds: [0, 2] },
+    { canonical: "s3.GetObject", permissionIds: [1], authorizationCoverage: "mapped" },
+    { canonical: "s3.HeadBucket", permissionIds: [], authorizationCoverage: "unresolved" },
+    { canonical: "s3.PutObject", permissionIds: [0, 2], authorizationCoverage: "mapped" },
   ],
 };
 const rows = [
@@ -55,4 +55,21 @@ test("copying uses the unique permission union of the filtered relationships", (
   assert.deepEqual(mappingPermissionIds([...mappings, mappings[0]]), [0, 1, 2]);
   assert.deepEqual(mappingPermissionIds(filterMappings(mappings, catalog, "", "read")), [1]);
   assert.deepEqual(mappingPermissionIds([mappings[1]]), []);
+});
+
+test("copying rejects mixed unresolved selections but retains documented empty ones", () => {
+  assert.equal(authorizationResolved(mappings, catalog), false);
+  assert.equal(authorizationResolved([mappings[0], mappings[2]], catalog), true);
+  const documented = {
+    ...catalog,
+    apiMethods: catalog.apiMethods.map((method, index) => index === 1
+      ? { ...method, authorizationCoverage: "not_required" } : method),
+  };
+  assert.equal(authorizationResolved(mappings, documented), true);
+  const partial = {
+    ...catalog,
+    apiMethods: catalog.apiMethods.map((method, index) => index === 0
+      ? { ...method, authorizationCoverage: "unresolved" } : method),
+  };
+  assert.equal(authorizationResolved([mappings[0]], partial), false);
 });

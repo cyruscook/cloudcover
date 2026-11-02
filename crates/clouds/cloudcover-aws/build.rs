@@ -10,6 +10,8 @@ use std::{
 
 const CACHE_FILE_NAME: &str = "actions-v2.rs";
 
+mod authorization_supplement;
+
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 
 #[derive(serde::Deserialize)]
@@ -194,8 +196,11 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=data/sar/catalog.json");
     println!("cargo:rerun-if-changed=data/sar/manifest.json");
+    println!("cargo:rerun-if-changed=authorization_supplement.rs");
+    println!("cargo:rerun-if-changed=data/authorization.json");
     let mut rows = collect_rows()?;
     let action_keys = sort_and_validate_action_rows(&mut rows.actions)?;
+    authorization_supplement::apply(&mut rows.operations, &action_keys)?;
     sort_and_validate_operation_rows(&mut rows.operations, &action_keys)?;
     sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
     write_generated_file(&generate_code(&rows)?)
@@ -749,6 +754,7 @@ mod tests {
         fn generate() -> BuildResult<String> {
             let mut rows = collect_rows()?;
             let keys = sort_and_validate_action_rows(&mut rows.actions)?;
+            authorization_supplement::apply(&mut rows.operations, &keys)?;
             sort_and_validate_operation_rows(&mut rows.operations, &keys)?;
             sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
             generate_code(&rows).map_err(Into::into)

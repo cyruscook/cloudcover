@@ -5,7 +5,7 @@ use cloudcover_core::{
 };
 use std::{collections::BTreeMap, sync::OnceLock};
 
-use crate::{generated, policy};
+use crate::{AuthorizationCoverage, generated, policy};
 
 #[derive(Clone, Copy, Debug, Default)]
 pub struct AwsProvider;
@@ -15,6 +15,17 @@ impl AwsProvider {
     pub const fn new() -> Self {
         Self
     }
+
+    /// Returns coverage of direct caller IAM requirements, independently of FAS.
+    ///
+    /// # Errors
+    /// Returns [`AwsError::UnknownApiMethod`] when the operation is not indexed.
+    pub fn authorization_coverage(
+        &self,
+        method: &ApiMethod,
+    ) -> Result<AuthorizationCoverage, AwsError> {
+        Ok(policy::find_operation(method)?.authorization_coverage())
+    }
     /// Returns direct IAM permissions plus documented possible FAS permissions.
     ///
     /// This action-only projection omits conditions and applicability. Use
@@ -23,7 +34,8 @@ impl AwsProvider {
     /// # Errors
     ///
     /// Returns [`AwsError::UnknownApiMethod`] when the operation or one of its
-    /// generated authorized-action references is unknown.
+    /// generated authorized-action references is unknown, or
+    /// [`AwsError::UnresolvedAuthorization`] when authorization data is incomplete.
     pub fn iam_permissions(&self, method: &ApiMethod) -> Result<Vec<&'static str>, AwsError> {
         let mut permissions = policy::resolve_actions(method)?
             .into_iter()
@@ -70,6 +82,10 @@ pub enum AwsError {
     InvalidFasCatalog { message: String },
     #[error("unknown AWS API method {service}:{name}")]
     UnknownApiMethod { service: String, name: String },
+    #[error(
+        "unresolved AWS authorization coverage for {service}:{name}: the catalog does not establish caller IAM permission requirements"
+    )]
+    UnresolvedAuthorization { service: String, name: String },
     #[error("failed to encode IAM policy as Terraform HCL: {source}")]
     HclSerialization { source: hcl::Error },
     #[error("unsupported SDK {name:?} for language {language:?}")]

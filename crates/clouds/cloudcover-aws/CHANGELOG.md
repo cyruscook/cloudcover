@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Resolve S3 CreateSession through a reviewed s3express authorization bridge, validating catalog references and upstream conflicts without weakening unknown-authorization rejection.
+
 ## [0.2.3](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.2.2...cloudcover-aws-v0.2.3) - 2026-10-28
 
 ### Other

@@ -1,7 +1,7 @@
 import type { ApiCatalog } from "../lib/catalog";
 import {
   type Entry, type Lifecycle, type Mapping, LIFECYCLES,
-  filterMappings, mappingPermissionIds,
+  authorizationResolved, filterMappings, mappingPermissionIds,
 } from "../lib/mappings";
 
 function node<K extends keyof HTMLElementTagNameMap>(tag: K, text = "", className = ""): HTMLElementTagNameMap[K] {
@@ -146,14 +146,17 @@ export function mappingTable(
   section.append(scroll, empty);
 
   const footer = node("div", "", "mapping-footer");
-  footer.append(icon("M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"), node("p", "CloudCover includes every IAM permission that could be required. Configuration, resource names, and request parameters determine which ones you actually need."));
+  footer.append(icon("M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"), node("p", "Known IAM requirements are shown here. Configuration, resource names, and request parameters determine which permissions apply."));
   section.append(footer);
+  const authorizationNotice = node("p", "Authorization coverage is unresolved for one or more operations. The permission list is incomplete and cannot be copied.", "fas-note");
+  section.append(authorizationNotice);
   const copyFeedback = node("p", "", "sr-only");
   copyFeedback.setAttribute("role", "status");
   section.append(copyFeedback);
   let visible: Mapping[] = [];
   let copyAttempt = 0;
   copy.addEventListener("click", async () => {
+    if (!authorizationResolved(visible, catalog)) return;
     const attempt = ++copyAttempt;
     const permissions = mappingPermissionIds(visible).map(id => catalog.iamPermissions[id]);
     try {
@@ -175,7 +178,9 @@ export function mappingTable(
     clear.hidden = input.value.length === 0;
     visible = filterMappings(mappings, catalog, input.value, lifecycle);
     const permissionCount = mappingPermissionIds(visible).length;
-    copy.disabled = permissionCount === 0;
+    const resolved = authorizationResolved(visible, catalog);
+    authorizationNotice.hidden = resolved;
+    copy.disabled = !resolved || permissionCount === 0;
     copy.setAttribute("aria-label", `Copy ${count(permissionCount, "IAM permission")} from the filtered mappings`);
     results.textContent = `${count(visible.length, "action")} · ${count(permissionCount, "permission")}`;
     table.querySelectorAll("tbody").forEach(body => body.remove());
@@ -197,6 +202,9 @@ export function mappingTable(
             context.append(steps);
           }
           const coverage = method.fas?.coverage ?? "unknown";
+          if (method.authorizationCoverage === "unresolved") {
+            context.append(node("small", "Caller IAM authorization unresolved", "fas-coverage"));
+          }
           context.append(node("small", coverage === "unknown"
             ? "FAS coverage unknown"
             : coverage === "reviewed_no_dependencies"
@@ -206,7 +214,8 @@ export function mappingTable(
           row.append(action);
         }
         const permission = node("td", "", "permission-cell");
-        if (id === undefined) permission.append(node("span", "No known permissions", "unmapped-permission"));
+        if (id === undefined) permission.append(node("span", method.authorizationCoverage === "not_required"
+          ? "No caller IAM permission required" : "Authorization unresolved", "unmapped-permission"));
         else {
           const name = catalog.iamPermissions[id];
           permission.append(link({ kind: "iam", id, label: name, normalized: name.toLowerCase() }));
