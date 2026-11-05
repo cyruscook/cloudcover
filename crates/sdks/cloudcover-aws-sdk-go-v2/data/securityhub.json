@@ -3046,6 +3046,72 @@
       "module_version": "1.85.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.85.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.86.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "GetSoftwareResourcesV2",
+          [
+            [
+              "securityhub",
+              "GetSoftwareResourcesV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "GetSoftwareStatisticsV2",
+          [
+            [
+              "securityhub",
+              "GetSoftwareStatisticsV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "Client",
+          "GetSoftwareV2",
+          [
+            [
+              "securityhub",
+              "GetSoftwareV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "GetSoftwareResourcesV2Paginator",
+          "NextPage",
+          [
+            [
+              "securityhub",
+              "GetSoftwareResourcesV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/securityhub",
+          "GetSoftwareV2Paginator",
+          "NextPage",
+          [
+            [
+              "securityhub",
+              "GetSoftwareV2"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
