@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-cli-v0.2.3...cloudcover-cli-v0.3.0) - 2026-11-05
+
+### Other
+
+- Reject unresolved AWS caller IAM authorization ([#65](https://github.com/cyruscook/cloudcover/pull/65))
+
 ### Fixed
 
 - Restore modern Go S3 policy generation with explicit warnings for conservatively included directory-session permissions; preserve failure for unrelated unresolved authorization.
