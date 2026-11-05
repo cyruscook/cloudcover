@@ -997,6 +997,94 @@
       "module_version": "1.24.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.24.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.25.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "CompleteTableMigration",
+          [
+            [
+              "s3tables",
+              "CompleteTableMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "GetTableMigration",
+          [
+            [
+              "s3tables",
+              "GetTableMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "ListTableMigrations",
+          [
+            [
+              "s3tables",
+              "ListTableMigrations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "StartTableMigration",
+          [
+            [
+              "s3tables",
+              "StartTableMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "SyncTableMigration",
+          [
+            [
+              "s3tables",
+              "SyncTableMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "Client",
+          "UpdateTableMigration",
+          [
+            [
+              "s3tables",
+              "UpdateTableMigration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/s3tables",
+          "ListTableMigrationsPaginator",
+          "NextPage",
+          [
+            [
+              "s3tables",
+              "ListTableMigrations"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
