@@ -3565,6 +3565,39 @@
       "module_version": "1.81.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.81.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.82.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "DeregisterDefaultHostManagementConfiguration",
+          [
+            [
+              "ssm",
+              "DeregisterDefaultHostManagementConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ssm",
+          "Client",
+          "RegisterDefaultHostManagementConfiguration",
+          [
+            [
+              "ssm",
+              "RegisterDefaultHostManagementConfiguration"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

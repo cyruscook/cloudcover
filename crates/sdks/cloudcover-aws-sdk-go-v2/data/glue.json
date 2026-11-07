@@ -5693,6 +5693,50 @@
       "module_version": "1.172.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.173.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "GetJobUpgradeAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "StartJobUpgradeAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "StopJobUpgradeAnalysis"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.174.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
