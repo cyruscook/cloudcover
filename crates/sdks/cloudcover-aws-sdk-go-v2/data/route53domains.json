@@ -1534,6 +1534,28 @@
       "module_version": "1.45.5",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53domains",
+          "Client",
+          "RestoreDomain",
+          [
+            [
+              "route53domains",
+              "RestoreDomain"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
