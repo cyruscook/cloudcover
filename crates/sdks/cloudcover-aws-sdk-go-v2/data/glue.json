@@ -5693,6 +5693,127 @@
       "module_version": "1.172.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.173.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "GetJobUpgradeAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StartJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "StartJobUpgradeAnalysis"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "StopJobUpgradeAnalysis",
+          [
+            [
+              "glue",
+              "StopJobUpgradeAnalysis"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.174.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.175.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "CreateDataQualityEvaluationConfig",
+          [
+            [
+              "glue",
+              "CreateDataQualityEvaluationConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteDataQualityEvaluationConfig",
+          [
+            [
+              "glue",
+              "DeleteDataQualityEvaluationConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "GetDataQualityEvaluationConfig",
+          [
+            [
+              "glue",
+              "GetDataQualityEvaluationConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "ListDataQualityEvaluationConfigs",
+          [
+            [
+              "glue",
+              "ListDataQualityEvaluationConfigs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "UpdateDataQualityEvaluationConfig",
+          [
+            [
+              "glue",
+              "UpdateDataQualityEvaluationConfig"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "ListDataQualityEvaluationConfigsPaginator",
+          "NextPage",
+          [
+            [
+              "glue",
+              "ListDataQualityEvaluationConfigs"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.175.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

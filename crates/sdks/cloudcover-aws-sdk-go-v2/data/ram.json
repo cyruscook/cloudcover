@@ -1715,6 +1715,33 @@
       "module_version": "1.45.9",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.45.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.46.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ram",
+          "Client",
+          "UpdatePermission",
+          [
+            [
+              "ram",
+              "UpdatePermission"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.46.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

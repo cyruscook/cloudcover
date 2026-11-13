@@ -2568,6 +2568,38 @@
       "module_version": "1.51.9",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.51.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.51.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.52.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/elasticsearchservice",
+          "Client",
+          "UpdateClone",
+          [
+            [
+              "es",
+              "UpdateClone"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.52.1",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

@@ -4417,6 +4417,115 @@
       "module_version": "1.75.8",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.75.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.75.11",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.76.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminListUserSessions",
+          [
+            [
+              "cognito-idp",
+              "AdminListUserSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "AdminRevokeUserSession",
+          [
+            [
+              "cognito-idp",
+              "AdminRevokeUserSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUserPoolClientSessionConfiguration",
+          [
+            [
+              "cognito-idp",
+              "GetUserPoolClientSessionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "GetUserPoolSessionConfiguration",
+          [
+            [
+              "cognito-idp",
+              "GetUserPoolSessionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListUserSessions",
+          [
+            [
+              "cognito-idp",
+              "ListUserSessions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "RevokeUserSession",
+          [
+            [
+              "cognito-idp",
+              "RevokeUserSession"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUserPoolClientSessionConfiguration",
+          [
+            [
+              "cognito-idp",
+              "SetUserPoolClientSessionConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "SetUserPoolSessionConfiguration",
+          [
+            [
+              "cognito-idp",
+              "SetUserPoolSessionConfiguration"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

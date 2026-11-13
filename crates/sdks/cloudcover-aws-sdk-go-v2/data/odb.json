@@ -1534,6 +1534,82 @@
       "module_version": "1.27.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.27.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.27.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.28.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "AssociateVirtualMachinesToCloudVmCluster",
+          [
+            [
+              "odb",
+              "AssociateVirtualMachinesToCloudVmCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "DisassociateVirtualMachinesFromCloudVmCluster",
+          [
+            [
+              "odb",
+              "DisassociateVirtualMachinesFromCloudVmCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "UpdateCloudAutonomousVmCluster",
+          [
+            [
+              "odb",
+              "UpdateCloudAutonomousVmCluster"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "UpdateCloudExadataInfrastructureStorageCapacity",
+          [
+            [
+              "odb",
+              "UpdateCloudExadataInfrastructureStorageCapacity"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "UpdateCloudVmCluster",
+          [
+            [
+              "odb",
+              "UpdateCloudVmCluster"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

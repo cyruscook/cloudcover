@@ -5401,6 +5401,44 @@
       "module_version": "1.138.4",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.139.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/quicksight",
+          "Client",
+          "DescribeResourcePermissions",
+          [
+            [
+              "quicksight",
+              "DescribeResourcePermissions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/quicksight",
+          "Client",
+          "UpdateResourcePermissions",
+          [
+            [
+              "quicksight",
+              "UpdateResourcePermissions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.139.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.139.2",
+      "remove": [],
+      "upsert": []
     }
   ]
 }
