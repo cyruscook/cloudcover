@@ -3001,6 +3001,82 @@
       "module_version": "1.70.2",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.70.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.72.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lightsail",
+          "Client",
+          "CheckSubdomainAvailability",
+          [
+            [
+              "lightsail",
+              "CheckSubdomainAvailability"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lightsail",
+          "Client",
+          "CreateSubdomain",
+          [
+            [
+              "lightsail",
+              "CreateSubdomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lightsail",
+          "Client",
+          "DeleteSubdomain",
+          [
+            [
+              "lightsail",
+              "DeleteSubdomain"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lightsail",
+          "Client",
+          "GetSubdomains",
+          [
+            [
+              "lightsail",
+              "GetSubdomains"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lightsail",
+          "Client",
+          "UpdateSubdomainAssociation",
+          [
+            [
+              "lightsail",
+              "UpdateSubdomainAssociation"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

@@ -3456,6 +3456,93 @@
       "module_version": "1.77.4",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.77.5",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.77.6",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.78.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "CreateFirewallPolicyV2",
+          [
+            [
+              "network-firewall",
+              "CreateFirewallPolicyV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "DeleteFirewallPolicyV2",
+          [
+            [
+              "network-firewall",
+              "DeleteFirewallPolicyV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "DescribeFirewallPolicyV2",
+          [
+            [
+              "network-firewall",
+              "DescribeFirewallPolicyV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "ListFirewallPoliciesV2",
+          [
+            [
+              "network-firewall",
+              "ListFirewallPoliciesV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "UpdateFirewallPolicyV2",
+          [
+            [
+              "network-firewall",
+              "UpdateFirewallPolicyV2"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "ListFirewallPoliciesV2Paginator",
+          "NextPage",
+          [
+            [
+              "network-firewall",
+              "ListFirewallPoliciesV2"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

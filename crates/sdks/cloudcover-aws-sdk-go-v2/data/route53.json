@@ -2053,6 +2053,71 @@
       "module_version": "1.70.7",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.70.8",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.9",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.70.10",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.71.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "CreateResourceRecordSetProtections",
+          [
+            [
+              "route53",
+              "CreateResourceRecordSetProtections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "DeleteResourceRecordSetProtections",
+          [
+            [
+              "route53",
+              "DeleteResourceRecordSetProtections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "Client",
+          "ListResourceRecordSetProtections",
+          [
+            [
+              "route53",
+              "ListResourceRecordSetProtections"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/route53",
+          "ListResourceRecordSetProtectionsPaginator",
+          "NextPage",
+          [
+            [
+              "route53",
+              "ListResourceRecordSetProtections"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
