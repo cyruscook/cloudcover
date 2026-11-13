@@ -74,11 +74,17 @@ class PublicationTests(unittest.TestCase):
             validate(self.branch, self.base)
 
     def test_executable_blocked(self):
-        self.path.chmod(0o755)
-        with self.assertRaises(ValueError):
-            validate(self.branch, self.base, True)
-        self.commit()
-        with self.assertRaises(ValueError):
+        # Windows chmod cannot set POSIX execute bits. The updater runs on
+        # Ubuntu; exercise its worktree guard where those bits are supported.
+        if os.name != 'nt':
+            self.path.chmod(0o755)
+            with self.assertRaises(ValueError):
+                validate(self.branch, self.base, True)
+        # Git tree modes are portable, even when the host filesystem is not.
+        self.git('add', '.')
+        self.git('update-index', '--chmod=+x', self.path.as_posix())
+        self.git('commit', '-qm', 'executable generated file')
+        with self.assertRaisesRegex(ValueError, 'regular non-executable'):
             validate(self.branch, self.base)
 
     def test_invalid_json_blocked(self):
