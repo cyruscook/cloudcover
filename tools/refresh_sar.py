@@ -132,7 +132,7 @@ def summary(old, new):
     lines.extend(['', f'Affected services: {names or "none (catalog source/provenance bytes changed)"}'
                   + (f' and {len(changed_services) - 12} more.' if len(changed_services) > 12 else '.'), '',
                   'Review policy/FAS tests and these input changes before merging. Normal builds remain pinned and offline.', '',
-                  'This update uses GITHUB_TOKEN. GitHub may require a repository writer to select **Approve workflows to run** for the resulting PR workflows; no additional credentials or automatic merge are configured.', ''])
+                  'The scheduled updater publishes with a dedicated GitHub App. Verify all required CI checks pass before merging; the updater does not merge this PR.', ''])
     return '\n'.join(lines)
 
 

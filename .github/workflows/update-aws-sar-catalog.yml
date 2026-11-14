@@ -14,19 +14,23 @@ concurrency:
 
 jobs:
   update:
+    # Environment deployment policy MUST permit only main (branches, not tags).
+    if: github.repository == 'cyruscook/cloudcover' && github.ref == 'refs/heads/main'
+    environment: cloudcover-updater
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
+      pull-requests: read
     env:
       BRANCH: automation/aws-sar-catalog
       SAR_DIR: crates/clouds/cloudcover-aws/data/sar
     steps:
-      - name: Check out default branch # zizmor: ignore[artipacked]
+      - name: Check out default branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          ref: ${{ github.sha }}
+          persist-credentials: false
 
       - name: Test refresh behavior without network access
         run: python3 -B -m unittest discover -s tools -p 'test_refresh_sar.py'
@@ -99,6 +103,13 @@ jobs:
           make check
           cargo test --locked --workspace --all-features
 
+      - name: Validate generated publication paths
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          UPDATE_BRANCH: automation/aws-sar-catalog
+          SOURCE_SHA: ${{ github.sha }}
+        run: python3 tools/validate_generated_publication.py "$UPDATE_BRANCH" "$SOURCE_SHA" --worktree
+
       - name: Commit catalog and provenance together
         if: steps.changes.outputs.changed == 'true'
         run: |
@@ -107,16 +118,41 @@ jobs:
           git add -- "$SAR_DIR/catalog.json" "$SAR_DIR/manifest.json"
           git commit -m 'Update pinned AWS SAR catalog'
 
+      - name: Validate committed publication
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          UPDATE_BRANCH: automation/aws-sar-catalog
+          SOURCE_SHA: ${{ github.sha }}
+        run: python3 tools/validate_generated_publication.py "$UPDATE_BRANCH" "$SOURCE_SHA"
+
+      - name: Create repository-scoped updater token
+        if: steps.changes.outputs.changed == 'true'
+        id: updater-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.CLOUDCOVER_UPDATER_APP_CLIENT_ID }}
+          private-key: ${{ secrets.CLOUDCOVER_UPDATER_APP_PRIVATE_KEY }}
+          owner: cyruscook
+          repositories: cloudcover
+          permission-contents: write
+          permission-pull-requests: write
+
       - name: Push the stable update branch
         if: steps.changes.outputs.changed == 'true'
         env:
+          GH_TOKEN: ${{ steps.updater-token.outputs.token }}
+          GIT_CONFIG_COUNT: '2'
+          GIT_CONFIG_KEY_0: credential.helper
+          GIT_CONFIG_VALUE_0: ''
+          GIT_CONFIG_KEY_1: credential.helper
+          GIT_CONFIG_VALUE_1: '!gh auth git-credential'
           REMOTE_SHA: ${{ steps.baseline.outputs.remote_sha }}
         run: git push origin "HEAD:refs/heads/$BRANCH" --force-with-lease="refs/heads/$BRANCH:$REMOTE_SHA"
 
       - name: Create or update the catalog pull request
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.updater-token.outputs.token }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           pull_request="$(gh pr list --head "$BRANCH" --base "$DEFAULT_BRANCH" --state open --json number,headRepository,headRepositoryOwner --jq 'map(select((.headRepositoryOwner.login + "/" + .headRepository.name) == env.GITHUB_REPOSITORY)) | .[0].number // empty')"

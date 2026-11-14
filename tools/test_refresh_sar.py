@@ -96,7 +96,7 @@ class RefreshTests(unittest.TestCase):
         self.assertIn('| API operations | 1 | 1 | 0 |', body)
         self.assertIn(sar.sha256(sar.canonical(original)), body)
         self.assertIn(sar.sha256(content), body)
-        self.assertIn('Approve workflows to run', body)
+        self.assertIn('Verify all required CI checks pass before merging', body)
         published = fingerprint(self.current)
         with mock.patch.object(sar, 'collect_catalog', return_value=(b'index changed again', changed)):
             self.assertFalse(sar.refresh(self.current, previous_dir=pending))
