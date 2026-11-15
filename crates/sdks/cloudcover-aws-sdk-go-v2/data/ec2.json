@@ -13442,6 +13442,203 @@
       "module_version": "1.344.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.344.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.344.2",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.344.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.345.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.346.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "CreateMetricCategory",
+          [
+            [
+              "ec2",
+              "CreateMetricCategory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DeleteMetricCategory",
+          [
+            [
+              "ec2",
+              "DeleteMetricCategory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DescribeMetricCategories",
+          [
+            [
+              "ec2",
+              "DescribeMetricCategories"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "ModifyMetricCategory",
+          [
+            [
+              "ec2",
+              "ModifyMetricCategory"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "DescribeMetricCategoriesPaginator",
+          "NextPage",
+          [
+            [
+              "ec2",
+              "DescribeMetricCategories"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.347.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "AssociateNetworkingFlexCostAllocationPolicy",
+          [
+            [
+              "ec2",
+              "AssociateNetworkingFlexCostAllocationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "CreateNetworkingFlexCostAllocationPolicy",
+          [
+            [
+              "ec2",
+              "CreateNetworkingFlexCostAllocationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DeleteNetworkingFlexCostAllocationPolicies",
+          [
+            [
+              "ec2",
+              "DeleteNetworkingFlexCostAllocationPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DescribeNetworkingFlexCostAllocationPolicies",
+          [
+            [
+              "ec2",
+              "DescribeNetworkingFlexCostAllocationPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DescribeNetworkingFlexCostAllocationPolicyAssociations",
+          [
+            [
+              "ec2",
+              "DescribeNetworkingFlexCostAllocationPolicyAssociations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DisassociateNetworkingFlexCostAllocationPolicy",
+          [
+            [
+              "ec2",
+              "DisassociateNetworkingFlexCostAllocationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "GetNetworkingFlexCostAllocationPolicyVersions",
+          [
+            [
+              "ec2",
+              "GetNetworkingFlexCostAllocationPolicyVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "ModifyNetworkingFlexCostAllocationPolicy",
+          [
+            [
+              "ec2",
+              "ModifyNetworkingFlexCostAllocationPolicy"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "DescribeNetworkingFlexCostAllocationPoliciesPaginator",
+          "NextPage",
+          [
+            [
+              "ec2",
+              "DescribeNetworkingFlexCostAllocationPolicies"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator",
+          "NextPage",
+          [
+            [
+              "ec2",
+              "DescribeNetworkingFlexCostAllocationPolicyAssociations"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

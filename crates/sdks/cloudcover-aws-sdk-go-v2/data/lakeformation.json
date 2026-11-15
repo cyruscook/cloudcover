@@ -2167,6 +2167,44 @@
       "module_version": "1.57.2",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.57.3",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.57.4",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.58.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lakeformation",
+          "Client",
+          "GetGlueFunctionSessionContext",
+          [
+            [
+              "lakeformation",
+              "GetGlueFunctionSessionContext"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/lakeformation",
+          "Client",
+          "GetTemporaryGlueFunctionCredentials",
+          [
+            [
+              "lakeformation",
+              "GetTemporaryGlueFunctionCredentials"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

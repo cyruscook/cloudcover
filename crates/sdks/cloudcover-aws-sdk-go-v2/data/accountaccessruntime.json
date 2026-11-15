@@ -1,0 +1,54 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/accountaccessruntime",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccessruntime",
+          "Client",
+          "GetRoleCredentials",
+          [
+            [
+              "account-access",
+              "GetRoleCredentials"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccessruntime",
+          "Client",
+          "ListRoles",
+          [
+            [
+              "account-access",
+              "ListRoles"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/accountaccessruntime",
+          "ListRolesPaginator",
+          "NextPage",
+          [
+            [
+              "account-access",
+              "ListRoles"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.0.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.0.2",
+      "remove": [],
+      "upsert": []
+    }
+  ]
+}
