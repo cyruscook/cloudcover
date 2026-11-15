@@ -7712,6 +7712,159 @@
       "module_version": "1.286.1",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.287.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.287.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.288.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "CreateClusterExtension",
+          [
+            [
+              "sagemaker",
+              "CreateClusterExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DeleteClusterExtension",
+          [
+            [
+              "sagemaker",
+              "DeleteClusterExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeClusterExtension",
+          [
+            [
+              "sagemaker",
+              "DescribeClusterExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterExtensions",
+          [
+            [
+              "sagemaker",
+              "ListClusterExtensions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "UpdateClusterExtension",
+          [
+            [
+              "sagemaker",
+              "UpdateClusterExtension"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterExtensionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterExtensions"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.288.1",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.289.0",
+      "remove": [],
+      "upsert": []
+    },
+    {
+      "module_version": "1.290.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "DescribeClusterOperation",
+          [
+            [
+              "sagemaker",
+              "DescribeClusterOperation"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterExtensionVersions",
+          [
+            [
+              "sagemaker",
+              "ListClusterExtensionVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "Client",
+          "ListClusterOperations",
+          [
+            [
+              "sagemaker",
+              "ListClusterOperations"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterExtensionVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterExtensionVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemaker",
+          "ListClusterOperationsPaginator",
+          "NextPage",
+          [
+            [
+              "sagemaker",
+              "ListClusterOperations"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
