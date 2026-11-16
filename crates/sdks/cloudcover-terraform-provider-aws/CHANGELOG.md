@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.3.0...cloudcover-terraform-provider-aws-v0.3.1) - 2026-11-15
+
+### Other
+
+- Update AWS SDK Go v2 mapping data ([#67](https://github.com/cyruscook/cloudcover/pull/67))
+- Update Terraform AWS provider permission data ([#70](https://github.com/cyruscook/cloudcover/pull/70))
+
 ## [0.3.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-terraform-provider-aws-v0.2.3...cloudcover-terraform-provider-aws-v0.3.0) - 2026-11-05
 
 ### Other
