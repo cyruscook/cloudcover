@@ -362,7 +362,15 @@ function analyze(root) {
       if (result && result.info) {
         const name = result.symbol ? result.symbol.name : result.name;
         const receiver = result.symbol && parentClassName(ts, result.symbol);
-        if (receiver && !receiver.endsWith('Client') && name !== 'send') {
+        // DynamoDBDocument.from constructs the aggregate client locally. Unlike
+        // its instance methods it sends no command and requires no permission.
+        const documentFactory = result.info.path === '@aws-sdk/lib-dynamodb'
+          && receiver === 'DynamoDBDocument' && name === 'from';
+        // lib-dynamodb reexports this local numeric wrapper from util-dynamodb.
+        const numberHelper = result.info.path === '@aws-sdk/util-dynamodb'
+          && ['NumberValue', 'NumberValueImpl'].includes(receiver)
+          && ['from', 'toAttributeValue', 'toBigInt', 'toString', 'valueOf'].includes(name);
+        if (receiver && !receiver.endsWith('Client') && name !== 'send' && !documentFactory && !numberHelper) {
           addMethod(result.info, receiver, name);
         } else if (!receiver && /^(?:paginate|waitFor|waitUntil)/.test(name || '')) {
           addMethod(result.info, undefined, name);

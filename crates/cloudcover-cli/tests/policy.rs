@@ -248,3 +248,28 @@ fn unrelated_missing_authorization_still_rejects_mixed_modern_s3_output()
     }
     Ok(())
 }
+
+#[test]
+fn document_client_response_properties_preserve_existing_dynamodb_policy()
+-> Result<(), Box<dyn Error>> {
+    use cloudcover_core::{ApiMethod, CloudProvider};
+
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("../langs/cloudcover-javascript/analyzer/fixtures/dynamodb");
+    let expected = cloudcover_aws::AwsProvider::new().permissions_policy(&[
+        ApiMethod::new("dynamodb", "GetItem"),
+        ApiMethod::new("dynamodb", "DescribeTable"),
+    ])?;
+    for language in ["javascript", "typescript"] {
+        let output = run_policy(&["policy", "--language", language, &fixture.to_string_lossy()])?;
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        let policy = parse_stdout_json(&output)?;
+        assert_eq!(policy, expected);
+        assert!(collect_actions(&policy)?.contains(&"dynamodb:GetItem".to_owned()));
+    }
+    Ok(())
+}

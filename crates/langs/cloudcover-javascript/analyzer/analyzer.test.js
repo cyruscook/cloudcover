@@ -9,6 +9,7 @@ const test = require('node:test');
 
 const analyzer = fs.readFileSync(path.join(__dirname, 'analyzer.js'), 'utf8');
 const typescript = path.resolve(__dirname, '../../../../site/node_modules/typescript');
+const dynamodbFixture = path.join(__dirname, 'fixtures/dynamodb');
 
 function fixture(files, { sdk = true } = {}) {
   assert.ok(fs.existsSync(typescript), `project TypeScript dependency is missing at ${typescript}`);
@@ -68,6 +69,80 @@ function analyze(root) {
 function methodNames(result) {
   return result.methods.map(({ receiver, name }) => receiver ? `${receiver}.${name}` : name);
 }
+
+function documentFixture(files) {
+  const root = fixture(files, { sdk: false });
+  fs.symlinkSync(path.join(dynamodbFixture, 'node_modules/@aws-sdk'), path.join(root, 'node_modules/@aws-sdk'), 'dir');
+  return root;
+}
+
+test('real DynamoDB declarations preserve document response values and low-level operations', () => {
+  const result = analyze(dynamodbFixture);
+  assert.equal(result.error, undefined);
+  assert.deepEqual(methodNames(result), ['DescribeTableCommand', 'GetCommand']);
+  assert.deepEqual(result.modules, [
+    { path: '@aws-sdk/client-dynamodb', version: '3.1137.0' },
+    { path: '@aws-sdk/lib-dynamodb', version: '3.1137.0' },
+  ]);
+});
+
+test('document convenience methods, command variables, aliases, CommonJS, and paginators', (t) => {
+  const root = documentFixture({
+    'main.ts': `
+      import { DynamoDBClient as Client } from "@aws-sdk/client-dynamodb";
+      import { DynamoDBDocument as Document, DynamoDBDocumentClient, GetCommand as Read } from "@aws-sdk/lib-dynamodb";
+      import * as sdk from "@aws-sdk/lib-dynamodb";
+      const client = new Client({});
+      const document = Document.from(client);
+      document.get({ TableName: "test", Key: { id: "1" } });
+      document.put({ TableName: "test", Item: { id: "1" } });
+      const command = new Read({ TableName: "test", Key: { id: "1" } });
+      DynamoDBDocumentClient.from(client).send(command);
+      sdk.paginateQuery({ client: document }, { TableName: "test" });
+    `,
+    'common.cjs': `
+      const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+      const { DynamoDBDocument: Doc, DeleteCommand: Remove } = require("@aws-sdk/lib-dynamodb");
+      const sdk = require("@aws-sdk/lib-dynamodb");
+      const document = Doc.from(new DynamoDBClient({}));
+      document.delete({ TableName: "test", Key: { id: "1" } });
+      document.send(new Remove({ TableName: "test", Key: { id: "1" } }));
+      sdk.paginateScan({ client: document }, { TableName: "test" });
+    `,
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const result = analyze(root);
+  assert.equal(result.error, undefined);
+  assert.deepEqual(new Set(methodNames(result)), new Set([
+    'GetCommand', 'DeleteCommand', 'DynamoDBDocument.get', 'DynamoDBDocument.put',
+    'DynamoDBDocument.delete', 'paginateQuery', 'paginateScan',
+  ]));
+});
+
+test('document factories and lifecycle helpers require no API permissions', (t) => {
+  const root = documentFixture({
+    'main.ts': `
+      import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+      import { DynamoDBDocument, DynamoDBDocumentClient, NumberValue } from "@aws-sdk/lib-dynamodb";
+      const client = new DynamoDBClient({});
+      DynamoDBDocument.from(client).destroy();
+      DynamoDBDocumentClient.from(client).destroy();
+      client.destroy();
+      NumberValue.from("123").toBigInt();
+      new NumberValue("123").toAttributeValue();
+    `,
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  assert.deepEqual(analyze(root), { methods: [], modules: [] });
+});
+
+test('unknown document commands and paginators still fail closed', (t) => {
+  for (const expression of ['new sdk.UnknownCommand({})', 'sdk.paginateUnknown({}, {})']) {
+    const root = documentFixture({ 'main.ts': `import * as sdk from "@aws-sdk/lib-dynamodb"; ${expression};` });
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    assert.match(analyze(root).error, /has no runtime export/);
+  }
+});
 
 test('analyzes JavaScript included by an empty jsconfig', (t) => {
   const root = fixture({

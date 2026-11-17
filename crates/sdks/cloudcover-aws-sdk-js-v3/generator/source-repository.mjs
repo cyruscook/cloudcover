@@ -352,7 +352,7 @@ function isSourceFile(path) {
 function packageDirectory(packageName) {
   if (typeof packageName !== "string") return undefined;
   const name = packageName.includes("/") ? packageName.slice(packageName.lastIndexOf("/") + 1) : packageName;
-  return /^client-[a-z0-9][a-z0-9-]*$/.test(name) ? name : undefined;
+  return name === "lib-dynamodb" || /^client-[a-z0-9][a-z0-9-]*$/.test(name) ? name : undefined;
 }
 
 /**
@@ -486,7 +486,7 @@ export async function openSourceRepository({ repository, cacheDir } = {}) {
       if (refOid === undefined) return null;
 
       const rootTreeOid = await commitTree(refOid);
-      const clientsTreeOid = await childTree(rootTreeOid, "clients");
+      const clientsTreeOid = await childTree(rootTreeOid, clientDirectory === "lib-dynamodb" ? "lib" : "clients");
       if (clientsTreeOid === undefined) return null;
       const clientTreeOid = await childTree(clientsTreeOid, clientDirectory);
       if (clientTreeOid === undefined) return null;
@@ -536,6 +536,9 @@ export async function openSourceRepository({ repository, cacheDir } = {}) {
       const clientTrees = new Map();
       for (const refOid of refOids) {
         const rootTreeOid = await commitTree(refOid);
+        const libTreeOid = await childTree(rootTreeOid, "lib");
+        const documentTreeOid = libTreeOid && await childTree(libTreeOid, "lib-dynamodb");
+        if (documentTreeOid) clientTrees.set("lib-dynamodb", documentTreeOid);
         const clientsTreeOid = await childTree(rootTreeOid, "clients");
         if (clientsTreeOid === undefined) continue;
         for (const entry of await treeEntries(clientsTreeOid)) {

@@ -1,7 +1,7 @@
 # AWS SDK for JavaScript / TypeScript v3 mappings
 
 `data/mappings.json` records exact stable npm package releases for current and
-historical `@aws-sdk/client-*` packages. Each package starts with a full mapping
+historical `@aws-sdk/client-*` packages and `@aws-sdk/lib-dynamodb`. Each package starts with a full mapping
 snapshot, followed by removals and upserts for each subsequent release. Releases
 with no mapping changes remain indexed under their exact package version.
 
@@ -9,6 +9,25 @@ Mappings cover command symbols, aggregated client methods, paginators, and
 waiters. API service names come from the version-matched SDK signing metadata.
 The build validates release ordering and deltas, shares identical release
 mapping arrays, and generates an exact package/version lookup.
+
+`lib-dynamodb` command mappings come from the underlying `client-dynamodb`
+command constructed by each wrapper, rather than its shortened name: `GetCommand`
+maps to `GetItem`, `PutCommand` to `PutItem`, `TransactWriteCommand` to
+`TransactWriteItems`, and so on. Document convenience methods and pagination
+helpers use the same operation mappings, including Query/Scan and the newer
+`paginatedBatchGet`. This preserves the existing DynamoDB authorization catalog:
+transactions use item actions, while PartiQL uses the `PartiQL*` actions. Request
+arguments and statement text are not narrowed, so policies retain the catalog's
+conservative action union and documented possible FAS permissions.
+
+Client constructors, `.from()`, `.destroy()`, and `NumberValue` helpers make no API
+calls. Unknown SDK operations and unrecorded package versions continue to fail
+closed. The document client history starts at its first stable release, `3.8.0`;
+helpers are only mapped in releases that contain them.
+
+Source evidence: [AWS document command implementation](https://github.com/aws/aws-sdk-js-v3/blob/main/lib/lib-dynamodb/src/commands/GetCommand.ts),
+[document convenience client](https://github.com/aws/aws-sdk-js-v3/blob/main/lib/lib-dynamodb/src/DynamoDBDocument.ts),
+and [PartiQL authorization](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-iam.html).
 
 ## Regenerate
 
@@ -28,7 +47,20 @@ refresh its tags yourself before running. Exact versions absent from Git history
 use their published npm tarball. Unavailable tarballs are reported explicitly.
 
 Use `--latest` for a current snapshot, `--package NAME@VERSION` for exact selected
-releases, and `--output PATH` to write a separate data file.
+releases, `--package-history NAME` for all stable releases of one package, and
+`--output PATH` to write a separate data file. Each invocation replaces its output;
+use `--all` for the checked-in inventory to retain all other packages.
+
+Generator fixtures retain published package modules with inline source maps
+removed, plus their exact tarball URL and SHA-256. The analyzer and CLI regression
+fixture uses real pinned SDK dependencies. To run it locally:
+
+```sh
+npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb
+node --test crates/langs/cloudcover-javascript/analyzer/analyzer.test.js
+cargo test -p cloudcover-aws --test dynamodb
+cargo test -p cloudcover-cli --test policy
+```
 
 ## Pooled compiled lookups and migration
 

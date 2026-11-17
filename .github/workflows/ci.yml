@@ -228,7 +228,9 @@ jobs:
         run: npm --prefix site test
 
       - name: Test JavaScript/TypeScript analysis
-        run: node --test crates/langs/cloudcover-javascript/analyzer/analyzer.test.js
+        run: |
+          npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb
+          node --test crates/langs/cloudcover-javascript/analyzer/analyzer.test.js
 
   tests:
     name: Tests
@@ -241,6 +243,14 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249 # stable
+
+      - name: Install Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24.22.1"
+
+      - name: Install DynamoDB analysis fixture
+        run: npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb
 
       - name: Validate metadata manifests and contract fixtures
         run: |
