@@ -1,0 +1,77 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "ApproveTimeOff",
+          [
+            [
+              "connect",
+              "ApproveTimeOff"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "CancelTimeOff",
+          [
+            [
+              "connect",
+              "CancelTimeOff"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "CreateTimeOff",
+          [
+            [
+              "connect",
+              "CreateTimeOff"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "GetTimeOff",
+          [
+            [
+              "connect",
+              "GetTimeOff"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "PutTimeOffBalance",
+          [
+            [
+              "connect",
+              "PutTimeOffBalance"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connectscheduling",
+          "Client",
+          "RejectTimeOff",
+          [
+            [
+              "connect",
+              "RejectTimeOff"
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

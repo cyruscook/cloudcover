@@ -1,0 +1,33 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/sagemakerinferencerouterruntime",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerinferencerouterruntime",
+          "Client",
+          "InvokeInferenceRouter",
+          [
+            [
+              "sagemaker",
+              "InvokeInferenceRouter"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/sagemakerinferencerouterruntime",
+          "Client",
+          "InvokeInferenceRouterAsync",
+          [
+            [
+              "sagemaker",
+              "InvokeInferenceRouterAsync"
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

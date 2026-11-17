@@ -3664,6 +3664,56 @@
         ]
       ],
       "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "ListContextStores",
+          [
+            [
+              "network-firewall",
+              "ListContextStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "Client",
+          "ListResourcesInContextStore",
+          [
+            [
+              "network-firewall",
+              "ListResourcesInContextStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "ListContextStoresPaginator",
+          "NextPage",
+          [
+            [
+              "network-firewall",
+              "ListContextStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networkfirewall",
+          "ListResourcesInContextStorePaginator",
+          "NextPage",
+          [
+            [
+              "network-firewall",
+              "ListResourcesInContextStore"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
