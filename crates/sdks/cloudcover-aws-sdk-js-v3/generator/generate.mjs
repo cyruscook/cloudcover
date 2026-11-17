@@ -13,14 +13,16 @@ import { openSourceRepository } from "./source-repository.mjs";
 const REGISTRY = "https://registry.npmjs.org";
 
 function usage() {
-  return `Usage: node generate.mjs [--latest|--all] [--package NAME@VERSION ...] [--output FILE]\n\n` +
-    `--latest generates the latest published version of every current @aws-sdk/client-* package using AWS SDK Git source.\n` +
-    `--all generates every stable published version of current and historical @aws-sdk/client-* packages using AWS SDK Git source.\n` +
+  return `Usage: node generate.mjs [--latest|--all] [--package NAME@VERSION ...] [--package-history NAME ...] [--output FILE]\n\n` +
+    `--latest generates the latest published version of every current @aws-sdk/client-* package and @aws-sdk/lib-dynamodb using AWS SDK Git source.\n` +
+    `--all generates every stable published version of current and historical supported packages using AWS SDK Git source.\n` +
+    `--package-history generates every stable version of the named package from npm (or CLOUDCOVER_AWS_SDK_REPOSITORY).\n` +
     `--package accepts an exact package/version, for example @aws-sdk/client-s3@3.XXX.X.`;
 }
 
 function parseArguments(argv) {
   const packages = [];
+  const histories = [];
   let latest = false;
   let all = false;
   let output = resolve(import.meta.dirname, "../data/mappings.json");
@@ -30,6 +32,10 @@ function parseArguments(argv) {
       latest = true;
     } else if (argument === "--all") {
       all = true;
+    } else if (argument === "--package-history") {
+      const name = argv[++index];
+      if (!name || name.startsWith("--")) throw new Error("--package-history requires NAME");
+      histories.push(name);
     } else if (argument === "--package") {
       const value = argv[++index];
       if (!value) throw new Error("--package requires NAME@VERSION");
@@ -49,10 +55,10 @@ function parseArguments(argv) {
     }
   }
   if (latest && all) throw new Error("--latest and --all cannot be combined");
-  if (!latest && !all && packages.length === 0) {
-    throw new Error("select --latest, --all, or at least one --package");
+  if (!latest && !all && packages.length === 0 && histories.length === 0) {
+    throw new Error("select --latest, --all, --package-history, or at least one --package");
   }
-  return { latest, all, output, packages };
+  return { latest, all, output, packages, histories };
 }
 
 async function json(url) {
@@ -62,8 +68,8 @@ async function json(url) {
 }
 
 
-async function selectedClientPackages(selection, sourceRepository) {
-  const names = await sourceRepository.packageNames({ includeHistorical: selection === "all" });
+async function selectedPackages(selection, sourceRepository, requestedNames) {
+  const names = requestedNames ?? await sourceRepository.packageNames({ includeHistorical: selection === "all" });
   const packages = [];
   for (let index = 0; index < names.length; index += 8) {
     const batch = names.slice(index, index + 8);
@@ -191,8 +197,12 @@ async function run() {
     : null;
   try {
     const requested = new Map(options.packages.map((item) => [`${item.package}@${item.version}`, item]));
+    if (options.histories.length > 0) {
+      const selected = await selectedPackages("all", sourceRepository, options.histories);
+      for (const item of selected) requested.set(`${item.package}@${item.version}`, item);
+    }
     if (options.latest || options.all) {
-      const selected = await selectedClientPackages(options.all ? "all" : "latest", sourceRepository);
+      const selected = await selectedPackages(options.all ? "all" : "latest", sourceRepository);
       for (const item of selected) requested.set(`${item.package}@${item.version}`, item);
       process.stderr.write(`selected ${requested.size} exact npm package releases\n`);
     }

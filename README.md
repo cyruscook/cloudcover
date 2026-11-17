@@ -57,6 +57,12 @@ cloudcover policy --language typescript ./path/to/project
 ```
 
 JavaScript and TypeScript analysis requires Node.js on `PATH`.
+
+AWS SDK v3 support includes `@aws-sdk/lib-dynamodb` document commands,
+`DynamoDBDocument` convenience methods, and pagination helpers, alongside the
+low-level `@aws-sdk/client-*` packages. Mappings use the installed exact package
+versions; for example, document `GetCommand` requires DynamoDB `GetItem`
+permissions.
 When present, `tsconfig.json` or `jsconfig.json` sets the project entrypoints.
 
 ## Scheduled mapping updates

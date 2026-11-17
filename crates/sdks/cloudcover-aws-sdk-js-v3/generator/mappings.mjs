@@ -108,13 +108,92 @@ function commandMappings(packageName, files, service) {
     const classMatch = text.match(/(?:export\s+class|var)\s+([A-Za-z0-9_]+Command)\b/);
     if (!classMatch) continue;
     const command = classMatch[1];
-    const operation = command.slice(0, -"Command".length);
+    const operation = packageName === "@aws-sdk/lib-dynamodb"
+      ? documentOperation(packageName, file, text)
+      : command.slice(0, -"Command".length);
     if (commands.has(command)) throw new Error(`${packageName}: duplicate command ${command}`);
     commands.set(command, operation);
     mappings.push({ package: packageName, receiver: null, method: command, api_methods: [{ service, name: operation }] });
   }
   if (commands.size === 0) throw new Error(`${packageName}: no exported commands found`);
   return { commands, mappings };
+}
+
+// Document commands wrap low-level commands, often with different names (Get ->
+// GetItem, TransactWrite -> TransactWriteItems). Read the actual imported command
+// being constructed rather than guessing an operation from the wrapper's name.
+function documentOperation(packageName, file, text) {
+  const source = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS);
+  const imports = new Map();
+  for (const node of source.statements) {
+    if (!ts.isImportDeclaration(node) || node.moduleSpecifier.text !== "@aws-sdk/client-dynamodb") continue;
+    const bindings = node.importClause?.namedBindings;
+    if (!bindings || !ts.isNamedImports(bindings)) continue;
+    for (const binding of bindings.elements) {
+      const name = (binding.propertyName ?? binding.name).text;
+      if (name.endsWith("Command")) imports.set(binding.name.text, name.slice(0, -"Command".length));
+    }
+  }
+  const operations = new Set();
+  function visit(node) {
+    if (ts.isNewExpression(node) && ts.isIdentifier(node.expression) && imports.has(node.expression.text)) {
+      operations.add(imports.get(node.expression.text));
+    }
+    ts.forEachChild(node, visit);
+  }
+  visit(source);
+  if (operations.size !== 1) {
+    throw new Error(`${packageName}:${file}: expected one wrapped DynamoDB operation, found ${[...operations].join(", ") || "none"}`);
+  }
+  return [...operations][0];
+}
+
+function documentClientMappings(packageName, files, commands, helpers) {
+  const mappings = [];
+  const helperOperations = new Map(helpers.map((row) => [row.method, row.api_methods[0].name]));
+  for (const [file, text] of sourceFiles(files, "dist-es/").filter(([file]) => /\/DynamoDBDocument\.js$/.test(file))) {
+    const source = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS);
+    function addMethod(method, body) {
+      const operations = new Set();
+      function visit(node) {
+        if (ts.isNewExpression(node) && ts.isIdentifier(node.expression)) {
+          const operation = commands.get(node.expression.text);
+          if (operation) operations.add(operation);
+        }
+        if (ts.isCallExpression(node) && ts.isIdentifier(node.expression)) {
+          const operation = helperOperations.get(node.expression.text);
+          if (operation) operations.add(operation);
+        }
+        ts.forEachChild(node, visit);
+      }
+      visit(body);
+      if (operations.size !== 1) throw new Error(`${packageName}:${file}: cannot resolve document method ${method}`);
+      mappings.push({ package: packageName, receiver: "DynamoDBDocument", method,
+        api_methods: [{ service: "dynamodb", name: [...operations][0] }] });
+    }
+    function visit(node) {
+      if (ts.isClassDeclaration(node) && node.name?.text === "DynamoDBDocument") {
+        for (const member of node.members) {
+          if (ts.isMethodDeclaration(member) && member.body
+              && !member.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.StaticKeyword)) {
+            addMethod(member.name.text, member.body);
+          }
+        }
+        return;
+      }
+      if (ts.isBinaryExpression(node) && node.operatorToken.kind === ts.SyntaxKind.EqualsToken
+          && ts.isPropertyAccessExpression(node.left)
+          && node.left.expression.getText(source) === "DynamoDBDocument.prototype"
+          && ts.isFunctionExpression(node.right)) {
+        addMethod(node.left.name.text, node.right.body);
+        return;
+      }
+      ts.forEachChild(node, visit);
+    }
+    visit(source);
+  }
+  if (mappings.length === 0) throw new Error(`${packageName}: no document client methods found`);
+  return mappings;
 }
 
 function clientMappings(packageName, files, service, commands, version) {
@@ -173,7 +252,15 @@ function helperMappings(packageName, files, service, commands) {
     for (const match of text.matchAll(/export\s+(?:(?:async\s+)?function\s*\*?|const)\s+(paginate[A-Za-z0-9_]+)/g)) {
       const method = match[1];
       const command = `${method.slice("paginate".length)}Command`;
-      const operation = commands.get(command);
+      let operation = commands.get(command);
+      if (packageName === "@aws-sdk/lib-dynamodb") {
+        // Includes paginatedBatchGet, whose name cannot be turned into a command
+        // by removing the paginate prefix. Verify the actual referenced command.
+        const used = new Set([...text.matchAll(/\b([A-Za-z0-9_]+Command)\b/g)]
+          .map((match) => commands.get(match[1])).filter(Boolean));
+        if (used.size !== 1) throw new Error(`${packageName}:${file}: cannot resolve paginator ${method}`);
+        operation = [...used][0];
+      }
       if (operation) {
         mappings.push({ package: packageName, receiver: null, method, api_methods: [{ service, name: operation }] });
       }
@@ -200,10 +287,16 @@ export function compareMappings(left, right) {
 
 export function inspectFiles(packageVersion, files) {
   const normalizedFiles = normalizeFiles(packageVersion, files);
-  const service = canonicalSigningService(`${packageVersion.package}@${packageVersion.version}`, normalizedFiles);
+  // lib-dynamodb has no signing config: its commands delegate to client-dynamodb.
+  const service = packageVersion.package === "@aws-sdk/lib-dynamodb"
+    ? "dynamodb"
+    : canonicalSigningService(`${packageVersion.package}@${packageVersion.version}`, normalizedFiles);
   const { commands, mappings } = commandMappings(packageVersion.package, normalizedFiles, service);
-  mappings.push(...clientMappings(packageVersion.package, normalizedFiles, service, commands, packageVersion.version));
-  mappings.push(...helperMappings(packageVersion.package, normalizedFiles, service, commands));
+  const helpers = helperMappings(packageVersion.package, normalizedFiles, service, commands);
+  mappings.push(...(packageVersion.package === "@aws-sdk/lib-dynamodb"
+    ? documentClientMappings(packageVersion.package, normalizedFiles, commands, helpers)
+    : clientMappings(packageVersion.package, normalizedFiles, service, commands, packageVersion.version)));
+  mappings.push(...helpers);
   for (const mapping of mappings) delete mapping.package;
   mappings.sort(compareMappings);
   for (let index = 1; index < mappings.length; index += 1) {

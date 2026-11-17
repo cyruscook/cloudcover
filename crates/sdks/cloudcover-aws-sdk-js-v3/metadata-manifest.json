@@ -407,6 +407,7 @@
     "23eaddb3e2a7a3dbcc2bfca446406a10278611b9f2b2ae67ef6809955c8ed29a",
     "23ef99f695192fb2bc0f93b6601077c2592f5bc44919742f8d44ff750c29b68d",
     "23efdc50298da9f28ec0095592bc0fc697eb3e61b3333564fed9b47bba479f64",
+    "23f12ee204044b05e6b51c4b6c11b4be77ed4e8fe8094966b52af4344f0158e4",
     "23fe8a85936904fc79130254165b3e6859d7218e2d43c4045f6e999ee433d294",
     "23ffe03acc20e583807c5a1b1b710bb60588f90b5b66bb2591dbe314959f983c",
     "24005f472e91b152369371b198e4d30ecc78ae6a4ea1a5bb871bc06820405d35",
@@ -1138,6 +1139,7 @@
     "635cfa0712b84639387d0f2d56e0943fcdc2545000b69ca10a9a6feb69727459",
     "637e13e2b2fd2cf86e2b40304818293b4c25cc47d47f3b261a560589f78b6ace",
     "637eb7ceb719934107edea557cc84b4e41f23dd08d42f4dad342376c8cfb9cc4",
+    "63acf481032145ca3a43c4f2c37dcfb08362a66c7806c5d22f8fa0386fae246a",
     "63ad3efce14d84f1d9b8490b1816dc4436d1faa387b40ed2e9c0f5aed780e407",
     "63bcda42d5ef208511fcc3897b15a196dea3e04799d39c156c3d3c1eb9f68d8e",
     "63d6793db11d934d2d9163dd9d80bf4e43c75cbaa1e80472f64cbd89981b19a1",
@@ -1281,6 +1283,7 @@
     "6fc4ec370922b81da304a7ab8f214ac9f20c967c704d35f211c1b1d6274de30b",
     "700e43cdc034e086d48f94c303424809e56b1e0357c781cab9bca5c878289322",
     "703ae9c97b672f79b73eb74278e3da88e0094112ea33814cbe493bea228801a0",
+    "7046a9e29f6b324030cf3add4df11005892f5f9201b9ab3873fb27658e341579",
     "7070e2d0bda828f26520a277b94cc81f10bec43387c4a9e77463f6bba25e9be2",
     "70800dda06806aa9d8584dc05e0a8b2be14161cf4039efbd38803b68379d32f2",
     "708e488c9269df007f34a3bf7dc635127c23d21bd2eb97192dbd71a418c2cebe",
@@ -2432,6 +2435,7 @@
     "d4b64506660c4f4dc302ce065c880ec1ef10d4a337329fb3c37ced633984fe4a",
     "d4bd8757d28fb9d2b78e649b13afb2800e7234d3a3b567032eec6049ac56ac10",
     "d4e1da144f50599ef6639711bd298b77f7057c6fa8112bd08d98aa63db1975f7",
+    "d51235a1fddd9a019e935dc00c0569bb2711ea2725895736559d35d521688bff",
     "d53ae8ad61507cb2a9cc9c783abe64de20cf8cebff4bccb7c53ef85ce96a96b3",
     "d55960072735d86108e584f7ca233507cc3f50ae3a36917eaa53380a52ed7f25",
     "d55ee68fd0a3a90f09c6834749fd957a4828274cfbe89b55bafffdd04527d4be",
@@ -2502,6 +2506,7 @@
     "db67cb0016448a6e92ec3c3319901b03c3c261b7f97fd83bff8584a2ce1718ac",
     "db6c30a06b0c23e01157fbda672fdaa15c1cb38d3c2b382cf3a607c1774038c3",
     "dba5361960135dd7bfc5170c9928ee2f95681ed28c23a102b9a04aecda51e378",
+    "dbb925c24b6b029b7fd4b7e8b5bb1e5e15e12084823aaa9d616ff6eac3e6ba3c",
     "dbcbf6f11e60572b182ae033b9b5ef16896afaec46114015205f54bd5fa62fc7",
     "dbde03fa96da3459d197c87345164bf3ddaf2ba4dbc2d006ee7566a048c50b3f",
     "dc4c2673fc7def6584b847562606772d01e4598edcba62ca5be3013072b10150",
@@ -2921,23 +2926,26 @@
   ],
   "extraction_options": null,
   "extractor_sources": {
-    "generator/generate.mjs": "00cce55f0d58204f2109bc71913b76f030f56cdc357f0d4963cd3f3917dc8633",
-    "generator/mappings.mjs": "95222bc90ce56638da5c4515fb3f2f145169c4132c1e61dc706d6b93451ad0ca",
-    "generator/mappings.test.mjs": "315962b6cfea80defa79580ca67f9650f66d7de807ea0b8da0bb475a65df5a73",
+    "generator/fixtures/lib-dynamodb-3.1170.0.json": "e3aca456a79561d9a4bf043ce2ef10c72751b5075a1758dcbda69a377ea5c892",
+    "generator/fixtures/lib-dynamodb-3.8.0.json": "7ffca8a784b5125c6b0548ade8610dba41031db8cbee8a0a9d7267d3ff3836c7",
+    "generator/generate.mjs": "0ca805a454db35d1e3ae7da91135dce932340460a13103314be111d36195d8dd",
+    "generator/mappings.mjs": "688cc67ea4fcc30904552a756d192745f8298a0361f1fdb3a0d09fbe49ad326b",
+    "generator/mappings.test.mjs": "f4c9043a28f26cc40fae2143d54d53f4c9730d3b59f4d32fef141b41a22d16d9",
     "generator/package-lock.json": "88aaae9a006fd7c0a342e3bd5b213905cf7dad52ce70fe0293d82ed3f6a5804f",
-    "generator/package.json": "a3b38f30d2690dc5639566fb16ee5076ae29ee775e0ad5290313a44441764ec7",
-    "generator/source-repository.mjs": "f41c4801904b245b0f31e2989a90f0f1d9432d9c15c0c36a66b765b362318d1b"
+    "generator/package.json": "43f3326c753375793bcb628b3028d1e1509c2d06ea99fed12ff055143b70430b",
+    "generator/source-repository.mjs": "57ccef5046524f2b7715470109cad651cefbde98308d1d577c46fa737f350180",
+    "generator/source-repository.test.mjs": "60e2aa8a3bd5ae1a2f265e1859b5b1d1f19bd1ddd88d61774a1be521e19516c2"
   },
   "known_no_call_memberships": 0,
-  "release_count": 259243,
-  "release_snapshot_index_sha256": "c661be6202d3bffc59358ed6b5fefa7a4b64631d2a3c271f92eaae6aff8aecce",
+  "release_count": 259961,
+  "release_snapshot_index_sha256": "c53f01a81dcedd7080c0718d448a4ffb982ad0abdea1b40ea16a66e5d7b98545",
   "schema_version": 1,
   "sdk_identity": "cloudcover-aws-sdk-js-v3",
   "source_content_digest": null,
   "source_identity": "legacy: exact upstream release names retained in histories",
   "sources": {
-    "data/mappings.json": "03ee9fc049ab9dcfe93880ab2a2d3b771b8c7794374b9de147a377fb2c208478"
+    "data/mappings.json": "d592427a662e50664fe10ef0ac38eabe94998d0fca7192ed693432d31fd2c210"
   },
   "unique_api_lists": 34425,
-  "unique_mapping_rows": 78100
+  "unique_mapping_rows": 78136
 }

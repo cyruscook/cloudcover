@@ -200,3 +200,65 @@ fn pooled_views_preserve_access_and_reject_unrecorded_spellings() -> Result<(), 
     }
     Ok(())
 }
+
+#[test]
+fn document_client_history_preserves_wrapper_names_and_helper_availability()
+-> Result<(), Box<dyn Error>> {
+    const DOCUMENT: &str = "@aws-sdk/lib-dynamodb";
+    let first = cloudcover_aws_sdk_js_v3::service_method_mappings(DOCUMENT, "3.8.0")
+        .ok_or("missing first document client release")?;
+    for (wrapper, operation) in [
+        ("GetCommand", "GetItem"),
+        ("PutCommand", "PutItem"),
+        ("BatchGetCommand", "BatchGetItem"),
+        ("BatchWriteCommand", "BatchWriteItem"),
+        ("TransactGetCommand", "TransactGetItems"),
+        ("TransactWriteCommand", "TransactWriteItems"),
+    ] {
+        let row = first
+            .iter()
+            .find(|row| row.receiver.is_none() && row.method == wrapper)
+            .ok_or("missing document command")?;
+        assert_eq!(
+            row.api_methods,
+            &[cloudcover_aws_sdk_js_v3::AwsSdkJsV3ApiMethod {
+                service: "dynamodb",
+                name: operation
+            }]
+        );
+    }
+    assert!(!first.iter().any(|row| row.method == "paginateQuery"));
+    let paginators = cloudcover_aws_sdk_js_v3::service_method_mappings(DOCUMENT, "3.43.0")
+        .ok_or("missing first document paginator release")?;
+    for (helper, operation) in [("paginateQuery", "Query"), ("paginateScan", "Scan")] {
+        let row = paginators
+            .iter()
+            .find(|row| row.method == helper)
+            .ok_or("missing paginator")?;
+        assert_eq!(row.api_methods[0].name, operation);
+    }
+    let recent = cloudcover_aws_sdk_js_v3::service_method_mappings(DOCUMENT, "3.1155.0")
+        .ok_or("missing batch paginator release")?;
+    for receiver in [None, Some("DynamoDBDocument")] {
+        let row = recent
+            .iter()
+            .find(|row| row.receiver == receiver && row.method == "paginatedBatchGet")
+            .ok_or("missing batch paginator")?;
+        assert_eq!(row.api_methods[0].name, "BatchGetItem");
+    }
+    assert!(
+        recent
+            .iter()
+            .any(|row| row.method == "batchWrite" && row.api_methods[0].name == "BatchWriteItem")
+    );
+    for version in [
+        "3.0.0",
+        "3.1137.0+local",
+        "3.1137.0-alpha",
+        "03.1137.0",
+        "999.0.0",
+    ] {
+        assert!(cloudcover_aws_sdk_js_v3::service_method_mappings(DOCUMENT, version).is_none());
+    }
+    Ok(())
+}
