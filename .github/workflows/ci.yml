@@ -227,6 +227,9 @@ jobs:
       - name: Test mapping relationships
         run: npm --prefix site test
 
+      - name: Test JavaScript/TypeScript analysis
+        run: node --test crates/langs/cloudcover-javascript/analyzer/analyzer.test.js
+
   tests:
     name: Tests
     runs-on: ubuntu-latest

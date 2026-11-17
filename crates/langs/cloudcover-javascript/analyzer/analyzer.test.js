@@ -31,7 +31,7 @@ function fixture(files, { sdk = true } = {}) {
       export declare class PutObjectCommand { constructor(input: unknown); }
       export declare class S3Client {
         constructor(config: unknown);
-        send(command: unknown): Promise<unknown>;
+        send(command: unknown): Promise<TestOutput>;
         destroy(): void;
       }
       export interface S3 {
@@ -42,6 +42,11 @@ function fixture(files, { sdk = true } = {}) {
       export declare const paginateListObjects: (config: unknown, input: unknown) => Promise<unknown>;
       export declare const waitForBucketExists: (config: unknown, input: unknown) => Promise<unknown>;
       export declare const waitUntilBucketExists: (config: unknown, input: unknown) => Promise<unknown>;
+      export interface TestOutput {
+        TableNames?: string[];
+        Item?: Record<string, any>;
+        RequiredNames: string[];
+      }
       export interface TypeOnly {}
     `);
   }
@@ -163,4 +168,70 @@ test('ignores unresolved type-only AWS imports', (t) => {
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
 
   assert.deepEqual(analyze(root), { methods: [], modules: [] });
+});
+
+
+test('SDK response properties are values, not module exports or SDK operations', (t) => {
+  const root = fixture({
+    'tsconfig.json': JSON.stringify({ compilerOptions: { strict: true, target: 'ES2022' } }),
+    'main.ts': `
+      import { S3Client, GetObjectCommand } from "@aws-sdk/client-test";
+      const client = new S3Client({});
+      export async function read() {
+        const response = await client.send(new GetObjectCommand({}));
+        const count = response.TableNames?.length;
+        const asserted = response.TableNames!.length;
+        const names = response.TableNames ?? [];
+        const direct = response.RequiredNames.map(name => name.toUpperCase());
+        const optional = response.TableNames?.map(name => name.toLowerCase());
+        const item = response.Item?.access_token;
+        if (!response.Item) return { count, asserted, names, direct, optional, item };
+        return response.Item.access_token;
+      }
+    `,
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+
+  const result = analyze(root);
+  assert.equal(result.error, undefined);
+  assert.deepEqual(methodNames(result), ['GetObjectCommand']);
+});
+
+test('missing namespace exports still fail closed for ESM and CommonJS', (t) => {
+  for (const statement of [
+    'import * as sdk from "@aws-sdk/client-test"; sdk.MissingCommand;',
+    'import * as sdk from "@aws-sdk/client-test"; sdk?.MissingCommand;',
+    'const sdk = require("@aws-sdk/client-test"); sdk.MissingCommand;',
+  ]) {
+    const root = fixture({ [statement.startsWith('const') ? 'main.cjs' : 'main.ts']: statement });
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    assert.match(analyze(root).error, /no runtime export MissingCommand/);
+  }
+});
+
+test('unresolved commands passed to SDK send still fail closed', (t) => {
+  const root = fixture({
+    'main.ts': `
+      import { S3Client } from "@aws-sdk/client-test";
+      const client = new S3Client({});
+      declare const command: unknown;
+      client.send(command);
+    `,
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  assert.match(analyze(root).error, /could not resolve the AWS SDK command passed to send/);
+});
+
+
+test('re-exported SDK namespaces retain their module identity', (t) => {
+  for (const use of ['new sdk.GetObjectCommand({});', 'sdk.MissingCommand;']) {
+    const root = fixture({
+      'bridge.ts': 'export * as sdk from "@aws-sdk/client-test";',
+      'main.ts': `import { sdk } from "./bridge"; ${use}`,
+    });
+    t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+    const result = analyze(root);
+    if (use.startsWith('new')) assert.deepEqual(methodNames(result), ['GetObjectCommand']);
+    else assert.match(result.error, /no runtime export MissingCommand/);
+  }
 });

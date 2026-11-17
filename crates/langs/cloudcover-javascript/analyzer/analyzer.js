@@ -208,24 +208,30 @@ function analyze(root) {
   }
 
   function resolvedSymbol(node) {
+    // Keep namespace identity explicit. Declaration provenance alone also matches
+    // SDK response properties, which are ordinary values rather than exports.
+    if (ts.isIdentifier(node)) {
+      const binding = bindingFor(node);
+      if (binding) return binding;
+    }
     const direct = symbolAt(node);
     const directPackage = sourcePackage(direct);
-    if (directPackage) return { symbol: direct, info: directPackage };
+    if (directPackage) {
+      return { symbol: direct, info: directPackage, namespace: (direct.flags & ts.SymbolFlags.Module) !== 0 };
+    }
 
     if (ts.isIdentifier(node)) return bindingFor(node);
     if (ts.isPropertyAccessExpression(node)) {
       const directProperty = symbolAt(node.name);
       const directInfo = sourcePackage(directProperty);
-      if (directInfo) return { symbol: directProperty, info: directInfo };
-      const base = resolvedSymbol(node.expression);
-      if (base && base.symbol) {
-        const type = checker.getTypeOfSymbolAtLocation(base.symbol, node.expression);
-        const member = checker.getPropertyOfType(type, node.name.text);
-        const unaliased = unalias(checker, member);
-        const info = sourcePackage(unaliased) || base.info;
-        if (unaliased && info) return { symbol: unaliased, info };
+      if (directInfo) {
+        return { symbol: directProperty, info: directInfo, namespace: (directProperty.flags & ts.SymbolFlags.Module) !== 0 };
       }
-      if (base && base.info) {
+      const base = resolvedSymbol(node.expression);
+      if (base && base.namespace) {
+        const member = checker.getExportsOfModule(base.symbol)
+          .find((candidate) => candidate.name === node.name.text);
+        if (member) return { symbol: unalias(checker, member), info: base.info };
         return { info: base.info, missingExport: node.name.text, specifier: base.specifier };
       }
     }
@@ -263,7 +269,7 @@ function analyze(root) {
           }
           if (clause.namedBindings) {
             if (ts.isNamespaceImport(clause.namedBindings)) {
-              addBinding(checker.getSymbolAtLocation(clause.namedBindings.name), module);
+              addBinding(checker.getSymbolAtLocation(clause.namedBindings.name), { ...module, namespace: true });
             } else {
               for (const item of clause.namedBindings.elements) {
                 if (item.isTypeOnly) continue;
@@ -284,7 +290,7 @@ function analyze(root) {
         const module = moduleSymbol(ts, checker, program, source, node.initializer.arguments[0].text, config.options);
         if (module) {
           if (ts.isIdentifier(node.name)) {
-            addBinding(checker.getSymbolAtLocation(node.name), module);
+            addBinding(checker.getSymbolAtLocation(node.name), { ...module, namespace: true });
           } else if (ts.isObjectBindingPattern(node.name)) {
             for (const element of node.name.elements) {
               if (!ts.isIdentifier(element.name)) continue;
