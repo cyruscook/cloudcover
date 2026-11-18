@@ -7414,6 +7414,23 @@
       "module_version": "1.216.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.217.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/connect",
+          "Client",
+          "DeleteAllEntitySessions",
+          [
+            [
+              "connect",
+              "DeleteAllEntitySessions"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

@@ -13639,6 +13639,78 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.348.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "AssociateKmsKeyId",
+          [
+            [
+              "ec2",
+              "AssociateKmsKeyId"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "CreateTransitGatewayNetworkFunctionAttachment",
+          [
+            [
+              "ec2",
+              "CreateTransitGatewayNetworkFunctionAttachment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DeleteTransitGatewayNetworkFunctionAttachment",
+          [
+            [
+              "ec2",
+              "DeleteTransitGatewayNetworkFunctionAttachment"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DescribeTransitGatewayNetworkFunctionAttachments",
+          [
+            [
+              "ec2",
+              "DescribeTransitGatewayNetworkFunctionAttachments"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "DisassociateKmsKeyId",
+          [
+            [
+              "ec2",
+              "DisassociateKmsKeyId"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/ec2",
+          "Client",
+          "ModifyTransitGatewayNetworkFunctionAttachment",
+          [
+            [
+              "ec2",
+              "ModifyTransitGatewayNetworkFunctionAttachment"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
