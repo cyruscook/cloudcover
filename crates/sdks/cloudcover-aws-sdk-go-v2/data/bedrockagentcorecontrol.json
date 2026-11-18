@@ -5267,6 +5267,56 @@
       "module_version": "1.80.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.81.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockagentcorecontrol",
+          "Client",
+          "GetAgentInsightStore",
+          [
+            [
+              "bedrock-agentcore",
+              "GetAgentInsightStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockagentcorecontrol",
+          "Client",
+          "ListAgentInsightStores",
+          [
+            [
+              "bedrock-agentcore",
+              "ListAgentInsightStores"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockagentcorecontrol",
+          "Client",
+          "UpdateAgentInsightStore",
+          [
+            [
+              "bedrock-agentcore",
+              "UpdateAgentInsightStore"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bedrockagentcorecontrol",
+          "ListAgentInsightStoresPaginator",
+          "NextPage",
+          [
+            [
+              "bedrock-agentcore",
+              "ListAgentInsightStores"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
