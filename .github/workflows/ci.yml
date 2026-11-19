@@ -249,6 +249,16 @@ jobs:
         with:
           node-version: "24.22.1"
 
+      - name: Install Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.26.x'
+          cache-dependency-path: crates/langs/cloudcover-go/analyzer/go.sum
+
+      - name: Test Go and Terraform analyzer
+        working-directory: crates/langs/cloudcover-go/analyzer
+        run: go test ./...
+
       - name: Install DynamoDB analysis fixture
         run: npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb
 

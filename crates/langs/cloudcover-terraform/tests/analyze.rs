@@ -46,3 +46,26 @@ fn analyzes_reachable_initialized_modules_and_ignores_stale_manifest_entries()
 
     Ok(())
 }
+
+#[test]
+fn analyzes_root_resources_without_module_manifest() -> Result<(), Box<dyn Error>> {
+    let fixture = fixture_dir().with_file_name("aws-terraform-root-only");
+    assert!(!fixture.join(".terraform/modules/modules.json").exists());
+    let analysis = analyze_dir(fixture)?;
+
+    assert_eq!(analysis.provider_version(), "6.64.0");
+    assert_eq!(analysis.methods().len(), 5);
+    for action in ["create", "read", "update", "delete"] {
+        assert!(analysis.methods().contains(&TerraformMethodReference::new(
+            "resource",
+            "aws_s3_bucket",
+            action,
+        )));
+    }
+    assert!(analysis.methods().contains(&TerraformMethodReference::new(
+        "data_source",
+        "aws_ecr_image",
+        "read",
+    )));
+    Ok(())
+}
