@@ -951,6 +951,34 @@
       "module_version": "1.23.6",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.24.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "SplitCredit",
+          [
+            [
+              "billing",
+              "SplitCredit"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/billing",
+          "Client",
+          "TransferCredit",
+          [
+            [
+              "billing",
+              "TransferCredit"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
