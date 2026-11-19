@@ -3095,6 +3095,34 @@
       "module_version": "1.54.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.55.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "Client",
+          "DescribeServerlessV2PlatformVersions",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/neptune",
+          "DescribeServerlessV2PlatformVersionsPaginator",
+          "NextPage",
+          [
+            [
+              "rds",
+              "DescribeServerlessV2PlatformVersions"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

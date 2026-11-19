@@ -1,0 +1,55 @@
+{
+  "module_path": "github.com/aws/aws-sdk-go-v2/service/abusesignal",
+  "releases": [
+    {
+      "module_version": "1.0.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/abusesignal",
+          "Client",
+          "CreateAbuseReport",
+          [
+            [
+              "abuse",
+              "CreateAbuseReport"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/abusesignal",
+          "Client",
+          "GetAbuseReportStatus",
+          [
+            [
+              "abuse",
+              "GetAbuseReportStatus"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/abusesignal",
+          "Client",
+          "ListAbuseReportStatuses",
+          [
+            [
+              "abuse",
+              "ListAbuseReportStatuses"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/abusesignal",
+          "ListAbuseReportStatusesPaginator",
+          "NextPage",
+          [
+            [
+              "abuse",
+              "ListAbuseReportStatuses"
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

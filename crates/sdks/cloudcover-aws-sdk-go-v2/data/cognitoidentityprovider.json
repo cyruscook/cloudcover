@@ -4548,6 +4548,67 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.79.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "CancelPointInTimeRecovery",
+          [
+            [
+              "cognito-idp",
+              "CancelPointInTimeRecovery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "DescribePointInTimeRecovery",
+          [
+            [
+              "cognito-idp",
+              "DescribePointInTimeRecovery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "InitiatePointInTimeRecovery",
+          [
+            [
+              "cognito-idp",
+              "InitiatePointInTimeRecovery"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "ListPointInTimeRecoveries",
+          [
+            [
+              "cognito-idp",
+              "ListPointInTimeRecoveries"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider",
+          "Client",
+          "StartPointInTimeRecovery",
+          [
+            [
+              "cognito-idp",
+              "StartPointInTimeRecovery"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
