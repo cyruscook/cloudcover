@@ -122,6 +122,27 @@ class PublicationTests(unittest.TestCase):
         self.assertFalse(allowed('automation/aws-sar-catalog', 'crates/clouds/cloudcover-aws/src/lib.rs'))
 
 class WorkflowContractTests(unittest.TestCase):
+    def test_sar_validation_installs_fixture_before_workspace_tests(self):
+        root = Path(__file__).resolve().parent.parent
+        text = (root / '.github/workflows/update-aws-sar-catalog.yml').read_text()
+        steps = text.split('      - name: ')
+
+        def step_containing(command):
+            matches = [step for step in steps if command in step]
+            self.assertEqual(len(matches), 1, command)
+            return matches[0]
+
+        site = step_containing('npm --prefix site ci')
+        fixture = step_containing(
+            'npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb')
+        validation = step_containing('cargo test --locked --workspace --all-features')
+        for step in (site, fixture, validation):
+            self.assertIn("if: steps.changes.outputs.changed == 'true'", step)
+        self.assertLess(steps.index(site), steps.index(fixture))
+        self.assertLess(steps.index(fixture), steps.index(validation))
+        self.assertIn('make check', validation)
+        self.assertLess(text.index(validation), text.index('id: updater-token'))
+
     def test_credentials_and_publication_guards(self):
         root = Path(__file__).resolve().parent.parent
         files = sorted((root / '.github/workflows').glob('update-*.yml'))

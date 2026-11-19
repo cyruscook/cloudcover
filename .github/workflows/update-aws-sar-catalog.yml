@@ -97,6 +97,10 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: npm --prefix site ci
 
+      - name: Install DynamoDB analysis fixture
+        if: steps.changes.outputs.changed == 'true'
+        run: npm ci --ignore-scripts --prefix crates/langs/cloudcover-javascript/analyzer/fixtures/dynamodb
+
       - name: Validate catalog, deterministic compilation and policy integration
         if: steps.changes.outputs.changed == 'true'
         run: |
