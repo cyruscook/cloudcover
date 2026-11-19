@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.6](https://github.com/cyruscook/cloudcover/compare/cloudcover-go-v0.3.5...cloudcover-go-v0.3.6) - 2026-11-19
+
+### Other
+
+- Fix Terraform root analysis when no module manifest is generated ([#85](https://github.com/cyruscook/cloudcover/pull/85))
+
 ## [0.3.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-go-v0.2.3...cloudcover-go-v0.3.0) - 2026-11-05
 
 ### Other
