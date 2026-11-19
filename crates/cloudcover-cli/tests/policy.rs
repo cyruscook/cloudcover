@@ -273,3 +273,24 @@ fn document_client_response_properties_preserve_existing_dynamodb_policy()
     }
     Ok(())
 }
+
+#[test]
+fn emits_terraform_policy_without_module_manifest() -> Result<(), Box<dyn Error>> {
+    let fixture = terraform_fixture_dir().with_file_name("aws-terraform-root-only");
+    let output = run_policy(&[
+        "policy",
+        "--language",
+        "terraform",
+        &fixture.to_string_lossy(),
+    ])?;
+    assert!(
+        output.status.success(),
+        "stderr: {}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let actions = collect_actions(&parse_stdout_json(&output)?)?;
+    for action in ["s3:CreateBucket", "s3:DeleteBucket", "ecr:DescribeImages"] {
+        assert!(actions.contains(&action.to_owned()), "missing {action}");
+    }
+    Ok(())
+}

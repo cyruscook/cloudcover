@@ -345,9 +345,6 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		return nil, "", fmt.Errorf("Terraform provider lock file is required at %s", lockPath)
 	}
 	manifestPath := filepath.Join(root, ".terraform", "modules", "modules.json")
-	if _, err := os.Stat(manifestPath); err != nil {
-		return nil, "", fmt.Errorf("Terraform module manifest is required at %s", manifestPath)
-	}
 
 	configuration := tfconfig.LoadPostInit(root, filepath.Join(root, ".terraform"))
 	for _, diagnostic := range configuration.Diagnostics {
@@ -360,12 +357,21 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		return nil, "", fmt.Errorf("Terraform AWS provider version is missing from .terraform.lock.hcl")
 	}
 
-	content, err := os.ReadFile(manifestPath)
-	if err != nil {
-		return nil, "", err
+	rootModule, diagnostics := tfconfig.LoadModule(root)
+	if diagnostics.HasErrors() {
+		return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", root, diagnostics.Error())
 	}
+
+	content, err := os.ReadFile(manifestPath)
 	var manifest terraformModuleManifest
-	if err := json.Unmarshal(content, &manifest); err != nil {
+	if os.IsNotExist(err) {
+		// Terraform does not write a module manifest for roots without module calls.
+		if len(rootModule.ModuleCalls) > 0 {
+			return nil, "", fmt.Errorf("Terraform module manifest is required at %s", manifestPath)
+		}
+	} else if err != nil {
+		return nil, "", err
+	} else if err := json.Unmarshal(content, &manifest); err != nil {
 		return nil, "", fmt.Errorf("failed to parse Terraform module manifest: %w", err)
 	}
 	moduleDirs := make(map[string]string, len(manifest.Modules)+1)
@@ -384,10 +390,6 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		moduleDirs[module.Key] = filepath.Clean(dir)
 	}
 
-	rootModule, diagnostics := tfconfig.LoadModule(root)
-	if diagnostics.HasErrors() {
-		return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", root, diagnostics.Error())
-	}
 	modules := map[string]*tfconfig.Module{"": rootModule}
 	moduleKeys := []string{""}
 	for len(moduleKeys) > 0 {
