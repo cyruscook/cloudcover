@@ -79,7 +79,7 @@ impl AwsProvider {
     /// Generate JSON with request-dependent direct authorization diagnostics.
     ///
     /// `false` omits only reviewed conditional links; `true` explicitly includes
-    /// eligible grants; manual-only AppStream PassRole remains a diagnostic. Neither
+    /// eligible grants; manual-only `appstream` role passing remains a diagnostic. Neither
     /// mode infers request applicability. Present all diagnostics
     /// and review resource placeholders and any required resource policies.
     /// FAS behavior is unchanged. Raw evidence remains in `iam_permissions`.
