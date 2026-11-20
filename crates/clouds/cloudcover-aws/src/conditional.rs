@@ -14,6 +14,8 @@ pub struct ConditionalPermission {
     pub source: &'static str,
     pub reviewed: &'static str,
     pub passed_to_service: Option<&'static str>,
+    /// A required manual policy step; this link is never rendered automatically.
+    pub manual_step: Option<&'static str>,
 }
 
 /// Policy output together with direct links excluded or explicitly opted into.
@@ -84,5 +86,6 @@ pub(crate) fn classify(method: &ApiMethod, action: &AwsAction) -> Option<Conditi
         source,
         reviewed: "2026-11-20",
         passed_to_service,
+        manual_step: passed_to_service.map(|_| "Add iam:PassRole manually only for the concrete, validated requested role ARN, with StringEquals iam:PassedToService = appstream.amazonaws.com. CloudCover does not infer the role ARN and never renders this grant."),
     })
 }

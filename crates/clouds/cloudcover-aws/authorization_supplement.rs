@@ -26,6 +26,8 @@ struct Mapping {
 struct Action {
     service: String,
     name: String,
+    #[serde(default)]
+    context: Option<serde_json::Value>,
 }
 
 #[derive(serde::Deserialize)]
@@ -40,6 +42,51 @@ pub(super) fn apply(
     actions: &BTreeSet<(String, String)>,
 ) -> BuildResult<()> {
     apply_document(operations, actions, include_str!("data/authorization.json"))
+}
+
+pub(super) fn validate_upstream_contexts(
+    service: &str,
+    operations: &[super::ServiceOperation],
+) -> BuildResult<()> {
+    let supplement: Supplement = serde_json::from_str(include_str!("data/authorization.json"))?;
+    for operation in operations {
+        let Some(expected) = supplement
+            .mappings
+            .iter()
+            .find(|mapping| mapping.service == service && mapping.operation == operation.name)
+        else {
+            continue;
+        };
+        if operation.authorized_actions.is_empty() {
+            continue;
+        }
+        let mut seen = BTreeSet::new();
+        if operation.authorized_actions.len() != expected.authorized_actions.len()
+            || operation.authorized_actions.iter().any(|action| {
+                !seen.insert((&action.service, &action.name))
+                    || !expected.authorized_actions.iter().any(|reviewed| {
+                        reviewed.service == action.service
+                            && reviewed.name == action.name
+                            && reviewed.context == action.context
+                    })
+            })
+        {
+            return Err(format!(
+                "authorization supplement action/context conflicts with SAR for {service}:{}",
+                operation.name
+            )
+            .into());
+        }
+    }
+    Ok(())
+}
+
+#[cfg(test)]
+fn validate_upstream_context(
+    service: &str,
+    operation: &super::ServiceOperation,
+) -> BuildResult<()> {
+    validate_upstream_contexts(service, std::slice::from_ref(operation))
 }
 
 fn apply_document(
@@ -95,6 +142,88 @@ fn apply_document(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn reviewed_context_shapes_accept_published_rows_and_reject_stricter_changes() -> BuildResult<()>
+    {
+        let supplement: Supplement = serde_json::from_str(include_str!("data/authorization.json"))?;
+        for mapping in supplement.mappings {
+            let actions: Vec<_> = mapping
+                .authorized_actions
+                .iter()
+                .map(|a| {
+                    let mut row = serde_json::json!({"Service": a.service, "Name": a.name});
+                    if let Some(context) = &a.context {
+                        row["Context"] = context.clone();
+                    }
+                    row
+                })
+                .collect();
+            let row = serde_json::json!({"Name": mapping.operation, "AuthorizedActions": actions});
+            validate_upstream_context(&mapping.service, &serde_json::from_value(row.clone())?)?;
+            validate_upstream_context(
+                &mapping.service,
+                &serde_json::from_value(serde_json::json!({"Name": mapping.operation}))?,
+            )?;
+            for (index, action) in actions.iter().enumerate() {
+                let mut changed = row.clone();
+                changed["AuthorizedActions"][index]["Context"] =
+                    serde_json::json!({"unreviewed:StricterCondition": ["required"]});
+                assert!(
+                    validate_upstream_context(&mapping.service, &serde_json::from_value(changed)?)
+                        .is_err()
+                );
+                let mut explicit_null = row.clone();
+                explicit_null["AuthorizedActions"][index]["Context"] = serde_json::Value::Null;
+                assert!(
+                    validate_upstream_context(
+                        &mapping.service,
+                        &serde_json::from_value(explicit_null)?
+                    )
+                    .is_err()
+                );
+                if action.get("Context").is_some() {
+                    for context in [
+                        serde_json::json!({}),
+                        serde_json::json!({"iam:PassedToService": ["other.amazonaws.com"]}),
+                        serde_json::Value::Null,
+                    ] {
+                        let mut changed = row.clone();
+                        changed["AuthorizedActions"][index]["Context"] = context;
+                        assert!(
+                            validate_upstream_context(
+                                &mapping.service,
+                                &serde_json::from_value(changed)?
+                            )
+                            .is_err()
+                        );
+                    }
+                    let mut changed = row.clone();
+                    changed["AuthorizedActions"][index]
+                        .as_object_mut()
+                        .ok_or("action object missing")?
+                        .remove("Context");
+                    assert!(
+                        validate_upstream_context(
+                            &mapping.service,
+                            &serde_json::from_value(changed)?
+                        )
+                        .is_err()
+                    );
+                }
+            }
+            let mut duplicate = row;
+            duplicate["AuthorizedActions"]
+                .as_array_mut()
+                .ok_or("missing actions")?
+                .push(actions[0].clone());
+            assert!(
+                validate_upstream_context(&mapping.service, &serde_json::from_value(duplicate)?)
+                    .is_err()
+            );
+        }
+        Ok(())
+    }
 
     fn rows() -> Vec<OperationRow> {
         [

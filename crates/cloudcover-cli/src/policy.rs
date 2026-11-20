@@ -41,13 +41,18 @@ pub(crate) fn build_terraform_policy(
 
 fn report_conditional(diagnostics: &[cloudcover_aws::ConditionalPermission], included: bool) {
     for diagnostic in diagnostics {
-        let disposition = if included {
+        let disposition = if diagnostic.manual_step.is_some() {
+            "manual grant required; not rendered"
+        } else if included {
             "included by explicit opt-in"
         } else {
             "excluded from ordinary grants"
         };
+        if let Some(step) = diagnostic.manual_step {
+            eprintln!("Manual authorization: {step}");
+        }
         eprintln!(
-            "Conditional authorization: {}:{} -> {} {disposition}. {} Review request applicability and resource scopes; --include-conditional explicitly includes these links. Source: {} (reviewed {}).",
+            "Conditional authorization: {}:{} -> {} {disposition}. {} Review request applicability and resource scopes; --include-conditional includes eligible links; manual-only grants remain diagnostics. Source: {} (reviewed {}).",
             diagnostic.service,
             diagnostic.operation,
             diagnostic.permission,

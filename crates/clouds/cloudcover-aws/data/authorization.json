@@ -36,14 +36,19 @@
         },
         {
           "service": "iam",
-          "name": "PassRole"
+          "name": "PassRole",
+          "context": {
+            "iam:PassedToService": [
+              "appstream.amazonaws.com"
+            ]
+          }
         }
       ],
       "reviewed": "2026-11-20",
       "sources": [
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
-          "evidence": "The API operation table lists appstream:CreateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+          "evidence": "The API operation table lists appstream:CreateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and keeps PassRole diagnostic-only with a manual concrete-role and iam:PassedToService requirement."
         },
         {
           "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html",
@@ -61,14 +66,19 @@
         },
         {
           "service": "iam",
-          "name": "PassRole"
+          "name": "PassRole",
+          "context": {
+            "iam:PassedToService": [
+              "appstream.amazonaws.com"
+            ]
+          }
         }
       ],
       "reviewed": "2026-11-20",
       "sources": [
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
-          "evidence": "The API operation table lists appstream:UpdateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+          "evidence": "The API operation table lists appstream:UpdateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and keeps PassRole diagnostic-only with a manual concrete-role and iam:PassedToService requirement."
         },
         {
           "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html",
@@ -90,14 +100,19 @@
         },
         {
           "service": "iam",
-          "name": "PassRole"
+          "name": "PassRole",
+          "context": {
+            "iam:PassedToService": [
+              "appstream.amazonaws.com"
+            ]
+          }
         }
       ],
       "reviewed": "2026-11-20",
       "sources": [
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
-          "evidence": "The API operation table lists appstream:CreateImageBuilder and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+          "evidence": "The API operation table lists appstream:CreateImageBuilder and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and keeps PassRole diagnostic-only with a manual concrete-role and iam:PassedToService requirement."
         },
         {
           "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html",
@@ -122,7 +137,7 @@
       "sources": [
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
-          "evidence": "The API operation table lists appstream:CreateStack and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+          "evidence": "The API operation table lists appstream:CreateStack and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and keeps PassRole diagnostic-only with a manual concrete-role and iam:PassedToService requirement."
         },
         {
           "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html",
@@ -147,7 +162,7 @@
       "sources": [
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
-          "evidence": "The API operation table lists appstream:CreateUpdatedImage and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+          "evidence": "The API operation table lists appstream:CreateUpdatedImage and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and keeps PassRole diagnostic-only with a manual concrete-role and iam:PassedToService requirement."
         },
         {
           "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUpdatedImage.html",

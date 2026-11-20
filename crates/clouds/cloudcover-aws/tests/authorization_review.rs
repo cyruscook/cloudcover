@@ -13,8 +13,7 @@ fn actions(policy: &serde_json::Value) -> Result<BTreeSet<String>, Box<dyn Error
 }
 
 #[test]
-fn appstream_defaults_keep_only_reviewed_base_and_opt_in_scopes_role() -> Result<(), Box<dyn Error>>
-{
+fn appstream_defaults_keep_base_and_role_grants_remain_manual() -> Result<(), Box<dyn Error>> {
     let provider = AwsProvider::new();
     for name in [
         "CreateFleet",
@@ -55,6 +54,7 @@ fn appstream_defaults_keep_only_reviewed_base_and_opt_in_scopes_role() -> Result
             provider
                 .iam_permissions(&method)?
                 .into_iter()
+                .filter(|permission| *permission != "iam:PassRole")
                 .map(str::to_owned)
                 .collect()
         );
@@ -63,22 +63,17 @@ fn appstream_defaults_keep_only_reviewed_base_and_opt_in_scopes_role() -> Result
             hcl.conditional_permissions,
             advanced.conditional_permissions
         );
-        for statement in advanced.policy["Statement"]
-            .as_array()
-            .ok_or("missing statements")?
-        {
-            if statement["Action"]
-                .as_array()
-                .ok_or("missing actions")?
-                .iter()
-                .any(|a| a == "iam:PassRole")
-            {
+        assert!(!actions(&advanced.policy)?.contains("iam:PassRole"));
+        assert!(!hcl.policy.contains("iam:PassRole"));
+        for diagnostic in &advanced.conditional_permissions {
+            if diagnostic.permission == "iam:PassRole" {
                 assert_eq!(
-                    statement["Condition"]["StringEquals"]["iam:PassedToService"],
-                    "appstream.amazonaws.com"
+                    diagnostic.passed_to_service,
+                    Some("appstream.amazonaws.com")
                 );
-                assert!(hcl.policy.contains("iam:PassedToService"));
-                assert!(hcl.policy.contains("appstream.amazonaws.com"));
+                let step = diagnostic.manual_step.ok_or("missing manual role step")?;
+                assert!(step.contains("concrete, validated requested role ARN"));
+                assert!(step.contains("iam:PassedToService = appstream.amazonaws.com"));
             }
         }
         let ordinary_hcl = provider.review_permissions_policy_hcl(&[method], false)?;

@@ -29,7 +29,15 @@ pub(crate) fn review_permissions_policy(
 ) -> Result<ReviewedPolicy<serde_json::Value>, AwsError> {
     let (statements, conditional_permissions) =
         build_policy_statements(methods, include_conditional)?;
-    let policy = json!({
+    let policy = render_json(statements);
+    Ok(ReviewedPolicy {
+        policy,
+        conditional_permissions,
+    })
+}
+
+fn render_json(statements: Vec<PolicyStatement>) -> serde_json::Value {
+    json!({
         "Version": "2012-10-17",
         "Statement": statements.into_iter().map(|statement| {
             let resource = match statement.scope.resources.as_slice() {
@@ -40,15 +48,8 @@ pub(crate) fn review_permissions_policy(
             if let Some(via_service) = statement.scope.via_service {
                 value["Condition"] = json!({condition_test(&via_service): {"kms:ViaService": via_service}});
             }
-            if let Some(service) = statement.scope.passed_to_service {
-                value["Condition"] = json!({"StringEquals": {"iam:PassedToService": service}});
-            }
             value
         }).collect::<Vec<_>>(),
-    });
-    Ok(ReviewedPolicy {
-        policy,
-        conditional_permissions,
     })
 }
 
@@ -62,6 +63,14 @@ pub(crate) fn review_permissions_policy_hcl(
 ) -> Result<ReviewedPolicy<String>, AwsError> {
     let (statements, conditional_permissions) =
         build_policy_statements(methods, include_conditional)?;
+    let policy = render_hcl(statements)?;
+    Ok(ReviewedPolicy {
+        policy,
+        conditional_permissions,
+    })
+}
+
+fn render_hcl(statements: Vec<PolicyStatement>) -> Result<String, AwsError> {
     let statement_blocks = statements.into_iter().map(|statement| {
         let mut builder = hcl::Block::builder("statement")
             .add_attribute(("effect", "Allow"))
@@ -76,15 +85,6 @@ pub(crate) fn review_permissions_policy_hcl(
                     .build(),
             );
         }
-        if let Some(service) = statement.scope.passed_to_service {
-            builder = builder.add_block(
-                hcl::Block::builder("condition")
-                    .add_attribute(("test", "StringEquals"))
-                    .add_attribute(("variable", "iam:PassedToService"))
-                    .add_attribute(("values", vec![service]))
-                    .build(),
-            );
-        }
         builder.build()
     });
     let body = hcl::Body::builder()
@@ -96,12 +96,7 @@ pub(crate) fn review_permissions_policy_hcl(
                 .build(),
         )
         .build();
-    let policy =
-        hcl::format::to_string(&body).map_err(|source| AwsError::HclSerialization { source })?;
-    Ok(ReviewedPolicy {
-        policy,
-        conditional_permissions,
-    })
+    hcl::format::to_string(&body).map_err(|source| AwsError::HclSerialization { source })
 }
 
 fn condition_test(via_service: &str) -> &'static str {
@@ -117,7 +112,6 @@ struct PolicyScope {
     service: &'static str,
     resources: Vec<String>,
     via_service: Option<String>,
-    passed_to_service: Option<&'static str>,
     // Keep independently replaceable source/destination/replica keys separate.
     resource_role: String,
 }
@@ -155,10 +149,18 @@ fn build_policy_statements(
     methods: &[ApiMethod],
     include_conditional: bool,
 ) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
+    build_policy_statements_with(methods, include_conditional, resolve_direct_actions)
+}
+
+fn build_policy_statements_with(
+    methods: &[ApiMethod],
+    include_conditional: bool,
+    mut resolve: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
     let mut statements = BTreeMap::<PolicyScope, BTreeSet<&'static str>>::new();
     let mut diagnostics = Vec::new();
     for method in methods {
-        let direct = resolve_direct_actions(method)?;
+        let direct = resolve(method)?;
         ensure_ordinary_authorization(method, &direct)?;
         let (ordinary, optional): (Vec<&AwsAction>, Vec<&AwsAction>) = direct
             .into_iter()
@@ -169,7 +171,6 @@ fn build_policy_statements(
                     service: action.service,
                     resources: resources(action),
                     via_service: None,
-                    passed_to_service: None,
                     resource_role: String::new(),
                 })
                 .or_default()
@@ -177,13 +178,12 @@ fn build_policy_statements(
         }
         for action in optional {
             if let Some(diagnostic) = conditional::classify(method, action) {
-                if include_conditional {
+                if include_conditional && diagnostic.manual_step.is_none() {
                     statements
                         .entry(PolicyScope {
                             service: action.service,
                             resources: resources(action),
                             via_service: None,
-                            passed_to_service: diagnostic.passed_to_service,
                             resource_role: String::new(),
                         })
                         .or_default()
@@ -211,7 +211,6 @@ fn build_policy_statements(
                             service: action.service,
                             resources,
                             via_service: rule.via_service.clone(),
-                            passed_to_service: None,
                             resource_role: rule.resource_role.clone(),
                         })
                         .or_default()
@@ -330,6 +329,50 @@ fn find_action(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn incomplete_passrole_metadata_is_diagnostic_only_in_both_renderers() -> Result<(), AwsError> {
+        static BASE: AwsAction = AwsAction {
+            service: "appstream",
+            name: "CreateFleet",
+            permission: "appstream:CreateFleet",
+            resource_types: &[],
+            resource_templates: &[],
+            has_complete_resource_templates: false,
+        };
+        static ROLE: AwsAction = AwsAction {
+            service: "iam",
+            name: "PassRole",
+            permission: "iam:PassRole",
+            resource_types: &["role"],
+            resource_templates: &[],
+            has_complete_resource_templates: false,
+        };
+        assert_eq!(resources(&ROLE), ["*"]);
+        for include in [false, true] {
+            for hcl in [false, true] {
+                let (statements, diagnostics) = build_policy_statements_with(
+                    &[ApiMethod::new("appstream", "CreateFleet")],
+                    include,
+                    |_| Ok(vec![&BASE, &ROLE]),
+                )?;
+                assert_eq!(diagnostics.len(), 1);
+                assert!(diagnostics[0].manual_step.is_some());
+                assert_eq!(
+                    diagnostics[0].passed_to_service,
+                    Some("appstream.amazonaws.com")
+                );
+                let rendered = if hcl {
+                    render_hcl(statements)?
+                } else {
+                    render_json(statements).to_string()
+                };
+                assert!(rendered.contains("appstream:CreateFleet"));
+                assert!(!rendered.contains("iam:PassRole"));
+            }
+        }
+        Ok(())
+    }
 
     #[test]
     fn classification_is_tuple_specific_and_cannot_remove_all_direct_authorization()

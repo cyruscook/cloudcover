@@ -64,6 +64,8 @@ Review stderr diagnostics before using a generated policy. For the reviewed
 request-dependent direct links, ordinary output omits optional grants and
 explains their applicability. `--include-conditional` explicitly includes them
 in either output format; review request parameters and resource scopes first.
+AppStream PassRole remains diagnostic-only and requires a separate manual grant
+for a concrete validated role ARN and the documented service condition.
 See [direct authorization review](docs/sar-authorization-review.md) for the exact
 tuples, advanced-use limitations, and the library review API.
 

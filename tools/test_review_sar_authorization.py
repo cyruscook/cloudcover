@@ -11,6 +11,17 @@ def catalog(links, present=True, action_present=True):
 
 
 class AuthorizationDriftTests(unittest.TestCase):
+    def test_bridge_requires_the_reviewed_context_shape(self):
+        before = catalog([('test', 'Run')])
+        before['services'][0]['document']['Operations'][0]['AuthorizedActions'][0]['Context'] = {'test:Scope': ['narrow']}
+        action = {'service': 'test', 'name': 'Run'}
+        supplement = {'mappings': [{'service': 'test', 'operation': 'Run', 'authorized_actions': [action]}]}
+        self.assertEqual(review(before, catalog([]), supplement)[0]['status'], 'unresolved')
+        action['context'] = {'test:Scope': ['narrow']}
+        self.assertEqual(review(before, catalog([]), supplement)[0]['status'], 'reviewed_compiler_bridge')
+        action['context'] = {'test:Scope': ['other']}
+        self.assertEqual(review(before, catalog([]), supplement)[0]['status'], 'unresolved')
+
     def test_malformed_and_duplicate_rows_fail_instead_of_hiding_drift(self):
         for links in [None, [{'Service': 'test', 'Name': ''}]]:
             invalid = catalog([])

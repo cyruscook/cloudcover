@@ -34,15 +34,27 @@ def operations(catalog):
     return result
 
 
+def context_shape(links, service_field, name_field, context_field):
+    return sorted((action[service_field], action[name_field],
+                   json.dumps(action[context_field], sort_keys=True, separators=(',', ':'))
+                   if context_field in action else '<absent>') for action in links)
+
+
 def review(baseline, candidate, supplement):
     before, after = operations(baseline), operations(candidate)
+    baseline_rows = definitions(baseline, 'Operations')
     bridges = {(row['service'], row['operation']):
                {(action['service'], action['name']) for action in row['authorized_actions']}
                for row in supplement['mappings']}
+    bridge_shapes = {(row['service'], row['operation']):
+                     context_shape(row['authorized_actions'], 'service', 'name', 'context')
+                     for row in supplement['mappings']}
     actions = set(definitions(candidate, 'Actions'))
     return [{'service': key[0], 'operation': key[1],
              'previous_actions': [f'{s}:{n}' for s, n in sorted(old)],
              'status': 'reviewed_compiler_bridge' if old == bridges.get(key) and old <= actions
+                       and context_shape(baseline_rows[key]['AuthorizedActions'],
+                                         'Service', 'Name', 'Context') == bridge_shapes.get(key)
                        and key in after else 'unresolved',
              'candidate_operation_present': key in after}
             for key, old in sorted(before.items()) if old and not after.get(key)]

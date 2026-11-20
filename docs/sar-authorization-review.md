@@ -7,7 +7,7 @@ remain errors, even if they have FAS metadata or a same-name IAM action.
 The reviewed `data/authorization.json` bridges cover S3 CreateSession and five
 AppStream operations: CreateFleet, UpdateFleet, CreateImageBuilder, CreateStack,
 and CreateUpdatedImage. AppStream mappings are accepted only when omitted or
-identical to the reviewed operation-table mapping. Missing actions, missing
+identical to the reviewed operation-table action and Context shape. A changed, stricter, missing or unexpected context is rejected. Missing actions, missing
 operations, and conflicting nonempty mappings fail compilation. They are not
 unioned with the bridge or replaced with a generic same-name fallback.
 
@@ -16,10 +16,13 @@ unioned with the bridge or replaced with a generic same-name fallback.
 The CLI defaults to ordinary grants and writes each excluded conditional direct
 link, its applicability and AWS source to stderr for both JSON and Terraform HCL.
 `--include-conditional` explicitly opts into those grants and still emits the
-review diagnostics. AppStream PassRole statements use
-`StringEquals: iam:PassedToService = appstream.amazonaws.com`; the role ARN still
-needs review. The opt-in does not infer request parameters or produce any
-additional cross-account resource policies.
+review diagnostics. AppStream PassRole is always diagnostic-only, even with the
+opt-in: source analysis does not establish a concrete requested role ARN. The
+diagnostic requires a separate manual grant scoped to that validated ARN with
+`StringEquals: iam:PassedToService = appstream.amazonaws.com`. Incomplete or
+missing role resource metadata cannot cause a wildcard or unconditioned grant.
+The opt-in does not infer request parameters or produce additional cross-account
+resource policies.
 
 Only these exact operation/action pairs are classified:
 
@@ -37,13 +40,14 @@ traversal, conditions and resource scopes are unchanged. Classification cannot
 turn an operation with no ordinary direct authorization into a successful policy.
 
 Library callers use `review_permissions_policy` or `review_permissions_policy_hcl`
-with an explicit inclusion boolean. Both return `ReviewedPolicy<T>`, containing
+with an explicit inclusion boolean for eligible conditional grants; manual-only
+PassRole links are never rendered. Both return `ReviewedPolicy<T>`, containing
 the policy and conditional permission diagnostics that the caller must present.
 The older bare JSON/HCL methods cannot return those diagnostics and therefore
 return `ConditionalAuthorization` when a reviewed conditional link is present,
 rather than silently issuing an incomplete policy. `iam_permissions` and
 `iam_permission_catalog` continue to expose all raw/reviewed evidence; they are
-not default-grant APIs. This is a deliberate behavior change for the exact tuples
+not default-grant APIs. The new error variant also affects exhaustive error matches. This is a deliberate behavior change for the exact tuples
 above. Advanced callers must review request applicability and resource policies,
 not merely enable every optional permission.
 
@@ -60,7 +64,7 @@ Run `python3 -B tools/review_sar_authorization.py BASELINE_DIR CANDIDATE_DIR`, w
 each directory contains the unchanged `catalog.json` and `manifest.json` pair.
 It verifies both checksums, reports every previously mapped operation that lost
 its links or disappeared, and exits 1 for any transition without an exact reviewed
-compiler bridge and retained action references. It reports bridged raw losses
+compiler bridge, matching reviewed baseline context shape, and retained action references. It reports bridged raw losses
 too. It does not modify either snapshot or publish anything. This standalone gate
 can be used before updater publication; this change does not alter the updater.
 

@@ -336,9 +336,12 @@ fn conditional_grants_have_diagnostics_and_explicit_opt_in_in_both_formats()
                 }));
                 let stdout = String::from_utf8(output.stdout)?;
                 assert!(stdout.contains("appstream:CreateFleet"));
-                assert_eq!(stdout.contains("iam:PassRole"), include);
+                assert!(!stdout.contains("iam:PassRole"));
                 assert_eq!(stdout.contains("appstream:TagResource"), include);
-                assert_eq!(stdout.contains("iam:PassedToService"), include);
+                assert!(!stdout.contains("iam:PassedToService"));
+                assert!(stderr.contains("manual grant required; not rendered"));
+                assert!(stderr.contains("concrete, validated requested role ARN"));
+                assert!(stderr.contains("iam:PassedToService = appstream.amazonaws.com"));
             }
         }
         Ok(())

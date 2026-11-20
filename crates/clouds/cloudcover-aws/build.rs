@@ -88,6 +88,16 @@ struct AuthorizedAction {
     name: String,
     #[serde(rename = "Service")]
     service: String,
+    #[serde(rename = "Context", default, deserialize_with = "deserialize_context")]
+    context: Option<serde_json::Value>,
+}
+
+fn deserialize_context<'de, D: serde::Deserializer<'de>>(
+    deserializer: D,
+) -> Result<Option<serde_json::Value>, D::Error> {
+    // Preserve an explicit null as a changed shape instead of treating it as
+    // an omitted Context field in a reviewed operation.
+    <serde_json::Value as serde::Deserialize>::deserialize(deserializer).map(Some)
 }
 
 #[derive(serde::Deserialize)]
@@ -241,6 +251,7 @@ fn collect_rows() -> BuildResult<GeneratedRows> {
         validate_service_name(&entry, &document)?;
 
         let service = entry.service;
+        authorization_supplement::validate_upstream_contexts(&service, &document.operations)?;
         let ServiceDocument {
             name: _,
             actions: document_actions,
