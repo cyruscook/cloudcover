@@ -47,6 +47,7 @@ impl std::fmt::Display for OperationDisposition {
 pub(crate) fn lookup(method: &ApiMethod) -> Option<&'static OperationDisposition> {
     generated::AUTHORIZATION_DISPOSITIONS
         .iter()
+        .chain(generated::PRIVILEGED_AUTHORIZATION_DISPOSITIONS)
         .find(|d| d.service == method.service() && d.operation == method.name())
 }
 

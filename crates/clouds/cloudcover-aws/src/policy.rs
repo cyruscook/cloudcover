@@ -199,13 +199,29 @@ fn build_policy_statements_with(
 fn build_policy_statements_with_resolvers(
     methods: &[ApiMethod],
     include_conditional: bool,
+    resolve: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+    resolve_downstream: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
+    build_policy_statements_with_guard(
+        methods,
+        include_conditional,
+        resolve,
+        resolve_downstream,
+        crate::disposition::ensure_policy_supported,
+    )
+}
+
+fn build_policy_statements_with_guard(
+    methods: &[ApiMethod],
+    include_conditional: bool,
     mut resolve: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
     mut resolve_downstream: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+    mut ensure_supported: impl FnMut(&ApiMethod) -> Result<(), AwsError>,
 ) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
     let mut statements = BTreeMap::<PolicyScope, BTreeSet<&'static str>>::new();
     let mut diagnostics = Vec::new();
     for method in methods {
-        crate::disposition::ensure_policy_supported(method)?;
+        ensure_supported(method)?;
         let direct = resolve(method)?;
         ensure_ordinary_authorization(method, &direct)?;
         let (ordinary, optional): (Vec<&AwsAction>, Vec<&AwsAction>) = direct
@@ -241,10 +257,7 @@ fn build_policy_statements_with_resolvers(
         for dependency in fas::dependencies(method)? {
             let rule = dependency.rule;
             for operation in &rule.downstream_operations {
-                crate::disposition::ensure_policy_supported(&ApiMethod::new(
-                    &rule.downstream_service,
-                    operation,
-                ))?;
+                ensure_supported(&ApiMethod::new(&rule.downstream_service, operation))?;
                 for action in
                     resolve_downstream(&ApiMethod::new(&rule.downstream_service, operation))?
                 {
@@ -379,6 +392,45 @@ fn find_action(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn disposition_guard_blocks_fas_before_rendering_partial_source_grants() -> Result<(), AwsError>
+    {
+        for include in [false, true] {
+            for hcl in [false, true] {
+                let mut downstream_seen = false;
+                let result = build_policy_statements_with_guard(
+                    &[ApiMethod::new("s3", "GetObject")],
+                    include,
+                    resolve_direct_actions,
+                    resolve_direct_actions,
+                    |method| {
+                        if method.service() == "kms" && method.name() == "Decrypt" {
+                            downstream_seen = true;
+                            Err(AwsError::UnresolvedAuthorization {
+                                service: method.service().to_owned(),
+                                name: method.name().to_owned(),
+                            })
+                        } else {
+                            crate::disposition::ensure_policy_supported(method)
+                        }
+                    },
+                )
+                .and_then(|(statements, _)| {
+                    if hcl {
+                        render_hcl(statements)
+                    } else {
+                        Ok(render_json(statements).to_string())
+                    }
+                });
+                assert!(downstream_seen);
+                assert!(
+                    matches!(result, Err(AwsError::UnresolvedAuthorization {service, name}) if service=="kms" && name=="Decrypt")
+                );
+            }
+        }
+        Ok(())
+    }
 
     #[test]
     fn incomplete_fas_leaf_blocks_both_renderers_without_partial_policy() -> Result<(), AwsError> {

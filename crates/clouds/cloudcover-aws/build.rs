@@ -12,6 +12,7 @@ const CACHE_FILE_NAME: &str = "actions-v2.rs";
 
 mod authorization_dispositions;
 mod authorization_supplement;
+mod passrole_preservation;
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
 
@@ -150,6 +151,7 @@ struct SdkMappingRow {
 }
 
 struct GeneratedRows {
+    privileged_dispositions: String,
     actions: Vec<ActionRow>,
     operations: Vec<OperationRow>,
     sdk_mappings: Vec<SdkMappingRow>,
@@ -211,6 +213,8 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=data/authorization.json");
     println!("cargo:rerun-if-changed=authorization_dispositions.rs");
     println!("cargo:rerun-if-changed=data/authorization-dispositions.json");
+    println!("cargo:rerun-if-changed=passrole_preservation.rs");
+    println!("cargo:rerun-if-changed=data/passrole-preservation.json");
     let mut rows = collect_rows()?;
     let action_keys = sort_and_validate_action_rows(&mut rows.actions)?;
     authorization_supplement::apply(&mut rows.operations, &action_keys)?;
@@ -280,6 +284,7 @@ fn collect_rows() -> BuildResult<GeneratedRows> {
     }
 
     Ok(GeneratedRows {
+        privileged_dispositions: passrole_preservation::generate(&contents)?,
         actions,
         operations,
         sdk_mappings,
@@ -603,6 +608,7 @@ fn generate_code(rows: &GeneratedRows) -> Result<String, fmt::Error> {
     write_permission_details(&mut generated, &rows.actions)?;
     write_operations(&mut generated, &rows.operations)?;
     write_sdk_method_mappings(&mut generated, &rows.sdk_mappings)?;
+    generated.push_str(&rows.privileged_dispositions);
 
     Ok(generated)
 }
@@ -805,6 +811,8 @@ mod tests {
     #[test]
     fn pinned_catalog_generates_identical_bytes() -> BuildResult<()> {
         fn generate() -> BuildResult<String> {
+            println!("cargo:rerun-if-changed=passrole_preservation.rs");
+            println!("cargo:rerun-if-changed=data/passrole-preservation.json");
             let mut rows = collect_rows()?;
             let keys = sort_and_validate_action_rows(&mut rows.actions)?;
             authorization_supplement::apply(&mut rows.operations, &keys)?;

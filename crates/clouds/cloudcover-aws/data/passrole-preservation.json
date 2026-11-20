@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "catalog_sha256": "004d21619dbe95ebb3c4f77600173de02bbe7a84a80c83afbc21e2b8008b215a",
+    "commit": "0acf9901023cf3c0c7720ce73b1e45a09555b8cd",
+    "manifest_sha256": "34db3804c92573c29e4765e1db0d4d1dda91df0edf7d806f17efce0b1cc39cd9"
+  },
+  "candidate": {
+    "catalog_sha256": "36cf78f0309bbba3268998c82150f8c5997a65b724177b3a4e1827edc69f9e42",
+    "commit": "3dc1f0dbba0278c403a0dbaa890fa0d444bbc236",
+    "manifest_sha256": "7c758fba9c6493f5a5425ade766c5e085b1326f99b115b8ab9b09bc1a6505ffa"
+  },
+  "operations": {
+    "continuum:AssociateCollector": "223b3e6b791dba101f09f8381edc08aaf59dc16408efe0c9a2baae37ee6f7987",
+    "continuum:CreateCollector": "99258c459a14ef29daaad2afdd2512b85ff7e93f78284927fcf99a3d5e0fe397",
+    "continuum:CreateEnvironment": "bc6ed5d5fbd3f84f3737f22aa9260e033241d5506cb100d175630f637f41b7bb",
+    "continuum:CreateIntegration": "be9b6f77c5849df2e1c651aeb7e4f7c1ee561df19b124324cc298f9ae0e6c67f",
+    "continuum:UpdateIntegration": "edccbf52f22d39fa9e849c4e81db1d4438eab47473303d6dfbb8d5647f0a71b2",
+    "dms:CreateReplicationTask": "e05e266828eda41364ef0e410b6cbef2e9ac519f50cd064ffeb72023eadbea67",
+    "events:CreateEventSource": "c73d98e07893b59cf4194c42c3b3883f91557fd5e231337cccadbb2a7013d8cc",
+    "events:UpdateEventSource": "4d191bd147f03a42c5ee33183442a8deccc35e15b46f2e4db57653e104bda2b6",
+    "glue:CreateDataQualityEvaluationConfig": "fd74281c4dbf99f1e278bb911d9a7193550e12140e4869a5977d9c1077acee04",
+    "glue:UpdateDataQualityEvaluationConfig": "76f62e0d26d703270455594b55d9eab88f1260b1d53dffe27b79ea25e81ffe42",
+    "kinesisanalytics:ExportSnapshot": "e2b9ece8593f26c586555ac92e3e2b8c10a7b6ac7796e8fc8aa09a237a6739a1",
+    "kinesisanalytics:ImportSnapshot": "dde587c63ca1375906d7b702354600a6808e340c502222593bd74559ab2b70f7",
+    "logs:PutIntegration": "bc1e1ddf1abe7416d09401aebc19cb01430797d8e4dd4fe95a4580c5574ac39c",
+    "logs:StartQuery": "39709d039a5a706aaf7d61b47cce386b67227a935e91cf1de77341fb79c06f59",
+    "observabilityadmin:CreateConnector": "215746225057b77740bde5d57c75e21541025c7956b1d36895a58996662c0e2d",
+    "quicksight:UpdateResourcePermissions": "f358eade390a640495c0d143845f5ac05e4d1f214e094d9857b0096f6f4986e6",
+    "s3tables:StartTableMigration": "3ab4b502801ceca0fcc2fb8e98806b3bb0d488ec8260ea19cb5d0b3cd1b5a4f1",
+    "s3tables:SyncTableMigration": "1f45fcdac895d744e6c0ae6bf28fd160f936a261f46885033c162721c0817e07",
+    "secretsmanager:AssociateCrossAccountReplica": "ac8a0bb6061be7ab8fcf0203a959740acaabff0b617d4cf819aaade1cb16b63c",
+    "ssm:RegisterDefaultHostManagementConfiguration": "92798c57aee3a5665fb18e4c2b16d2176e21016d298bab733d1184b5bf2ed879",
+    "wafv2:CreateWebACL": "2ad7cc07293163fbb22961425dc4bc76cde0aeb8a9c93cd92bcf5ead4a9e51ab",
+    "wafv2:UpdateWebACL": "c7793a62efb9a9883b77ac63201674f649b2156d9c41bcaeed6da4b93d173afa"
+  },
+  "purpose": "Preserve exact historical evidence only; never authorize a new PassRole grant.",
+  "schema_version": 1
+}
