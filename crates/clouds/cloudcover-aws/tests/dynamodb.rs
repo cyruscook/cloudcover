@@ -118,16 +118,47 @@ fn document_operations_reuse_low_level_dynamodb_iam_semantics() -> Result<(), Bo
             );
             assert_eq!(mapping.unresolved_api_methods(), []);
             // Match both JSON and HCL output, including shared transaction and
-            // PartiQL authorization and possible FAS dependencies.
+            // PartiQL authorization, conditional direct links and possible FAS.
             let expected = [ApiMethod::new("dynamodb", operation)];
-            assert_eq!(
-                provider.permissions_policy(mapping.api_methods())?,
-                provider.permissions_policy(&expected)?
-            );
-            assert_eq!(
-                provider.permissions_policy_hcl(mapping.api_methods())?,
-                provider.permissions_policy_hcl(&expected)?
-            );
+            for include in [false, true] {
+                let actual_json =
+                    provider.review_permissions_policy(mapping.api_methods(), include)?;
+                let expected_json = provider.review_permissions_policy(&expected, include)?;
+                assert_eq!(actual_json.policy, expected_json.policy);
+                assert_eq!(
+                    actual_json.conditional_permissions,
+                    expected_json.conditional_permissions
+                );
+                let actual_hcl =
+                    provider.review_permissions_policy_hcl(mapping.api_methods(), include)?;
+                let expected_hcl = provider.review_permissions_policy_hcl(&expected, include)?;
+                assert_eq!(actual_hcl.policy, expected_hcl.policy);
+                assert_eq!(
+                    actual_hcl.conditional_permissions,
+                    expected_hcl.conditional_permissions
+                );
+                if actual_json.conditional_permissions.is_empty() {
+                    assert_eq!(
+                        provider.permissions_policy(mapping.api_methods())?,
+                        actual_json.policy
+                    );
+                    assert_eq!(
+                        provider.permissions_policy_hcl(mapping.api_methods())?,
+                        actual_hcl.policy
+                    );
+                } else {
+                    // Newer SAR Scan evidence requires review. Document wrappers
+                    // must preserve the same strict bare-API behavior and report.
+                    assert!(matches!(
+                        provider.permissions_policy(mapping.api_methods()),
+                        Err(AwsError::ConditionalAuthorization { .. })
+                    ));
+                    assert!(matches!(
+                        provider.permissions_policy_hcl(mapping.api_methods()),
+                        Err(AwsError::ConditionalAuthorization { .. })
+                    ));
+                }
+            }
         }
     }
     Ok(())

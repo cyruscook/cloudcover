@@ -181,53 +181,153 @@ fn exact_conditional_links_keep_evidence_without_changing_other_grants_or_fas()
 }
 
 #[test]
-fn unrelated_mapped_to_empty_rows_still_fail_closed() -> Result<(), Box<dyn Error>> {
-    use cloudcover_aws::AuthorizationCoverage;
-    let catalog: serde_json::Value = serde_json::from_slice(&std::fs::read(
-        std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("data/sar/catalog.json"),
-    )?)?;
+fn reviewed_dispositions_block_every_policy_path_without_permissionless_success()
+-> Result<(), Box<dyn Error>> {
+    let review: serde_json::Value =
+        serde_json::from_str(include_str!("../data/authorization-dispositions.json"))?;
     let provider = AwsProvider::new();
-    for (service, operation) in [
-        ("cloudwatch", "CreateAlert"),
-        ("inspector", "RegisterCrossAccountAccessRole"),
-        ("odb", "DisassociateVirtualMachinesFromExadbVmCluster"),
-    ] {
-        let document = catalog["services"]
-            .as_array()
-            .ok_or("missing services")?
-            .iter()
-            .find(|entry| entry["service"] == service)
-            .ok_or("missing service")?;
-        let row = document["document"]["Operations"]
-            .as_array()
-            .ok_or("missing operations")?
-            .iter()
-            .find(|row| row["Name"] == operation)
-            .ok_or("missing operation")?;
+    let entries = review["entries"].as_array().ok_or("missing dispositions")?;
+    assert_eq!(entries.len(), 22);
+    for row in entries {
+        let service = row["service"].as_str().ok_or("service")?;
+        let operation = row["operation"].as_str().ok_or("operation")?;
         let method = ApiMethod::new(service, operation);
-        if row["AuthorizedActions"]
-            .as_array()
-            .is_none_or(Vec::is_empty)
-        {
-            assert_eq!(
-                provider.authorization_coverage(&method)?,
-                AuthorizationCoverage::Unresolved
-            );
-            assert!(matches!(
-                provider.review_permissions_policy(std::slice::from_ref(&method), false),
-                Err(AwsError::UnresolvedAuthorization { .. })
-            ));
-            assert!(matches!(
-                provider.review_permissions_policy_hcl(&[method], true),
-                Err(AwsError::UnresolvedAuthorization { .. })
-            ));
-        } else {
-            assert_eq!(
-                provider.authorization_coverage(&method)?,
-                AuthorizationCoverage::Mapped
-            );
-            assert!(!actions(&provider.permissions_policy(&[method])?)?.is_empty());
+        let diagnostic = provider
+            .authorization_disposition(&method)
+            .ok_or("missing diagnostic")?;
+        assert_eq!(diagnostic.kind, row["kind"].as_str().ok_or("kind")?);
+        assert_ne!(diagnostic.source, "");
+        for include in [false, true] {
+            for methods in [
+                vec![method.clone()],
+                vec![ApiMethod::new("s3", "GetObject"), method.clone()],
+            ] {
+                for result in [
+                    provider
+                        .review_permissions_policy(&methods, include)
+                        .map(|_| ()),
+                    provider
+                        .review_permissions_policy_hcl(&methods, include)
+                        .map(|_| ()),
+                ] {
+                    assert!(
+                        matches!(result, Err(AwsError::AuthorizationDisposition { diagnostic: d })
+                        if d == diagnostic)
+                    );
+                }
+            }
         }
+        assert!(matches!(
+            provider.permissions_policy(std::slice::from_ref(&method)),
+            Err(AwsError::AuthorizationDisposition { .. })
+        ));
+        assert!(matches!(
+            provider.permissions_policy_hcl(&[method]),
+            Err(AwsError::AuthorizationDisposition { .. })
+        ));
+        if service == "network-firewall" {
+            assert!(
+                diagnostic
+                    .message
+                    .contains("not evidence of endpoint shutdown")
+            );
+            assert!(diagnostic.message.contains("v1.80.0"));
+        }
+        if service == "cloudwatch" {
+            assert!(diagnostic.message.contains("HasAccessGrant=true"));
+            assert!(diagnostic.message.contains("space/profile"));
+        }
+    }
+    Ok(())
+}
+
+#[test]
+fn odb_bridge_is_single_action_and_scoped_in_both_formats() -> Result<(), Box<dyn Error>> {
+    use cloudcover_aws::AuthorizationCoverage;
+    let provider = AwsProvider::new();
+    let method = ApiMethod::new("odb", "DisassociateVirtualMachinesFromExadbVmCluster");
+    let action = "odb:DisassociateVirtualMachinesFromExadbVmCluster";
+    let arn = "arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}";
+    assert_eq!(
+        provider.authorization_coverage(&method)?,
+        AuthorizationCoverage::Mapped
+    );
+    assert!(provider.authorization_disposition(&method).is_none());
+    assert_eq!(provider.iam_permissions(&method)?, [action]);
+    for include in [false, true] {
+        let result = provider.review_permissions_policy(std::slice::from_ref(&method), include)?;
+        assert_eq!(result.conditional_permissions, []);
+        assert_eq!(
+            result.policy["Statement"],
+            serde_json::json!([
+                {"Effect":"Allow", "Action":[action], "Resource":arn}
+            ])
+        );
+        let hcl = provider.review_permissions_policy_hcl(std::slice::from_ref(&method), include)?;
+        assert_eq!(hcl.conditional_permissions, []);
+        assert!(hcl.policy.contains(action));
+        assert!(hcl.policy.contains(&arn.replace("${", "$${")));
+        assert!(!hcl.policy.contains("\"*\""));
+        assert!(!hcl.policy.contains("PassRole"));
+    }
+    assert_eq!(
+        provider.permissions_policy(std::slice::from_ref(&method))?["Statement"][0]["Resource"],
+        arn
+    );
+    assert!(
+        provider
+            .permissions_policy_hcl(&[method])?
+            .contains(&arn.replace("${", "$${"))
+    );
+    Ok(())
+}
+
+#[test]
+fn retained_proxy_apis_and_unknown_operations_are_not_legacy_exceptions()
+-> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
+    for name in ["DeleteProxy", "DescribeProxy"] {
+        let method = ApiMethod::new("network-firewall", name);
+        assert!(provider.authorization_disposition(&method).is_none());
+        let json = provider.permissions_policy(std::slice::from_ref(&method))?;
+        assert!(actions(&json)?.contains(&format!("network-firewall:{name}")));
+        assert!(
+            provider
+                .permissions_policy_hcl(&[method])?
+                .contains(&format!("network-firewall:{name}"))
+        );
+    }
+    // Retained in both models, but neither raw snapshot establishes its IAM
+    // mapping. Do not mislabel it as deprecated or invent a same-name grant.
+    let retained_unresolved = ApiMethod::new("network-firewall", "UpdateProxySettings");
+    assert!(
+        provider
+            .authorization_disposition(&retained_unresolved)
+            .is_none()
+    );
+    assert!(matches!(
+        provider.permissions_policy(std::slice::from_ref(&retained_unresolved)),
+        Err(AwsError::UnresolvedAuthorization { .. })
+    ));
+    assert!(matches!(
+        provider.permissions_policy_hcl(&[retained_unresolved]),
+        Err(AwsError::UnresolvedAuthorization { .. })
+    ));
+    for (service, name) in [
+        ("network-firewall", "UnreviewedProxyOperation"),
+        ("other", "CreateAlert"),
+        ("inspector2", "RegisterCrossAccountAccessRole"),
+    ] {
+        let method = ApiMethod::new(service, name);
+        assert!(provider.authorization_disposition(&method).is_none());
+        assert!(matches!(
+            provider.permissions_policy(std::slice::from_ref(&method)),
+            Err(AwsError::UnknownApiMethod { .. })
+        ));
+        assert!(matches!(
+            provider.permissions_policy_hcl(&[method]),
+            Err(AwsError::UnknownApiMethod { .. })
+        ));
     }
     Ok(())
 }

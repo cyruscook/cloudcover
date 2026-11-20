@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-11-20",
+  "baseline_commit": "6892e215617eeee635d3baf11961fb28d5a11d4e",
+  "candidate_commit": "3dc1f0dbba0278c403a0dbaa890fa0d444bbc236",
+  "entries": [
+    {
+      "service": "cloudwatch",
+      "operation": "CreateAlert",
+      "kind": "manual_review",
+      "candidate_state": "empty",
+      "authorized_actions": [
+        {
+          "Name": "CreateAlert",
+          "Service": "cloudwatch"
+        }
+      ],
+      "message": "Manual review required: CreateAlert uses a caller-supplied space and access profile. Review a policy with StringEquals cloudwatch:HasAccessGrant=true and the intended space/profile access. No automatic grant is emitted; this condition is an AWS-supported example, not proof of complete request authorization.",
+      "source": "https://docs.aws.amazon.com/aws-managed-policy/latest/reference/CloudWatchOmniSpaceAccessPolicy.html"
+    },
+    {
+      "service": "inspector",
+      "operation": "RegisterCrossAccountAccessRole",
+      "kind": "retired",
+      "candidate_state": "empty",
+      "authorized_actions": [
+        {
+          "Context": {
+            "iam:PassedToService": [
+              "inspector.amazonaws.com"
+            ]
+          },
+          "Name": "PassRole",
+          "Service": "iam"
+        },
+        {
+          "Name": "RegisterCrossAccountAccessRole",
+          "Service": "inspector"
+        }
+      ],
+      "message": "Amazon Inspector Classic support and resource access ended May 20, 2026. Migrate to a separately reviewed Inspector2 workflow; there is no automatic API replacement or PassRole grant.",
+      "source": "https://docs.aws.amazon.com/managedservices/latest/userguide/inspector.html"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "AttachRuleGroupsToProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "AttachRuleGroupsToProxyConfiguration",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "CreateProxy",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "CreateProxy",
+          "Service": "network-firewall"
+        },
+        {
+          "Name": "TagResource",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "CreateProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "AttachRuleGroupsToProxyConfiguration",
+          "Service": "network-firewall"
+        },
+        {
+          "Name": "CreateProxyConfiguration",
+          "Service": "network-firewall"
+        },
+        {
+          "Name": "TagResource",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "CreateProxyRuleGroup",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "CreateProxyRuleGroup",
+          "Service": "network-firewall"
+        },
+        {
+          "Name": "TagResource",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "CreateProxyRules",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "CreateProxyRules",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DeleteProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DeleteProxyConfiguration",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DeleteProxyRuleGroup",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DeleteProxyRuleGroup",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DeleteProxyRules",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DeleteProxyRules",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DescribeProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DescribeProxyConfiguration",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DescribeProxyRule",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DescribeProxyRule",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DescribeProxyRuleGroup",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DescribeProxyRuleGroup",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "DetachRuleGroupsFromProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "DetachRuleGroupsFromProxyConfiguration",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "ListProxies",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "ListProxies",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "ListProxyConfigurations",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "ListProxyConfigurations",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "ListProxyRuleGroups",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "ListProxyRuleGroups",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "UpdateProxy",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "UpdateProxy",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "UpdateProxyConfiguration",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "UpdateProxyConfiguration",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "UpdateProxyRule",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "UpdateProxyRule",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "UpdateProxyRuleGroupPriorities",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "UpdateProxyRuleGroupPriorities",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    },
+    {
+      "service": "network-firewall",
+      "operation": "UpdateProxyRulePriorities",
+      "kind": "deprecated_sdk_api",
+      "candidate_state": "removed",
+      "authorized_actions": [
+        {
+          "Name": "UpdateProxyRulePriorities",
+          "Service": "network-firewall"
+        }
+      ],
+      "message": "Deprecated Egress Proxy API: removed from the AWS Go SDK Network Firewall v1.80.0 model on November 13, 2026. This is not evidence of endpoint shutdown. Review migration to the current Firewall Proxy APIs; no replacement action or legacy grant is inferred.",
+      "source": "https://raw.githubusercontent.com/aws/aws-sdk-go-v2/service/networkfirewall/v1.80.0/service/networkfirewall/CHANGELOG.md"
+    }
+  ],
+  "action_scopes": {
+    "cloudwatch:CreateAlert": {
+      "Resources": [],
+      "ActionConditionKeys": [
+        "cloudwatch:HasAccessGrant"
+      ]
+    },
+    "iam:PassRole": {
+      "Resources": [
+        {
+          "Name": "role"
+        }
+      ],
+      "ActionConditionKeys": [
+        "iam:AssociatedResourceArn",
+        "iam:PassedToService"
+      ]
+    },
+    "inspector:RegisterCrossAccountAccessRole": {
+      "Resources": [],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:AttachRuleGroupsToProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        },
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:CreateProxy": {
+      "Resources": [
+        {
+          "Name": "Proxy"
+        },
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "network-firewall:TagResource": {
+      "Resources": [
+        {
+          "Name": "ContainerAssociation"
+        },
+        {
+          "Name": "Firewall"
+        },
+        {
+          "Name": "FirewallPolicy"
+        },
+        {
+          "Name": "FirewallPolicyV2"
+        },
+        {
+          "Name": "FirewallRuleGroup"
+        },
+        {
+          "Name": "IpsRuleGroup"
+        },
+        {
+          "Name": "Proxy"
+        },
+        {
+          "Name": "ProxyConfiguration"
+        },
+        {
+          "Name": "ProxyRuleGroup"
+        },
+        {
+          "Name": "StatefulRuleGroup"
+        },
+        {
+          "Name": "StatelessRuleGroup"
+        },
+        {
+          "Name": "TLSInspectionConfiguration"
+        },
+        {
+          "Name": "VpcEndpointAssociation"
+        }
+      ],
+      "ActionConditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "network-firewall:CreateProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        },
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "network-firewall:CreateProxyRuleGroup": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "network-firewall:CreateProxyRules": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DeleteProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DeleteProxyRuleGroup": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DeleteProxyRules": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DescribeProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DescribeProxyRule": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DescribeProxyRuleGroup": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:DetachRuleGroupsFromProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        },
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:ListProxies": {
+      "Resources": [
+        {
+          "Name": "Proxy"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:ListProxyConfigurations": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:ListProxyRuleGroups": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:UpdateProxy": {
+      "Resources": [
+        {
+          "Name": "Proxy"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:UpdateProxyConfiguration": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:UpdateProxyRule": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:UpdateProxyRuleGroupPriorities": {
+      "Resources": [
+        {
+          "Name": "ProxyConfiguration"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "network-firewall:UpdateProxyRulePriorities": {
+      "Resources": [
+        {
+          "Name": "ProxyRuleGroup"
+        }
+      ],
+      "ActionConditionKeys": []
+    },
+    "odb:DisassociateVirtualMachinesFromExadbVmCluster": {
+      "Resources": [
+        {
+          "Name": "exadb-vm-cluster"
+        }
+      ],
+      "ActionConditionKeys": []
+    }
+  },
+  "resource_scopes": {
+    "iam:role": {
+      "ARNFormats": [
+        "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "iam:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:ProxyConfiguration": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-configuration/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:ProxyRuleGroup": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy-rule-group/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:Proxy": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:proxy/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:ContainerAssociation": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:container-association/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:Firewall": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:FirewallPolicy": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:FirewallPolicyV2": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-policy-v2/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:FirewallRuleGroup": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:firewall-rulegroup/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:IpsRuleGroup": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:ips-rulegroup/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:StatefulRuleGroup": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:stateful-rulegroup/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:StatelessRuleGroup": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:stateless-rulegroup/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:TLSInspectionConfiguration": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:tls-configuration/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "network-firewall:VpcEndpointAssociation": {
+      "ARNFormats": [
+        "arn:${Partition}:network-firewall:${Region}:${Account}:vpc-endpoint-association/${Name}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "odb:exadb-vm-cluster": {
+      "ARNFormats": [
+        "arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}"
+      ],
+      "ConditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
+  }
+}

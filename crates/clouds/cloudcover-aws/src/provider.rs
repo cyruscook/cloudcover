@@ -16,6 +16,17 @@ impl AwsProvider {
         Self
     }
 
+    /// Returns an actionable reviewed issue that blocks policy output, including
+    /// exact legacy operations absent from the current catalog. Evidence queries
+    /// and IAM coverage describe metadata, not service availability or safe grants.
+    #[must_use]
+    pub fn authorization_disposition(
+        &self,
+        method: &ApiMethod,
+    ) -> Option<&'static crate::OperationDisposition> {
+        crate::disposition::lookup(method)
+    }
+
     /// Returns coverage of direct caller IAM requirements, independently of FAS.
     ///
     /// # Errors
@@ -83,6 +94,7 @@ impl AwsProvider {
     /// mode infers request applicability. Present all diagnostics
     /// and review resource placeholders and any required resource policies.
     /// FAS behavior is unchanged. Raw evidence remains in `iam_permissions`.
+    /// Reviewed lifecycle/manual dispositions always block output, in either mode.
     ///
     /// # Errors
     /// Returns an error for unknown or unresolved authorization, including an
@@ -110,6 +122,10 @@ impl AwsProvider {
 
 #[derive(Debug, thiserror::Error)]
 pub enum AwsError {
+    #[error("policy generation blocked by reviewed authorization disposition: {diagnostic}")]
+    AuthorizationDisposition {
+        diagnostic: &'static crate::OperationDisposition,
+    },
     #[error(
         "conditional direct authorization requires review for {service}:{name} ({permission}). Use review_permissions_policy/review_permissions_policy_hcl and present every diagnostic; explicitly choose ordinary or conditional grants. Evidence: {source_url}"
     )]

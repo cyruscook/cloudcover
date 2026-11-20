@@ -1,6 +1,7 @@
 use std::{
     collections::{BTreeMap, BTreeSet},
     ffi::OsString,
+    fmt::Write as _,
 };
 
 use cloudcover_aws::AwsProvider;
@@ -228,11 +229,21 @@ fn build_javascript_api_methods(
 
 fn complete_api_methods(mapping: &SdkMethodMapping) -> Result<&[ApiMethod], CliError> {
     if !mapping.is_complete() {
-        return Err(CliError::Runtime(format!(
+        let mut message = format!(
             "incomplete AWS catalog mapping for {:?}: unresolved operations {:?}",
             mapping.method(),
             mapping.unresolved_api_methods()
-        )));
+        );
+        for diagnostic in mapping
+            .unresolved_api_methods()
+            .iter()
+            .filter_map(|method| AwsProvider::new().authorization_disposition(method))
+        {
+            write!(message, " Reviewed authorization: {diagnostic}").map_err(|_| {
+                CliError::Runtime("could not format reviewed authorization diagnostic".into())
+            })?;
+        }
+        return Err(CliError::Runtime(message));
     }
     Ok(mapping.api_methods())
 }
@@ -240,6 +251,24 @@ fn complete_api_methods(mapping: &SdkMethodMapping) -> Result<&[ApiMethod], CliE
 #[cfg(test)]
 mod coverage_tests {
     use super::*;
+
+    #[test]
+    fn removed_legacy_operation_reports_disposition_without_partial_success()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let mapping = SdkMethodMapping::new(
+            Sdk::new("test", Language::Go),
+            MethodReference::Go(GoMethodReference::new("pkg", Some("Client".into()), "Call")),
+            vec![ApiMethod::new("s3", "GetObject")],
+        )
+        .with_unresolved_api_methods(vec![ApiMethod::new("network-firewall", "CreateProxy")]);
+        let Err(CliError::Runtime(error)) = complete_api_methods(&mapping) else {
+            return Err("unexpected partial success or non-runtime error".into());
+        };
+        assert!(error.contains("incomplete AWS catalog mapping"));
+        assert!(error.contains("deprecated_sdk_api"));
+        assert!(error.contains("not evidence of endpoint shutdown"));
+        Ok(())
+    }
 
     #[test]
     fn requested_partial_mapping_fails_but_known_no_calls_succeeds() {
