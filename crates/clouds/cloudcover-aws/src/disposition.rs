@@ -70,5 +70,23 @@ pub(crate) fn unresolved_reason(service: &str, name: &str) -> String {
             "policy generation blocked by reviewed authorization disposition: {diagnostic}"
         );
     }
+    let permission = format!("{service}:{name}");
+    if let Some(action) = generated::IAM_PERMISSIONS
+        .iter()
+        .find(|action| action.permission == permission)
+    {
+        let missing = action
+            .resources
+            .iter()
+            .filter(|resource| resource.arn_formats.is_empty())
+            .map(|resource| resource.name)
+            .collect::<Vec<_>>();
+        if !missing.is_empty() {
+            return format!(
+                "IAM action {permission} has incomplete resource scope: missing or empty ARN formats for [{}]. Review the pinned SAR resource definitions and references before retrying; policy generation is blocked without wildcard or partial grants.",
+                missing.join(", ")
+            );
+        }
+    }
     "the catalog does not establish caller IAM permission requirements".to_owned()
 }
