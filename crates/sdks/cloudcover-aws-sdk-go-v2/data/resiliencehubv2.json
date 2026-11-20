@@ -2354,6 +2354,23 @@
       "module_version": "1.13.8",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/resiliencehubv2",
+          "ListTestTemplatesPaginator",
+          "NextPage",
+          [
+            [
+              "resiliencehub",
+              "ListTestTemplates"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
