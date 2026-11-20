@@ -93,13 +93,24 @@ They never mean `NotRequired`, never suppress newly affected operations, and
 never authorize a successful empty policy.
 
 All JSON/HCL policy APIs, including both reviewed inclusion modes, return an
-`AuthorizationDisposition` error for these exact operations, alone or in a mixed
-request. They return no partial policy. CLI incomplete-SDK-mapping errors also include
+`UnresolvedAuthorization` error for retired/manual cases and for the exact
+removed Network Firewall state, alone or in a mixed request. When the pinned raw
+SAR still contains an exact reviewed Network Firewall mapping and scope, historical
+policy output is preserved. SDK deprecation alone does not establish endpoint
+shutdown or invalidate that retained mapping. Blocking cases return no partial
+policy. CLI incomplete-SDK-mapping errors also include
 the disposition when an unresolved row exactly identifies a reviewed legacy
 operation. Unknown rows keep their existing failure behavior.
+The existing error variant retains its fields and includes the actionable reviewed
+diagnostic in its display text; no new public enum variant is required.
 `authorization_disposition(&method)` is
 an additive inspection API returning the same structured diagnostic even when a
-legacy operation is absent from the current catalog. Raw IAM evidence APIs retain
+legacy operation is absent from the current catalog. Its `blocks_policy()` method
+distinguishes blocking states from informational deprecation warnings. The CLI
+presents retained-legacy warnings in stderr for JSON and HCL. Bare and reviewed
+library callers can inspect these warnings through this existing diagnostic API;
+their policy return types are unchanged. Informational deprecation warnings do not
+weaken the strict handling of conditional IAM requirements. Raw IAM evidence APIs retain
 their existing metadata/coverage meaning; metadata does not prove availability or
 that a grant is safe. Callers must present policy errors and every successful
 `ReviewedPolicy` diagnostic. Its public fields and `#[must_use]` do not enforce
@@ -111,7 +122,7 @@ logging, hidden options or redesign of the core provider trait.
 | ODB DisassociateVirtualMachinesFromExadbVmCluster | The reviewed single base action renders only with `arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}`. Substitute the intended cluster. No PassRole or other action is inferred. |
 | Inspector Classic RegisterCrossAccountAccessRole | Retired: AWS ended support and access to Classic resources May 20, 2026. Review a migration to Inspector2 separately. No API alias or automatic role grant is supplied. |
 | CloudWatch Omni CreateAlert | Manual authorization review: AWS explicitly links the action in its SDK model. Its managed policy shows `StringEquals cloudwatch:HasAccessGrant=true`; the API requires a caller-supplied space and access profile. Review these together. This is an AWS-supported conditioned policy example, not proof of complete request authorization. No automatic action or PassRole grant is emitted. |
-| The twenty explicitly listed Network Firewall Egress Proxy operations | Deprecated SDK APIs: the v1.80.0 model removes exactly these operations. This does not establish endpoint shutdown. Review migration to current Firewall Proxy APIs; no replacement or legacy grant is inferred. DeleteProxy and DescribeProxy keep their mapped grants. UpdateProxySettings remains in the model but its IAM mapping was already unresolved in both snapshots; it stays unresolved. All three are outside this disposition. |
+| The twenty explicitly listed Network Firewall Egress Proxy operations | Deprecated SDK APIs: the v1.80.0 model removes exactly these operations. This does not establish endpoint shutdown. Exact retained raw mappings preserve historical policy output with warnings; the exact absent state remains blocked. Review migration separately; no replacement or legacy grant is inferred. DeleteProxy and DescribeProxy keep their mapped grants. UpdateProxySettings remains in the model but its IAM mapping was already unresolved in both snapshots; it stays unresolved. All three are outside this disposition. |
 
 Primary evidence:
 
@@ -128,3 +139,5 @@ is a local read-only command; updater workflows and publication remain unchanged
 PR #57 still requires an independent full-refresh review and a separate merge
 decision. Conditional advanced-use grants and AppStream role scope still require
 the manual steps described above.
+
+Local compatibility note: the compiler emits a retained-legacy index only after validating the exact raw operation/action/Context and scope shape. A generated action-based fallback cannot revive an absent operation. Unknown, empty, conflicting or incomplete future metadata still rejects review.

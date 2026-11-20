@@ -22,6 +22,7 @@ pub(crate) fn build_policy(
     let review = AwsProvider::new()
         .review_permissions_policy(&api_methods, include_conditional)
         .map_err(|error| CliError::Runtime(error.to_string()))?;
+    report_legacy_dispositions(&api_methods);
     report_conditional(&review.conditional_permissions, include_conditional);
     Ok(review.policy)
 }
@@ -36,8 +37,28 @@ pub(crate) fn build_terraform_policy(
     let review = AwsProvider::new()
         .review_permissions_policy_hcl(&api_methods, include_conditional)
         .map_err(|error| CliError::Runtime(error.to_string()))?;
+    report_legacy_dispositions(&api_methods);
     report_conditional(&review.conditional_permissions, include_conditional);
     Ok(review.policy)
+}
+
+fn legacy_dispositions(
+    methods: &[ApiMethod],
+) -> Vec<&'static cloudcover_aws::OperationDisposition> {
+    let mut diagnostics: Vec<_> = methods
+        .iter()
+        .filter_map(|method| AwsProvider::new().authorization_disposition(method))
+        .filter(|diagnostic| !diagnostic.blocks_policy())
+        .collect();
+    diagnostics.sort_unstable_by_key(|d| (d.service, d.operation));
+    diagnostics.dedup();
+    diagnostics
+}
+
+fn report_legacy_dispositions(methods: &[ApiMethod]) {
+    for diagnostic in legacy_dispositions(methods) {
+        eprintln!("Deprecated API: {diagnostic}");
+    }
 }
 
 fn report_conditional(diagnostics: &[cloudcover_aws::ConditionalPermission], included: bool) {
@@ -267,6 +288,33 @@ mod coverage_tests {
         assert!(error.contains("incomplete AWS catalog mapping"));
         assert!(error.contains("deprecated_sdk_api"));
         assert!(error.contains("not evidence of endpoint shutdown"));
+        Ok(())
+    }
+
+    #[test]
+    fn retained_legacy_diagnostics_are_visible_and_deduplicated()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let legacy = ApiMethod::new("network-firewall", "CreateProxy");
+        let diagnostic = AwsProvider::new()
+            .authorization_disposition(&legacy)
+            .ok_or("diagnostic")?;
+        let found = legacy_dispositions(&[
+            legacy.clone(),
+            legacy,
+            ApiMethod::new("inspector", "RegisterCrossAccountAccessRole"),
+            ApiMethod::new("cloudwatch", "CreateAlert"),
+            ApiMethod::new("s3", "GetObject"),
+        ]);
+        if diagnostic.blocks_policy() {
+            assert_eq!(found, [] as [&cloudcover_aws::OperationDisposition; 0]);
+        } else {
+            assert_eq!(found, [diagnostic]);
+            assert!(
+                found[0]
+                    .to_string()
+                    .contains("historical permissions are preserved")
+            );
+        }
         Ok(())
     }
 

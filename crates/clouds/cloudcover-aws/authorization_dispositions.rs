@@ -180,15 +180,35 @@ fn validate_document(catalog: &Value, review: &Review) -> BuildResult<()> {
 
 pub(super) fn generate() -> BuildResult<String> {
     let review = load()?;
+    let catalog: Value = serde_json::from_slice(&std::fs::read("data/sar/catalog.json")?)?;
+    generate_document(&catalog, &review)
+}
+
+fn generate_document(catalog: &Value, review: &Review) -> BuildResult<String> {
+    validate_document(catalog, review)?;
     let mut code = String::from(
         "pub(crate) static AUTHORIZATION_DISPOSITIONS: &[crate::OperationDisposition] = &[\n",
     );
-    for entry in review.entries {
+    for entry in &review.entries {
         writeln!(
             code,
             "crate::OperationDisposition {{ service: {:?}, operation: {:?}, kind: {:?}, message: {:?}, source: {:?} }},",
             entry.service, entry.operation, entry.kind, entry.message, entry.source
         )?;
+    }
+    code.push_str("];\n");
+    code.push_str("pub(crate) static REVIEWED_LEGACY_OPERATIONS: &[(&str, &str)] = &[\n");
+    for entry in review
+        .entries
+        .iter()
+        .filter(|e| e.kind == "deprecated_sdk_api")
+    {
+        // The raw row must retain its exact reviewed action/Context shape and
+        // referenced scope. Never infer support from the generated action-based
+        // fallback index or from an operation's name alone.
+        if definition(catalog, &entry.service, "Operations", &entry.operation)?.is_some() {
+            writeln!(code, "({:?}, {:?}),", entry.service, entry.operation)?;
+        }
     }
     code.push_str("];\n");
     Ok(code)
@@ -234,6 +254,46 @@ mod tests {
             }
         }
         json!({"services":services.into_values().collect::<Vec<_>>()})
+    }
+
+    #[test]
+    fn legacy_support_requires_exact_raw_mapping_instead_of_presence_or_fallback() -> BuildResult<()>
+    {
+        let review = load()?;
+        let old = fixture(&review, false);
+        let removed = fixture(&review, true);
+        let old_code = generate_document(&old, &review)?;
+        let removed_code = generate_document(&removed, &review)?;
+        let old_legacy = old_code
+            .split("REVIEWED_LEGACY_OPERATIONS")
+            .nth(1)
+            .ok_or("legacy table")?;
+        let removed_legacy = removed_code
+            .split("REVIEWED_LEGACY_OPERATIONS")
+            .nth(1)
+            .ok_or("legacy table")?;
+        assert_eq!(old_legacy.matches("network-firewall").count(), 20);
+        assert_eq!(removed_legacy.matches("network-firewall").count(), 0);
+        // All remaining raw operations may disappear too. The compiler's
+        // legacy action-based fallback must not resurrect the removed APIs.
+        let mut absent = removed;
+        let service = absent["services"]
+            .as_array_mut()
+            .ok_or("services")?
+            .iter_mut()
+            .find(|s| s["service"] == "network-firewall")
+            .ok_or("service")?;
+        service["document"]["Operations"] = json!([]);
+        let code = generate_document(&absent, &review)?;
+        assert_eq!(
+            code.split("REVIEWED_LEGACY_OPERATIONS")
+                .nth(1)
+                .ok_or("legacy table")?
+                .matches("network-firewall")
+                .count(),
+            0
+        );
+        Ok(())
     }
 
     #[test]

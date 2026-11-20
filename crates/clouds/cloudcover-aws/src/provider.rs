@@ -16,8 +16,10 @@ impl AwsProvider {
         Self
     }
 
-    /// Returns an actionable reviewed issue that blocks policy output, including
-    /// exact legacy operations absent from the current catalog. Evidence queries
+    /// Returns a reviewed diagnostic, including exact legacy operations absent
+    /// from the current catalog. Check `blocks_policy()` to distinguish retained
+    /// reviewed legacy mappings (warnings) from removed/manual/retired blockers.
+    /// Evidence queries
     /// and IAM coverage describe metadata, not service availability or safe grants.
     #[must_use]
     pub fn authorization_disposition(
@@ -94,7 +96,9 @@ impl AwsProvider {
     /// mode infers request applicability. Present all diagnostics
     /// and review resource placeholders and any required resource policies.
     /// FAS behavior is unchanged. Raw evidence remains in `iam_permissions`.
-    /// Reviewed lifecycle/manual dispositions always block output, in either mode.
+    /// Manual/retired dispositions and removed legacy mappings block output in
+    /// either mode. Query `authorization_disposition` for informational warnings
+    /// on retained, reviewed legacy mappings; the CLI presents these warnings.
     ///
     /// # Errors
     /// Returns an error for unknown or unresolved authorization, including an
@@ -122,10 +126,6 @@ impl AwsProvider {
 
 #[derive(Debug, thiserror::Error)]
 pub enum AwsError {
-    #[error("policy generation blocked by reviewed authorization disposition: {diagnostic}")]
-    AuthorizationDisposition {
-        diagnostic: &'static crate::OperationDisposition,
-    },
     #[error(
         "conditional direct authorization requires review for {service}:{name} ({permission}). Use review_permissions_policy/review_permissions_policy_hcl and present every diagnostic; explicitly choose ordinary or conditional grants. Evidence: {source_url}"
     )]
@@ -140,7 +140,7 @@ pub enum AwsError {
     #[error("unknown AWS API method {service}:{name}")]
     UnknownApiMethod { service: String, name: String },
     #[error(
-        "unresolved AWS authorization coverage for {service}:{name}: the catalog does not establish caller IAM permission requirements"
+        "unresolved AWS authorization coverage for {service}:{name}: {}", crate::disposition::unresolved_reason(.service, .name)
     )]
     UnresolvedAuthorization { service: String, name: String },
     #[error("failed to encode IAM policy as Terraform HCL: {source}")]

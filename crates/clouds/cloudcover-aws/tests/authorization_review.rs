@@ -180,8 +180,44 @@ fn exact_conditional_links_keep_evidence_without_changing_other_grants_or_fas()
     Ok(())
 }
 
+fn assert_retained_legacy_policy(
+    provider: AwsProvider,
+    method: &ApiMethod,
+    diagnostic: &cloudcover_aws::OperationDisposition,
+    expected: &BTreeSet<String>,
+) -> Result<(), Box<dyn Error>> {
+    let original = provider.permissions_policy(std::slice::from_ref(method))?;
+    assert_eq!(&actions(&original)?, expected);
+    assert!(
+        diagnostic
+            .to_string()
+            .contains("historical permissions are preserved")
+    );
+    for include in [false, true] {
+        let review = provider.review_permissions_policy(std::slice::from_ref(method), include)?;
+        assert_eq!(review.policy, original);
+        assert_eq!(review.conditional_permissions, []);
+        let hcl = provider.review_permissions_policy_hcl(std::slice::from_ref(method), include)?;
+        assert_eq!(
+            hcl.policy,
+            provider.permissions_policy_hcl(std::slice::from_ref(method))?
+        );
+        assert_eq!(hcl.conditional_permissions, []);
+        for action in expected {
+            assert!(hcl.policy.contains(action));
+        }
+        let mixed = provider.review_permissions_policy(
+            &[ApiMethod::new("s3", "GetObject"), method.clone()],
+            include,
+        )?;
+        assert!(expected.is_subset(&actions(&mixed.policy)?));
+        assert!(actions(&mixed.policy)?.contains("s3:GetObject"));
+    }
+    Ok(())
+}
+
 #[test]
-fn reviewed_dispositions_block_every_policy_path_without_permissionless_success()
+fn reviewed_dispositions_preserve_legacy_grants_and_block_removed_operations()
 -> Result<(), Box<dyn Error>> {
     let review: serde_json::Value =
         serde_json::from_str(include_str!("../data/authorization-dispositions.json"))?;
@@ -197,6 +233,23 @@ fn reviewed_dispositions_block_every_policy_path_without_permissionless_success(
             .ok_or("missing diagnostic")?;
         assert_eq!(diagnostic.kind, row["kind"].as_str().ok_or("kind")?);
         assert_ne!(diagnostic.source, "");
+        if !diagnostic.blocks_policy() {
+            assert_eq!(service, "network-firewall");
+            let expected = row["authorized_actions"]
+                .as_array()
+                .ok_or("links")?
+                .iter()
+                .map(|a| {
+                    Ok(format!(
+                        "{}:{}",
+                        a["Service"].as_str().ok_or("service")?,
+                        a["Name"].as_str().ok_or("action")?
+                    ))
+                })
+                .collect::<Result<BTreeSet<String>, Box<dyn Error>>>()?;
+            assert_retained_legacy_policy(provider, &method, diagnostic, &expected)?;
+            continue;
+        }
         for include in [false, true] {
             for methods in [
                 vec![method.clone()],
@@ -209,22 +262,18 @@ fn reviewed_dispositions_block_every_policy_path_without_permissionless_success(
                     provider
                         .review_permissions_policy_hcl(&methods, include)
                         .map(|_| ()),
+                    provider.permissions_policy(&methods).map(|_| ()),
+                    provider.permissions_policy_hcl(&methods).map(|_| ()),
                 ] {
+                    let error = result.err().ok_or("blocked policy succeeded")?;
                     assert!(
-                        matches!(result, Err(AwsError::AuthorizationDisposition { diagnostic: d })
-                        if d == diagnostic)
+                        matches!(&error, AwsError::UnresolvedAuthorization { service: s, name: n }
+                        if s == service && n == operation)
                     );
+                    assert!(error.to_string().contains(&diagnostic.to_string()));
                 }
             }
         }
-        assert!(matches!(
-            provider.permissions_policy(std::slice::from_ref(&method)),
-            Err(AwsError::AuthorizationDisposition { .. })
-        ));
-        assert!(matches!(
-            provider.permissions_policy_hcl(&[method]),
-            Err(AwsError::AuthorizationDisposition { .. })
-        ));
         if service == "network-firewall" {
             assert!(
                 diagnostic
@@ -238,6 +287,34 @@ fn reviewed_dispositions_block_every_policy_path_without_permissionless_success(
             assert!(diagnostic.message.contains("space/profile"));
         }
     }
+    Ok(())
+}
+
+fn assert_odb_hcl_scope(policy: &str, action: &str, arn: &str) -> Result<(), Box<dyn Error>> {
+    let body: hcl::Body = hcl::from_str(policy)?;
+    let round_trip: hcl::Body = hcl::from_str(&hcl::format::to_string(&body)?)?;
+    assert_eq!(body, round_trip);
+    let data = body.blocks().collect::<Vec<_>>();
+    assert_eq!(data.len(), 1);
+    assert_eq!(data[0].identifier.as_str(), "data");
+    let statements = data[0].body.blocks().collect::<Vec<_>>();
+    assert_eq!(statements.len(), 1);
+    assert_eq!(statements[0].identifier.as_str(), "statement");
+    assert_eq!(statements[0].body.blocks().count(), 0);
+    let attributes = statements[0]
+        .body
+        .attributes()
+        .map(|attribute| {
+            Ok((
+                attribute.key.as_str(),
+                serde_json::to_value(hcl::Value::from(attribute.expr.clone()))?,
+            ))
+        })
+        .collect::<Result<std::collections::BTreeMap<_, _>, serde_json::Error>>()?;
+    assert_eq!(attributes.len(), 3);
+    assert_eq!(attributes["effect"], "Allow");
+    assert_eq!(attributes["actions"], serde_json::json!([action]));
+    assert_eq!(attributes["resources"], serde_json::json!([arn]));
     Ok(())
 }
 
@@ -265,20 +342,13 @@ fn odb_bridge_is_single_action_and_scoped_in_both_formats() -> Result<(), Box<dy
         );
         let hcl = provider.review_permissions_policy_hcl(std::slice::from_ref(&method), include)?;
         assert_eq!(hcl.conditional_permissions, []);
-        assert!(hcl.policy.contains(action));
-        assert!(hcl.policy.contains(&arn.replace("${", "$${")));
-        assert!(!hcl.policy.contains("\"*\""));
-        assert!(!hcl.policy.contains("PassRole"));
+        assert_odb_hcl_scope(&hcl.policy, action, arn)?;
     }
     assert_eq!(
         provider.permissions_policy(std::slice::from_ref(&method))?["Statement"][0]["Resource"],
         arn
     );
-    assert!(
-        provider
-            .permissions_policy_hcl(&[method])?
-            .contains(&arn.replace("${", "$${"))
-    );
+    assert_odb_hcl_scope(&provider.permissions_policy_hcl(&[method])?, action, arn)?;
     Ok(())
 }
 
