@@ -122,6 +122,17 @@ struct PolicyStatement {
 }
 
 fn checked_resources(action: &AwsAction) -> Result<Vec<String>, AwsError> {
+    // A declared but unresolved scope is not evidence for a global grant or
+    // for dropping the unknown member of a partially resolved resource union.
+    // Check before any reviewed optional-agent wildcard exception.
+    if !action.has_complete_resource_templates
+        || (!action.resource_types.is_empty() && action.resource_templates.is_empty())
+    {
+        return Err(AwsError::UnresolvedAuthorization {
+            service: action.service.to_owned(),
+            name: action.name.to_owned(),
+        });
+    }
     // This reviewed bridge is valid only with the exact retained cluster scope.
     // Recheck at rendering too: incomplete metadata must never produce "*".
     if action.service == "odb"
@@ -175,7 +186,21 @@ fn build_policy_statements(
 fn build_policy_statements_with(
     methods: &[ApiMethod],
     include_conditional: bool,
+    resolve: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
+    build_policy_statements_with_resolvers(
+        methods,
+        include_conditional,
+        resolve,
+        resolve_direct_actions,
+    )
+}
+
+fn build_policy_statements_with_resolvers(
+    methods: &[ApiMethod],
+    include_conditional: bool,
     mut resolve: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
+    mut resolve_downstream: impl FnMut(&ApiMethod) -> Result<Vec<&'static AwsAction>, AwsError>,
 ) -> Result<(Vec<PolicyStatement>, Vec<crate::ConditionalPermission>), AwsError> {
     let mut statements = BTreeMap::<PolicyScope, BTreeSet<&'static str>>::new();
     let mut diagnostics = Vec::new();
@@ -221,7 +246,7 @@ fn build_policy_statements_with(
                     operation,
                 ))?;
                 for action in
-                    resolve_direct_actions(&ApiMethod::new(&rule.downstream_service, operation))?
+                    resolve_downstream(&ApiMethod::new(&rule.downstream_service, operation))?
                 {
                     let mut resources = checked_resources(action)?;
                     if let Some(key) = &rule.key_placeholder {
@@ -356,6 +381,164 @@ mod tests {
     use super::*;
 
     #[test]
+    fn incomplete_fas_leaf_blocks_both_renderers_without_partial_policy() -> Result<(), AwsError> {
+        let leaf = resolve_direct_actions(&ApiMethod::new("kms", "Decrypt"))?[0];
+        let broken = Box::leak(Box::new(AwsAction {
+            resource_templates: &[],
+            has_complete_resource_templates: false,
+            ..*leaf
+        }));
+        for include in [false, true] {
+            for hcl in [false, true] {
+                let result = build_policy_statements_with_resolvers(
+                    &[ApiMethod::new("s3", "GetObject")],
+                    include,
+                    resolve_direct_actions,
+                    |method| {
+                        if method.service() == "kms" && method.name() == "Decrypt" {
+                            Ok(vec![broken])
+                        } else {
+                            resolve_direct_actions(method)
+                        }
+                    },
+                )
+                .and_then(|(statements, _)| {
+                    if hcl {
+                        render_hcl(statements)
+                    } else {
+                        Ok(render_json(statements).to_string())
+                    }
+                });
+                assert!(
+                    matches!(result, Err(AwsError::UnresolvedAuthorization { service, name })
+                    if service == "kms" && name == "Decrypt")
+                );
+            }
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn incomplete_scope_never_renders_global_or_partial_permissions() -> Result<(), AwsError> {
+        let valid = resolve_direct_actions(&ApiMethod::new("s3", "GetObject"))?[0];
+        for action in [
+            AwsAction {
+                resource_types: &["missing"],
+                resource_templates: &[],
+                has_complete_resource_templates: false,
+                ..*valid
+            },
+            AwsAction {
+                resource_types: &["empty"],
+                resource_templates: &[],
+                has_complete_resource_templates: true,
+                ..*valid
+            },
+            AwsAction {
+                resource_types: &["known", "missing"],
+                resource_templates: &["arn:test:known/${Id}"],
+                has_complete_resource_templates: false,
+                ..*valid
+            },
+            AwsAction {
+                has_complete_resource_templates: false,
+                ..agent_action("CreateLocationS3")
+            },
+        ] {
+            let broken = Box::leak(Box::new(action));
+            assert!(checked_resources(broken).is_err());
+            for include in [false, true] {
+                for mixed in [false, true] {
+                    let methods = if mixed {
+                        vec![
+                            ApiMethod::new("s3", "GetObject"),
+                            ApiMethod::new("s3", "PutObject"),
+                        ]
+                    } else {
+                        vec![ApiMethod::new("s3", "PutObject")]
+                    };
+                    for hcl in [false, true] {
+                        let result = build_policy_statements_with(&methods, include, |method| {
+                            Ok(if method.name() == "PutObject" {
+                                vec![valid, broken]
+                            } else {
+                                vec![valid]
+                            })
+                        })
+                        .and_then(|(statements, _)| {
+                            if hcl {
+                                render_hcl(statements)
+                            } else {
+                                Ok(render_json(statements).to_string())
+                            }
+                        });
+                        assert!(matches!(
+                            result,
+                            Err(AwsError::UnresolvedAuthorization { .. })
+                        ));
+                    }
+                }
+            }
+        }
+        let global = AwsAction {
+            resource_types: &[],
+            resource_templates: &[],
+            has_complete_resource_templates: true,
+            ..*valid
+        };
+        assert_eq!(checked_resources(&global)?, ["*"]);
+        assert_eq!(checked_resources(&agent_action("CreateLocationS3"))?, ["*"]);
+        Ok(())
+    }
+
+    #[test]
+    fn incomplete_conditional_scope_blocks_opt_in_and_keeps_ordinary_diagnostics()
+    -> Result<(), AwsError> {
+        static OPTIONAL: AwsAction = AwsAction {
+            service: "dynamodb",
+            name: "ReadDataForReplication",
+            permission: "dynamodb:ReadDataForReplication",
+            resource_types: &["table"],
+            resource_templates: &[],
+            has_complete_resource_templates: false,
+        };
+        let method = ApiMethod::new("dynamodb", "Scan");
+        let base = resolve_direct_actions(&method)?
+            .into_iter()
+            .find(|action| action.permission == "dynamodb:Scan")
+            .ok_or_else(|| AwsError::UnresolvedAuthorization {
+                service: method.service().to_owned(),
+                name: method.name().to_owned(),
+            })?;
+        for hcl in [false, true] {
+            for include in [false, true] {
+                let result =
+                    build_policy_statements_with(std::slice::from_ref(&method), include, |_| {
+                        Ok(vec![base, &OPTIONAL])
+                    });
+                if include {
+                    assert!(matches!(
+                        result,
+                        Err(AwsError::UnresolvedAuthorization { .. })
+                    ));
+                } else {
+                    let (statements, diagnostics) = result?;
+                    assert_eq!(diagnostics.len(), 1);
+                    assert_eq!(diagnostics[0].permission, OPTIONAL.permission);
+                    let output = if hcl {
+                        render_hcl(statements)?
+                    } else {
+                        render_json(statements).to_string()
+                    };
+                    assert!(!output.contains(OPTIONAL.permission));
+                    assert!(output.contains("dynamodb:Scan"));
+                }
+            }
+        }
+        Ok(())
+    }
+
+    #[test]
     fn odb_renderers_reject_scope_fallback_even_when_injected_after_compilation()
     -> Result<(), AwsError> {
         let original = resolve_direct_actions(&ApiMethod::new(
@@ -421,7 +604,9 @@ mod tests {
             permission: "appstream:CreateFleet",
             resource_types: &[],
             resource_templates: &[],
-            has_complete_resource_templates: false,
+            // An explicit global action has no declared resource references;
+            // the compiler marks that scope complete. Only ROLE is incomplete.
+            has_complete_resource_templates: true,
         };
         static ROLE: AwsAction = AwsAction {
             service: "iam",

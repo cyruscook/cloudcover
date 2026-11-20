@@ -336,7 +336,7 @@ fn build_action_row(
     for resource in action.resources {
         let definition = resource_definitions.get(&resource.name);
         let arn_formats = definition.map_or_else(Vec::new, |value| value.arn_formats.clone());
-        if definition.is_none() {
+        if arn_formats.is_empty() {
             has_complete_resource_templates = false;
         }
         for name in resource.condition_keys {
@@ -740,6 +740,43 @@ fn format_authorized_actions(authorized_actions: &[(String, String)]) -> String 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn declared_resource_scopes_require_every_definition_and_arn_format() -> BuildResult<()> {
+        use serde_json::json;
+        let known = json!({"Name":"known", "ARNFormats":["arn:test:known/${Id}"]});
+        for (references, definitions, complete) in [
+            (json!([]), json!([]), true),
+            (json!([{"Name":"known"}]), json!([known.clone()]), true),
+            (json!([{"Name":"missing"}]), json!([]), false),
+            (
+                json!([{"Name":"empty"}]),
+                json!([{"Name":"empty", "ARNFormats":[]}]),
+                false,
+            ),
+            (
+                json!([{"Name":"known"},{"Name":"missing"}]),
+                json!([known.clone()]),
+                false,
+            ),
+            (
+                json!([{"Name":"known"},{"Name":"empty"}]),
+                json!([known, {"Name":"empty", "ARNFormats":[]}]),
+                false,
+            ),
+        ] {
+            let action: ServiceAction =
+                serde_json::from_value(json!({"Name":"Test", "Resources":references}))?;
+            let definitions: Vec<ServiceResource> = serde_json::from_value(definitions)?;
+            let definitions = definitions
+                .into_iter()
+                .map(|resource| (resource.name.clone(), resource))
+                .collect();
+            let row = build_action_row("test", action, &definitions, &BTreeMap::new());
+            assert_eq!(row.has_complete_resource_templates, complete);
+        }
+        Ok(())
+    }
 
     #[test]
     fn rejects_corruption_and_unsupported_schema() -> BuildResult<()> {
