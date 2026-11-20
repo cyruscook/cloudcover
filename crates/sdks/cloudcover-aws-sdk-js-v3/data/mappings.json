@@ -6,6 +6,107 @@
   },
   "packages": [
     {
+      "package": "@aws-sdk/client-abuse-signal",
+      "releases": [
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": "AbuseSignal",
+              "method": "createAbuseReport",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "CreateAbuseReport"
+                }
+              ]
+            },
+            {
+              "receiver": "AbuseSignal",
+              "method": "getAbuseReportStatus",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "GetAbuseReportStatus"
+                }
+              ]
+            },
+            {
+              "receiver": "AbuseSignal",
+              "method": "listAbuseReportStatuses",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "ListAbuseReportStatuses"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "CreateAbuseReportCommand",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "CreateAbuseReport"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "GetAbuseReportStatusCommand",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "GetAbuseReportStatus"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "ListAbuseReportStatusesCommand",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "ListAbuseReportStatuses"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "paginateListAbuseReportStatuses",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "ListAbuseReportStatuses"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "waitForReportProcessing",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "GetAbuseReportStatus"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "waitUntilReportProcessing",
+              "api_methods": [
+                {
+                  "service": "abuse",
+                  "name": "GetAbuseReportStatus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "package": "@aws-sdk/client-accessanalyzer",
       "releases": [
         {
@@ -5784,6 +5885,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -9598,6 +9704,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -10184,6 +10295,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -10283,6 +10399,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -15312,6 +15433,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -20423,6 +20549,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -20832,6 +20963,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -21533,6 +21669,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -23159,6 +23300,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -35906,6 +36052,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -41685,6 +41836,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -46835,6 +46991,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -51244,6 +51405,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -62365,6 +62531,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -65971,6 +66142,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -74368,6 +74544,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -80324,6 +80505,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -86713,6 +86899,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -89988,6 +90179,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -93465,6 +93661,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -98449,6 +98650,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -103091,6 +103297,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -107424,6 +107635,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -112663,6 +112879,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -118174,6 +118395,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -120757,6 +120983,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -124329,6 +124560,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -129350,6 +129586,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -137265,6 +137506,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -144461,6 +144707,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -147583,6 +147834,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -150925,6 +151181,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -153333,6 +153594,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -160650,6 +160916,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -168056,6 +168327,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -175901,6 +176177,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -179694,6 +179975,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -182526,6 +182812,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -191819,6 +192110,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -196084,6 +196380,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -197958,6 +198259,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -205006,6 +205312,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -206646,6 +206957,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -209330,6 +209646,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -211776,6 +212097,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -213125,6 +213451,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -218297,6 +218628,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -223332,6 +223668,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -226488,6 +226829,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -229519,6 +229865,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -234941,6 +235292,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -237170,6 +237526,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -238921,6 +239282,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -241521,6 +241887,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -243965,6 +244336,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -247902,6 +248278,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -252158,6 +252539,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -257285,6 +257671,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -260066,6 +260457,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -276651,6 +277047,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -281230,6 +281631,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -285656,6 +286062,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -289553,6 +289964,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -295116,6 +295532,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -301882,6 +302303,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -308315,6 +308741,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -312362,6 +312793,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -316667,6 +317103,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -320307,6 +320748,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -328265,6 +328711,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -337347,6 +337798,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -348381,6 +348837,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -350841,6 +351302,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -355486,6 +355952,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -359983,6 +360454,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -364973,6 +365449,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -368574,6 +369055,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -374902,6 +375388,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -377577,6 +378068,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -384037,6 +384533,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -390314,6 +390815,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -398928,6 +399434,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -400493,6 +401004,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -405013,6 +405529,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -412046,6 +412567,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -415534,6 +416060,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -424117,6 +424648,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -426651,6 +427187,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -433143,6 +433684,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -437622,6 +438168,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -440597,6 +441148,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -445340,6 +445896,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -451407,6 +451968,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -459496,6 +460062,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -463802,6 +464373,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -468671,6 +469247,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -479369,6 +479950,112 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": "CognitoIdentityProvider",
+              "method": "cancelPointInTimeRecovery",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "CancelPointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": "CognitoIdentityProvider",
+              "method": "describePointInTimeRecovery",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "DescribePointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": "CognitoIdentityProvider",
+              "method": "initiatePointInTimeRecovery",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "InitiatePointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": "CognitoIdentityProvider",
+              "method": "listPointInTimeRecoveries",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "ListPointInTimeRecoveries"
+                }
+              ]
+            },
+            {
+              "receiver": "CognitoIdentityProvider",
+              "method": "startPointInTimeRecovery",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "StartPointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "CancelPointInTimeRecoveryCommand",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "CancelPointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "DescribePointInTimeRecoveryCommand",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "DescribePointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "InitiatePointInTimeRecoveryCommand",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "InitiatePointInTimeRecovery"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "ListPointInTimeRecoveriesCommand",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "ListPointInTimeRecoveries"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "StartPointInTimeRecoveryCommand",
+              "api_methods": [
+                {
+                  "service": "cognito-idp",
+                  "name": "StartPointInTimeRecovery"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -483810,6 +484497,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -492989,6 +493681,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -497903,6 +498600,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -502729,6 +503431,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -504378,6 +505085,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -514213,6 +514925,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -534415,6 +535132,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -537936,6 +538658,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -541855,6 +542582,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -544262,6 +544994,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -548970,6 +549707,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -550310,6 +551052,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -554313,6 +555060,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -554447,6 +555199,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -555293,6 +556050,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -557421,6 +558183,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -561338,6 +562105,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -565160,6 +565932,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -571187,6 +571964,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -573728,6 +574510,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -581276,6 +582063,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -585932,6 +586724,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -596608,6 +597405,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -602803,6 +603605,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -608214,6 +609021,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -615266,6 +616078,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -624107,6 +624924,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -628793,6 +629615,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -633858,6 +634685,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -638833,6 +639665,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -647448,6 +648285,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -649752,6 +650594,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -655179,6 +656026,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -662501,6 +663353,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -670462,6 +671319,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -672596,6 +673458,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -676519,6 +677386,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -683500,6 +684372,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -686937,6 +687814,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -691721,6 +692603,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -693835,6 +694722,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -701117,6 +702009,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -704808,6 +705705,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -708671,6 +709573,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -756577,6 +757484,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -760119,6 +761031,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -766693,6 +767610,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -771590,6 +772512,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -779702,6 +780629,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -785067,6 +785999,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -792441,6 +793378,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -794616,6 +795558,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -801145,6 +802092,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -808790,6 +809742,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -815269,6 +816226,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -827423,6 +828385,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -834061,6 +835028,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -835778,6 +836750,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -843096,6 +844073,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -847879,6 +848861,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -851749,6 +852736,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -852518,6 +853510,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -856294,6 +857291,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -862897,6 +863899,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -863641,6 +864648,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -869510,6 +870522,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -882661,6 +883678,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -886613,6 +887635,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -892462,6 +893489,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -897313,6 +898345,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -900850,6 +901887,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -908714,6 +909756,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -911005,6 +912052,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -916995,6 +918047,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -927477,6 +928534,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -929743,6 +930805,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -933147,6 +934214,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -934938,6 +936010,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -936692,6 +937769,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -942326,6 +943408,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -949267,6 +950354,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -967999,6 +969091,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -971818,6 +972915,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -980773,6 +981875,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -985441,6 +986548,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -991144,6 +992256,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -999722,6 +1000839,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1004488,6 +1005610,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1009045,6 +1010172,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1025709,6 +1026841,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1026034,6 +1027171,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1029977,6 +1031119,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1035217,6 +1036364,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1041172,6 +1042324,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1043357,6 +1044514,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1049866,6 +1051028,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1050910,6 +1052077,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1054211,6 +1055383,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1056310,6 +1057487,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1076350,6 +1077532,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1085795,6 +1086982,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1097316,6 +1098508,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1100667,6 +1101864,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1110392,6 +1111594,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1119107,6 +1120314,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1127028,6 +1128240,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1130955,6 +1132172,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1141373,6 +1142595,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1147206,6 +1148433,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1152256,6 +1153488,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1156779,6 +1158016,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1160882,6 +1162124,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1164342,6 +1165589,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1171059,6 +1172311,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1175059,6 +1176316,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1179996,6 +1181258,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1183056,6 +1184323,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1186958,6 +1188230,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1188442,6 +1189719,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1194472,6 +1195754,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1199098,6 +1200385,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1204592,6 +1205884,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1209760,6 +1211057,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1213605,6 +1214907,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1217091,6 +1218398,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1220636,6 +1221948,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1223431,6 +1224748,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1230198,6 +1231520,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1236761,6 +1238088,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1245474,6 +1246806,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1246500,6 +1247837,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1247536,6 +1248878,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1248971,6 +1250318,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1251690,6 +1253042,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1257899,6 +1259256,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1266410,6 +1267772,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1270168,6 +1271535,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1273828,6 +1275200,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1280322,6 +1281699,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1283368,6 +1284750,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1286977,6 +1288364,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1299845,6 +1301237,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1305950,6 +1307347,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1311510,6 +1312912,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1322528,6 +1323935,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1327921,6 +1329333,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1337690,6 +1339107,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1340910,6 +1342332,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1346027,6 +1347454,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1348794,6 +1350226,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1351852,6 +1353289,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1356069,6 +1357511,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1359627,6 +1361074,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1361914,6 +1363366,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1362873,6 +1364330,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1366402,6 +1367864,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1370087,6 +1371554,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1371806,6 +1373278,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1379465,6 +1380942,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1384937,6 +1386419,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1394589,6 +1396076,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1399267,6 +1400759,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1403791,6 +1405288,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1407473,6 +1408975,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1412193,6 +1413700,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1415950,6 +1417462,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1421588,6 +1423105,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1424743,6 +1426265,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1429958,6 +1431485,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1435794,6 +1437326,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1440498,6 +1442035,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1444771,6 +1446313,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1448453,6 +1450000,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1452646,6 +1454198,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1456852,6 +1458409,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1460977,6 +1462539,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1464939,6 +1466506,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1471009,6 +1472581,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1474887,6 +1476464,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1476362,6 +1477944,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1484368,6 +1485955,42 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": "Neptune",
+              "method": "describeServerlessV2PlatformVersions",
+              "api_methods": [
+                {
+                  "service": "rds",
+                  "name": "DescribeServerlessV2PlatformVersions"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "DescribeServerlessV2PlatformVersionsCommand",
+              "api_methods": [
+                {
+                  "service": "rds",
+                  "name": "DescribeServerlessV2PlatformVersions"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "paginateDescribeServerlessV2PlatformVersions",
+              "api_methods": [
+                {
+                  "service": "rds",
+                  "name": "DescribeServerlessV2PlatformVersions"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1488213,6 +1489836,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1492326,6 +1493954,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1499428,6 +1501061,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1500657,6 +1502295,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1503064,6 +1504707,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1511722,6 +1513370,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1514317,6 +1515970,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1519866,6 +1521524,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1521677,6 +1523340,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1523121,6 +1524789,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1526545,6 +1528218,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1529432,6 +1531110,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1532753,6 +1534436,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1540509,6 +1542197,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1547468,6 +1549161,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1547972,6 +1549670,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1552703,6 +1554406,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1570465,6 +1572173,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1573716,6 +1575429,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1578987,6 +1580705,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1585075,6 +1586798,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1586534,6 +1588262,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1588012,6 +1589745,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1588871,6 +1590609,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1591551,6 +1593294,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1595073,6 +1596821,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1598017,6 +1599770,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1601401,6 +1603159,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1603510,6 +1605273,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1605697,6 +1607465,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1613221,6 +1614994,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1616905,6 +1618683,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1620502,6 +1622285,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1624659,6 +1626447,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1635247,6 +1637040,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1641380,6 +1643178,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1645286,6 +1647089,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1652503,6 +1654311,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1655663,6 +1657476,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1659815,6 +1661633,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1663634,6 +1665457,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1664193,6 +1666021,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1674516,6 +1676349,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1677088,6 +1678926,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1682416,6 +1684259,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1687695,6 +1689543,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1709631,6 +1711484,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1715294,6 +1717152,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1718704,6 +1720567,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1733458,6 +1735326,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1737274,6 +1739147,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1749356,6 +1751234,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1753635,6 +1755518,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1759340,6 +1761228,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1768184,6 +1770077,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1770805,6 +1772703,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1773421,6 +1775324,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1778129,6 +1780037,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1780498,6 +1782411,22 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": null,
+              "method": "paginateListTestTemplates",
+              "api_methods": [
+                {
+                  "service": "resiliencehub",
+                  "name": "ListTestTemplates"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1784527,6 +1786456,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1789210,6 +1791144,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1793267,6 +1795206,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1803521,6 +1805465,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1811254,6 +1813203,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1816781,6 +1818735,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1820257,6 +1822216,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1824882,6 +1826846,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1829646,6 +1831615,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1831909,6 +1833883,11 @@
               ]
             }
           ]
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1834214,6 +1836193,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1841523,6 +1843507,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1843789,6 +1845778,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1847808,6 +1849802,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1857889,6 +1859888,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1866266,6 +1868270,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1867460,6 +1869469,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1871222,6 +1873236,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1874029,6 +1876048,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1875882,6 +1877906,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1902206,6 +1904235,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1905969,6 +1908003,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1909556,6 +1911595,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1913304,6 +1915348,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1916896,6 +1918945,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1916950,6 +1919004,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1919728,6 +1921787,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1923325,6 +1925389,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1924446,6 +1926515,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1925097,6 +1927171,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1925331,6 +1927410,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1928970,6 +1931054,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1932280,6 +1934369,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1936397,6 +1938491,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1941365,6 +1943464,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1943541,6 +1945645,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1946459,6 +1948568,32 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": null,
+              "method": "ResumePentestJobCommand",
+              "api_methods": [
+                {
+                  "service": "securityagent",
+                  "name": "ResumePentestJob"
+                }
+              ]
+            },
+            {
+              "receiver": "SecurityAgent",
+              "method": "resumePentestJob",
+              "api_methods": [
+                {
+                  "service": "securityagent",
+                  "name": "ResumePentestJob"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1955712,6 +1957847,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1960380,6 +1962520,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1964736,6 +1966881,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1974124,6 +1976274,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1979051,6 +1981206,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -1983891,6 +1986051,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1989102,6 +1991267,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -1996921,6 +1999091,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2006698,6 +2008873,32 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": null,
+              "method": "PutAccountDeliveryAttributesCommand",
+              "api_methods": [
+                {
+                  "service": "ses",
+                  "name": "PutAccountDeliveryAttributes"
+                }
+              ]
+            },
+            {
+              "receiver": "SESv2",
+              "method": "putAccountDeliveryAttributes",
+              "api_methods": [
+                {
+                  "service": "ses",
+                  "name": "PutAccountDeliveryAttributes"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2012209,6 +2014410,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2017816,6 +2020022,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2021689,6 +2023900,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2022598,6 +2024814,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2023980,6 +2026201,82 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": [
+            {
+              "receiver": null,
+              "method": "BatchRevokeSessionsCommand",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "BatchRevokeSessions"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "GetSessionCommand",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "GetSession"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "ListSessionsCommand",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "ListSessions"
+                }
+              ]
+            },
+            {
+              "receiver": null,
+              "method": "paginateListSessions",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "ListSessions"
+                }
+              ]
+            },
+            {
+              "receiver": "Signin",
+              "method": "batchRevokeSessions",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "BatchRevokeSessions"
+                }
+              ]
+            },
+            {
+              "receiver": "Signin",
+              "method": "getSession",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "GetSession"
+                }
+              ]
+            },
+            {
+              "receiver": "Signin",
+              "method": "listSessions",
+              "api_methods": [
+                {
+                  "service": "signin",
+                  "name": "ListSessions"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2024899,6 +2027196,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2036114,6 +2038416,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2041254,6 +2043561,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2047268,6 +2049580,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2049772,6 +2052089,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2054626,6 +2056948,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2068056,6 +2070383,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2073174,6 +2075506,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2074698,6 +2077035,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2079508,6 +2081850,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2081593,6 +2083940,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2085399,6 +2087751,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2089243,6 +2091600,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2096877,6 +2099239,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2100409,6 +2102776,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2109614,6 +2111986,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2113580,6 +2115957,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2116379,6 +2118761,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2120876,6 +2123263,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2124254,6 +2126646,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2124983,6 +2127380,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2125865,6 +2128267,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2131781,6 +2134188,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2135754,6 +2138166,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2137975,6 +2140392,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2142585,6 +2145007,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2145107,6 +2147534,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2149262,6 +2151694,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2153861,6 +2156298,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2163232,6 +2165674,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2166960,6 +2169407,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2173890,6 +2176342,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2178496,6 +2180953,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2181210,6 +2183672,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2182059,6 +2184526,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2185791,6 +2188263,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2190324,6 +2192801,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2195593,6 +2198075,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2203641,6 +2206128,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2211931,6 +2214423,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2218539,6 +2221036,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2226032,6 +2228534,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2228037,6 +2230544,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2233155,6 +2235667,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2239400,6 +2241917,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2251282,6 +2253804,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2254809,6 +2257336,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2262822,6 +2265354,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2264517,6 +2267054,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2267620,6 +2270162,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
@@ -2273734,6 +2276281,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2279424,6 +2281976,11 @@
           "version": "3.1171.0",
           "remove": [],
           "upsert": []
+        },
+        {
+          "version": "3.1172.0",
+          "remove": [],
+          "upsert": []
         }
       ]
     },
@@ -2283387,6 +2285944,11 @@
         },
         {
           "version": "3.1171.0",
+          "remove": [],
+          "upsert": []
+        },
+        {
+          "version": "3.1172.0",
           "remove": [],
           "upsert": []
         }
