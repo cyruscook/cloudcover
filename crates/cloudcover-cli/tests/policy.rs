@@ -275,6 +275,82 @@ fn document_client_response_properties_preserve_existing_dynamodb_policy()
 }
 
 #[test]
+#[cfg(unix)]
+fn conditional_grants_have_diagnostics_and_explicit_opt_in_in_both_formats()
+-> Result<(), Box<dyn Error>> {
+    use std::{fs, os::unix::fs::symlink};
+    let root = std::env::temp_dir().join(format!("cloudcover-conditional-{}", std::process::id()));
+    fs::create_dir_all(root.join("node_modules/@aws-sdk/client-appstream"))?;
+    let result = (|| -> Result<(), Box<dyn Error>> {
+        symlink(
+            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join(
+                "../langs/cloudcover-javascript/analyzer/fixtures/dynamodb/node_modules/typescript",
+            ),
+            root.join("node_modules/typescript"),
+        )?;
+        fs::write(
+            root.join("package.json"),
+            r#"{"private":true,"type":"module"}"#,
+        )?;
+        fs::write(
+            root.join("main.ts"),
+            "import { CreateFleetCommand } from '@aws-sdk/client-appstream'; new CreateFleetCommand({});",
+        )?;
+        let sdk = root.join("node_modules/@aws-sdk/client-appstream");
+        fs::write(
+            sdk.join("package.json"),
+            r#"{"name":"@aws-sdk/client-appstream","version":"3.1172.0","types":"index.d.ts","main":"index.js"}"#,
+        )?;
+        fs::write(
+            sdk.join("index.d.ts"),
+            "export declare class CreateFleetCommand { constructor(input: unknown); }",
+        )?;
+        fs::write(
+            sdk.join("index.js"),
+            "throw new Error('Analyzed SDK code must never execute');",
+        )?;
+        for format in ["json", "terraform"] {
+            for include in [false, true] {
+                let path = root.to_string_lossy();
+                let mut args = vec![
+                    "policy",
+                    "--language",
+                    "typescript",
+                    "--format",
+                    format,
+                    &path,
+                ];
+                if include {
+                    args.push("--include-conditional");
+                }
+                let output = run_policy(&args)?;
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                assert!(output.status.success(), "{stderr}");
+                assert!(stderr.contains("appstream:CreateFleet -> iam:PassRole"));
+                assert!(stderr.contains("appstream:CreateFleet -> appstream:TagResource"));
+                assert!(stderr.contains("https://docs.aws.amazon.com/"));
+                assert!(stderr.contains(if include {
+                    "included by explicit opt-in"
+                } else {
+                    "excluded from ordinary grants"
+                }));
+                let stdout = String::from_utf8(output.stdout)?;
+                assert!(stdout.contains("appstream:CreateFleet"));
+                assert!(!stdout.contains("iam:PassRole"));
+                assert_eq!(stdout.contains("appstream:TagResource"), include);
+                assert!(!stdout.contains("iam:PassedToService"));
+                assert!(stderr.contains("manual grant required; not rendered"));
+                assert!(stderr.contains("concrete, validated requested role ARN"));
+                assert!(stderr.contains("iam:PassedToService = appstream.amazonaws.com"));
+            }
+        }
+        Ok(())
+    })();
+    fs::remove_dir_all(root)?;
+    result
+}
+
+#[test]
 fn emits_terraform_policy_without_module_manifest() -> Result<(), Box<dyn Error>> {
     let fixture = terraform_fixture_dir().with_file_name("aws-terraform-root-only");
     let output = run_policy(&[

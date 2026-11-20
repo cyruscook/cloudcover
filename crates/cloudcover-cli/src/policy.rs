@@ -14,23 +14,53 @@ use crate::error::CliError;
 pub(crate) fn build_policy(
     path: OsString,
     language: Language,
+    include_conditional: bool,
 ) -> Result<serde_json::Value, CliError> {
     let api_methods = build_api_methods(path, language)?;
     report_fas_coverage(&api_methods)?;
-    AwsProvider::new()
-        .permissions_policy(&api_methods)
-        .map_err(|error| CliError::Runtime(error.to_string()))
+    let review = AwsProvider::new()
+        .review_permissions_policy(&api_methods, include_conditional)
+        .map_err(|error| CliError::Runtime(error.to_string()))?;
+    report_conditional(&review.conditional_permissions, include_conditional);
+    Ok(review.policy)
 }
 
 pub(crate) fn build_terraform_policy(
     path: OsString,
     language: Language,
+    include_conditional: bool,
 ) -> Result<String, CliError> {
     let api_methods = build_api_methods(path, language)?;
     report_fas_coverage(&api_methods)?;
-    AwsProvider::new()
-        .permissions_policy_hcl(&api_methods)
-        .map_err(|error| CliError::Runtime(error.to_string()))
+    let review = AwsProvider::new()
+        .review_permissions_policy_hcl(&api_methods, include_conditional)
+        .map_err(|error| CliError::Runtime(error.to_string()))?;
+    report_conditional(&review.conditional_permissions, include_conditional);
+    Ok(review.policy)
+}
+
+fn report_conditional(diagnostics: &[cloudcover_aws::ConditionalPermission], included: bool) {
+    for diagnostic in diagnostics {
+        let disposition = if diagnostic.manual_step.is_some() {
+            "manual grant required; not rendered"
+        } else if included {
+            "included by explicit opt-in"
+        } else {
+            "excluded from ordinary grants"
+        };
+        if let Some(step) = diagnostic.manual_step {
+            eprintln!("Manual authorization: {step}");
+        }
+        eprintln!(
+            "Conditional authorization: {}:{} -> {} {disposition}. {} Review request applicability and resource scopes; --include-conditional includes eligible links; manual-only grants remain diagnostics. Source: {} (reviewed {}).",
+            diagnostic.service,
+            diagnostic.operation,
+            diagnostic.permission,
+            diagnostic.applicability,
+            diagnostic.source,
+            diagnostic.reviewed
+        );
+    }
 }
 
 fn report_fas_coverage(methods: &[ApiMethod]) -> Result<(), CliError> {
