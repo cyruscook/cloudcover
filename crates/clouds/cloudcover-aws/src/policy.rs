@@ -394,8 +394,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn disposition_guard_blocks_fas_before_rendering_partial_source_grants() -> Result<(), AwsError>
-    {
+    fn disposition_guard_blocks_fas_before_rendering_partial_source_grants() {
         for include in [false, true] {
             for hcl in [false, true] {
                 let mut downstream_seen = false;
@@ -429,7 +428,6 @@ mod tests {
                 );
             }
         }
-        Ok(())
     }
 
     #[test]

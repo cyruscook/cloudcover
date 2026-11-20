@@ -30,7 +30,8 @@ fn known_role_transitions_block_complete_policies_without_hiding_evidence()
         if baseline {
             assert!(provider.authorization_disposition(&method).is_none());
         }
-        if !candidate && !(baseline && !indexed) {
+        let expect_unknown = baseline && !indexed;
+        if !(candidate || expect_unknown) {
             continue;
         }
         if candidate {
