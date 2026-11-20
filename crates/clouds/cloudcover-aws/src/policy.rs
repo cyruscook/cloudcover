@@ -121,6 +121,26 @@ struct PolicyStatement {
     actions: Vec<&'static str>,
 }
 
+fn checked_resources(action: &AwsAction) -> Result<Vec<String>, AwsError> {
+    // This reviewed bridge is valid only with the exact retained cluster scope.
+    // Recheck at rendering too: incomplete metadata must never produce "*".
+    if action.service == "odb"
+        && action.name == "DisassociateVirtualMachinesFromExadbVmCluster"
+        && (!action.has_complete_resource_templates
+            || action.resource_types != ["exadb-vm-cluster"]
+            || action.resource_templates
+                != [
+                    "arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}",
+                ])
+    {
+        return Err(AwsError::UnresolvedAuthorization {
+            service: action.service.to_owned(),
+            name: action.name.to_owned(),
+        });
+    }
+    Ok(resources(action))
+}
+
 fn resources(action: &AwsAction) -> Vec<String> {
     // AgentArns is optional for these APIs (S3 uses it only on Outposts).
     // SAR can list an agent resource even though agentless requests need "*".
@@ -160,6 +180,7 @@ fn build_policy_statements_with(
     let mut statements = BTreeMap::<PolicyScope, BTreeSet<&'static str>>::new();
     let mut diagnostics = Vec::new();
     for method in methods {
+        crate::disposition::ensure_policy_supported(method)?;
         let direct = resolve(method)?;
         ensure_ordinary_authorization(method, &direct)?;
         let (ordinary, optional): (Vec<&AwsAction>, Vec<&AwsAction>) = direct
@@ -169,7 +190,7 @@ fn build_policy_statements_with(
             statements
                 .entry(PolicyScope {
                     service: action.service,
-                    resources: resources(action),
+                    resources: checked_resources(action)?,
                     via_service: None,
                     resource_role: String::new(),
                 })
@@ -182,7 +203,7 @@ fn build_policy_statements_with(
                     statements
                         .entry(PolicyScope {
                             service: action.service,
-                            resources: resources(action),
+                            resources: checked_resources(action)?,
                             via_service: None,
                             resource_role: String::new(),
                         })
@@ -195,10 +216,14 @@ fn build_policy_statements_with(
         for dependency in fas::dependencies(method)? {
             let rule = dependency.rule;
             for operation in &rule.downstream_operations {
+                crate::disposition::ensure_policy_supported(&ApiMethod::new(
+                    &rule.downstream_service,
+                    operation,
+                ))?;
                 for action in
                     resolve_direct_actions(&ApiMethod::new(&rule.downstream_service, operation))?
                 {
-                    let mut resources = resources(action);
+                    let mut resources = checked_resources(action)?;
                     if let Some(key) = &rule.key_placeholder {
                         for resource in &mut resources {
                             *resource = resource
@@ -329,6 +354,64 @@ fn find_action(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn odb_renderers_reject_scope_fallback_even_when_injected_after_compilation()
+    -> Result<(), AwsError> {
+        let original = resolve_direct_actions(&ApiMethod::new(
+            "odb",
+            "DisassociateVirtualMachinesFromExadbVmCluster",
+        ))?[0];
+        for action in [
+            AwsAction {
+                resource_types: &[],
+                resource_templates: &[],
+                ..*original
+            },
+            AwsAction {
+                resource_templates: &["*"],
+                ..*original
+            },
+            AwsAction {
+                resource_templates: &[],
+                ..*original
+            },
+            AwsAction {
+                has_complete_resource_templates: false,
+                ..*original
+            },
+            AwsAction {
+                resource_types: &["other"],
+                ..*original
+            },
+        ] {
+            let action = Box::leak(Box::new(action));
+            for include in [false, true] {
+                for hcl in [false, true] {
+                    let result = build_policy_statements_with(
+                        &[ApiMethod::new(
+                            "odb",
+                            "DisassociateVirtualMachinesFromExadbVmCluster",
+                        )],
+                        include,
+                        |_| Ok(vec![action]),
+                    )
+                    .and_then(|(statements, _)| {
+                        if hcl {
+                            render_hcl(statements)
+                        } else {
+                            Ok(render_json(statements).to_string())
+                        }
+                    });
+                    assert!(matches!(
+                        result,
+                        Err(AwsError::UnresolvedAuthorization { .. })
+                    ));
+                }
+            }
+        }
+        Ok(())
+    }
 
     #[test]
     fn incomplete_passrole_metadata_is_diagnostic_only_in_both_renderers() -> Result<(), AwsError> {

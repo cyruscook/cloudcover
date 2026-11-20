@@ -16,6 +16,19 @@ impl AwsProvider {
         Self
     }
 
+    /// Returns a reviewed diagnostic, including exact legacy operations absent
+    /// from the current catalog. Check `blocks_policy()` to distinguish retained
+    /// reviewed legacy mappings (warnings) from removed/manual/retired blockers.
+    /// Evidence queries
+    /// and IAM coverage describe metadata, not service availability or safe grants.
+    #[must_use]
+    pub fn authorization_disposition(
+        &self,
+        method: &ApiMethod,
+    ) -> Option<&'static crate::OperationDisposition> {
+        crate::disposition::lookup(method)
+    }
+
     /// Returns coverage of direct caller IAM requirements, independently of FAS.
     ///
     /// # Errors
@@ -83,6 +96,9 @@ impl AwsProvider {
     /// mode infers request applicability. Present all diagnostics
     /// and review resource placeholders and any required resource policies.
     /// FAS behavior is unchanged. Raw evidence remains in `iam_permissions`.
+    /// Manual/retired dispositions and removed legacy mappings block output in
+    /// either mode. Query `authorization_disposition` for informational warnings
+    /// on retained, reviewed legacy mappings; the CLI presents these warnings.
     ///
     /// # Errors
     /// Returns an error for unknown or unresolved authorization, including an
@@ -124,7 +140,7 @@ pub enum AwsError {
     #[error("unknown AWS API method {service}:{name}")]
     UnknownApiMethod { service: String, name: String },
     #[error(
-        "unresolved AWS authorization coverage for {service}:{name}: the catalog does not establish caller IAM permission requirements"
+        "unresolved AWS authorization coverage for {service}:{name}: {}", crate::disposition::unresolved_reason(.service, .name)
     )]
     UnresolvedAuthorization { service: String, name: String },
     #[error("failed to encode IAM policy as Terraform HCL: {source}")]

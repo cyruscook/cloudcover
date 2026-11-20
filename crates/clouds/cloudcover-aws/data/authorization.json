@@ -169,6 +169,31 @@
           "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
         }
       ]
+    },
+    {
+      "service": "odb",
+      "operation": "DisassociateVirtualMachinesFromExadbVmCluster",
+      "authorized_actions": [
+        {
+          "service": "odb",
+          "name": "DisassociateVirtualMachinesFromExadbVmCluster"
+        }
+      ],
+      "required_scope": {
+        "resource_type": "exadb-vm-cluster",
+        "arn_format": "arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}"
+      },
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_odb.html",
+          "evidence": "The operation table explicitly links this API to the same-name action; the action requires exadb-vm-cluster scope."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DisassociateVirtualMachinesFromExadbVmCluster.html",
+          "evidence": "Removes the supplied DB nodes from the specified Exascale VM cluster. This is not IAM role association."
+        }
+      ]
     }
   ]
 }

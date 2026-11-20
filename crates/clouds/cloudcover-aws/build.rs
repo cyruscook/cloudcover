@@ -10,6 +10,7 @@ use std::{
 
 const CACHE_FILE_NAME: &str = "actions-v2.rs";
 
+mod authorization_dispositions;
 mod authorization_supplement;
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
@@ -208,18 +209,21 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=data/sar/manifest.json");
     println!("cargo:rerun-if-changed=authorization_supplement.rs");
     println!("cargo:rerun-if-changed=data/authorization.json");
+    println!("cargo:rerun-if-changed=authorization_dispositions.rs");
+    println!("cargo:rerun-if-changed=data/authorization-dispositions.json");
     let mut rows = collect_rows()?;
     let action_keys = sort_and_validate_action_rows(&mut rows.actions)?;
     authorization_supplement::apply(&mut rows.operations, &action_keys)?;
     sort_and_validate_operation_rows(&mut rows.operations, &action_keys)?;
     sort_and_validate_sdk_mapping_rows(&mut rows.sdk_mappings)?;
-    write_generated_file(&generate_code(&rows)?)
+    write_generated_file(&(generate_code(&rows)? + &authorization_dispositions::generate()?))
 }
 
 fn collect_rows() -> BuildResult<GeneratedRows> {
     let contents = fs::read("data/sar/catalog.json")?;
     let manifest: Manifest = serde_json::from_slice(&fs::read("data/sar/manifest.json")?)?;
     validate_manifest(&manifest, &contents)?;
+    authorization_dispositions::validate(&contents)?;
     let catalog: Catalog = serde_json::from_slice(&contents)?;
     if catalog.schema_version != 1
         || catalog.services.is_empty()
@@ -252,6 +256,7 @@ fn collect_rows() -> BuildResult<GeneratedRows> {
 
         let service = entry.service;
         authorization_supplement::validate_upstream_contexts(&service, &document.operations)?;
+        authorization_supplement::validate_scopes(&service, &document)?;
         let ServiceDocument {
             name: _,
             actions: document_actions,

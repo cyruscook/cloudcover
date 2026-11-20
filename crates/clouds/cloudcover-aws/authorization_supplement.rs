@@ -19,6 +19,14 @@ struct Mapping {
     authorized_actions: Vec<Action>,
     sources: Vec<Source>,
     reviewed: String,
+    required_scope: Option<RequiredScope>,
+}
+
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct RequiredScope {
+    resource_type: String,
+    arn_format: String,
 }
 
 #[derive(serde::Deserialize)]
@@ -74,6 +82,42 @@ pub(super) fn validate_upstream_contexts(
             return Err(format!(
                 "authorization supplement action/context conflicts with SAR for {service}:{}",
                 operation.name
+            )
+            .into());
+        }
+    }
+    Ok(())
+}
+
+pub(super) fn validate_scopes(service: &str, document: &super::ServiceDocument) -> BuildResult<()> {
+    let supplement: Supplement = serde_json::from_str(include_str!("data/authorization.json"))?;
+    for mapping in supplement.mappings.iter().filter(|m| m.service == service) {
+        let Some(scope) = &mapping.required_scope else {
+            continue;
+        };
+        let action = document
+            .actions
+            .iter()
+            .find(|a| a.name == mapping.operation)
+            .ok_or("missing scoped supplemental action")?;
+        let resource = document
+            .resources
+            .iter()
+            .find(|r| r.name == scope.resource_type)
+            .ok_or("missing scoped supplemental resource")?;
+        if mapping.authorized_actions.len() != 1
+            || mapping.authorized_actions[0].service != service
+            || mapping.authorized_actions[0].name != action.name
+            || !action.condition_keys.is_empty()
+            || action.resources.len() != 1
+            || action.resources[0].name != scope.resource_type
+            || !action.resources[0].condition_keys.is_empty()
+            || resource.arn_formats != [scope.arn_format.clone()]
+            || resource.condition_keys != ["aws:ResourceTag/${TagKey}"]
+        {
+            return Err(format!(
+                "reviewed authorization scope changed for {service}:{}",
+                mapping.operation
             )
             .into());
         }
@@ -142,6 +186,56 @@ fn apply_document(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn odb_bridge_rejects_missing_wildcard_or_changed_scope() -> BuildResult<()> {
+        let original = serde_json::json!({"Name":"odb", "Actions":[{
+            "Name":"DisassociateVirtualMachinesFromExadbVmCluster",
+            "Resources":[{"Name":"exadb-vm-cluster"}]}], "Resources":[{
+            "Name":"exadb-vm-cluster", "ARNFormats":["arn:${Partition}:odb:${Region}:${Account}:exadb-vm-cluster/${ExadbVmClusterId}"],
+            "ConditionKeys":["aws:ResourceTag/${TagKey}"]}]});
+        validate_scopes("odb", &serde_json::from_value(original.clone())?)?;
+        for (pointer, value) in [
+            ("/Actions/0/Resources", serde_json::json!([])),
+            (
+                "/Actions/0/Resources",
+                serde_json::json!([{"Name":"other"}]),
+            ),
+            (
+                "/Actions/0/Resources",
+                serde_json::json!([{"Name":"exadb-vm-cluster", "ConditionKeys":["new:Restriction"]}]),
+            ),
+            (
+                "/Actions/0/ActionConditionKeys",
+                serde_json::json!(["new:Restriction"]),
+            ),
+            ("/Resources", serde_json::json!([])),
+            ("/Resources/0/ARNFormats", serde_json::json!([])),
+            ("/Resources/0/ARNFormats", serde_json::json!(["*"])),
+            (
+                "/Resources/0/ARNFormats",
+                serde_json::json!(["arn:${Partition}:odb:${Region}:${Account}:other/${Id}"]),
+            ),
+            (
+                "/Resources/0/ConditionKeys",
+                serde_json::json!(["new:Restriction"]),
+            ),
+        ] {
+            let mut changed = original.clone();
+            if pointer == "/Actions/0/ActionConditionKeys" {
+                changed["Actions"][0]["ActionConditionKeys"] = value;
+            } else {
+                *changed
+                    .pointer_mut(pointer)
+                    .ok_or("missing fixture field")? = value;
+            }
+            assert!(
+                validate_scopes("odb", &serde_json::from_value(changed)?).is_err(),
+                "{pointer}"
+            );
+        }
+        Ok(())
+    }
 
     #[test]
     fn reviewed_context_shapes_accept_published_rows_and_reject_stricter_changes() -> BuildResult<()>
@@ -233,6 +327,7 @@ mod tests {
             ("appstream", "CreateImageBuilder"),
             ("appstream", "CreateStack"),
             ("appstream", "CreateUpdatedImage"),
+            ("odb", "DisassociateVirtualMachinesFromExadbVmCluster"),
         ]
         .into_iter()
         .map(|(service, name)| OperationRow {
@@ -253,6 +348,7 @@ mod tests {
             ("appstream", "CreateStack"),
             ("appstream", "CreateUpdatedImage"),
             ("appstream", "TagResource"),
+            ("odb", "DisassociateVirtualMachinesFromExadbVmCluster"),
         ]
         .into_iter()
         .map(|(s, n)| (s.into(), n.into()))
@@ -267,7 +363,7 @@ mod tests {
             rows[0].authorized_actions,
             [("s3express".into(), "CreateSession".into())]
         );
-        for row in &rows[1..] {
+        for row in rows.iter().filter(|row| row.service == "appstream") {
             assert!(
                 row.authorized_actions
                     .contains(&("appstream".into(), row.name.clone()))
