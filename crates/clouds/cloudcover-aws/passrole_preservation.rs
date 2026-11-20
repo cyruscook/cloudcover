@@ -266,7 +266,7 @@ mod tests {
     {
         let baseline = fixture();
         let review = review(&baseline, "Create")?;
-        assert!(blocked(&baseline, &review).is_empty());
+        assert_eq!(blocked(&baseline, &review), Vec::<(String, String)>::new());
         for mutation in 0..15 {
             let mut changed = baseline.clone();
             let doc = &mut changed["services"][0]["document"];
@@ -306,7 +306,7 @@ mod tests {
             .as_array_mut()
             .ok_or("resources")?
             .push(json!({"Name":"unrelated","ARNFormats":["*"]}));
-        assert!(blocked(&benign, &review).is_empty());
+        assert_eq!(blocked(&benign, &review), Vec::<(String, String)>::new());
         Ok(())
     }
 
@@ -323,21 +323,21 @@ mod tests {
             match mutation {
                 0 => {}
                 1 => {
-                    changed["services"][1]["document"]["Resources"][0]["ARNFormats"] = json!(["*"])
+                    changed["services"][1]["document"]["Resources"][0]["ARNFormats"] = json!(["*"]);
                 }
                 2 => changed["services"][1]["document"]["Resources"][0]["ARNFormats"] = json!([]),
                 3 => changed["services"][1]["document"]["Actions"][0]["Resources"] = json!([]),
                 4 => {
                     changed["services"][1]["document"]["Resources"][0]["ARNFormats"] =
-                        json!(["arn:aws:iam::123456789012:role/concrete-but-not-request-bound"])
+                        json!(["arn:aws:iam::123456789012:role/concrete-but-not-request-bound"]);
                 }
                 5 => {
                     changed["services"][0]["document"]["Operations"][0]["AuthorizedActions"][2]["Context"] =
-                        Value::Null
+                        Value::Null;
                 }
                 6 => {
                     changed["services"][0]["document"]["Operations"][0]["AuthorizedActions"][2]["Context"] =
-                        json!({"iam:PassedToService":["other.amazonaws.com"]})
+                        json!({"iam:PassedToService":["other.amazonaws.com"]});
                 }
                 7 => changed["services"][1]["document"]["Resources"] = json!([]),
                 _ => unreachable!(),
@@ -352,7 +352,7 @@ mod tests {
     {
         let baseline = fixture();
         let review = review(&baseline, "New")?;
-        assert!(blocked(&baseline, &review).is_empty());
+        assert_eq!(blocked(&baseline, &review), Vec::<(String, String)>::new());
         let mut empty = baseline.clone();
         empty["services"][0]["document"]["Operations"]
             .as_array_mut()
@@ -373,7 +373,7 @@ mod tests {
         assert_eq!(review.operations.len(), 22);
         let digest = format!("{:x}", Sha256::digest(&contents));
         if digest == review.baseline.catalog_sha256 {
-            assert!(blocked(&catalog, &review).is_empty());
+            assert_eq!(blocked(&catalog, &review), Vec::<(String, String)>::new());
         }
         if digest == review.candidate.catalog_sha256 {
             assert_eq!(blocked(&catalog, &review).len(), 22);
