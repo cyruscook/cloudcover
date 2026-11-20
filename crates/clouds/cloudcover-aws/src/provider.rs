@@ -28,8 +28,9 @@ impl AwsProvider {
     }
     /// Returns direct IAM permissions plus documented possible FAS permissions.
     ///
-    /// This action-only projection omits conditions and applicability. Use
-    /// `fas_dependencies` for evidence and `permissions_policy` for scoped grants.
+    /// This evidence projection includes request-dependent direct links and
+    /// omits conditions and applicability. Use `fas_dependencies` for downstream
+    /// evidence and `review_permissions_policy` for direct authorization review.
     ///
     /// # Errors
     ///
@@ -74,10 +75,49 @@ impl AwsProvider {
     pub fn permissions_policy_hcl(&self, methods: &[ApiMethod]) -> Result<String, AwsError> {
         policy::build_permissions_policy_hcl(methods)
     }
+
+    /// Generate JSON with request-dependent direct authorization diagnostics.
+    ///
+    /// `false` omits only reviewed conditional links; `true` explicitly includes
+    /// them. Neither mode infers request applicability. Present all diagnostics
+    /// and review resource placeholders and any required resource policies.
+    /// FAS behavior is unchanged. Raw evidence remains in `iam_permissions`.
+    ///
+    /// # Errors
+    /// Returns an error for unknown or unresolved authorization, including an
+    /// operation that would have no ordinary direct authorization remaining.
+    pub fn review_permissions_policy(
+        &self,
+        methods: &[ApiMethod],
+        include_conditional: bool,
+    ) -> Result<crate::ReviewedPolicy<serde_json::Value>, AwsError> {
+        policy::review_permissions_policy(methods, include_conditional)
+    }
+
+    /// Generate HCL with the same explicit review contract as JSON.
+    ///
+    /// # Errors
+    /// Returns authorization errors or a serialization error.
+    pub fn review_permissions_policy_hcl(
+        &self,
+        methods: &[ApiMethod],
+        include_conditional: bool,
+    ) -> Result<crate::ReviewedPolicy<String>, AwsError> {
+        policy::review_permissions_policy_hcl(methods, include_conditional)
+    }
 }
 
 #[derive(Debug, thiserror::Error)]
 pub enum AwsError {
+    #[error(
+        "conditional direct authorization requires review for {service}:{name} ({permission}). Use review_permissions_policy/review_permissions_policy_hcl and present every diagnostic; explicitly choose ordinary or conditional grants. Evidence: {source_url}"
+    )]
+    ConditionalAuthorization {
+        service: String,
+        name: String,
+        permission: String,
+        source_url: &'static str,
+    },
     #[error("invalid FAS catalog: {message}")]
     InvalidFasCatalog { message: String },
     #[error("unknown AWS API method {service}:{name}")]

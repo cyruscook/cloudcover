@@ -1,4 +1,5 @@
 mod authorization;
+mod conditional;
 pub mod fas;
 mod generated;
 mod model;
@@ -6,6 +7,7 @@ mod policy;
 mod provider;
 
 pub use authorization::AuthorizationCoverage;
+pub use conditional::{ConditionalPermission, ReviewedPolicy};
 pub use provider::{AwsError, AwsProvider};
 
 pub use model::{IamContextKey, IamPermission, IamResource};

@@ -13,7 +13,7 @@ enum OutputFormat {
     Terraform,
 }
 
-pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go|terraform|javascript|typescript] [--format json|terraform] <PATH>";
+pub(crate) const USAGE: &str = "Usage: cloudcover policy [--language go|terraform|javascript|typescript] [--format json|terraform] [--include-conditional] <PATH>";
 
 pub(crate) fn run_main() -> ExitCode {
     match run() {
@@ -56,11 +56,17 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
     let mut language = Language::Go;
     let mut format = OutputFormat::Json;
     let mut path = None;
+    let mut include_conditional = false;
     let mut index = 0;
     while index < args.len() {
         let argument = &args[index];
         if is_help_flag(argument) {
             return Err(CliError::Help);
+        }
+        if argument == "--include-conditional" {
+            include_conditional = true;
+            index += 1;
+            continue;
         }
         if argument == "--language" {
             let value = args
@@ -113,14 +119,17 @@ fn run_policy(args: &[OsString]) -> Result<(), CliError> {
     let path = path.ok_or_else(|| CliError::Usage("missing path".to_owned()))?;
     match format {
         OutputFormat::Json => {
-            let policy = build_policy(path, language)?;
+            let policy = build_policy(path, language, include_conditional)?;
             let stdout = serde_json::to_string_pretty(&policy).map_err(|error| {
                 CliError::Runtime(format!("failed to encode policy JSON: {error}"))
             })?;
             println!("{stdout}");
         }
         OutputFormat::Terraform => {
-            println!("{}", build_terraform_policy(path, language)?);
+            println!(
+                "{}",
+                build_terraform_policy(path, language, include_conditional)?
+            );
         }
     }
     Ok(())

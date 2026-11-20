@@ -5,7 +5,10 @@
       "service": "s3",
       "operation": "CreateSession",
       "authorized_actions": [
-        { "service": "s3express", "name": "CreateSession" }
+        {
+          "service": "s3express",
+          "name": "CreateSession"
+        }
       ],
       "reviewed": "2026-10-30",
       "sources": [
@@ -16,6 +19,139 @@
         {
           "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3express.html",
           "evidence": "The S3 Express CreateSession action supplies the resource types and condition keys; reuse the pinned SAR action rather than inventing an s3 action."
+        }
+      ]
+    },
+    {
+      "service": "appstream",
+      "operation": "CreateFleet",
+      "authorized_actions": [
+        {
+          "service": "appstream",
+          "name": "CreateFleet"
+        },
+        {
+          "service": "appstream",
+          "name": "TagResource"
+        },
+        {
+          "service": "iam",
+          "name": "PassRole"
+        }
+      ],
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+          "evidence": "The API operation table lists appstream:CreateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html",
+          "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
+        }
+      ]
+    },
+    {
+      "service": "appstream",
+      "operation": "UpdateFleet",
+      "authorized_actions": [
+        {
+          "service": "appstream",
+          "name": "UpdateFleet"
+        },
+        {
+          "service": "iam",
+          "name": "PassRole"
+        }
+      ],
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+          "evidence": "The API operation table lists appstream:UpdateFleet and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html",
+          "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
+        }
+      ]
+    },
+    {
+      "service": "appstream",
+      "operation": "CreateImageBuilder",
+      "authorized_actions": [
+        {
+          "service": "appstream",
+          "name": "CreateImageBuilder"
+        },
+        {
+          "service": "appstream",
+          "name": "TagResource"
+        },
+        {
+          "service": "iam",
+          "name": "PassRole"
+        }
+      ],
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+          "evidence": "The API operation table lists appstream:CreateImageBuilder and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html",
+          "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
+        }
+      ]
+    },
+    {
+      "service": "appstream",
+      "operation": "CreateStack",
+      "authorized_actions": [
+        {
+          "service": "appstream",
+          "name": "CreateStack"
+        },
+        {
+          "service": "appstream",
+          "name": "TagResource"
+        }
+      ],
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+          "evidence": "The API operation table lists appstream:CreateStack and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html",
+          "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
+        }
+      ]
+    },
+    {
+      "service": "appstream",
+      "operation": "CreateUpdatedImage",
+      "authorized_actions": [
+        {
+          "service": "appstream",
+          "name": "CreateUpdatedImage"
+        },
+        {
+          "service": "appstream",
+          "name": "TagResource"
+        }
+      ],
+      "reviewed": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_appstream.html",
+          "evidence": "The API operation table lists appstream:CreateUpdatedImage and the additional actions recorded here. Tagging and role passing are request dependent; the conditional policy review classifies these exact links and scopes opted-in PassRole to appstream.amazonaws.com."
+        },
+        {
+          "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateUpdatedImage.html",
+          "evidence": "Request parameters establish when tags or a role are supplied; they do not establish unconditional grants."
         }
       ]
     }

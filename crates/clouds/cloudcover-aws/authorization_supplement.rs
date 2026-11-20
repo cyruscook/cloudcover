@@ -97,22 +97,53 @@ mod tests {
     use super::*;
 
     fn rows() -> Vec<OperationRow> {
-        vec![OperationRow {
-            service: "s3".into(),
-            name: "CreateSession".into(),
+        [
+            ("s3", "CreateSession"),
+            ("appstream", "CreateFleet"),
+            ("appstream", "UpdateFleet"),
+            ("appstream", "CreateImageBuilder"),
+            ("appstream", "CreateStack"),
+            ("appstream", "CreateUpdatedImage"),
+        ]
+        .into_iter()
+        .map(|(service, name)| OperationRow {
+            service: service.into(),
+            name: name.into(),
             authorized_actions: vec![],
-        }]
+        })
+        .collect()
     }
 
     fn actions() -> BTreeSet<(String, String)> {
-        BTreeSet::from([("s3express".into(), "CreateSession".into())])
+        [
+            ("s3express", "CreateSession"),
+            ("iam", "PassRole"),
+            ("appstream", "CreateFleet"),
+            ("appstream", "UpdateFleet"),
+            ("appstream", "CreateImageBuilder"),
+            ("appstream", "CreateStack"),
+            ("appstream", "CreateUpdatedImage"),
+            ("appstream", "TagResource"),
+        ]
+        .into_iter()
+        .map(|(s, n)| (s.into(), n.into()))
+        .collect()
     }
 
     #[test]
     fn applies_documented_bridge_and_accepts_identical_upstream_fix() -> BuildResult<()> {
         let mut rows = rows();
         apply(&mut rows, &actions())?;
-        assert_eq!(rows[0].authorized_actions, Vec::from_iter(actions()));
+        assert_eq!(
+            rows[0].authorized_actions,
+            [("s3express".into(), "CreateSession".into())]
+        );
+        for row in &rows[1..] {
+            assert!(
+                row.authorized_actions
+                    .contains(&("appstream".into(), row.name.clone()))
+            );
+        }
         apply(&mut rows, &actions())?;
         Ok(())
     }
@@ -124,6 +155,20 @@ mod tests {
         let mut rows = rows();
         rows[0].authorized_actions = vec![("s3".into(), "GetObject".into())];
         assert!(apply(&mut rows, &actions()).is_err());
+    }
+
+    #[test]
+    fn every_bridge_rejects_future_disagreement_and_missing_action_references() {
+        for index in 0..rows().len() {
+            let mut conflicting = rows();
+            conflicting[index].authorized_actions = vec![("unreviewed".into(), "Action".into())];
+            assert!(apply(&mut conflicting, &actions()).is_err());
+        }
+        for missing in actions() {
+            let mut keys = actions();
+            keys.remove(&missing);
+            assert!(apply(&mut rows(), &keys).is_err(), "{missing:?}");
+        }
     }
 
     #[test]
