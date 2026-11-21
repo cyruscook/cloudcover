@@ -1610,6 +1610,45 @@
           ]
         ]
       ]
+    },
+    {
+      "module_version": "1.29.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "ListAutonomousDatabaseRefreshableClones",
+          [
+            [
+              "odb",
+              "ListAutonomousDatabaseRefreshableClones"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "Client",
+          "StartAutonomousDatabaseRefresh",
+          [
+            [
+              "odb",
+              "StartAutonomousDatabaseRefresh"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/odb",
+          "ListAutonomousDatabaseRefreshableClonesPaginator",
+          "NextPage",
+          [
+            [
+              "odb",
+              "ListAutonomousDatabaseRefreshableClones"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
