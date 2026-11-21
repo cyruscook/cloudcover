@@ -220,6 +220,28 @@
       "module_version": "1.7.12",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.8.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/agentregistry",
+          "SearchDiscoverableRegistryRecordsPaginator",
+          "NextPage",
+          [
+            [
+              "agent-registry",
+              "SearchDiscoverableRegistryRecords"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "module_version": "1.9.0",
+      "remove": [],
+      "upsert": []
     }
   ]
 }

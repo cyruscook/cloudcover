@@ -702,6 +702,67 @@
       "module_version": "1.11.6",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.12.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/partnercentralchannel",
+          "Client",
+          "CancelChannelContract",
+          [
+            [
+              "partnercentral-channel",
+              "CancelChannelContract"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/partnercentralchannel",
+          "Client",
+          "CreateChannelContract",
+          [
+            [
+              "partnercentral-channel",
+              "CreateChannelContract"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/partnercentralchannel",
+          "Client",
+          "GetChannelContract",
+          [
+            [
+              "partnercentral-channel",
+              "GetChannelContract"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/partnercentralchannel",
+          "Client",
+          "ListChannelContracts",
+          [
+            [
+              "partnercentral-channel",
+              "ListChannelContracts"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/partnercentralchannel",
+          "ListChannelContractsPaginator",
+          "NextPage",
+          [
+            [
+              "partnercentral-channel",
+              "ListChannelContracts"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

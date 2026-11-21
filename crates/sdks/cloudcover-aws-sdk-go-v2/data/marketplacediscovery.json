@@ -525,6 +525,34 @@
       "module_version": "1.13.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.14.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacediscovery",
+          "Client",
+          "ListListingAttributes",
+          [
+            [
+              "aws-marketplace",
+              "ListListingAttributes"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacediscovery",
+          "ListListingAttributesPaginator",
+          "NextPage",
+          [
+            [
+              "aws-marketplace",
+              "ListListingAttributes"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

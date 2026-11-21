@@ -5819,6 +5819,22 @@
       "module_version": "1.176.0",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.177.0",
+      "remove": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "DeleteAssetType"
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/glue",
+          "Client",
+          "PutAssetType"
+        ]
+      ],
+      "upsert": []
     }
   ]
 }
