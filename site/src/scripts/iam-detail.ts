@@ -18,6 +18,7 @@ function copyButton(value: string, label: string): HTMLButtonElement {
   const button = node("button", label, "reference-copy");
   button.type = "button";
   button.setAttribute("aria-label", label);
+  button.setAttribute("aria-describedby", "permission-evidence-note");
   button.replaceChildren();
   const text = node("span", label);
   button.append(text);
@@ -66,7 +67,7 @@ function section(
   titleRow.append(h2, node("span", String(count), "reference-count"));
   text.append(titleRow);
   const policyField = node("code", field, "reference-field");
-  policyField.setAttribute("aria-label", `IAM policy element: ${field}`);
+  policyField.setAttribute("aria-label", `Reference policy field: ${field}`);
   heading.append(text, policyField);
   panel.append(heading);
   return panel;
@@ -76,15 +77,15 @@ function resourceCard(resource: IamResource): HTMLElement {
   const heading = node("div", "", "arn-card-heading");
   heading.append(
     node("h3", resource.name),
-    node("span", "ARN pattern", "arn-caption"),
+    node("span", "ARN template", "arn-caption"),
   );
   card.append(heading);
   if (!resource.arnFormats.length)
-    card.append(node("p", "No ARN pattern listed in SAR.", "reference-empty"));
+    card.append(node("p", "No ARN template listed in SAR.", "reference-empty"));
   for (const arn of resource.arnFormats) {
     const row = node("div", "", "arn-pattern");
-    const button = copyButton(arn, "Copy ARN");
-    button.setAttribute("aria-label", `Copy ARN pattern for ${resource.name}`);
+    const button = copyButton(arn, "Copy ARN template");
+    button.setAttribute("aria-label", `Copy ARN template for ${resource.name}`);
     row.append(code(arn), button);
     card.append(row);
   }
@@ -94,13 +95,14 @@ export function iamDetail(permission: IamPermission): HTMLElement {
   const root = node("div", "", "iam-reference");
   const overview = node("div", "", "reference-overview");
   const scope = node("div", "", "reference-scope");
+  const hasArnTemplates = permission.resources.some(resource => resource.arnFormats.length > 0);
   scope.append(
     node("span", "Resource scope", "reference-label"),
     node(
       "strong",
-      permission.resources.length
-        ? "Resource ARNs supported"
-        : "Wildcard resource required",
+      hasArnTemplates
+        ? "Resource ARN templates listed"
+        : "No resource ARN templates recorded",
     ),
   );
   const metrics = node("nav", "", "reference-metrics");
@@ -117,24 +119,22 @@ export function iamDetail(permission: IamPermission): HTMLElement {
   overview.append(
     scope,
     metrics,
-    copyButton(permission.permission, "Copy permission"),
+    copyButton(permission.permission, "Copy action name"),
   );
   root.append(overview);
 
   const resources = section(
     "permission-resources",
     "Resource",
-    "Resource ARNs",
+    "Resource ARN templates",
     permission.resources.length,
   );
-  if (!permission.resources.length) {
-    const wildcard = node("div", "", "wildcard-resource");
-    wildcard.append(
-      node("code", '"Resource": "*"'),
-      copyButton("*", "Copy resource"),
+  if (!hasArnTemplates) {
+    resources.append(
+      node("p", "No ARN template is recorded. This does not establish that a wildcard resource is required.", "reference-empty"),
     );
-    resources.append(wildcard);
-  } else {
+  }
+  if (permission.resources.length) {
     const list = node("div", "", "arn-grid");
     list.append(...permission.resources.slice(0, 4).map(resourceCard));
     resources.append(list);

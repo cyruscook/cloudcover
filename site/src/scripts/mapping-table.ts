@@ -48,9 +48,10 @@ export function mappingTable(
   heading.append(title, total);
   const copy = node("button", "", "copy-permissions");
   copy.type = "button";
-  const copyLabel = node("span", "Copy permissions");
+  const copyLabel = node("span", "Copy action names");
   copy.append(icon("M9 9h11v11H9z M15 5V3H3v12h2"), copyLabel);
-  copy.title = "Copy the unique IAM permissions in the filtered table, one per line";
+  copy.title = "Copy indexed IAM action names as reference evidence, one per line; not a generated policy";
+  copy.setAttribute("aria-describedby", "permission-evidence-note");
   header.append(heading, copy);
   section.append(header);
 
@@ -146,7 +147,7 @@ export function mappingTable(
   section.append(scroll, empty);
 
   const footer = node("div", "", "mapping-footer");
-  footer.append(icon("M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"), node("p", "Known IAM requirements are shown here. Configuration, resource names, and request parameters determine which permissions apply."));
+  footer.append(icon("M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"), node("p", "Indexed IAM relationships are reference evidence. Request parameters, resources and conditions determine which permissions apply."));
   section.append(footer);
   const authorizationNotice = node("p", "Authorization coverage is unresolved for one or more operations. The permission list is incomplete and cannot be copied.", "fas-note");
   section.append(authorizationNotice);
@@ -163,17 +164,17 @@ export function mappingTable(
       await navigator.clipboard.writeText(permissions.join("\n"));
       if (attempt !== copyAttempt) return;
       copyLabel.textContent = "Copied";
-      copyFeedback.textContent = `${count(permissions.length, "IAM permission")} copied to clipboard.`;
+      copyFeedback.textContent = `${count(permissions.length, "IAM action name")} copied to clipboard.`;
     } catch {
       if (attempt !== copyAttempt) return;
       copyLabel.textContent = "Copy unavailable";
-      copyFeedback.textContent = "Could not access the clipboard. Select and copy the permissions from the table.";
+      copyFeedback.textContent = "Could not access the clipboard. Select and copy the action names from the table.";
     }
   });
 
   function render(): void {
     copyAttempt++;
-    copyLabel.textContent = "Copy permissions";
+    copyLabel.textContent = "Copy action names";
     copyFeedback.textContent = "";
     clear.hidden = input.value.length === 0;
     visible = filterMappings(mappings, catalog, input.value, lifecycle);
@@ -181,7 +182,7 @@ export function mappingTable(
     const resolved = authorizationResolved(visible, catalog);
     authorizationNotice.hidden = resolved;
     copy.disabled = !resolved || permissionCount === 0;
-    copy.setAttribute("aria-label", `Copy ${count(permissionCount, "IAM permission")} from the filtered mappings`);
+    copy.setAttribute("aria-label", `Copy action names (${count(permissionCount, "IAM action name")}) from the filtered mappings`);
     results.textContent = `${count(visible.length, "action")} · ${count(permissionCount, "permission")}`;
     table.querySelectorAll("tbody").forEach(body => body.remove());
     for (const mapping of visible) {
