@@ -64,7 +64,7 @@ import "../styles/iam.css";
           </div>
         </section>
 
-        <section id="detail" class="detail" tabindex="-1" hidden>
+        <section id="detail" class="detail" tabindex="-1" aria-describedby="permission-evidence-note" hidden>
           <div id="detail-heading" class="detail-header"></div>
           <section id="terraform-context" class="provider-context" aria-labelledby="provider-title" hidden>
             <div class="provider-summary">
@@ -88,6 +88,11 @@ import "../styles/iam.css";
               </select>
             </div>
           </section>
+          <p id="permission-evidence-note" class="reference-note" role="note">
+            <strong>Permission evidence only.</strong> This is not a generated IAM policy.
+            Action names and ARN templates do not establish request-specific scope,
+            conditions or review status.
+          </p>
           <div id="detail-content"></div>
         </section>
 
