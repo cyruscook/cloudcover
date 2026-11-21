@@ -187,7 +187,7 @@ mod tests {
                 }
                 5 => {
                     doc["Operations"][0]["AuthorizedActions"][0]["Context"]["test:Flag"] =
-                        json!(["stricter"])
+                        json!(["stricter"]);
                 }
                 6 => {
                     let duplicate = doc["Resources"][0].clone();
