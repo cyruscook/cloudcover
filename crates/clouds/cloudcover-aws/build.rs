@@ -11,7 +11,9 @@ use std::{
 const CACHE_FILE_NAME: &str = "actions-v2.rs";
 
 mod authorization_dispositions;
+mod authorization_evidence;
 mod authorization_supplement;
+mod global_scope_preservation;
 mod passrole_preservation;
 
 type BuildResult<T> = Result<T, Box<dyn Error>>;
@@ -152,6 +154,7 @@ struct SdkMappingRow {
 
 struct GeneratedRows {
     privileged_dispositions: String,
+    global_scope_dispositions: String,
     actions: Vec<ActionRow>,
     operations: Vec<OperationRow>,
     sdk_mappings: Vec<SdkMappingRow>,
@@ -213,6 +216,9 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=data/authorization.json");
     println!("cargo:rerun-if-changed=authorization_dispositions.rs");
     println!("cargo:rerun-if-changed=data/authorization-dispositions.json");
+    println!("cargo:rerun-if-changed=authorization_evidence.rs");
+    println!("cargo:rerun-if-changed=global_scope_preservation.rs");
+    println!("cargo:rerun-if-changed=data/global-scope-preservation.json");
     println!("cargo:rerun-if-changed=passrole_preservation.rs");
     println!("cargo:rerun-if-changed=data/passrole-preservation.json");
     let mut rows = collect_rows()?;
@@ -285,6 +291,7 @@ fn collect_rows() -> BuildResult<GeneratedRows> {
 
     Ok(GeneratedRows {
         privileged_dispositions: passrole_preservation::generate(&contents)?,
+        global_scope_dispositions: global_scope_preservation::generate(&contents)?,
         actions,
         operations,
         sdk_mappings,
@@ -609,6 +616,7 @@ fn generate_code(rows: &GeneratedRows) -> Result<String, fmt::Error> {
     write_operations(&mut generated, &rows.operations)?;
     write_sdk_method_mappings(&mut generated, &rows.sdk_mappings)?;
     generated.push_str(&rows.privileged_dispositions);
+    generated.push_str(&rows.global_scope_dispositions);
 
     Ok(generated)
 }
@@ -811,6 +819,9 @@ mod tests {
     #[test]
     fn pinned_catalog_generates_identical_bytes() -> BuildResult<()> {
         fn generate() -> BuildResult<String> {
+            println!("cargo:rerun-if-changed=authorization_evidence.rs");
+            println!("cargo:rerun-if-changed=global_scope_preservation.rs");
+            println!("cargo:rerun-if-changed=data/global-scope-preservation.json");
             println!("cargo:rerun-if-changed=passrole_preservation.rs");
             println!("cargo:rerun-if-changed=data/passrole-preservation.json");
             let mut rows = collect_rows()?;
