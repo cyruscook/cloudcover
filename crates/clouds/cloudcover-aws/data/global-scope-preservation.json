@@ -1,0 +1,53 @@
+{
+  "baseline": {
+    "catalog_sha256": "004d21619dbe95ebb3c4f77600173de02bbe7a84a80c83afbc21e2b8008b215a",
+    "commit": "0acf9901023cf3c0c7720ce73b1e45a09555b8cd",
+    "manifest_sha256": "34db3804c92573c29e4765e1db0d4d1dda91df0edf7d806f17efce0b1cc39cd9"
+  },
+  "candidate": {
+    "catalog_sha256": "36cf78f0309bbba3268998c82150f8c5997a65b724177b3a4e1827edc69f9e42",
+    "commit": "3dc1f0dbba0278c403a0dbaa890fa0d444bbc236",
+    "manifest_sha256": "7c758fba9c6493f5a5425ade766c5e085b1326f99b115b8ab9b09bc1a6505ffa"
+  },
+  "operations": {
+    "aws-marketplace:AcceptAgreementRequest": {
+      "affected_permissions": [
+        "aws-marketplace:UpdatePurchaseOrders"
+      ],
+      "baseline_fingerprint": "8c1fbbfe6c078be772ccebfef6e65749258d938ffe57e9d4c0bdb659c9ad4a21"
+    },
+    "bedrock-agentcore:UpdateGateway": {
+      "affected_permissions": [
+        "bedrock-agentcore:CreateGateway"
+      ],
+      "baseline_fingerprint": "69b48dbb42700ca3b041a02f461f220d63ad94802bed40fe4e8ca16f3281798b"
+    },
+    "identitystore:UpdateUser": {
+      "affected_permissions": [
+        "sso-directory:DisableUser",
+        "sso-directory:EnableUser"
+      ],
+      "baseline_fingerprint": "17f336392734af318732f7bfb08e4306a0bb547b32ea08fb43759c94444cbcec"
+    },
+    "ram:ListPermissionAssociations": {
+      "affected_permissions": [
+        "ram:ListPermissionAssociations"
+      ],
+      "baseline_fingerprint": "ed5461a186e78582b2bde96736e39ed6d02ccc7e999373a24e7b11552dfe3044"
+    },
+    "sagemaker:InvokeEndpoint": {
+      "affected_permissions": [
+        "sagemaker:CallWithBearerToken"
+      ],
+      "baseline_fingerprint": "0a0b420a2b437b0486291e856758dc1e3e84c55480b27aee82c927f746196ef3"
+    },
+    "sts:GetWebIdentityToken": {
+      "affected_permissions": [
+        "sts:SetWebIdentityTokenScope"
+      ],
+      "baseline_fingerprint": "7c14f90e3e9de4deaaeebdf8d099bd28b8bc9c8db2bd7278b702ce0bb2813eca"
+    }
+  },
+  "purpose": "Preserve exact historical authorization without automatically adding an unreviewed global grant.",
+  "schema_version": 1
+}
