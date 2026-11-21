@@ -45,8 +45,10 @@ impl std::fmt::Display for OperationDisposition {
 }
 
 pub(crate) fn lookup(method: &ApiMethod) -> Option<&'static OperationDisposition> {
-    generated::AUTHORIZATION_DISPOSITIONS
+    // A privilege blocker must take precedence over an informational lifecycle warning.
+    generated::PRIVILEGED_AUTHORIZATION_DISPOSITIONS
         .iter()
+        .chain(generated::AUTHORIZATION_DISPOSITIONS)
         .find(|d| d.service == method.service() && d.operation == method.name())
 }
 
