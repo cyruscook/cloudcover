@@ -57,6 +57,7 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     );
 
     assert_iam_reference(&output, &iam_permissions)?;
+    assert_policy_status(&api)?;
 
     let api_values = field(&api, "api_methods")?
         .as_array()
@@ -228,6 +229,101 @@ fn generated_catalogs_are_consistent() -> Result<(), Box<dyn Error>> {
     assert_resource_permissions(&output, &terraform_rows, &api_rows, &iam_permissions)?;
     assert_fas_provenance(&api, &output, &api_rows, &iam_permissions)?;
     assert_security_group_rule_permissions(&output, &terraform_rows, &api_rows)?;
+    Ok(())
+}
+
+fn assert_policy_status(api: &Value) -> Result<(), Box<dyn Error>> {
+    let rows = api["api_methods"].as_array().ok_or("API rows")?;
+    let statuses = api["policy_status"].as_array().ok_or("policy statuses")?;
+    let permissions = api["iam_permissions"].as_array().ok_or("IAM permissions")?;
+    assert_eq!(rows.len(), statuses.len());
+    for (row, status) in rows.iter().zip(statuses) {
+        match status["state"].as_str() {
+            Some("unknown") => assert!(!row[2].is_null()),
+            Some("blocked") => {
+                assert!(row[2].is_null(), "older clients must remain unresolved");
+                assert!(status["message"].as_str().is_some_and(|v| !v.is_empty()));
+                if let Some(ids) = status["evidence_permission_ids"].as_array() {
+                    assert!(ids.windows(2).all(|v| v[0].as_u64() < v[1].as_u64()));
+                    assert!(
+                        ids.iter()
+                            .all(|v| v.as_u64().is_some_and(|id| id < permissions.len() as u64))
+                    );
+                } else {
+                    assert!(status["evidence_permission_ids"].is_null());
+                }
+            }
+            _ => return Err("an operation was presented as reviewed or approved".into()),
+        }
+    }
+    let index = |service: &str, operation: &str| {
+        rows.iter()
+            .position(|row| row[0] == service && row[1] == operation)
+            .ok_or("missing policy status operation")
+    };
+    let get = index("s3", "GetObject")?;
+    assert_eq!(statuses[get], serde_json::json!({"state":"unknown"}));
+    assert!(!rows[get][2].is_null());
+    let caller = index("sts", "GetCallerIdentity")?;
+    assert_eq!(statuses[caller]["state"], "unknown");
+    assert_eq!(rows[caller][2], serde_json::json!([]));
+    let manifest: Value = serde_json::from_str(include_str!(
+        "../../clouds/cloudcover-aws/data/sar/manifest.json"
+    ))?;
+    let candidate = manifest["catalog_sha256"]
+        == "36cf78f0309bbba3268998c82150f8c5997a65b724177b3a4e1827edc69f9e42";
+    let baseline = manifest["catalog_sha256"]
+        == "004d21619dbe95ebb3c4f77600173de02bbe7a84a80c83afbc21e2b8008b215a";
+    if baseline || candidate {
+        let role = permissions
+            .iter()
+            .position(|v| v == "iam:PassRole")
+            .ok_or("role evidence")?;
+        for (service, operation) in [
+            ("cognito-identity", "SetIdentityPoolRoles"),
+            ("elasticmapreduce", "StartSession"),
+            ("observabilityadmin", "CreateS3TableIntegration"),
+            ("sagemaker", "CreateTrainingSession"),
+        ] {
+            let id = index(service, operation)?;
+            if candidate {
+                assert_eq!(statuses[id]["state"], "blocked");
+                assert!(rows[id][2].is_null());
+                assert!(
+                    statuses[id]["message"]
+                        .as_str()
+                        .is_some_and(|v| v.contains("entire request"))
+                );
+                assert!(
+                    statuses[id]["evidence_permission_ids"]
+                        .as_array()
+                        .is_some_and(|ids| ids.contains(&serde_json::json!(role)))
+                );
+            } else {
+                assert_eq!(statuses[id]["state"], "unknown");
+                assert!(
+                    rows[id][2]
+                        .as_array()
+                        .is_some_and(|ids| ids.contains(&serde_json::json!(role)))
+                );
+            }
+        }
+        let ivs = index("ivs", "CreateChannel")?;
+        assert_eq!(
+            statuses[ivs]["state"],
+            if candidate { "blocked" } else { "unknown" }
+        );
+        if baseline {
+            let legacy = index("network-firewall", "CreateProxy")?;
+            assert_eq!(statuses[legacy]["state"], "unknown");
+            assert!(!rows[legacy][2].is_null());
+            assert!(
+                statuses[legacy]["message"]
+                    .as_str()
+                    .is_some_and(|v| v.contains("not evidence of endpoint shutdown"))
+            );
+        }
+    }
     Ok(())
 }
 

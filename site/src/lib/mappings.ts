@@ -56,6 +56,7 @@ export function mappingPermissionIds(mappings: Mapping[]): number[] {
 export function authorizationResolved(mappings: Mapping[], catalog: ApiCatalog): boolean {
   return mappings.every(mapping => {
     const coverage = catalog.apiMethods[mapping.apiMethodId].authorizationCoverage;
-    return coverage === "mapped" || coverage === "not_required";
+    return catalog.apiMethods[mapping.apiMethodId].policyStatus?.state !== "blocked"
+      && (coverage === "mapped" || coverage === "not_required");
   });
 }

@@ -8,6 +8,13 @@ export type ApiMethod = {
   permissionIds: number[];
   authorizationCoverage: "mapped" | "not_required" | "unresolved";
   fas?: FasInfo;
+  policyStatus: PolicyStatus;
+};
+
+export type PolicyStatus = {
+  state: "blocked" | "unknown";
+  message?: string;
+  source?: string;
 };
 
 export type FasDependency = {
@@ -60,16 +67,32 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
   const iamPermissionNames = new Set(iamPermissions);
   const apiMethodsValue = array(document.api_methods, "API methods");
   const fasEntries = document.fas === undefined ? undefined : array(document.fas, "FAS entries");
+  const policyEntries = document.policy_status === undefined ? undefined : array(document.policy_status, "Policy status entries");
   if (fasEntries && fasEntries.length !== apiMethodsValue.length) {
     throw new CatalogError("FAS entries do not match the API method index");
+  }
+  if (policyEntries && policyEntries.length !== apiMethodsValue.length) {
+    throw new CatalogError("Policy status entries do not match the API method index");
   }
   const apiMethods = apiMethodsValue.map((row, index) => {
     const values = tuple(row, 3, `API method ${index}`);
     const service = string(values[0], `API method ${index} service`);
     const name = string(values[1], `API method ${index} operation`);
     const unresolved = values[2] === null;
-    const permissionIds = unresolved ? [] : integerArray(
-      values[2],
+    const policyEntry = policyEntries ? record(policyEntries[index], `API method ${index} policy status`) : undefined;
+    const policyStatus = parsePolicyStatus(policyEntry);
+    if (policyStatus.state === "blocked" && !unresolved) {
+      throw new CatalogError(`Blocked API method ${index} must have a null authorization marker`);
+    }
+    if (policyEntry && policyStatus.state === "unknown" && unresolved) {
+      throw new CatalogError(`Unknown policy status for API method ${index} contradicts its null authorization marker`);
+    }
+    const evidence = policyStatus.state === "blocked" ? policyEntry?.evidence_permission_ids : undefined;
+    if (policyStatus.state === "blocked" && evidence === undefined) {
+      throw new CatalogError(`Blocked API method ${index} is missing its evidence marker`);
+    }
+    const permissionIds = unresolved && (evidence === undefined || evidence === null) ? [] : integerArray(
+      unresolved ? evidence : values[2],
       `API method ${index} IAM permission IDs`,
     );
     for (const permissionId of permissionIds) {
@@ -94,7 +117,7 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
     ))) throw new CatalogError(`API method ${index} omits a FAS permission`);
     const authorizationCoverage: ApiMethod["authorizationCoverage"] = unresolved
       ? "unresolved" : permissionIds.length ? "mapped" : "not_required";
-    return { service, name, canonical: `${service}.${name}`, permissionIds, authorizationCoverage, fas };
+    return { service, name, canonical: `${service}.${name}`, permissionIds, authorizationCoverage, fas, policyStatus };
   });
 
   if (
@@ -108,6 +131,26 @@ export function parseApiCatalog(value: unknown): ApiCatalog {
   }
 
   return { iamPermissions, apiMethods };
+}
+
+function parsePolicyStatus(entry: Record<string, unknown> | undefined): PolicyStatus {
+  if (!entry) return { state: "unknown" };
+  const state = string(entry.state, "Policy status state");
+  if (state !== "blocked" && state !== "unknown") throw new CatalogError("Unknown policy status state");
+  if (state === "unknown" && Object.hasOwn(entry, "evidence_permission_ids")) {
+    throw new CatalogError("Unknown policy status cannot carry blocked permission evidence");
+  }
+  const message = entry.message === undefined ? undefined : string(entry.message, "Policy status message");
+  if ((state === "blocked" && message === undefined) || (message !== undefined && !message.trim())) {
+    throw new CatalogError("Policy status is missing a diagnostic");
+  }
+  const source = entry.source === undefined ? undefined : string(entry.source, "Policy status source");
+  if (source !== undefined) {
+    let url: URL;
+    try { url = new URL(source); } catch { throw new CatalogError("Invalid policy status source URL"); }
+    if (url.protocol !== "https:") throw new CatalogError("Policy status source must use HTTPS");
+  }
+  return { state, message, source };
 }
 
 function parseFasInfo(value: unknown): FasInfo {

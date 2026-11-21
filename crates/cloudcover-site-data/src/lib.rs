@@ -6,7 +6,7 @@ use std::{
 };
 
 use cloudcover_aws::{AwsError, AwsProvider, IamPermission, iam_permission_catalog};
-use cloudcover_core::{CloudProvider, Language, MethodReference, ResolvedSdk, Sdk};
+use cloudcover_core::{ApiMethod, CloudProvider, Language, MethodReference, ResolvedSdk, Sdk};
 use cloudcover_terraform_provider_aws::{
     TerraformProviderAwsMappingsLookup, provider_versions, sdk_method_mappings,
 };
@@ -27,6 +27,32 @@ struct ApiArtifact {
     iam_permissions: Vec<String>,
     api_methods: Vec<ApiRow>,
     fas: Vec<Option<ApiFas>>,
+    policy_status: Vec<PolicyStatus>,
+}
+
+// This is a blocker projection, never a record of request-specific approval.
+// Blocked legacy rows stay null; their independently indexed evidence is retained
+// here for newer browsers without enabling old clients to copy a partial list.
+#[derive(Serialize)]
+#[serde(tag = "state", rename_all = "snake_case")]
+enum PolicyStatus {
+    Unknown {
+        #[serde(skip_serializing_if = "Option::is_none")]
+        message: Option<String>,
+        #[serde(skip_serializing_if = "Option::is_none")]
+        source: Option<&'static str>,
+    },
+    Blocked {
+        message: String,
+        #[serde(skip_serializing_if = "Option::is_none")]
+        source: Option<&'static str>,
+        evidence_permission_ids: Option<Vec<usize>>,
+    },
+}
+
+struct PolicyBlocker {
+    message: String,
+    source: Option<&'static str>,
 }
 
 #[derive(Serialize)]
@@ -157,12 +183,18 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
     api_methods.dedup();
 
     let mut permissions_by_method = Vec::with_capacity(api_methods.len());
+    let mut blockers = Vec::with_capacity(api_methods.len());
     let mut all_permissions = iam_permission_catalog()
         .iter()
         .map(|entry| entry.permission.to_owned())
         .collect::<BTreeSet<_>>();
     for method in &api_methods {
         let permissions = resolved_authorization(provider.iam_permissions(method))?;
+        blockers.push(policy_blocker(
+            provider
+                .review_permissions_policy(std::slice::from_ref(method), false)
+                .map(drop),
+        )?);
         for permission in permissions.iter().flatten() {
             all_permissions.insert((*permission).to_owned());
         }
@@ -181,10 +213,12 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
         .map(|(id, method)| ((method.service(), method.name()), id))
         .collect::<BTreeMap<_, _>>();
 
+    let mut policy_status = Vec::with_capacity(api_methods.len());
     let api_rows = api_methods
         .iter()
         .zip(permissions_by_method)
-        .map(|(method, permissions)| {
+        .zip(blockers)
+        .map(|((method, permissions), blocker)| {
             let permission_ids = permissions
                 .map(|permissions| {
                     permissions
@@ -197,6 +231,12 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
                         .collect::<Result<Vec<_>, _>>()
                 })
                 .transpose()?;
+            let (status, permission_ids) = project_policy_status(
+                provider.authorization_disposition(method),
+                blocker,
+                permission_ids,
+            );
+            policy_status.push(status);
             Ok((
                 method.service().to_owned(),
                 method.name().to_owned(),
@@ -228,11 +268,59 @@ fn build_catalog() -> Result<Catalog, Box<dyn Error>> {
             iam_permissions,
             api_methods: api_rows,
             fas,
+            policy_status,
         },
         terraform_index,
         terraform_rows,
         terraform_versions,
     })
+}
+
+fn project_policy_status(
+    disposition: Option<&cloudcover_aws::OperationDisposition>,
+    blocker: Option<PolicyBlocker>,
+    evidence: Option<Vec<usize>>,
+) -> (PolicyStatus, Option<Vec<usize>>) {
+    if let Some(blocker) = blocker {
+        (
+            PolicyStatus::Blocked {
+                message: blocker.message,
+                source: blocker.source,
+                evidence_permission_ids: evidence,
+            },
+            None,
+        )
+    } else {
+        (
+            PolicyStatus::Unknown {
+                message: disposition.map(ToString::to_string),
+                source: disposition.map(|value| value.source),
+            },
+            evidence,
+        )
+    }
+}
+
+fn policy_blocker(value: Result<(), AwsError>) -> Result<Option<PolicyBlocker>, AwsError> {
+    match value {
+        Ok(()) => Ok(None),
+        Err(error) => {
+            if let AwsError::UnresolvedAuthorization { service, name } = &error {
+                // A FAS error may identify a leaf rather than the requested root.
+                // Only that actual failure's blocking disposition can supply a source.
+                let source = AwsProvider::new()
+                    .authorization_disposition(&ApiMethod::new(service, name))
+                    .filter(|diagnostic| diagnostic.blocks_policy())
+                    .map(|diagnostic| diagnostic.source);
+                Ok(Some(PolicyBlocker {
+                    message: error.to_string(),
+                    source,
+                }))
+            } else {
+                Err(error)
+            }
+        }
+    }
 }
 
 fn resolved_authorization<T>(value: Result<T, AwsError>) -> Result<Option<T>, AwsError> {
@@ -461,5 +549,81 @@ mod authorization_tests {
             })),
             Err(AwsError::InvalidFasCatalog { .. })
         ));
+    }
+
+    #[test]
+    fn blocker_projection_never_treats_success_as_approval_or_hides_other_errors() {
+        assert!(matches!(policy_blocker(Ok(())), Ok(None)));
+        let error = AwsError::UnresolvedAuthorization {
+            service: "s3".to_owned(),
+            name: "RenameObject".to_owned(),
+        };
+        assert!(
+            matches!(policy_blocker(Err(error)), Ok(Some(blocker)) if blocker.message.contains("s3:RenameObject"))
+        );
+        assert!(matches!(
+            policy_blocker(Err(AwsError::UnknownApiMethod {
+                service: "missing".to_owned(),
+                name: "Missing".to_owned(),
+            })),
+            Err(AwsError::UnknownApiMethod { .. })
+        ));
+        assert!(matches!(
+            policy_blocker(Err(AwsError::InvalidFasCatalog {
+                message: "invalid evidence".to_owned(),
+            })),
+            Err(AwsError::InvalidFasCatalog { .. })
+        ));
+    }
+
+    #[test]
+    fn unknown_fas_leaf_cannot_inherit_the_roots_diagnostic_source() -> Result<(), Box<dyn Error>> {
+        let root = AwsProvider::new()
+            .authorization_disposition(&ApiMethod::new("network-firewall", "CreateProxy"))
+            .ok_or("legacy root diagnostic")?;
+        // This root is an informational warning on the old pin. Whether retained
+        // or removed, its source cannot explain a different operation's failure.
+        let blocker = policy_blocker(Err(AwsError::UnresolvedAuthorization {
+            service: "kms".to_owned(),
+            name: "UnknownLeaf".to_owned(),
+        }))?;
+        let (status, legacy) = project_policy_status(Some(root), blocker, Some(vec![0]));
+        assert!(legacy.is_none());
+        assert!(matches!(status, PolicyStatus::Blocked { source: None, .. }));
+        // Even when the actual failing operation has a disposition, an old-pin
+        // nonblocking warning cannot be used as evidence for its policy failure.
+        let actual_root_failure = policy_blocker(Err(AwsError::UnresolvedAuthorization {
+            service: root.service.to_owned(),
+            name: root.operation.to_owned(),
+        }))?
+        .ok_or("missing blocker")?;
+        assert_eq!(
+            actual_root_failure.source,
+            root.blocks_policy().then_some(root.source)
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn known_blocking_leaf_supplies_its_own_source() -> Result<(), Box<dyn Error>> {
+        let provider = AwsProvider::new();
+        let root = provider
+            .authorization_disposition(&ApiMethod::new("network-firewall", "CreateProxy"))
+            .ok_or("legacy root diagnostic")?;
+        let leaf = provider
+            .authorization_disposition(&ApiMethod::new("cloudwatch", "CreateAlert"))
+            .ok_or("blocking leaf diagnostic")?;
+        assert!(leaf.blocks_policy());
+        assert_ne!(root.source, leaf.source);
+        let blocker = policy_blocker(Err(AwsError::UnresolvedAuthorization {
+            service: "cloudwatch".to_owned(),
+            name: "CreateAlert".to_owned(),
+        }))?;
+        let (status, legacy) = project_policy_status(Some(root), blocker, Some(vec![0]));
+        assert!(legacy.is_none());
+        assert!(
+            matches!(status, PolicyStatus::Blocked { source: Some(source), .. } if source == leaf.source)
+        );
+        Ok(())
     }
 }

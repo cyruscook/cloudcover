@@ -54,6 +54,7 @@ export function mappingTable(
   copy.setAttribute("aria-describedby", "permission-evidence-note");
   header.append(heading, copy);
   section.append(header);
+  section.append(node("p", "Review status unknown means that request-specific authorization has not been reviewed. Absence of a recorded blocker does not approve these permissions or the catalog.", "fas-note"));
 
   let lifecycle: Lifecycle | undefined;
   const filters = node("div", "", "lifecycle-filters");
@@ -149,7 +150,7 @@ export function mappingTable(
   const footer = node("div", "", "mapping-footer");
   footer.append(icon("M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"), node("p", "Indexed IAM relationships are reference evidence. Request parameters, resources and conditions determine which permissions apply."));
   section.append(footer);
-  const authorizationNotice = node("p", "Authorization coverage is unresolved for one or more operations. The permission list is incomplete and cannot be copied.", "fas-note");
+  const authorizationNotice = node("p", "Policy generation is blocked or authorization coverage is unresolved for one or more operations. The reference evidence below cannot be copied as a complete permission list.", "fas-note");
   section.append(authorizationNotice);
   const copyFeedback = node("p", "", "sr-only");
   copyFeedback.setAttribute("role", "status");
@@ -197,6 +198,21 @@ export function mappingTable(
           action.rowSpan = permissionIds.length;
           const context = node("div", "", "action-context");
           context.append(link({ kind: "api", id: mapping.apiMethodId, label: method.canonical, normalized: method.canonical.toLowerCase() }));
+          const status = method.policyStatus;
+          context.append(node("small", status.state === "blocked" ? "Policy generation blocked" : "Review status unknown", "fas-coverage"));
+          if (status.message) {
+            const details = node("details", "", "fas-details");
+            details.append(node("summary", status.state === "blocked" ? "Why policy generation is blocked" : "Reference diagnostic"));
+            details.append(node("p", status.message));
+            if (status.source) {
+              const source = node("a", "Diagnostic source");
+              source.href = status.source;
+              source.target = "_blank";
+              source.rel = "noopener noreferrer";
+              details.append(source);
+            }
+            context.append(details);
+          }
           if (terraform) {
             const steps = node("div", "", "mobile-lifecycle lifecycle-tags");
             for (const step of mapping.lifecycles) steps.append(node("span", stepLabel(step), "lifecycle-tag"));
