@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-site-data-v0.3.6...cloudcover-site-data-v0.4.0) - 2026-11-21
+
+### Other
+
+- Show known policy blockers in the CloudCover data browser ([#98](https://github.com/cyruscook/cloudcover/pull/98))
+
 ## [0.3.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-site-data-v0.2.3...cloudcover-site-data-v0.3.0) - 2026-11-05
 
 ### Other

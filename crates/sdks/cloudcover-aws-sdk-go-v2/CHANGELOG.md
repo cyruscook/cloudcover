@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-go-v2-v0.3.6...cloudcover-aws-sdk-go-v2-v0.4.0) - 2026-11-21
+
+### Other
+
+- Update AWS SDK Go v2 mapping data ([#86](https://github.com/cyruscook/cloudcover/pull/86))
+
 ## [0.3.5](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-go-v2-v0.3.4...cloudcover-aws-sdk-go-v2-v0.3.5) - 2026-11-18
 
 ### Other
