@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "purpose": "Preserve four exact historical authorization closures; changed PassRole Context evidence never authorizes a new automatic grant.",
+  "baseline": {
+    "commit": "68d0437d1da8dd1eb4f3e54151d9d62e8fbc6aad",
+    "catalog_sha256": "004d21619dbe95ebb3c4f77600173de02bbe7a84a80c83afbc21e2b8008b215a",
+    "manifest_sha256": "34db3804c92573c29e4765e1db0d4d1dda91df0edf7d806f17efce0b1cc39cd9"
+  },
+  "candidate": {
+    "commit": "3dc1f0dbba0278c403a0dbaa890fa0d444bbc236",
+    "catalog_sha256": "36cf78f0309bbba3268998c82150f8c5997a65b724177b3a4e1827edc69f9e42",
+    "manifest_sha256": "7c758fba9c6493f5a5425ade766c5e085b1326f99b115b8ab9b09bc1a6505ffa"
+  },
+  "operations": {
+    "cognito-identity:SetIdentityPoolRoles": "4927a2ccce20ff9d0c584f39a4290eebf5a4b3323794d34bba673396cc251488",
+    "elasticmapreduce:StartSession": "2fff4e79383650055f68fbbb1613d7271783690d28532916592a9a4da546bcd5",
+    "observabilityadmin:CreateS3TableIntegration": "64f454daeb6f5d6c56bca96aa81ba50a400a6a14ecc9f5777c9be59e41c33eab",
+    "sagemaker:CreateTrainingSession": "e5efc3b624cdba74df0c660c1133cda80004d905696534c15ecb19215071d218"
+  }
+}

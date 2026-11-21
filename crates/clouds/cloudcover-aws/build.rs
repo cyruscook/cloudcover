@@ -221,6 +221,7 @@ fn main() -> BuildResult<()> {
     println!("cargo:rerun-if-changed=data/global-scope-preservation.json");
     println!("cargo:rerun-if-changed=passrole_preservation.rs");
     println!("cargo:rerun-if-changed=data/passrole-preservation.json");
+    println!("cargo:rerun-if-changed=data/passrole-context-preservation.json");
     let mut rows = collect_rows()?;
     let action_keys = sort_and_validate_action_rows(&mut rows.actions)?;
     authorization_supplement::apply(&mut rows.operations, &action_keys)?;
