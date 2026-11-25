@@ -11,6 +11,10 @@ import (
 	"strings"
 	"unsafe"
 
+	legacyhcl "github.com/hashicorp/hcl"
+	legacyast "github.com/hashicorp/hcl/hcl/ast"
+	"github.com/hashicorp/hcl/v2/hclparse"
+	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/hashicorp/terraform-config-inspect/tfconfig"
 	"golang.org/x/tools/go/callgraph"
 	"golang.org/x/tools/go/callgraph/vta"
@@ -337,7 +341,14 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		return nil, "", err
 	}
 	if !info.IsDir() {
+		if isTerraformQueryFile(root) {
+			return nil, "", unsupportedTerraformListQuery(root)
+		}
 		return nil, "", fmt.Errorf("path is not a directory: %s", root)
+	}
+
+	if err := rejectTerraformListQueries(root); err != nil {
+		return nil, "", err
 	}
 
 	lockPath := filepath.Join(root, ".terraform.lock.hcl")
@@ -417,6 +428,9 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 					moduleKey,
 				)
 			}
+			if err := rejectTerraformListQueries(dir); err != nil {
+				return nil, "", err
+			}
 			module, diagnostics := tfconfig.LoadModule(dir)
 			if diagnostics.HasErrors() {
 				return nil, "", fmt.Errorf("failed to parse Terraform module %s: %s", dir, diagnostics.Error())
@@ -471,6 +485,97 @@ func analyzeTerraformDir(root string) ([]terraformReference, string, error) {
 		}
 	}
 	return result, provider.Version, nil
+}
+
+// The configuration inspector only discovers managed resources and data sources.
+// Reject query inputs before returning any references: an empty/partial result
+// would otherwise look like a complete permissions analysis to either renderer.
+func rejectTerraformListQueries(dir string) error {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return fmt.Errorf("failed to inspect Terraform directory %s: %w", dir, err)
+	}
+	parser := hclparse.NewParser()
+	for _, entry := range entries {
+		name := entry.Name()
+		// Match the inspector's hidden/editor-backup exclusions. Do not recurse into
+		// directories; initialized module traversal decides which children are input.
+		if entry.IsDir() || strings.HasPrefix(name, ".") || strings.HasSuffix(name, "~") ||
+			(strings.HasPrefix(name, "#") && strings.HasSuffix(name, "#")) {
+			continue
+		}
+		path := filepath.Join(dir, name)
+		if isTerraformQueryFile(name) {
+			return unsupportedTerraformListQuery(path)
+		}
+		switch {
+		case strings.HasSuffix(name, ".tf.json"):
+			source, err := os.ReadFile(path)
+			if err != nil {
+				// The inspector retains its read diagnostic.
+				continue
+			}
+			var body map[string]json.RawMessage
+			if err := json.Unmarshal(source, &body); err == nil {
+				if _, found := body["list"]; found {
+					return unsupportedTerraformListQuery(path)
+				}
+			} else if legacyTerraformHasListBlock(path) {
+				return unsupportedTerraformListQuery(path)
+			}
+		case strings.HasSuffix(name, ".tf"):
+			file, diagnostics := parser.ParseHCLFile(path)
+			// Recovered bodies can still expose a block after a parse error.
+			if file != nil {
+				if body, ok := file.Body.(*hclsyntax.Body); ok {
+					for _, block := range body.Blocks {
+						if block.Type == "list" {
+							return unsupportedTerraformListQuery(path)
+						}
+					}
+				}
+			}
+			// The existing inspector accepts some legacy HCL after modern
+			// parse errors. Inspect that fallback instead of allowing a query
+			// to bypass the guard; preserve other parse/read diagnostics.
+			if diagnostics.HasErrors() && legacyTerraformHasListBlock(path) {
+				return unsupportedTerraformListQuery(path)
+			}
+		}
+	}
+	return nil
+}
+
+func legacyTerraformHasListBlock(path string) bool {
+	source, err := os.ReadFile(path)
+	if err != nil {
+		return false
+	}
+	file, err := legacyhcl.Parse(string(source))
+	if err != nil {
+		return false
+	}
+	body, ok := file.Node.(*legacyast.ObjectList)
+	if !ok {
+		return false
+	}
+	for _, item := range body.Items {
+		if len(item.Keys) == 0 || item.Keys[0].Token.Value() != "list" {
+			continue
+		}
+		if _, block := item.Val.(*legacyast.ObjectType); block && !item.Assign.IsValid() {
+			return true
+		}
+	}
+	return false
+}
+
+func isTerraformQueryFile(path string) bool {
+	return strings.HasSuffix(path, ".tfquery.hcl") || strings.HasSuffix(path, ".tfquery.json")
+}
+
+func unsupportedTerraformListQuery(path string) error {
+	return fmt.Errorf("unsupported Terraform list queries in %s: CloudCover analyzes managed resources and data sources only; list blocks, .tfquery.hcl and .tfquery.json files are not supported, so no policy was generated", path)
 }
 
 func usesAWSProvider(module *tfconfig.Module, provider tfconfig.ProviderRef) bool {
