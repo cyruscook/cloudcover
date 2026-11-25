@@ -1484,6 +1484,23 @@
       "module_version": "1.21.12",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.22.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/bcmpricingcalculator",
+          "Client",
+          "GetUsageLinesEstimatedCost",
+          [
+            [
+              "bcm-pricing-calculator",
+              "GetUsageLinesEstimatedCost"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

@@ -730,6 +730,67 @@
       "module_version": "1.20.5",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.21.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "GetDeploymentConfiguration",
+          [
+            [
+              "aws-marketplace",
+              "GetDeploymentConfiguration"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "GetDeploymentConfigurationJob",
+          [
+            [
+              "aws-marketplace",
+              "GetDeploymentConfigurationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "ListDeploymentConfigurationJobs",
+          [
+            [
+              "aws-marketplace",
+              "ListDeploymentConfigurationJobs"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "Client",
+          "StartDeploymentConfigurationJob",
+          [
+            [
+              "aws-marketplace",
+              "StartDeploymentConfigurationJob"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/marketplacedeployment",
+          "ListDeploymentConfigurationJobsPaginator",
+          "NextPage",
+          [
+            [
+              "aws-marketplace",
+              "ListDeploymentConfigurationJobs"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
