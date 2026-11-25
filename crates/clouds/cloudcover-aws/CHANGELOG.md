@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.3.6...cloudcover-aws-v0.4.0) - 2026-11-25
+
+### Other
+
+- Fix tag overreach in Terraform AWS 6.74 list mappings ([#100](https://github.com/cyruscook/cloudcover/pull/100))
+- Block unreviewed changes to existing PassRole context ([#97](https://github.com/cyruscook/cloudcover/pull/97))
+- Block unreviewed SAR global grant transitions ([#95](https://github.com/cyruscook/cloudcover/pull/95))
+- Block new PassRole paths until concrete scope is reviewed ([#94](https://github.com/cyruscook/cloudcover/pull/94))
+- Fail closed on incomplete SAR resource scopes ([#93](https://github.com/cyruscook/cloudcover/pull/93))
+- Guard reviewed SAR drift dispositions and preserve legacy policies ([#90](https://github.com/cyruscook/cloudcover/pull/90))
+- Guard SAR drift and review conditional direct authorization ([#89](https://github.com/cyruscook/cloudcover/pull/89))
+
 ## [0.3.4](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-v0.3.3...cloudcover-aws-v0.3.4) - 2026-11-17
 
 ### Other
