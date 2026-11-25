@@ -1376,6 +1376,45 @@
       "module_version": "1.68.3",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.69.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/polly",
+          "Client",
+          "CreateVoice",
+          [
+            [
+              "polly",
+              "CreateVoice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/polly",
+          "Client",
+          "DeleteVoice",
+          [
+            [
+              "polly",
+              "DeleteVoice"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/polly",
+          "Client",
+          "GetVoice",
+          [
+            [
+              "polly",
+              "GetVoice"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }

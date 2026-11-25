@@ -726,6 +726,56 @@
       "module_version": "1.0.12",
       "remove": [],
       "upsert": []
+    },
+    {
+      "module_version": "1.1.0",
+      "remove": [],
+      "upsert": [
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networksecuritymanager",
+          "Client",
+          "ListEntityCoverages",
+          [
+            [
+              "network-security-manager",
+              "ListEntityCoverages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networksecuritymanager",
+          "Client",
+          "ListProtectedResourceCoverages",
+          [
+            [
+              "network-security-manager",
+              "ListProtectedResourceCoverages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networksecuritymanager",
+          "ListEntityCoveragesPaginator",
+          "NextPage",
+          [
+            [
+              "network-security-manager",
+              "ListEntityCoverages"
+            ]
+          ]
+        ],
+        [
+          "github.com/aws/aws-sdk-go-v2/service/networksecuritymanager",
+          "ListProtectedResourceCoveragesPaginator",
+          "NextPage",
+          [
+            [
+              "network-security-manager",
+              "ListProtectedResourceCoverages"
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
