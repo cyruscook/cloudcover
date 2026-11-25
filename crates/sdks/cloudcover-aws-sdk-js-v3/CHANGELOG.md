@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-js-v3-v0.3.6...cloudcover-aws-sdk-js-v3-v0.4.0) - 2026-11-25
+
+### Other
+
+- Update AWS SDK JavaScript/TypeScript v3 mapping data ([#87](https://github.com/cyruscook/cloudcover/pull/87))
+
 ## [0.3.6](https://github.com/cyruscook/cloudcover/compare/cloudcover-aws-sdk-js-v3-v0.3.5...cloudcover-aws-sdk-js-v3-v0.3.6) - 2026-11-19
 
 ### Other

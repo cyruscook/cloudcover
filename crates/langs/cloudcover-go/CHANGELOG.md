@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/cyruscook/cloudcover/compare/cloudcover-go-v0.3.6...cloudcover-go-v0.4.0) - 2026-11-25
+
+### Fixed
+
+- *(terraform)* reject unsupported list query input ([#101](https://github.com/cyruscook/cloudcover/pull/101))
+
 ## [0.3.6](https://github.com/cyruscook/cloudcover/compare/cloudcover-go-v0.3.5...cloudcover-go-v0.3.6) - 2026-11-19
 
 ### Other
