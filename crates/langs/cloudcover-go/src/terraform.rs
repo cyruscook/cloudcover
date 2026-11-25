@@ -12,12 +12,18 @@ use crate::{
 /// # Errors
 ///
 /// Returns [`GoAnalysisError`] when Terraform initialization metadata is
-/// missing or invalid, or analysis fails.
+/// missing or invalid, query inputs are unsupported, or analysis fails.
 pub fn analyze_terraform_dir(
     path: impl AsRef<Path>,
 ) -> Result<(Vec<TerraformMethodReference>, String), GoAnalysisError> {
     let path = path.as_ref();
-    if !path.is_dir() {
+    // Query files are passed through solely for the analyzer's actionable
+    // unsupported-input error. Other file arguments retain NotDirectory.
+    let query_file = path.file_name().is_some_and(|name| {
+        let name = name.to_string_lossy();
+        name.ends_with(".tfquery.hcl") || name.ends_with(".tfquery.json")
+    }) && path.is_file();
+    if !path.is_dir() && !query_file {
         return Err(GoAnalysisError::NotDirectory(path.to_path_buf()));
     }
     let path =
