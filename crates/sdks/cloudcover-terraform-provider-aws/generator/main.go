@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/sha256"
 	"encoding/json"
 	"errors"
 	"flag"
@@ -56,11 +57,13 @@ type sdkMethodKey struct {
 }
 
 type entrypointSpec struct {
-	kind        string
-	typeName    string
-	factory     string
-	sourceFile  string
-	packagePath string
+	kind               string
+	typeName           string
+	factory            string
+	sourceFile         string
+	packagePath        string
+	tagResourceType    string
+	tagMetadataOmitted bool
 }
 
 type packageIndex struct {
@@ -75,6 +78,7 @@ type packageIndex struct {
 	ssaBySyntax          map[ast.Node][]*ssa.Function
 	nestedFuncs          map[*ssa.Function][]*ssa.Function
 	callers              map[*ssa.Function][]*ssa.Function
+	callSites            map[*ssa.Function]map[*ssa.Function][]token.Pos
 	interfaceCalleeCache map[providerInterfaceCalleeKey]providerInterfaceCalleeResolution
 }
 
@@ -144,6 +148,7 @@ type apiMethodAnalyzer struct {
 	summaries          map[*ssa.Function]*apiMethodFunctionSummary
 	interfaceBindings  map[*types.Var]types.Type
 	functionBindings   map[*types.Var][]*ssa.Function
+	pruned             []sourceRange
 }
 
 func newAPIMethodAnalyzer(index *packageIndex, sdkMappings map[sdkMethodKey][]apiMethod, servicePackagePath string) *apiMethodAnalyzer {
@@ -218,12 +223,18 @@ func run() error {
 		}
 		for _, handler := range handlers {
 			handlerAnalyzer := analyzer
-			if len(handler.interfaceBindings) > 0 || len(handler.functionBindings) > 0 {
+			if len(handler.interfaceBindings) > 0 || len(handler.functionBindings) > 0 || isUserListEntrypoint(spec) || isReviewedUntaggedListSpec(spec) {
 				// Shared embedded lifecycle methods dispatch differently for each
 				// factory. Their summaries must not leak into another resource.
 				handlerAnalyzer = newAPIMethodAnalyzer(index, sdkMappings, spec.packagePath)
 				handlerAnalyzer.interfaceBindings = handler.interfaceBindings
 				handlerAnalyzer.functionBindings = handler.functionBindings
+			}
+			if reviewedUserListTagsAlreadySet(*providerDir, spec) {
+				handlerAnalyzer.pruned = sdkListTagFallbackRanges(index)
+			}
+			if isReviewedUntaggedListSpec(spec) && matchesTagProtocol(*providerDir) && reviewedProviderCheckout(*providerDir) {
+				handlerAnalyzer.pruned = unregisteredListTagInterceptorRanges(index)
 			}
 			analysis, err := handlerAnalyzer.collect(handler.funcs)
 			if err != nil {
@@ -378,6 +389,7 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 		ssaBySyntax:          map[ast.Node][]*ssa.Function{},
 		nestedFuncs:          map[*ssa.Function][]*ssa.Function{},
 		callers:              map[*ssa.Function][]*ssa.Function{},
+		callSites:            map[*ssa.Function]map[*ssa.Function][]token.Pos{},
 		interfaceCalleeCache: map[providerInterfaceCalleeKey]providerInterfaceCalleeResolution{},
 	}
 
@@ -468,6 +480,14 @@ func loadProviderIndex(providerDir string) (*packageIndex, error) {
 			return nil
 		}
 		index.callers[caller] = append(index.callers[caller], callee)
+		if index.callSites[caller] == nil {
+			index.callSites[caller] = map[*ssa.Function][]token.Pos{}
+		}
+		if edge.Site != nil {
+			index.callSites[caller][callee] = append(index.callSites[caller][callee], edge.Site.Pos())
+		} else {
+			index.callSites[caller][callee] = append(index.callSites[caller][callee], token.NoPos)
+		}
 		return nil
 	}); err != nil {
 		return nil, err
@@ -1175,14 +1195,16 @@ func compactEntrypointSpecs(specs []entrypointSpec) ([]entrypointSpec, error) {
 	for i := 1; i < len(specs); i++ {
 		previous, current := specs[i-1], specs[i]
 		if previous.kind == current.kind && previous.typeName == current.typeName &&
-			(previous.factory != current.factory || previous.packagePath != current.packagePath) {
+			(previous.factory != current.factory || previous.packagePath != current.packagePath || previous.tagResourceType != current.tagResourceType || previous.tagMetadataOmitted != current.tagMetadataOmitted) {
 			return nil, fmt.Errorf(
-				"conflicting %s entrypoints for %s: %s in %s and %s in %s",
+				"conflicting %s entrypoints for %s: %s (tag type %q) in %s and %s (tag type %q) in %s",
 				current.kind,
 				current.typeName,
 				previous.factory,
+				previous.tagResourceType,
 				previous.sourceFile,
 				current.factory,
+				current.tagResourceType,
 				current.sourceFile,
 			)
 		}
@@ -1786,7 +1808,7 @@ func (analyzer *apiMethodAnalyzer) discover(fn *ssa.Function, pending map[*ssa.F
 		}
 		summary.direct = append(summary.direct, resolved...)
 	}
-	direct, err := collectDirectSDKAPIMethods(analyzer.index, fn, analyzer.sdkMappings)
+	direct, err := collectDirectSDKAPIMethods(analyzer.index, fn, analyzer.sdkMappings, analyzer)
 	if err != nil {
 		return err
 	}
@@ -1799,8 +1821,17 @@ func (analyzer *apiMethodAnalyzer) discover(fn *ssa.Function, pending map[*ssa.F
 		return err
 	}
 	summary.callees = append(summary.callees, localCallees...)
-	summary.callees = append(summary.callees, analyzer.index.nestedFuncs[fn]...)
-	summary.callees = append(summary.callees, analyzer.index.callers[fn]...)
+	for _, nested := range analyzer.index.nestedFuncs[fn] {
+		if !analyzer.excluded(nested.Pos()) {
+			summary.callees = append(summary.callees, nested)
+		}
+	}
+	for _, callee := range analyzer.index.callers[fn] {
+		sites := analyzer.index.callSites[fn][callee]
+		if len(sites) == 0 || slices.ContainsFunc(sites, func(pos token.Pos) bool { return !analyzer.excluded(pos) }) {
+			summary.callees = append(summary.callees, callee)
+		}
+	}
 	for _, callee := range summary.callees {
 		if err := analyzer.discover(callee, pending); err != nil {
 			return err
@@ -1875,6 +1906,9 @@ func collectDirectLocalCallees(index *packageIndex, fn *ssa.Function, servicePac
 	var callees []*ssa.Function
 	var visitErr error
 	ast.Inspect(fn.Syntax(), func(node ast.Node) bool {
+		if len(analyzers) > 0 && node != nil && analyzers[0].excluded(node.Pos()) {
+			return false
+		}
 		if visitErr != nil {
 			return false
 		}
@@ -2193,12 +2227,15 @@ func isProviderSSAFunction(fn *ssa.Function) bool {
 	return isProviderPackage(fn.Package().Pkg.Path())
 }
 
-func collectDirectSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod) ([]apiMethod, error) {
+func collectDirectSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod, analyzers ...*apiMethodAnalyzer) ([]apiMethod, error) {
 	methods := make([]apiMethod, 0)
 	for _, block := range fn.Blocks {
 		for _, instruction := range block.Instrs {
 			callInstruction, ok := instruction.(ssa.CallInstruction)
 			if !ok {
+				continue
+			}
+			if len(analyzers) > 0 && analyzers[0].excluded(callInstruction.Pos()) {
 				continue
 			}
 			common := callInstruction.Common()
@@ -2220,14 +2257,14 @@ func collectDirectSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappin
 			methods = append(methods, resolved...)
 		}
 	}
-	astMethods, err := collectDirectASTSDKAPIMethods(index, fn, sdkMappings)
+	astMethods, err := collectDirectASTSDKAPIMethods(index, fn, sdkMappings, analyzers...)
 	if err != nil {
 		return nil, err
 	}
 	return append(methods, astMethods...), nil
 }
 
-func collectDirectASTSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod) ([]apiMethod, error) {
+func collectDirectASTSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMappings map[sdkMethodKey][]apiMethod, analyzers ...*apiMethodAnalyzer) ([]apiMethod, error) {
 	if fn == nil || fn.Syntax() == nil {
 		return nil, nil
 	}
@@ -2242,6 +2279,9 @@ func collectDirectASTSDKAPIMethods(index *packageIndex, fn *ssa.Function, sdkMap
 	methods := make([]apiMethod, 0)
 	var visitErr error
 	ast.Inspect(fn.Syntax(), func(node ast.Node) bool {
+		if len(analyzers) > 0 && node != nil && analyzers[0].excluded(node.Pos()) {
+			return false
+		}
 		if visitErr != nil {
 			return false
 		}
@@ -3205,7 +3245,8 @@ var errIncompleteEntrypointSpec = errors.New("incomplete entrypoint spec")
 
 func entrypointFromCompositeLit(pkg *packages.Package, kind, sourceFile string, lit *ast.CompositeLit) (entrypointSpec, error) {
 	var factoryExpr ast.Expr
-	var typeName string
+	var typeName, tagResourceType string
+	var tagsPresent bool
 	for _, elt := range lit.Elts {
 		kv, ok := elt.(*ast.KeyValueExpr)
 		if !ok {
@@ -3213,6 +3254,16 @@ func entrypointFromCompositeLit(pkg *packages.Package, kind, sourceFile string, 
 		}
 		key := exprIdentName(kv.Key)
 		switch key {
+		case "Tags":
+			tagsPresent = true
+			if kind != "list_resource" {
+				continue
+			}
+			if call, ok := kv.Value.(*ast.CallExpr); ok && len(call.Args) == 2 {
+				if obj := calledFunctionObject(pkg, call); obj != nil && obj.Pkg() != nil && obj.Pkg().Path() == providerModulePath+"/internal/types" && obj.Name() == "ResourceTagsTypeAndAttribute" {
+					tagResourceType, _ = stringLiteralValue(call.Args[0])
+				}
+			}
 		case "Factory":
 			factoryExpr = kv.Value
 		case "TypeName":
@@ -3231,11 +3282,13 @@ func entrypointFromCompositeLit(pkg *packages.Package, kind, sourceFile string, 
 		return entrypointSpec{}, err
 	}
 	return entrypointSpec{
-		kind:        kind,
-		typeName:    typeName,
-		factory:     factory,
-		sourceFile:  sourceFile,
-		packagePath: packagePath,
+		kind:               kind,
+		tagResourceType:    tagResourceType,
+		tagMetadataOmitted: kind == "list_resource" && !tagsPresent,
+		typeName:           typeName,
+		factory:            factory,
+		sourceFile:         sourceFile,
+		packagePath:        packagePath,
 	}, nil
 }
 
@@ -3902,4 +3955,167 @@ func compareStrings(left, right string) int {
 		return 1
 	}
 	return 0
+}
+
+// sourceRange excludes a source-proven unreachable branch from all three edge
+// sources: AST calls, SSA calls and synthetic/nested function discovery.
+type sourceRange struct{ start, end token.Pos }
+
+func (analyzer *apiMethodAnalyzer) excluded(pos token.Pos) bool {
+	return pos != token.NoPos && slices.ContainsFunc(analyzer.pruned, func(r sourceRange) bool { return r.start <= pos && pos < r.end })
+}
+
+// Bounded adapters for the reviewed list-resource registration/tag protocol.
+// Reviewed at terraform-provider-aws v6.74.0, commit
+// 37a03ed2ae866e067de31f8288c039ab53e132f1. Hashes cover registration, context
+// identity, Some(empty) semantics and the framework/SDK list interceptor wiring.
+// go.mod is checked after the existing loadProviderIndex tool-requirement cleanup;
+// the module graph and checksums also bind the external framework/logging helpers.
+// A changed or missing file restores the conservative traversal. Extending the
+// adapter requires reviewing the new source and its offline behavior tests.
+var reviewedListTagProtocol = map[string]string{
+	"internal/framework/with_list.go":     "71019737e7de8300b5a48b785fd7cede7c08fdb61f4d2a63421c06967ad3f0be",
+	"go.sum":                              "6870594b891df92e616e95906c7cc853aa81ac1706c8b8c20ff4f4e09b5a6e63",
+	"go.mod":                              "55fdc13d3b767291b01545beb515b033fdfbbe12cc953a0339ec2975c3628d70",
+	"internal/provider/framework/wrap.go": "76cfb41bba4b16f75e392e848b9788cbb14aa64ee75e29fe96f7118276755611",
+	"internal/framework/list_resource_with_sdkv2_resource.go":           "4c6c6f0115200b629a9fc5756f7976f3aedc522e0abd43ed0dece4256a9745b4",
+	"internal/provider/framework/listresource/list_result_intercept.go": "66c4d91b81b4892eee34ab2e54a2ffa9d3bd43b21b91dbb9cb967c504048c5ca",
+	"internal/provider/interceptors/htags.go":                           "d8f6d060919c8496145973e3b09dec2371b5dcbe7e01af902730fc5f22367d5f",
+	"internal/provider/interceptors/info.go":                            "77b258bda092da35a0aeeb9eaa357cac8ea294e5fba65aec1d7775ce1f35dd1f",
+	"internal/types/service_package.go":                                 "54944044bb613d3e613c2bfd2cda48e935614a4fbd21973c14847aee49648bf4",
+	"internal/tags/context.go":                                          "d428c0cf8dbcb866f82272da68c4c403cc5b30c06205918887d15148beae7169",
+	"internal/types/option/option.go":                                   "e007301e996a10d8561f75a7adf07d4444fec2c54613aa92ea570009aa299f61",
+	"internal/tags/lister.go":                                           "30c8ea58d4a25dcc2d333629578737ce678894ea2247660b27525a0fe6226c7b",
+}
+
+var reviewedUserListTagState = map[string]string{
+	"internal/service/iam/service_package_gen.go": "cd48c8094c87e28ef68316aa9cea1bd71e881731f074777d9ccd9a06f64901a2",
+	"internal/service/iam/user_list.go":           "fc92344f96afc4d53782b3ae442a8f2d481ba9b375af764365fe2de0a50fa1c9",
+	"internal/service/iam/user.go":                "c25e0a09e21ab464f85ff102ce105b4c1db5156297ec96297e0c9a48280c3964",
+	"internal/service/iam/tags_gen.go":            "ae8836a87b797b2eef83af6f50e1c56c1511849e5d4bb744426f1e4a190059bb",
+}
+
+func matchesSourceFiles(root string, expected map[string]string) bool {
+	for path, digest := range expected {
+		data, err := os.ReadFile(filepath.Join(root, filepath.FromSlash(path)))
+		if err != nil || fmt.Sprintf("%x", sha256.Sum256(data)) != digest {
+			return false
+		}
+	}
+	return true
+}
+
+func matchesTagProtocol(root string) bool {
+	return matchesSourceFiles(root, reviewedListTagProtocol)
+}
+
+func isUserListEntrypoint(spec entrypointSpec) bool {
+	return spec.kind == "list_resource" && spec.packagePath == providerModulePath+"/internal/service/iam" &&
+		spec.factory == "newUserResourceAsListResource" && spec.typeName == "aws_iam_user" && spec.tagResourceType == "User"
+}
+
+// Bind the whole provider tree as well as the named protocol files: an edit to
+// a context helper outside those files must never inherit the reviewed proof.
+func reviewedProviderCheckout(root string) bool {
+	head := exec.Command("git", "rev-parse", "HEAD")
+	head.Dir = root
+	out, err := head.Output()
+	if err != nil || strings.TrimSpace(string(out)) != "37a03ed2ae866e067de31f8288c039ab53e132f1" {
+		return false
+	}
+	diff := exec.Command("git", "diff", "--no-ext-diff", "--no-textconv", "--quiet", "HEAD", "--", ".")
+	diff.Dir = root
+	if diff.Run() != nil {
+		return false
+	}
+	// Include ignored files: an ignored extra .go file can still compile.
+	extra := exec.Command("git", "ls-files", "--others", "-z")
+	extra.Dir = root
+	out, err = extra.Output()
+	if err != nil || len(out) != 0 {
+		return false
+	}
+	tracked := exec.Command("git", "ls-files", "-v", "-z")
+	tracked.Dir = root
+	out, err = tracked.Output()
+	if err != nil {
+		return false
+	}
+	for _, row := range strings.Split(string(out), "\x00") {
+		if row != "" && row[0] != 'H' {
+			return false
+		} // no skip-worktree/assume-unchanged shortcuts
+	}
+	return true
+}
+
+func matchesUserListTagSource(root string) bool {
+	return matchesTagProtocol(root) && matchesSourceFiles(root, reviewedUserListTagState)
+}
+
+func reviewedUserListTagsAlreadySet(root string, spec entrypointSpec) bool {
+	// In this exact source, identity-only results skip tags. Full results always
+	// call resourceUserFlatten -> setTagsOut -> Some(keyValueTags), even for nil or
+	// empty tags, before SetResult. Error/NotFound paths never reach SetResult.
+	return isUserListEntrypoint(spec) && matchesUserListTagSource(root) && reviewedProviderCheckout(root)
+}
+
+func sdkListTagFallbackRanges(index *packageIndex) []sourceRange {
+	var ranges []sourceRange
+	for obj, decl := range index.funcDecls {
+		sig, ok := obj.Type().(*types.Signature)
+		if !ok || sig.Recv() == nil || obj.Pkg() == nil || obj.Pkg().Path() != providerModulePath+"/internal/provider/framework/listresource" ||
+			obj.Name() != "Read" || receiverTypeNameForType(sig.Recv().Type()) != "tagsInterceptorSDK" {
+			continue
+		}
+		ast.Inspect(decl.Body, func(n ast.Node) bool {
+			branch, ok := n.(*ast.IfStmt)
+			if !ok {
+				return true
+			}
+			call, ok := branch.Cond.(*ast.CallExpr)
+			if !ok {
+				return true
+			}
+			sel, ok := call.Fun.(*ast.SelectorExpr)
+			if !ok || sel.Sel.Name != "IsNone" {
+				return true
+			}
+			field, ok := sel.X.(*ast.SelectorExpr)
+			if !ok || field.Sel.Name != "TagsOut" {
+				return true
+			}
+			ranges = append(ranges, sourceRange{branch.Pos(), branch.End()})
+			return false
+		})
+	}
+	return ranges
+}
+
+// The framework wrapper appends TagsInterceptor only for spec.Tags.Enabled().
+// These two reviewed registrations omit Tags, so its Read implementation is not
+// installed. Keep all direct handler/helper calls, including parent-error reads.
+func isReviewedUntaggedListSpec(spec entrypointSpec) bool {
+	if spec.kind != "list_resource" || !spec.tagMetadataOmitted {
+		return false
+	}
+	return (spec.packagePath == providerModulePath+"/internal/service/devopsagent" &&
+		spec.typeName == "aws_devopsagent_asset_file" && spec.factory == "newAssetFileResourceAsListResource") ||
+		(spec.packagePath == providerModulePath+"/internal/service/pinpointsmsvoicev2" &&
+			spec.typeName == "aws_pinpointsmsvoicev2_protect_configuration_association" && spec.factory == "newProtectConfigurationAssociationResourceAsListResource")
+}
+
+func unregisteredListTagInterceptorRanges(index *packageIndex) []sourceRange {
+	var ranges []sourceRange
+	for obj, decl := range index.funcDecls {
+		sig, ok := obj.Type().(*types.Signature)
+		if !ok || sig.Recv() == nil || obj.Pkg() == nil || obj.Pkg().Path() != providerModulePath+"/internal/provider/framework/listresource" || obj.Name() != "Read" {
+			continue
+		}
+		receiver := receiverTypeNameForType(sig.Recv().Type())
+		if receiver == "tagsInterceptor" || receiver == "tagsInterceptorSDK" {
+			ranges = append(ranges, sourceRange{decl.Pos(), decl.End()})
+		}
+	}
+	return ranges
 }

@@ -225,6 +225,101 @@ mod tests {
     };
 
     #[test]
+    fn reviewed_674_list_tags_follow_registration_and_returned_state() -> Result<(), &'static str> {
+        let TerraformProviderAwsMappingsLookup::Supported(mappings) = sdk_method_mappings("6.74.0")
+        else {
+            return Err("missing v6.74.0 mappings");
+        };
+        let user = mappings
+            .iter()
+            .find(|row| {
+                row.kind == "list_resource"
+                    && row.type_name == "aws_iam_user"
+                    && row.action == "list"
+            })
+            .ok_or("missing IAM user list mapping")?;
+        assert_eq!(
+            user.api_methods.collect::<Vec<_>>(),
+            [
+                TerraformProviderAwsApiMethodRef {
+                    service: "iam",
+                    name: "GetUser",
+                },
+                TerraformProviderAwsApiMethodRef {
+                    service: "iam",
+                    name: "ListUsers",
+                },
+            ]
+        );
+        for (type_name, expected) in [
+            (
+                "aws_devopsagent_asset_file",
+                &[
+                    "GetAgentSpace",
+                    "GetAsset",
+                    "GetAssetFile",
+                    "ListAssetFiles",
+                ][..],
+            ),
+            (
+                "aws_pinpointsmsvoicev2_protect_configuration_association",
+                &["DescribeConfigurationSets"][..],
+            ),
+        ] {
+            let mapping = mappings
+                .iter()
+                .find(|row| {
+                    row.kind == "list_resource"
+                        && row.type_name == type_name
+                        && row.action == "list"
+                })
+                .ok_or("missing reviewed untagged list mapping")?;
+            assert_eq!(
+                mapping
+                    .api_methods
+                    .map(|method| method.name)
+                    .collect::<Vec<_>>(),
+                expected,
+                "{type_name}"
+            );
+        }
+        let protect = mappings
+            .iter()
+            .find(|row| {
+                row.kind == "list_resource"
+                    && row.type_name == "aws_pinpointsmsvoicev2_protect_configuration"
+                    && row.action == "list"
+            })
+            .ok_or("missing tag-enabled protect configuration list")?;
+        assert!(
+            protect
+                .api_methods
+                .contains(&TerraformProviderAwsApiMethodRef {
+                    service: "sms-voice",
+                    name: "ListTagsForResource",
+                })
+        );
+        // Another list type still reads tags from its own service API.
+        let bucket = mappings
+            .iter()
+            .find(|row| {
+                row.kind == "list_resource"
+                    && row.type_name == "aws_s3_bucket"
+                    && row.action == "list"
+            })
+            .ok_or("missing S3 bucket list mapping")?;
+        assert!(
+            bucket
+                .api_methods
+                .contains(&TerraformProviderAwsApiMethodRef {
+                    service: "s3",
+                    name: "GetBucketTagging",
+                })
+        );
+        Ok(())
+    }
+
+    #[test]
     fn s3_upload_paths_are_present_in_every_affected_provider_version() {
         let mut uses_uploader = false;
         for version in provider_versions() {

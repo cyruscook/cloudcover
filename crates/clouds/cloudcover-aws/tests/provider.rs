@@ -851,3 +851,70 @@ fn rejects_unknown_api_method() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+
+#[test]
+fn terraform_674_user_list_reaches_both_policy_renderers_without_unrelated_tags()
+-> Result<(), Box<dyn Error>> {
+    let provider = AwsProvider::new();
+    let mappings = provider.sdk_method_mappings(&ResolvedSdk::new(
+        Sdk::new("terraform-provider-aws", Language::Terraform).with_version("6.74.0"),
+    ))?;
+    let reference = MethodReference::Terraform(TerraformMethodReference::new(
+        "list_resource",
+        "aws_iam_user",
+        "list",
+    ));
+    let mapping = mappings
+        .iter()
+        .find(|row| row.method() == &reference)
+        .ok_or("missing IAM user list entrypoint")?;
+    let expected = [
+        ApiMethod::new("iam", "GetUser"),
+        ApiMethod::new("iam", "ListUsers"),
+    ];
+    assert_eq!(mapping.api_methods(), expected);
+    for include in [false, true] {
+        let json = provider.review_permissions_policy(mapping.api_methods(), include)?;
+        assert_eq!(
+            json.conditional_permissions,
+            Vec::<cloudcover_aws::ConditionalPermission>::new()
+        );
+        let mut actions = json.policy["Statement"]
+            .as_array()
+            .ok_or("missing statements")?
+            .iter()
+            .flat_map(|statement| statement["Action"].as_array().into_iter().flatten())
+            .map(|action| action.as_str().ok_or("non-string action"))
+            .collect::<Result<Vec<_>, _>>()?;
+        actions.sort_unstable();
+        assert_eq!(actions, ["iam:GetUser", "iam:ListUsers"]);
+        assert_eq!(
+            provider.permissions_policy(mapping.api_methods())?,
+            json.policy
+        );
+        let hcl = provider.review_permissions_policy_hcl(mapping.api_methods(), include)?;
+        assert_eq!(
+            hcl.conditional_permissions,
+            Vec::<cloudcover_aws::ConditionalPermission>::new()
+        );
+        assert_eq!(hcl.policy, provider.permissions_policy_hcl(&expected)?);
+        let body: hcl::Body = hcl::from_str(&hcl.policy)?;
+        let round_trip: hcl::Body = hcl::from_str(&hcl::format::to_string(&body)?)?;
+        assert_eq!(body, round_trip);
+    }
+    // An SDK mapping correction must not permit partial policy output when a
+    // mixed request also contains an operation with unknown authorization.
+    let mut mixed = mapping.api_methods().to_vec();
+    mixed.push(ApiMethod::new("iam", "UnreviewedOperation"));
+    for include in [false, true] {
+        assert!(provider.review_permissions_policy(&mixed, include).is_err());
+        assert!(
+            provider
+                .review_permissions_policy_hcl(&mixed, include)
+                .is_err()
+        );
+    }
+    assert!(provider.permissions_policy(&mixed).is_err());
+    assert!(provider.permissions_policy_hcl(&mixed).is_err());
+    Ok(())
+}
